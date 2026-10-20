@@ -5,4 +5,4 @@ Copy a template into the relevant project or documentation folder and fill it wi
 - [Feature brief](feature-brief.md): define the BIM problem and success criteria.
 - [Research record](research-record.md): assess existing work and its provenance.
 - [Verification record](verification-record.md): record independent checks and limits.
-- [Lesson](lesson.md): turn completed work into a repeatable learning exercise.
+- [Lesson](lesson.md): capture how participants engaged the agent, with a linked technical guide future agents can follow.

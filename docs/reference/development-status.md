@@ -4,7 +4,7 @@ Baseline: 2026-10-20. Update this page when implementation or verification chang
 
 | Area | Status |
 |---|---|
-| Teaching repository | Local structure, navigation, agent guidance, and imported materials |
+| Teaching repository | Local structure, navigation, agent guidance, and imported materials; Excel learning now separates the participant engagement story from the technical agent guide |
 | Research | Seven original precedents plus ClosedXML inspected at pinned commits; license and dependency evidence retained |
 | Revit readiness questions | Three proposed demonstrations and controlled acceptance cases |
 | Revit add-in | Minimal probe plus read-only required-type-information command built, installed, and run locally |

@@ -1,6 +1,7 @@
 # Documentation map
 
-- [Tutorials](tutorials/README.md): learn the process in sequence.
+- [Tutorials](tutorials/README.md): learn the process in sequence; the [Excel participant story](tutorials/04-add-an-excel-report-dependency.md) focuses on how the author engaged the agent.
+- [Agent dependency guide](how-to/add-a-plugin-dependency.md): reproduce and extend the Excel implementation using source locations, commands, and acceptance evidence.
 - [Clone research repositories](how-to/clone-research-repositories.md): obtain and inspect a pinned source candidate.
 - [Extend a project](how-to/extend-a-project.md): plan a complete, verifiable change.
 - [Repository design](explanation/repository-design.md): how the lab and worked examples fit together.

@@ -10,9 +10,10 @@ BIM Agent Lab is a teaching repository for BIM professionals. It pairs worked ex
 
 | I want to… | Start here |
 |---|---|
+| Learn how to engage an agent | [Excel output: the participant story](docs/tutorials/04-add-an-excel-report-dependency.md), with actual prompts, decisions, and evidence to examine |
 | Use the plugin | [Revit readiness project](projects/revit-readiness/README.md): intended behavior and current availability |
 | Learn how we build it | [Learning path](docs/tutorials/README.md), beginning with directing an agent with Git |
-| Extend it with my agent | [Agent instructions](AGENTS.md), [project guidance](projects/revit-readiness/AGENTS.md), and [extension workflow](docs/how-to/extend-a-project.md) |
+| Extend it with my agent | [Agent instructions](AGENTS.md), [project guidance](projects/revit-readiness/AGENTS.md), [extension workflow](docs/how-to/extend-a-project.md), and the worked [dependency implementation guide](docs/how-to/add-a-plugin-dependency.md) |
 | Review research and resources | [Research index](docs/research/README.md) with pinned repositories, license evidence, and source findings |
 | Revisit the seminar | [SWACCA 2026](workshops/swacca-2026/README.md) |
 

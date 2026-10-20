@@ -349,6 +349,18 @@ The [lesson](../tutorials/04-add-an-excel-report-dependency.md), [research/licen
 
 The prompt specifies purpose, output, research, verification, and documentation rather than asking only to install a package. The sequence is reproducible: inspect Git and source, inspect the resolved dependency graph and notices, pin versions, write failing tests, implement, package all runtime files, verify in the actual host, independently inspect output, review and record the checkpoint. The runtime failure is useful teaching evidence: successful unit tests did not establish that a dependency would load inside Revit.
 
+## 2026-10-20 Capture the engagement story separately from implementation
+
+### Author prompt
+
+> good.  Now we need to capture that as learning for participants and also for agents that read the repo.  Participants are the highest level, "how did we engage the agent?"  agents get the lower level description.
+
+The author clarified the teaching hierarchy after the Excel implementation checkpoint `4d40788`. The original lesson mixed the engagement story with technical instructions. The agent rewrote the [participant lesson](../tutorials/04-add-an-excel-report-dependency.md) around the actual questions and implementation prompt, prior context, human judgments, delegated work, the host failure, evidence to assess, and clearly labeled suggested follow-up prompts. The [companion agent guide](../how-to/add-a-plugin-dependency.md) retains the technical procedure and adds a source map, failure diagnostics, and explicit acceptance boundaries.
+
+Root/project agent instructions, navigation, and the lesson template now make both audiences explicit. Participants get the purpose, decisions, and evidence first; agents get enough detail to reproduce or extend the work. Earlier lessons retain their combined format until revised. The two-hour seminar timing remains unchanged.
+
+This increment changes documentation and agent guidance only. Link resolution, referenced paths, historical prompt wording, and source/evidence consistency are the relevant checks; it does not rerun or extend the plugin's runtime acceptance. The underlying Revit and workbook results remain those in the dated Excel verification record.
+
 ## A reusable research prompt
 
 The following is a teaching template, not an additional instruction from the author:

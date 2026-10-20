@@ -1,119 +1,78 @@
-# Add our first plugin dependency: Excel reports with ClosedXML
+# How we directed the agent: adding Excel output
 
-The readiness command now creates a four-sheet `.readiness.xlsx` beside its JSON and text reports. This lesson teaches how to select, inspect, pin, install, and verify a third-party dependency. The workbook presents the existing check's results; it does not introduce another evaluator.
+**For seminar participants.** Learn how to ask for a useful change, give the agent room to solve technical problems, and judge its evidence. You can follow this story without writing code or installing Revit. The [agent implementation guide](../how-to/add-a-plugin-dependency.md) contains the commands, source map, dependencies, and verification procedure.
 
-## The actual request
+Our starting point was a working, read-only Revit check for missing wall and ceiling type information. We wanted a report BIM staff could review in Excel. The completed change is recorded in commit `4d40788`; its [acceptance record](../../projects/revit-readiness/docs/verification/2026-10-20-excel-output.md) contains the results and screenshots.
+
+## Start with the work people need to do
+
+The author's actual opening question for this increment was:
+
+> What additional libraries or add-ons would we need to produce an excel sheet readable output?
+
+This asked the agent to identify what the new capability would require before implementation. A library is reusable code written by others; adopting one also brings its dependencies and license terms. Participants do not need to arrive knowing a library name. Ask the agent to investigate suitable options and explain the recommendation in terms of your intended use.
+
+The conversation then settled on ClosedXML and four worksheets: Summary, Findings, Affected elements, and Rules and coverage. That supplied enough shared context for the next instruction.
+
+## Give a bounded implementation instruction
+
+The author's actual implementation prompt was:
 
 > Ok, let's add the Excel output using ClosedXML with those four worksheets. Review the dependencies and licenses, verify the output against our sample results, and record the process in bim-agent-lab. This will demonstrate how to add our first plugin dependency. It will teach this.
 
-This is a useful agent prompt because it names the package and desired output, requires dependency and license research, identifies an independent verification target, and asks for a durable lesson. It follows an earlier discussion of the four sheets, so that context does not need to be repeated. For a new chat, include the sheet names and point to this lesson.
+The important parts of that direction were:
 
-## 1. Establish Git context and acceptance
+| What the author specified | What it gave the agent to do | What a participant can examine |
+|---|---|---|
+| Excel output with the agreed sheets | Produce a defined deliverable from the existing check | Open the workbook and identify the purpose of each sheet |
+| ClosedXML, dependencies, and licenses | Inspect the selected library and the other code it brings with it | A source-backed [research record](../research/closedxml-dependency.md), exact versions, and retained notices |
+| Verify against our sample results | Preserve known BIM answers while adding a new output | Findings and affected-element identities agree with the independent sample evidence |
+| Record the process in the teaching repo | Leave reusable knowledge alongside the working change | The lesson, technical guide, evidence, and Git checkpoint |
 
-From your own clone's root:
+Earlier direction already established research first, inspecting cloned repositories, using Git to record the build, working on sample copies, and keeping the checker read-only. The short prompt relied on that accumulated context. In a fresh conversation, point the agent to the repository instructions and current evidence so those requirements are available again.
 
-```powershell
-git status --short --branch
-git log --oneline -5
-git switch -c feat/excel-readiness-report
-```
+## Delegate the implementation; stay responsible for the meaning
 
-Create a branch only if it does not already exist. Inspect an existing branch instead of resetting it. Our change began from `c7c2ad9` with a clean working tree. No remote or publishing action was needed.
+The author chose the BIM purpose, requested the output, and set the evidence standard. The agent inspected source code, selected exact package versions, wrote the exporter and tests, checked deployment, and documented the result. These technical choices did not require the author to prescribe every file or command.
 
-Acceptance: exactly **Summary**, **Findings**, **Affected elements**, and **Rules and coverage**, preserving scope and evidence. The complete/wall-defect/ceiling-negative scenarios must remain **0/0**, **2/6**, and **3/8** findings/distinct affected instances. A zero finding count with incomplete coverage must remain visibly incomplete. Identifiers stay text; counts stay numbers. This workbook is a static report, not an editable requirements interface.
+The author still owns what counts as useful information, which requirements apply to the model, and whether the result supports the intended work. A report showing no missing text does not establish that an assembly is correct. Keep that distinction visible when reviewing the agent's result.
 
-## 2. Inspect the dependency before adopting it
+Git made the work inspectable: the agent began from a known baseline, worked on a branch, and committed the reviewed change. For a new task, a useful **suggested prompt** is:
 
-We cloned ClosedXML tag `0.105.1` into ignored `references/ClosedXML` and inspected commit `b4ebe47bd3ecebf8480dea7422188d16b35b9d9a`:
+> Inspect the repository and current changes first. Preserve existing work, use an appropriate branch, and record a reviewed local checkpoint. Show me what changed and the evidence behind it. Publishing will be a separate instruction.
 
-```powershell
-git clone --depth 1 --branch 0.105.1 https://github.com/ClosedXML/ClosedXML.git references/ClosedXML
-git -C references/ClosedXML rev-parse HEAD
-git -C references/ClosedXML status --short
-```
+## Use a failure to test the evidence standard
 
-Only clone into an absent destination. A detached research checkout is intentional. Read the upstream license, project manifest, workbook/cell writing code, graphics engine, and embedded resources. Do not build or run upstream scripts merely because they are present. Our plugin consumes the published NuGet package; the clone is source-inspection evidence.
+The first automated Excel tests passed, but the first export inside Revit failed. That exposed a difference between the test environment and the real application. The agent investigated, changed how the exporter ran, and repeated the relevant checks. The final design uses a small separate program to create the workbook reliably alongside Revit's other add-ins.
 
-The [research record](../research/closedxml-dependency.md) distinguishes one direct package from eleven transitive packages and a font embedded in ClosedXML. A package's top-level license label does not replace inspection of its dependencies or bundled assets.
+The author did not have to diagnose library loading. Requiring verification in Revit made the failure visible and gave the agent a reason to continue until the complete workflow worked. Code review also found missing details for unexamined elements and an installation issue; both were corrected.
 
-## 3. Add and pin the package
+When the evidence is incomplete, a useful **suggested follow-up**, not a historical quote, is:
 
-NuGet is .NET's package manager. The exporter project has one direct package reference:
+> Which checks have actually passed, and which still need the real application? Investigate the failure, preserve the working outputs and models, and show evidence that the fix works in Revit.
 
-```xml
-<PackageReference Include="ClosedXML" Version="[0.105.1]" />
-```
+Revit's unsigned-add-in prompt needed a human action under the automation rules used in this session. The author allowed the add-in and replied "loaded." The agent continued documentation while waiting, then resumed the application checks. This was a specific handoff, not a requirement to approve every technical step.
 
-The bracketed version is exact. `packages.lock.json` records resolved transitive versions and content hashes. Commit those small text files, not downloaded DLLs or the NuGet cache. The project-local `NuGet.Config` declares the public package source.
+## Decide what the result proves
 
-For an intentional dependency change, restore and inspect the changed graph:
+The three prepared model copies gave us known answers:
 
-```powershell
-dotnet restore projects/revit-readiness/src/excel-report/BimAgentLab.Readiness.Excel.csproj --force-evaluate
-dotnet list projects/revit-readiness/src/excel-report/BimAgentLab.Readiness.Excel.csproj package --include-transitive
-dotnet list projects/revit-readiness/src/excel-report/BimAgentLab.Readiness.Excel.csproj package --include-transitive --vulnerable
-git diff -- projects/revit-readiness/src/excel-report/packages.lock.json
-```
+| Sample | Missing type values | Distinct affected elements |
+|---|---:|---:|
+| Complete information | 0 | 0 |
+| Wall defects | 2 | 6 |
+| Wall defects plus ceiling negative control | 3 | 8 |
 
-Normal build/test scripts use locked restore. Do not habitually use `--force-evaluate`: reviewing a lock-file update is part of changing the dependency. `--locked-mode` is a `dotnet restore` option; for `dotnet build`, use `-p:RestoreLockedMode=true`. A successful restore does not prove runtime compatibility or absence of vulnerabilities.
+The final Revit exports matched those answers and the independent native schedule evidence. All four sheets were inspected in Excel. Model files were unchanged. The two numbers matter: one missing value on a wall type can affect several wall instances. A plausible total alone would not prove that the right elements were identified.
 
-The [license collection script](../../projects/revit-readiness/scripts/Collect-ExcelDependencyEvidence.py) reads the resolved graph and package metadata, collects packaged notices or pinned upstream licenses, and records hashes. Its retained [evidence](../../projects/revit-readiness/third-party/dependency-evidence.json) is reviewed and shipped by the install script. Python is only a research/verification aid; users do not need Python or Microsoft Excel to generate the workbook.
+The [verification record](../../projects/revit-readiness/docs/verification/2026-10-20-excel-output.md) distinguishes automated tests, actual Revit runs, independent comparisons, and visual review. These establish the stated sample behavior on the tested Revit configuration; additional capabilities and versions need their own evidence.
 
-## 4. Keep responsibilities understandable
+## Reuse the engagement pattern
 
-```text
-Revit API reader -> deterministic evaluator -> InformationReport -> JSON + text
-                                                              |
-                                             saved JSON -> Excel exporter -> XLSX
-```
+A **suggested prompt for another capability** is:
 
-The report data classes moved to the host-independent core without changing the JSON shape. The [exporter](../../projects/revit-readiness/src/excel-report/InformationWorkbook.cs) creates tables, freezes headings, preserves literal text and identifiers, and writes a temporary workbook before replacing the destination. If Excel holds the destination open, the previous file is preserved and the command warns that it is stale. JSON/text remain available.
+> Read this repo's instructions and current status. We need [output or capability] so [people] can [work task]. Research existing solutions and required resources, including source code, dependencies, and licenses. Propose a bounded change and use [independent examples] to define success. Implement and verify it in the target application. Record how I directed the work for participants, and the technical procedure for future agents, then create a reviewed Git checkpoint.
 
-| Sheet | Row meaning |
-|---|---|
-| Summary | Check identity, scope, counts, exclusions, coverage, and read-only evidence |
-| Findings | One missing required field on one type; per-row instance counts may overlap |
-| Affected elements | One distinct affected instance, with its missing fields/rules |
-| Rules and coverage | All evaluated fields, including optional/unknown requirements; scope issues and identifiable unexamined instances |
+Supply the business purpose and known examples first. Let the agent investigate how to implement the change. Ask for evidence you can assess, and preserve the reasoning so the next conversation can continue from it.
 
-## 5. Verify in the host, not just the test executable
-
-Our first seven Excel tests passed, but the initial Revit run failed to load compatible spreadsheet dependencies. The console test application had generated assembly binding redirects; Revit's process did not have that same configuration. This is why a clean build and passing offline tests are insufficient.
-
-The final design runs a small **local console exporter in a hidden child process**. It receives the saved report and output paths, owns its .NET configuration, and exits after writing the workbook. The [launcher](../../projects/revit-readiness/src/revit-addin/ExcelReportProcess.cs) waits for completion, reports errors, and limits the operation to 60 seconds. No spreadsheet libraries load into Revit, and no Revit installation/configuration changes are required. The helper uses the already-required .NET Framework runtime; it is not a service or MCP server.
-
-The install script deploys the add-in/core DLLs plus an `Excel/` folder containing the exporter EXE, its configuration, and runtime DLLs. It verifies file hashes, carries third-party notices, and refuses to install while Revit is running. Copying just our own DLL is no longer sufficient. If the optional teaching-sample editor is already installed, the script also synchronizes its backward-compatible shared core to avoid a stale copy loading first. It does not install or enable the editor for new users.
-
-## 6. Reproduce verification
-
-From the repository root:
-
-```powershell
-& .\projects\revit-readiness\scripts\Test-Readiness.ps1
-& .\projects\revit-readiness\scripts\Build-Readiness.ps1
-# Close Revit before installing.
-& .\projects\revit-readiness\scripts\Install-Readiness.ps1
-python .\projects\revit-readiness\tests\verify_excel_evidence.py .\projects\revit-readiness\docs\verification\required-information-evidence .\projects\revit-readiness\tests\excel\bin\outputs
-```
-
-The test script runs 18 core tests, seven workbook tests, and an isolated-export test from a host with no spreadsheet references or binding redirects. Excel tests cover all three scenarios, incomplete coverage and identities, text resembling formulas, long IDs with leading zeros, a locked destination, and distinct affected counts when several fields are missing.
-
-The independent Python comparator reads XLSX ZIP/XML directly. It first checks saved JSON and native Revit schedules against the separately authored answer sheet, then checks workbook values and identities. It does not use ClosedXML or rerun the evaluator.
-
-After running the command in all three sample models, compare the fresh host outputs:
-
-```powershell
-python .\projects\revit-readiness\tests\verify_excel_evidence.py .\projects\revit-readiness\samples\local\required-information .\projects\revit-readiness\samples\local\required-information
-```
-
-Then open each prepared RVT in Revit and run **Add-Ins > External Tools > BIM Agent Lab - Required type information**. Confirm the Excel-success message and inspect the workbook in Excel. Compare newly generated outputs, not earlier offline workbooks. The [acceptance record](../../projects/revit-readiness/docs/verification/2026-10-20-excel-output.md) distinguishes offline tests, actual host execution, and visual inspection. Working RVTs and generated workbooks stay under ignored local/build directories.
-
-## 7. Review, teach, and checkpoint
-
-Review the diff, package graph, licenses, expected results, deployment inventory, and host evidence before committing. The separate code review found the dependency-loading gap and missing identities for unexamined elements; both became explicit verification targets.
-
-A suggested prompt for extending this example:
-
-> Read AGENTS.md and the Excel dependency lesson. Add one useful report column without changing the readiness rule. Explain its source and row meaning. Preserve scope, stable identifiers, missing/optional/unexamined distinctions, and distinct affected counts. Verify against our independent sample answers, run the host checks affected by the change, and record the lesson before a Git checkpoint.
-
-The transferable lesson is that **adding a package also adds a resolved dependency graph, redistribution obligations, deployment files, and runtime assumptions to verify**.
+For practice, ask your agent to explain how one additional report column would help a BIM reviewer, where its value would come from, and how you would check it. Decide whether it is useful before requesting implementation. The agent can then follow the [technical guide](../how-to/add-a-plugin-dependency.md).
