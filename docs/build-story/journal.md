@@ -206,6 +206,47 @@ the journal and dated evidence snapshots. The original authoring folder and its
 reference clones remain available. No plugin implementation or remote publication
 is implied by the new structure.
 
+## 2026-10-20 Develop the selected Option B seminar structure
+
+### Author prompt
+
+> Ok, let's update Option B around our current plan, emphasizing research, Git, how we built the plugin, and using bim-agent-lab afterward. Keep it to two one-hour sessions. This will evolve as we proceed, but it is the general structure.
+
+### Decision and working allocation
+
+The author confirmed a variation of Option B, “The story of the build.” The agent
+created a [current HTML agenda](../../workshops/swacca-2026/agenda.html) while
+preserving the original organizer brief and alternative outlines in the archive.
+
+Session 1 allocates 5 minutes to the room and problem, 5 to a result preview,
+8 to Git, 15 to research and resources, 10 to requirements and sample design,
+12 to the first working build step, and 5 to questions. Session 2 allocates
+5 minutes to recap, 18 to the complete plugin/MCP operation, 12 to verification
+and corrections, 15 to using BIM Agent Lab afterward, 5 to participants' own
+ideas, and 5 to questions. Each session totals 60 minutes.
+
+These timings are a working proposal within the author's selected structure.
+Examples will come from actual research, code changes, and verification as the
+plugin develops. The agenda distinguishes planned seminar demonstrations from
+the current research-only implementation status. A separate scripting walkthrough
+is optional; the core story follows the standalone add-in and MCP workflow.
+
+### Teaching lesson
+
+Use the live sessions to establish a method and show its evidence. Make the
+repository handoff an explicit lesson: participants should know how to direct a
+fresh agent to the project context, relevant source, expected answers, and the
+next small extension. Keep the timing source and evolving build record linked.
+
+### Verification
+
+Checked that each session's elapsed blocks are consecutive and total 60 minutes,
+and that the visual timelines match their tables. All 15 agenda links and 128
+relative Markdown file links resolve. The original HTML archive matches the
+previous commit byte-for-byte. Viewed the page header and both session tables in
+the browser, correcting the table-column spacing before the final check. These
+are documentation checks; they do not validate the planned plugin demonstrations.
+
 ## A reusable research prompt
 
 The following is a teaching template, not an additional instruction from the author:

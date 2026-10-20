@@ -229,6 +229,18 @@ Transferable lessons from building Rook, to be reframed for BIM/Revit.
 
 ## 5. Topics & Themes (candidate)
 
+### Working Option B structure (author, 2026-10-20)
+
+> Ok, let's update Option B around our current plan, emphasizing research, Git, how we built the plugin, and using bim-agent-lab afterward. Keep it to two one-hour sessions. This will evolve as we proceed, but it is the general structure.
+
+Confirmed direction: use a variation of Option B, “The story of the build,” for
+two one-hour sessions. Emphasize research and resource gathering, directing agents
+with Git, the actual plugin development process, and using BIM Agent Lab afterward.
+The [working agenda](agenda.html) supplies the current proposed minute allocations;
+the author explicitly expects them to evolve. `[session-1]` `[session-2]` `[takeaway]`
+
+### Earlier topic collection
+
 Brainstorm of subject matter; not yet prioritized.
 
 - Research existing work before choosing an implementation; compare reuse with

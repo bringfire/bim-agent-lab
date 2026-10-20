@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>SWACCA 2026 · Option B working agenda · BIM Agent Lab</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Continue the dark drawing-sheet style of the original organizer brief. */
+:root {
+  color-scheme: dark;
+  --paper: #12171d; --sheet: #182029; --ink: #e6ebf0;
+  --muted: #a5b1bd; --rule: #34414f; --accent: #8fb8e0;
+  --display: "Barlow Condensed", "Arial Narrow", sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", "Cascadia Mono", Consolas, monospace;
+}
+* { box-sizing: border-box; }
+body { margin: 0; padding: 32px 16px 64px; background: var(--paper); color: var(--ink); font: 16px/1.6 var(--body); }
+.page { max-width: 1000px; margin: auto; display: grid; gap: 38px; }
+h1, h2, h3 { margin: 0; font-family: var(--display); font-weight: 600; line-height: 1.12; text-wrap: balance; }
+h1 { font-size: clamp(2.2rem, 5vw, 3.2rem); }
+h2 { font-size: 1.9rem; }
+h3 { font-size: 1.45rem; }
+p { margin: 0; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+.muted { color: var(--muted); }
+.label { font: .73rem/1.5 var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+.status { color: var(--accent); border: 1px solid var(--accent); padding: 3px 8px; width: fit-content; }
+.titleblock { display: grid; grid-template-columns: 1fr 190px; border: 1.5px solid var(--ink); background: var(--sheet); }
+.tb-main { padding: 26px; display: grid; gap: 14px; border-right: 1px solid var(--rule); }
+.tb-side { display: grid; }
+.tb-cell { display: grid; gap: 2px; align-content: center; padding: 12px 16px; border-bottom: 1px solid var(--rule); }
+.tb-cell:last-child { border: 0; }
+.tb-cell strong { font: 500 .87rem/1.5 var(--mono); }
+.lede { max-width: 62ch; font-size: 1.06rem; }
+nav { display: flex; flex-wrap: wrap; gap: 8px 22px; font-size: .9rem; }
+section { display: grid; gap: 16px; }
+.section-head { display: flex; align-items: baseline; flex-wrap: wrap; gap: 8px 16px; border-bottom: 1px solid var(--ink); padding-bottom: 10px; }
+.section-head .label { margin-left: auto; }
+.facts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; border: 1px solid var(--rule); background: var(--rule); }
+.fact { padding: 16px; background: var(--sheet); display: grid; gap: 5px; }
+.fact strong { font-weight: 600; }
+.note { padding: 14px 18px; border-left: 3px solid var(--accent); background: var(--sheet); }
+.session { border: 1px solid var(--rule); padding: 22px; background: var(--sheet); }
+.session .section-head { border-color: var(--rule); }
+.timeline-wrap, .tablewrap { overflow-x: auto; }
+.timeline { min-width: 640px; display: flex; gap: 3px; }
+.timeline > div { flex: var(--minutes); min-width: 0; padding: 8px 5px; min-height: 64px; text-align: center; font-size: .76rem; line-height: 1.4; }
+.timeline b { display: block; margin-bottom: 4px; font: 500 .71rem var(--mono); }
+.frame { background: #2a333d; } .git { background: #24483a; }
+.research { background: #23405f; } .build { background: #3e2f57; }
+.practice { background: #5a4724; }
+table { border-collapse: collapse; width: 100%; min-width: 660px; font-size: .91rem; }
+caption { text-align: left; color: var(--muted); padding: 2px 0 12px; font-size: .82rem; }
+th, td { text-align: left; vertical-align: top; border-bottom: 1px solid var(--rule); padding: 12px 10px; }
+th { font: 500 .71rem var(--mono); text-transform: uppercase; letter-spacing: .04em; color: var(--muted); }
+thead th:first-child, tbody td:first-child { width: 90px; white-space: nowrap; }
+tbody td:first-child { font: .78rem/1.65 var(--mono); }
+thead th:nth-child(2), tbody td:nth-child(2) { width: 65px; white-space: nowrap; }
+td strong { display: block; margin-bottom: 4px; font-weight: 600; }
+tfoot td { border: 0; font-weight: 600; }
+.outcome { font-size: .92rem; }
+.two { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.two > div { display: grid; align-content: start; gap: 12px; }
+ul, ol { margin: 0; padding-left: 1.2em; display: grid; gap: 9px; }
+blockquote { margin: 0; padding: 16px 20px; border-left: 3px solid var(--accent); background: var(--sheet); }
+footer { border-top: 1px solid var(--rule); padding-top: 16px; color: var(--muted); font-size: .82rem; }
+@media (max-width: 680px) {
+  body { padding: 16px 12px 36px; }
+  .page { gap: 26px; }
+  .titleblock { grid-template-columns: 1fr; }
+  .tb-main { padding: 20px; border-right: 0; border-bottom: 1px solid var(--rule); }
+  .tb-side { grid-template-columns: 1fr 1fr; }
+  .tb-cell { border-right: 1px solid var(--rule); }
+  .facts, .two { grid-template-columns: 1fr; }
+  .session { padding: 16px; }
+  .section-head .label { margin-left: 0; }
+}
+@media print {
+  @page { size: Letter; margin: .5in; }
+  * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+  body { padding: 0; font-size: 12px; }
+  .page { gap: 24px; }
+  nav { display: none; }
+  .session { break-before: page; padding: 16px; }
+  .tablewrap, .timeline-wrap { overflow: visible; }
+  table, .timeline { min-width: 0; }
+  th, td { padding: 8px; }
+  tr, .titleblock, .facts, blockquote { break-inside: avoid; }
+  h2, h3, .section-head { break-after: avoid; }
+}
+</style>
+</head>
+<body>
+<main class="page">
+  <header class="titleblock">
+    <div class="tb-main">
+      <span class="status label">Option B · Working structure</span>
+      <h1>The story of the build.<br>A process you can use afterward.</h1>
+      <p class="lede">Two one-hour sessions on directing AI coding agents to build BIM tools: research the possibilities, use Git deliberately, follow the Revit readiness plugin’s build, and continue with BIM Agent Lab.</p>
+    </div>
+    <div class="tb-side">
+      <div class="tb-cell"><span class="label">Event</span><strong>SWACCA BIM 2026</strong></div>
+      <div class="tb-cell"><span class="label">Format</span><strong>60 + 60 minutes</strong></div>
+      <div class="tb-cell"><span class="label">Scheduled date</span><strong>Thu 10/29/2026</strong></div>
+      <div class="tb-cell"><span class="label">Revision</span><strong>B · 10/20/2026</strong></div>
+    </div>
+  </header>
+
+  <nav aria-label="Agenda navigation">
+    <a href="#session-1">Session 1</a><a href="#session-2">Session 2</a><a href="#afterward">After the seminar</a><a href="#evolution">How this evolves</a>
+  </nav>
+
+  <section aria-labelledby="purpose-title">
+    <div class="section-head"><h2 id="purpose-title">One example, a reusable method</h2><span class="label">Orientation → evidence → next step</span></div>
+    <div class="facts">
+      <div class="fact"><span class="label">First hour · 8:30–9:30</span><strong>From BIM question to a researched plan</strong><span class="muted">Learn what to ask an agent to do before and during the first build.</span></div>
+      <div class="fact"><span class="label">Second hour · 11:00–12:00</span><strong>From working plugin to your next tool</strong><span class="muted">Follow the implementation, examine its evidence, and take the process home.</span></div>
+      <div class="fact"><span class="label">Continuing resource</span><strong>BIM Agent Lab</strong><span class="muted">The planned plugin takeaway, source, build story, lessons, and extension guides.</span></div>
+    </div>
+    <p>Model readiness leads the example. Inventory and quantities support three questions: what required information is missing, which modeled conditions need review, and how the findings affect quantity reporting.</p>
+    <p class="note"><strong>Working plan:</strong> the sequence is our general structure; the examples and minute allocations can evolve as the plugin develops. At this revision, research and the teaching repository exist; the plugin, sample preparation, and runtime verification are still to be completed. The agenda describes what we intend to demonstrate at the seminar.</p>
+  </section>
+
+  <section class="session" id="session-1" data-session="1" aria-labelledby="s1-title">
+    <div class="section-head"><h2 id="s1-title">01 / From BIM question to a researched plan</h2><span class="label">60 minutes · 8:30–9:30</span></div>
+    <p>Establish the problem, introduce Git early, and show how research changes the plan before following the first implementation decisions.</p>
+    <div class="timeline-wrap" aria-hidden="true"><div class="timeline">
+      <div class="frame" style="--minutes:5"><b>5 min</b>Frame</div>
+      <div class="practice" style="--minutes:5"><b>5 min</b>Preview</div>
+      <div class="git" style="--minutes:8"><b>8 min</b>Git</div>
+      <div class="research" style="--minutes:15"><b>15 min</b>Research</div>
+      <div class="frame" style="--minutes:10"><b>10 min</b>Define</div>
+      <div class="build" style="--minutes:12"><b>12 min</b>First build</div>
+      <div class="frame" style="--minutes:5"><b>5 min</b>Q&amp;A</div>
+    </div></div>
+    <div class="tablewrap"><table>
+      <caption>Elapsed time within Session 1. Show the prompt, the evidence, and the decision for each worked example.</caption>
+      <thead><tr><th scope="col">Elapsed</th><th scope="col">Time</th><th scope="col">Focus and demonstration</th></tr></thead>
+      <tbody>
+        <tr data-start="0" data-end="5" data-minutes="5"><td>00–05</td><td>5 min</td><td><strong>Meet the room and frame the BIM problem</strong>Poll experience, introduce model readiness, and explain that the seminar leads into a continuing teaching repository.</td></tr>
+        <tr data-start="5" data-end="10" data-minutes="5"><td>05–10</td><td>5 min</td><td><strong>Preview the plugin and the three questions</strong>Show the intended result using a prepared example: missing information, modeling conditions, and quantities with review status.</td></tr>
+        <tr data-start="10" data-end="18" data-minutes="8"><td>10–18</td><td>8 min</td><td><strong>Direct an agent with Git</strong>Ask it to identify the working repo, clone a precedent, and record its revision. Explain a branch, diff, and commit; distinguish a local checkpoint from a push.</td></tr>
+        <tr data-start="18" data-end="33" data-minutes="15"><td>18–33</td><td>15 min</td><td><strong>Research existing work and gather resources</strong>Inspect actual source, licenses, SDKs, APIs, libraries, and dependencies. Use the discovered 100-element query limit to show why scope and completeness must be checked. Explain the evidence behind reuse, adaptation, or a new component.</td></tr>
+        <tr data-start="33" data-end="43" data-minutes="10"><td>33–43</td><td>10 min</td><td><strong>Turn the idea into requirements and a sample plan</strong>Follow our prompts and refinements. Define scope, checklist rules, valid exceptions, and independently expected answers in a controlled Revit sample.</td></tr>
+        <tr data-start="43" data-end="55" data-minutes="12"><td>43–55</td><td>12 min</td><td><strong>How we built it, part 1: the first working step</strong>Walk through the starting-point decision, repository structure, AGENTS.md, dependencies, and the smallest Revit read operation. Show a real change and its Git checkpoint.</td></tr>
+        <tr data-start="55" data-end="60" data-minutes="5"><td>55–60</td><td>5 min</td><td><strong>Questions and the next step</strong>Revisit what participants should ask an agent to research and record before implementing their own idea.</td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="2">Total</td><td>60 minutes</td></tr></tfoot>
+    </table></div>
+    <p class="outcome"><strong>Leave this hour able to:</strong> brief an agent, ask it to clone and inspect relevant work, gather the necessary resources, and define a small result that can be checked.</p>
+  </section>
+
+  <section class="session" id="session-2" data-session="2" aria-labelledby="s2-title">
+    <div class="section-head"><h2 id="s2-title">02 / From working plugin to your next tool</h2><span class="label">60 minutes · 11:00–12:00</span></div>
+    <p>Follow one complete operation through the plugin, review how we verified it, then practice directing an agent to continue from BIM Agent Lab.</p>
+    <div class="timeline-wrap" aria-hidden="true"><div class="timeline">
+      <div class="frame" style="--minutes:5"><b>5 min</b>Reconnect</div>
+      <div class="build" style="--minutes:18"><b>18 min</b>Build + MCP</div>
+      <div class="research" style="--minutes:12"><b>12 min</b>Verify</div>
+      <div class="git" style="--minutes:15"><b>15 min</b>BIM Agent Lab</div>
+      <div class="practice" style="--minutes:5"><b>5 min</b>Your idea</div>
+      <div class="frame" style="--minutes:5"><b>5 min</b>Q&amp;A</div>
+    </div></div>
+    <div class="tablewrap"><table>
+      <caption>Elapsed time within Session 2. Revisit the same model and requirements so each step connects to the first hour.</caption>
+      <thead><tr><th scope="col">Elapsed</th><th scope="col">Time</th><th scope="col">Focus and demonstration</th></tr></thead>
+      <tbody>
+        <tr data-start="0" data-end="5" data-minutes="5"><td>00–05</td><td>5 min</td><td><strong>Reconnect to the model-readiness question</strong>Recap the scope, requirement, and expected result. Show where the first session’s work sits in the repository.</td></tr>
+        <tr data-start="5" data-end="23" data-minutes="18"><td>05–23</td><td>18 min</td><td><strong>How we built it, part 2: a complete operation</strong>Trace model data through a deterministic check, findings, and supporting quantities. Show how an MCP tool lets an agent request the operation. Use our prompts, source changes, and actual decisions to explain the implementation.</td></tr>
+        <tr data-start="23" data-end="35" data-minutes="12"><td>23–35</td><td>12 min</td><td><strong>Verify, debug, and review the result</strong>Compare known defects and valid exceptions with an independent answer sheet and schedules. Follow one correction through the evidence, diff, and commit. Explain incomplete results, units, and the limits of what was tested.</td></tr>
+        <tr data-start="35" data-end="50" data-minutes="15"><td>35–50</td><td>15 min</td><td><strong>Use BIM Agent Lab after the seminar</strong>Show how to clone the repo, read README and AGENTS.md, and choose use, learn, or extend. Follow a lesson to its code and verification. Demonstrate a prompt for one additional readiness rule and show how to preserve the change in Git.</td></tr>
+        <tr data-start="50" data-end="55" data-minutes="5"><td>50–55</td><td>5 min</td><td><strong>Apply the process to your own idea</strong>Have participants frame one office task or Summit Challenge need: problem, existing resources, smallest useful change, and a checkable answer. Point to the reusable templates.</td></tr>
+        <tr data-start="55" data-end="60" data-minutes="5"><td>55–60</td><td>5 min</td><td><strong>Questions and handoff</strong>Make the repo and learning path easy to find. Confirm the next action participants can take with their own coding agent.</td></tr>
+      </tbody>
+      <tfoot><tr><td colspan="2">Total</td><td>60 minutes</td></tr></tfoot>
+    </table></div>
+    <p class="outcome"><strong>Leave this hour able to:</strong> examine the evidence behind a tool’s answer, navigate the teaching repo with an agent, and scope one extension or a new BIM tool.</p>
+  </section>
+
+  <section id="afterward" aria-labelledby="after-title">
+    <div class="section-head"><h2 id="after-title">The handoff is a starting point</h2><span class="label">Use · learn · extend</span></div>
+    <div class="two">
+      <div><h3>What participants take away</h3><ul>
+        <li>The planned Revit readiness plugin and matching source, with installation and tested-version guidance.</li>
+        <li>A build story with actual prompts, research, decisions, corrections, and Git checkpoints.</li>
+        <li>Versioned resources, license observations, sample preparation, and independent expected results.</li>
+        <li>Agent instructions, lessons, and templates for adding a rule or starting another BIM tool.</li>
+      </ul></div>
+      <div><h3>What to show in the repo</h3><ul>
+        <li><a href="../../README.md">README: choose a starting point</a> and <a href="../../AGENTS.md">AGENTS.md: provide project context</a>.</li>
+        <li><a href="../../docs/tutorials/01-directing-an-agent-with-git.md">Git lesson</a> and <a href="../../docs/research/README.md">research sources and code inspection</a>.</li>
+        <li><a href="../../docs/build-story/journal.md">Build journal</a> and <a href="../../projects/revit-readiness/docs/demo-questions-and-sample-model.md">three demo questions</a>.</li>
+        <li><a href="../../docs/how-to/extend-a-project.md">Extension workflow</a> and <a href="../../templates/README.md">reusable templates</a>.</li>
+      </ul></div>
+    </div>
+    <p class="label">Suggested participant prompt</p>
+    <blockquote>Read README.md and AGENTS.md. Explain how the readiness example works, guide me to the relevant lesson, and help me add one rule. Establish the expected result, show the changes, verify the behavior, and save a Git checkpoint. Tell me what remains untested.</blockquote>
+  </section>
+
+  <section id="evolution" aria-labelledby="evolution-title">
+    <div class="section-head"><h2 id="evolution-title">Keep the structure, refine the evidence</h2><span class="label">Planning notes</span></div>
+    <ul>
+      <li>Use the plugin built before the seminar, selected source changes, and prepared demonstrations. Detailed installation and full walkthroughs belong in the teaching repository.</li>
+      <li>Let research findings and real corrections supply the examples. Record them as they happen; link lessons to actual commits.</li>
+      <li>Keep Git near the start, make source inspection visible, and protect the second session’s repository handoff time. Preserve a five-minute question block in each hour.</li>
+      <li>Adjust depth to the room. A scripting comparison can support the build story when useful. The five-minute application exercise can use an office task or the Summit Challenge.</li>
+      <li>Revit 2024 is the first required target. State compatibility and quantity behavior only as far as the verification supports them.</li>
+      <li>Rebalance blocks as the build and rehearsal develop, while keeping each session at 60 minutes. Use this file as the current timing source.</li>
+    </ul>
+  </section>
+
+  <footer>Working revision B, October 20, 2026. Adapted from Option B, “The story of the build,” in the <a href="archive/organizer-brief.html">original organizer brief</a>. That revision and its alternatives remain in the archive. See <a href="README.md">workshop context</a> and <a href="../../docs/reference/development-status.md">current development status</a>.</footer>
+</main>
+</body>
+</html>

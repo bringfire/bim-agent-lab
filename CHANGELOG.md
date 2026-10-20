@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased — working seminar agenda, 2026-10-20
+
+- Develop Option B into two 60-minute sessions emphasizing research, Git, the plugin build, verification, and continued use of BIM Agent Lab.
+- Add the current HTML agenda and link it from workshop guidance; preserve the original brief in the archive.
+- Record the author's direction and provisional timing in the build story and planning notes.
+
 ## Unreleased — initial teaching baseline, 2026-10-20
 
 - Establish BIM Agent Lab with shared teaching guidance and a Revit readiness project.
