@@ -25,7 +25,7 @@ For the Excel increment, use the [participant story](../../docs/tutorials/04-add
 
 Use the [MCP comparison story](../../docs/tutorials/05-research-and-choose-the-mcp-bridge.md) to teach asking for current-version checks: the protocol revision, SDK release, package name, lockfile, and actual-client compatibility are separate evidence. Present its bridge recommendation as research pending implementation.
 
-Use the [specification and review story](../../docs/tutorials/06-direct-design-and-external-review.md) to show the author's follow-up: request a written spec and plan, then hand reviewable artifacts to an external reviewer. The [review packets](../../docs/superpowers/reviews/revit-mcp-bridge/README.md) support the full process afterward. Show actual findings and corrections only after those reviews occur; the current spec packet is prepared but not reviewed. These development sessions do not add time to the two one-hour seminar sessions.
+Use the [specification and review story](../../docs/tutorials/06-direct-design-and-external-review.md) to show the author's follow-up: request a written spec and plan, then hand reviewable artifacts to an external reviewer. The [review record/packets](../../docs/superpowers/reviews/revit-mcp-bridge/README.md) now include actual R1 findings and revision 2 dispositions: identify both desktop clients, test incomplete coverage, and bound incomplete requests. Follow-up/author approval remain pending; no runtime pass is claimed. These development sessions do not add time to the two one-hour seminar sessions.
 
 ## Planning archive
 

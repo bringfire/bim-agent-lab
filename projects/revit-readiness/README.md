@@ -14,7 +14,7 @@ The [demo brief](docs/demo-questions-and-sample-model.md) defines the proposed c
 
 ## Start here
 
-For the current MCP increment, read the [draft spec](../../docs/superpowers/specs/2026-10-20-revit-mcp-bridge-design.md) and [review hub](../../docs/superpowers/reviews/revit-mcp-bridge/README.md). The author selected the custom C# bridge and requested spec, plan, and implementation reviews. The spec packet is ready to hand over; no external review, implementation plan, or bridge code exists yet.
+For the current MCP increment, read [spec revision 2](../../docs/superpowers/specs/2026-10-20-revit-mcp-bridge-design.md) and the [review hub](../../docs/superpowers/reviews/revit-mcp-bridge/README.md). The author selected the custom C# bridge and requested spec, plan, and implementation reviews. R1 returned three findings now addressed in the spec; follow-up and author approval are pending. Both Codex desktop and Claude Desktop must pass the stated protocol/host acceptance. No implementation plan or bridge code exists yet.
 
 - Read the [readiness participant story](../../docs/tutorials/03-check-required-type-information.md), use the [agent build/verification guide](../../docs/how-to/build-required-information-check.md), and inspect [actual results and evidence](docs/verification/2026-10-20-required-information.md).
 - Read the [setup participant story](../../docs/tutorials/02-build-a-read-only-revit-command.md), use the [agent setup guide](../../docs/how-to/build-read-only-revit-command.md), and inspect [actual verification results](docs/verification/2026-10-20-read-only-probe.md).

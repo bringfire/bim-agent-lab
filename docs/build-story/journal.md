@@ -415,6 +415,30 @@ The original build objective remains active in the project, with implementation 
 
 Documentation verification resolved 624 local Markdown links with no missing targets, confirmed both new prompt quotations match the journal, checked all nine acceptance IDs and the three literal sample names, and found no unfinished spec placeholders. The scoped change contains Markdown only. No product test or host execution was represented as performed for this documentation checkpoint.
 
+## 2026-10-20 Respond to external R1 and clarify the seminar clients
+
+The author supplied external reviewer feedback headed **“R1 recommendation: revise before approval.”** The reviewer identified itself as Codex in a separate review context that did not author the spec, and named reviewed revision 1 at `b56c0dc219e1269f5b90542004267a2d388f338d`. It inspected documents/source and explicitly ran no builds or MCP/Revit runtime tests. The [feedback record](../superpowers/reviews/revit-mcp-bridge/2026-10-20-r1-feedback.md) preserves the reviewer wording and original revision, separately from the drafting agent's dispositions.
+
+The agent used superpowers receiving-code-review, checked the spec against the reader/evaluator/checklist/comparator source, and accepted all three findings. R1-01 required a named application/version/configuration baseline and an explicit fallback policy; R1-02 required successful but incomplete results through the whole pipeline; R1-03 required an accept-time limit before a full pipe frame/deadline exists.
+
+When asked to choose the required client scope, the author clarified:
+
+> are you asking about the agent desktop app like Codex or Claude code?
+
+The agent explained the difference between the AI client application and the C# MCP server. Asked which application must work for the first seminar demonstration, the author chose:
+
+> Codex desktop and Claude Desktop
+
+The agent observed installed Windows package versions `OpenAI.Codex 26.1013.4894.0` and `Claude 3.1623.0.0`, recorded available engine/executable metadata, and proposed the shared local stdio configuration without changing client settings. These are initial test baselines, not compatibility passes. [Spec revision 2](../superpowers/specs/2026-10-20-revit-mcp-bridge-design.md) requires protocol 2026-07-28 in **each** desktop application; an SDK harness or older fallback cannot satisfy A8. Each must demonstrate discovery/context, the three principal cases, a structured failure, and both incomplete controls, including truthful presentation of zero findings with incomplete coverage.
+
+Source inspection established a useful nuance: an unresolved declared element makes overall coverage false through `ScopeIssues` while the evaluator can remain complete for its observed subset. A missing used-type requirement makes both completeness flags false and retains exact evaluator-unexamined identities/reasons. Revision 2 specifies both outcomes without changing the principal 0/0, 2/6, and 3/8 answers or weakening the comparator. Control sidecars must be prepared on disposable copies before a fresh context, keeping context-change failures distinct from evaluation.
+
+The timeout correction starts a non-resetting five-second header/body timer at pipe acceptance, releases stalled slots, and then uses only the validated remaining processing budget. Its acceptance includes filling all eight slots with no-byte, partial-header, and partial-body connections, trickled input, measured cleanup, and a subsequent valid request.
+
+The [participant story](../tutorials/06-direct-design-and-external-review.md) now shows the real review and client clarification; the [agent guide](../how-to/run-spec-plan-and-implementation-reviews.md) explains source validation and the exact corrections. The [updated R1 packet](../superpowers/reviews/revit-mcp-bridge/01-spec-review.md) requests focused follow-up on the three findings. No reviewer closure or author spec approval is inferred. This revision is documentation only; product code, dependencies, models, and client settings remain unchanged, and no new host/runtime test was performed.
+
+Documentation checks resolved 650 local Markdown links without missing targets, retained all nine acceptance IDs, mapped all three R1 findings to corrections, confirmed the three principal sample rows are unchanged, and checked current status text against the received review. The diff contains Markdown only; whitespace checks passed. The negative-control expectations were checked against reader/evaluator semantics, including NC1's additional other-host instance, without running or altering production code.
+
 ## A reusable research prompt
 
 The following is a teaching template, not an additional instruction from the author:
@@ -443,4 +467,4 @@ Research can reveal that the problem or architecture needs revision. Return to t
 
 Record the author's prompt or a clearly labeled excerpt; the decision requested; constraints supplied; the agent's actions; the evidence; any correction or rejected approach; the outcome; and the lesson worth showing on stage. Label a suggested prompt as a suggestion, never as a historical prompt.
 
-Current next action: review the [written spec and R1 packet](../superpowers/reviews/revit-mcp-bridge/README.md), record external findings and the author's spec decision, then write/review the implementation plan using the requested superpowers protocol. The authorized build and three-case MCP/Revit acceptance follow that process; current-version checks and actual-client verification remain required. Physical-condition and quantity checks remain separate increments in the working demo brief.
+Current next action: hand back [spec revision 2 and the R1 follow-up packet](../superpowers/reviews/revit-mcp-bridge/README.md), record reviewer follow-up and the author's spec decision, then write/review the implementation plan using the requested superpowers protocol. The authorized build and three-case MCP/Revit acceptance plus incomplete controls and both desktop clients follow that process. Current-version checks remain required. Physical-condition and quantity checks remain separate increments in the working demo brief.

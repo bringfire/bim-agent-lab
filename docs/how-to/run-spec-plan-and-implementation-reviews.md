@@ -1,6 +1,6 @@
 # Run specification, plan, and implementation reviews
 
-For agents and technical readers. The [participant story](../tutorials/06-direct-design-and-external-review.md) explains the human's direction. Follow root/project `AGENTS.md`. The current worked example starts from `7d3ae71` on `docs/revit-mcp-spec` and produces a [draft spec](../superpowers/specs/2026-10-20-revit-mcp-bridge-design.md) and [review packets](../superpowers/reviews/revit-mcp-bridge/README.md). The plan, external reviews, and implementation remain pending.
+For agents and technical readers. The [participant story](../tutorials/06-direct-design-and-external-review.md) explains the human's direction. Follow root/project `AGENTS.md`. The worked example starts from `7d3ae71` on `docs/revit-mcp-spec`; revision 1 was committed as `b56c0dc`. [R1 feedback](../superpowers/reviews/revit-mcp-bridge/2026-10-20-r1-feedback.md) now informs [spec revision 2](../superpowers/specs/2026-10-20-revit-mcp-bridge-design.md) and a [follow-up packet](../superpowers/reviews/revit-mcp-bridge/01-spec-review.md). Follow-up review, author approval, the plan, and implementation remain pending.
 
 ## 1. Identify the authorized task and current stage
 
@@ -45,7 +45,17 @@ Hand over [R1](../superpowers/reviews/revit-mcp-bridge/01-spec-review.md) and it
 
 Use [the review form](../../templates/external-review.md). Record reviewer identity/type, date, exact revisions, inspected inputs, tests actually run, findings, and limitations. Return findings as evidence-backed issues rather than an unstructured rewrite. The author/implementer records accept/reject/defer decisions separately and links corrections and verification. Preserve original feedback. A rejected finding needs a reason supported by evidence; an unresolved blocker prevents the relevant stage from passing.
 
-Revise and self-check the spec as needed, then obtain the author's approval of the actual written revision. A review recommendation is not author approval. The current R1 packet has not been sent and has no returned findings; do not create a fictional review to move on.
+Revise and self-check the spec as needed, then obtain the author's approval of the actual written revision. A review recommendation is not author approval. The author returned an external Codex review of revision 1 with three findings and a revise recommendation. Its wording is preserved separately from the drafting agent's dispositions; do not present those dispositions as reviewer closure.
+
+### Worked R1 response
+
+The agent used the installed superpowers receiving-code-review skill to read, understand, and verify the feedback against source before editing. All three findings were accepted at the spec level. The author chose **Codex desktop and Claude Desktop** after clarification of the word client. Section 8.1 now pins the observed initial Windows package versions, intended stdio/instance selection, and a strict protocol rule: 2026-07-28 is required in each application; fallback cannot pass A8. Actual configurations and traces remain future evidence.
+
+For R1-02, inspect `Checklist.Validate`, `RequiredInformationReader.Read`, and `TypeInformation.Evaluate`. Removing one used type's requirement remains schema-valid and reaches evaluation. An unresolved declared element enters `ScopeIssues` and leaves the evaluator complete for the observed subset; a missing requirement enters `Evaluation.UnexaminedElements` and makes evaluator completeness false. Section 8.2 states exact NC1/NC2 results and independent identities. Prepare isolated sidecars before fresh context acquisition; otherwise the expected result is a context-change failure, not the coverage behavior under test. Keep the complete-case comparator's assertions and add separate control comparisons. Each desktop client must present incomplete checking as incomplete even with zero findings.
+
+For R1-03, section 6 starts a single five-second monotonic timer at pipe acceptance for the complete header/body. No-byte, partial-header, partial-body, and trickle tests fill all eight slots, prove cleanup, and admit a later valid request. The validated remaining deadline then caps processing; receiving a frame does not reset the end-to-end lifetime. Section 8.3 distinguishes the five-second production limit from a one-second measured test scheduling allowance.
+
+Retain the [feedback/dispositions and client baseline evidence](../superpowers/reviews/revit-mcp-bridge/2026-10-20-r1-feedback.md). The source checks and installed-version observations do not establish runtime behavior. Ask the reviewer to assess the three corrections at the new full Git revision and record that response separately. The two-hour seminar need not reproduce every technical check; the participant lesson explains how the review changed the work.
 
 ## 5. Write and review the implementation plan
 
@@ -59,7 +69,7 @@ Attach the real plan and approved spec to [R2](../superpowers/reviews/revit-mcp-
 
 Execute the approved plan with meaningful behavioral tests and scoped Git checkpoints. Use actual builds and installed binaries for host verification. SDK 2.2.0 in a package file is not proof of protocol 2026-07-28 on the wire. An SDK client harness is not proof that the intended seminar application works. Record both distinctly.
 
-The three live sample outcomes must remain 0/0, 2/6, and 3/8 findings/distinct affected instances, with exact identities, rule sources, scope, exclusions, and completeness. Extend independent comparison coverage where required; do not generate expected values with production code. Inspect the Revit schedules, retain fresh model hashes and modified-state evidence, and keep failure-case preparation separate from normal queries.
+The three live sample outcomes must remain 0/0, 2/6, and 3/8 findings/distinct affected instances, with exact identities, rule sources, scope, exclusions, and completeness. Add NC1/NC2 from revision 2 as distinct incomplete-coverage controls. Run A8 through both required desktop applications using protocol 2026-07-28. Extend independent comparison coverage where required; do not generate expected values with production code. Inspect the Revit schedules, retain fresh model hashes and modified-state evidence, and keep failure-case preparation separate from normal queries.
 
 Provide the exact diff and evidence listed in [R3](../superpowers/reviews/revit-mcp-bridge/03-implementation-review.md). Review source provenance against the actual package graph and all copied/adapted code. Address each accepted finding, rerun affected checks, retain limitations, and update the review log. Source review, automated tests, real-host checks, and independent BIM comparisons establish different things.
 
@@ -67,4 +77,4 @@ Provide the exact diff and evidence listed in [R3](../superpowers/reviews/revit-
 
 Update the participant story with actual prompts, what the person decided, delegated choices, review findings, corrections, and assessable evidence. Keep commands, technical decisions, dependencies, and reproducibility in the linked agent guide. Label suggested prompts and planned sessions. Link both to the same real review records, acceptance evidence, and commits.
 
-Update current status, root/project agent guidance, source entry points, learning path, and journal at each real milestone. Never mark implementation ready because the spec or packet exists. This checkpoint prepares R1; the approved plan, implementation, and end-to-end acceptance remain subsequent work.
+Update current status, root/project agent guidance, source entry points, learning path, and journal at each real milestone. Preserve earlier journal entries as dated history while correcting current status. Never mark implementation ready because the spec or packet exists. Revision 2 responds to R1; reviewer follow-up, written-spec approval, the approved plan, implementation, and end-to-end acceptance remain subsequent work.

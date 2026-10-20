@@ -1,6 +1,6 @@
 # R1: external specification review packet
 
-Ready for handoff after the design checkpoint is committed. Not yet sent or reviewed. Use the full Git revision from the [handoff procedure](README.md), not just a moving branch name.
+Revision 1 was reviewed at `b56c0dc219e1269f5b90542004267a2d388f338d` with recommendation **revise before approval**. [Feedback and dispositions](2026-10-20-r1-feedback.md) are retained. This packet now targets revision 2 for focused follow-up; that follow-up has not occurred. Use the full new Git revision from the [handoff procedure](README.md), not just a moving branch name.
 
 ## Reviewer brief
 
@@ -8,7 +8,7 @@ We are extending a teaching repo for BIM professionals with a minimal read-only 
 
 Read this packet with:
 
-- [Spec revision 1](../../specs/2026-10-20-revit-mcp-bridge-design.md).
+- [Spec revision 2](../../specs/2026-10-20-revit-mcp-bridge-design.md) and [R1 findings/dispositions](2026-10-20-r1-feedback.md).
 - [Root agent guidance](../../../../AGENTS.md), [project guidance](../../../../projects/revit-readiness/AGENTS.md), and [current status](../../../reference/development-status.md).
 - [Bridge comparison](../../../research/revit-mcp-bridge-comparison.md), its [source/version evidence](../../../research/evidence/mcp-version-observations-2026-10-20.json), and [prior integration gates](../../../how-to/choose-and-verify-an-mcp-bridge.md).
 - Existing [reader](../../../../projects/revit-readiness/src/revit-addin/RequiredInformationReader.cs), [command](../../../../projects/revit-readiness/src/revit-addin/RequiredInformationCommand.cs), [report](../../../../projects/revit-readiness/src/readiness-core/InformationReport.cs), and [checklist](../../../../projects/revit-readiness/src/readiness-core/Checklist.cs).
@@ -31,3 +31,9 @@ The following is a reusable prompt, not a review already performed:
 7. Does the spec contain enough decisions for a task-level plan while keeping physical conditions, quantities, editing, and report exports out of this increment?
 
 Return the [review form](../../../../templates/external-review.md) with stage R1, reviewer identity/type, exact inspected revision, findings, limitations, and recommendation. The author/implementer will maintain a separate disposition record; a reviewer recommendation does not itself approve implementation.
+
+## Revision 2 follow-up prompt
+
+Suggested handoff, not a review already performed:
+
+> Review spec revision 2 at the supplied new full Git hash against your R1 findings on b56c0dc219e1269f5b90542004267a2d388f338d. Read the preserved feedback and separate dispositions. Check that R1-01 now names both author-selected clients (Codex desktop and Claude Desktop), their observed version/configuration baselines, and required 2026-07-28 exchanges with no fallback acceptance. Check that R1-02's two valid-checklist controls reach live evaluation after fresh context acquisition and retain exact identities/reasons and the distinct completeness flags, without weakening the original three samples. Check that R1-03's five-second accept-time frame limit cannot be extended by trickled bytes, releases all stalled slots, and preserves the remaining request budget. Assess whether the corrections introduce contradictions or unnecessary scope. Report closure or remaining findings per ID, your inspected revision and limitations, and a recommendation. Do not infer runtime compatibility from this documentation-only revision.

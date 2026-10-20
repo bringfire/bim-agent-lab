@@ -1,6 +1,6 @@
 # Drafting agent's specification self-review
 
-Date: 2026-10-20. Actor: the same agent that wrote the spec. Artifact: [spec revision 1](../../specs/2026-10-20-revit-mcp-bridge-design.md). This is the brainstorming skill's inline self-review, **not an external review, author approval, or runtime verification**.
+Date: 2026-10-20. Actor: the same agent that wrote the spec. Initial artifact: spec revision 1 at `b56c0dc219e1269f5b90542004267a2d388f338d`; the [current spec](../../specs/2026-10-20-revit-mcp-bridge-design.md) is revision 2. This is the brainstorming skill's inline self-review, **not an external review, author approval, or runtime verification**.
 
 ## Checks and decisions before handoff
 
@@ -19,4 +19,10 @@ The draft was checked for unfinished placeholders, contradicting scope, and ambi
 
 ## Limits
 
-This pass inspects design and baseline source only. It does not establish pipe interoperability, actual net48 dispatch behavior, modern protocol use by the seminar client, SDK package restore success, or live sample equivalence. Those remain acceptance A1-A9. No external reviewer has yet challenged the draft.
+This initial pass inspected design and baseline source only. It did not establish pipe interoperability, actual net48 dispatch behavior, modern protocol use by the seminar client, SDK package restore success, or live sample equivalence. Those remain acceptance A1-A9. At the revision 1 checkpoint no external review had yet been returned; the subsequent [R1 feedback](2026-10-20-r1-feedback.md) is now retained separately.
+
+## Revision 2 self-review after external feedback
+
+Checked R1-01–03 against the actual source before revising the contract. Confirmed that the two incomplete controls remain valid checklists, use separate unexamined collections, and have different evaluator completeness flags. Kept the original three sample expectations and complete-case comparator intact. Required each author-selected desktop application to run the modern-protocol acceptance sequence, with installed version observations distinguished from compatibility evidence. Checked the five-second frame timer and subsequent budget against the original 30-second total lifetime; no timer resets on partial progress or complete receipt.
+
+Checked current status/navigation against the received review and updated spec revision, while preserving historical journal entries and original reviewer wording. No external follow-up, author approval, model edits, builds, or MCP/Revit tests are claimed by this documentation revision.

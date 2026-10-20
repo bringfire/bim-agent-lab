@@ -1,6 +1,6 @@
 # Ask for a design, a plan, and independent review
 
-This participant story explains how the author changed the next step from immediate bridge construction into a reviewable design process. Its [agent guide](../how-to/run-spec-plan-and-implementation-reviews.md) provides the technical procedure. The [spec](../superpowers/specs/2026-10-20-revit-mcp-bridge-design.md) and [review hub](../superpowers/reviews/revit-mcp-bridge/README.md) are working artifacts; the bridge, implementation plan, and external reviews are not yet complete.
+This participant story explains how the author changed the next step from immediate bridge construction into a reviewable design process. Its [agent guide](../how-to/run-spec-plan-and-implementation-reviews.md) provides the technical procedure. An external review of the first [spec](../superpowers/specs/2026-10-20-revit-mcp-bridge-design.md) has now returned three findings; revision 2 addresses them and awaits follow-up and author approval. The implementation plan and bridge remain pending.
 
 ## Begin with the work already done
 
@@ -47,11 +47,35 @@ The author asked for an external reviewer. The agent prepared a [handoff packet]
 
 A useful finding explains what could go wrong, where the problem is, the consequence, a small correction, and how to verify that correction. “Looks good” cannot establish that the right Revit document was queried or that a timeout will not produce a late answer. The reviewer must also say what they did not inspect or run.
 
-The first packet is ready to give to another person or an independently run agent. No reviewer has been assigned or contacted, and no external findings or approval have been invented. The drafting agent's self-review is labeled separately. We will retain the real review and the response when they occur, including any finding we reject with evidence.
+The author returned feedback from Codex in a separate review context, which identified the exact reviewed commit `b56c0dc219e1269f5b90542004267a2d388f338d`. Its recommendation was **“revise before approval.”** The [original feedback and separate dispositions](../superpowers/reviews/revit-mcp-bridge/2026-10-20-r1-feedback.md) preserve what the reviewer said and how the drafting agent responded. The reviewer inspected source and documents but explicitly ran no builds or MCP/Revit tests.
+
+## Use review to improve the definition of success
+
+The review accepted the architecture and provenance boundaries but found three gaps:
+
+| Finding | Why it matters to the person directing the work | What changed in the spec |
+|---|---|---|
+| Which agent application must work? | A developer's test client could pass while the application used on stage does not | The author selected Codex desktop and Claude Desktop; each must pass using the requested protocol, with its exact version/configuration recorded |
+| Can zero findings still mean incomplete checking? | A missing checklist rule or unresolved model element must not become a reassuring readiness answer | Two temporary negative controls now prove the report preserves what was not examined and that each client explains the incomplete coverage |
+| What if a connection sends nothing? | A connection can occupy a slot before a normal request timeout exists | A five-second limit now starts when the connection is accepted, with recovery checks |
+
+The agent asked which application should satisfy acceptance. The author first clarified the meaning of “client” with this actual reply:
+
+> are you asking about the agent desktop app like Codex or Claude code?
+
+After the agent explained the distinction between the AI application and the MCP server, the author's actual selection was:
+
+> Codex desktop and Claude Desktop
+
+This is a useful division of responsibility: the person chooses the applications participants need; the agent inspects installed versions and writes the technical evidence requirements. A package version alone does not prove the application can use the requested protocol. Older-protocol fallback remains a compatibility observation rather than a pass for this demonstration.
+
+The agent checked the incomplete-coverage finding against the source before changing the spec. A missing declared element and a missing type requirement are reported in different parts of the result. Revision 2 preserves that distinction and requires both controls to run after their test inputs are prepared and a fresh context is acquired. The original three sample answers remain unchanged. These are additional required checks, not runtime results already obtained.
+
+All three findings were accepted and addressed in the specification. The follow-up packet asks the reviewer to check those corrections specifically. Editing a document does not close a review by itself, and returning feedback does not approve a revised document that the author has not yet reviewed. The drafting agent's self-review, external recommendation, and author's decision remain separately recorded.
 
 ## Distinguish the human's direction from delegated choices
 
-The author chose the BIM purpose, custom-bridge direction, versions, three-case verification, provenance emphasis, two teaching layers, and staged external review. The agent proposed the two tool names, process split, local connection, context validation, timeout/bounds, and evidence matrix. Those engineering choices belong in the spec where a reviewer can challenge them.
+The author chose the BIM purpose, custom-bridge direction, versions, three-case verification, provenance emphasis, two teaching layers, staged external review, and subsequently both desktop clients. The agent proposed the two tool names, process split, local connection, context validation, timeout/bounds, and evidence matrix. Those engineering choices belong in the spec where a reviewer can challenge them.
 
 The spec gives the author practical questions to assess: Does the operation remain limited to our declared checklist? Does it reject a changed document? Do missing values remain findings rather than errors? Do failures remain distinguishable from a zero-finding result? Will the same 0/0, 2/6, and 3/8 sample answers be verified independently?
 
@@ -63,4 +87,4 @@ This is a **suggested teaching prompt**, not another historical instruction:
 
 As an exercise, open the spec-review packet and identify one way a check could return the wrong model's data. Ask a reviewer to show whether the spec prevents it and what test would demonstrate that. Then compare the response with the written requirement rather than accepting a confident summary.
 
-Current evidence is a documented design and review workflow. Actual review outcomes, implementation results, and corrections will extend this story as they happen. Find this design checkpoint using `git log --oneline -- docs/superpowers/specs/2026-10-20-revit-mcp-bridge-design.md`; do not use the earlier runtime passes as proof that the bridge works.
+Current evidence includes the external R1 review, source-backed dispositions, observed client versions, and spec revision 2. Follow-up review, author approval, implementation, and runtime acceptance remain pending. Find the design and revision checkpoints using `git log --oneline -- docs/superpowers/specs/2026-10-20-revit-mcp-bridge-design.md`; do not use earlier runtime passes as proof that the bridge works.
