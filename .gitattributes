@@ -1,0 +1,17 @@
+* text=auto
+.gitattributes text eol=lf
+.gitignore text eol=lf
+*.md text eol=lf
+*.json text eol=lf
+*.html text eol=lf
+*.ps1 text eol=lf
+*.py text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+*.pdf binary
+*.png binary
+*.jpg binary
+
+# Preserve archived evidence bytes across platforms.
+docs/research/evidence/*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
+workshops/swacca-2026/archive/organizer-brief.html -text -whitespace

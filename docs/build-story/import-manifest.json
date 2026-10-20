@@ -1,0 +1,91 @@
+{
+  "date": "2026-10-20",
+  "source_workspace": "D:/SWACCA_BIM",
+  "purpose": "Initial-import provenance; source_workspace is historical and not a prerequisite.",
+  "files": [
+    {
+      "source": "docs/directing-an-agent-with-git.md",
+      "destination": "docs/tutorials/01-directing-an-agent-with-git.md",
+      "source_sha256": "0de0745fc1646b9a20e3689e18fb7e8914a8d8599b050dca6d6bf07572d2bab1",
+      "imported_sha256": "e5f95a06ddd61ff06db100eb9280f9cbcdf052734506044cd05726d240577076",
+      "adapted": true
+    },
+    {
+      "source": "docs/research-and-resources.md",
+      "destination": "docs/research/revit-resources.md",
+      "source_sha256": "d4e6f81766bbd5c553277ae90cd0f19e8373f97ebb799721bdb0998f4936c9eb",
+      "imported_sha256": "ce643c7d4987ca1b077c357bf983b96510fc037e154a88ee789695ea0f6d5763",
+      "adapted": true
+    },
+    {
+      "source": "docs/reference-code-map.md",
+      "destination": "docs/research/reference-code-map.md",
+      "source_sha256": "1e98010a2cdd0e2add09e44461ae5181bdff15bde76d206d4f99a7a9994cd7e8",
+      "imported_sha256": "b35cb4340a434ccf82d0871a9ce8078aced9bcb4d81627f49365495b2c0b1e7c",
+      "adapted": true
+    },
+    {
+      "source": "docs/domain-research.md",
+      "destination": "docs/research/archive/wall-and-ceiling-domain-research.md",
+      "source_sha256": "2b5ad867dea7ce52ffd0c26d1b4e71a1b2efcafb92c3cb373810197a83f9e88b",
+      "imported_sha256": "cca18fb4b60932603c1cf9211919f810ff9dc271cf43d820a7d4465a762eb074",
+      "adapted": true
+    },
+    {
+      "source": "docs/build-journal.md",
+      "destination": "docs/build-story/journal.md",
+      "source_sha256": "e6f7a37e3c67fb99b20dec46447ea4f4ab2a713833e0f11417c7d505c12568fc",
+      "imported_sha256": "972f1c6ca2a407d8165c3dccb176f92bf3212c852a7d52c116a24da77dc44659",
+      "adapted": true
+    },
+    {
+      "source": "docs/demo-questions-and-sample-model.md",
+      "destination": "projects/revit-readiness/docs/demo-questions-and-sample-model.md",
+      "source_sha256": "6e5d94001ac3625264982f2f6d6fffbb4833852bef05e770b5b7e8b21b9ff433",
+      "imported_sha256": "ed7a9d94d005249a818eeee4807b58bfc30bd88e89e7a6112e5bdfe7b70a1e61",
+      "adapted": true
+    },
+    {
+      "source": "docs/info-gathering.md",
+      "destination": "workshops/swacca-2026/planning-notes.md",
+      "source_sha256": "9be9bd4ca37c0e77b55da941f4d559e8674e6f4b3e5c250f6d5ad4ea2b129542",
+      "imported_sha256": "875248e925c8623d0d449064babd052da33ecfeb2697b88504ee7d97ce43c257",
+      "adapted": true
+    },
+    {
+      "source": "docs/organizer-brief.html",
+      "destination": "workshops/swacca-2026/archive/organizer-brief.html",
+      "source_sha256": "ac2f75cac27fb999bf579b9d5b3dd82c3a2c1dd3a523922b708fa5dac340e952",
+      "imported_sha256": "ac2f75cac27fb999bf579b9d5b3dd82c3a2c1dd3a523922b708fa5dac340e952",
+      "adapted": false
+    },
+    {
+      "source": "docs/SWACCA-Workshop-Proposal.pdf",
+      "destination": "workshops/swacca-2026/archive/SWACCA-Workshop-Proposal.pdf",
+      "source_sha256": "6c32ac8c68aaff96adf6aa74870a7da78dd7f16d0c839f8b40f5d5d25bf698d4",
+      "imported_sha256": "6c32ac8c68aaff96adf6aa74870a7da78dd7f16d0c839f8b40f5d5d25bf698d4",
+      "adapted": false
+    },
+    {
+      "source": "CLAUDE.md",
+      "destination": "workshops/swacca-2026/archive/source-project-context.md",
+      "source_sha256": "c8cfdcdf36239cab293f07c453a662b45802168be818eab1931b356a4295b526",
+      "imported_sha256": "48d28ae63ef25c24e626bbc680dd531921a7ff5d0f642f45d91e9c28e77802f7",
+      "adapted": true
+    },
+    {
+      "source": "docs/research/repository-evidence-2026-10-20.json",
+      "destination": "docs/research/evidence/repository-evidence-2026-10-20.json",
+      "source_sha256": "f026c377de51214341c493cf916d88aedae3cf0b9ba9079f8d3230ad6d5fb845",
+      "imported_sha256": "f026c377de51214341c493cf916d88aedae3cf0b9ba9079f8d3230ad6d5fb845",
+      "adapted": false
+    },
+    {
+      "source": "docs/research/local-checkouts-2026-10-20.json",
+      "destination": "docs/research/evidence/local-checkouts-2026-10-20.json",
+      "source_sha256": "73835f5bbae38579753b3b53d7a341cedb30ea7fbd9f79ffe5cdcb91b4965a18",
+      "imported_sha256": "73835f5bbae38579753b3b53d7a341cedb30ea7fbd9f79ffe5cdcb91b4965a18",
+      "adapted": false
+    }
+  ]
+}

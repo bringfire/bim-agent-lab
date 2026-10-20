@@ -1,0 +1,43 @@
+# Source-inspection copies and downloaded resources
+/references/
+/downloads/
+
+# Local agent/session configuration and credentials
+/.remember/
+/.superpowers/
+/.codex/
+/.claude/
+.env
+.env.*
+!.env.example
+*.local.json
+*.local.yaml
+
+# Editors and generated build/runtime output
+.vs/
+.idea/
+**/bin/
+**/obj/
+**/node_modules/
+**/.venv/
+**/__pycache__/
+**/.pytest_cache/
+**/TestResults/
+**/dist/
+**/build/
+*.pyc
+*.user
+*.suo
+*.log
+
+# Working BIM models: distribute recipes until assets are deliberately cleared
+*.rvt
+*.rfa
+*.rte
+*.rft
+*.ifc
+*.3dm
+
+# Operating system files
+Thumbs.db
+.DS_Store

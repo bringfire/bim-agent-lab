@@ -1,0 +1,345 @@
+<title>SWACCA Workshop Proposal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a single reading column under a drawing-sheet title block; wide timelines scroll in their own frames.
+   Single dark look by author's choice (2026-10-15), regardless of viewer theme. */
+:root {
+  --paper: #12171d;
+  --sheet: #182029;
+  --ink: #e6ebf0;
+  --muted: #9aa6b3;
+  --rule: #2d3844;
+  --accent: #8fb8e0;
+  --accent-soft: #1f3247;
+  --l0: #5a4724; --l1: #23405f; --l2: #24483a; --l3: #3e2f57; --ch: #5a2c29; --all: #2a333d;
+  --display: "Barlow Condensed", "Arial Narrow", "Roboto Condensed", sans-serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--paper); color: var(--ink);
+  font-family: var(--body); font-size: 16px; line-height: 1.6;
+  padding-inline: 16px; padding-block: 32px 64px;
+}
+.page { max-width: 880px; margin: 0 auto; display: grid; gap: 48px; }
+h1, h2, h3 { font-family: var(--display); font-weight: 600; text-wrap: balance; line-height: 1.1; margin: 0; }
+h1 { font-size: clamp(2.1rem, 5vw, 3rem); letter-spacing: .005em; }
+h2 { font-size: 1.75rem; }
+h3 { font-size: 1.25rem; }
+p { margin: 0; max-width: 68ch; }
+a { color: var(--accent); }
+.label {
+  font-family: var(--mono); font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted);
+}
+section { display: grid; gap: 16px; }
+.section-head { display: flex; align-items: baseline; gap: 12px; border-bottom: 1.5px solid var(--ink); padding-bottom: 6px; }
+.section-head .label { margin-left: auto; }
+.lede { font-size: 1.08rem; }
+.muted { color: var(--muted); }
+
+/* Title block, after a drawing sheet's */
+.titleblock { background: var(--sheet); border: 1.5px solid var(--ink); display: grid; grid-template-columns: 1fr auto; }
+.tb-main { padding: 24px; display: grid; gap: 12px; border-right: 1.5px solid var(--ink); min-width: 0; }
+.tb-side { display: grid; grid-template-rows: repeat(4, auto); min-width: 170px; }
+.tb-cell { padding: 10px 14px; border-bottom: 1px solid var(--rule); display: grid; gap: 2px; }
+.tb-cell:last-child { border-bottom: 0; }
+.tb-cell strong { font-family: var(--mono); font-weight: 500; font-size: .9rem; }
+.status { display: inline-block; font-family: var(--mono); font-size: .72rem; letter-spacing: .06em; text-transform: uppercase;
+  border: 1px solid var(--accent); color: var(--accent); padding: 2px 8px; border-radius: 3px; width: fit-content; }
+@media (max-width: 640px) {
+  .titleblock { grid-template-columns: 1fr; }
+  .tb-main { border-right: 0; border-bottom: 1.5px solid var(--ink); }
+  .tb-side { grid-template-columns: 1fr 1fr; grid-template-rows: none; }
+  .tb-cell { border-right: 1px solid var(--rule); }
+}
+
+/* Facts */
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); }
+.fact { background: var(--sheet); padding: 14px 16px; display: grid; gap: 4px; align-content: start; min-width: 0; }
+.fact strong { font-weight: 600; }
+
+/* Sequence */
+ol.seq { list-style: none; margin: 0; padding: 0; display: grid; gap: 1px; background: var(--rule); border: 1px solid var(--rule); counter-reset: s; }
+ol.seq li { background: var(--sheet); padding: 12px 16px 12px 56px; position: relative; counter-increment: s; }
+ol.seq li::before { content: counter(s); position: absolute; left: 16px; top: 10px; font-family: var(--display); font-weight: 700; font-size: 1.4rem; color: var(--accent); }
+
+/* Tables */
+.tablewrap { overflow-x: auto; border: 1px solid var(--rule); background: var(--sheet); }
+table { border-collapse: collapse; width: 100%; min-width: 620px; font-size: .94rem; }
+th, td { text-align: left; vertical-align: top; padding: 10px 12px; border-bottom: 1px solid var(--rule); }
+th { font-family: var(--mono); font-weight: 500; font-size: .72rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); }
+tr:last-child td { border-bottom: 0; }
+.chip { display: inline-block; font-family: var(--mono); font-size: .78rem; font-weight: 500; padding: 1px 7px; border-radius: 3px; color: var(--ink); white-space: nowrap; }
+.c-l0 { background: var(--l0); } .c-l1 { background: var(--l1); } .c-l2 { background: var(--l2); } .c-l3 { background: var(--l3); }
+.c-ch { background: var(--ch); } .c-all { background: var(--all); }
+
+/* Plugin card */
+.plugin { background: var(--sheet); border: 1px solid var(--rule); border-left: 4px solid var(--accent); padding: 20px; display: grid; gap: 14px; }
+.tag { font-family: var(--mono); font-size: .8rem; border: 1px solid var(--ink); padding: 2px 8px; width: fit-content; }
+.two { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+.two > div { min-width: 0; display: grid; gap: 6px; align-content: start; }
+ul { margin: 0; padding-left: 1.15em; display: grid; gap: 4px; }
+blockquote { margin: 0; padding: 10px 16px; border-left: 3px solid var(--rule); color: var(--muted); font-style: italic; max-width: 68ch; }
+
+/* Agenda options */
+.legend { display: flex; flex-wrap: wrap; gap: 6px 8px; }
+.option { background: var(--sheet); border: 1px solid var(--rule); padding: 20px; display: grid; gap: 14px; }
+.option-head { display: flex; gap: 14px; align-items: baseline; }
+.option-head .letter { font-family: var(--display); font-weight: 700; font-size: 2rem; color: var(--accent); line-height: 1; }
+.tlwrap { overflow-x: auto; }
+.tl-row { display: grid; gap: 6px; min-width: 640px; }
+.tl-title { font-size: .88rem; font-weight: 600; }
+.tl-title span { font-family: var(--mono); font-weight: 400; color: var(--muted); font-size: .78rem; margin-right: 8px; }
+.tl { display: flex; gap: 2px; }
+.tl > div { padding: 7px 8px; font-size: .78rem; line-height: 1.25; min-height: 54px; color: var(--ink); }
+.tl b { display: block; font-family: var(--mono); font-weight: 500; font-size: .7rem; opacity: .8; margin-bottom: 2px; font-variant-numeric: tabular-nums; }
+.verdict { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 12px; font-size: .92rem; }
+.verdict > div { min-width: 0; }
+.verdict .label { display: block; margin-bottom: 2px; }
+
+/* Questions */
+ol.q { margin: 0; padding-left: 1.4em; display: grid; gap: 10px; }
+ol.q li::marker { font-family: var(--mono); color: var(--accent); }
+ol.q strong { font-weight: 600; }
+
+footer { border-top: 1px solid var(--rule); padding-top: 14px; font-size: .85rem; color: var(--muted); }
+
+/* Print / PDF: Letter, dark palette full-bleed, keep blocks whole */
+@page { size: Letter; margin: 0; }
+@media print {
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  html { background: var(--paper); }
+  body { background: var(--paper); padding: 0.5in; font-size: 14.5px;
+    -webkit-box-decoration-break: clone; box-decoration-break: clone; }
+  .page { gap: 30px; max-width: none; }
+  .tablewrap, .tlwrap { overflow: visible; }
+  .titleblock, .facts, ol.seq, .tablewrap, .plugin, .option, .two, blockquote, ol.q li { break-inside: avoid; }
+  .facts { grid-template-columns: repeat(4, 1fr); }
+  #monday, #levels, #tool, #questions { break-inside: avoid; }
+  #agenda, #questions { break-before: page; }
+  .section-head, h2, h3 { break-after: avoid; }
+  a { color: var(--ink); text-decoration: none; }
+}
+</style>
+
+<div class="page">
+
+  <header class="titleblock">
+    <div class="tb-main">
+      <span class="status">Draft for organizer review</span>
+      <h1>AI-Assisted Tool Building for Wall &amp; Ceiling BIM</h1>
+      <p class="lede">A two-session workshop for the SWACCA BIM Summit 2026. It shows BIM and VDC staff how to use AI coding agents to build Revit tools, and sends them home with a package they can keep working from.</p>
+    </div>
+    <div class="tb-side">
+      <div class="tb-cell"><span class="label">Event</span><strong>BIM Summit 2026</strong></div>
+      <div class="tb-cell"><span class="label">Slots</span><strong>Ed. Sessions 1 &amp; 2</strong></div>
+      <div class="tb-cell"><span class="label">Date</span><strong>Thu 10/29/2026</strong></div>
+      <div class="tb-cell"><span class="label">Rev</span><strong>A · 10/15/2026</strong></div>
+    </div>
+  </header>
+
+  <section>
+    <div class="section-head"><h2>At a glance</h2></div>
+    <div class="facts">
+      <div class="fact"><span class="label">Session 1</span><strong>Thu 8:30–9:30</strong><span class="muted">Right after the keynote and the Challenge topic vote</span></div>
+      <div class="fact"><span class="label">Session 2</span><strong>Thu 11:00–12:00</strong><span class="muted">After team formation, before lunch and build time</span></div>
+      <div class="fact"><span class="label">Audience</span><strong>Mixed levels</strong><span class="muted">VDC staff, detailers, estimators, field leads, a few in-house scripters</span></div>
+      <div class="fact"><span class="label">Takeaway</span><strong>Repo + process guide</strong><span class="muted">A working Revit tool and the documented steps we used to build it</span></div>
+    </div>
+    <p>Two hours is not enough to teach this subject. The sessions are the on-ramp. The <strong>takeaway package is the real product</strong>: attendees bring it back to the office and keep going.</p>
+  </section>
+
+  <section id="monday">
+    <div class="section-head"><h2>What attendees should do on Monday</h2><span class="label">The target workflow</span></div>
+    <p>The goal is a repeatable way to start, not a finished plugin. Back at their desk, an attendee should be able to:</p>
+    <ol class="seq">
+      <li><strong>Think the idea through with an LLM</strong> and plan it before writing any code.</li>
+      <li><strong>Research what already exists</strong> (Dynamo graphs, pyRevit tools, open-source add-ins, vendor features) to reuse, adapt, or learn from.</li>
+      <li><strong>Gather the APIs and SDKs</strong> the idea needs, starting with the Revit API.</li>
+      <li><strong>Set up a repository</strong> for the project.</li>
+      <li><strong>Install and configure Claude Code or Codex.</strong></li>
+      <li><strong>Write the project memory first</strong> (CLAUDE.md or AGENTS.md), so the agent keeps the rules and context between sessions.</li>
+    </ol>
+  </section>
+
+  <section id="levels">
+    <div class="section-head"><h2>Levels of engagement</h2><span class="label">One room, four depths</span></div>
+    <p>The session opens by polling the room on experience, and the pacing follows the answers. Every level gets something, and no one gets left behind.</p>
+    <div class="tablewrap">
+      <table>
+        <thead><tr><th>Level</th><th>Who</th><th>What they do</th><th>Workshop weight</th></tr></thead>
+        <tbody>
+          <tr><td><span class="chip c-l0">L0 Spectator</span></td><td>Managers, field leads, estimators</td><td>Ask the Revit model questions in an AI chat app. Never see code.</td><td>A short demo of what's possible</td></tr>
+          <tr><td><span class="chip c-l1">L1 Scripter</span></td><td>Dynamo / pyRevit-curious BIM staff</td><td>Have an LLM write, explain, and fix quick scripts.</td><td>Real time on stage</td></tr>
+          <tr><td><span class="chip c-l2">L2 Agent builder</span></td><td>BIM staff ready to build tools</td><td>Use Claude Code or Codex in a repo to extend a C# add-in.</td><td>The core of the takeaway package</td></tr>
+          <tr><td><span class="chip c-l3">L3 Systems builder</span></td><td>In-house developers</td><td>Build MCP tools, use a coder/reviewer split, support multiple Revit versions, write tests.</td><td>Shown on stage, covered in depth in the package</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="tool">
+    <div class="section-head"><h2>The reference tool</h2><span class="label">Built before the summit</span></div>
+    <div class="plugin">
+      <span class="tag">WORKING NAME · WALL &amp; CEILING MODEL INVENTORY</span>
+      <p>The week before the summit, we will build a small, <strong>read-only</strong> Revit tool with an AI agent and document every step. At the summit we walk through how it was built rather than live-coding it. Attendees take home the repo and the process guide.</p>
+      <div class="two">
+        <div>
+          <h3>What it does</h3>
+          <ul>
+            <li>Reads a model and reports wall types, layers, fire and STC ratings, heights, lengths, and net area after openings</li>
+            <li>Reports ceiling types and heights</li>
+            <li>Groups everything by level and exports to Excel or CSV</li>
+            <li>Lets an AI agent ask the model these questions directly through <strong>MCP</strong> (Model Context Protocol)</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Why this tool</h3>
+          <ul>
+            <li>Remapping generic architect wall types by hand is the most-cited pain point in our research</li>
+            <li>Nothing free and current extracts trade-scoped quantities from Revit</li>
+            <li>Read-only, so it is safe to run on live projects</li>
+            <li><strong>Runs on Revit 2022–2027.</strong> Autodesk's official Revit MCP server needs Revit 2027.2 or later, which most firms aren't on yet</li>
+          </ul>
+        </div>
+      </div>
+      <p class="muted">The same tool appears at every level: L0 asks it questions, L1 sees it as a short pyRevit script, L2 extends the add-in, and L3 adds a new MCP tool.</p>
+    </div>
+    <p>This builds on what SWACCA members said at the 2025 summit, where custom plug-in development was a session topic and the first takeaway was:</p>
+    <blockquote>"Having software development skills in-house can be a major differentiator."</blockquote>
+  </section>
+
+  <section id="agenda">
+    <div class="section-head"><h2>Three ways to shape the two hours</h2><span class="label">For discussion</span></div>
+    <p>We haven't picked one. The right shape depends on the room and on how the Summit Challenge runs, so we'd like your input. Bar widths are proportional to minutes.</p>
+    <div class="legend">
+      <span class="chip c-all">Everyone</span><span class="chip c-l0">L0 Spectator</span><span class="chip c-l1">L1 Scripter</span><span class="chip c-l2">L2 Agent builder</span><span class="chip c-l3">L3 Systems</span><span class="chip c-ch">Challenge tie-in</span>
+    </div>
+
+    <div class="option">
+      <div class="option-head"><span class="letter">A</span><div><h3>Climb the ladder</h3><p class="muted">Session 1 covers the lower levels and Session 2 the upper ones. Simple and linear.</p></div></div>
+      <div class="tlwrap"><div class="tl-row">
+        <div class="tl-title"><span>S1</span>What AI can do, and quick scripting</div>
+        <div class="tl">
+          <div class="c-all" style="flex:8"><b>8 min</b>Room poll + why now</div>
+          <div class="c-l0" style="flex:10"><b>10 min</b>Ask the model questions</div>
+          <div class="c-all" style="flex:12"><b>12 min</b>How LLMs and agents work</div>
+          <div class="c-l1" style="flex:25"><b>25 min</b>AI-written pyRevit scripts, live</div>
+          <div class="c-all" style="flex:5"><b>5</b>Q&amp;A</div>
+        </div>
+        <div class="tl-title"><span>S2</span>Building real tools with agents</div>
+        <div class="tl">
+          <div class="c-l2" style="flex:15"><b>15 min</b>Idea → research → repo</div>
+          <div class="c-l2" style="flex:15"><b>15 min</b>CLAUDE.md + the add-in</div>
+          <div class="c-l3" style="flex:15"><b>15 min</b>MCP + coder/reviewer</div>
+          <div class="c-all" style="flex:10"><b>10 min</b>Package tour</div>
+          <div class="c-all" style="flex:5"><b>5</b>Q&amp;A</div>
+        </div>
+      </div></div>
+      <div class="verdict">
+        <div><span class="label">Strength</span>Each session has a clear audience.</div>
+        <div><span class="label">Risk</span>Each half of the room waits through the other half's hour.</div>
+      </div>
+    </div>
+
+    <div class="option">
+      <div class="option-head"><span class="letter">B</span><div><h3>The story of the build</h3><p class="muted">Session 1 tells how we built the tool in a week. Session 2 shows it at every level and hands it off.</p></div></div>
+      <div class="tlwrap"><div class="tl-row">
+        <div class="tl-title"><span>S1</span>How we built a Revit tool with AI in a week</div>
+        <div class="tl">
+          <div class="c-all" style="flex:7"><b>7 min</b>Room poll</div>
+          <div class="c-l0" style="flex:8"><b>8 min</b>Teaser: the finished tool</div>
+          <div class="c-all" style="flex:10"><b>10 min</b>Thinking it through with an LLM</div>
+          <div class="c-all" style="flex:12"><b>12 min</b>Research: what exists, which APIs</div>
+          <div class="c-l2" style="flex:18"><b>18 min</b>Repo, CLAUDE.md, the agent builds it</div>
+          <div class="c-all" style="flex:5"><b>5</b>Q&amp;A</div>
+        </div>
+        <div class="tl-title"><span>S2</span>Your level, your next step</div>
+        <div class="tl">
+          <div class="c-l1" style="flex:15"><b>15 min</b>Same tool as a pyRevit script</div>
+          <div class="c-l3" style="flex:15"><b>15 min</b>MCP + how review kept it honest</div>
+          <div class="c-all" style="flex:10"><b>10 min</b>Best practices &amp; pitfalls</div>
+          <div class="c-ch" style="flex:12"><b>12 min</b>Use this on your Challenge today</div>
+          <div class="c-all" style="flex:8"><b>8 min</b>Package tour + Q&amp;A</div>
+        </div>
+      </div></div>
+      <div class="verdict">
+        <div><span class="label">Strength</span>One story everyone can follow, with levels as places to stop.</div>
+        <div><span class="label">Risk</span>Session 1 is mostly watching.</div>
+      </div>
+    </div>
+
+    <div class="option">
+      <div class="option-head"><span class="letter">C</span><div><h3>Show it all, then point it at the Challenge</h3><p class="muted">Session 1 tours every level. Session 2 runs the Monday workflow live on a team's Challenge problem.</p></div></div>
+      <div class="tlwrap"><div class="tl-row">
+        <div class="tl-title"><span>S1</span>One tool, four levels</div>
+        <div class="tl">
+          <div class="c-all" style="flex:7"><b>7 min</b>Room poll</div>
+          <div class="c-l0" style="flex:8"><b>8 min</b>Ask the model</div>
+          <div class="c-l1" style="flex:12"><b>12 min</b>The script</div>
+          <div class="c-l2" style="flex:15"><b>15 min</b>The add-in + CLAUDE.md</div>
+          <div class="c-l3" style="flex:13"><b>13 min</b>MCP + reviewer</div>
+          <div class="c-all" style="flex:5"><b>5</b>Q&amp;A</div>
+        </div>
+        <div class="tl-title"><span>S2</span>Live: from Challenge problem to plan</div>
+        <div class="tl">
+          <div class="c-ch" style="flex:10"><b>10 min</b>Pick a team's problem</div>
+          <div class="c-ch" style="flex:20"><b>20 min</b>Think it through + research with agents</div>
+          <div class="c-ch" style="flex:15"><b>15 min</b>Repo + CLAUDE.md + first build</div>
+          <div class="c-all" style="flex:10"><b>10 min</b>Best practices + package</div>
+          <div class="c-all" style="flex:5"><b>5</b>Q&amp;A</div>
+        </div>
+      </div></div>
+      <div class="verdict">
+        <div><span class="label">Strength</span>Highest energy. Teams apply it within the hour.</div>
+        <div><span class="label">Risk</span>Live work on a problem nobody knows until the 8:00 vote.</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="section-head"><h2>Takeaway package</h2><span class="label">Draft contents</span></div>
+    <div class="two">
+      <div>
+        <h3>To use</h3>
+        <ul>
+          <li>The reference tool repo: add-in, MCP server, pyRevit version</li>
+          <li>Install guide for Revit 2022–2027</li>
+          <li>Setup guide for Claude Code and Codex</li>
+          <li>CLAUDE.md / AGENTS.md starter templates for Revit projects</li>
+        </ul>
+      </div>
+      <div>
+        <h3>To learn from</h3>
+        <ul>
+          <li>The build story: prompts, research, decisions, and dead ends, step by step</li>
+          <li>Best practices and the coder/reviewer checklist</li>
+          <li>Curated resources: Revit API docs, RevitLookup, pyRevit, add-in templates, MCP servers</li>
+          <li>Starter prompts for wall &amp; ceiling tasks</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="questions">
+    <div class="section-head"><h2>Questions for you</h2><span class="label">Your input shapes the plan</span></div>
+    <ol class="q">
+      <li><strong>The Challenge.</strong> Would you welcome a Session 2 that helps teams apply AI tools to their Challenge problem? Does the 9:45 kickoff still fall between our two sessions?</li>
+      <li><strong>The room.</strong> Roughly how many attendees, and in what roles? Can we send a two-question pre-survey about Revit version and scripting experience?</li>
+      <li><strong>Revit versions.</strong> Do you know which versions member firms run? We're assuming about three years behind current.</li>
+      <li><strong>Laptops.</strong> Will attendees have laptops, and Revit, during the sessions or the build time?</li>
+      <li><strong>Overlap.</strong> Who gives the keynote, Education Session 3, and the vendor demos? We'd like to complement them, not repeat them.</li>
+      <li><strong>Distribution.</strong> How should the takeaway package reach attendees: a public repo, the member portal, a USB drive, or email after the event?</li>
+      <li><strong>Room setup.</strong> Projector, internet access for live demos, and whether we can run Revit on stage.</li>
+    </ol>
+  </section>
+
+  <footer>
+    Draft prepared 10/15/2026 for discussion with the SWACCA organizers. Audience and tool research draws on the attending firms' public sites, SWACCA's Innovation blog and 2025 summit recap, AWCI's Walls &amp; Ceilings magazine, and public Revit developer resources.
+  </footer>
+
+</div>

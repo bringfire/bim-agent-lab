@@ -1,0 +1,165 @@
+{
+  "checked_date": "2026-10-20",
+  "purpose": "Pinned local source references. Submodule lines beginning with a minus indicate dependencies not fetched in this inspection pass.",
+  "repositories": [
+    {
+      "repository": "mcp-servers-for-revit/mcp-servers-for-revit",
+      "local_path": "references/mcp-servers-for-revit",
+      "origin": "https://github.com/mcp-servers-for-revit/mcp-servers-for-revit.git",
+      "commit": "86cf7057785f2423fc0d0892c9a5d9c93deb1aa3",
+      "checkout": "detached HEAD for inspection",
+      "clean": true,
+      "clone_filter": "blob:none",
+      "saved_evidence_checks": [
+        {
+          "file": "LICENSE",
+          "matches_saved_evidence": true
+        },
+        {
+          "file": "server/package.json",
+          "matches_saved_evidence": true
+        },
+        {
+          "file": "plugin/RevitMCPPlugin.csproj",
+          "matches_saved_evidence": true
+        },
+        {
+          "file": "global.json",
+          "matches_saved_evidence": true
+        }
+      ],
+      "submodule_status": [],
+      "built_or_installed": false
+    },
+    {
+      "repository": "Nice3point/RevitTemplates",
+      "local_path": "references/RevitTemplates",
+      "origin": "https://github.com/Nice3point/RevitTemplates.git",
+      "commit": "d703757a01e2cde2eb5392cd59666e6b0e578cf6",
+      "checkout": "detached HEAD for inspection",
+      "clean": true,
+      "clone_filter": "blob:none",
+      "saved_evidence_checks": [
+        {
+          "file": "LICENSE.md",
+          "matches_saved_evidence": true
+        },
+        {
+          "file": "source/Nice3point.Revit.Templates/Nice3point.Revit.AddIn.Application/Nice3point.Revit.AddIn.1.csproj",
+          "matches_saved_evidence": true
+        },
+        {
+          "file": "global.json",
+          "matches_saved_evidence": true
+        }
+      ],
+      "submodule_status": [],
+      "built_or_installed": false
+    },
+    {
+      "repository": "lookup-foundation/RevitLookup",
+      "local_path": "references/RevitLookup",
+      "origin": "https://github.com/lookup-foundation/RevitLookup.git",
+      "commit": "766aa41a3821b64befc0b81e3c6b164725b26e87",
+      "checkout": "detached HEAD for inspection",
+      "clean": true,
+      "clone_filter": "blob:none",
+      "saved_evidence_checks": [
+        {
+          "file": "LICENSE.md",
+          "matches_saved_evidence": true
+        }
+      ],
+      "submodule_status": [
+        "-c75c0ef4d3803dc29066b429a75433fd152e4f0f source/LookupEngine",
+        "-b0f314433d16cd78f3d2f128c4f278b056224cef source/LookupEngine.UI"
+      ],
+      "built_or_installed": false
+    },
+    {
+      "repository": "modelcontextprotocol/python-sdk",
+      "local_path": "references/python-sdk",
+      "origin": "https://github.com/modelcontextprotocol/python-sdk.git",
+      "commit": "2af9e3089ac66b35c1550c500aae86a82efb1e17",
+      "checkout": "detached HEAD for inspection",
+      "clean": true,
+      "clone_filter": "blob:none",
+      "saved_evidence_checks": [
+        {
+          "file": "LICENSE",
+          "matches_saved_evidence": true
+        },
+        {
+          "file": "pyproject.toml",
+          "matches_saved_evidence": true
+        }
+      ],
+      "submodule_status": [],
+      "built_or_installed": false
+    },
+    {
+      "repository": "modelcontextprotocol/csharp-sdk",
+      "local_path": "references/csharp-sdk",
+      "origin": "https://github.com/modelcontextprotocol/csharp-sdk.git",
+      "commit": "3d8af7f98a49f55e0ac70e4fcd42df76fe1d1410",
+      "checkout": "detached HEAD for inspection",
+      "clean": true,
+      "clone_filter": "blob:none",
+      "saved_evidence_checks": [
+        {
+          "file": "LICENSE",
+          "matches_saved_evidence": true
+        }
+      ],
+      "submodule_status": [],
+      "built_or_installed": false
+    },
+    {
+      "repository": "pyrevitlabs/pyRevit",
+      "local_path": "references/pyRevit",
+      "origin": "https://github.com/pyrevitlabs/pyRevit.git",
+      "commit": "fc524b132f13d2d7cb4d085976efd9a1431d469b",
+      "checkout": "detached HEAD for inspection",
+      "clean": true,
+      "clone_filter": "blob:none",
+      "saved_evidence_checks": [
+        {
+          "file": "LICENSE.txt",
+          "matches_saved_evidence": true
+        }
+      ],
+      "submodule_status": [
+        "-fc95f6f942f5b52d695075c6145ecc3c0bc6fea3 dev/modules/pyRevitLabs.MahApps.Metro",
+        "-ceb524ee46cf1757cf0da99175b5229d80b67182 dev/modules/pyRevitLabs.NLog",
+        "-8d029da84d0846992a6118309e73d07d8d6f7ea9 dev/modules/pyRevitLabs.Newtonsoft.Json",
+        "-f591d92fbc25f3c74b5579d3a7def6beefac324a dev/modules/pyRevitLabs.Python.Net",
+        "-088d64499511181b7cdc1df1fb9c881c1a7e9c0b dev/modules/pyRevitLabs.dlr",
+        "-088d64499511181b7cdc1df1fb9c881c1a7e9c0b dev/modules/pyRevitLabs.dlr3",
+        "-d773abc38396e85705d1f72c3c0ffef40d8a6e7d dev/modules/pyRevitLabs.ironpython2",
+        "-f737841712bc13ecfd54a733141fdf18febe603c dev/modules/pyRevitLabs.ironpython3"
+      ],
+      "built_or_installed": false
+    },
+    {
+      "repository": "tillbaum/revit-mcp-python",
+      "local_path": "references/revit-mcp-python",
+      "origin": "https://github.com/tillbaum/revit-mcp-python.git",
+      "commit": "9cc3f195b0e79f511e4ed8bce729402dd659644e",
+      "checkout": "detached HEAD for inspection",
+      "clean": true,
+      "clone_filter": "blob:none",
+      "saved_evidence_checks": [
+        {
+          "file": "LICENSE",
+          "matches_saved_evidence": true
+        },
+        {
+          "file": "pyproject.toml",
+          "matches_saved_evidence": true
+        }
+      ],
+      "submodule_status": [],
+      "built_or_installed": false
+    }
+  ]
+}
