@@ -1,0 +1,2 @@
+System.InvalidOperationException: Fixture-first core loading hid the report contract: C:\Users\bring\AppData\Roaming\Autodesk\Revit\Addins\2024\BimAgentLab.FixtureTools\BimAgentLab.Readiness.Core.dll
+   at Program.Main(String[] args) in D:\bim-agent-lab\projects\revit-readiness\tests\host-load\Program.cs:line 20

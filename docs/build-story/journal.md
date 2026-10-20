@@ -329,6 +329,26 @@ The useful agent workflow is observable: establish Git context, translate the BI
 
 The [new tutorial](../tutorials/03-check-required-type-information.md), [sample recipe](../../projects/revit-readiness/samples/model-recipes/required-information.md), and [verification record](../../projects/revit-readiness/docs/verification/2026-10-20-required-information.md) preserve commands, requirements, observations, limits, and corrections. Participants can direct their agents through the same sequence when adding another check. An MCP bridge should expose this verified operation while preserving its scope, identity, and completeness evidence.
 
+## 2026-10-20 First plugin dependency: ClosedXML Excel output
+
+### Author prompt
+
+> Ok, let's add the Excel output using ClosedXML with those four worksheets. Review the dependencies and licenses, verify the output against our sample results, and record the process in bim-agent-lab. This will demonstrate how to add our first plugin dependency. It will teach this.
+
+The preceding discussion defined Summary, Findings, Affected elements, and Rules and coverage. The agent used that approved design, created `feat/excel-readiness-report` from clean `c7c2ad9`, cloned ClosedXML at a pinned tag/commit, and inspected source, package metadata, transitive dependencies, and embedded resources. The chosen package is ClosedXML 0.105.1. The resolved graph has twelve packages total; the font embedded in ClosedXML adds a separate OFL notice. Source/package/license evidence and notices are retained, while source clones and binaries remain ignored.
+
+The first seven workbook tests failed against a stub, then passed. A separate XML reader compares workbook data with the already independently verified JSON/native schedules and literal expected answers. The workbook retains all eighteen type-field evaluations and explicitly identifies unexamined cases. A separate review caught a missing-identity gap, and a targeted red/green assertion now protects it.
+
+The first Revit export failed despite passing console tests. Its dialog preserved the successful model check and JSON/text output and clearly reported the Excel error. Investigation found dependency binding assumptions hidden by the test executable's configuration. A private AppDomain attempt also failed its host-like test and was removed. The final approach is a short-lived local exporter process with its own configuration and dependency directory; Revit configuration remains untouched. A host-like harness with no spreadsheet references/redirects verifies the exact process launcher against both built and installed exporters. The installer now deploys the full runtime and notices, not just the add-in DLL.
+
+Follow-up review found a shared-core load-order issue when the older optional fixture tool is used first. The installer now synchronizes the backward-compatible core in an existing recognized fixture installation without enabling the editor for new users. This is a concrete example of how adding a dependency can reveal deployment assumptions beyond the new library.
+
+The [lesson](../tutorials/04-add-an-excel-report-dependency.md), [research/license review](../research/closedxml-dependency.md), and [acceptance record](../../projects/revit-readiness/docs/verification/2026-10-20-excel-output.md) distinguish code, offline checks, and actual host results. The user handled Revit's unsigned-add-in prompt and replied "loaded"; the agent continued documentation and independent checks during that handoff. All three final Revit exports passed with 0/0, 2/6, and 3/8 findings/affected instances. Fresh XLSX data matched native schedules and independent expected answers, all four sheets were inspected in Excel, and original/source/demo model hashes remained unchanged. Normal installation then synchronized the existing fixture core; the fixture-first load test passed. Final source/deployment review found no remaining substantive issues, including matching hashes for all 51 installed files.
+
+### Teaching value
+
+The prompt specifies purpose, output, research, verification, and documentation rather than asking only to install a package. The sequence is reproducible: inspect Git and source, inspect the resolved dependency graph and notices, pin versions, write failing tests, implement, package all runtime files, verify in the actual host, independently inspect output, review and record the checkpoint. The runtime failure is useful teaching evidence: successful unit tests did not establish that a dependency would load inside Revit.
+
 ## A reusable research prompt
 
 The following is a teaching template, not an additional instruction from the author:

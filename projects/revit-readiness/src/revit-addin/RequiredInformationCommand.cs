@@ -34,6 +34,19 @@ namespace BimAgentLab.RevitReadiness
                 }
                 foreach (var issue in report.ScopeIssues) details.AppendLine($"{issue.CaseId}: {issue.Status} - {issue.Reason}");
                 File.WriteAllText(Path.ChangeExtension(document.PathName, ".readiness.txt"), details.ToString(), new UTF8Encoding(false));
+                string excelPath = Path.ChangeExtension(document.PathName, ".readiness.xlsx");
+                string excelStatus;
+                try
+                {
+                    ExcelReportProcess.Save(output, excelPath);
+                    excelStatus = "Excel report saved: " + excelPath;
+                }
+                catch (Exception exception)
+                {
+                    // JSON/text remain usable. Never imply that an older workbook is the current result.
+                    excelStatus = "EXCEL EXPORT FAILED: " + exception.Message +
+                        "\nJSON/text were saved. Any previous workbook is out of date; close it if open, then rerun.\nTarget: " + excelPath;
+                }
                 new TaskDialog("BIM Agent Lab - Required type information") {
                     TitleAutoPrefix = false,
                     MainInstruction = $"{report.Evaluation.FindingCount} missing required type values",
@@ -41,8 +54,8 @@ namespace BimAgentLab.RevitReadiness
                         $"Examined {report.ExaminedInstances} of {report.RequestedInstances} declared cases. Coverage: {(report.CoverageComplete ? "complete for this checklist scope" : "INCOMPLETE; inspect unexamined cases")}.\n" +
                         $"Level: {report.Level}; phase: {report.Phase} (New).\n" +
                         $"Outside scope: {report.OtherHostWallCeilingInstances} host wall/ceiling instances and {report.LinkInstancesExcluded} link instances.\n\n" +
-                        $"Document modified: {report.ModifiedBefore} before / {report.ModifiedAfter} after.\nRead-only model check; local reports written.\n\n" + details,
-                    ExpandedContent = $"Checklist: {report.ChecklistId}\nReport: {output}\nRevit build: {report.RevitBuild}\nCompleteness of supplied text only; no rating, assembly, quantity, or code-compliance validation.",
+                        $"Document modified: {report.ModifiedBefore} before / {report.ModifiedAfter} after.\nRead-only model check; local reports written.\n{excelStatus}\n\n" + details,
+                    ExpandedContent = $"Checklist: {report.ChecklistId}\nJSON report: {output}\nExcel report: {excelPath}\nRevit build: {report.RevitBuild}\nCompleteness of supplied text only; no rating, assembly, quantity, or code-compliance validation.",
                     CommonButtons = TaskDialogCommonButtons.Close
                 }.Show();
                 return Result.Succeeded;

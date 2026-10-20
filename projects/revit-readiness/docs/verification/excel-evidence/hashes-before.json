@@ -1,0 +1,22 @@
+[
+  {
+    "Path": "C:\\Program Files\\Autodesk\\Revit 2024\\Samples\\Snowdon Towers Sample Architectural.rvt",
+    "Hash": "690A69B77BA4000DFC4BD04E9CF52E9885BFE3986F4149659EE6EE24B03300E5"
+  },
+  {
+    "Path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\required-information\\BAL-info-ceiling-negative.rvt",
+    "Hash": "520EE45B056D004F10189A4BF26EDE3CE22FF2B06A9CBE0A25C1EB79D384A003"
+  },
+  {
+    "Path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\required-information\\BAL-info-complete.rvt",
+    "Hash": "B4A7A1E1733F857BA9E31A1659594A01076560E31E2F11BB6192789BD64524DE"
+  },
+  {
+    "Path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\required-information\\BAL-info-wall-defects.rvt",
+    "Hash": "EFD2717188956F7A070480323D85BCFFE765007135915C1908A909FE04D50D17"
+  },
+  {
+    "Path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\required-information\\Snowdon-BAL-source-copy.rvt",
+    "Hash": "690A69B77BA4000DFC4BD04E9CF52E9885BFE3986F4149659EE6EE24B03300E5"
+  }
+]

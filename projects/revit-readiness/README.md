@@ -2,7 +2,7 @@
 
 The first BIM Agent Lab example helps wall and ceiling professionals review whether a model meets an explicit checklist for a stated coordination or quantity-review use. Inventory and quantities provide supporting evidence.
 
-**Status:** the first required-type-information check is implemented, locally installable, and verified on Revit 2024 build `24.3.60.12`. It reads an explicit checklist, identifies missing required type text, and reports affected instances with evidence and exclusions. Eighteen offline tests and all three sample-based acceptance cases passed. The original minimal probe remains available. Physical-condition checks, quantities, MCP, and broader compatibility remain unverified or planned.
+**Status:** the first required-type-information check is implemented, locally installable, and verified on Revit 2024 build `24.3.60.12`. It reads an explicit checklist, identifies missing required type text, and reports affected instances with evidence and exclusions. Eighteen offline tests and all three sample-based acceptance cases passed. The command also writes a four-sheet Excel workbook through a local ClosedXML exporter; see the [dependency lesson](../../docs/tutorials/04-add-an-excel-report-dependency.md) and [current Excel verification status](docs/verification/2026-10-20-excel-output.md). The original minimal probe remains available. Physical-condition checks, quantities, MCP, and broader compatibility remain unverified or planned.
 
 ## The three questions
 
@@ -29,6 +29,7 @@ The [demo brief](docs/demo-questions-and-sample-model.md) defines the proposed c
 |---|---|
 | [src/readiness-core](src/readiness-core/README.md) | Deterministic rules, findings, and aggregation over normalized inputs |
 | [src/revit-addin](src/revit-addin/README.md) | Read Revit data in a valid API context and provide application commands |
+| [src/excel-report](src/excel-report/README.md) | Generate a static Excel workbook from saved report data in a separate local process |
 | [src/mcp-server](src/mcp-server/README.md) | Expose scoped operations to an agent and return structured evidence |
 
 The core evaluator and Revit command/reader are implemented. The external server language and whether to adapt an existing bridge are still open decisions.

@@ -15,3 +15,5 @@
 # Preserve archived evidence bytes across platforms.
 docs/research/evidence/*.json -text whitespace=blank-at-eol,blank-at-eof,space-before-tab,cr-at-eol
 workshops/swacca-2026/archive/organizer-brief.html -text -whitespace
+# Upstream notices/metadata include intentional original whitespace; retain exact bytes/hashes.
+projects/revit-readiness/third-party/** -text -whitespace

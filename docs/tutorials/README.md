@@ -12,7 +12,8 @@ Before building the Revit example, use the [development prerequisites](../../pro
 | 4. Understand the decisions | Recognize how user direction and evidence change the plan | [Build journal](../build-story/journal.md) |
 | 5. Prove the development setup | Check prerequisites, build/register a command, and verify its answer in Revit | [First-build tutorial](02-build-a-read-only-revit-command.md), [fixture recipe](../../projects/revit-readiness/samples/model-recipes/read-only-probe.md) |
 | 6. Build and verify a readiness check | Define required data, test deterministic rules, prepare sample copies, and compare native schedules | [Required-information tutorial](03-check-required-type-information.md) |
-| 7. Expose a verified operation through MCP | Choose a bridge, preserve scope, dispatch safely, and return evidence | Planned; bridge selection remains open |
-| 8. Package and extend | Reproduce results, install a release, and add a new capability | [Extension workflow](../how-to/extend-a-project.md); release packaging remains planned |
+| 7. Add a third-party dependency | Inspect licenses and transitive packages, pin versions, package runtime files, and independently verify Excel output | [Excel dependency tutorial](04-add-an-excel-report-dependency.md) |
+| 8. Expose a verified operation through MCP | Choose a bridge, preserve scope, dispatch safely, and return evidence | Planned; bridge selection remains open |
+| 9. Package and extend | Reproduce results, install a release, and add a new capability | [Extension workflow](../how-to/extend-a-project.md); release packaging remains planned |
 
 Ask your agent to explain one step, perform the relevant inspection, and show the evidence. Use the [lesson template](../../templates/lesson.md) when a completed implementation becomes a new chapter.

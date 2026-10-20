@@ -1,0 +1,53 @@
+[
+  {
+    "scenario": "BAL-info-complete",
+    "schedule_cases": 16,
+    "findings": 0,
+    "affected_instances": 0,
+    "result": "PASS",
+    "workbook": "BAL-info-complete.readiness.xlsx",
+    "worksheets": [
+      "Summary",
+      "Findings",
+      "Affected elements",
+      "Rules and coverage"
+    ],
+    "rule_rows": 18,
+    "sha256": "d50de6cb0e4ea9a65b9b9e1e3b02aeb82b1e50c0337c9f538de9af13637c701d",
+    "comparison": "XLSX XML -> report -> native schedules + literal oracle"
+  },
+  {
+    "scenario": "BAL-info-wall-defects",
+    "schedule_cases": 16,
+    "findings": 2,
+    "affected_instances": 6,
+    "result": "PASS",
+    "workbook": "BAL-info-wall-defects.readiness.xlsx",
+    "worksheets": [
+      "Summary",
+      "Findings",
+      "Affected elements",
+      "Rules and coverage"
+    ],
+    "rule_rows": 18,
+    "sha256": "92501311a49c937fee72bbbce5d3dc873ccf6ee1276adc177ad4d1ef45bd86ec",
+    "comparison": "XLSX XML -> report -> native schedules + literal oracle"
+  },
+  {
+    "scenario": "BAL-info-ceiling-negative",
+    "schedule_cases": 16,
+    "findings": 3,
+    "affected_instances": 8,
+    "result": "PASS",
+    "workbook": "BAL-info-ceiling-negative.readiness.xlsx",
+    "worksheets": [
+      "Summary",
+      "Findings",
+      "Affected elements",
+      "Rules and coverage"
+    ],
+    "rule_rows": 18,
+    "sha256": "82b86961cd50fe0c2894345c9eafac75b860cedc8a69267f8dca9e2862770721",
+    "comparison": "XLSX XML -> report -> native schedules + literal oracle"
+  }
+]

@@ -5,12 +5,13 @@ Baseline: 2026-10-20. Update this page when implementation or verification chang
 | Area | Status |
 |---|---|
 | Teaching repository | Local structure, navigation, agent guidance, and imported materials |
-| Research | Seven repositories inspected at pinned commits; license and dependency evidence retained |
+| Research | Seven original precedents plus ClosedXML inspected at pinned commits; license and dependency evidence retained |
 | Revit readiness questions | Three proposed demonstrations and controlled acceptance cases |
 | Revit add-in | Minimal probe plus read-only required-type-information command built, installed, and run locally |
+| Excel reporting | Four-sheet ClosedXML export passed all three actual Revit runs and independent comparisons; native Excel visual review passed. See [acceptance evidence](../../projects/revit-readiness/docs/verification/2026-10-20-excel-output.md) |
 | MCP server | Not implemented; language and bridge selection still open |
 | Sample models | Three Snowdon-derived copies contain 12 walls/four ceilings with declared type-information cases; larger physical-condition/quantity fixture remains planned |
-| Builds and tests | 18 passing console tests, three independent schedule comparisons, repeated read, unchanged RVT hashes, and source review; no CI yet |
+| Builds and tests | 18 core tests, seven Excel tests, isolated-process and fixture-first load checks; three independent JSON/XLSX/schedule comparisons, unchanged RVT hashes, and source review; no CI yet |
 | Compatibility | Probe and first readiness check tested on Revit 2024 build 24.3.60.12, net48, with SDK 10.0.204; other configurations unverified |
 | Distribution | Local install script only; no remote, packaged installer, public release, or selected license for original lab materials |
 

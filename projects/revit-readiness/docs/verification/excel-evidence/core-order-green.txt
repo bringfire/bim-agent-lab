@@ -1,0 +1,1 @@
+PASS fixture-first core exposes the readiness report contract: C:\Users\bring\AppData\Roaming\Autodesk\Revit\Addins\2024\BimAgentLab.FixtureTools\BimAgentLab.Readiness.Core.dll

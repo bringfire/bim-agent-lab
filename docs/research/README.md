@@ -2,6 +2,7 @@
 
 Research precedes selecting a stack or implementing a tool. Evaluate the BIM fit, inspect source, record dependencies and terms, and test the smallest uncertain assumption.
 
+- [ClosedXML dependency review](closedxml-dependency.md): the first adopted package, full resolved graph, licenses, embedded font, and runtime findings.
 - [Revit resource register](revit-resources.md): SDK/API sources, local observations, candidate roles, and open compatibility questions.
 - [Reference code map](reference-code-map.md): useful source entry points linked to inspected commits.
 - [Repository manifest](repositories.json): exact sources, commits, and relative checkout paths.

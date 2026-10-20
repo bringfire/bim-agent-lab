@@ -1,0 +1,8 @@
+FAIL BAL-info-complete: Excel export not implemented yet.
+FAIL BAL-info-wall-defects: Excel export not implemented yet.
+FAIL BAL-info-ceiling-negative: Excel export not implemented yet.
+FAIL Incomplete coverage stays visible even with zero findings: Excel export not implemented yet.
+FAIL Text resembling formulas and long identifiers remains literal: Excel export not implemented yet.
+FAIL Locked destination preserves existing workbook and cleans temporary file: Excel export not implemented yet.
+FAIL Multiple missing fields do not duplicate affected elements: Excel export not implemented yet.
+0 passed; 7 failed

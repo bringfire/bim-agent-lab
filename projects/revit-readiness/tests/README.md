@@ -2,7 +2,7 @@
 
 The probe has a [manual Revit acceptance procedure](read-only-probe.md) and an [observed verification record](../docs/verification/2026-10-20-read-only-probe.md). The first readiness check adds 18 executable rule/aggregation tests, a [host acceptance procedure](required-information.md), a separate [fixture editor](fixture-tools/PrepareInformationFixture.cs), and an [independent schedule comparator](verify_information_evidence.py). See its [dated record](../docs/verification/2026-10-20-required-information.md) for observed results. No CI or MCP contract suite exists yet.
 
-From the project folder, run `& .\scripts\Test-Readiness.ps1`. This builds and runs a net48 console test executable; it needs framework targeting/runtime support but no running Revit instance or third-party test library. It does not use `dotnet test`.
+From the project folder, run `& .\scripts\Test-Readiness.ps1`. This builds and runs 18 core tests, seven Excel workbook tests, and a host-like process-isolation test; it needs framework targeting/runtime support but no running Revit instance or third-party test library. It does not use `dotnet test`. The [Excel verifier](verify_excel_evidence.py) independently compares XLSX XML with saved reports and native schedule evidence; see the [Excel acceptance record](../docs/verification/2026-10-20-excel-output.md).
 
 | Level | What it establishes | Requires Revit? |
 |---|---|---|

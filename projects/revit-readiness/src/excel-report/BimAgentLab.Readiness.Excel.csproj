@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net48</TargetFramework>
+    <OutputType>Exe</OutputType>
+    <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
+    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Version>0.3.0</Version>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../readiness-core/BimAgentLab.Readiness.Core.csproj" />
+    <PackageReference Include="ClosedXML" Version="[0.105.1]" />
+  </ItemGroup>
+</Project>
