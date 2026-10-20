@@ -1,6 +1,6 @@
 # Preparing the readiness demonstration
 
-Status: proposed recipe, not an executed preparation record.
+The [required-information recipe](required-information.md) has been executed against a copy of Snowdon Towers Architectural on Revit 2024. It creates three local files, six teaching types, 16 marked instances, checklists, and native schedules. The [probe recipe](read-only-probe.md) retains the earlier four-wall setup proof. The remaining notes describe the larger, still-planned physical-condition and quantity demonstration.
 
 Follow the [controlled cases and preparation sequence](../../docs/demo-questions-and-sample-model.md). Inspect the sample's actual parameters, types, phases, and levels before selecting a demo area. Use explicit case IDs to define scope independently of view visibility.
 

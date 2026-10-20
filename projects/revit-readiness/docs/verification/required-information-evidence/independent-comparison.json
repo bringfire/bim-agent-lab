@@ -1,0 +1,23 @@
+[
+  {
+    "scenario": "BAL-info-complete",
+    "schedule_cases": 16,
+    "findings": 0,
+    "affected_instances": 0,
+    "result": "PASS"
+  },
+  {
+    "scenario": "BAL-info-wall-defects",
+    "schedule_cases": 16,
+    "findings": 2,
+    "affected_instances": 6,
+    "result": "PASS"
+  },
+  {
+    "scenario": "BAL-info-ceiling-negative",
+    "schedule_cases": 16,
+    "findings": 3,
+    "affected_instances": 8,
+    "result": "PASS"
+  }
+]

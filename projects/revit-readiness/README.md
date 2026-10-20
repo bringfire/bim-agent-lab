@@ -2,7 +2,7 @@
 
 The first BIM Agent Lab example helps wall and ceiling professionals review whether a model meets an explicit checklist for a stated coordination or quantity-review use. Inventory and quantities provide supporting evidence.
 
-**Status:** the minimal read-only probe is implemented, locally installable, and host-verified on Revit 2024 build `24.3.60.12`. It reports project identity and wall/ceiling counts. Readiness evaluation, quantities, MCP, and the larger demo fixture remain planned; broader compatibility is unverified.
+**Status:** the first required-type-information check is implemented, locally installable, and verified on Revit 2024 build `24.3.60.12`. It reads an explicit checklist, identifies missing required type text, and reports affected instances with evidence and exclusions. Eighteen offline tests and all three sample-based acceptance cases passed. The original minimal probe remains available. Physical-condition checks, quantities, MCP, and broader compatibility remain unverified or planned.
 
 ## The three questions
 
@@ -14,6 +14,7 @@ The [demo brief](docs/demo-questions-and-sample-model.md) defines the proposed c
 
 ## Start here
 
+- [Build and verify the required-information check](../../docs/tutorials/03-check-required-type-information.md), with [actual results and evidence](docs/verification/2026-10-20-required-information.md).
 - [Build and run the read-only probe](../../docs/tutorials/02-build-a-read-only-revit-command.md), with [actual verification results](docs/verification/2026-10-20-read-only-probe.md).
 - [Development prerequisites](docs/development-prerequisites.md) for the minimum agent-assisted Revit 2024 setup, optional tools, and later MCP dependencies.
 - [Project agent guidance](AGENTS.md) for scope and implementation boundaries.
@@ -30,6 +31,6 @@ The [demo brief](docs/demo-questions-and-sample-model.md) defines the proposed c
 | [src/revit-addin](src/revit-addin/README.md) | Read Revit data in a valid API context and provide application commands |
 | [src/mcp-server](src/mcp-server/README.md) | Expose scoped operations to an agent and return structured evidence |
 
-Only the minimal command in `revit-addin` is implemented. The external server language and whether to adapt an existing bridge are still open decisions.
+The core evaluator and Revit command/reader are implemented. The external server language and whether to adapt an existing bridge are still open decisions.
 
-The next step is sample inspection and one deterministic readiness check with independent expected answers. The probe establishes a working local build and API read; it does not select or validate an MCP bridge.
+The first deterministic check now has independent expected answers, native schedules, and three sample-derived copies. Next, compare bridge candidates around this proven read-only operation before selecting MCP dependencies. The [larger demo brief](docs/demo-questions-and-sample-model.md) still requires physical-condition and quantity checks.

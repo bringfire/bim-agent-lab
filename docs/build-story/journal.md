@@ -295,6 +295,40 @@ The author's prompt successfully carries forward earlier context while specifyin
 
 This milestone proves local API access and the build/install workflow. It does not complete model readiness, quantity review, or MCP. The next increment should establish one real readiness check and its sample answer before adding remote dispatch and more dependencies.
 
+## 2026-10-20 First required-type-information check
+
+### Author prompt
+
+> Ok, let's build the first readiness check for missing required wall and ceiling type information. Use a copy of a Revit sample project, verify the results independently, and record the process in bim-agent-lab.
+
+### Decisions and actions
+
+The agent started `feat/required-type-information` from the clean, verified probe checkpoint `f025fce`. The request retained the earlier model-readiness goal while specifying a useful first rule, safe sample handling, independent verification, and a teaching record. Those requirements became a [concrete contract](../../projects/revit-readiness/docs/required-type-information.md) before implementation.
+
+“Required” was made explicit: all six teaching types need a code in Type Mark; Walls A and B additionally need Fire Rating and a GUID-identified assembly-reference text field. Optional blanks remain valid. Scope is 16 identified cases on one level/phase, with host/linked exclusions reported. Nonempty text is a completeness answer, not proof of a valid rated assembly. Physical top conditions, measured quantities, and MCP remain separate work.
+
+Research used installed Revit 2024 XML API documentation plus Autodesk's sample, shared-parameter, and parameter guides. It established the actual `FIRE_RATING` identifier, string-storage handling, GUID binding, schedule fields/exports, and transaction behavior. The existing net48 toolchain was enough; no new packages or prerequisites were installed. No precedent code was copied into this implementation.
+
+The evaluator consumes plain observations and requirements, independently of Revit. Thirteen behavior tests first failed against a stub, then passed after implementation. A separate Revit reader collects scoped type values using stable identifiers; a `TransactionMode.ReadOnly` command writes local reports and displays the result. An explicitly installed fixture tool prepares model copies in transactions. Keeping those two operations separate makes their permissions and purposes visible to participants.
+
+The installed Snowdon Towers Architectural sample was copied and hash-checked. The fixture command opened only that copy, duplicated six types, added 12 walls and four ceilings in an isolated area, and created itemized native schedules. It saved a complete baseline, a wall-defect copy, and a ceiling-negative copy. Its ACT/GWB labels are data-case labels; the copied physical assemblies were not redesigned.
+
+### Review, host verification, and corrections
+
+A separate code reviewer found two fixture failure paths: treating an unchanged `Parameter.Set(false)` as a failure, and ignoring non-committed transaction statuses before saving. The agent checked those findings against API documentation, fixed them before fixture execution, and added five multi-type/identity regressions. The final suite passed 18/18; readiness and fixture builds had zero warnings/errors. Follow-up review found both issues resolved.
+
+The unsigned-add-in prompt required the user's action under the agent's computer-use policy. The user allowed both commands and reported choosing Always Load. The agent restarted Revit after installing the reviewed build, then prepared the samples and executed the read-only check.
+
+All three host cases matched the independently authored answer sheet: **0 findings/0 affected instances**, **2/6**, and **3/8**. Each covered exactly 16 cases/six types on L1 - Block 43, New Construction (New), while reporting 1,196 other host wall/ceiling instances and six links outside scope. The native wall and ceiling schedules were opened and inspected. A standard-library Python comparator checked every exported row, expected field value/status, and affected case identity without importing the evaluator or fixture code; all three comparisons passed.
+
+Two ceiling-negative reads were identical except for their timestamps. Every command reported modified False before/False after. Hashes taken before queries and after closing Revit matched for the three prepared models; the initial copy and installed original sample also remained unchanged. [Retained evidence](../../projects/revit-readiness/docs/verification/required-information-evidence/README.md) lets participants reproduce the text comparison without owning the RVT files.
+
+### Teaching lesson
+
+The useful agent workflow is observable: establish Git context, translate the BIM question into declared requirements, research actual API contracts, write expected answers, test a small deterministic core, build/install, review, execute in the host, compare against independent BIM evidence, and checkpoint the process. Unit tests, a clean build, a source review, and a native schedule comparison answer different questions; none substitutes for all the others.
+
+The [new tutorial](../tutorials/03-check-required-type-information.md), [sample recipe](../../projects/revit-readiness/samples/model-recipes/required-information.md), and [verification record](../../projects/revit-readiness/docs/verification/2026-10-20-required-information.md) preserve commands, requirements, observations, limits, and corrections. Participants can direct their agents through the same sequence when adding another check. An MCP bridge should expose this verified operation while preserving its scope, identity, and completeness evidence.
+
 ## A reusable research prompt
 
 The following is a teaching template, not an additional instruction from the author:
@@ -323,4 +357,4 @@ Research can reveal that the problem or architecture needs revision. Return to t
 
 Record the author's prompt or a clearly labeled excerpt; the decision requested; constraints supplied; the agent's actions; the evidence; any correction or rejected approach; the outcome; and the lesson worth showing on stage. Label a suggested prompt as a suggestion, never as a historical prompt.
 
-Current next action: inspect the readiness sample and implement one deterministic check with independent expected answers. A minimal custom Revit command now builds and runs; the existing bridge candidate and a custom dispatch bridge still need comparison before MCP dependencies are selected. The working demo brief remains the acceptance target for that larger implementation.
+Current next action: compare the existing bridge candidate with a minimal custom dispatch bridge around the verified read-only information check before selecting MCP dependencies. Physical-condition and quantity checks remain separate increments in the working demo brief.

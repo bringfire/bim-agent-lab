@@ -5,6 +5,7 @@
     <AssemblyName>BimAgentLab.RevitProbe</AssemblyName>
     <RootNamespace>BimAgentLab.RevitProbe</RootNamespace>
     <Version>0.1.0</Version>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
     <Deterministic>true</Deterministic>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <!-- This probe uses the installed 4.8 targeting pack, with no NuGet packages. -->
@@ -12,6 +13,7 @@
     <RevitInstallDir Condition="'$(RevitInstallDir)' == ''">$(ProgramW6432)\Autodesk\Revit 2024</RevitInstallDir>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="ReadOnlyProbeCommand.cs" />
     <Reference Include="RevitAPI">
       <HintPath>$(RevitInstallDir)\RevitAPI.dll</HintPath>
       <Private>false</Private>

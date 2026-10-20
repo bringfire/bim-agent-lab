@@ -1,5 +1,13 @@
 # Changelog
 
+## Unreleased — required wall and ceiling type information, 2026-10-20
+
+- Add a deterministic core and separate read-only Revit command for missing required Type Mark, Fire Rating, and GUID-identified assembly-reference text against an explicit checklist.
+- Preserve raw values, requirement sources, rule IDs, affected case/element identities, scope exclusions, and incomplete coverage in JSON reports.
+- Add 18 passing console tests, an opt-in sample-copy preparation tool, native schedule exports, and an independent comparison script.
+- Verify three Snowdon-derived cases with 0/2/3 findings and 0/6/8 affected instances on Revit 24.3.60.12; repeat reads and file hashes confirm unchanged models.
+- Record the tutorial, review corrections, source/API evidence, sample recipe, screenshots, and reproducible acceptance procedure. No new packages or prerequisites were installed; MCP and physical-condition/quantity checks remain planned.
+
 ## Unreleased — first read-only Revit command, 2026-10-20
 
 - Add a minimal Revit 2024 command reporting project identity and whole-host wall/ceiling instance counts with read-only API enforcement.

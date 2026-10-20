@@ -1,6 +1,8 @@
 # Verification strategy
 
-The first command has a [manual Revit acceptance procedure](read-only-probe.md) and an [observed verification record](../docs/verification/2026-10-20-read-only-probe.md). The [tutorial](../../../docs/tutorials/02-build-a-read-only-revit-command.md) documents check/build/install commands. No automated unit-test suite exists yet; the current probe is verified inside its host. The layers below describe the larger readiness tool's intended verification.
+The probe has a [manual Revit acceptance procedure](read-only-probe.md) and an [observed verification record](../docs/verification/2026-10-20-read-only-probe.md). The first readiness check adds 18 executable rule/aggregation tests, a [host acceptance procedure](required-information.md), a separate [fixture editor](fixture-tools/PrepareInformationFixture.cs), and an [independent schedule comparator](verify_information_evidence.py). See its [dated record](../docs/verification/2026-10-20-required-information.md) for observed results. No CI or MCP contract suite exists yet.
+
+From the project folder, run `& .\scripts\Test-Readiness.ps1`. This builds and runs a net48 console test executable; it needs framework targeting/runtime support but no running Revit instance or third-party test library. It does not use `dotnet test`.
 
 | Level | What it establishes | Requires Revit? |
 |---|---|---|
@@ -9,6 +11,6 @@ The first command has a [manual Revit acceptance procedure](read-only-probe.md) 
 | Host integration | Correct API values, valid dispatch, document selection, and unchanged model after queries | Yes |
 | Independent acceptance | Agreement with known fixture cases, manual inspection, and matching schedules | Yes |
 
-The [demo brief](../docs/demo-questions-and-sample-model.md) is the current acceptance target. Test both known defects and valid exceptions. Verify exclusions and partial results explicitly. A fixture with four findings must not count repeated type findings as extra affected instances.
+The [information-check contract](../docs/required-type-information.md) is this increment's acceptance target. The [larger demo brief](../docs/demo-questions-and-sample-model.md) also includes physical conditions and quantities that remain planned. Test known defects and valid exceptions, and verify exclusions and partial results explicitly. Repeated type findings must not duplicate affected instance totals.
 
 Record the host version, sample revision, build revision, scope, units, expected/observed results, and limitations using the [verification template](../../../templates/verification-record.md). Offline tests alone do not establish Revit compatibility.

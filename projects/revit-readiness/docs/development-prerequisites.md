@@ -98,3 +98,5 @@ Suggested participant prompt, not a command already executed:
 ### Evidence on the author's workstation
 
 Initial inspection on 2026-10-20 found Revit and API DLL file version `24.3.60.12`, .NET SDKs `9.0.318` and `10.0.204`, Git `2.53.0.windows.2`, and .NET Framework 4.8 references. In the subsequent implementation step, all required inputs passed inspection, the probe compiled with zero warnings/errors, and it loaded and returned independently checked counts in Revit. No prerequisite software needed installation. The new command was installed per user. See the [verification record](verification/2026-10-20-read-only-probe.md) for scope and limits.
+
+The [first readiness check](verification/2026-10-20-required-information.md) subsequently used the same toolchain with no added NuGet packages. Its 18-test console harness also uses framework libraries only. Python was used solely for an independent comparison of saved native schedule exports and JSON evidence; it remains optional for add-in development and execution.

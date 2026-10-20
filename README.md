@@ -4,7 +4,7 @@ Learn to build and extend BIM tools with AI coding agents—from research and Gi
 
 BIM Agent Lab is a teaching repository for BIM professionals. It pairs worked examples with the prompts, research, decisions, and verification needed to understand and extend them. The first example is a Revit model-readiness tool for wall and ceiling workflows, supported by inventory and quantities.
 
-**Current status:** the first read-only Revit 2024 command has been built, installed locally, and verified against an empty project and a controlled four-wall model. Follow the [first-build tutorial](docs/tutorials/02-build-a-read-only-revit-command.md). Readiness rules, the larger demo fixture, MCP, and release packaging remain to be implemented. Git history records the build from the teaching baseline onward; earlier research is preserved in the build journal.
+**Current status:** a read-only Revit 2024 command checks required wall and ceiling type information against an explicit checklist. It passed 18 offline tests and independent native-schedule comparisons on three copies of Autodesk's Snowdon sample. Follow the [readiness tutorial](docs/tutorials/03-check-required-type-information.md), or begin with the [first-build tutorial](docs/tutorials/02-build-a-read-only-revit-command.md). Physical-condition checks, quantities, MCP, and release packaging remain planned. Git history and the build journal preserve the implementation and research evidence.
 
 ## Choose your starting point
 

@@ -1,0 +1,17 @@
+[
+  {
+    "Assembly": "BimAgentLab.RevitReadiness.dll",
+    "SHA256": "87872559BBAFD2A3839657D2110605E6FB1E4FFAE4F86C37A3838C4A54DE5CEC",
+    "InstalledMatches": true
+  },
+  {
+    "Assembly": "BimAgentLab.Readiness.Core.dll",
+    "SHA256": "1A3B81958D6163962D981D1E807CBC10794A2787F6C3451BEB6B376401518839",
+    "InstalledMatches": true
+  },
+  {
+    "Assembly": "BimAgentLab.FixtureTools.dll",
+    "SHA256": "F776364EB597AB8B5F14A9AD6A4117E4B909A60B65A86A689AC78C491916D99D",
+    "InstalledMatches": true
+  }
+]

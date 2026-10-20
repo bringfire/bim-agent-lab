@@ -1,7 +1,7 @@
 # Model readiness demos and sample model
 
 Date: 2026-10-20
-Status: working demo design. Model readiness is the author's confirmed direction; the questions, rules, and controlled examples below are proposed. This larger fixture has not been prepared. A separate [four-wall setup probe](../samples/model-recipes/read-only-probe.md) has been built and verified; it does not implement the readiness demonstration below.
+Status: working demo design. Model readiness is the author's confirmed direction. Question 1 now has an implemented [required-information contract](required-type-information.md) and [passing sample-based evidence](verification/2026-10-20-required-information.md), including a ceiling negative control. The combined physical-condition and quantity fixture below remains planned. The earlier [four-wall setup probe](../samples/model-recipes/read-only-probe.md) is also retained.
 
 The workshop example helps wall and ceiling BIM staff decide what needs attention before using an incoming model for coordination and quantity review. Inventory and quantities supply the evidence. Readiness means meeting an explicit project checklist for a stated use; it does not certify construction readiness or code compliance.
 
