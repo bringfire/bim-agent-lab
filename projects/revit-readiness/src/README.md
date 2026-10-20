@@ -6,4 +6,4 @@ The first read-only Revit command is implemented under `revit-addin`. The readin
 - [revit-addin](revit-addin/README.md): host API access and commands.
 - [mcp-server](mcp-server/README.md): agent-facing tool interface.
 
-Keep the three demonstration questions as the initial product scope. The [first-build tutorial](../../../docs/tutorials/02-build-a-read-only-revit-command.md) documents the smaller setup proof, SDK pin, and repeatable commands.
+Keep the three demonstration questions as the initial product scope. The [agent setup guide](../../../docs/how-to/build-read-only-revit-command.md) documents the smaller setup proof, SDK pin, and repeatable commands.

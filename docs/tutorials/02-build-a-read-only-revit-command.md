@@ -1,122 +1,62 @@
-# Build and prove a read-only Revit command
+# How we directed the agent: proving the Revit setup
 
-This chapter takes an agent from a machine inspection to a command running inside Revit. The worked example targets **Revit 2024 and .NET Framework 4.8**. It reports the active project and counts wall and ceiling instances. The [verification record](../../projects/revit-readiness/docs/verification/2026-10-20-read-only-probe.md) contains the actual results and screenshots.
+**For seminar participants.** Learn to turn a prerequisite question into a small, observable proof that an agent can build a working Revit command. The [agent setup guide](../how-to/build-read-only-revit-command.md) contains the environment checks, commands, source map, installation, and host verification procedure.
 
-## 1. Give the agent a bounded outcome
+The [prerequisites](../../projects/revit-readiness/docs/development-prerequisites.md) were recorded in `88ac2df`; the working probe and [acceptance evidence](../../projects/revit-readiness/docs/verification/2026-10-20-read-only-probe.md) followed in `f025fce`. Reading this story requires no development installation. Its results describe the author's tested Revit 2024 configuration.
 
-Actual author prompt:
+## Ask what a new user actually needs
+
+The author's actual starting question was:
+
+> first things..What are the minimal requirements for developing a plugin for Revit?  This includes all software, libraries or other dependencies that will allow a new user to build a plugin with their agent.
+
+This brought the discussion back to the participant's machine. Research had found many possible tools, but the first command needed only a workable build setup and access to Revit's programming interface. The agent separated required inputs from optional investigation tools and future MCP dependencies.
+
+Participants need to understand three roles: tools that compile the source, reference libraries that describe the interfaces it can use, and Revit as the application that runs the command. The agent can identify exact compatible versions and paths. Installing a newer compiler does not change the version of Revit the plugin must work inside.
+
+## Request proof in the real application
+
+The next **actual prompt** was:
 
 > Ok, let's check this machine against the prerequisites, install anything missing, and build a minimal read-only Revit command to prove the setup works. Record the steps and lessons in the teaching repo.
 
-This prompt supplies an observable outcome, permission to fill prerequisite gaps, a read-only boundary, and a documentation requirement. Repository instructions supply the target Revit year and the wider model-readiness goal. The agent still has to inspect the machine and establish what a passing result means.
+Earlier context supplied Revit 2024, Git, the readiness goal, and the teaching repository. This prompt added a bounded outcome: inspect the actual machine, fill genuine gaps, and make a small read-only command work. It also required a record that someone else could follow.
 
-Suggested participant prompt:
+The author authorized missing installations; inspection found that every required input was already present. **No prerequisite software needed installation or upgrading.** The agent built and installed the new command itself. That distinction keeps the lesson useful for a participant whose machine may have different gaps.
 
-> Read the repository and project instructions. Inspect my machine against the Revit prerequisites. Identify missing inputs before installing anything, and use official sources for required downloads. Work on a development branch. Build the read-only probe, install it for my user, and verify it in Revit against a small model with an independently known count. Record the commands, exact versions, results, and limits. Commit the reviewed source and evidence; keep binaries and model files out of Git.
+## Delegate mechanics while keeping the purpose visible
 
-## 2. Establish the Git checkpoint
+| What the author directed | What the agent handled | Evidence a participant can assess |
+|---|---|---|
+| Check this machine against the prerequisites | Inspect software, matching API libraries, and build references | An inventory stating what was present and what was missing |
+| Build a minimal read-only command | Write the source, build it, register it for the local user | The command appears and runs in the intended Revit version |
+| Prove the setup works | Define small known-count cases and compare actual results | Revit's own selection count agrees with the command |
+| Record steps and lessons | Save source, procedure, screenshots, and verification in Git | A reproducible guide linked to the working checkpoint |
 
-From the repository root:
+The author did not specify the compiler flags, project files, or installer script. The agent chose those implementation details. The human-facing requirement remained understandable: read the active model and return an answer we can independently check.
 
-```powershell
-git status --short --branch
-git log --oneline -5
-git switch -c feat/revit-read-only-probe
-```
+## Choose an answer that is easy to verify
 
-The first implementation began from clean commit `88ac2df`. Do not rerun branch creation if the branch already exists. Ask the agent to preserve unrelated changes and choose a new branch name when extending this example.
+The agent defined an empty-project case and a four-wall case before writing the command. It prepared a simple model with four deliberately drawn wall segments and checked Revit's own Properties palette, which showed **Walls (4)**.
 
-Git records the source, decisions, instructions, and evidence together. It does not record the Revit installation or replace a model backup.
+| Case | Expected answer | Recorded result |
+|---|---|---|
+| Empty project | 0 walls, 0 ceilings | Matched |
+| Saved four-wall model | 4 walls, 0 ceilings | Matched on two runs |
+| Read-only behavior | No change during the query | Revit's modified flag stayed false and saved file hashes matched |
 
-## 3. Inspect before installing
+A file hash is a fingerprint of the saved bytes. It helps show that the file stayed unchanged, but cannot alone detect an unsaved edit in memory. The agent combined it with Revit's modified flag and the command's enforced read-only execution. The [verification record](../../projects/revit-readiness/docs/verification/2026-10-20-read-only-probe.md) includes the evidence and the untested cases.
 
-Read the [prerequisites](../../projects/revit-readiness/docs/development-prerequisites.md), then run:
+One check initially failed because Revit held the model file open while the agent tried to hash it. The agent investigated that file-access problem and confirmed the same hash after closing the project. A failed verification command was recorded and resolved; it was not treated as proof that the plugin had modified the model.
 
-```powershell
-& .\projects\revit-readiness\scripts\Check-Environment.ps1
-```
+## Judge what the milestone proves
 
-The script checks Git, the SDK selected by the project's `global.json`, Revit 2024 and both API DLLs, and three .NET Framework 4.8 reference assemblies. It reports missing inputs and fails if they are absent. Activation, entitlement, and actual application behavior still require opening Revit.
+Successful compilation showed that source and references agreed. Running in Revit established that the command loaded and returned the known result. Independent counts and read-only evidence addressed behavior. Each answered a different question.
 
-On the author's machine, every required input was already present. **No prerequisite software was installed or upgraded.** The build used .NET SDK `10.0.204`, installed .NET Framework 4.8 references, and Revit/API build `24.3.60.12`.
+The result proved the local development workflow and a narrow count operation. It did not establish model readiness, measured quantities, an MCP server, or support for other Revit versions. Even positive ceiling counts were not part of this first probe's host acceptance.
 
-The SDK supplies the compiler; `net48` selects the framework the add-in targets. Installing a modern SDK does not change Revit 2024's runtime. Our `global.json` selects SDK `10.0.204` with `latestPatch` roll-forward within the `10.0.2xx` feature band. An SDK in a different feature band alone will not satisfy it. Install the matching SDK or deliberately change the pin and repeat verification.
+A **suggested prompt for your own setup** is:
 
-This project uses installed targeting references and **zero NuGet packages**. The full Revit SDK, RevitLookup, Visual Studio, Python, Node.js, MCP libraries, and an AI API key are not required to build or run this command. They may serve later tasks. The coding agent has its own setup and authentication.
+> Read the repo instructions and inspect my workstation against the target Revit prerequisites. Identify missing inputs and obtain what is needed within this task. Build a minimal read-only command and verify it in Revit against a small example with an independently known answer. Show what passed and what remains untested. Record the participant story, technical procedure, and reviewed Git checkpoint.
 
-## 4. Define proof, then build
-
-The [host acceptance procedure](../../projects/revit-readiness/tests/read-only-probe.md) was written before the command: a fresh project should return 0/0, four deliberately drawn wall segments should return 4/0, and repeated reads should leave the model unchanged.
-
-The small implementation has three parts:
-
-| File | Responsibility |
-|---|---|
-| [Project file](../../projects/revit-readiness/src/revit-addin/BimAgentLab.RevitProbe.csproj) | Compile an x64 `net48` library; reference installed Revit API DLLs without copying them |
-| [C# command](../../projects/revit-readiness/src/revit-addin/ReadOnlyProbeCommand.cs) | Run in Revit's command context, count category instances, and display scope and results |
-| [Manifest template](../../projects/revit-readiness/src/revit-addin/BimAgentLab.ReadOnlyProbe.addin.template) | Tell Revit which assembly and command class to load |
-
-`TransactionMode.ReadOnly` makes Revit enforce the no-write boundary. A document-wide collector excludes element types and does not apply an active-view or selection filter. Linked documents are not traversed. API errors fail the command instead of becoming a misleading zero count.
-
-```powershell
-& .\projects\revit-readiness\scripts\Build-Probe.ps1
-```
-
-For a non-default installation, pass `-RevitInstallDir 'D:\Applications\Autodesk\Revit 2024'` to both the environment check and build script, using your actual folder. The scripts locate the project from their own paths, so the SDK pin is honored.
-
-A passing build creates `projects/revit-readiness/src/revit-addin/bin/Release/net48/BimAgentLab.RevitProbe.dll`. The first build produced zero warnings and errors. Compilation establishes that the source and references agree; loading and behavior must still be tested in Revit.
-
-## 5. Register and run
-
-Save any open work and close Revit before installation:
-
-```powershell
-& .\projects\revit-readiness\scripts\Install-Probe.ps1
-```
-
-The installer copies our DLL and creates our manifest under:
-
-```text
-%APPDATA%\Autodesk\Revit\Addins\2024\BimAgentLab.ReadOnlyProbe.addin
-%APPDATA%\Autodesk\Revit\Addins\2024\BimAgentLab.ReadOnlyProbe\BimAgentLab.RevitProbe.dll
-```
-
-It verifies the installed DLL hash, refuses to replace an unrelated manifest, and refuses installation while Revit is running. This avoids updating a DLL that Revit has already loaded. It does not close applications or alter other add-ins.
-
-Start Revit 2024 and open or create a project. Choose **Add-Ins > External Tools > BIM Agent Lab - Read-only probe**. Expand **See details** for the Revit build and project path. The command is unavailable without an active project and is configured to be unavailable in the family editor.
-
-To update, close Revit, build, install, restart, and repeat the relevant acceptance cases. To uninstall, close Revit and remove only the two lab locations shown above. Do not remove the shared `Addins/2024` directory.
-
-If PowerShell blocks a script, review its source and follow your organization's script-execution policy; do not treat disabling machine security settings as a build prerequisite.
-
-## 6. Prove the result independently
-
-Follow the [fixture recipe](../../projects/revit-readiness/samples/model-recipes/read-only-probe.md). Our empty project returned 0 walls and 0 ceilings. We then drew a rectangle of four basic walls and verified **Walls (4)** in Revit's Properties palette before running the probe. Both saved-model runs returned **4 walls and 0 ceilings**, with `IsModified` false before and after.
-
-The saved RVT's SHA-256 was also identical before the reads, after the reads, and after closing the project without another save. A normal `Get-FileHash` initially encountered Revit's file-sharing lock; a read-only shared stream worked, and a normal hash after closing confirmed the result. On your machine, a simple alternative is to hash the saved closed file before opening it, run the command, then close without saving and hash again:
-
-```powershell
-Get-FileHash -LiteralPath .\projects\revit-readiness\samples\local\read-only-probe.rvt -Algorithm SHA256
-```
-
-Use the hash together with Revit's modified flag, API-enforced read-only mode, and source review. A disk hash alone cannot detect unsaved in-memory edits. An unchanged `IsModified` value alone would also be weak evidence if the model were already modified.
-
-This is host acceptance testing, not a unit-test suite. Positive ceiling counts, linked models, design options, worksharing, large models, and the family-editor guard remain untested. Category counts do not establish quantities or model readiness.
-
-## 7. Review and record the checkpoint
-
-Ask the agent to review the source and scripts, verify the install matches the tested build, check documentation links, and inspect what Git will include:
-
-```powershell
-git status --short
-git diff --check
-git diff
-# Stage only the source, instructions, and evidence reviewed for this change.
-git diff --cached --stat
-git diff --cached
-git commit -m "Add and verify the first read-only Revit 2024 command"
-```
-
-Keep generated binaries, Autodesk DLLs, working RVT files, and local sidecars out of Git. This checkpoint stays on the development branch until integration is chosen. It does not publish a release or push to a remote.
-
-The next useful increment is to inspect the readiness sample and define one deterministic check with independent expected answers. The external MCP bridge is a separate architectural decision; this command proves that the local Revit API and build setup work.
+For practice, ask your agent to explain the existing environment report and name the next independent case that would strengthen the probe's evidence. Have it separate inspection from installation and build success from host success. Use the [technical guide](../how-to/build-read-only-revit-command.md) when executing the work.

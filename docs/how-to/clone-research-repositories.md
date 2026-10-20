@@ -1,5 +1,7 @@
 # Clone and inspect research repositories
 
+Technical procedure for agents and readers following the [research guide](research-existing-solutions.md) or [Git guide](work-with-git.md). The [research participant story](../tutorials/00-research-before-building.md) and [Git participant story](../tutorials/01-directing-an-agent-with-git.md) explain why the author asked for these operations. Follow the current request and repository instructions; do not rerun historical clone work unnecessarily.
+
 The [repository manifest](../research/repositories.json) records seven source candidates and exact inspected commits. These are research pins, not selected application dependencies. The [resource register](../research/revit-resources.md) explains their potential roles and license observations.
 
 From the BIM Agent Lab root, give your agent this suggested prompt:

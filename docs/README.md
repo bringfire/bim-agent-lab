@@ -1,6 +1,10 @@
 # Documentation map
 
-- [Tutorials](tutorials/README.md): learn the process in sequence; the [Excel participant story](tutorials/04-add-an-excel-report-dependency.md) focuses on how the author engaged the agent.
+- [Participant learning path](tutorials/README.md): how the author engaged the agent through research, Git, setup, readiness, and Excel output.
+- [Agent research guide](how-to/research-existing-solutions.md): inspect resources, source behavior, dependencies, and provenance.
+- [Agent Git guide](how-to/work-with-git.md): preserve work, inspect research copies, and record reviewed checkpoints.
+- [Agent setup guide](how-to/build-read-only-revit-command.md): inspect, build, install, and prove the Revit probe.
+- [Agent readiness guide](how-to/build-required-information-check.md): implement explicit requirements and independently verify sample results.
 - [Agent dependency guide](how-to/add-a-plugin-dependency.md): reproduce and extend the Excel implementation using source locations, commands, and acceptance evidence.
 - [Clone research repositories](how-to/clone-research-repositories.md): obtain and inspect a pinned source candidate.
 - [Extend a project](how-to/extend-a-project.md): plan a complete, verifiable change.

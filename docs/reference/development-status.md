@@ -4,7 +4,7 @@ Baseline: 2026-10-20. Update this page when implementation or verification chang
 
 | Area | Status |
 |---|---|
-| Teaching repository | Local structure, navigation, agent guidance, and imported materials; Excel learning now separates the participant engagement story from the technical agent guide |
+| Teaching repository | Local structure, navigation, agent guidance, and imported materials; research, Git, Revit setup, readiness, and Excel each pair a participant engagement story with a technical agent guide |
 | Research | Seven original precedents plus ClosedXML inspected at pinned commits; license and dependency evidence retained |
 | Revit readiness questions | Three proposed demonstrations and controlled acceptance cases |
 | Revit add-in | Minimal probe plus read-only required-type-information command built, installed, and run locally |
@@ -17,9 +17,9 @@ Baseline: 2026-10-20. Update this page when implementation or verification chang
 
 The [resource register](../research/revit-resources.md) records dated local observations and upstream evidence. Installed software on the authoring machine is not a prerequisite guarantee for a participant's machine.
 
-The [first-build tutorial](../tutorials/02-build-a-read-only-revit-command.md) and [verification record](../../projects/revit-readiness/docs/verification/2026-10-20-read-only-probe.md) reproduce the working setup. No prerequisite software needed installation on the author's machine; only the new per-user command was installed.
+The [agent setup guide](../how-to/build-read-only-revit-command.md) and [verification record](../../projects/revit-readiness/docs/verification/2026-10-20-read-only-probe.md) reproduce the working setup. No prerequisite software needed installation on the author's machine; only the new per-user command was installed.
 
-The [readiness tutorial](../tutorials/03-check-required-type-information.md) and [verification record](../../projects/revit-readiness/docs/verification/2026-10-20-required-information.md) document the first working rule. The check reports 0/2/3 missing type values affecting 0/6/8 distinct instances in its three declared scenarios. It does not certify rating/assembly correctness or review the whole sample.
+The [agent readiness guide](../how-to/build-required-information-check.md) and [verification record](../../projects/revit-readiness/docs/verification/2026-10-20-required-information.md) document the first working rule. The check reports 0/2/3 missing type values affecting 0/6/8 distinct instances in its three declared scenarios. It does not certify rating/assembly correctness or review the whole sample.
 
 Next technical work: evaluate the existing bridge candidate against a minimal custom bridge around the verified read-only operation before choosing the external server language and dependencies. Physical conditions and quantities remain separate increments.
 

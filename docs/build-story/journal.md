@@ -287,7 +287,7 @@ Normal `Get-FileHash` initially could not read the model while Revit held it ope
 
 The UI automation's accessibility tree sometimes retained stale dialog information while screenshots showed the current window. The agent used fresh screenshots to ground subsequent UI actions and retained actual result images. The teaching record does not equate a successful click, compile, or file inventory with a passing host test.
 
-The [first-build lesson](../tutorials/02-build-a-read-only-revit-command.md), [fixture recipe](../../projects/revit-readiness/samples/model-recipes/read-only-probe.md), and [verification record](../../projects/revit-readiness/docs/verification/2026-10-20-read-only-probe.md) preserve commands, versions, hashes, evidence, and limitations. Source and evidence are checkpointed together; working models, Autodesk binaries, and generated output stay outside Git.
+The [first-build lesson](../tutorials/02-build-a-read-only-revit-command.md), its [agent procedure](../how-to/build-read-only-revit-command.md), [fixture recipe](../../projects/revit-readiness/samples/model-recipes/read-only-probe.md), and [verification record](../../projects/revit-readiness/docs/verification/2026-10-20-read-only-probe.md) preserve commands, versions, hashes, evidence, and limitations. Source and evidence are checkpointed together; working models, Autodesk binaries, and generated output stay outside Git.
 
 ### Teaching lesson
 
@@ -327,7 +327,7 @@ Two ceiling-negative reads were identical except for their timestamps. Every com
 
 The useful agent workflow is observable: establish Git context, translate the BIM question into declared requirements, research actual API contracts, write expected answers, test a small deterministic core, build/install, review, execute in the host, compare against independent BIM evidence, and checkpoint the process. Unit tests, a clean build, a source review, and a native schedule comparison answer different questions; none substitutes for all the others.
 
-The [new tutorial](../tutorials/03-check-required-type-information.md), [sample recipe](../../projects/revit-readiness/samples/model-recipes/required-information.md), and [verification record](../../projects/revit-readiness/docs/verification/2026-10-20-required-information.md) preserve commands, requirements, observations, limits, and corrections. Participants can direct their agents through the same sequence when adding another check. An MCP bridge should expose this verified operation while preserving its scope, identity, and completeness evidence.
+The [readiness tutorial](../tutorials/03-check-required-type-information.md), its [agent procedure](../how-to/build-required-information-check.md), [sample recipe](../../projects/revit-readiness/samples/model-recipes/required-information.md), and [verification record](../../projects/revit-readiness/docs/verification/2026-10-20-required-information.md) preserve commands, requirements, observations, limits, and corrections. Participants can direct their agents through the same sequence when adding another check. An MCP bridge should expose this verified operation while preserving its scope, identity, and completeness evidence.
 
 ## 2026-10-20 First plugin dependency: ClosedXML Excel output
 
@@ -360,6 +360,20 @@ The author clarified the teaching hierarchy after the Excel implementation check
 Root/project agent instructions, navigation, and the lesson template now make both audiences explicit. Participants get the purpose, decisions, and evidence first; agents get enough detail to reproduce or extend the work. Earlier lessons retain their combined format until revised. The two-hour seminar timing remains unchanged.
 
 This increment changes documentation and agent guidance only. Link resolution, referenced paths, historical prompt wording, and source/evidence consistency are the relevant checks; it does not rerun or extend the plugin's runtime acceptance. The underlying Revit and workbook results remain those in the dated Excel verification record.
+
+## 2026-10-20 Apply both learning layers to the earlier work
+
+### Author prompt
+
+> Ok, let's apply that same two-level approach to the earlier lessons on research, Git, setting up Revit development, and building the readiness check. Keep the participant story focused on how we engaged the agent.
+
+Starting from `b82288a`, the agent added a [research participant story](../tutorials/00-research-before-building.md) and rewrote the [Git](../tutorials/01-directing-an-agent-with-git.md), [setup](../tutorials/02-build-a-read-only-revit-command.md), and [readiness](../tutorials/03-check-required-type-information.md) lessons around actual direction, prior context, human judgments, delegated implementation, corrections, and assessable evidence. Excerpts and suggested prompts are explicitly labeled. Research and Git point to the initial import checkpoint because that work began before this repository existed.
+
+Companion guides now cover [research](../how-to/research-existing-solutions.md), [Git](../how-to/work-with-git.md), [setup](../how-to/build-read-only-revit-command.md), and [readiness](../how-to/build-required-information-check.md). The existing clone procedure remains their shared acquisition reference. Setup and readiness retain the earlier technical detail, with source maps and clearer boundaries between original milestones and current code: the probe remains package-free, while current readiness scripts also build and test the later Excel exporter.
+
+The learning path, root/project agent guidance, technical entry points, and seminar navigation now expose all five lesson pairs, including Excel. The original two-hour agenda, archival evidence, implementation, and model files are unchanged. This completes the earlier lessons' conversion noted as pending in the preceding journal entry.
+
+Documentation checks resolved local links, confirmed cited commits exist, matched all eight historical prompt quotations/excerpts in the four stories against the prior journal, and confirmed every command/code block from the original setup and readiness lessons is retained in its agent guide. Technical paths and current script behavior were inspected, and the change contains only Markdown. Existing dated build and Revit results remain historical evidence; no new runtime pass is claimed by this revision.
 
 ## A reusable research prompt
 

@@ -34,15 +34,25 @@ Participants are the primary audience. Their lesson should answer **how did we e
 
 Give future agents a linked technical guide in `docs/how-to/` or the project's docs: source boundaries, exact dependencies and provenance, commands, acceptance conditions, failure handling, deployment, and observed versus unverified behavior. Keep technical procedure out of the participant's required reading. Link both layers to the same verification record and real Git checkpoint rather than duplicating logs. Historical results are context, not a substitute for verifying a new change.
 
-Use the [lesson template](templates/lesson.md). The worked example pairs the [participant account of Excel output](docs/tutorials/04-add-an-excel-report-dependency.md) with the [agent dependency guide](docs/how-to/add-a-plugin-dependency.md). When updating an existing lesson, preserve useful technical detail in its companion guide and maintain links.
+Use the [lesson template](templates/lesson.md). The [learning path](docs/tutorials/README.md) pairs participant stories and technical guides for research, Git, Revit setup, readiness, and Excel output. When updating an existing lesson, preserve useful technical detail in its companion guide and maintain links.
+
+## Route readers to the right layer
+
+| Work | Participant story | Agent procedure |
+|---|---|---|
+| Research and resources | [Research story](docs/tutorials/00-research-before-building.md) | [Research guide](docs/how-to/research-existing-solutions.md) |
+| Git and source inspection | [Git story](docs/tutorials/01-directing-an-agent-with-git.md) | [Git guide](docs/how-to/work-with-git.md), [clone procedure](docs/how-to/clone-research-repositories.md) |
+| Revit development setup | [Setup story](docs/tutorials/02-build-a-read-only-revit-command.md) | [Probe guide](docs/how-to/build-read-only-revit-command.md) |
+| Required type information | [Readiness story](docs/tutorials/03-check-required-type-information.md) | [Readiness guide](docs/how-to/build-required-information-check.md) |
+| Excel output | [Excel story](docs/tutorials/04-add-an-excel-report-dependency.md) | [Dependency guide](docs/how-to/add-a-plugin-dependency.md) |
 
 ## Current commands and boundaries
 
 Git orientation: `git status --short --branch`, `git log --oneline -5`, `git diff`, and `git diff --cached`.
 
-From the repository root, Revit scripts live in `projects/revit-readiness/scripts/`. Use `Check-Environment.ps1`, `Test-Readiness.ps1`, `Build-Readiness.ps1`, and `Install-Readiness.ps1` for the readiness check. `Build-Probe.ps1` and `Install-Probe.ps1` retain the original minimal example. Installation requires Revit closed. Follow the [readiness tutorial](docs/tutorials/03-check-required-type-information.md) and [host acceptance procedure](projects/revit-readiness/tests/required-information.md). The automated suite includes 18 core tests, seven Excel report tests, and a process-isolation test. Follow the [agent dependency guide](docs/how-to/add-a-plugin-dependency.md) and its current verification record. CI and MCP tests do not exist yet. Distinguish environment checks, compilation, and observed Revit runtime results; never infer a host pass from a build alone. Fixture editing tools are opt-in and separate from normal readiness installation.
+From the repository root, Revit scripts live in `projects/revit-readiness/scripts/`. Use `Check-Environment.ps1`, `Test-Readiness.ps1`, `Build-Readiness.ps1`, and `Install-Readiness.ps1` for the readiness check. `Build-Probe.ps1` and `Install-Probe.ps1` retain the original minimal example. Installation requires Revit closed. Follow the [agent readiness guide](docs/how-to/build-required-information-check.md) and [host acceptance procedure](projects/revit-readiness/tests/required-information.md). The automated suite includes 18 core tests, seven Excel report tests, and a process-isolation test. Follow the [agent dependency guide](docs/how-to/add-a-plugin-dependency.md) and its current verification record. CI and MCP tests do not exist yet. Distinguish environment checks, compilation, and observed Revit runtime results; never infer a host pass from a build alone. Fixture editing tools are opt-in and separate from normal readiness installation.
 
-Reference acquisition is described in [the clone guide](docs/how-to/clone-research-repositories.md). Keep local clones under ignored `references/`; inspect upstream instructions within each clone. ClosedXML is the first adopted NuGet dependency, isolated in the local Excel exporter; the original seven reference repositories remain research precedents. Review the [resolved dependencies and licenses](docs/research/closedxml-dependency.md) before changing packages. Commit lock files and use locked restores. Existing optional fixture installations share our core and must stay synchronized.
+Research procedure is in the [agent research guide](docs/how-to/research-existing-solutions.md); reference acquisition is described in [the clone guide](docs/how-to/clone-research-repositories.md). Keep local clones under ignored `references/`; inspect upstream instructions within each clone. ClosedXML is the first adopted NuGet dependency, isolated in the local Excel exporter; the original seven reference repositories remain research precedents. Review the [resolved dependencies and licenses](docs/research/closedxml-dependency.md) before changing packages. Commit lock files and use locked restores. Existing optional fixture installations share our core and must stay synchronized.
 
 Keep credentials, local agent configuration, generated outputs, and working model files out of Git. Preserve source notices when adapting material. The license for original lab material remains an owner decision before release.
 

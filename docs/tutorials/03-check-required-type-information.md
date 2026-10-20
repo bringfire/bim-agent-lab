@@ -1,89 +1,66 @@
-# Check required wall and ceiling type information
+# How we directed the agent: the first readiness check
 
-This increment turns the first API read into a declared readiness check. It targets Revit 2024 and reuses the established net48 toolchain. See the [implementation contract](../../projects/revit-readiness/docs/required-type-information.md) for the exact rules and the [verification record](../../projects/revit-readiness/docs/verification/2026-10-20-required-information.md) for what has actually been exercised.
+**For seminar participants.** Learn how a short BIM request becomes an explicit rule, controlled examples, and evidence you can judge. The [agent readiness guide](../how-to/build-required-information-check.md) contains the implementation, sample preparation, commands, and independent verification procedure.
 
-Actual author prompt:
+We started from the working probe in `f025fce`. The first readiness check and its [acceptance record](../../projects/revit-readiness/docs/verification/2026-10-20-required-information.md) were recorded in `c7c2ad9`. That milestone produced JSON and text reports; the [next lesson](04-add-an-excel-report-dependency.md) covers the later Excel output.
+
+## Carry earlier context into a bounded request
+
+The author's actual prompt was:
 
 > Ok, let's build the first readiness check for missing required wall and ceiling type information. Use a copy of a Revit sample project, verify the results independently, and record the process in bim-agent-lab.
 
-## Translate the BIM request into explicit requirements
+This did not start a new project from scratch. Earlier direction had already established model readiness as the lead workflow, Revit 2024, research before implementation, Git checkpoints, and a reusable teaching repository. The prompt selected one useful increment and specified how to demonstrate it.
 
-“Required” needs a source. A blank fire-rating value alone does not tell us whether a wall should be rated. Our checklist explicitly requires a code on every fixture type and rating/assembly text on Walls A and B. Walls C and D and both ceiling types explicitly do not require those latter fields.
+| Direction | How it shaped the work |
+|---|---|
+| First check for missing required type information | Define the applicable requirements before deciding what counts as a defect |
+| Use a sample copy | Prepare known cases while preserving the original supplied model |
+| Verify independently | Compare the answer with evidence outside the new checker |
+| Record the process | Retain source, expected answers, results, and lessons together |
 
-The code lives in **Type Mark**. Rating uses the built-in **Fire Rating** parameter. A GUID-identified text type parameter, **BAL_AssemblyReference**, holds the synthetic assembly reference. These mappings were checked against the installed Revit 2024 API documentation. The symbolic identifier is `FIRE_RATING`; do not invent API names from display labels. The [Autodesk shared-parameter guide](https://help.autodesk.com/cloudhelp/2024/ENU/Revit-API/files/Revit_API_Developers_Guide/Basic_Interaction_with_Revit_Elements/Parameters/Revit_API_Revit_API_Developers_Guide_Basic_Interaction_with_Revit_Elements_Parameters_Shared_Parameters_html.html) explains the definition and binding model.
+The author supplied the professional purpose and these constraints. The agent developed the detailed teaching checklist, scoped cases, implementation, and verification procedure. The exact fields and sample values were engineering choices for this example, not a record of the author issuing an industry-wide standard.
 
-Scope is a list of element UniqueIds in the checklist, on one declared level and New in one declared phase. The report states that scope, counts other host walls/ceilings outside it, and excludes linked documents. It does not present a check of 16 teaching cases as a review of the entire building.
+## Make the meaning of “required” explicit
 
-## Put the rules where they can be tested
+A blank fire-rating value does not by itself mean a wall is wrong. The teaching checklist requires a code on all six sample types, and rating and assembly-reference text on Walls A and B. The remaining wall and ceiling types explicitly allow those latter fields to be blank.
 
-The [core evaluator](../../projects/revit-readiness/src/readiness-core/TypeInformation.cs) consumes plain type observations and separate requirements. It has no Revit API reference. The [Revit reader](../../projects/revit-readiness/src/revit-addin/RequiredInformationReader.cs) supplies those observations using built-in parameter IDs and the assembly parameter GUID.
+This makes both failures and valid exceptions testable. The check covers 16 identified teaching instances on a stated level and phase; it reports other host elements and links as outside its scope. Participants should ask whether the requirements and scope match their own work before applying a similar rule to a live project.
 
-The first 13 behavior tests were run against a stub and all failed because evaluation was not implemented. They then passed against the implementation. Tests address required blanks, whitespace, optional blanks, ceilings, one type affecting multiple instances, multiple missing fields without double counting, absent parameters, unsupported storage, unknown requirements, category mismatch, invalid rules, and preserved evidence. Code review led to five more regressions for the full six-type counts, mixed unsupported data, and duplicate instances across types; the suite now has 18 tests.
+For a new rule, a useful **suggested follow-up** is:
 
-From the repository root:
+> What makes this field required, where does that requirement come from, and which cases are valid exceptions? Show the proposed scope and expected answers before implementing the check.
 
-```powershell
-& .\projects\revit-readiness\scripts\Test-Readiness.ps1
-& .\projects\revit-readiness\scripts\Build-Readiness.ps1
-```
+That question asks for a domain decision a BIM professional can assess. It does not require the person to select API parameter identifiers or design the software classes.
 
-The test executable is a small net48 console harness with a nonzero exit status on any failed assertion. It runs the actual evaluator and requires no Revit process or test-library packages. It is not a `dotnet test` project. The build uses .NET Framework's JSON serializer; no NuGet dependency was added.
+## Give the agent known examples and require a separate check
 
-## Install the read-only command
+The agent used a copy of Autodesk's Snowdon Towers Architectural sample. A separate preparation command duplicated teaching types, added 12 walls and four ceilings, and saved three scenarios. Preparing examples deliberately edited copies; running the readiness command was read-only. The installed original remained unchanged.
 
-Close Revit, then run:
+The expected answers were written independently of the evaluator. Native Revit wall and ceiling schedules displayed the relevant case labels and type values. A comparison then checked those exported schedule rows and the checker report against the answer sheet, without using the checker's own evaluation code.
 
-```powershell
-& .\projects\revit-readiness\scripts\Install-Readiness.ps1
-```
-
-This installs **BIM Agent Lab - Required type information** under the current user's Revit 2024 Addins folder. It has its own manifest and folder; the original probe remains available. The installation includes the add-in DLL and the host-independent core DLL, and verifies their hashes.
-
-Revit may show an unsigned-add-in prompt for locally built code. Inspect the command name and local DLL path before choosing **Load Once**. When the agent's computer-use policy prevents it from acting on a security prompt, the person must make that choice. Do not change security settings to avoid this step.
-
-## Prepare reproducible sample copies
-
-Use the [fixture recipe](../../projects/revit-readiness/samples/model-recipes/required-information.md). The sample is Autodesk's installed Snowdon Towers Architectural model, also listed on the [official Revit 2024 sample page](https://help.autodesk.com/cloudhelp/2024/ENU/Revit-GetStarted/files/GUID-61EF2F22-3A1F-4317-B925-1E85F138BE88.htm).
-
-A separate, opt-in fixture tool creates three saved copies and two itemized native Revit schedules in each. It duplicates source types and creates 16 marked instances in an isolated area. It introduces the project-wide assembly-parameter binding, then changes values only on the duplicated teaching types. The original installed model is never opened for editing.
-
-The editing tool is not part of normal readiness installation. Build and install it only to reproduce the teaching fixture:
-
-```powershell
-& .\projects\revit-readiness\scripts\Prepare-SampleCopy.ps1
-& .\projects\revit-readiness\scripts\Build-Readiness.ps1 -IncludeFixtureTools
-# Revit must be closed:
-& .\projects\revit-readiness\scripts\Install-Readiness.ps1 -IncludeFixtureTools
-```
-
-The copy script refuses to overwrite an existing source copy. For a second run, supply a fresh folder under `samples/local/`, and pass the resulting source-copy path as `-FixtureSourceCopy` when installing the fixture tool. Preparing the fixtures also refuses to overwrite any of the three output RVTs.
-
-Start Revit, close any active project, return from Home to the ribbon, and choose **Add-Ins > External Tools > BIM Agent Lab - Prepare teaching sample copies**. This is an explicitly editing preparation operation. The later required-information command uses `TransactionMode.ReadOnly`.
-
-## Read, inspect, and compare
-
-Open a prepared RVT and choose **Add-Ins > External Tools > BIM Agent Lab - Required type information**. It reads `<model-name>.checklist.json` beside the saved project and writes `<model-name>.readiness.json` plus a text detail report. The checklist contains a schema version, checklist identity, project identity/filename, level/phase UniqueIds, case identities, and explicit requirements per type.
-
-Each type is checked once. A missing type field creates one finding and lists every affected in-scope instance. Unknown rules and unreadable fields remain unexamined; missing or changed case identities make coverage incomplete. The output retains raw values, parameter identity, rule/source, type identity, and case/element identities. It distinguishes absent parameters from blank values and preserves explicit exceptions.
-
-The [independent answer sheet](../../projects/revit-readiness/samples/expected-results/required-information.md) expects:
-
-| Copy | Findings | Distinct affected instances |
+| Prepared scenario | Missing required type values | Distinct affected instances |
 |---|---:|---:|
-| Complete | 0 | 0 |
+| Complete information | 0 | 0 |
 | Wall defects | 2 | 6 |
-| Additional ceiling gap | 3 | 8 |
+| Wall defects plus a ceiling gap | 3 | 8 |
 
-Inspect **BAL INFO Walls** and **BAL INFO Ceilings** in Revit's Project Browser. They display the case Marks, type names, codes, and applicable rating/assembly values. Their exported cells are independent of the readiness reader and evaluator. Compare the cells with the answer sheet, then run the optional standard-library Python aid:
+A missing value on one type can affect several instances. Counting findings and counting affected elements answer different questions; several missing fields on the same type must not count its instances twice. The agent verified identities and field values as well as totals.
 
-```powershell
-python .\projects\revit-readiness\tests\verify_information_evidence.py .\projects\revit-readiness\samples\local\required-information
-```
+## Expect investigation and review, not a flawless first attempt
 
-Python is needed only for this comparison aid, not to build or run the add-in. Repeat the readiness command and compare results. Hash saved RVTs before and after the reads; also verify Revit's modified flag remains false. Hashing an open RVT may need a shared read handle or closing the project first.
+The agent tested the rule logic separately, reviewed the source, built the commands, and then exercised them in Revit. Review found two issues in the sample-preparation code involving unchanged values and whether edits had actually committed. The agent corrected them before running that preparation and added further tests for multi-type counts and identity handling.
 
-## Preserve the lesson
+Revit's unsigned-add-in prompt required a human action under the tools used in that session. The author allowed the commands and reported choosing Always Load. The agent resumed the application checks afterward. This was a specific handoff, not the author having to approve each implementation choice.
 
-Commit source, tests, the declared answer sheet, exported evidence, and the observed verification record. Keep RVTs, Autodesk binaries, generated build output, and local sidecars out of Git. Record failures and corrections without rewriting them as first-attempt successes.
+All three Revit scenarios matched the [answer sheet](../../projects/revit-readiness/samples/expected-results/required-information.md) and independent schedules. Eighteen rule tests passed. Repeated reads agreed apart from timestamps, modified flags stayed false, and model-file hashes matched after closing. The [dated evidence](../../projects/revit-readiness/docs/verification/2026-10-20-required-information.md) records the precise configuration and boundaries.
 
-The user supplies purpose and constraints; the agent supplies a concrete checklist, bounded scope, implementation, and evidence. A passing completeness check says the required text is present. It does not validate the fire rating, the assembly, physical top conditions, quantities, or construction readiness. MCP remains a later layer around this deterministic operation.
+## Decide whether the evidence answers the BIM question
+
+The result establishes text completeness against this declared checklist. It does not establish that a fire rating is valid, that an assembly performs as intended, or that the entire building is ready for construction. Unreadable or unexamined cases must stay visible instead of being counted as passing. The person owns whether the checklist is meaningful for the intended work.
+
+A **suggested prompt for another readiness rule** is:
+
+> Read the existing contract and verification evidence. We need to check [condition] for [defined scope], using [requirement source]. Make the requirements and valid exceptions explicit. Prepare sample copies with independently known passing, failing, and excluded cases. Implement the check, verify values and affected identities against native BIM evidence, and show what the result does and does not prove. Record both learning layers and a reviewed Git checkpoint.
+
+For practice, ask your agent to propose one valid exception to a future rule and explain how it would prove that the exception is handled correctly. Review the domain meaning before implementing it. The [technical guide](../how-to/build-required-information-check.md) gives the next agent the reproducible procedure.

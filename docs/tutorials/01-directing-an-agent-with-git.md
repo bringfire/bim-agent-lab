@@ -1,72 +1,54 @@
-# Directing an agent with Git
+# How we directed the agent: working with Git
 
-Participants should learn early that they can ask an agent to obtain existing source code, inspect it, and maintain a reviewable history of their own work. Git belongs in the first research and setup steps of an AI-assisted project.
+**For seminar participants.** Learn when to ask an agent to obtain source, preserve existing work, and record a reviewable checkpoint. The [agent Git guide](../how-to/work-with-git.md) carries the commands and repository checks; the [clone procedure](../how-to/clone-research-repositories.md) covers research copies.
 
-The immediate habit is: **when research identifies a serious candidate repository, ask the agent to clone it and inspect the relevant implementation.** Reading a project page can identify a candidate; having the source locally lets the agent trace behavior, search related files, and compare versions.
+This story began during [research](00-research-before-building.md), before BIM Agent Lab existed. Its first local checkpoint is `3ca7a87`. The [build journal](../build-story/journal.md), [checkout evidence](../research/evidence/local-checkouts-2026-10-20.json), and [repository setup record](../build-story/repository-setup.md) distinguish the earlier inspections from the start of our own Git history.
 
-## The first demonstration
+## Ask the agent to inspect the implementation
 
-Give the agent the repository URLs, a local destination, and the purpose of the inspection:
+The author's actual direction was:
 
-> Clone these repositories into a references folder. Keep them as clean research copies. Record each source URL and the exact commit inspected. Read the project instructions, license, dependency files, and code relevant to our Revit 2024 readiness tool. Explain what we can reuse, what is missing, and what still needs a build or runtime test. Keep this pass to source inspection.
+> One thing that participants need to know pretty much from the start is what it means to direct an agent in regards to working with git. I am going to ask you to clone the repos that you found, so that you can inspect the code for the researched resources. Participants will need to know how to do this...meaning "that they should do this"
 
-The agent should return the local paths, recorded revisions, a map of relevant code, and a recommendation supported by that code.
+The key instruction is knowing **that you should ask for a source inspection**. Participants do not need to memorize the clone command. A project page can identify a candidate; a local copy lets the agent follow related files and explain what the implementation actually does.
 
-During the initial research on 2026-10-20, seven repositories were cloned in the authoring workspace at recorded commits. At inspection, their working trees were clean and 14 license/manifest files matched the saved evidence by SHA-256 hash. Those are historical observations; the clones are not bundled with BIM Agent Lab. Use the [clone guide](../how-to/clone-research-repositories.md) to obtain your own copies. See the [source map](../research/reference-code-map.md) and [inspection snapshot](../research/evidence/local-checkouts-2026-10-20.json).
+The agent obtained seven research repositories, recorded their exact revisions, and checked their state against saved evidence. It located the code behind a current-view query and found a default limit of 100 elements. That finding mattered to our BIM question: a partial list cannot silently stand in for a complete model inventory.
 
-Reference checkouts are separate Git repositories. BIM Agent Lab ignores the root `references/` directory so it can hold local research copies without tracking other projects' repositories.
+## Understand the operations you are directing
 
-## The concepts participants need
+These are **suggested instructions**, not quotations from the original conversation:
 
-| Concept | Meaning | A useful instruction to the agent |
+| Concept | What the participant is asking for | Example direction |
 |---|---|---|
-| Repository | A project with tracked files and change history | “Identify the repository we are working in and inspect its current state.” |
-| Clone | Create a local Git copy of an existing repository | “Clone this repository so you can inspect the implementation.” |
-| Commit | A recorded checkpoint of selected changes | “Review the changes, run the relevant checks, and commit this completed step with an explanatory message.” |
-| Branch | A named line of development | “Create a branch for this feature before implementing it.” |
-| Diff | The actual changes between versions or working states | “Show me the staged and unstaged changes and explain their effect.” |
-| Remote and push | The remote is a configured repository location; pushing transfers commits to it | “Confirm the destination and branch, then push the reviewed work to our repository.” |
-| Fork | A hosted copy under another account or organization | “Create our own fork when we decide to maintain an adaptation.” |
-| Tag or commit ID | A reference to a particular version | “Record the exact version we tested so the workshop can reproduce it.” |
+| Repository | A project with tracked files and history | Identify which repository we are working in and inspect its current state. |
+| Clone | A local copy of an existing repository | Obtain this source so you can inspect the relevant implementation. |
+| Branch | A named line of development | Use an appropriate branch for this change and preserve existing work. |
+| Diff | The actual changes between versions | Explain what changed and what effect it has. |
+| Commit | A local checkpoint of selected changes | Review and verify this step, then record it with an explanatory message. |
+| Remote and push | A destination and an operation that transfers commits there | When I ask to publish, verify the intended repository and branch first. |
+| Fork | A hosted copy maintained separately | Assess whether we need our own fork when adapting this project. |
+| Tag or commit ID | A reference to a particular version | Record the exact version inspected or tested. |
 
-A clone creates local files and an `origin` remote. A commit records local history. Publishing is a separate operation. [Git clone documentation](https://git-scm.com/docs/git-clone), [recording changes](https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository).
+Knowing these intentions helps the person control what is being changed, saved, and shared. The agent handles command syntax and reports the result.
 
-Participants can express these intentions in ordinary language while the agent handles command syntax. They should still understand which project is being changed, what is being saved, and where work is being shared.
+## Give our own work a history too
 
-## Our own project needs Git early too
+Cloning someone else's repository did not put the surrounding workshop folder under version control. The author wanted a lasting teaching resource, chose the broader name BIM Agent Lab, and then gave this **actual implementation instruction**:
 
-Cloning reference repositories does not put a surrounding folder under version control. BIM Agent Lab has its own Git history, beginning with the imported teaching materials and repository structure. The journal preserves the earlier research that predates this history.
+> Ok, let's create bim-agent-lab with that structure, bring over the research and teaching materials we've developed, and initialize Git so we can record the build process from here. Do this in the D: drive
 
-When beginning our own project, use a prompt such as:
+The human selected the purpose, name, location, and scope of the migration. The agent created the structure, adapted navigation, recorded where imported material came from, configured exclusions, and checked the staged baseline before committing. Reference repositories and working models stayed outside the tracked teaching material. No remote was created or publication performed.
 
-> Check whether this folder is already a Git repository. Preserve any existing work. Set up local version control if needed, exclude reference checkouts, local configuration, secrets, and generated files, and record a baseline of the project notes. Report what is tracked and whether a remote is configured.
+The first migration script failed before writing files. The agent corrected the method and checked the resulting files and import hashes. The lesson is to ask what was verified, rather than accepting a statement that a copy operation was attempted.
 
-Ask the agent to checkpoint useful decisions and working increments. A checkpoint can contain a design document, sample preparation recipe, source code, or installation instructions. Review should establish what the checkpoint contains and how it was verified.
+## Ask for a checkpoint you can understand
 
-For a later feature:
+The setup record reports 50 staged files, 125 working local Markdown links, verified import provenance, and preserved archival evidence at the initial checkpoint. Those are historical checks of the teaching baseline, not tests of a plugin. Later commits record the setup proof, readiness rule, and Excel feature with their corresponding evidence.
 
-> Inspect the current Git state, create a branch for the agreed change, implement it, and show the resulting diff and verification evidence. Commit the completed change. Report the branch and commit so we can return to this version.
+For a seminar demonstration, ask the agent to show one cited source file from a research copy, explain its consequence for our design, then show a checkpoint and diff from our own repo. This connects Git to a useful decision without turning the session into a command tutorial.
 
-Creating a branch and inspecting a fixed revision are distinct operations. A fixed inspection checkout may be in “detached HEAD” state, meaning Git is positioned directly at a commit; create a branch when beginning development there. [Git switch documentation](https://git-scm.com/docs/git-switch).
+A **suggested prompt for future work** is:
 
-## What we should show on stage
+> Inspect the current repository, branch, and changes. Preserve existing work. Use an appropriate branch for the agreed task. Show me the resulting changes and relevant verification evidence, then record a reviewed local checkpoint and report its commit. Keep research copies, credentials, generated files, and working models out of Git. Publishing will be a separate instruction.
 
-Spend a few minutes on a real sequence:
-
-1. Identify an existing repository during research.
-2. Ask the agent to clone it and record the version.
-3. Ask it to locate the code that handles a Revit query.
-4. Open the cited source and explain what that evidence changes in our design.
-5. Show a checkpoint and diff in our own project using `git log` and `git show`.
-
-One example is enough for the live explanation; the takeaway can contain the full reference list. Avoid making attendees memorize Git commands before they have seen why the operations help.
-
-The first source pass already supplies a concrete lesson: the existing MCP bridge's current-view tool defaults to a 100-element limit. Our readiness report must define scope and completeness explicitly. Finding an existing query does not establish that it answers our entire business question.
-
-## Details for the takeaway
-
-Our clone commands used a partial-clone filter, `--filter=blob:none`, and then checked out the recorded commits. This downloads file contents as needed, including the files in the selected working tree. The basic operation participants need to recognize remains `git clone`.
-
-Some repositories reference additional repositories through Git submodules. RevitLookup and pyRevit declare ten submodules in total; these were identified but not fetched during the initial source inspection. A build preparation step must determine which submodules and packages it needs. A successful clone is evidence that source was obtained, not that the project builds or runs.
-
-Keep the source license and provenance when adopting code. Cloning a public repository is a research action; the license review determines how particular code and assets may be reused and distributed.
+For practice, ask your agent to explain the difference between the initial teaching baseline and the first working Revit command, using their actual commits. It should show what each checkpoint proves and what it leaves unverified. The [technical guide](../how-to/work-with-git.md) provides the inspection commands.

@@ -1,6 +1,6 @@
 # Revit readiness guidance
 
-Follow the root [AGENTS.md](../../AGENTS.md), then read this project's [README](README.md) and [demo brief](docs/demo-questions-and-sample-model.md).
+Follow the root [AGENTS.md](../../AGENTS.md), then read this project's [README](README.md) and [demo brief](docs/demo-questions-and-sample-model.md). Technical procedures are in the [setup guide](../../docs/how-to/build-read-only-revit-command.md) and [readiness guide](../../docs/how-to/build-required-information-check.md). Their linked participant stories explain the human's direction; retain both layers when extending this example.
 
 ## Requirements
 

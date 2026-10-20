@@ -1,6 +1,6 @@
 # Revit build and fixture scripts
 
-Run these PowerShell scripts from a local Windows checkout. They require Git, the SDK selected in `../global.json`, installed .NET Framework 4.8 targeting references, and Revit 2024. See the [tutorial](../../../docs/tutorials/02-build-a-read-only-revit-command.md).
+Run these PowerShell scripts from a local Windows checkout. They require Git, the SDK selected in `../global.json`, installed .NET Framework 4.8 targeting references, and Revit 2024. See the [agent setup guide](../../../docs/how-to/build-read-only-revit-command.md) and [agent readiness guide](../../../docs/how-to/build-required-information-check.md).
 
 | Script | Operation |
 |---|---|

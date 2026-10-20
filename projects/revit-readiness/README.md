@@ -14,8 +14,8 @@ The [demo brief](docs/demo-questions-and-sample-model.md) defines the proposed c
 
 ## Start here
 
-- [Build and verify the required-information check](../../docs/tutorials/03-check-required-type-information.md), with [actual results and evidence](docs/verification/2026-10-20-required-information.md).
-- [Build and run the read-only probe](../../docs/tutorials/02-build-a-read-only-revit-command.md), with [actual verification results](docs/verification/2026-10-20-read-only-probe.md).
+- Read the [readiness participant story](../../docs/tutorials/03-check-required-type-information.md), use the [agent build/verification guide](../../docs/how-to/build-required-information-check.md), and inspect [actual results and evidence](docs/verification/2026-10-20-required-information.md).
+- Read the [setup participant story](../../docs/tutorials/02-build-a-read-only-revit-command.md), use the [agent setup guide](../../docs/how-to/build-read-only-revit-command.md), and inspect [actual verification results](docs/verification/2026-10-20-read-only-probe.md).
 - [Development prerequisites](docs/development-prerequisites.md) for the minimum agent-assisted Revit 2024 setup, optional tools, and later MCP dependencies.
 - [Project agent guidance](AGENTS.md) for scope and implementation boundaries.
 - [Resources and precedents](../../docs/research/revit-resources.md) for SDKs, API evidence, and bridge candidates.

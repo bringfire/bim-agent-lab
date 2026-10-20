@@ -1,6 +1,6 @@
 # Minimum development requirements for a Revit add-in
 
-Checked against official documentation: 2026-10-20. First lab target: **Revit 2024, C#, .NET Framework 4.8 (`net48`)**. The [first probe](../../../docs/tutorials/02-build-a-read-only-revit-command.md) has now been compiled and run on Revit build `24.3.60.12`. Other releases need their own verified requirements.
+Checked against official documentation: 2026-10-20. First lab target: **Revit 2024, C#, .NET Framework 4.8 (`net48`)**. The [first probe](../../../docs/tutorials/02-build-a-read-only-revit-command.md) has now been compiled and run on Revit build `24.3.60.12`. Other releases need their own verified requirements. The [participant setup story](../../../docs/tutorials/02-build-a-read-only-revit-command.md) explains how the author requested the proof; the [agent setup guide](../../../docs/how-to/build-read-only-revit-command.md) contains its reproducible procedure.
 
 For an agent-assisted first add-in, start with a Windows Revit workstation, a C# build toolchain, the matching framework references, the Revit API libraries, Git, and a coding agent that can work in the local repository. A basic command needs no additional third-party runtime library.
 

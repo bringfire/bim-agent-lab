@@ -1,5 +1,7 @@
 # Research and resources
 
+The [participant research story](../tutorials/00-research-before-building.md) explains how the author requested this work; the [agent research guide](../how-to/research-existing-solutions.md) gives the technical procedure.
+
 Research precedes selecting a stack or implementing a tool. Evaluate the BIM fit, inspect source, record dependencies and terms, and test the smallest uncertain assumption.
 
 - [ClosedXML dependency review](closedxml-dependency.md): the first adopted package, full resolved graph, licenses, embedded font, and runtime findings.

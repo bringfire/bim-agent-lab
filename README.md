@@ -10,9 +10,9 @@ BIM Agent Lab is a teaching repository for BIM professionals. It pairs worked ex
 
 | I want to… | Start here |
 |---|---|
-| Learn how to engage an agent | [Excel output: the participant story](docs/tutorials/04-add-an-excel-report-dependency.md), with actual prompts, decisions, and evidence to examine |
+| Learn how to engage an agent | [Participant learning path](docs/tutorials/README.md): research, Git, Revit setup, readiness, and Excel, with actual prompts, decisions, and evidence |
 | Use the plugin | [Revit readiness project](projects/revit-readiness/README.md): intended behavior and current availability |
-| Learn how we build it | [Learning path](docs/tutorials/README.md), beginning with directing an agent with Git |
+| Learn how we build it | [Learning path](docs/tutorials/README.md), beginning with research and directing an agent with Git |
 | Extend it with my agent | [Agent instructions](AGENTS.md), [project guidance](projects/revit-readiness/AGENTS.md), [extension workflow](docs/how-to/extend-a-project.md), and the worked [dependency implementation guide](docs/how-to/add-a-plugin-dependency.md) |
 | Review research and resources | [Research index](docs/research/README.md) with pinned repositories, license evidence, and source findings |
 | Revisit the seminar | [SWACCA 2026](workshops/swacca-2026/README.md) |
@@ -36,7 +36,7 @@ Projects can target other BIM applications as the lab grows. Each owns its depen
 
 ## Development and sharing
 
-See [Contributing](CONTRIBUTING.md), [development status](docs/reference/development-status.md), and the [build journal](docs/build-story/journal.md). The [first-build tutorial](docs/tutorials/02-build-a-read-only-revit-command.md) documents environment, build, install, and host verification commands. Read-only Git orientation commands are:
+See [Contributing](CONTRIBUTING.md), [development status](docs/reference/development-status.md), and the [build journal](docs/build-story/journal.md). The [agent setup guide](docs/how-to/build-read-only-revit-command.md) documents environment, build, install, and host verification commands; its [participant story](docs/tutorials/02-build-a-read-only-revit-command.md) explains how the work was directed. Read-only Git orientation commands are:
 
 ```powershell
 git status --short --branch

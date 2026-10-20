@@ -1,6 +1,6 @@
 # Lesson template: participants first, agents next
 
-Use this for a completed increment. Create or update a participant lesson in `docs/tutorials/` and a linked technical guide in `docs/how-to/` or the project's docs. Keep both tied to one verification record and the real implementation commit. The [Excel participant lesson](../docs/tutorials/04-add-an-excel-report-dependency.md) and [agent guide](../docs/how-to/add-a-plugin-dependency.md) are the worked example.
+Use this for a completed increment. Create or update a participant lesson in `docs/tutorials/` and a linked technical guide in `docs/how-to/` or the project's docs. Keep both tied to the same dated research or verification evidence and the real Git checkpoint. For work that predates this repo, identify the import checkpoint and original evidence rather than inventing earlier history. The [Excel participant lesson](../docs/tutorials/04-add-an-excel-report-dependency.md) and [agent guide](../docs/how-to/add-a-plugin-dependency.md) are the worked example.
 
 ## Participant lesson: how did we engage the agent?
 
