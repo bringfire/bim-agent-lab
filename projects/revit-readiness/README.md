@@ -14,6 +14,8 @@ The [demo brief](docs/demo-questions-and-sample-model.md) defines the proposed c
 
 ## Start here
 
+For the current MCP increment, read the [draft spec](../../docs/superpowers/specs/2026-10-20-revit-mcp-bridge-design.md) and [review hub](../../docs/superpowers/reviews/revit-mcp-bridge/README.md). The author selected the custom C# bridge and requested spec, plan, and implementation reviews. The spec packet is ready to hand over; no external review, implementation plan, or bridge code exists yet.
+
 - Read the [readiness participant story](../../docs/tutorials/03-check-required-type-information.md), use the [agent build/verification guide](../../docs/how-to/build-required-information-check.md), and inspect [actual results and evidence](docs/verification/2026-10-20-required-information.md).
 - Read the [setup participant story](../../docs/tutorials/02-build-a-read-only-revit-command.md), use the [agent setup guide](../../docs/how-to/build-read-only-revit-command.md), and inspect [actual verification results](docs/verification/2026-10-20-read-only-probe.md).
 - [Development prerequisites](docs/development-prerequisites.md) for the minimum agent-assisted Revit 2024 setup, optional tools, and later MCP dependencies.
@@ -34,4 +36,4 @@ The [demo brief](docs/demo-questions-and-sample-model.md) defines the proposed c
 
 The core evaluator and Revit command/reader are implemented. The [MCP comparison](../../docs/research/revit-mcp-bridge-comparison.md) recommends a narrow original bridge plus an external C# server using the current official SDK. This is the proposed first experiment; the server is not implemented or host-tested.
 
-The first deterministic check now has independent expected answers, native schedules, and three sample-derived copies. Next, use the [agent bridge guide](../../docs/how-to/choose-and-verify-an-mcp-bridge.md) to implement and verify the proposed connection around this proven operation, checking current versions before adding dependencies. The [larger demo brief](docs/demo-questions-and-sample-model.md) still requires physical-condition and quantity checks.
+The first deterministic check now has independent expected answers, native schedules, and three sample-derived copies. Next, complete the requested [spec and plan review stages](../../docs/superpowers/reviews/revit-mcp-bridge/README.md), then implement and verify the proposed connection using the approved plan and [bridge integration gates](../../docs/how-to/choose-and-verify-an-mcp-bridge.md). Check current versions before adding dependencies. The [larger demo brief](docs/demo-questions-and-sample-model.md) still requires physical-condition and quantity checks.

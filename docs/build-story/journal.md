@@ -393,6 +393,28 @@ This increment performs research and records the decision basis. It does not ins
 
 Documentation/evidence checks passed: 529 local Markdown links resolved; five inspection trees remained clean at their recorded commits; all 29 working-file and Git-blob hashes matched; the bridge's manifest/lockfile and the three SDK release/registry versions agreed with the snapshot. The participant prompt matches the recorded instruction. The reviewed change contains Markdown and one research JSON snapshot, with source, packages, and Revit models unchanged.
 
+## 2026-10-20 Specify the bridge and prepare external review
+
+### Author prompts
+
+> Ok, let's build the minimal custom bridge with C# MCP SDK 2.2.0 and protocol 2026-07-28. Verify our three sample cases end to end and record the process in both teaching layers in bim-agent-lab. Also, one important thing to emphasize is whether you are using any code from the SDK 1.26.0, whether you're just using it as a learning precedent, or whether you're going handroll your own from scratch.
+
+Before product implementation, the author added:
+
+> I also want you to write a spec and implementation plan, with review sessions that we hand to an external reviewer, so that we can teach that skill...use the superpowers brainstorming skill protocol.
+
+The author selected the direction proposed by the earlier research, then explicitly requested a staged design/review process. Starting from clean `7d3ae71`, the agent created `docs/revit-mcp-spec`, read the installed superpowers 6.4.2 brainstorming skill, and classified the new server/host connection as architectural work. The skill requires review of the actual written spec before the implementation plan, and review of that plan before execution. Existing decisions were retained rather than asking the author to repeat the brief.
+
+The agent inspected the reader, manual command, report, serializer, project boundaries, installer, and independent comparator, and reopened the official C# release, dated protocol, Autodesk ExternalEvent guide, and Microsoft pipe documentation. The [spec](../superpowers/specs/2026-10-20-revit-mcp-bridge-design.md) defines two named tools, context/document/checklist binding, a separate modern server, original local IPC and dispatch, finite queue/time/size bounds, structured failures, and acceptance A1-A9. It explicitly distinguishes adopting the official C# SDK from using the older TypeScript SDK/bridge as a precedent, reusing lab BIM code, and writing the connection ourselves. No SDK or bridge code was installed or copied during this design increment.
+
+Three [review handoffs](../superpowers/reviews/revit-mcp-bridge/README.md) cover spec, implementation plan, and code/runtime evidence. The spec packet is ready for an external reviewer; the other packets are instructions for later artifacts. A [review template](../../templates/external-review.md) records reviewer identity, exact revision, findings, evidence, limitations, author dispositions, corrections, and approval. The agent's [self-review](../superpowers/reviews/revit-mcp-bridge/00-authoring-self-review.md) is explicitly separate. No external reviewer was named or contacted, no findings were received, and no approval is claimed.
+
+The [participant story](../tutorials/06-direct-design-and-external-review.md) teaches how the author engaged the agent and why spec, plan, and review answer different questions. The [agent procedure](../how-to/run-spec-plan-and-implementation-reviews.md) records the skill version/hash, source boundaries, exact stage sequence, review handoffs, provenance checks, and later implementation/evidence requirements. The two one-hour seminar timings remain unchanged; development review sessions can be demonstrated selectively and repeated after the seminar.
+
+The original build objective remains active in the project, with implementation deliberately following the requested written-artifact reviews. The current checkpoint is documentation only: spec revision 1 and R1 handoff prepared; implementation plan, external reviews, bridge deployment, and new MCP/Revit acceptance still pending.
+
+Documentation verification resolved 624 local Markdown links with no missing targets, confirmed both new prompt quotations match the journal, checked all nine acceptance IDs and the three literal sample names, and found no unfinished spec placeholders. The scoped change contains Markdown only. No product test or host execution was represented as performed for this documentation checkpoint.
+
 ## A reusable research prompt
 
 The following is a teaching template, not an additional instruction from the author:
@@ -421,4 +443,4 @@ Research can reveal that the problem or architecture needs revision. Return to t
 
 Record the author's prompt or a clearly labeled excerpt; the decision requested; constraints supplied; the agent's actions; the evidence; any correction or rejected approach; the outcome; and the lesson worth showing on stage. Label a suggested prompt as a suggestion, never as a historical prompt.
 
-Current next action: implement and verify the focused custom-bridge experiment from the [MCP comparison](../research/revit-mcp-bridge-comparison.md), rechecking current SDK/protocol versions before adoption and recording actual-client compatibility. Physical-condition and quantity checks remain separate increments in the working demo brief.
+Current next action: review the [written spec and R1 packet](../superpowers/reviews/revit-mcp-bridge/README.md), record external findings and the author's spec decision, then write/review the implementation plan using the requested superpowers protocol. The authorized build and three-case MCP/Revit acceptance follow that process; current-version checks and actual-client verification remain required. Physical-condition and quantity checks remain separate increments in the working demo brief.

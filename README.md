@@ -8,6 +8,8 @@ BIM Agent Lab is a teaching repository for BIM professionals. It pairs worked ex
 
 ## Choose your starting point
 
+The next bridge increment now has a [draft specification and external-review packets](docs/superpowers/reviews/revit-mcp-bridge/README.md). The author requested the superpowers brainstorming sequence: review the written spec, write/review the implementation plan, then implement and verify. The [participant story](docs/tutorials/06-direct-design-and-external-review.md) teaches that direction; the bridge and external reviews are still pending.
+
 | I want to… | Start here |
 |---|---|
 | Learn how to engage an agent | [Participant learning path](docs/tutorials/README.md): research, Git, Revit setup, readiness, and Excel, with actual prompts, decisions, and evidence |

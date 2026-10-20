@@ -1,0 +1,11 @@
+# R3: implementation and evidence review instructions
+
+**Not ready for review.** No MCP implementation or new host acceptance exists at this checkpoint. This packet defines the future handoff after the approved plan has been executed.
+
+Supply the approved spec/plan and their review dispositions; exact base/head commits and source diff; dependency locks, notices, provenance/advisory evidence; test commands/results; installed-file hashes; protocol traces; three fresh sample reports and independent comparisons; before/after model hashes and modified-state evidence; failure-case results; actual client configuration/version; and both teaching layers. Exclude credentials, unrelated local configuration, binaries, and RVT files from the shared Git packet.
+
+## Suggested handoff prompt
+
+> Review this implementation and its evidence against the approved Revit MCP spec and plan at the supplied exact commits. Inspect the code and deployment boundary, not only the author's summary. Check SDK 2.2.0/protocol 2026-07-28 usage, declared source provenance, package/license completeness, absence of adopted SDK 1.26.0/third-party bridge code, and read-only API execution. Examine framing, access, correlation, queue/dispatch races, document/checklist binding, cancellation/deadline/late-response behavior, cleanup and errors. Check that all three sample results were produced through live MCP into Revit and compared independently, with full identities and coverage. Verify that the evidence supports the claimed client and host versions and unchanged manual command behavior. Identify any unsupported completion claims or missing tests. Do not report a host test as run unless you ran it or explicitly identify it as supplied evidence. Return prioritized findings, source locations, failure scenarios, smallest fixes, verification methods, and limitations.
+
+Use the [review form](../../../../templates/external-review.md) with stage R3. Findings about runtime behavior require reproducible evidence or an explicit statement that they are source-level risks. Corrections need focused regression evidence and, where host behavior changed, fresh host acceptance. Preserve original findings and final dispositions for the teaching story. A clean review does not replace execution evidence.
