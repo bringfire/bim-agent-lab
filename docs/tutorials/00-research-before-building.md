@@ -45,6 +45,8 @@ The author chose the professional audience, readiness as the lead workflow, the 
 
 A participant can assess the research by asking whether each recommendation answers the BIM question, shows its source and version, explains what it would add to the setup, and distinguishes inspected code from a tested solution. License labels are recorded evidence to review, not a blanket conclusion that every bundled component can be redistributed.
 
+The later [MCP comparison story](05-research-and-choose-the-mcp-bridge.md) shows another research habit: explicitly ask the agent to check current versions and compatibility when returning to an older candidate. A saved source version preserves what we learned; a fresh version check establishes what is available now.
+
 ## Reuse the engagement pattern
 
 This is a **suggested prompt**, not a historical quote:

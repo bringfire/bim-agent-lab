@@ -4,6 +4,7 @@ The [participant research story](../tutorials/00-research-before-building.md) ex
 
 Research precedes selecting a stack or implementing a tool. Evaluate the BIM fit, inspect source, record dependencies and terms, and test the smallest uncertain assumption.
 
+- [MCP bridge comparison](revit-mcp-bridge-comparison.md): current protocol/SDK releases, existing bridge migration work, and a minimal custom alternative; [source/version evidence](evidence/mcp-version-observations-2026-10-20.json).
 - [ClosedXML dependency review](closedxml-dependency.md): the first adopted package, full resolved graph, licenses, embedded font, and runtime findings.
 - [Revit resource register](revit-resources.md): SDK/API sources, local observations, candidate roles, and open compatibility questions.
 - [Reference code map](reference-code-map.md): useful source entry points linked to inspected commits.

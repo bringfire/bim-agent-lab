@@ -1,6 +1,8 @@
 # Research and resources for the Revit readiness tool
 
 Checked: 2026-10-20
+Later follow-up: the [MCP bridge comparison](revit-mcp-bridge-comparison.md) refreshes released protocol/SDK versions and recommends a minimal original bridge for the first integration experiment. The observations and provisional recommendation below remain the initial research record.
+
 Status: initial resource and precedent review. No candidate repository has been built, adopted, or installed. The inspected commits identify research evidence, not selected production dependencies.
 
 The workshop should begin by demonstrating how to find existing work, inspect it, and gather the resources needed to build. The outcome of research is a justified reuse decision and a reproducible resource list.

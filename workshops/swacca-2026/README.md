@@ -23,6 +23,8 @@ Use the [participant learning path](../../docs/tutorials/README.md) for the whol
 
 For the Excel increment, use the [participant story](../../docs/tutorials/04-add-an-excel-report-dependency.md) to show how the author engaged the agent: the initial capability question, the bounded implementation prompt, the failed first host run, and the evidence behind acceptance. The [agent guide](../../docs/how-to/add-a-plugin-dependency.md) is the technical follow-through for use with the repo afterward. During the seminar, focus on what the person asked, what the agent handled, and how the person could judge the result. The two one-hour sessions remain as allocated in the agenda.
 
+Use the [MCP comparison story](../../docs/tutorials/05-research-and-choose-the-mcp-bridge.md) to teach asking for current-version checks: the protocol revision, SDK release, package name, lockfile, and actual-client compatibility are separate evidence. Present its bridge recommendation as research pending implementation.
+
 ## Planning archive
 
 - [Raw planning notes](planning-notes.md) retain earlier proposals and author input.

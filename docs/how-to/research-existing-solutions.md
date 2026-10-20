@@ -20,7 +20,7 @@ The first research predates this repository. Commit `3ca7a87` imported the recor
 
 Translate the current task into a concrete question: which API reads a needed value, whether a candidate supports the target host, or how a bridge dispatches a scoped query. Identify acceptance evidence and constraints before recommending a stack. The larger demo includes physical conditions and quantities; the implemented type-information rule is narrower. Do not describe the larger brief as completed behavior.
 
-Record the date and target application/build. Inspect existing local resources and matching installed API documentation. When seeking current versions or adoption terms, consult official documentation and the exact selected upstream source/package; an older snapshot cannot establish today's compatibility or terms. Keep the historical records intact and create a new dated observation for refreshed research.
+Record the date and target application/build. Inspect existing local resources and matching installed API documentation. When seeking current versions or adoption terms, consult official documentation and the exact selected upstream source/package; an older snapshot cannot establish today's compatibility or terms. Keep the historical records intact and create a new dated observation for refreshed research. The [MCP version-checking example](choose-and-verify-an-mcp-bridge.md) demonstrates checking specification revisions, stable releases, registries, manifest ranges, lockfiles, and actual-client compatibility separately. Pin the selected compatible version after research; do not make a floating latest install the reproducible build recipe.
 
 ## 2. Obtain the source reproducibly
 

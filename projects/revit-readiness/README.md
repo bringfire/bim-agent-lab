@@ -32,6 +32,6 @@ The [demo brief](docs/demo-questions-and-sample-model.md) defines the proposed c
 | [src/excel-report](src/excel-report/README.md) | Generate a static Excel workbook from saved report data in a separate local process |
 | [src/mcp-server](src/mcp-server/README.md) | Expose scoped operations to an agent and return structured evidence |
 
-The core evaluator and Revit command/reader are implemented. The external server language and whether to adapt an existing bridge are still open decisions.
+The core evaluator and Revit command/reader are implemented. The [MCP comparison](../../docs/research/revit-mcp-bridge-comparison.md) recommends a narrow original bridge plus an external C# server using the current official SDK. This is the proposed first experiment; the server is not implemented or host-tested.
 
-The first deterministic check now has independent expected answers, native schedules, and three sample-derived copies. Next, compare bridge candidates around this proven read-only operation before selecting MCP dependencies. The [larger demo brief](docs/demo-questions-and-sample-model.md) still requires physical-condition and quantity checks.
+The first deterministic check now has independent expected answers, native schedules, and three sample-derived copies. Next, use the [agent bridge guide](../../docs/how-to/choose-and-verify-an-mcp-bridge.md) to implement and verify the proposed connection around this proven operation, checking current versions before adding dependencies. The [larger demo brief](docs/demo-questions-and-sample-model.md) still requires physical-condition and quantity checks.

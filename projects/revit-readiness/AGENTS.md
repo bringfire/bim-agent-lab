@@ -16,7 +16,7 @@ Follow the root [AGENTS.md](../../AGENTS.md), then read this project's [README](
 
 ## Design and verification
 
-Keep core evaluation independent of live Revit objects where practical. Revit access belongs in valid API execution context; the external server requests named operations rather than directly manipulating application objects. Research dispatch, request scope, timeout behavior, and cancellation before selecting a bridge.
+Keep core evaluation independent of live Revit objects where practical. Revit access belongs in valid API execution context; the external server requests named operations rather than directly manipulating application objects. The [bridge comparison](../../docs/research/revit-mcp-bridge-comparison.md) now recommends an original narrow bridge with an external C# SDK server. Follow its [implementation gates](../../docs/how-to/choose-and-verify-an-mcp-bridge.md): valid ExternalEvent context, bounded queue, document identity, cancellation, framing, and actual-client protocol verification. This is a research recommendation, not a working integration. Recheck current stable SDK/protocol and registry evidence before adding packages; retain the Revit 2024/net48 target independently of the external server runtime.
 
 The larger demo targets 12 basic walls and four ceilings, with four findings affecting eight distinct elements across information and physical-condition checks. That combined result remains planned. The implemented [information-check contract](docs/required-type-information.md) has three verified cases: 0 findings/0 affected, 2/6, and 3/8 with an additional ceiling negative control. Keep these scopes distinct. Read the complete brief before extending the fixture or rules.
 

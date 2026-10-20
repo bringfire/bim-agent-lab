@@ -1,4 +1,8 @@
-# Historical research evidence
+# Research evidence
+
+The [MCP version/source observation](mcp-version-observations-2026-10-20.json) was collected during the later bridge comparison. It records official release and registry metadata, inspected package manifests/notices and hashes, five clean source checkouts, and 29 source-file hashes. It establishes research provenance, not a successful dependency restore, build, or Revit integration. See the [comparison](../revit-mcp-bridge-comparison.md).
+
+## Original imported snapshots
 
 These two snapshots were imported byte-for-byte from the original authoring folder:
 

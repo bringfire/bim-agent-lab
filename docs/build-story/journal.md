@@ -375,6 +375,24 @@ The learning path, root/project agent guidance, technical entry points, and semi
 
 Documentation checks resolved local links, confirmed cited commits exist, matched all eight historical prompt quotations/excerpts in the four stories against the prior journal, and confirmed every command/code block from the original setup and readiness lessons is retained in its agent guide. Technical paths and current script behavior were inspected, and the change contains only Markdown. Existing dated build and Revit results remain historical evidence; no new runtime pass is claimed by this revision.
 
+## 2026-10-20 Compare MCP bridges and check current versions
+
+### Author prompt
+
+> Ok, let's move on to the MCP server. Compare the existing Revit bridge with a minimal custom bridge around our readiness check, and record the research and decisions in both teaching layers. We need to update he MCP bridge to MCP 2.0 or whatever the latest is and this teaching note about checking for the latest versions is important.  Start that research now.
+
+Starting from `4784b24`, the agent created `docs/mcp-bridge-research`, rechecked official protocol/releases and package registries, inspected three stable SDK checkouts, reused the unchanged original bridge checkout, and traced its RevitMCPSDK dispatch dependency to the source commit recorded in the published 2024 package. Five trees were clean; 29 relevant files were hashed. The [evidence snapshot](../research/evidence/mcp-version-observations-2026-10-20.json) records observations and package provenance.
+
+The current official protocol revision was 2026-07-28. Stable SDK observations were TypeScript 2.3.1, Python 2.3.0, and C# 2.2.0. The existing bridge still imported the v1 TypeScript SDK, declared ^1.7.0, and locked 1.26.0. The old npm package's latest remained on 1.x; v2 uses split package names. The migration documentation also distinguishes installing v2 from enabling the latest protocol exchange. Python's release/runtime requirement differed from the earlier main-branch inspection. RevitMCPSDK uses Revit-year versions, so the highest overall package is not the appropriate 2024 target.
+
+The [comparison](../research/revit-mcp-bridge-comparison.md) records both adaptation benefits and the work it would inherit: protocol/API migration, tool-surface selection, socket framing/access, document identity, deadlines, packages, and readiness integration. The agent recommends a small original Revit bridge and a separate C# server, retaining the existing reader/evaluator/report. This is the agent's proposed next experiment, not an architecture the author explicitly prescribed or a claim of runtime compatibility.
+
+The [participant story](../tutorials/05-research-and-choose-the-mcp-bridge.md) focuses on how the author asked for comparison and current-version research. The [agent guide](../how-to/choose-and-verify-an-mcp-bridge.md) records repeatable version checks, source locations, proposed boundaries, and protocol/IPC/host acceptance gates. Root/project guidance and the research template now require current-version checks while retaining reproducible compatible pins.
+
+This increment performs research and records the decision basis. It does not install dependencies into the lab, modify the readiness command, upgrade an upstream bridge, register a server with the agent client, or claim new Revit results. The next proof is a live MCP call yielding the same independently verified readiness evidence, with the actual protocol revision and error behavior recorded.
+
+Documentation/evidence checks passed: 529 local Markdown links resolved; five inspection trees remained clean at their recorded commits; all 29 working-file and Git-blob hashes matched; the bridge's manifest/lockfile and the three SDK release/registry versions agreed with the snapshot. The participant prompt matches the recorded instruction. The reviewed change contains Markdown and one research JSON snapshot, with source, packages, and Revit models unchanged.
+
 ## A reusable research prompt
 
 The following is a teaching template, not an additional instruction from the author:
@@ -403,4 +421,4 @@ Research can reveal that the problem or architecture needs revision. Return to t
 
 Record the author's prompt or a clearly labeled excerpt; the decision requested; constraints supplied; the agent's actions; the evidence; any correction or rejected approach; the outcome; and the lesson worth showing on stage. Label a suggested prompt as a suggestion, never as a historical prompt.
 
-Current next action: compare the existing bridge candidate with a minimal custom dispatch bridge around the verified read-only information check before selecting MCP dependencies. Physical-condition and quantity checks remain separate increments in the working demo brief.
+Current next action: implement and verify the focused custom-bridge experiment from the [MCP comparison](../research/revit-mcp-bridge-comparison.md), rechecking current SDK/protocol versions before adoption and recording actual-client compatibility. Physical-condition and quantity checks remain separate increments in the working demo brief.

@@ -1,0 +1,602 @@
+{
+  "observed_utc": "2026-10-20T23:00:54.729414+00:00",
+  "scope": "Live metadata, not build/runtime verification",
+  "repositories": [
+    {
+      "repository": "mcp-servers-for-revit/mcp-servers-for-revit",
+      "url": "https://github.com/mcp-servers-for-revit/mcp-servers-for-revit",
+      "default_branch": "main",
+      "head": "86cf7057785f2423fc0d0892c9a5d9c93deb1aa3",
+      "head_date": "2026-04-05T06:47:22Z",
+      "archived": false,
+      "api_url": "https://api.github.com/repos/mcp-servers-for-revit/mcp-servers-for-revit",
+      "release": {
+        "tag_name": "v1.0.0",
+        "published_at": "2026-02-26T18:24:12Z",
+        "prerelease": false,
+        "draft": false,
+        "html_url": "https://github.com/mcp-servers-for-revit/mcp-servers-for-revit/releases/tag/v1.0.0",
+        "target_commitish": "main",
+        "commit": "1a52de93d9f4565f94d0d1541186c9cf18f3648f"
+      }
+    },
+    {
+      "repository": "modelcontextprotocol/typescript-sdk",
+      "url": "https://github.com/modelcontextprotocol/typescript-sdk",
+      "default_branch": "main",
+      "head": "c05225a636c679870b65f8ca4fe83a76ea1cf113",
+      "head_date": "2026-10-20T22:09:57Z",
+      "archived": false,
+      "api_url": "https://api.github.com/repos/modelcontextprotocol/typescript-sdk",
+      "release": {
+        "tag_name": "v2.3.1",
+        "published_at": "2026-10-05T11:54:56Z",
+        "prerelease": false,
+        "draft": false,
+        "html_url": "https://github.com/modelcontextprotocol/typescript-sdk/releases/tag/v2.3.1",
+        "target_commitish": "main",
+        "commit": "fcef852f6cdafea07f36cf6fae69b37c8adf85be"
+      }
+    },
+    {
+      "repository": "modelcontextprotocol/python-sdk",
+      "url": "https://github.com/modelcontextprotocol/python-sdk",
+      "default_branch": "main",
+      "head": "2af9e3089ac66b35c1550c500aae86a82efb1e17",
+      "head_date": "2026-10-17T13:54:35Z",
+      "archived": false,
+      "api_url": "https://api.github.com/repos/modelcontextprotocol/python-sdk",
+      "release": {
+        "tag_name": "v2.3.0",
+        "published_at": "2026-10-02T22:02:27Z",
+        "prerelease": false,
+        "draft": false,
+        "html_url": "https://github.com/modelcontextprotocol/python-sdk/releases/tag/v2.3.0",
+        "target_commitish": "main",
+        "commit": "2118f14f8a19bc158d8a1cf90af58d85d187f849"
+      }
+    },
+    {
+      "repository": "modelcontextprotocol/csharp-sdk",
+      "url": "https://github.com/modelcontextprotocol/csharp-sdk",
+      "default_branch": "main",
+      "head": "44b0234878a407a3f5454d736a2aa61af461a28a",
+      "head_date": "2026-10-20T21:21:05Z",
+      "archived": false,
+      "api_url": "https://api.github.com/repos/modelcontextprotocol/csharp-sdk",
+      "release": {
+        "tag_name": "v2.2.0",
+        "published_at": "2026-08-13T08:45:54Z",
+        "prerelease": false,
+        "draft": false,
+        "html_url": "https://github.com/modelcontextprotocol/csharp-sdk/releases/tag/v2.2.0",
+        "target_commitish": "6fa3825973949a9c4f0cd8af344e15a8db09dc35",
+        "commit": "6fa3825973949a9c4f0cd8af344e15a8db09dc35"
+      }
+    },
+    {
+      "repository": "modelcontextprotocol/modelcontextprotocol",
+      "url": "https://github.com/modelcontextprotocol/modelcontextprotocol",
+      "default_branch": "main",
+      "head": "80041ab0a139a8f4fb3adbc99f7ae9113ea59671",
+      "head_date": "2026-10-20T20:01:55Z",
+      "archived": false,
+      "api_url": "https://api.github.com/repos/modelcontextprotocol/modelcontextprotocol",
+      "release": {
+        "tag_name": "2026-07-28",
+        "published_at": "2026-07-28T16:47:49Z",
+        "prerelease": false,
+        "draft": false,
+        "html_url": "https://github.com/modelcontextprotocol/modelcontextprotocol/releases/tag/2026-07-28",
+        "target_commitish": "5f5440bb26a62e2cf3440b92da5a667efa03b267",
+        "commit": "5f5440bb26a62e2cf3440b92da5a667efa03b267"
+      }
+    }
+  ],
+  "packages": [
+    {
+      "registry": "npm",
+      "package": "@modelcontextprotocol/sdk",
+      "source_url": "https://registry.npmjs.org/@modelcontextprotocol%2fsdk/latest",
+      "version": "1.32.1",
+      "engines": {
+        "node": ">=18"
+      },
+      "license": "MIT",
+      "dependencies": {
+        "ajv": "^8.17.1",
+        "zod": "^3.25 || ^4.0",
+        "cors": "^2.8.5",
+        "hono": "^4.11.4",
+        "jose": "^6.1.3",
+        "express": "^5.2.1",
+        "raw-body": "^3.0.0",
+        "ajv-formats": "^3.0.1",
+        "cross-spawn": "^7.0.5",
+        "eventsource": "^3.0.2",
+        "content-type": "^1.0.5",
+        "pkce-challenge": "^5.0.0",
+        "@hono/node-server": "^1.19.9 || ^2.0.5",
+        "json-schema-typed": "^8.0.2",
+        "eventsource-parser": "^3.0.0",
+        "express-rate-limit": "^8.2.1",
+        "zod-to-json-schema": "^3.25.1"
+      },
+      "peerDependencies": {
+        "zod": "^3.25 || ^4.0",
+        "@cfworker/json-schema": "^4.1.1"
+      },
+      "repository": {
+        "url": "git+https://github.com/modelcontextprotocol/typescript-sdk.git",
+        "type": "git"
+      },
+      "dist": {
+        "shasum": "853286b3240b6d8143f5f8e6d58af85c77d475ab",
+        "tarball": "https://registry.npmjs.org/@modelcontextprotocol/sdk/-/sdk-1.32.1.tgz",
+        "fileCount": 701,
+        "integrity": "sha512-2DdE+SJDtzLEEWzY1ZjY7Q+VcPhcV1KisD3zI4u0XZyktsjHum1mwbMI+JaulUBi2OZk+KJAi2uPXzxichPkdw==",
+        "signatures": [
+          {
+            "sig": "MEQCIHxpg9cJmQUfJ7d4otna7zaj16Ts4i4lH8lFPhv5tRQWAiBF5BVgr38CQjkNKyi27B4aT1rNcEdizvE1goXqc7NVIQ==",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "sig": "MEUCIGApZ3A0O+WZUq+AWYq01H1hVQ/dtXta7mrcR1nGHaSnAiEAr53nCw43obN9MQNNt/W9IXnChjDTuFVoNDRdxP+L4kg=",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "attestations": {
+          "url": "https://registry.npmjs.org/-/npm/v1/attestations/@modelcontextprotocol%2fsdk@1.32.1",
+          "provenance": {
+            "predicateType": "https://slsa.dev/provenance/v1"
+          }
+        },
+        "unpackedSize": 4490363
+      }
+    },
+    {
+      "registry": "npm",
+      "package": "@modelcontextprotocol/server",
+      "source_url": "https://registry.npmjs.org/@modelcontextprotocol%2fserver/latest",
+      "version": "2.3.1",
+      "engines": {
+        "node": ">=20"
+      },
+      "license": "Apache-2.0",
+      "dependencies": {
+        "zod": "^4.2.0",
+        "@modelcontextprotocol/core": "2.3.1"
+      },
+      "peerDependencies": null,
+      "repository": {
+        "url": "git+https://github.com/modelcontextprotocol/typescript-sdk.git",
+        "type": "git"
+      },
+      "dist": {
+        "shasum": "a15440d5c06f3bad67360952fe58e6965b4a4ac7",
+        "tarball": "https://registry.npmjs.org/@modelcontextprotocol/server/-/server-2.3.1.tgz",
+        "fileCount": 85,
+        "integrity": "sha512-e59MfWuSssj6DoQ96JCTqdW1AXT5/XtnTl0WWd6MU1Ka434fFUGGosCLJbGNySDhHGvxQWoRWK137FXYFkYNWw==",
+        "signatures": [
+          {
+            "sig": "MEUCIDyAc/IpFBi7V48Mb42/kEx+zGO/WLjxwJ3v+CHTFgNOAiEAseDnAevqapBWW3JWcOv+98c6frduBtAxgg5aeFTLBs8=",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "sig": "MEYCIQDGG7/peBjDFTiGXycQsSh3Bo8TROc6Cz+9kp9zB/WViQIhANYenHWNwmlBVztC6riWQcGl1euja4ADWcsU7/ApaiqT",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "attestations": {
+          "url": "https://registry.npmjs.org/-/npm/v1/attestations/@modelcontextprotocol%2fserver@2.3.1",
+          "provenance": {
+            "predicateType": "https://slsa.dev/provenance/v1"
+          }
+        },
+        "unpackedSize": 6486743
+      }
+    },
+    {
+      "registry": "npm",
+      "package": "@modelcontextprotocol/server-legacy",
+      "source_url": "https://registry.npmjs.org/@modelcontextprotocol%2fserver-legacy/latest",
+      "version": "2.3.1",
+      "engines": {
+        "node": ">=20"
+      },
+      "license": "Apache-2.0",
+      "dependencies": {
+        "zod": "^4.2.0",
+        "cors": "^2.8.5",
+        "raw-body": "^3.0.0",
+        "content-type": "^1.0.5",
+        "pkce-challenge": "^5.0.0",
+        "express-rate-limit": "^8.2.1",
+        "@modelcontextprotocol/core": "2.3.1"
+      },
+      "peerDependencies": {
+        "express": "^4.18.0 || ^5.0.0"
+      },
+      "repository": {
+        "url": "git+https://github.com/modelcontextprotocol/typescript-sdk.git",
+        "type": "git"
+      },
+      "dist": {
+        "shasum": "ea7c87d3ee1682aa5f5722fe66f422209bfe568a",
+        "tarball": "https://registry.npmjs.org/@modelcontextprotocol/server-legacy/-/server-legacy-2.3.1.tgz",
+        "fileCount": 39,
+        "integrity": "sha512-+cuB+hl7s8DiFXIt13le3cD2wZPOeDYwlycAkRMPljqqNbOLekGRiyslx8WXfqaXSCveS1eDD8/B8rmxz9BZFQ==",
+        "signatures": [
+          {
+            "sig": "MEQCIEwAHQGIm6HaH5mgP7Ob+dKOUP7nTf+oiM8xuEYzSZYBAiBEJvSnsYeZl8BSs40Z7hRIRH8LsSYmonsBL4ZKSM6zxA==",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          },
+          {
+            "sig": "MEUCIQCTXdjDqWfgQ3AhyS/jNDxi03axBVYJ2G8uMOT0BAXI4AIgb5mFO88FaIlmTL0Z9SpfQc3qQN1oREkU0W4Sv8UNCjU=",
+            "keyid": "SHA256:DhQ8wR5APBvFHLF/+Tc+AYvPOdTpcIDqOhxsBHRwC7U"
+          }
+        ],
+        "attestations": {
+          "url": "https://registry.npmjs.org/-/npm/v1/attestations/@modelcontextprotocol%2fserver-legacy@2.3.1",
+          "provenance": {
+            "predicateType": "https://slsa.dev/provenance/v1"
+          }
+        },
+        "unpackedSize": 2139580
+      }
+    },
+    {
+      "registry": "pypi",
+      "package": "mcp",
+      "source_url": "https://pypi.org/pypi/mcp/json",
+      "version": "2.3.0",
+      "requires_python": ">=3.10",
+      "license": "MIT",
+      "license_expression": null,
+      "requires_dist": [
+        "anyio>=4.10; python_version >= \"3.14\"",
+        "anyio>=4.9; python_version < \"3.14\"",
+        "httpx2>=2.10.0",
+        "jsonschema>=4.20.0",
+        "mcp-types==2.3.0",
+        "opentelemetry-api>=1.28.0",
+        "pydantic>=2.12.0",
+        "pyjwt[crypto]>=2.10.1",
+        "python-multipart>=0.0.9",
+        "pywin32>=311; sys_platform == \"win32\"",
+        "sse-starlette>=3.0.0",
+        "starlette>=0.27; python_version < \"3.14\"",
+        "starlette>=0.48.0; python_version >= \"3.14\"",
+        "typing-extensions>=4.13.0",
+        "typing-inspection>=0.4.1",
+        "uvicorn>=0.31.1; sys_platform != \"emscripten\"",
+        "python-dotenv>=1.0.0; extra == \"cli\"",
+        "typer>=0.16.0; extra == \"cli\"",
+        "rich>=13.9.4; extra == \"rich\""
+      ],
+      "project_urls": {
+        "Documentation": "https://py.sdk.modelcontextprotocol.io/",
+        "Homepage": "https://modelcontextprotocol.io",
+        "Issues": "https://github.com/modelcontextprotocol/python-sdk/issues",
+        "Repository": "https://github.com/modelcontextprotocol/python-sdk"
+      },
+      "files": [
+        {
+          "filename": "mcp-2.3.0-py3-none-any.whl",
+          "upload_time_iso_8601": "2026-10-02T22:06:52.119073Z",
+          "digests": {
+            "blake2b_256": "20d74a2878f128df729db3ca04e71bfce26405cc2e0c9ebe19c592feeb4c61b9",
+            "md5": "221a310cb352d8678b051da78b3ca52c",
+            "sha256": "dd0c44c089d16453e8ae31a3877a0054d7a2314caaa81f5e0541b9b1734b2377"
+          },
+          "yanked": false
+        },
+        {
+          "filename": "mcp-2.3.0.tar.gz",
+          "upload_time_iso_8601": "2026-10-02T22:06:56.091381Z",
+          "digests": {
+            "blake2b_256": "9d8de0d339616f4810e9051d4aba6887afab289ab1f81875fe908b606cdfd0e3",
+            "md5": "aa30d59f171a66c4b1251f8390021eb3",
+            "sha256": "8b147a50441cf059dc88c684e0aeed3687f0aa0f39c6cde7b90330effd2b34d8"
+          },
+          "yanked": false
+        }
+      ]
+    },
+    {
+      "registry": "nuget",
+      "package": "ModelContextProtocol",
+      "source_url": "https://api.nuget.org/v3-flatcontainer/modelcontextprotocol/index.json",
+      "stable_versions": [
+        "1.1.0",
+        "1.2.0",
+        "1.3.0",
+        "1.4.0",
+        "1.4.1",
+        "2.0.0",
+        "2.1.0",
+        "2.2.0"
+      ],
+      "latest_listed": "2.2.0"
+    },
+    {
+      "registry": "nuget",
+      "package": "RevitMCPSDK",
+      "source_url": "https://api.nuget.org/v3-flatcontainer/revitmcpsdk/index.json",
+      "stable_versions": [
+        "2025.0.0.2",
+        "2025.0.0.3",
+        "2025.0.0.4",
+        "2025.0.0.5",
+        "2026.0.0.3",
+        "2026.0.0.4",
+        "2026.0.0.5",
+        "2027.0.0.5"
+      ],
+      "latest_listed": "2027.0.0.5"
+    }
+  ],
+  "nuget_package_inspection": [
+    {
+      "id": "modelcontextprotocol",
+      "version": "2.2.0",
+      "url": "https://api.nuget.org/v3-flatcontainer/modelcontextprotocol/2.2.0/modelcontextprotocol.2.2.0.nupkg",
+      "nupkg_sha256": "d9704e12d5412c97147c74dd89524410bbad86e09bc96472134d9c7269d5c6fc",
+      "nuspec": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<package xmlns=\"http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd\">\r\n  <metadata>\r\n    <id>ModelContextProtocol</id>\r\n    <version>2.2.0</version>\r\n    <authors>ModelContextProtocol</authors>\r\n    <license type=\"expression\">Apache-2.0</license>\r\n    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>\r\n    <icon>logo.png</icon>\r\n    <readme>README.md</readme>\r\n    <projectUrl>https://csharp.sdk.modelcontextprotocol.io/</projectUrl>\r\n    <description>.NET SDK for the Model Context Protocol (MCP) with hosting and dependency injection extensions.</description>\r\n    <copyright>\u00a9 Model Context Protocol a Series of LF Projects, LLC.</copyright>\r\n    <tags>ModelContextProtocol mcp ai llm</tags>\r\n    <repository type=\"git\" url=\"https://github.com/modelcontextprotocol/csharp-sdk\" commit=\"6fa3825973949a9c4f0cd8af344e15a8db09dc35\" />\r\n    <dependencies>\r\n      <group targetFramework=\"net8.0\">\r\n        <dependency id=\"ModelContextProtocol.Core\" version=\"[2.2.0]\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"Microsoft.Extensions.Caching.Abstractions\" version=\"10.0.10\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"Microsoft.Extensions.Hosting.Abstractions\" version=\"10.0.10\" exclude=\"Build,Analyzers\" />\r\n      </group>\r\n      <group targetFramework=\"net9.0\">\r\n        <dependency id=\"ModelContextProtocol.Core\" version=\"[2.2.0]\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"Microsoft.Extensions.Caching.Abstractions\" version=\"10.0.10\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"Microsoft.Extensions.Hosting.Abstractions\" version=\"10.0.10\" exclude=\"Build,Analyzers\" />\r\n      </group>\r\n      <group targetFramework=\"net10.0\">\r\n        <dependency id=\"ModelContextProtocol.Core\" version=\"[2.2.0]\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"Microsoft.Extensions.Caching.Abstractions\" version=\"10.0.10\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"Microsoft.Extensions.Hosting.Abstractions\" version=\"10.0.10\" exclude=\"Build,Analyzers\" />\r\n      </group>\r\n      <group targetFramework=\".NETStandard2.0\">\r\n        <dependency id=\"ModelContextProtocol.Core\" version=\"[2.2.0]\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"Microsoft.Extensions.Caching.Abstractions\" version=\"10.0.10\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"Microsoft.Extensions.Hosting.Abstractions\" version=\"10.0.10\" exclude=\"Build,Analyzers\" />\r\n      </group>\r\n    </dependencies>\r\n  </metadata>\r\n</package>",
+      "license_files": []
+    },
+    {
+      "id": "modelcontextprotocol.core",
+      "version": "2.2.0",
+      "url": "https://api.nuget.org/v3-flatcontainer/modelcontextprotocol.core/2.2.0/modelcontextprotocol.core.2.2.0.nupkg",
+      "nupkg_sha256": "146b28079d752ce216651f48287f5846e9061e1525c08181c3854fef1a1b7aba",
+      "nuspec": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<package xmlns=\"http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd\">\r\n  <metadata>\r\n    <id>ModelContextProtocol.Core</id>\r\n    <version>2.2.0</version>\r\n    <authors>ModelContextProtocol</authors>\r\n    <license type=\"expression\">Apache-2.0</license>\r\n    <licenseUrl>https://licenses.nuget.org/Apache-2.0</licenseUrl>\r\n    <icon>logo.png</icon>\r\n    <readme>README.md</readme>\r\n    <projectUrl>https://csharp.sdk.modelcontextprotocol.io/</projectUrl>\r\n    <description>Core .NET SDK for the Model Context Protocol (MCP)</description>\r\n    <copyright>\u00a9 Model Context Protocol a Series of LF Projects, LLC.</copyright>\r\n    <tags>ModelContextProtocol mcp ai llm</tags>\r\n    <repository type=\"git\" url=\"https://github.com/modelcontextprotocol/csharp-sdk\" commit=\"6fa3825973949a9c4f0cd8af344e15a8db09dc35\" />\r\n    <dependencies>\r\n      <group targetFramework=\"net8.0\">\r\n        <dependency id=\"Microsoft.Extensions.AI.Abstractions\" version=\"10.8.3\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"Microsoft.Extensions.Logging.Abstractions\" version=\"10.0.10\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"System.IO.Pipelines\" version=\"10.0.10\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"System.Net.ServerSentEvents\" version=\"10.0.10\" exclude=\"Build,Analyzers\" />\r\n      </group>\r\n      <group targetFramework=\"net9.0\">\r\n        <dependency id=\"Microsoft.Extensions.AI.Abstractions\" version=\"10.8.3\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"Microsoft.Extensions.Logging.Abstractions\" version=\"10.0.10\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"System.Net.ServerSentEvents\" version=\"10.0.10\" exclude=\"Build,Analyzers\" />\r\n      </group>\r\n      <group targetFramework=\"net10.0\">\r\n        <dependency id=\"Microsoft.Extensions.AI.Abstractions\" version=\"10.8.3\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"Microsoft.Extensions.Logging.Abstractions\" version=\"10.0.10\" exclude=\"Build,Analyzers\" />\r\n      </group>\r\n      <group targetFramework=\".NETStandard2.0\">\r\n        <dependency id=\"Microsoft.Bcl.Memory\" version=\"10.0.10\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"Microsoft.Extensions.AI.Abstractions\" version=\"10.8.3\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"Microsoft.Extensions.Logging.Abstractions\" version=\"10.0.10\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"System.Collections.Immutable\" version=\"10.0.10\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"System.Diagnostics.DiagnosticSource\" version=\"10.0.10\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"System.IO.Pipelines\" version=\"10.0.10\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"System.Net.ServerSentEvents\" version=\"10.0.10\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"System.Text.Json\" version=\"10.0.10\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"System.Threading.Channels\" version=\"10.0.10\" exclude=\"Build,Analyzers\" />\r\n      </group>\r\n    </dependencies>\r\n  </metadata>\r\n</package>",
+      "license_files": []
+    },
+    {
+      "id": "revitmcpsdk",
+      "version": "2024.0.0.5",
+      "url": "https://api.nuget.org/v3-flatcontainer/revitmcpsdk/2024.0.0.5/revitmcpsdk.2024.0.0.5.nupkg",
+      "nupkg_sha256": "0510a9a5cea1ce38d084da37a34c7b71a771fc7a610a8ded29b0ddf17a5cf2cd",
+      "nuspec": "<?xml version=\"1.0\" encoding=\"utf-8\"?>\r\n<package xmlns=\"http://schemas.microsoft.com/packaging/2013/05/nuspec.xsd\">\r\n  <metadata>\r\n    <id>RevitMCPSDK</id>\r\n    <version>2024.0.0.5</version>\r\n    <authors>Duong Tran Quang - DTDucas</authors>\r\n    <license type=\"expression\">MIT</license>\r\n    <licenseUrl>https://licenses.nuget.org/MIT</licenseUrl>\r\n    <icon>RevitMCPSDK256.png</icon>\r\n    <readme>README.md</readme>\r\n    <projectUrl>https://github.com/DTDucas/RevitMCPSDK</projectUrl>\r\n    <description>Revit MCP SDK for Revit API development</description>\r\n    <copyright>Copyright \u00a9 Duong Tran Quang - DTDucas 2025</copyright>\r\n    <tags>Revit API SDK MCP Duong Tran Quang - DTDucas</tags>\r\n    <repository type=\"git\" url=\"https://github.com/DTDucas/RevitMCPSDK.git\" commit=\"2d46e0c4965fff73f3677ab8eccadd21c1edd769\" />\r\n    <dependencies>\r\n      <group targetFramework=\".NETFramework4.8\">\r\n        <dependency id=\"Newtonsoft.Json\" version=\"13.0.3\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"Nice3point.Revit.Api.RevitAPI\" version=\"2024.3.30\" exclude=\"Build,Analyzers\" />\r\n        <dependency id=\"Nice3point.Revit.Api.RevitAPIUI\" version=\"2024.3.30\" exclude=\"Build,Analyzers\" />\r\n      </group>\r\n    </dependencies>\r\n  </metadata>\r\n</package>",
+      "license_files": []
+    }
+  ],
+  "inspections": [
+    {
+      "repository": "https://github.com/mcp-servers-for-revit/mcp-servers-for-revit",
+      "origin": "https://github.com/mcp-servers-for-revit/mcp-servers-for-revit.git",
+      "commit": "86cf7057785f2423fc0d0892c9a5d9c93deb1aa3",
+      "clean_at_inspection": true,
+      "observed_path": "D:\\SWACCA_BIM\\references\\mcp-servers-for-revit",
+      "files": [
+        {
+          "path": "LICENSE",
+          "source_url": "https://github.com/mcp-servers-for-revit/mcp-servers-for-revit/blob/86cf7057785f2423fc0d0892c9a5d9c93deb1aa3/LICENSE",
+          "working_sha256": "73e3e6e3453be403933b8e9f4d5e08b5c97054586ead87e98067b57afd9d7c80",
+          "git_blob_sha256": "a35e3103fdd7fb5ed33f4e640a831f1ae8a6f5f1200cca5c7ee6455739db64e8"
+        },
+        {
+          "path": "server/package.json",
+          "source_url": "https://github.com/mcp-servers-for-revit/mcp-servers-for-revit/blob/86cf7057785f2423fc0d0892c9a5d9c93deb1aa3/server/package.json",
+          "working_sha256": "434adc3863a20816160aa95c475da957dc7ad4e1008f7cd3c91423a7a7409ce8",
+          "git_blob_sha256": "2ff2e265c13489c86dc0427d9e2381478dcb2fdec8a222a77fb5045dda307060"
+        },
+        {
+          "path": "server/package-lock.json",
+          "source_url": "https://github.com/mcp-servers-for-revit/mcp-servers-for-revit/blob/86cf7057785f2423fc0d0892c9a5d9c93deb1aa3/server/package-lock.json",
+          "working_sha256": "8f1b98e0055386b3acf20d4ca36a287292c0f049736848cf9f2496f559ef55f1",
+          "git_blob_sha256": "32948e7f8962830ad4ac89872f6b6250b7fd1e267cd8f133ccee0e76b5894592"
+        },
+        {
+          "path": "server/src/index.ts",
+          "source_url": "https://github.com/mcp-servers-for-revit/mcp-servers-for-revit/blob/86cf7057785f2423fc0d0892c9a5d9c93deb1aa3/server/src/index.ts",
+          "working_sha256": "4e374e30584b95eb25021280105685d30f74d8ce8caac78041fb8bd7b1dd1e06",
+          "git_blob_sha256": "242d57c00a120b7f16a5b8f3dfb7e9023ad671d7120d91df0531601892031063"
+        },
+        {
+          "path": "server/src/tools/register.ts",
+          "source_url": "https://github.com/mcp-servers-for-revit/mcp-servers-for-revit/blob/86cf7057785f2423fc0d0892c9a5d9c93deb1aa3/server/src/tools/register.ts",
+          "working_sha256": "5370c94dfd373a9d71248ee2b20bd98fe143bbcec7e13d30446fd26a5b85b396",
+          "git_blob_sha256": "509825b0d53cf11e093fc1de0368bb626ccdaa4bd93d741a7e44bdcef3f4c556"
+        },
+        {
+          "path": "server/src/tools/get_current_view_elements.ts",
+          "source_url": "https://github.com/mcp-servers-for-revit/mcp-servers-for-revit/blob/86cf7057785f2423fc0d0892c9a5d9c93deb1aa3/server/src/tools/get_current_view_elements.ts",
+          "working_sha256": "b07bc3ffeb66a97fc913fd796409f25fb9870be276549ccb08b3b5bfd11e5bad",
+          "git_blob_sha256": "839069976d32b9b5904f1bc94880e7701804bba5c88de897f2bb9da161379a50"
+        },
+        {
+          "path": "server/src/utils/SocketClient.ts",
+          "source_url": "https://github.com/mcp-servers-for-revit/mcp-servers-for-revit/blob/86cf7057785f2423fc0d0892c9a5d9c93deb1aa3/server/src/utils/SocketClient.ts",
+          "working_sha256": "81134435e2321b4d56cf812f9e640fbf1819c26511f5388430e58b139ca68216",
+          "git_blob_sha256": "07ac877872a6d21e585a15ef8183855ef8344bd2bdd7b187a5ffb86509a0676d"
+        },
+        {
+          "path": "server/src/utils/ConnectionManager.ts",
+          "source_url": "https://github.com/mcp-servers-for-revit/mcp-servers-for-revit/blob/86cf7057785f2423fc0d0892c9a5d9c93deb1aa3/server/src/utils/ConnectionManager.ts",
+          "working_sha256": "4145e890b972c041a2035961961269ac75642aa2116409462b16bc080293f1e1",
+          "git_blob_sha256": "3dbb62ee09f42f3e2960b02f7192406bab4456a51bef4f560a4fe3b5be2dba4d"
+        },
+        {
+          "path": "plugin/Core/SocketService.cs",
+          "source_url": "https://github.com/mcp-servers-for-revit/mcp-servers-for-revit/blob/86cf7057785f2423fc0d0892c9a5d9c93deb1aa3/plugin/Core/SocketService.cs",
+          "working_sha256": "85f4310bea5f969ff14695845b1e4f705b65d7e4a845fd43f9e26f115c5eff42",
+          "git_blob_sha256": "485d8f7a66c3474fa5abe98c6019d53b59e637a23a0d6048e55a272779a83416"
+        },
+        {
+          "path": "plugin/Core/CommandManager.cs",
+          "source_url": "https://github.com/mcp-servers-for-revit/mcp-servers-for-revit/blob/86cf7057785f2423fc0d0892c9a5d9c93deb1aa3/plugin/Core/CommandManager.cs",
+          "working_sha256": "82f40bace59ad8dc804d5dc4688ddcebd40cbbbcde0220d0efa4334c3c373ae4",
+          "git_blob_sha256": "b2012e7f7dd0e42c15dce0bc4ec023991b6b35fdb4a32354e41938b1e9dc95a7"
+        },
+        {
+          "path": "plugin/RevitMCPPlugin.csproj",
+          "source_url": "https://github.com/mcp-servers-for-revit/mcp-servers-for-revit/blob/86cf7057785f2423fc0d0892c9a5d9c93deb1aa3/plugin/RevitMCPPlugin.csproj",
+          "working_sha256": "1be997a59eea7229d86e543da3be5b8237b693267422d51d601e34e55aeca573",
+          "git_blob_sha256": "48665ee2e6de84160a2a33e8bebcb72a84df5e9f19bac8c51f1072d7de9b3fc9"
+        },
+        {
+          "path": "commandset/RevitMCPCommandSet.csproj",
+          "source_url": "https://github.com/mcp-servers-for-revit/mcp-servers-for-revit/blob/86cf7057785f2423fc0d0892c9a5d9c93deb1aa3/commandset/RevitMCPCommandSet.csproj",
+          "working_sha256": "1db0bfb28c0a5f3ff876f89651aaaa4d3a4451a05d4d4534877320954c758c2d",
+          "git_blob_sha256": "83cee2925f5dcb093255a38766dfbcbb6552dbfe6b2f83e65bfa5471864dc62f"
+        },
+        {
+          "path": "commandset/Commands/Access/GetCurrentViewElementsCommand.cs",
+          "source_url": "https://github.com/mcp-servers-for-revit/mcp-servers-for-revit/blob/86cf7057785f2423fc0d0892c9a5d9c93deb1aa3/commandset/Commands/Access/GetCurrentViewElementsCommand.cs",
+          "working_sha256": "a0b38aabe4ed5a70cf898cc6712a729014a269b229da39f6018fd8d154e50528",
+          "git_blob_sha256": "74598a6e1d534351913c5fba2a0ee0a1231dabbe43095e9f542bc9b10da6b549"
+        },
+        {
+          "path": "commandset/Services/GetCurrentViewElementsEventHandler.cs",
+          "source_url": "https://github.com/mcp-servers-for-revit/mcp-servers-for-revit/blob/86cf7057785f2423fc0d0892c9a5d9c93deb1aa3/commandset/Services/GetCurrentViewElementsEventHandler.cs",
+          "working_sha256": "433c5cb5231433ae525b0e843017d20c1063ae824086cb3323fc1e730dcc853a",
+          "git_blob_sha256": "afa224db74933aaa83af1d9946a37996acb3e207a02eafff7ed4c1507b72c5af"
+        }
+      ]
+    },
+    {
+      "repository": "https://github.com/modelcontextprotocol/typescript-sdk",
+      "origin": "https://github.com/modelcontextprotocol/typescript-sdk.git",
+      "commit": "fcef852f6cdafea07f36cf6fae69b37c8adf85be",
+      "clean_at_inspection": true,
+      "observed_path": "D:\\bim-agent-lab\\references\\typescript-sdk-2.3.1",
+      "files": [
+        {
+          "path": "LICENSE",
+          "source_url": "https://github.com/modelcontextprotocol/typescript-sdk/blob/fcef852f6cdafea07f36cf6fae69b37c8adf85be/LICENSE",
+          "working_sha256": "fe5d1e818af2a1038f2805f7fdccdca778a61b42fb182786d2a3f4c8c7c7e9b2",
+          "git_blob_sha256": "0382b0057770ca05e9c350a50aa3b1c1fea84da0bc81d723bf00b9aa841be58a"
+        },
+        {
+          "path": "packages/server/package.json",
+          "source_url": "https://github.com/modelcontextprotocol/typescript-sdk/blob/fcef852f6cdafea07f36cf6fae69b37c8adf85be/packages/server/package.json",
+          "working_sha256": "8b268a3e84abf4445256b35ae9eabfca77c086a26fad1b4c9f62605b7ea46a10",
+          "git_blob_sha256": "9d5f4d85ddfc3085816750202c6c78244d131880656cf2d74252db26dd8ca08a"
+        },
+        {
+          "path": "docs/migration/upgrade-to-v2.md",
+          "source_url": "https://github.com/modelcontextprotocol/typescript-sdk/blob/fcef852f6cdafea07f36cf6fae69b37c8adf85be/docs/migration/upgrade-to-v2.md",
+          "working_sha256": "9722c2b41899c96792455de0ba35e671c69e32b0b31f8de9c8bb438a1d17f2df",
+          "git_blob_sha256": "e608a7bdc3e383f72b13a325e9b47e5ae6196c7dbb5594c66711803f01ab3106"
+        },
+        {
+          "path": "docs/migration/support-2026-07-28.md",
+          "source_url": "https://github.com/modelcontextprotocol/typescript-sdk/blob/fcef852f6cdafea07f36cf6fae69b37c8adf85be/docs/migration/support-2026-07-28.md",
+          "working_sha256": "c6f5be6a72a027330e5bbd9b009c970a7fc06a3c43263e53442fd142d820a3dd",
+          "git_blob_sha256": "8d6e417347cc53ea087f6c943a45b2573f165b376a0beb610df64efcf924d5f4"
+        },
+        {
+          "path": "examples/dual-era/README.md",
+          "source_url": "https://github.com/modelcontextprotocol/typescript-sdk/blob/fcef852f6cdafea07f36cf6fae69b37c8adf85be/examples/dual-era/README.md",
+          "working_sha256": "31679cb2e369c94923bce67371ce0bcf396220f1075f6ff7138235b3f8031b6d",
+          "git_blob_sha256": "ba166de297b778c5c46030747611744ac7bed15e0ec6462a14bc939455255f14"
+        }
+      ]
+    },
+    {
+      "repository": "https://github.com/modelcontextprotocol/python-sdk",
+      "origin": "https://github.com/modelcontextprotocol/python-sdk.git",
+      "commit": "2118f14f8a19bc158d8a1cf90af58d85d187f849",
+      "clean_at_inspection": true,
+      "observed_path": "D:\\bim-agent-lab\\references\\python-sdk-2.3.0",
+      "files": [
+        {
+          "path": "LICENSE",
+          "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/2118f14f8a19bc158d8a1cf90af58d85d187f849/LICENSE",
+          "working_sha256": "22f8d69b51b1231102c966d1291d5056491f1882c5828b859e499e092fb9a594",
+          "git_blob_sha256": "5e13dbbc1d120fc2a03cecde7c91424ae2d7de11b63d58ded2f4431e261ee50d"
+        },
+        {
+          "path": "pyproject.toml",
+          "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/2118f14f8a19bc158d8a1cf90af58d85d187f849/pyproject.toml",
+          "working_sha256": "27ccfbab3740e94944f8d07a0f15e17a1570b139bec331354633ec11edbd279b",
+          "git_blob_sha256": "db642c4ab5c3166ab688d679a637786c270703b2c37e8983b1c0b7f1ccdd045a"
+        },
+        {
+          "path": "docs/migration.md",
+          "source_url": "https://github.com/modelcontextprotocol/python-sdk/blob/2118f14f8a19bc158d8a1cf90af58d85d187f849/docs/migration.md",
+          "working_sha256": "8400992ce1b5e90372df2a4891e40bd8ed55864b2ea10b6399327e83dddc4555",
+          "git_blob_sha256": "3d82aaf11dc917322d4de54fa395637ce817ac9568c2e9faa01e9d685a7ca346"
+        }
+      ]
+    },
+    {
+      "repository": "https://github.com/modelcontextprotocol/csharp-sdk",
+      "origin": "https://github.com/modelcontextprotocol/csharp-sdk.git",
+      "commit": "6fa3825973949a9c4f0cd8af344e15a8db09dc35",
+      "clean_at_inspection": true,
+      "observed_path": "D:\\bim-agent-lab\\references\\csharp-sdk-2.2.0",
+      "files": [
+        {
+          "path": "LICENSE",
+          "source_url": "https://github.com/modelcontextprotocol/csharp-sdk/blob/6fa3825973949a9c4f0cd8af344e15a8db09dc35/LICENSE",
+          "working_sha256": "10a500c69133ef6e1df944a1b0fd8578fc9c4735745bcc75f04a24038016df49",
+          "git_blob_sha256": "7c6a686d2b34b86ad8c726e0ac4d76903b525f251d73e617f8db3879fa8f11fc"
+        },
+        {
+          "path": "src/ModelContextProtocol/ModelContextProtocol.csproj",
+          "source_url": "https://github.com/modelcontextprotocol/csharp-sdk/blob/6fa3825973949a9c4f0cd8af344e15a8db09dc35/src/ModelContextProtocol/ModelContextProtocol.csproj",
+          "working_sha256": "bb6f49ab56006bd68032e0cafe96c2759e2583edd3548d4bd500c06723c3f94c",
+          "git_blob_sha256": "1eb1485c6acd79cd27c79d6eda599a39e63ecb98e446ebc042ac8d23c74d7755"
+        },
+        {
+          "path": "src/ModelContextProtocol.Core/ModelContextProtocol.Core.csproj",
+          "source_url": "https://github.com/modelcontextprotocol/csharp-sdk/blob/6fa3825973949a9c4f0cd8af344e15a8db09dc35/src/ModelContextProtocol.Core/ModelContextProtocol.Core.csproj",
+          "working_sha256": "3b12a42b86a2fca5cef884b18f6b8878fd220d00c058c8f12b6d12b20f5c37f3",
+          "git_blob_sha256": "96746c8a7c55682a21edbe31283cb42a5482826d0e06d6a73a5563d2461da08e"
+        },
+        {
+          "path": "src/Common/McpProtocolVersions.cs",
+          "source_url": "https://github.com/modelcontextprotocol/csharp-sdk/blob/6fa3825973949a9c4f0cd8af344e15a8db09dc35/src/Common/McpProtocolVersions.cs",
+          "working_sha256": "c5ffef9f9e4620507b703158607543ba420c3f17c3523bf9aea1b353658a35df",
+          "git_blob_sha256": "394b012e4f53bac0e0d6fa46652b099727d58ce02c074f2bcac79ad333f7d628"
+        },
+        {
+          "path": "samples/QuickstartWeatherServer/Program.cs",
+          "source_url": "https://github.com/modelcontextprotocol/csharp-sdk/blob/6fa3825973949a9c4f0cd8af344e15a8db09dc35/samples/QuickstartWeatherServer/Program.cs",
+          "working_sha256": "78502f78fec5d8d8d8a3768644aa5010a44cbdc4ed21f47c7da91d871f7e9c6a",
+          "git_blob_sha256": "00a3f7fbd05b8190dfaa8002eaa4513339dfa58936cbcd8f0b304155c4abb537"
+        }
+      ]
+    },
+    {
+      "repository": "https://github.com/DTDucas/RevitMCPSDK",
+      "origin": "https://github.com/DTDucas/RevitMCPSDK.git",
+      "commit": "2d46e0c4965fff73f3677ab8eccadd21c1edd769",
+      "clean_at_inspection": true,
+      "observed_path": "D:\\bim-agent-lab\\references\\RevitMCPSDK-2024.0.0.5",
+      "files": [
+        {
+          "path": "LICENSE.txt",
+          "source_url": "https://github.com/DTDucas/RevitMCPSDK/blob/2d46e0c4965fff73f3677ab8eccadd21c1edd769/LICENSE.txt",
+          "working_sha256": "f6161b009390c47879f10ece8afc4fbc81addd3209d5d5bae4551bc9170262ff",
+          "git_blob_sha256": "be79ba599c07baea5fea6bd368158ba006e2b857f6dce2b95209be5dbf4b1cb0"
+        },
+        {
+          "path": "RevitMCPSDK/API/Base/ExternalEventCommandBase.cs",
+          "source_url": "https://github.com/DTDucas/RevitMCPSDK/blob/2d46e0c4965fff73f3677ab8eccadd21c1edd769/RevitMCPSDK/API/Base/ExternalEventCommandBase.cs",
+          "working_sha256": "948aa76776737388583c32a94cf2caa98a182b85ecae8f45bb8c0230394d4972",
+          "git_blob_sha256": "6f0200b44da1a02d4ba6a54e8cd786cdeb385cf5acd29dc87601d011b3d99600"
+        }
+      ]
+    }
+  ],
+  "protocol": {
+    "revision": "2026-07-28",
+    "latest_url": "https://modelcontextprotocol.io/specification/latest",
+    "resolved_url": "https://modelcontextprotocol.io/specification/2026-07-28",
+    "announcement_url": "https://blog.modelcontextprotocol.io/posts/2026-07-28/",
+    "observation": "Official latest page redirects to this revision; SDK version and JSON-RPC version are separate."
+  },
+  "existing_bridge": {
+    "manifest_sdk_range": "^1.7.0",
+    "locked_sdk_version": "1.26.0",
+    "locked_sqlite_version": "12.8.0",
+    "locked_zod_version": "3.25.76",
+    "research_only": true,
+    "built_or_host_tested_in_this_pass": false
+  },
+  "completed_observation_utc": "2026-10-20T23:04:01.853128+00:00"
+}

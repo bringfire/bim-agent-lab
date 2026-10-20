@@ -22,7 +22,7 @@ Use relative links inside repository documents. Link external source code to the
 
 1. Inspect the repository, current branch, and existing changes before editing. Preserve unrelated work.
 2. Establish the BIM question, intended use, scope, and observable acceptance criteria.
-3. Research before choosing dependencies or copying code. Inspect licenses, manifests, actual source, and required SDKs. Record exact revisions and unresolved assumptions.
+3. Research before choosing dependencies or copying code. Check current official protocol specifications, stable SDK releases, package registries, migration guides, and host/client compatibility. Distinguish protocol revision, SDK package version, project version, manifest range, and locked version. Inspect licenses, actual source, and required resources. Record the date, exact revisions, selected compatible pins, and unresolved assumptions; an older research snapshot is not a current-version check.
 4. Implement focused changes. Keep each example's dependencies local to that project; avoid premature shared frameworks.
 5. Verify against independent evidence. Distinguish source observations, successful builds, and application runtime tests.
 6. Capture learning for both audiences using the guidance below, and update the journal. Label actual user prompts, excerpts, and suggested teaching prompts accurately.
@@ -45,6 +45,7 @@ Use the [lesson template](templates/lesson.md). The [learning path](docs/tutoria
 | Revit development setup | [Setup story](docs/tutorials/02-build-a-read-only-revit-command.md) | [Probe guide](docs/how-to/build-read-only-revit-command.md) |
 | Required type information | [Readiness story](docs/tutorials/03-check-required-type-information.md) | [Readiness guide](docs/how-to/build-required-information-check.md) |
 | Excel output | [Excel story](docs/tutorials/04-add-an-excel-report-dependency.md) | [Dependency guide](docs/how-to/add-a-plugin-dependency.md) |
+| MCP research and version selection | [MCP participant story](docs/tutorials/05-research-and-choose-the-mcp-bridge.md) | [Bridge guide](docs/how-to/choose-and-verify-an-mcp-bridge.md), [dated comparison](docs/research/revit-mcp-bridge-comparison.md) |
 
 ## Current commands and boundaries
 
@@ -52,7 +53,7 @@ Git orientation: `git status --short --branch`, `git log --oneline -5`, `git dif
 
 From the repository root, Revit scripts live in `projects/revit-readiness/scripts/`. Use `Check-Environment.ps1`, `Test-Readiness.ps1`, `Build-Readiness.ps1`, and `Install-Readiness.ps1` for the readiness check. `Build-Probe.ps1` and `Install-Probe.ps1` retain the original minimal example. Installation requires Revit closed. Follow the [agent readiness guide](docs/how-to/build-required-information-check.md) and [host acceptance procedure](projects/revit-readiness/tests/required-information.md). The automated suite includes 18 core tests, seven Excel report tests, and a process-isolation test. Follow the [agent dependency guide](docs/how-to/add-a-plugin-dependency.md) and its current verification record. CI and MCP tests do not exist yet. Distinguish environment checks, compilation, and observed Revit runtime results; never infer a host pass from a build alone. Fixture editing tools are opt-in and separate from normal readiness installation.
 
-Research procedure is in the [agent research guide](docs/how-to/research-existing-solutions.md); reference acquisition is described in [the clone guide](docs/how-to/clone-research-repositories.md). Keep local clones under ignored `references/`; inspect upstream instructions within each clone. ClosedXML is the first adopted NuGet dependency, isolated in the local Excel exporter; the original seven reference repositories remain research precedents. Review the [resolved dependencies and licenses](docs/research/closedxml-dependency.md) before changing packages. Commit lock files and use locked restores. Existing optional fixture installations share our core and must stay synchronized.
+Research procedure is in the [agent research guide](docs/how-to/research-existing-solutions.md); reference acquisition is described in [the clone guide](docs/how-to/clone-research-repositories.md). Keep local clones under ignored `references/`; inspect upstream instructions within each clone. ClosedXML is the first adopted NuGet dependency, isolated in the local Excel exporter; the original seven reference repositories remain research precedents. Review the [resolved dependencies and licenses](docs/research/closedxml-dependency.md) before changing packages. Commit lock files and use locked restores. Existing optional fixture installations share our core and must stay synchronized. The MCP comparison recommends an original narrow Revit bridge with an external C# server and current SDK; it remains a research recommendation pending the integration gates in the bridge guide. No MCP dependency has been added to the project.
 
 Keep credentials, local agent configuration, generated outputs, and working model files out of Git. Preserve source notices when adapting material. The license for original lab material remains an owner decision before release.
 

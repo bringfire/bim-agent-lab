@@ -5,6 +5,7 @@
 - [Agent Git guide](how-to/work-with-git.md): preserve work, inspect research copies, and record reviewed checkpoints.
 - [Agent setup guide](how-to/build-read-only-revit-command.md): inspect, build, install, and prove the Revit probe.
 - [Agent readiness guide](how-to/build-required-information-check.md): implement explicit requirements and independently verify sample results.
+- [MCP bridge research](research/revit-mcp-bridge-comparison.md): current protocol/SDK evidence and the architecture recommendation, with a [participant story](tutorials/05-research-and-choose-the-mcp-bridge.md) and [agent procedure](how-to/choose-and-verify-an-mcp-bridge.md).
 - [Agent dependency guide](how-to/add-a-plugin-dependency.md): reproduce and extend the Excel implementation using source locations, commands, and acceptance evidence.
 - [Clone research repositories](how-to/clone-research-repositories.md): obtain and inspect a pinned source candidate.
 - [Extend a project](how-to/extend-a-project.md): plan a complete, verifiable change.
