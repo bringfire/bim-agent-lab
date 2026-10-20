@@ -1,5 +1,12 @@
 # Changelog
 
+## Unreleased — first read-only Revit command, 2026-10-20
+
+- Add a minimal Revit 2024 command reporting project identity and whole-host wall/ceiling instance counts with read-only API enforcement.
+- Add SDK selection and repeatable environment, build, and per-user installation scripts; use local API/targeting references and no NuGet packages.
+- Verify empty and four-wall projects, repeated reads, unchanged model state/file hash, and no-project availability on Revit build 24.3.60.12.
+- Record the first-build tutorial, fixture recipe, actual prompts, screenshots, versions, and verification limits. No prerequisite software needed installation.
+
 ## Unreleased — development prerequisites, 2026-10-20
 
 - Add a participant guide to the minimum Revit 2024 add-in development setup, with official sources and alternative build-tool routes.

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Command">
+    <Assembly>__ASSEMBLY_PATH__</Assembly>
+    <AddInId>8B3FA065-26DF-4076-A194-43C1457C81AF</AddInId>
+    <FullClassName>BimAgentLab.RevitProbe.ReadOnlyProbeCommand</FullClassName>
+    <Text>BIM Agent Lab - Read-only probe</Text>
+    <VendorId>BIAL</VendorId>
+    <VendorDescription>BIM Agent Lab teaching example</VendorDescription>
+    <AvailabilityClassName>BimAgentLab.RevitProbe.ProjectAvailable</AvailabilityClassName>
+    <VisibilityMode>NotVisibleInFamily</VisibilityMode>
+    <VisibilityMode>NotVisibleWhenNoActiveDocument</VisibilityMode>
+    <AllowLoadIntoExistingSession>false</AllowLoadIntoExistingSession>
+  </AddIn>
+</RevitAddIns>

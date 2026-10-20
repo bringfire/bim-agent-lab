@@ -31,6 +31,7 @@
 *.log
 
 # Working BIM models: distribute recipes until assets are deliberately cleared
+/projects/revit-readiness/samples/local/
 *.rvt
 *.rfa
 *.rte

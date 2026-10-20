@@ -265,6 +265,36 @@ The author's request exposes a prerequisite that experienced developers may over
 
 Rechecked the installed Revit/API file versions, .NET SDKs, Git, and the presence of .NET Framework 4.8 reference files. These are inventory observations, not a successful compilation or host test. Exact lab build-tool pins and the MCP dependency selection remain pending the first working build. No software was installed and no Revit add-in was created or run for this documentation step.
 
+## 2026-10-20 Build and verify the first Revit command
+
+### Author prompt
+
+> Ok, let's check this machine against the prerequisites, install anything missing, and build a minimal read-only Revit command to prove the setup works. Record the steps and lessons in the teaching repo.
+
+### Decisions and actions
+
+The agent inspected the clean teaching repository and created `feat/revit-read-only-probe` from `88ac2df`. The machine already had Revit 2024, matching API DLLs, .NET Framework 4.8 references, .NET SDK 10.0.204, and Git. No prerequisite software needed installation. Keeping the minimum setup small was a result of inspection, not an assumption that every participant has these tools.
+
+A host acceptance procedure was written before the command. The first implementation uses an original C# `IExternalCommand` targeting x64/net48, local Revit API references with Copy Local disabled, and `TransactionMode.ReadOnly`. It reports the active project, Revit build, wall/ceiling category-instance counts, explicit scope, and the document's modified flag before and after. It introduces no NuGet packages or MCP dependency.
+
+The agent added repeatable environment, build, and per-user install scripts, built successfully with zero warnings/errors, verified the installed DLL hash, and launched Revit. The Revit journal confirmed command registration. A new project from the installed Imperial Multi-discipline template returned zero walls and zero ceilings.
+
+The agent then used Revit's rectangle wall tool to draw four basic wall segments. Revit's own Properties palette showed **Walls (4)**. After saving the fixture, two command invocations both returned **4 walls and 0 ceilings**, with the modified flag **False before / False after**. The saved file's SHA-256 remained identical before the reads, after the reads, and after closing without another save. With no project open, External Tools was disabled. The family-editor case was not exercised.
+
+### Corrections and verification boundaries
+
+Normal `Get-FileHash` initially could not read the model while Revit held it open. A read-only shared file stream allowed hashing; a normal hash after closing confirmed the same result. This was a file-access limitation, not a plugin failure. The model fixture was deliberately edited during preparation; the read-only command itself did not edit it.
+
+The UI automation's accessibility tree sometimes retained stale dialog information while screenshots showed the current window. The agent used fresh screenshots to ground subsequent UI actions and retained actual result images. The teaching record does not equate a successful click, compile, or file inventory with a passing host test.
+
+The [first-build lesson](../tutorials/02-build-a-read-only-revit-command.md), [fixture recipe](../../projects/revit-readiness/samples/model-recipes/read-only-probe.md), and [verification record](../../projects/revit-readiness/docs/verification/2026-10-20-read-only-probe.md) preserve commands, versions, hashes, evidence, and limitations. Source and evidence are checkpointed together; working models, Autodesk binaries, and generated output stay outside Git.
+
+### Teaching lesson
+
+The author's prompt successfully carries forward earlier context while specifying the next observable outcome. Participants should direct their agent to inspect before installing, use Git deliberately, make one small operation work in its actual host, and compare the answer with independent BIM evidence. Research and resources remain inputs to the work; installing every tool discovered during research is unnecessary.
+
+This milestone proves local API access and the build/install workflow. It does not complete model readiness, quantity review, or MCP. The next increment should establish one real readiness check and its sample answer before adding remote dispatch and more dependencies.
+
 ## A reusable research prompt
 
 The following is a teaching template, not an additional instruction from the author:
@@ -293,4 +323,4 @@ Research can reveal that the problem or architecture needs revision. Return to t
 
 Record the author's prompt or a clearly labeled excerpt; the decision requested; constraints supplied; the agent's actions; the evidence; any correction or rejected approach; the outcome; and the lesson worth showing on stage. Label a suggested prompt as a suggestion, never as a historical prompt.
 
-Current next action: inspect the sample in Revit and evaluate the existing bridge's minimum Revit 2024 read workflow. The teaching repository baseline is established; the working demo brief provides the acceptance target for technical investigations.
+Current next action: inspect the readiness sample and implement one deterministic check with independent expected answers. A minimal custom Revit command now builds and runs; the existing bridge candidate and a custom dispatch bridge still need comparison before MCP dependencies are selected. The working demo brief remains the acceptance target for that larger implementation.

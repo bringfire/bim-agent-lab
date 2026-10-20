@@ -1,6 +1,6 @@
 # Verification strategy
 
-No executable tests exist yet. Implement the checks alongside the first working feature and document exact commands and prerequisites here.
+The first command has a [manual Revit acceptance procedure](read-only-probe.md) and an [observed verification record](../docs/verification/2026-10-20-read-only-probe.md). The [tutorial](../../../docs/tutorials/02-build-a-read-only-revit-command.md) documents check/build/install commands. No automated unit-test suite exists yet; the current probe is verified inside its host. The layers below describe the larger readiness tool's intended verification.
 
 | Level | What it establishes | Requires Revit? |
 |---|---|---|

@@ -20,6 +20,6 @@ Keep core evaluation independent of live Revit objects where practical. Revit ac
 
 The demo targets 12 basic walls and four ceilings, with four findings affecting eight distinct elements. These counts are proposed fixture acceptance criteria, not observed model data. Read the complete brief before preparing fixtures or writing tests.
 
-The [test strategy](tests/README.md) separates offline rule/contract tests from host integration and manual schedule checks. There are no executable build/test commands yet. Add verified commands when implementation makes them real; do not infer support from a repository's configurations alone.
+The [test strategy](tests/README.md) separates offline rule/contract tests from host integration and manual schedule checks. From this project directory, run `& .\scripts\Check-Environment.ps1`, `& .\scripts\Build-Probe.ps1`, then `& .\scripts\Install-Probe.ps1` with Revit closed. Follow [host acceptance](tests/read-only-probe.md) in Revit. There is no automated unit-test suite or MCP implementation yet. The [first verification record](docs/verification/2026-10-20-read-only-probe.md) establishes the tested configuration; do not infer broader support from project settings alone.
 
 Do not copy SDK binaries or working RVT files into Git. Record sample provenance, setup, reset instructions, and independent expected results. Keep the root journal and the related teaching lesson current as design decisions are resolved.

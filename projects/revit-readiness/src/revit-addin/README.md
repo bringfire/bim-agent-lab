@@ -1,5 +1,9 @@
 # Revit add-in
 
-Planned responsibility: establish the requested model scope, collect element/type data using the Revit API, and provide commands and evidence navigation. Revit API access must occur in a valid host context.
+The first implementation is `BimAgentLab.RevitProbe`, a C# x64 `net48` library for Revit 2024. It provides **Add-Ins > External Tools > BIM Agent Lab - Read-only probe**.
 
-Start with Revit 2024. The resource register contains candidate templates and bridges; no code has been adopted and no add-in has been built here. The first probe must establish a repeatable build and one read operation before broader implementation.
+The command reports project identity, Revit build, and counts of non-type elements in the Walls and Ceilings categories. It reads the entire active host document, excludes linked documents, and applies no view/selection/phase/design-option/level filter or result limit. `TransactionMode.ReadOnly` enforces read-only execution; the dialog also reports the document's modified flag before and after the reads.
+
+Follow the [tutorial](../../../../docs/tutorials/02-build-a-read-only-revit-command.md) for build and installation, the [acceptance procedure](../../tests/read-only-probe.md) for testing, and the [verification record](../../docs/verification/2026-10-20-read-only-probe.md) for observed results. API references come from the installed Revit 2024 folder with Copy Local disabled. There are no NuGet packages.
+
+Future responsibility: collect normalized element/type data and provide readiness commands and evidence navigation in a valid Revit API context. Counts alone are not takeoff quantities or readiness findings. No bridge or MCP endpoint is present yet.

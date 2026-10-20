@@ -4,7 +4,7 @@ Learn to build and extend BIM tools with AI coding agents—from research and Gi
 
 BIM Agent Lab is a teaching repository for BIM professionals. It pairs worked examples with the prompts, research, decisions, and verification needed to understand and extend them. The first example is a Revit model-readiness tool for wall and ceiling workflows, supported by inventory and quantities.
 
-**Current status:** research and teaching baseline. The Revit plugin and MCP server have not been implemented, built, or released. The sample-model conditions are a proposed acceptance target. This repository begins recording Git history after the initial research; the earlier work is preserved in the build journal.
+**Current status:** the first read-only Revit 2024 command has been built, installed locally, and verified against an empty project and a controlled four-wall model. Follow the [first-build tutorial](docs/tutorials/02-build-a-read-only-revit-command.md). Readiness rules, the larger demo fixture, MCP, and release packaging remain to be implemented. Git history records the build from the teaching baseline onward; earlier research is preserved in the build journal.
 
 ## Choose your starting point
 
@@ -20,7 +20,7 @@ Open your local copy in a coding agent and try:
 
 > Read README.md and AGENTS.md. Explain this project's current state and guide me through the learning path. Start with research and Git. Distinguish what has been observed, what is proposed, and what has been tested. Help me choose one useful next step.
 
-Reading the materials needs no Revit installation. Executing future Revit examples will require the [development prerequisites](projects/revit-readiness/docs/development-prerequisites.md) documented by that project. SDKs, host applications, model files, and the seven reference repositories are obtained separately.
+Reading the materials needs no Revit installation. Building and running the Revit example requires the [development prerequisites](projects/revit-readiness/docs/development-prerequisites.md) documented by that project. SDKs, host applications, model files, and the seven reference repositories are obtained separately.
 
 ## Repository map
 
@@ -35,7 +35,7 @@ Projects can target other BIM applications as the lab grows. Each owns its depen
 
 ## Development and sharing
 
-See [Contributing](CONTRIBUTING.md), [development status](docs/reference/development-status.md), and the [build journal](docs/build-story/journal.md). There are no plugin build or test commands yet. Read-only Git orientation commands are:
+See [Contributing](CONTRIBUTING.md), [development status](docs/reference/development-status.md), and the [build journal](docs/build-story/journal.md). The [first-build tutorial](docs/tutorials/02-build-a-read-only-revit-command.md) documents environment, build, install, and host verification commands. Read-only Git orientation commands are:
 
 ```powershell
 git status --short --branch

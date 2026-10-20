@@ -32,7 +32,7 @@ Use relative links inside repository documents. Link external source code to the
 
 Git orientation: `git status --short --branch`, `git log --oneline -5`, `git diff`, and `git diff --cached`.
 
-There is currently no build system, package installation command, automated plugin test suite, or CI workflow. Do not report tests or builds as passing merely because the documentation or scaffold exists. When implementation establishes repeatable commands, document their prerequisites and add them here or in project instructions.
+From the repository root, the Revit probe uses `& .\projects\revit-readiness\scripts\Check-Environment.ps1`, `Build-Probe.ps1`, and `Install-Probe.ps1` in that same script directory. Installation requires Revit to be closed. Follow the [first-build tutorial](docs/tutorials/02-build-a-read-only-revit-command.md) and [host acceptance procedure](projects/revit-readiness/tests/read-only-probe.md). There is no automated plugin test suite or CI workflow yet. Distinguish environment checks, compilation, and observed Revit runtime results; never infer a host pass from a build alone.
 
 Reference acquisition is described in [the clone guide](docs/how-to/clone-research-repositories.md). Keep local clones under ignored `references/`; inspect upstream instructions within each clone. No reference code has been adopted as a dependency yet.
 

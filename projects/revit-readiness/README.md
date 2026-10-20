@@ -2,7 +2,7 @@
 
 The first BIM Agent Lab example helps wall and ceiling professionals review whether a model meets an explicit checklist for a stated coordination or quantity-review use. Inventory and quantities provide supporting evidence.
 
-**Status:** research and demo design. There is no installable plugin, implemented MCP server, or verified sample model yet. Revit 2024 is the required first target; broader compatibility is unverified.
+**Status:** the minimal read-only probe is implemented, locally installable, and host-verified on Revit 2024 build `24.3.60.12`. It reports project identity and wall/ceiling counts. Readiness evaluation, quantities, MCP, and the larger demo fixture remain planned; broader compatibility is unverified.
 
 ## The three questions
 
@@ -14,6 +14,7 @@ The [demo brief](docs/demo-questions-and-sample-model.md) defines the proposed c
 
 ## Start here
 
+- [Build and run the read-only probe](../../docs/tutorials/02-build-a-read-only-revit-command.md), with [actual verification results](docs/verification/2026-10-20-read-only-probe.md).
 - [Development prerequisites](docs/development-prerequisites.md) for the minimum agent-assisted Revit 2024 setup, optional tools, and later MCP dependencies.
 - [Project agent guidance](AGENTS.md) for scope and implementation boundaries.
 - [Resources and precedents](../../docs/research/revit-resources.md) for SDKs, API evidence, and bridge candidates.
@@ -29,6 +30,6 @@ The [demo brief](docs/demo-questions-and-sample-model.md) defines the proposed c
 | [src/revit-addin](src/revit-addin/README.md) | Read Revit data in a valid API context and provide application commands |
 | [src/mcp-server](src/mcp-server/README.md) | Expose scoped operations to an agent and return structured evidence |
 
-These folders document responsibilities, not a completed implementation. The external server language and whether to adapt an existing bridge are still open decisions.
+Only the minimal command in `revit-addin` is implemented. The external server language and whether to adapt an existing bridge are still open decisions.
 
-The next step is a minimal Revit 2024 build-and-read investigation plus sample inspection. That evidence will establish the exact SDK/package versions, commands, and architecture used by the first working example.
+The next step is sample inspection and one deterministic readiness check with independent expected answers. The probe establishes a working local build and API read; it does not select or validate an MCP bridge.

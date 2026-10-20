@@ -1,6 +1,8 @@
 # Demonstration samples
 
-The initial candidate is a working copy of Autodesk's Snowdon Towers architectural sample for Revit 2024. Sample files have been located on the authoring machine but have not been opened or modified in this work.
+For the first setup proof, a [controlled four-wall project](model-recipes/read-only-probe.md) was created from an installed Revit template and verified. Its local RVT and sidecars remain ignored under `samples/local/`.
+
+The larger readiness demonstration's initial candidate is a working copy of Autodesk's Snowdon Towers architectural sample for Revit 2024. Those sample files have been located on the authoring machine but have not yet been opened or modified as part of this lab work.
 
 - [Preparation recipe](model-recipes/README.md) describes how to turn the demo brief into a repeatable fixture.
 - [Expected results](expected-results/README.md) identifies the proposed acceptance counts and the missing independent observations.

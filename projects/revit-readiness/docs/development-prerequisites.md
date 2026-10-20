@@ -1,6 +1,6 @@
 # Minimum development requirements for a Revit add-in
 
-Checked against official documentation: 2026-10-20. First lab target: **Revit 2024, C#, .NET Framework 4.8 (`net48`)**. This is a preparation guide; the lab has not yet compiled or run an add-in. Other Revit releases need their own verified requirements.
+Checked against official documentation: 2026-10-20. First lab target: **Revit 2024, C#, .NET Framework 4.8 (`net48`)**. The [first probe](../../../docs/tutorials/02-build-a-read-only-revit-command.md) has now been compiled and run on Revit build `24.3.60.12`. Other releases need their own verified requirements.
 
 For an agent-assisted first add-in, start with a Windows Revit workstation, a C# build toolchain, the matching framework references, the Revit API libraries, Git, and a coding agent that can work in the local repository. A basic command needs no additional third-party runtime library.
 
@@ -10,7 +10,7 @@ For an agent-assisted first add-in, start with a Windows Revit workstation, a C#
 |---|---|---|
 | Windows workstation | A supported 64-bit Windows configuration for the selected Revit version; use Windows 11 x64 for our proposed participant setup | Revit hosts and executes the add-in |
 | Full Autodesk Revit 2024 | An installed, activated copy the participant is entitled to use; record its exact update/build | Required to load and test the add-in against the actual application. Revit LT does not support add-ins |
-| C# build tools | A supported Windows x64 .NET SDK for an SDK-style project; the stable .NET 10 SDK is a candidate for our first build investigation | Supplies the compiler, MSBuild, and `dotnet` commands used by the agent |
+| C# build tools | Windows x64 .NET SDK matching the project's `global.json`; tested with 10.0.204 | Supplies the compiler, MSBuild, and `dotnet` commands used by the agent |
 | .NET Framework 4.8 reference assemblies | The 4.8 Developer Pack is the straightforward installer route; a project can alternatively obtain Microsoft's reference-assembly NuGet package | Supplies the framework API definitions needed to compile for `net48` |
 | Revit API libraries | `RevitAPI.dll` and `RevitAPIUI.dll` from the Revit 2024 installation | Supplies the application-specific interfaces used by our code |
 | Git for Windows | Git available to the agent, with a commit name and email configured | Supports source research, reviewing changes, and recording the build process |
@@ -37,7 +37,7 @@ Installing a modern .NET SDK does not change Revit 2024's add-in target to .NET 
 
 The strictly necessary build input is the correct reference assemblies. A separately installed Developer Pack is not mandatory when the project obtains them through [Microsoft.NETFramework.ReferenceAssemblies](https://learn.microsoft.com/en-us/dotnet/framework/migration-guide/reference-assemblies). That alternative introduces a build-time NuGet dependency and package restoration; it does not add a runtime library to ship with the plugin. Record the chosen route and resolved versions.
 
-Our exact build-SDK pin will follow a successful build and Revit run. An installed SDK version is not yet a tested lab requirement.
+The probe uses installed 4.8 targeting references and zero NuGet packages. Its [global.json](../global.json) selects SDK `10.0.204`, allowing later patches within the `10.0.2xx` feature band. Other feature bands require an intentional pin change and repeat verification. See the [observed build and host result](verification/2026-10-20-read-only-probe.md); this pin records the tested toolchain, not a claim that it is the newest SDK.
 
 ## API libraries and the files the agent creates
 
@@ -97,4 +97,4 @@ Suggested participant prompt, not a command already executed:
 
 ### Evidence on the author's workstation
 
-On 2026-10-20, inspection found Revit and API DLL file version `24.3.60.12`, .NET SDKs `9.0.318` and `10.0.204`, Git `2.53.0.windows.2`, and a .NET Framework 4.8 reference-assembly directory containing `mscorlib.dll`. These observations do not establish a complete Developer Pack installation or a successful build. No software was installed and no plugin was compiled, registered, or run while preparing this guide.
+Initial inspection on 2026-10-20 found Revit and API DLL file version `24.3.60.12`, .NET SDKs `9.0.318` and `10.0.204`, Git `2.53.0.windows.2`, and .NET Framework 4.8 references. In the subsequent implementation step, all required inputs passed inspection, the probe compiled with zero warnings/errors, and it loaded and returned independently checked counts in Revit. No prerequisite software needed installation. The new command was installed per user. See the [verification record](verification/2026-10-20-read-only-probe.md) for scope and limits.
