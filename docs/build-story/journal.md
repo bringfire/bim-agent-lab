@@ -247,6 +247,24 @@ previous commit byte-for-byte. Viewed the page header and both session tables in
 the browser, correcting the table-column spacing before the final check. These
 are documentation checks; they do not validate the planned plugin demonstrations.
 
+## 2026-10-20 Establish the participant development requirements
+
+### Author prompt
+
+> first things..What are the minimal requirements for developing a plugin for Revit?  This includes all software, libraries or other dependencies that will allow a new user to build a plugin with their agent.
+
+### Action and teaching lesson
+
+Added the [development prerequisites](../../projects/revit-readiness/docs/development-prerequisites.md), grounded in Autodesk and Microsoft documentation and linked from the participant learning path. The guide separates the minimum C# add-in setup from research/debugging resources and the later MCP layer.
+
+The central distinction is between tools that compile code, references that define the target APIs, and Revit as the runtime host. A modern .NET SDK can build an SDK-style project targeting .NET Framework 4.8; its own version is not the add-in's runtime target. The required framework references can come from the Developer Pack or Microsoft's build-time NuGet package. A full Visual Studio editor and third-party plugin frameworks are optional for the first command.
+
+The author's request exposes a prerequisite that experienced developers may overlook: participants need to know what their agent can actually do on their machine. A reusable inspection prompt asks for existing software and missing requirements before installation. The next proof is a minimal read-only command that builds, loads in the target Revit release, and returns a result checked independently.
+
+### Evidence and remaining work
+
+Rechecked the installed Revit/API file versions, .NET SDKs, Git, and the presence of .NET Framework 4.8 reference files. These are inventory observations, not a successful compilation or host test. Exact lab build-tool pins and the MCP dependency selection remain pending the first working build. No software was installed and no Revit add-in was created or run for this documentation step.
+
 ## A reusable research prompt
 
 The following is a teaching template, not an additional instruction from the author:

@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased — development prerequisites, 2026-10-20
+
+- Add a participant guide to the minimum Revit 2024 add-in development setup, with official sources and alternative build-tool routes.
+- Distinguish build tools, framework references, host/API dependencies, research resources, and later MCP requirements.
+- Add a reusable machine-inspection prompt and require a build plus an observed Revit run as setup evidence.
+
 ## Unreleased — working seminar agenda, 2026-10-20
 
 - Develop Option B into two 60-minute sessions emphasizing research, Git, the plugin build, verification, and continued use of BIM Agent Lab.

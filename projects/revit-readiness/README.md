@@ -14,6 +14,7 @@ The [demo brief](docs/demo-questions-and-sample-model.md) defines the proposed c
 
 ## Start here
 
+- [Development prerequisites](docs/development-prerequisites.md) for the minimum agent-assisted Revit 2024 setup, optional tools, and later MCP dependencies.
 - [Project agent guidance](AGENTS.md) for scope and implementation boundaries.
 - [Resources and precedents](../../docs/research/revit-resources.md) for SDKs, API evidence, and bridge candidates.
 - [Sample preparation](samples/README.md) for controlled model cases.

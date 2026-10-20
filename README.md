@@ -20,7 +20,7 @@ Open your local copy in a coding agent and try:
 
 > Read README.md and AGENTS.md. Explain this project's current state and guide me through the learning path. Start with research and Git. Distinguish what has been observed, what is proposed, and what has been tested. Help me choose one useful next step.
 
-Reading the materials needs no Revit installation. Executing future Revit examples will require the prerequisites documented by that project. SDKs, host applications, model files, and the seven reference repositories are obtained separately.
+Reading the materials needs no Revit installation. Executing future Revit examples will require the [development prerequisites](projects/revit-readiness/docs/development-prerequisites.md) documented by that project. SDKs, host applications, model files, and the seven reference repositories are obtained separately.
 
 ## Repository map
 

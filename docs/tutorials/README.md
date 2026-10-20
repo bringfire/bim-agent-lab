@@ -2,6 +2,8 @@
 
 Begin with the [repository README](../../README.md) and [current status](../reference/development-status.md). The materials below cover the research and design work completed so far. Later implementation chapters will be written alongside the working code.
 
+Before building the Revit example, use the [development prerequisites](../../projects/revit-readiness/docs/development-prerequisites.md) to have your agent inspect your workstation and identify missing tools. Reading the teaching materials does not require a development installation.
+
 | Step | Learning outcome | Available material |
 |---|---|---|
 | 1. Direct an agent with Git | Identify the working repository; clone, inspect, review, and checkpoint | [Git lesson](01-directing-an-agent-with-git.md) |
