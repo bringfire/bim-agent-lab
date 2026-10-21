@@ -1,0 +1,112 @@
+{
+  "date": "2026-10-21",
+  "baseline": "9b4eb516819f4c6fc5d90ccdefc7751b0705e694",
+  "scope": "Task 2 offline evidence; no live Revit or desktop rerun",
+  "files": [
+    {
+      "path": "all-offline-green.txt",
+      "bytes": 12284,
+      "sha256": "c606f9e94c78a87a2807d3247a3edbae5fcd99e104e415c444b01d168702f6f5"
+    },
+    {
+      "path": "assembly-references.json",
+      "bytes": 1429,
+      "sha256": "8a4bd19ef2bd02ea0ed3a24c4fbd0df028f085dd7f5e9b1851cd85bee348d2fa"
+    },
+    {
+      "path": "exchange/net10.0/context.json",
+      "bytes": 375,
+      "sha256": "a339e604a2fbba285c2fca2b238ebc4a970ded58c3fdb485df6ee257c97b54d8"
+    },
+    {
+      "path": "exchange/net10.0/request.json",
+      "bytes": 170,
+      "sha256": "ce92a54a31cffd88e0d7cf3f78cacb2b74f61f9d18db7285a02f6eef382e7a8f"
+    },
+    {
+      "path": "exchange/net10.0/response.json",
+      "bytes": 405,
+      "sha256": "f40c3bc76c549020eb40bbacb736802638bde73dcd3fb088f4671eee19338b98"
+    },
+    {
+      "path": "exchange/net48/context.json",
+      "bytes": 375,
+      "sha256": "a339e604a2fbba285c2fca2b238ebc4a970ded58c3fdb485df6ee257c97b54d8"
+    },
+    {
+      "path": "exchange/net48/request.json",
+      "bytes": 170,
+      "sha256": "ce92a54a31cffd88e0d7cf3f78cacb2b74f61f9d18db7285a02f6eef382e7a8f"
+    },
+    {
+      "path": "exchange/net48/response.json",
+      "bytes": 405,
+      "sha256": "f40c3bc76c549020eb40bbacb736802638bde73dcd3fb088f4671eee19338b98"
+    },
+    {
+      "path": "framing-green.txt",
+      "bytes": 5552,
+      "sha256": "422d902654858149011fb9b8075f6beba5b8105371c41e6dd36469665ef0ca1f"
+    },
+    {
+      "path": "initial-red.txt",
+      "bytes": 7638,
+      "sha256": "54c7763421eb2d1c1bd3bcf7e7cf2fa740a0760d3e4ba3f72894671ecbecf61f"
+    },
+    {
+      "path": "json-boundary-red.txt",
+      "bytes": 5492,
+      "sha256": "01cef85f5fd9becab774f889b30f463941b61b43dc94153b071f135230c2a33f"
+    },
+    {
+      "path": "protocol/2025-06-18-compatible/client-to-server.jsonl",
+      "bytes": 525,
+      "sha256": "0c0ee15a6a309cfc5be76323b5a4400192fa3d4103b69f3a85377828643f7247"
+    },
+    {
+      "path": "protocol/2025-06-18-compatible/server-to-client.jsonl",
+      "bytes": 1102,
+      "sha256": "b7dfb6acc305927924b9a416fcfbb425279eb63d86dbd3dd04a6275b2095456a"
+    },
+    {
+      "path": "protocol/2025-11-25-compatible/client-to-server.jsonl",
+      "bytes": 525,
+      "sha256": "edc189918efe522c685348a98992fc4c1b5d97cb3ce072c821a294666f876ddb"
+    },
+    {
+      "path": "protocol/2025-11-25-compatible/server-to-client.jsonl",
+      "bytes": 1102,
+      "sha256": "2aac23e8f2d6dfe9a16fb5241783c15e8de332af347817e59e4daf0fe30b4f86"
+    },
+    {
+      "path": "protocol/2026-07-28-compatible/client-to-server.jsonl",
+      "bytes": 1162,
+      "sha256": "2280004f874c20d3f1fdf563f040233b7e10b6eac3d897e0eada2e0dd34aced4"
+    },
+    {
+      "path": "protocol/2026-07-28-compatible/server-to-client.jsonl",
+      "bytes": 1572,
+      "sha256": "2ce70baef931472e971cb472720eca767673c66ddd9b6818605dbed7f3b0e254"
+    },
+    {
+      "path": "protocol/2026-07-28-strict/client-to-server.jsonl",
+      "bytes": 1162,
+      "sha256": "2280004f874c20d3f1fdf563f040233b7e10b6eac3d897e0eada2e0dd34aced4"
+    },
+    {
+      "path": "protocol/2026-07-28-strict/server-to-client.jsonl",
+      "bytes": 1572,
+      "sha256": "2ce70baef931472e971cb472720eca767673c66ddd9b6818605dbed7f3b0e254"
+    },
+    {
+      "path": "readiness-green.txt",
+      "bytes": 3091,
+      "sha256": "a827b239b4ee1b025624b9603ba67c9fe54ddfafebb4a1da07a8f39625614e13"
+    },
+    {
+      "path": "timestamp-red.txt",
+      "bytes": 5142,
+      "sha256": "945a2deaab89c080f760cbbdceb33b29624b710993a6d9ddddd34c41d291a1b5"
+    }
+  ]
+}

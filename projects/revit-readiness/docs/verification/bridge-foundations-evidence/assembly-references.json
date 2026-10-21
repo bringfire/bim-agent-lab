@@ -1,0 +1,51 @@
+[
+  {
+    "target": "net48",
+    "assembly": "BimAgentLab.RevitBridge.Contract",
+    "sha256": "dbbc03848c735d1d10699ced8e92fe1e8d651444e1b2ff2ac8f74776b1f548ad",
+    "references": [
+      "mscorlib"
+    ]
+  },
+  {
+    "target": "net48",
+    "assembly": "BimAgentLab.RevitBridge.Runtime",
+    "sha256": "49aa483d3e3c4582880dd9695686c1307e7f81cf151f9c20f97361ad7f7f80f7",
+    "references": [
+      "mscorlib",
+      "BimAgentLab.RevitBridge.Contract",
+      "System.Runtime.Serialization",
+      "System.Xml",
+      "System.Xml.Linq",
+      "System",
+      "System.Web.Extensions",
+      "System.Core"
+    ]
+  },
+  {
+    "target": "net10.0",
+    "assembly": "BimAgentLab.RevitBridge.Contract",
+    "sha256": "94dc45d8230b0daa8b8d46e4bb8bd407a0d8199df687b9ed072349c1a16bffbb",
+    "references": [
+      "System.Runtime"
+    ]
+  },
+  {
+    "target": "net10.0",
+    "assembly": "BimAgentLab.RevitBridge.Runtime",
+    "sha256": "4fc67fd8e1e616d98706ac8e582a9ffbda0e78a02857312dd1c8e4740ad922aa",
+    "references": [
+      "System.Runtime",
+      "BimAgentLab.RevitBridge.Contract",
+      "System.Runtime.Serialization.Xml",
+      "System.Xml.ReaderWriter",
+      "System.Text.Json",
+      "System.Xml.XDocument",
+      "System.Collections",
+      "System.Text.Encoding.Extensions",
+      "System.Runtime.Serialization.Json",
+      "System.Linq",
+      "System.Threading"
+    ]
+  }
+]

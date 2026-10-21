@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "dependencies": {
+    ".NETFramework,Version=v4.8": {
+      "bimagentlab.revitbridge.contract": {
+        "type": "Project"
+      },
+      "bimagentlab.revitbridge.runtime": {
+        "type": "Project",
+        "dependencies": {
+          "BimAgentLab.RevitBridge.Contract": "[1.0.0, )"
+        }
+      }
+    },
+    ".NETFramework,Version=v4.8/win-x86": {},
+    "net10.0": {
+      "bimagentlab.revitbridge.contract": {
+        "type": "Project"
+      },
+      "bimagentlab.revitbridge.runtime": {
+        "type": "Project",
+        "dependencies": {
+          "BimAgentLab.RevitBridge.Contract": "[1.0.0, )"
+        }
+      }
+    },
+    "net10.0/win-x86": {}
+  }
+}

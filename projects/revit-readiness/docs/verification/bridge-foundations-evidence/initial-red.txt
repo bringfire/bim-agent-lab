@@ -1,0 +1,70 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net48\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net48\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.Bridge.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\bin\Release\net10.0\BimAgentLab.Bridge.Tests.dll
+  BimAgentLab.Bridge.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\bin\Release\net48\BimAgentLab.Bridge.Tests.exe
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.34
+FAIL Fragmented headers and Unicode bodies larger than 8192 bytes survive: NotImplementedException Bounded frame read
+FAIL Coalesced frames leave the next frame unread: NotImplementedException Bounded frame read
+FAIL Header and body EOF cannot become a complete payload: NotImplementedException Bounded frame read
+FAIL Zero, over-limit and unsigned-overflow lengths fail before body reads: NotImplementedException Bounded frame read
+FAIL Request and response exact byte limits pass; one byte over writes nothing: NotImplementedException Bounded frame write
+FAIL Invalid UTF-8 fails without replacement characters: NotImplementedException Bounded frame read
+FAIL Cancellation releases a blocked frame read and write: NotImplementedException Bounded frame read
+FAIL Already canceled frame cannot touch output; caller retains stream ownership: NotImplementedException Bounded frame write
+FAIL Request wire preserves required members and Unicode: NotImplementedException Strict private envelope validation
+FAIL Malformed, duplicate, unknown, missing and wrongly typed envelope members fail: NotImplementedException Strict private envelope validation
+FAIL Unknown version and operation report stable contract errors: NotImplementedException Strict private envelope validation
+FAIL UTC timestamps reject culture-dependent, local and invalid values: NotImplementedException Invariant UTC timestamp
+FAIL Opaque report preserves casing, false flags, Unicode and prompt-like text: NotImplementedException Bounded response publication
+FAIL Response requires exactly one result/error and matching error request identity: NotImplementedException Private envelope serialization
+FAIL Oversized response becomes a small correlated error without truncation or mutation: NotImplementedException Bounded response publication
+FAIL Context DTO preserves paths and rejects incomplete identity: NotImplementedException Private envelope serialization
+FAIL Admission uses one monotonic 30-second budget despite wall-clock jumps: NotImplementedException Admission budget
+FAIL Slow receipt consumes original budget and accept cap cannot be reset: NotImplementedException Remaining receive budget
+FAIL Expired and beyond-policy deadlines are rejected at receipt: NotImplementedException Remaining receive budget
+FAIL Context keeps same budget and a defensive request snapshot: NotImplementedException Admission budget
+FAIL Borrowed lifetime cannot extend its wire deadline: NotImplementedException Admission budget
+FAIL Cancellation during preparation prevents a new read: ownerStopping=False: NotImplementedException Admission budget
+FAIL Cancellation during preparation prevents a new read: ownerStopping=True: NotImplementedException Admission budget
+FAIL Expiry during preparation and after execution suppresses new reads and publication: NotImplementedException Admission budget
+FAIL Remaining deadline timer wakes blocked work without upstream cancellation: NotImplementedException Remaining receive budget
+FAIL Canceled response retains lifetime until callback quiesces: NotImplementedException Admission budget
+FAIL Cancellation racing quiescence leaves cleanup settled without disposed-source faults: NotImplementedException Admission budget
+Bridge tests: 0 passed; 27 failed.
+FAIL Fragmented headers and Unicode bodies larger than 8192 bytes survive: NotImplementedException Bounded frame read
+FAIL Coalesced frames leave the next frame unread: NotImplementedException Bounded frame read
+FAIL Header and body EOF cannot become a complete payload: NotImplementedException Bounded frame read
+FAIL Zero, over-limit and unsigned-overflow lengths fail before body reads: NotImplementedException Bounded frame read
+FAIL Request and response exact byte limits pass; one byte over writes nothing: NotImplementedException Bounded frame write
+FAIL Invalid UTF-8 fails without replacement characters: NotImplementedException Bounded frame read
+FAIL Cancellation releases a blocked frame read and write: NotImplementedException Bounded frame read
+FAIL Already canceled frame cannot touch output; caller retains stream ownership: NotImplementedException Bounded frame write
+FAIL Request wire preserves required members and Unicode: NotImplementedException Strict private envelope validation
+FAIL Malformed, duplicate, unknown, missing and wrongly typed envelope members fail: NotImplementedException Strict private envelope validation
+FAIL Unknown version and operation report stable contract errors: NotImplementedException Strict private envelope validation
+FAIL UTC timestamps reject culture-dependent, local and invalid values: NotImplementedException Invariant UTC timestamp
+FAIL Opaque report preserves casing, false flags, Unicode and prompt-like text: NotImplementedException Bounded response publication
+FAIL Response requires exactly one result/error and matching error request identity: NotImplementedException Private envelope serialization
+FAIL Oversized response becomes a small correlated error without truncation or mutation: NotImplementedException Bounded response publication
+FAIL Context DTO preserves paths and rejects incomplete identity: NotImplementedException Private envelope serialization
+FAIL Admission uses one monotonic 30-second budget despite wall-clock jumps: NotImplementedException Admission budget
+FAIL Slow receipt consumes original budget and accept cap cannot be reset: NotImplementedException Remaining receive budget
+FAIL Expired and beyond-policy deadlines are rejected at receipt: NotImplementedException Remaining receive budget
+FAIL Context keeps same budget and a defensive request snapshot: NotImplementedException Admission budget
+FAIL Borrowed lifetime cannot extend its wire deadline: NotImplementedException Admission budget
+FAIL Cancellation during preparation prevents a new read: ownerStopping=False: NotImplementedException Admission budget
+FAIL Cancellation during preparation prevents a new read: ownerStopping=True: NotImplementedException Admission budget
+FAIL Expiry during preparation and after execution suppresses new reads and publication: NotImplementedException Admission budget
+FAIL Remaining deadline timer wakes blocked work without upstream cancellation: NotImplementedException Remaining receive budget
+FAIL Canceled response retains lifetime until callback quiesces: NotImplementedException Admission budget
+FAIL Cancellation racing quiescence leaves cleanup settled without disposed-source faults: NotImplementedException Admission budget
+Bridge tests: 0 passed; 27 failed.
