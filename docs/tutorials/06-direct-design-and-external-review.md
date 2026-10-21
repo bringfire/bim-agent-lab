@@ -1,6 +1,6 @@
 # Ask for a design, a plan, and independent review
 
-This participant story explains how the author changed the next step from immediate bridge construction into a reviewable design process. Its [agent guide](../how-to/run-spec-plan-and-implementation-reviews.md) provides the technical procedure. An external review of the first [spec](../superpowers/specs/2026-10-20-revit-mcp-bridge-design.md) returned three findings. The reviewer subsequently closed them on revision 2, and the author approved that spec. The [implementation plan](../superpowers/plans/2026-10-20-revit-mcp-bridge.md) is now written for external review; the bridge remains unimplemented.
+This participant story explains how the author directed a reviewable design process and then challenged the reasoning behind several review findings. Its [agent guide](../how-to/run-spec-plan-and-implementation-reviews.md) gives the technical procedure. Spec revision 2 is reviewed and approved. External R2 found three major gaps and one minor inconsistency in the first plan; [plan revision 2](../superpowers/plans/2026-10-20-revit-mcp-bridge.md) now addresses them and awaits follow-up. The bridge remains unimplemented.
 
 ## Begin with the work already done
 
@@ -93,6 +93,28 @@ Here, the reviewer identified the remaining uncertainty: can **both desktop appl
 
 The [R2 packet](../superpowers/reviews/revit-mcp-bridge/02-plan-review.md) gives an external reviewer the plan, approved spec, relevant source, and questions that can expose missing steps. The agent recommends implementing in the current session because the connection, queue, and document checks share interfaces; the author has not yet chosen an execution method. External plan and implementation reviews remain part of either approach. This demonstrates directing the agent to make a recommendation while retaining the human decision.
 
+## Ask what connects several findings
+
+The [external R2 review](../superpowers/reviews/revit-mcp-bridge/2026-10-20-r2-feedback.md) recommended **revise before implementation**. It found three major gaps: cancellation could be lost before a Revit read, stopping the server could leave it waiting on stdin, and an interrupted installation might lack the backups needed to recover. A smaller inconsistency concerned how instance-selection errors reached the agent.
+
+The author did more than ask for four local fixes. The accompanying message identified a common reasoning gap:
+
+> The common gap is reasoning about what remains safe when an operation stops halfway through.
+
+It then supplied this direction:
+
+> Walk each operation from admission through completion, including cancellation, timeout, disconnect, shutdown, and partial failure. For every stage, identify who owns the resources, which conditions must still hold before the next action, and how the system reaches a safe final state. Carry those responsibilities into the interfaces and test failures at the transitions.
+
+This is a reusable way to engage an agent. Several findings can reveal a shared blind spot. Ask the agent to explain that pattern, check it against source, and revise the reasoning that generated the plan. The original self-review had checked whether tasks covered the requirements; it had not established that those guarantees survived the handoffs between tasks.
+
+The revised plan starts with ownership across the whole operation. In plain terms: stopping your wait does not necessarily stop the Revit read; the read still needs its resources until it finishes, and its late result must not be presented as current. Similarly, an installation needs verified backups **before** replacing anything. A list of the files it intends to install cannot restore the files it already overwrote.
+
+The plan now calls for tests that deliberately interrupt preparation, reads, shutdown, installation and recovery. Participants can ask to see those test definitions and, later, their actual results. At this checkpoint they are planned tests, not demonstrations that the bridge is safe.
+
+The review also changed a provenance detail. The agent now proposes adapting a small stdin-cancellation helper from the **official C# SDK 2.2.0**, with source attribution and license/notice review. That is different from merely consuming its package. The old **TypeScript SDK 1.26.0 remains a learning precedent**, with no code selected for reuse. No helper code has been copied yet. Asking the agent to keep its provenance account current is part of directing the work.
+
+Hand the [focused R2 follow-up packet](../superpowers/reviews/revit-mcp-bridge/02-plan-review.md) to the reviewer. Ask whether the shared lifetime rules resolve the findings and whether any handoff still loses a guarantee. The drafting agent's acceptance of a finding is not the reviewer's closure of it.
+
 ## Reuse this way of directing an agent
 
 This is a **suggested teaching prompt**, not another historical instruction:
@@ -101,4 +123,4 @@ This is a **suggested teaching prompt**, not another historical instruction:
 
 As an exercise, open the spec-review packet and identify one way a check could return the wrong model's data. Ask a reviewer to show whether the spec prevents it and what test would demonstrate that. Then compare the response with the written requirement rather than accepting a confident summary.
 
-Current evidence includes external R1 findings and closure, source-backed dispositions, spec revision 2 approval, and a self-reviewed implementation plan. External R2, author review/execution choice, implementation, and runtime acceptance remain pending. Find the actual checkpoints using `git log --oneline -- docs/superpowers/`; earlier readiness runtime passes do not prove the bridge works.
+Current evidence includes approved spec revision 2, external R2 findings, the author's lifetime/ownership direction, source-backed dispositions and plan revision 2. R2 follow-up, author plan review/execution choice, implementation and runtime acceptance remain pending. Find actual checkpoints using `git log --oneline -- docs/superpowers/`; earlier readiness passes do not prove the bridge works.
