@@ -1,0 +1,114 @@
+{
+  "observedLocalDate": "2026-10-20",
+  "timezone": "America/New_York",
+  "baselineCommit": "9ea3151b323ae50b919fed2e4cb89e10362e598a",
+  "approvedRequirementChanged": false,
+  "productionHostChanged": false,
+  "codex": {
+    "updaterTool": "mcp__codex_app__check_app_update",
+    "updaterResult": {
+      "installedVersion": "26.1013.40934",
+      "installedBuildVersion": "20770",
+      "installedReleaseChannel": "prod",
+      "status": "up_to_date"
+    },
+    "windowsPackageVersion": "26.1013.4894.0",
+    "wireClientVersion": "0.163.0-alpha.10.2",
+    "feature": "features.mcp_2026_07_28",
+    "initialFeatureValue": false,
+    "experimentalFeatureValue": true,
+    "featureStage": "under development",
+    "appsFeatureChanged": false,
+    "activation": "Author replied reloaded after temporary feature and probe registration",
+    "capturedConnections": 6,
+    "observedProtocol": "2025-06-18",
+    "error": -32022,
+    "toolCalls": "Not reached",
+    "fullApplicationRestartTest": "Pending",
+    "runtimeFeatureActivation": "Unverified; recognized CLI setting plus MCP reload did not change wire behavior",
+    "cleanup": "Temporary feature and probe remain on disk for pending full-restart test; private durable recovery retained"
+  },
+  "claude": {
+    "windowsPackageVersion": "3.1623.0.0",
+    "executableProductVersion": "3.1623.0",
+    "officialLatestEndpoint": "https://claude.ai/api/desktop/win32/x64/msix/latest/redirect",
+    "httpMethod": "GET, headers only, automatic redirects disabled",
+    "httpStatus": 307,
+    "location": "https://downloads.claude.ai/releases/win32/x64/3.1623.0/Claude-e751f9d5249da803676835a68a9b15463ec5b1d7.msix",
+    "downloadedInstaller": false,
+    "nativeUpdater": "Invoked once; checking state observed; final result not captured",
+    "documentedLocalStdioOverride": "None found in inspected official setup, deployment and release documentation",
+    "configurationChangedThisInvestigation": false,
+    "newDesktopProtocolTest": false
+  },
+  "sdkDiagnostic": {
+    "package": "ModelContextProtocol 2.2.0",
+    "expectedCombinations": 6,
+    "observedExpectedCombinations": 6,
+    "exitCode": 0,
+    "desktopAcceptance": false
+  },
+  "sourcePins": {
+    "csharpSdk": "6fa3825973949a9c4f0cd8af344e15a8db09dc35",
+    "openaiCodexReadme": "d571eaf1f61d0d93a797506335a99a9950ffe37b"
+  },
+  "captureNotes": "SDK JSON and twelve lab-only protocol files copied byte-for-byte. Feature list retains only the two relevant lines. Update observations transcribed from tool/HTTP results; no full settings, private receipts or unrelated application logs retained.",
+  "files": [
+    {
+      "path": "codex-feature-reload/session-3ad0a527552b4a4a8b477d2c1981aa66/client-to-server.jsonl",
+      "sha256": "5aa98cc3fdc54a94c24b92dc2404c8e81af88f47ace5c09b184702cee2c1e83d"
+    },
+    {
+      "path": "codex-feature-reload/session-3ad0a527552b4a4a8b477d2c1981aa66/server-to-client.jsonl",
+      "sha256": "ce6725745d4d809f2a6f637d66ee9e7fe54abed38bfa952919a4fe3149b3b4e4"
+    },
+    {
+      "path": "codex-feature-reload/session-3d0a9de4490f45329fe66fe5283b2dad/client-to-server.jsonl",
+      "sha256": "64c62e9614f91db65ee42af6e9bac26de3760260ec8fdd96492353cba2c587d7"
+    },
+    {
+      "path": "codex-feature-reload/session-3d0a9de4490f45329fe66fe5283b2dad/server-to-client.jsonl",
+      "sha256": "ce6725745d4d809f2a6f637d66ee9e7fe54abed38bfa952919a4fe3149b3b4e4"
+    },
+    {
+      "path": "codex-feature-reload/session-5a40454c8fe84f1691a2ee672c27374e/client-to-server.jsonl",
+      "sha256": "5aa98cc3fdc54a94c24b92dc2404c8e81af88f47ace5c09b184702cee2c1e83d"
+    },
+    {
+      "path": "codex-feature-reload/session-5a40454c8fe84f1691a2ee672c27374e/server-to-client.jsonl",
+      "sha256": "ce6725745d4d809f2a6f637d66ee9e7fe54abed38bfa952919a4fe3149b3b4e4"
+    },
+    {
+      "path": "codex-feature-reload/session-9e4d995d4758401aaa0013d096a6a420/client-to-server.jsonl",
+      "sha256": "5aa98cc3fdc54a94c24b92dc2404c8e81af88f47ace5c09b184702cee2c1e83d"
+    },
+    {
+      "path": "codex-feature-reload/session-9e4d995d4758401aaa0013d096a6a420/server-to-client.jsonl",
+      "sha256": "ce6725745d4d809f2a6f637d66ee9e7fe54abed38bfa952919a4fe3149b3b4e4"
+    },
+    {
+      "path": "codex-feature-reload/session-f6ebcaa2500b41858fe4011c3e848bd6/client-to-server.jsonl",
+      "sha256": "5aa98cc3fdc54a94c24b92dc2404c8e81af88f47ace5c09b184702cee2c1e83d"
+    },
+    {
+      "path": "codex-feature-reload/session-f6ebcaa2500b41858fe4011c3e848bd6/server-to-client.jsonl",
+      "sha256": "ce6725745d4d809f2a6f637d66ee9e7fe54abed38bfa952919a4fe3149b3b4e4"
+    },
+    {
+      "path": "codex-feature-reload/session-ff6582b8551a47c4a0d6f8bdabd9453d/client-to-server.jsonl",
+      "sha256": "5aa98cc3fdc54a94c24b92dc2404c8e81af88f47ace5c09b184702cee2c1e83d"
+    },
+    {
+      "path": "codex-feature-reload/session-ff6582b8551a47c4a0d6f8bdabd9453d/server-to-client.jsonl",
+      "sha256": "ce6725745d4d809f2a6f637d66ee9e7fe54abed38bfa952919a4fe3149b3b4e4"
+    },
+    {
+      "path": "codex-features-experiment.txt",
+      "sha256": "f8f01b95574989938b9843860478d7a6c5a132e25fb92107e8417f2e0f402d72"
+    },
+    {
+      "path": "sdk-default-comparison.json",
+      "sha256": "f4552920ad020bf712b98d744c09d8882db1427421eb6afe97fcaa0fb439859f"
+    }
+  ]
+}

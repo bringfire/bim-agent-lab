@@ -48,4 +48,32 @@ This is a **suggested prompt**, not a historical instruction:
 
 > Before building the full integration, identify its least certain assumption and propose the smallest test of it in the applications we will actually use. Record the versions and messages exchanged. Keep a library test separate from a real application test. If it fails, preserve the evidence, explain the choices, and tell me which requirement would need to change. Record how I directed this work and how another agent can reproduce it.
 
-Current outcome: the compatibility checkpoint failed for both installed desktops. The temporary configuration entries were removed; dependent bridge tasks remain unstarted. The next decision is whether to retain the strict protocol requirement and find supporting client versions, or explicitly revise it and test a compatible exchange. No alternate protocol has yet been demonstrated in both desktops. Find the implementation checkpoint with `git log --oneline -- projects/revit-readiness/src/mcp-server`.
+That first checkpoint failed for both installed desktops with their tested settings. Its temporary configuration entries were removed; dependent bridge tasks remained unstarted. The real implementation checkpoint is `9ea3151b323ae50b919fed2e4cb89e10362e598a`. The author's next question led to the investigation below.
+
+## Challenge whether a blocker serves the purpose
+
+The author first asked:
+
+> wait sorry...neither desktop apps support the new MCP protocol?
+
+Then gave this actual instruction and question:
+
+> Ok, check whether newer versions or settings in Codex desktop and Claude Desktop support 2026-07-28 before we change the requirement. Record what you find in both teaching layers., but I still don't fully understand. Is this a footgun and self-imposed restriction or something real?
+
+This is a useful way to direct an agent: ask it to examine its own recommendation before accepting a limitation or changing the goal. The author did not need to know the implementation detail that caused the failure.
+
+The answer is that **the protocol difference is real, but we chose to make it a blocker**. The current SDK already knows how to communicate using both old and new revisions. Our server deliberately accepts only the new one, and the written acceptance criteria require both desktop applications to use it. The agent should have explained the difference between using a modern SDK and requiring every application to speak only the newest protocol before recommending that restriction.
+
+To test that explanation, the agent held the SDK version constant and changed the protocol setting in a separate, small diagnostic. All three tested revisions worked with the SDK's compatibility default; only the newest worked with our strict setting. This is evidence about the cause of the rejection. It is not yet proof that the real desktop demonstrations work, and it does not change the approved requirement.
+
+The update research also narrowed the original claim. Codex's updater offered no eligible update, but its installed engine exposed an experimental setting for the new protocol. The agent prepared a reversible experiment, and the author replied **“reloaded.”** Fresh desktop traffic still used the older protocol. That combination did not resolve the failure; a full application restart remains to test whether the running desktop actually loads the setting. Claude's public Windows download matched the installed version. The inspected documentation did not identify a local-server switch or a Desktop version that resolves the failure. A general rollout announcement is not enough to claim success in our particular connection.
+
+The [dated investigation](../research/mcp-desktop-protocol-investigation.md) preserves the evidence and limits. Keeping SDK 2.2.0 while permitting tested older client exchanges would not mean adopting SDK 1.x, copying the old bridge or writing our own protocol. No new-protocol-only capability has been identified as necessary for these readiness questions. The author can use that information to decide whether the strict restriction serves the demonstration; the agent must not quietly change the contract to get a green result.
+
+### A follow-up prompt to reuse
+
+This is a **suggested prompt**, not a historical instruction:
+
+> Before treating this as a product limitation, separate the library version, the application's actual capabilities and restrictions we added ourselves. Check current releases and settings. Identify which required feature needs the restriction, and test the smallest alternative without changing our approved requirements. Show what the evidence proves and what still needs testing in the real application.
+
+The lesson is broader than MCP: challenge a proposed constraint by asking what purpose it serves and what evidence distinguishes an external limitation from a choice the agent made.

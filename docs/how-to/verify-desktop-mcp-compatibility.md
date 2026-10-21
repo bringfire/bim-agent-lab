@@ -52,4 +52,33 @@ The restoration checks ownership and preserves concurrent unrelated edits. If th
 
 Retain narrowly scoped, reviewed transcripts and a SHA-256 manifest. The saved lab-only messages can be copied unchanged; omit full settings, unrelated logs and chat content. Normalize personal paths only in diagnostic logs and disclose that transformation. Record exact failure evidence as carefully as a pass.
 
-Both actual desktops must show `2026-07-28` plus discovery, success and structured failure before CP0 passes. In the recorded run both used legacy `initialize` and received `-32022`. No supported setting that forces the required exchange was found in the inspected local help and official setup pages; that is a dated investigation result, not a claim about every release or undocumented option. A new client version requires another test. An alternate protocol requires an explicit specification decision and new evidence. CP0 success would still leave Task 8's live samples, NC1/NC2 and both desktop applications' Revit acceptance outstanding.
+Both actual desktops must show `2026-07-28` plus discovery, success and structured failure before CP0 passes. In the original run both used legacy `initialize` and received `-32022`. The first search did not find a resolving documented setting; the [follow-up investigation](../research/mcp-desktop-protocol-investigation.md) subsequently found a recognized **experimental** Codex feature flag. Preserve that distinction instead of repeating a blanket incompatibility claim. A new client version or setting requires another test. An alternate protocol requires an explicit specification decision and new evidence. CP0 success would still leave Task 8's live samples, NC1/NC2 and both desktop applications' Revit acceptance outstanding.
+
+## Diagnose a version restriction before changing acceptance
+
+Separate four facts: the installed SDK package, its supported wire revisions, the client exchange actually observed, and the server/acceptance policy. Inspect the pinned SDK source as well as current documentation. In SDK 2.2.0, `McpServerOptions.ProtocolVersion = null` supports its listed old/new revisions; our explicit `2026-07-28` pin rejects legacy initialization. The production host and approved spec remain strict.
+
+Reproduce the isolated SDK comparison from the repository root:
+
+```powershell
+dotnet restore ./projects/revit-readiness/tests/mcp-sdk-diagnostic/BimAgentLab.Mcp.SdkDiagnostic.csproj --locked-mode
+dotnet build ./projects/revit-readiness/tests/mcp-sdk-diagnostic/BimAgentLab.Mcp.SdkDiagnostic.csproj -c Release --no-restore
+& ./projects/revit-readiness/tests/mcp-sdk-diagnostic/bin/Release/net10.0/BimAgentLab.Mcp.SdkDiagnostic.exe
+```
+
+The diagnostic self-launches SDK servers and clients. Six comparisons hold SDK 2.2.0 constant, varying strict/default server options and pinned client revisions. Expected rejections must contain the initialization error; accepted cases check exact negotiated revision, tool discovery, structured success/failure and explicit false/true flags. Exit 0 and `allExpectedOutcomesObserved: true` establish these SDK observations only. This separate test is not included in `Test-McpBridge.ps1`, does not call the production host, and is not CP0 or Revit acceptance. Its project reference inherits the existing exact SDK dependency and commits a lockfile.
+
+For Codex, locate the installed engine without assuming the versioned directory name on another machine. The observed command was:
+
+```powershell
+& "$env:LOCALAPPDATA/OpenAI/Codex/bin/896a0166b774037a/codex.exe" features list |
+    Select-String '^mcp_2026_07_28\s|^codex_apps_mcp_2026_07_28\s'
+```
+
+Both were initially false and labeled `under development`. Only `features.mcp_2026_07_28` is the candidate local-server experiment here; do not enable the separate apps flag by analogy. Save durable recovery before any global configuration change, inspect existing overrides, preserve unrelated settings and disclose the exact experiment. A recognized CLI feature and a successful config write do not prove the running desktop applied it. Reload the actual application, inspect fresh wire evidence, then call both probe outcomes through that application. If no new trace appears, activation is unverified, not a protocol rejection.
+
+Use Codex's configured updater result to describe eligible updates, retaining its product/build identifiers separately from Windows package identifiers. For Claude, compare the installed package/product version with the official Windows latest-download redirect; do not download an installer merely to discover its version. Record native updater results only if actually observed. Search absence and cross-product rollout announcements cannot establish universal lack of support.
+
+Retain the original failed captures. Add follow-up results under a separate evidence directory and record which configuration produced them. Restore only owned temporary changes, verify unrelated settings, and distinguish disk restoration from application cache refresh. The [follow-up record](../research/mcp-desktop-protocol-investigation.md) identifies the current experiment and private recovery location.
+
+If compatibility is proposed, identify whether any required capability actually needs the newest protocol, then explicitly revise acceptance before changing production policy. SDK 2.2.0's compatibility path is SDK consumption, not an SDK 1.x dependency or hand-rolled protocol. Older-client acceptance must still preserve all readiness, incomplete-coverage, interruption and independent-verification guarantees.

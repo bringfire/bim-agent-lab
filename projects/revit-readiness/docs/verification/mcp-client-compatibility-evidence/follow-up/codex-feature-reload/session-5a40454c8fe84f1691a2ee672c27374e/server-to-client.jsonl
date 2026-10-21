@@ -1,0 +1,1 @@
+{"error":{"code":-32022,"message":"Protocol version \u00272026-07-28\u0027 is not available through the initialize handshake.","data":{"supported":[],"requested":"2026-07-28"}},"id":0,"jsonrpc":"2.0"}

@@ -4,6 +4,8 @@ Observed 2026-10-20, America/New_York (some evidence timestamps fall on October 
 
 ## Observed results
 
+This section preserves the original default-settings run. The [follow-up investigation](../../../../docs/research/mcp-desktop-protocol-investigation.md) checks updates, finds an experimental Codex flag and demonstrates SDK 2.2.0's compatibility default separately. It qualifies the original research conclusion without changing these captured failures or claiming CP0 acceptance.
+
 | Caller | Baseline | Actual exchange | Outcome |
 |---|---|---|---|
 | Official C# SDK test client | ModelContextProtocol 2.2.0; .NET 10 | `server/discover`, tools/list and two calls with `2026-07-28` metadata | Pass: synthetic success and `ProbeFailure`, explicit false/true isError, structured content; independent comparator passed |

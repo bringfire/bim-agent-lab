@@ -1,0 +1,57 @@
+{
+  "client": "Isolated official SDK diagnostic; not a desktop acceptance run",
+  "package": "ModelContextProtocol 2.2.0",
+  "allExpectedOutcomesObserved": true,
+  "rows": [
+    {
+      "server": "strict",
+      "requested": "2025-06-18",
+      "connected": false,
+      "error": "Request failed (remote): Protocol version \u00272026-07-28\u0027 is not available through the initialize handshake.",
+      "expectedOutcomeObserved": true
+    },
+    {
+      "server": "strict",
+      "requested": "2025-11-25",
+      "connected": false,
+      "error": "Request failed (remote): Protocol version \u00272026-07-28\u0027 is not available through the initialize handshake.",
+      "expectedOutcomeObserved": true
+    },
+    {
+      "server": "strict",
+      "requested": "2026-07-28",
+      "negotiated": "2026-07-28",
+      "connected": true,
+      "successIsError": false,
+      "failureIsError": true,
+      "expectedOutcomeObserved": true
+    },
+    {
+      "server": "default",
+      "requested": "2025-06-18",
+      "negotiated": "2025-06-18",
+      "connected": true,
+      "successIsError": false,
+      "failureIsError": true,
+      "expectedOutcomeObserved": true
+    },
+    {
+      "server": "default",
+      "requested": "2025-11-25",
+      "negotiated": "2025-11-25",
+      "connected": true,
+      "successIsError": false,
+      "failureIsError": true,
+      "expectedOutcomeObserved": true
+    },
+    {
+      "server": "default",
+      "requested": "2026-07-28",
+      "negotiated": "2026-07-28",
+      "connected": true,
+      "successIsError": false,
+      "failureIsError": true,
+      "expectedOutcomeObserved": true
+    }
+  ]
+}
