@@ -69,3 +69,15 @@ Suggested participant prompt, not a verbatim instruction from this session:
 > Prepare the test and tell me one application step at a time. Wait until I am ready before starting any time-limited check. I will operate Revit and report when the step is done; you verify the actual state through the plugin, preserve the evidence and explain what it proves.
 
 The useful boundary is responsibility, not whether every action is automated. A person's “saved” response triggers verification; the returned model identity and report establish the observed result. See the [agent procedure](../../projects/revit-readiness/docs/mcp-bridge-setup.md#coordinate-a-human-operated-save-as-test) and [fresh-token evidence](../../projects/revit-readiness/docs/verification/2026-10-21-live-installation.md#coordinated-fresh-token-save-as).
+
+## Ask the agent to make an unobserved claim testable
+
+After the person closed Revit, the agent verified shutdown and recorded the saved file's hash. The next question came from the existing plan: a timeout message tells us the caller stopped waiting, but did the plugin subsequently begin reading anyway? Answering that requires observing the reader inside Revit.
+
+The agent prepared a separate diagnostic build that can pause at specific boundaries and record what actually happens. Its normal deadline and safeguards remain in place. The person only needs to open the disposable model and start the bridge; the agent controls the test pauses and releases. Tests of those controls come before installing the diagnostic build, and the recoverable installer preserves the normal build for restoration. A diagnostic observation and a successful seminar demonstration remain separate milestones.
+
+Suggested participant prompt:
+
+> If our current evidence cannot prove the claim, explain what we need to observe. Prepare a bounded diagnostic test, show how we return to the normal plugin, and distinguish tests of the diagnostic controls from results inside Revit.
+
+The [diagnostic procedure](../../projects/revit-readiness/tests/host-diagnostics/README.md) gives agents the execution model, commands, file formats and limits. The source and logs should make it possible for a reviewer to distinguish an actual reader entry from an inferred one.

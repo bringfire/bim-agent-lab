@@ -17,7 +17,13 @@ namespace BimAgentLab.RevitReadiness
         bool hooked;
         bool reportedLifecycleFailure;
         public Result OnStartup(UIControlledApplication app)
-        { application = app; Current = this; return Result.Succeeded; } // No automatic listener.
+        {
+            application = app; Current = this;
+#if BIM_BRIDGE_DIAGNOSTICS
+            BridgeDiagnostics.Initialize();
+#endif
+            return Result.Succeeded;
+        } // No automatic listener.
 
         internal void Start()
         {
@@ -37,12 +43,36 @@ namespace BimAgentLab.RevitReadiness
             {
                 var handler = new ReadinessExternalEventHandler(ui => next.DrainInApiContext(c => executor.Execute(ui, c)));
                 var externalEvent = ExternalEvent.Create(handler);
-                return new ApiEventLease(() => Map(externalEvent.Raise()), externalEvent.Dispose);
-            }, () => new PipeEndpoint(descriptor, new SessionCatalog(), clock, observation =>
+                return new ApiEventLease(() => {
+#if BIM_BRIDGE_DIAGNOSTICS
+                    BridgeDiagnostics.Record("NativeRaiseBegin");
+#endif
+                    var result = externalEvent.Raise();
+#if BIM_BRIDGE_DIAGNOSTICS
+                    BridgeDiagnostics.Record("NativeRaiseEnd", result.ToString());
+#endif
+                    return Map(result);
+                }, () => {
+                    externalEvent.Dispose();
+#if BIM_BRIDGE_DIAGNOSTICS
+                    BridgeDiagnostics.Record("EventDisposed");
+#endif
+                });
+            }, () => {
+                var endpoint = new PipeEndpoint(descriptor, new SessionCatalog(), clock, observation =>
             {
+#if BIM_BRIDGE_DIAGNOSTICS
+                BridgeDiagnostics.Record("Pipe." + observation.Stage, observation.ConnectionId.ToString());
+#endif
                 if (observation.Error != null && System.Threading.Interlocked.Exchange(ref reportedNetworkFailure, 1) == 0)
                     Trace.TraceError("BIM bridge asynchronous cleanup failure: {0}", observation.Error.GetType().Name);
-            }));
+            });
+#if BIM_BRIDGE_DIAGNOSTICS
+                return BridgeDiagnostics.Endpoint(endpoint);
+#else
+                return endpoint;
+#endif
+            });
             executor = new RevitReadinessExecutor(descriptor, next, nextCatalog);
             // Retain ownership before acquisition, including failed starts.
             session = next; catalog = nextCatalog; reportedLifecycleFailure = false;
@@ -57,10 +87,16 @@ namespace BimAgentLab.RevitReadiness
 
         internal void Stop()
         {
+#if BIM_BRIDGE_DIAGNOSTICS
+            BridgeDiagnostics.Record("StopEntered");
+#endif
             if (session == null) { Unhook(); return; }
             try { Observe(session.StopInApiContext()); }
             finally { catalog.Clear(); }
             if (session.PollRetirementInApiContext()) Unhook();
+#if BIM_BRIDGE_DIAGNOSTICS
+            BridgeDiagnostics.Record("StopReturned");
+#endif
         }
         void OnIdling(object sender, IdlingEventArgs args)
         {
@@ -84,7 +120,11 @@ namespace BimAgentLab.RevitReadiness
             try
             {
                 application.ControlledApplication.DocumentClosed += OnDocumentClosed;
-                try { application.ControlledApplication.DocumentSavedAs += OnDocumentSavedAs; hooked = true; }
+                try { application.ControlledApplication.DocumentSavedAs += OnDocumentSavedAs; hooked = true;
+#if BIM_BRIDGE_DIAGNOSTICS
+                    BridgeDiagnostics.Record("EventsHooked");
+#endif
+                }
                 catch { application.ControlledApplication.DocumentClosed -= OnDocumentClosed; throw; }
             }
             catch { application.Idling -= OnIdling; throw; }
@@ -96,13 +136,22 @@ namespace BimAgentLab.RevitReadiness
             application.ControlledApplication.DocumentClosed -= OnDocumentClosed;
             application.ControlledApplication.DocumentSavedAs -= OnDocumentSavedAs;
             hooked = false;
+#if BIM_BRIDGE_DIAGNOSTICS
+            BridgeDiagnostics.Record("EventsUnhooked");
+#endif
         }
         public Result OnShutdown(UIControlledApplication app)
         {
+#if BIM_BRIDGE_DIAGNOSTICS
+            BridgeDiagnostics.Record("ApplicationShutdownEntered");
+#endif
             try { Stop(); }
             catch (Exception error) { Trace.TraceError("BIM bridge shutdown: {0}", error.GetType().Name); }
             finally { Unhook(); Current = null; }
             // No waits on API execution, borrowed cancellation callbacks or network tasks.
+#if BIM_BRIDGE_DIAGNOSTICS
+            BridgeDiagnostics.Record("ApplicationShutdownReturned");
+#endif
             return Result.Succeeded;
         }
         static void Observe(Task task)

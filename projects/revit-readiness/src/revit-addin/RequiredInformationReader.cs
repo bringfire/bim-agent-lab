@@ -13,6 +13,9 @@ namespace BimAgentLab.RevitReadiness
         internal static readonly Guid AssemblyGuid = new Guid("cd425f17-1bb4-4d3f-a088-902728147491");
         internal static InformationReport Read(Document document, Checklist checklist, string checklistPath)
         {
+#if BIM_BRIDGE_DIAGNOSTICS
+            BridgeDiagnostics.Record("ReaderEntered");
+#endif
             checklist.Validate();
             if (document.ProjectInformation.UniqueId != checklist.ProjectUniqueId ||
                 !string.Equals(Path.GetFileName(document.PathName), checklist.ProjectFileName, StringComparison.OrdinalIgnoreCase))
@@ -29,6 +32,9 @@ namespace BimAgentLab.RevitReadiness
                 RequestedInstances = checklist.Cases.Count, ModifiedBefore = document.IsModified
             };
             var types = new Dictionary<string, TypeObservation>(StringComparer.Ordinal);
+#if BIM_BRIDGE_DIAGNOSTICS
+            BridgeDiagnostics.Hold("Reader"); // Actual reader has already accessed Autodesk data above.
+#endif
             foreach (var expected in checklist.Cases)
             {
                 var element = document.GetElement(expected.UniqueId);

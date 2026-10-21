@@ -1,0 +1,25 @@
+# Task 7 diagnostic preparation
+
+Date: 2026-10-21. Normal installed baseline: `9a93f6d`. The [execution model](../../tests/host-diagnostics/README.md) was committed at `ef83388` before implementation. The author operates Revit; the agent prepares controls and collects evidence. This record is not live diagnostic acceptance, Task 7 closure or desktop A8.
+
+The author replied “closed” after the successful Save As check. Revit and its descriptor were absent; the source model and both sidecars matched their prior hashes. The new saved model's post-close baseline is retained in the [live record](2026-10-21-live-installation.md#coordinated-fresh-token-save-as), committed at `d2f2d49`.
+
+## What is instrumented
+
+The separate `tests/host-diagnostics` project compiles the actual add-in source with `BIM_BRIDGE_DIAGNOSTICS`. Hooks observe admission, API execution, actual reader entry/exit, native Raise results, event disposal, hook removal and shutdown. It also observes the original Response, Quiesced and network-stop tasks without waiting for those observers. It does not observe physical lifetime disposal; quiescence must not be described as that proof.
+
+Preparation holds occur after capture/context validation and before the unchanged final guard. Reader holds occur inside the actual reader, after it has accessed Autodesk data. The original request ID, deadline, cancellation state and guards remain authoritative. Each file-controlled hold is single-use and bounded to 45 seconds. Local control files are diagnostic inputs; neither MCP tool accepts them. Injected Stop is explicitly labelled and runs on the API thread; it is not a user click while Revit is paused, nor application shutdown.
+
+The normal add-in project does not define the symbol or compile either helper class. Both real-API variants compile. A binary metadata-name check confirms `BridgeDiagnostics` and `DiagnosticRecorder` are absent from the normal assembly and present in the diagnostic assembly. SDK 2.2.0, protocol policy, dependencies and existing computational rules are unchanged. TypeScript SDK 1.26.0 remains precedent-only; no third-party implementation is copied.
+
+## Offline verification and observed failures
+
+Ten controls failed against an unimplemented recorder, then passed on net48 and net10.0: identity/thread recording, explicit release, preparation cancellation, preparation expiry, started-reader cancellation, bounded automatic release, stale release rejection, invalid duration rejection, single consumption, and injected cancellation while held. These tests use the production context/lifetime/guard flow with a simulated reader. They do not demonstrate Autodesk scheduling or live network shutdown. The first dual-target compile needed an explicit Windows platform annotation; that compile failure is not counted as the behavioral RED run.
+
+The first Dispatch regression run had one failure: the existing net48 host-Stop test did not observe its registered notification within two seconds. An initial direct rerun used the wrong working directory and failed its source-path test; it did pass the notification test. The correct-working-directory rerun passed all 87 net48 tests. These are preserved as distinct observations. The production runtime source was not changed by this increment. The intermittent notification observation has not been independently diagnosed or closed; do not erase it because a subsequent run passes.
+
+A package comparison also rejected an early assumption that rebuilt dependencies have identical bytes: .NET's generated informational version includes the current Git commit, so rebuilding unchanged source changes binary metadata. The corrected staging script uses the inventory-verified installed core/runtime/contract/exporter/server bytes and substitutes the diagnostic add-in DLL. A subsequent preflight rejected duplicate server notice paths from copying an already-installed payload into a publish layout. The corrected script excludes installer-generated inventory and server notice paths; the existing installer supplies those notices from the retained source folder. No installed files were changed by either failed preparation/preflight.
+
+The package has its own hashes and source inventory. A 97-operation standard-installer preflight passes. Installation must still use durable Prepared recovery and preserve the current normal installation for restoration. Live controls, their independent trace/wire comparisons, restoration and all remaining host/client gates must be recorded separately.
+
+Final offline run: All passed (41 deployment, 59 tool, 87/82 dispatch, ten adapter handoff, 53 pipe and 33 foundation cases per runtime, plus protocol/stdio/settings checks and strict July/legacy rejection). Readiness 18, Excel seven and process isolation passed. The separate diagnostic control suite passed ten cases per runtime and both Revit API builds. Logs, including the earlier failures, are retained in [the evidence folder](host-diagnostic-evidence/hashes.json). No live diagnostic run is claimed.

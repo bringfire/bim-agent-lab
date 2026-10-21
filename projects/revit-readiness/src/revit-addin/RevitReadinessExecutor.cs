@@ -15,6 +15,12 @@ namespace BimAgentLab.RevitReadiness
         { this.descriptor = descriptor; this.session = session; this.catalog = catalog; }
         internal BridgeResponse Execute(UIApplication application, BridgeExecutionContext context)
         {
+#if BIM_BRIDGE_DIAGNOSTICS
+            return BridgeDiagnostics.Execute(context, () => ExecuteCore(application, context));
+        }
+        BridgeResponse ExecuteCore(UIApplication application, BridgeExecutionContext context)
+        {
+#endif
             if (context.Request.Operation == BridgeLimits.GetContext)
                 return ReadinessExecutionFlow.Run(context, () => catalog.Capture(application), prepared => prepared,
                     prepared => ReadinessExecutionFlow.IssueContext(context, session.Contexts, prepared.Binding, session.ResponseFor(context), lease =>
@@ -33,9 +39,21 @@ namespace BimAgentLab.RevitReadiness
                 {
                     snapshot = catalog.Capture(application);
                     session.Contexts.Validate(context.Request.ContextToken, snapshot.Binding);
+#if BIM_BRIDGE_DIAGNOSTICS
+                    BridgeDiagnostics.Hold("Preparation");
+#endif
                     return snapshot;
                 },
+#if BIM_BRIDGE_DIAGNOSTICS
+                prepared => {
+                    try { return RequiredInformationReader.Read(prepared.Document, prepared.Checklist, prepared.Binding.ChecklistPath); }
+                    finally {
+                        BridgeDiagnostics.Record("ReaderExited");
+                    }
+                },
+#else
                 prepared => RequiredInformationReader.Read(prepared.Document, prepared.Checklist, prepared.Binding.ChecklistPath),
+#endif
                 report => Response(context, snapshot.Binding.ChecklistSha256, ReadinessPayloadCodec.SerializeReport(report)));
         }
         BridgeResponse Response(BridgeExecutionContext context, string hash, string result) => new BridgeResponse

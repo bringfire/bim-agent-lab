@@ -1,0 +1,15 @@
+{
+  "algorithm": "SHA256",
+  "files": {
+    "diagnostic-all.txt": "9d37f1664bb8a6932261fe58ed1fd9d09d46dcba0ad1375b55bfb3de9ae4a508",
+    "diagnostic-controls-final.txt": "a419f5bbe5406fcc5c50fed4bb07c96e4633b7c0f0a45392137f9eae4146e619",
+    "diagnostic-dispatch-net48-correct-cwd.txt": "14f305ee632dba4106a6a8392e2b94e5a0fae2417585038f7a98ef68a76cb6fa",
+    "diagnostic-dispatch-net48-retry.txt": "086b861dd0e04a5e07694c1b97dcc0f85b63e3936cdfb24d859b391dee60f2f9",
+    "diagnostic-dispatch.txt": "b8551f2636ce8ec5e5b2da928c4cf6137bb893939973176814abd3cd6997d6ed",
+    "diagnostic-package-corrected.txt": "03a8548b673c00f35c4531dd68fbcdb65755a17ff4574281307e39a119914b39",
+    "diagnostic-package-final.txt": "5d96274ab0cca6553f14e6f0e50658063c7dec8198004905711da832e254ae4d",
+    "diagnostic-package-preparation.txt": "8a8f8fc48d12954e3c60d52a1c84b28622f213e3d0be9b3057e19e4c3f7b4c87",
+    "diagnostic-readiness.txt": "c709394dd7970c22b659453d63d0965903ebf76181d30a11565817c4c27f8b50",
+    "diagnostic-red.txt": "c73f205df6d40a3318e3a2ecad1c6fea22dab04366bb76f4c9f52518ca40abe3"
+  }
+}

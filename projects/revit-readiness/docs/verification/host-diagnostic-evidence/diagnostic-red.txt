@@ -1,0 +1,11 @@
+FAIL RecordsIdentity: Original request identity missing
+FAIL ReleasesExplicitly: Expected observation was not reached
+FAIL PreparationCancellation: Expected observation was not reached
+FAIL PreparationExpiry: Expected observation was not reached
+FAIL ReaderCancellation: Expected observation was not reached
+FAIL BoundedHold: Hold did not honor its own bound
+FAIL RejectsStaleRelease: Stale release accepted as a new hold
+FAIL RejectsInvalidControl: Unbounded control accepted
+FAIL SingleUse: Arm was not consumed exactly once
+FAIL StopWhileHeld: Expected observation was not reached
+Diagnostic controls: 0 passed; 10 failed. No live Revit proof.

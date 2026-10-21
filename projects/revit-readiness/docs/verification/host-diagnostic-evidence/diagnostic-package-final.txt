@@ -1,0 +1,14 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net48\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net48\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.Readiness.Core -> D:\bim-agent-lab\projects\revit-readiness\src\readiness-core\bin\Release\net48\BimAgentLab.Readiness.Core.dll
+  BimAgentLab.RevitReadiness.Diagnostics -> D:\bim-agent-lab\projects\revit-readiness\tests\host-diagnostics\bin\Release\net48\BimAgentLab.RevitReadiness.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.92
+DIAGNOSTIC_PACKAGE=D:\bim-agent-lab\projects\revit-readiness\samples\local\diagnostic-packages\6c0ff25b217045e6baae6b6d05a3417f
+Prepared only. Install with the existing New/Save/Invoke-McpDeploymentPlan functions and retain its undo receipt.
