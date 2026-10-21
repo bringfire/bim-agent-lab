@@ -1,0 +1,397 @@
+{
+  "observedLocalDate": "2026-10-20",
+  "registry": {
+    "observedUtc": "2026-10-21T01:29:12.054753+00:00",
+    "source": "https://api.nuget.org/v3-flatcontainer/modelcontextprotocol/index.json",
+    "selected": "2.2.0",
+    "latestStable": "2.3.0",
+    "recentVersions": [
+      "2.0.0-rc.1",
+      "2.0.0-rc.2",
+      "2.0.0",
+      "2.1.0",
+      "2.2.0",
+      "2.3.0"
+    ]
+  },
+  "sourceCommit": "6fa3825973949a9c4f0cd8af344e15a8db09dc35",
+  "packages": [
+    {
+      "package": "ModelContextProtocol",
+      "version": "2.2.0",
+      "relationship": "Direct",
+      "licenseType": "expression",
+      "license": "Apache-2.0",
+      "nupkgSha256": "d9704e12d5412c97147c74dd89524410bbad86e09bc96472134d9c7269d5c6fc",
+      "contentHashSha512": "4Pb9u02Nwsp0poueDsqNdyGRojFxOYpljB7zDBsq+aHL+Afou3OgxlBc3GWFVnsRMRJrUtWqDh3s6k2JgPzmrQ==",
+      "noticeFiles": [],
+      "buildOrToolEntries": [],
+      "packageSource": {
+        "copyright": "\u00a9 Model Context Protocol a Series of LF Projects, LLC.",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/modelcontextprotocol/csharp-sdk",
+          "commit": "6fa3825973949a9c4f0cd8af344e15a8db09dc35"
+        }
+      },
+      "analyzerAssemblies": []
+    },
+    {
+      "package": "Microsoft.Extensions.AI.Abstractions",
+      "version": "10.8.3",
+      "relationship": "Transitive",
+      "licenseType": "expression",
+      "license": "MIT",
+      "nupkgSha256": "7be7e10d0663efb94ddbed605d5c03ccfe80bb6852ca44cdba1dd1e78ee7ca76",
+      "contentHashSha512": "K0B05oApxmviWalNHPMBBcRC7erKiDATz3ENNR/jqTR9JwIwLRefgDhj2jCRwL1aca99pXUe0qyQC73/xIuZig==",
+      "noticeFiles": [],
+      "buildOrToolEntries": [],
+      "packageSource": {
+        "copyright": "\u00a9 Microsoft Corporation. All rights reserved.",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/dotnet/extensions",
+          "commit": "ccb356f31db9d894807c4fd0c97c2f41553d1524"
+        }
+      },
+      "analyzerAssemblies": []
+    },
+    {
+      "package": "Microsoft.Extensions.Caching.Abstractions",
+      "version": "10.0.10",
+      "relationship": "Transitive",
+      "licenseType": "expression",
+      "license": "MIT",
+      "nupkgSha256": "c663193051052383d0219cdba4381235e0ff03a1c8ce93db323ad1eceb4636b4",
+      "contentHashSha512": "4ZFBNE+jzR+CrWWlhOesnmywCW7pYKT0dxyAQRdL11yJwxe4jvcAu31eorFtEkoFeCDcUTeNssgPv2yaRRptaQ==",
+      "noticeFiles": [
+        "THIRD-PARTY-NOTICES.TXT"
+      ],
+      "buildOrToolEntries": [
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Caching.Abstractions.targets",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net461/Microsoft.Extensions.Caching.Abstractions.targets"
+      ],
+      "packageSource": {
+        "copyright": "\u00a9 Microsoft Corporation. All rights reserved.",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/dotnet/dotnet",
+          "commit": "f7d90799ce4ef09a0bb257852a57248d2a8fb8dd"
+        }
+      },
+      "analyzerAssemblies": []
+    },
+    {
+      "package": "Microsoft.Extensions.Configuration.Abstractions",
+      "version": "10.0.10",
+      "relationship": "Transitive",
+      "licenseType": "expression",
+      "license": "MIT",
+      "nupkgSha256": "632deba4e226d5510f7584f219e1bb4bc6cd4fe001692262620b155957991ad5",
+      "contentHashSha512": "5Vnd2I75DmZCVEjSynIdJ/0EGafgnLQwgR3t2C2/fkjx/nRG+cLwxLLdInoHeCEpkD5K4Ov/g9ZCRYrl4TRsaA==",
+      "noticeFiles": [
+        "THIRD-PARTY-NOTICES.TXT"
+      ],
+      "buildOrToolEntries": [
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Configuration.Abstractions.targets",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net461/Microsoft.Extensions.Configuration.Abstractions.targets"
+      ],
+      "packageSource": {
+        "copyright": "\u00a9 Microsoft Corporation. All rights reserved.",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/dotnet/dotnet",
+          "commit": "f7d90799ce4ef09a0bb257852a57248d2a8fb8dd"
+        }
+      },
+      "analyzerAssemblies": []
+    },
+    {
+      "package": "Microsoft.Extensions.DependencyInjection.Abstractions",
+      "version": "10.0.10",
+      "relationship": "Transitive",
+      "licenseType": "expression",
+      "license": "MIT",
+      "nupkgSha256": "dabf90bddd2edf33837d0d4d00bfaabbe5b95c66aa2639b7d5b1ba48624a667d",
+      "contentHashSha512": "z/2xXlFw2aLGjHyEm6E0tQ+In6VfzQzTrtArbQ2c0TQE16ZbyDCMGPvaUT9I0s8rgy9sRWlU2P9waW37qV04qA==",
+      "noticeFiles": [
+        "THIRD-PARTY-NOTICES.TXT"
+      ],
+      "buildOrToolEntries": [
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.DependencyInjection.Abstractions.targets",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net461/Microsoft.Extensions.DependencyInjection.Abstractions.targets"
+      ],
+      "packageSource": {
+        "copyright": "\u00a9 Microsoft Corporation. All rights reserved.",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/dotnet/dotnet",
+          "commit": "f7d90799ce4ef09a0bb257852a57248d2a8fb8dd"
+        }
+      },
+      "analyzerAssemblies": []
+    },
+    {
+      "package": "Microsoft.Extensions.Diagnostics.Abstractions",
+      "version": "10.0.10",
+      "relationship": "Transitive",
+      "licenseType": "expression",
+      "license": "MIT",
+      "nupkgSha256": "be157a2858410586e06a919a9f24a21e1c9c9c7495a8fa88ca783c3b1017890f",
+      "contentHashSha512": "9uWiKpeOVac355STyChWR/pliFX/5CeLqChW9kKsaxyDH4EUTZxMkT4Jwp/J/peLm0GBFmSX5c0WCse3yCnq1Q==",
+      "noticeFiles": [
+        "THIRD-PARTY-NOTICES.TXT"
+      ],
+      "buildOrToolEntries": [
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Diagnostics.Abstractions.targets",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net461/Microsoft.Extensions.Diagnostics.Abstractions.targets"
+      ],
+      "packageSource": {
+        "copyright": "\u00a9 Microsoft Corporation. All rights reserved.",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/dotnet/dotnet",
+          "commit": "f7d90799ce4ef09a0bb257852a57248d2a8fb8dd"
+        }
+      },
+      "analyzerAssemblies": []
+    },
+    {
+      "package": "Microsoft.Extensions.FileProviders.Abstractions",
+      "version": "10.0.10",
+      "relationship": "Transitive",
+      "licenseType": "expression",
+      "license": "MIT",
+      "nupkgSha256": "bb79d3099a6aaa7e872159b43b6e199a6cb23656e65239aaf000de28cbb82725",
+      "contentHashSha512": "c5zqFCY9DiIpMovLd7/d/CTiEtrMOuQ639dhv3PABtKQIKNQikSHwQt8+N679uii9q+B55lgK28Uv64FOwEu8w==",
+      "noticeFiles": [
+        "THIRD-PARTY-NOTICES.TXT"
+      ],
+      "buildOrToolEntries": [
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.FileProviders.Abstractions.targets",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net461/Microsoft.Extensions.FileProviders.Abstractions.targets"
+      ],
+      "packageSource": {
+        "copyright": "\u00a9 Microsoft Corporation. All rights reserved.",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/dotnet/dotnet",
+          "commit": "f7d90799ce4ef09a0bb257852a57248d2a8fb8dd"
+        }
+      },
+      "analyzerAssemblies": []
+    },
+    {
+      "package": "Microsoft.Extensions.Hosting.Abstractions",
+      "version": "10.0.10",
+      "relationship": "Transitive",
+      "licenseType": "expression",
+      "license": "MIT",
+      "nupkgSha256": "59589a29dd1c6c7697cc561de82ba85effced1179b9f9616c406e66fa1581820",
+      "contentHashSha512": "5LugpYGHk+mkn0a8IZgcyfBca8PCTAU9RQFoMrTdtOOidq88M2SI5f3px6ugnzgxC+eTkvYYJi8pzlUnG5xdAQ==",
+      "noticeFiles": [
+        "THIRD-PARTY-NOTICES.TXT"
+      ],
+      "buildOrToolEntries": [
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Hosting.Abstractions.targets",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net461/Microsoft.Extensions.Hosting.Abstractions.targets"
+      ],
+      "packageSource": {
+        "copyright": "\u00a9 Microsoft Corporation. All rights reserved.",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/dotnet/dotnet",
+          "commit": "f7d90799ce4ef09a0bb257852a57248d2a8fb8dd"
+        }
+      },
+      "analyzerAssemblies": []
+    },
+    {
+      "package": "Microsoft.Extensions.Logging.Abstractions",
+      "version": "10.0.10",
+      "relationship": "Transitive",
+      "licenseType": "expression",
+      "license": "MIT",
+      "nupkgSha256": "99ca914981b742d06508051bc7b326692bc6e8a2ad005c7e1356787405a84d66",
+      "contentHashSha512": "zkFxGYUvdxAvIKTyXHrmW+Sux53D4SezD9dMyZ6hrwwzPQJNuwCRy1f5W7AvYTqacEGhWF2XderRQG1OvbV8og==",
+      "noticeFiles": [
+        "THIRD-PARTY-NOTICES.TXT"
+      ],
+      "buildOrToolEntries": [
+        "buildTransitive/netstandard2.0/Microsoft.Extensions.Logging.Abstractions.targets",
+        "buildTransitive/net8.0/Microsoft.Extensions.Logging.Abstractions.targets",
+        "buildTransitive/net462/Microsoft.Extensions.Logging.Abstractions.targets",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Logging.Abstractions.targets",
+        "buildTransitive/net461/Microsoft.Extensions.Logging.Abstractions.targets"
+      ],
+      "packageSource": {
+        "copyright": "\u00a9 Microsoft Corporation. All rights reserved.",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/dotnet/dotnet",
+          "commit": "f7d90799ce4ef09a0bb257852a57248d2a8fb8dd"
+        }
+      },
+      "analyzerAssemblies": [
+        "analyzers/dotnet/roslyn3.11/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn3.11/cs/Microsoft.Extensions.Logging.Generators.dll",
+        "analyzers/dotnet/roslyn4.0/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.0/cs/Microsoft.Extensions.Logging.Generators.dll",
+        "analyzers/dotnet/roslyn4.4/cs/cs/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/de/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/es/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/fr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/it/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ja/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ko/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pl/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pt-BR/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ru/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/tr/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hans/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hant/Microsoft.Extensions.Logging.Generators.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Logging.Generators.dll"
+      ]
+    },
+    {
+      "package": "Microsoft.Extensions.Options",
+      "version": "10.0.10",
+      "relationship": "Transitive",
+      "licenseType": "expression",
+      "license": "MIT",
+      "nupkgSha256": "4b890f1ecc865a90ad99d8fe4bf2149d93aa600037461859c3be965aae90b308",
+      "contentHashSha512": "srnhnk7nE8krBiIXp71LvBmKBtraBONWSRzdjJgRv1Ko9Mp8IVNqv4vIS9hGeVteBig8aQkva9ZG+sC+o5sVcA==",
+      "noticeFiles": [
+        "THIRD-PARTY-NOTICES.TXT"
+      ],
+      "buildOrToolEntries": [
+        "buildTransitive/netstandard2.0/Microsoft.Extensions.Options.targets",
+        "buildTransitive/net8.0/Microsoft.Extensions.Options.targets",
+        "buildTransitive/net462/Microsoft.Extensions.Options.targets",
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Options.targets",
+        "buildTransitive/net461/Microsoft.Extensions.Options.targets"
+      ],
+      "packageSource": {
+        "copyright": "\u00a9 Microsoft Corporation. All rights reserved.",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/dotnet/dotnet",
+          "commit": "f7d90799ce4ef09a0bb257852a57248d2a8fb8dd"
+        }
+      },
+      "analyzerAssemblies": [
+        "analyzers/dotnet/roslyn4.4/cs/cs/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/de/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/es/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/fr/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/it/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ja/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ko/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pl/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/pt-BR/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/ru/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/tr/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hans/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/zh-Hant/Microsoft.Extensions.Options.SourceGeneration.resources.dll",
+        "analyzers/dotnet/roslyn4.4/cs/Microsoft.Extensions.Options.SourceGeneration.dll"
+      ]
+    },
+    {
+      "package": "Microsoft.Extensions.Primitives",
+      "version": "10.0.10",
+      "relationship": "Transitive",
+      "licenseType": "expression",
+      "license": "MIT",
+      "nupkgSha256": "a8e29bc5a9879776fe7dba4b42cdc08e781ae1ccf57b9d12cd0402ad7ca8f1c7",
+      "contentHashSha512": "5wu/GrYVd8mG2DVUw3vFJzF+O336TyTGg/Kmcgw9bfwYhCoFiV5lR5QeEmKecJyrW4W54nMfD3p3589E8a7czQ==",
+      "noticeFiles": [
+        "THIRD-PARTY-NOTICES.TXT"
+      ],
+      "buildOrToolEntries": [
+        "buildTransitive/netcoreapp2.0/Microsoft.Extensions.Primitives.targets",
+        "buildTransitive/net8.0/_._",
+        "buildTransitive/net462/_._",
+        "buildTransitive/net461/Microsoft.Extensions.Primitives.targets"
+      ],
+      "packageSource": {
+        "copyright": "\u00a9 Microsoft Corporation. All rights reserved.",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/dotnet/dotnet",
+          "commit": "f7d90799ce4ef09a0bb257852a57248d2a8fb8dd"
+        }
+      },
+      "analyzerAssemblies": []
+    },
+    {
+      "package": "ModelContextProtocol.Core",
+      "version": "2.2.0",
+      "relationship": "Transitive",
+      "licenseType": "expression",
+      "license": "Apache-2.0",
+      "nupkgSha256": "146b28079d752ce216651f48287f5846e9061e1525c08181c3854fef1a1b7aba",
+      "contentHashSha512": "FeBfXU6T8k+jw4afg4sfxdEX2rL/e5oKOk9ROOGztu9k47+7Bz08sdaToYt2XvMY1opNbwxYQOFMj6wH9TInhA==",
+      "noticeFiles": [],
+      "buildOrToolEntries": [],
+      "packageSource": {
+        "copyright": "\u00a9 Model Context Protocol a Series of LF Projects, LLC.",
+        "repository": {
+          "type": "git",
+          "url": "https://github.com/modelcontextprotocol/csharp-sdk",
+          "commit": "6fa3825973949a9c4f0cd8af344e15a8db09dc35"
+        }
+      },
+      "analyzerAssemblies": [
+        "analyzers/dotnet/cs/ModelContextProtocol.Analyzers.dll"
+      ]
+    }
+  ],
+  "advisories": {
+    "version": 1,
+    "parameters": "--vulnerable --include-transitive",
+    "sources": [
+      "https://api.nuget.org/v3/index.json"
+    ],
+    "projects": [
+      {
+        "path": "projects/revit-readiness/src/mcp-server/BimAgentLab.RevitReadiness.Mcp.csproj"
+      }
+    ]
+  }
+}

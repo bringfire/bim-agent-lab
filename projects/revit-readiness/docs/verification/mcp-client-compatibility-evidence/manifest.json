@@ -1,0 +1,99 @@
+{
+  "observedLocalDate": "2026-10-20",
+  "timezone": "America/New_York",
+  "approvedPlanRevision": "cfbfe043bd6c4d0627424ea3b099d0007459cb91",
+  "baselineCommit": "ff8a4f359fd0a9ff9147cab366a9cb81683a98cc",
+  "requiredProtocol": "2026-07-28",
+  "sdkPackage": "ModelContextProtocol",
+  "sdkVersion": "2.2.0",
+  "cp0": "FAIL: both installed desktop clients sent legacy initialize; Task 2 not started",
+  "probe": {
+    "relativeExecutable": "tests/mcp-probe/bin/Release/net10.0/BimAgentLab.Mcp.Probe.exe",
+    "sha256": "23a907b517eb5cf3e2f68b61b5c95f4b0421491e29cd00bd20e010705dc20370",
+    "entryName": "bim-agent-lab-protocol-probe",
+    "arguments": [
+      "--wire-evidence",
+      "<repo>/projects/revit-readiness/samples/local/mcp-desktop-cp0/<client>"
+    ]
+  },
+  "clients": [
+    {
+      "application": "Codex desktop",
+      "packageVersion": "26.1013.4894.0",
+      "wireClient": "codex-mcp-client",
+      "wireClientVersion": "0.163.0-alpha.10.2",
+      "observedProtocol": "2025-06-18",
+      "configuration": "%USERPROFILE%/.codex/config.toml",
+      "activation": "User reported reloaded; desktop startup traffic captured",
+      "mode": "Current local Codex conversation; Native execution",
+      "modelAndToolPermissions": "Tool discovery failed before any model/tool invocation; not exercised",
+      "discovery": "Failed before tools/list",
+      "successCall": "Not reached",
+      "errorCall": "Not reached",
+      "protocolError": -32022
+    },
+    {
+      "application": "Claude Desktop",
+      "packageVersion": "3.1623.0.0",
+      "wireClient": "claude-ai",
+      "wireClientVersion": "0.1.0",
+      "observedProtocol": "2025-11-25",
+      "configuration": "%APPDATA%/Claude/claude_desktop_config.json",
+      "activation": "Desktop Developer > Reload MCP Configuration",
+      "mode": "Desktop-managed MCP registration; no model prompt needed for startup failure",
+      "modelAndToolPermissions": "Tool discovery failed before any model/tool invocation; not exercised",
+      "discovery": "Failed before tools/list",
+      "successCall": "Not reached",
+      "errorCall": "Not reached",
+      "protocolError": -32022
+    }
+  ],
+  "retention": "Wire files are byte-for-byte copies. Only lab synthetic metadata is present. Test log paths normalized. No full desktop configurations, unrelated chat content or private recovery receipts retained.",
+  "files": [
+    {
+      "path": "claude/client-to-server.jsonl",
+      "bytes": 246,
+      "sha256": "48aee00e3b7802e3a1dd7290d0f3aabd80ba4d9e56292353e6c744ce811fc9ae"
+    },
+    {
+      "path": "claude/server-to-client.jsonl",
+      "bytes": 201,
+      "sha256": "ce6725745d4d809f2a6f637d66ee9e7fe54abed38bfa952919a4fe3149b3b4e4"
+    },
+    {
+      "path": "codex/client-to-server.jsonl",
+      "bytes": 429,
+      "sha256": "64c62e9614f91db65ee42af6e9bac26de3760260ec8fdd96492353cba2c587d7"
+    },
+    {
+      "path": "codex/server-to-client.jsonl",
+      "bytes": 201,
+      "sha256": "ce6725745d4d809f2a6f637d66ee9e7fe54abed38bfa952919a4fe3149b3b4e4"
+    },
+    {
+      "path": "offline-tests.txt",
+      "bytes": 3680,
+      "sha256": "12d9f2cb560831835f242d5d460fd03412359e8d21a682665ab7b08adf7b07ce"
+    },
+    {
+      "path": "readiness-baseline.txt",
+      "bytes": 3011,
+      "sha256": "baee044562a65c06fdb971487483ec0afba0c3fc8fa0cddfc65d594f556b9382"
+    },
+    {
+      "path": "sdk/client-to-server.jsonl",
+      "bytes": 1162,
+      "sha256": "2280004f874c20d3f1fdf563f040233b7e10b6eac3d897e0eada2e0dd34aced4"
+    },
+    {
+      "path": "sdk/sdk-client-result.json",
+      "bytes": 359,
+      "sha256": "1162e585c666e2a3f43b8541ae3f80bad993f35428e8457deccb0af9c33540f1"
+    },
+    {
+      "path": "sdk/server-to-client.jsonl",
+      "bytes": 1572,
+      "sha256": "2ce70baef931472e971cb472720eca767673c66ddd9b6818605dbed7f3b0e254"
+    }
+  ]
+}

@@ -14,3 +14,5 @@ Research precedes selecting a stack or implementing a tool. Evaluate the BIM fit
 - [Earlier domain research](archive/wall-and-ceiling-domain-research.md): historical wall and ceiling workflow research, with later qualifications called out.
 
 Use the [research record](../../templates/research-record.md) for a new candidate or a version update. Record why it is a development tool, a dependency, adapted code, or a precedent. State what has actually been tested.
+
+[MCP adopted dependency review](mcp-sdk-dependencies.md) records the actual 12-package graph, helper adaptation, licenses and current registry check. The [desktop compatibility checkpoint](../../projects/revit-readiness/docs/verification/mcp-client-compatibility.md) follows the comparison with observed failures in both installed clients.

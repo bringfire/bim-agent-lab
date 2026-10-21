@@ -114,3 +114,7 @@ Use the [existing readiness acceptance](../../projects/revit-readiness/tests/req
 Update the [research record](../research/revit-mcp-bridge-comparison.md), participant story, journal, and current status with actual evidence. Preserve the distinction between the author's request to compare/update and the agent's architecture recommendation. Link a real implementation checkpoint only after implementation exists; this research begins from `4784b24` and will have its own documentation checkpoint.
 
 Refresh version observations at dependency selection, when upgrading, and before producing a seminar release. If primary metadata, release artifacts, and installed behavior disagree, retain the discrepancy and investigate it. Keep SDK inspection trees and downloaded packages ignored. Do not describe a research-only version review as an upgraded or verified bridge.
+
+## Execution checkpoint
+
+The author approved plan revision 2 and selected Native execution. The [agent compatibility procedure](verify-desktop-mcp-compatibility.md) now has runnable SDK/stream/settings tests and [actual desktop evidence](../../projects/revit-readiness/docs/verification/mcp-client-compatibility.md). The SDK harness passes 2026-07-28; Codex sends 2025-06-18 and Claude sends 2025-11-25, both rejected before discovery. Resolve CP0 before Task 2. The [dependency review](../research/mcp-sdk-dependencies.md) records actual package consumption and source adaptation; earlier comparison statements describe the research stage.

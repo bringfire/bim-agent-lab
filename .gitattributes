@@ -17,3 +17,5 @@ docs/research/evidence/*.json -text whitespace=blank-at-eol,blank-at-eof,space-b
 workshops/swacca-2026/archive/organizer-brief.html -text -whitespace
 # Upstream notices/metadata include intentional original whitespace; retain exact bytes/hashes.
 projects/revit-readiness/third-party/** -text -whitespace
+# MCP wire captures and hashed verification evidence must keep exact bytes.
+projects/revit-readiness/docs/verification/mcp-client-compatibility-evidence/** -text -whitespace

@@ -11,3 +11,5 @@ The first adopted dependency is documented in the [ClosedXML review](docs/resear
 When further source, packages, images, or other assets are adopted, add their source revision, affected local paths, applicable terms, and required notices here. Inspect the chosen dependency versions and transitive packages before release.
 
 See [licensing status](docs/reference/licensing.md) for the original lab material. A license for that material has not yet been selected.
+
+The MCP host now consumes official ModelContextProtocol 2.2.0 and its locked dependencies. [Dependency review](docs/research/mcp-sdk-dependencies.md) records package/source provenance. [Retained MCP material](projects/revit-readiness/third-party/mcp/README.md) includes SDK source LICENSE/THIRD-PARTY-NOTICES, Microsoft license texts and package notices. `CancellableInputStream.cs` adapts the official C# 2.2.0 stdin helper with documented modifications. TypeScript SDK 1.26.0 remains precedent only. The future MCP installer must carry these notices; no MCP distribution package exists yet.

@@ -519,4 +519,20 @@ Research can reveal that the problem or architecture needs revision. Return to t
 
 Record the author's prompt or a clearly labeled excerpt; the decision requested; constraints supplied; the agent's actions; the evidence; any correction or rejected approach; the outcome; and the lesson worth showing on stage. Label a suggested prompt as a suggestion, never as a historical prompt.
 
-Current next action: obtain author approval of [plan revision 2](../superpowers/plans/2026-10-20-revit-mcp-bridge.md) reviewed at `cfbfe04` and an execution-method choice. [External R2 follow-up](../superpowers/reviews/revit-mcp-bridge/2026-10-20-r2-follow-up.md) has closed all four findings and the underlying planning concern at plan level. Approved spec `0ef8cda` remains the contract. CP0, three live samples, incomplete controls and both desktop clients remain required; no runtime proof follows from plan revision alone. Current-version checks remain required. Physical-condition/quantity checks remain separate increments.
+Current next action: resolve CP0 using the [desktop compatibility evidence](../../projects/revit-readiness/docs/verification/mcp-client-compatibility.md). Plan revision 2 is author-approved and Native execution selected. Both installed desktop clients fail the strict protocol requirement; Task 2 and dependent Revit work remain unstarted. An SDK pass does not change the approved acceptance contract.
+
+## 2026-10-20 — Execute the compatibility checkpoint and retain a failed result
+
+Actual author prompt:
+
+> Ok, I approve plan revision 2. Let's use Native execution and start with the compatibility check in Codex desktop and Claude Desktop. Keep recording the process in both teaching layers.
+
+The agent recorded approval of reviewed commit `cfbfe043bd6c4d0627424ea3b099d0007459cb91`, retained the existing checkout on branch `feat/revit-mcp-bridge` from `ff8a4f3`, and started Task 1. The existing readiness suite passed before changes. Fresh registry research found SDK 2.3.0; the approved 2.2.0 pin was kept and its resolved graph/licenses reviewed. The official C# 2.2.0 stdin helper was adapted with attribution and notices; TypeScript 1.26.0 stayed precedent-only.
+
+The separate synthetic probe and official SDK test client proved discovery, structured success/error and protocol 2026-07-28. Fourteen C# tests and five Python test methods passed, including actual Windows shutdown with stdin still open and recovery in new processes. A disposal test found double stream disposal; host-owned raw streams and borrowed SDK wrappers corrected it. Settings tests also caught Windows newline normalization during unrelated edits.
+
+The agent prepared durable backups before temporary client entries, then tested both actual desktops. Claude's Developer menu reloaded its configuration. The author reloaded Codex and replied “reloaded.” Captured traffic showed Codex requesting 2025-06-18 and Claude requesting 2025-11-25. Both received SDK error -32022 before tool discovery. The agent retained unchanged lab-only transcripts, marked subsequent calls as not reached, and did not start Task 2 or change the protocol to obtain a pass.
+
+Both temporary entries were removed. Codex had added enabled=true; recovery refused the changed owned entry. The agent inspected the delta, prepared separate recovery bytes and removed only the verified probe block, checking all unrelated settings remained equal. Claude's MCP configuration was reloaded after cleanup; Codex's cached registration refresh remains a separate UI step.
+
+Outcome: CP0 fails on the recorded installed versions. No alternate protocol, production Revit tool, bridge installation, live sample acceptance or R3 review is claimed. The author can keep the strict requirement and test supporting client versions or explicitly revise protocol acceptance before testing an alternative. The [participant story](../tutorials/07-test-desktop-compatibility-first.md), [agent procedure](../how-to/verify-desktop-mcp-compatibility.md), [dependency review](../research/mcp-sdk-dependencies.md) and [verification record](../../projects/revit-readiness/docs/verification/mcp-client-compatibility.md) preserve both the technical evidence and how the author directed the work.

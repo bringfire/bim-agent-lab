@@ -1,0 +1,65 @@
+[
+  {
+    "package": "microsoft.extensions.caching.abstractions",
+    "version": "10.0.10",
+    "archiveFile": "THIRD-PARTY-NOTICES.TXT",
+    "retainedFile": "dotnet-runtime-THIRD-PARTY-NOTICES.txt",
+    "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+  },
+  {
+    "package": "microsoft.extensions.configuration.abstractions",
+    "version": "10.0.10",
+    "archiveFile": "THIRD-PARTY-NOTICES.TXT",
+    "retainedFile": "dotnet-runtime-THIRD-PARTY-NOTICES.txt",
+    "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+  },
+  {
+    "package": "microsoft.extensions.dependencyinjection.abstractions",
+    "version": "10.0.10",
+    "archiveFile": "THIRD-PARTY-NOTICES.TXT",
+    "retainedFile": "dotnet-runtime-THIRD-PARTY-NOTICES.txt",
+    "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+  },
+  {
+    "package": "microsoft.extensions.diagnostics.abstractions",
+    "version": "10.0.10",
+    "archiveFile": "THIRD-PARTY-NOTICES.TXT",
+    "retainedFile": "dotnet-runtime-THIRD-PARTY-NOTICES.txt",
+    "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+  },
+  {
+    "package": "microsoft.extensions.fileproviders.abstractions",
+    "version": "10.0.10",
+    "archiveFile": "THIRD-PARTY-NOTICES.TXT",
+    "retainedFile": "dotnet-runtime-THIRD-PARTY-NOTICES.txt",
+    "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+  },
+  {
+    "package": "microsoft.extensions.hosting.abstractions",
+    "version": "10.0.10",
+    "archiveFile": "THIRD-PARTY-NOTICES.TXT",
+    "retainedFile": "dotnet-runtime-THIRD-PARTY-NOTICES.txt",
+    "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+  },
+  {
+    "package": "microsoft.extensions.logging.abstractions",
+    "version": "10.0.10",
+    "archiveFile": "THIRD-PARTY-NOTICES.TXT",
+    "retainedFile": "dotnet-runtime-THIRD-PARTY-NOTICES.txt",
+    "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+  },
+  {
+    "package": "microsoft.extensions.options",
+    "version": "10.0.10",
+    "archiveFile": "THIRD-PARTY-NOTICES.TXT",
+    "retainedFile": "dotnet-runtime-THIRD-PARTY-NOTICES.txt",
+    "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+  },
+  {
+    "package": "microsoft.extensions.primitives",
+    "version": "10.0.10",
+    "archiveFile": "THIRD-PARTY-NOTICES.TXT",
+    "retainedFile": "dotnet-runtime-THIRD-PARTY-NOTICES.txt",
+    "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+  }
+]
