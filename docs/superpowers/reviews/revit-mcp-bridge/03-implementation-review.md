@@ -2,7 +2,7 @@
 
 **Not ready for review.** No MCP implementation or new host acceptance exists at this checkpoint. This packet defines the future handoff after the approved plan has been executed.
 
-Supply the approved spec/plan and their review dispositions; exact base/head commits and source diff; dependency locks, notices, provenance/advisory evidence; test commands/results; installed-file hashes; protocol traces; three fresh sample reports and independent comparisons; before/after model hashes and modified-state evidence; failure-case results; actual client configuration/version; and both teaching layers. Exclude credentials, unrelated local configuration, binaries, and RVT files from the shared Git packet.
+Supply the approved spec/plan and their review dispositions, plus the [subsequent author-directed desktop compatibility amendment](../../specs/2026-10-20-desktop-compatibility-amendment.md); exact base/head commits and source diff; dependency locks, notices, provenance/advisory evidence; test commands/results; installed-file hashes; protocol traces; three fresh sample reports and independent comparisons; before/after model hashes and modified-state evidence; failure-case results; actual client configuration/version; and both teaching layers. Verify both the strict July test policy and the production host's compatible exchanges; keep the required desktop evidence separate from the optional Claude Code evidence. Check that compatibility has not weakened coverage, errors or lifetime guarantees. Exclude credentials, unrelated local configuration, binaries, and RVT files from the shared Git packet.
 
 ## Suggested handoff prompt
 

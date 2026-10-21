@@ -101,3 +101,11 @@ The language question also received direct evidence: the alternative client's Ty
 > Before recommending a compromise, tell me what my users would lose and test one concrete alternative that preserves the original goal. Keep the implementation fixed where possible. Show actual success and failure messages, distinguish application versions, and tell me exactly which requirement each option would change.
 
 The teaching point is to make the agent investigate the decision, not merely defend its first recommendation. A failed test narrows what is known about one configuration; it does not eliminate all alternatives.
+
+## Let the audience determine the tradeoff
+
+The author then supplied a decisive constraint: participants are beginners who will not welcome Claude Code's terminal interface. They directed us to use compatible exchanges in the desktop applications while preserving a future move to the new protocol.
+
+That changes the recommendation even though the Claude Code test passed. A technically working option can still be wrong for the audience. The [policy amendment](../superpowers/specs/2026-10-20-desktop-compatibility-amendment.md) keeps the newer SDK, supports both protocol generations through that SDK, and retains a separate new-protocol test. Participants continue with Codex desktop and Claude Desktop. When those applications support the new revision, fresh compatibility and model tests establish the upgraded baseline; the BIM logic does not need a rewrite.
+
+The author selected the direction, and the written requirements now reflect it. Applying the runtime change and proving both desktop workflows remain the next implementation work. This documentation is not a passing desktop test. Teach the distinction between choosing a sensible compromise and verifying that it works.

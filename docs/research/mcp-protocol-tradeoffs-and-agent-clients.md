@@ -1,6 +1,6 @@
 # Protocol tradeoffs and an agent client that uses the new revision
 
-Observed **2026-10-20, America/New_York**. This follows the [desktop investigation](mcp-desktop-protocol-investigation.md). It preserves the approved SDK, protocol and client requirements; it does not authorize Task 2.
+Observed **2026-10-20, America/New_York**. This follows the [desktop investigation](mcp-desktop-protocol-investigation.md). Research checkpoint `e5cb2ac` preserved the then-approved SDK, protocol and client requirements. The author subsequently selected the [desktop-first compatibility amendment](../superpowers/specs/2026-10-20-desktop-compatibility-amendment.md). The results below remain evidence; implementation and amended desktop proof are pending, and Task 2 is not authorized by this research alone.
 
 **Claude Code 2.1.305 passed a real agent exchange on `2026-07-28` with our unchanged strict C# SDK 2.2.0 probe.** Discovery, tool listing, synthetic success and deliberate structured failure passed the existing independent transcript checker. Claude Code's response correctly distinguished the two outcomes. See the [verification record](../../projects/revit-readiness/docs/verification/2026-10-20-claude-code-protocol.md).
 
@@ -56,10 +56,10 @@ No. The protocol defines the messages exchanged, independently of implementation
 
 Our runtime result provides a direct cross-language example: Claude Code's documented TypeScript-based v2 client talked successfully to our C# SDK 2.2.0 server. Rewriting that server in Python or TypeScript would not make the previously observed desktop handshakes become July requests. Client runtime/version/configuration and server support must agree. This experiment adds no SDK dependency, copied client source or custom MCP implementation to the lab.
 
-## Decision options, not an implicit contract change
+## Options presented and the author's subsequent choice
 
 1. Keep July 2026 and explicitly revise the seminar client scope to use the verified Claude Code baseline. Establish the corresponding review/acceptance changes before continuing; the full Revit workflow still needs all three samples and NC1/NC2.
 2. Keep both desktop applications and explicitly accept their verified older exchanges, retaining new-protocol tests separately. Real desktop success/error and Revit acceptance remain necessary.
 3. Keep both original requirements and continue investigating supporting desktop versions/settings. The retained failures remain the result for the configurations tested.
 
-The present recommendation is to consider Claude Code if demonstrating the new protocol is the priority. There is no need to rewrite the C# server to do that. **No option has been selected by this research, CP0 remains failed for its required desktop scope, and Task 2 remains unstarted.**
+The research supported considering Claude Code if demonstrating the new protocol were the priority. The author then clarified that beginners need the desktop interfaces and selected **option 2**, preserving the possibility of adopting July as those applications support it. The [recorded amendment](../superpowers/specs/2026-10-20-desktop-compatibility-amendment.md) keeps SDK 2.2.0 and new-protocol regression tests while allowing SDK-provided compatibility. This is a deliberate audience decision, not a claim that Claude Code failed. **Runtime changes and compatible desktop acceptance remain pending; Task 2 remains unstarted.**
