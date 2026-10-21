@@ -4,6 +4,15 @@
     ".NETFramework,Version=v4.8": {
       "bimagentlab.readiness.core": {
         "type": "Project"
+      },
+      "bimagentlab.revitbridge.contract": {
+        "type": "Project"
+      },
+      "bimagentlab.revitbridge.runtime": {
+        "type": "Project",
+        "dependencies": {
+          "BimAgentLab.RevitBridge.Contract": "[1.0.0, )"
+        }
       }
     }
   }

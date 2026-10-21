@@ -10,6 +10,11 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="RequiredInformationCommand.cs" /><Compile Include="RequiredInformationReader.cs" /><Compile Include="ExcelReportProcess.cs" />
+    <Compile Include="BridgeApplication.cs" /><Compile Include="BridgeCommands.cs" />
+    <Compile Include="ReadinessExternalEventHandler.cs" /><Compile Include="RevitReadinessExecutor.cs" />
+    <Compile Include="RevitContextCatalog.cs" /><Compile Include="ReadinessPayloadCodec.cs" />
+    <Reference Include="System.Web.Extensions" /><Reference Include="System.Runtime.Serialization" />
+    <ProjectReference Include="../bridge-runtime/BimAgentLab.RevitBridge.Runtime.csproj" />
     <ProjectReference Include="../readiness-core/BimAgentLab.Readiness.Core.csproj" />
     <ProjectReference Include="../excel-report/BimAgentLab.Readiness.Excel.csproj" ReferenceOutputAssembly="false" />
     <Reference Include="RevitAPI"><HintPath>$(RevitInstallDir)\RevitAPI.dll</HintPath><Private>false</Private></Reference>

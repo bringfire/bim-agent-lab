@@ -1,6 +1,6 @@
 # Revit MCP bridge review sessions
 
-**Current checkpoint:** [Task 3 is independently closed at af4c67b](2026-10-21-task-3-closure.md), including the held-callback P2; prior P1 closure stands. Task 4 queue/context implementation passes verification and awaits [focused independent review](2026-10-21-task-4-review.md). Task 5 is unstarted. The entries below preserve earlier review/submission history, not current pending findings.
+**Current checkpoint:** [Task 3 is independently closed at af4c67b](2026-10-21-task-3-closure.md), including the held-callback P2; prior P1 closure stands. Task 4 is [independently closed at 24a72cf](2026-10-21-task-4-closure.md). Task 5 passes adapter verification and awaits [focused independent review/CP1](2026-10-21-task-5-review.md). The entries below preserve earlier review/submission history, not current pending findings.
 
 **Task 2 follow-up:** [independent review and separate author dispositions](2026-10-21-task-2-review.md) record T2-01/02/03 on `eefb156`. All reproduced; corrections pass [fresh offline checks](../../../../projects/revit-readiness/docs/verification/2026-10-21-bridge-foundations-review.md). [Independent follow-up](2026-10-21-task-2-follow-up.md) closes all three at `3cefe51`. Task 3 has Windows IPC evidence and a closed [peer-exit P2](2026-10-21-task-3-review.md). A subsequent [deadline P1](2026-10-21-task-3-deadline-review.md) is corrected with [fresh verification](../../../../projects/revit-readiness/docs/verification/2026-10-21-deadline-cancellation.md); its independent follow-up remains pending. Neither focused checkpoint closes full R3.
 
@@ -58,3 +58,5 @@ Task 2 checkpoint, 2026-10-21: the author requested the next task under the upda
 
 
 Latest Task 3 review: the author relayed independent closure of the P2 at `f79506d`, plus a process-terminating deadline-callback P1. Read the [feedback, disposition and follow-up packet](2026-10-21-task-3-deadline-review.md) and [new evidence](../../../../projects/revit-readiness/docs/verification/2026-10-21-deadline-cancellation.md). Six new child cases per runtime pass; Pipe now has 38. The P1 awaits independent follow-up; Task 4 is unstarted. Prior review packets and all evidence remain historical.
+
+Task 4 is [independently closed at 24a72cf](2026-10-21-task-4-closure.md). The next [Task 5/CP1 review packet](2026-10-21-task-5-review.md) covers the compiled Revit adapter, production guard/lifecycle tests and pending live-host obligations. Task 5 independent disposition is pending.

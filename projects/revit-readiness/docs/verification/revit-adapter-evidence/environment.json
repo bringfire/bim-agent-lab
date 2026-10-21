@@ -1,0 +1,65 @@
+{
+  "date": "2026-10-21",
+  "baseline": "24a72cfd28665fd6f9d93875cfabe9621ced940d",
+  "modelCommit": "b44ea23",
+  "os": "Windows-11-10.0.26300-SP0",
+  "dotnetSdk": "10.0.204",
+  "sourceAndBinaryRecords": [
+    {
+      "path": "C:\\Program Files\\Autodesk\\Revit 2024\\RevitAPI.dll",
+      "bytes": 33641304,
+      "sha256": "d676bac0987ab15affa09e5a3926b7bc62dc391de1bc8f1a064ff53995b09e6e"
+    },
+    {
+      "path": "C:\\Program Files\\Autodesk\\Revit 2024\\RevitAPIUI.dll",
+      "bytes": 2781016,
+      "sha256": "a8916bf0dcef21653d50bec06e99a5a77349819a05c064dff43eb99b97d05433"
+    },
+    {
+      "path": "C:\\Program Files\\Autodesk\\Revit 2024\\RevitAPI.xml",
+      "bytes": 12177159,
+      "sha256": "a0be105093c747be7395ec2d4ef96729977beaf3afac86b117fdae37f9cac858"
+    },
+    {
+      "path": "C:\\Program Files\\Autodesk\\Revit 2024\\RevitAPIUI.xml",
+      "bytes": 1191253,
+      "sha256": "4b6763b55f5d7c605d77d4fa6f19d1cbd80701f05a1b3915cda47e62de7510b9"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\src\\revit-addin\\RequiredInformationReader.cs",
+      "bytes": 6132,
+      "sha256": "6fb58c7cec8189ee5959a4d4c46becbe2d4af7c71ad7a64dba37a5779cefc648"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\src\\revit-addin\\RequiredInformationCommand.cs",
+      "bytes": 4909,
+      "sha256": "5043879f555fce24b5e125498743bbde717371f7db4a59c7611f6aeabf58f006"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\src\\readiness-core\\Checklist.cs",
+      "bytes": 2169,
+      "sha256": "03e01c70eb7f16b206ee05e06554025813a47d19f7dea1611af336c0de7a2bea"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\src\\readiness-core\\TypeInformation.cs",
+      "bytes": 6495,
+      "sha256": "0d17c4f29a99a9e994c56fca0f2133fb18946601e3c9933db39f8a412eb03065"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\src\\revit-addin\\bin\\Release\\net48\\BimAgentLab.RevitReadiness.dll",
+      "bytes": 35328,
+      "sha256": "7efde5e2d4566a771add70ed9991d6c21c1bfe89bce34b2290365e4f2b6030c5"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\src\\bridge-runtime\\bin\\Release\\net48\\BimAgentLab.RevitBridge.Runtime.dll",
+      "bytes": 74752,
+      "sha256": "0047ecbd5fd6ec593caa2a42a94f8b2bc939a2aa2c1fa4a38f46bf7c1e593a10"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\src\\bridge-runtime\\bin\\Release\\net10.0\\BimAgentLab.RevitBridge.Runtime.dll",
+      "bytes": 74752,
+      "sha256": "9acc974ddf4a161c70122e16bdfc4f0ac4e8d9d1d8fb4a8fb14b9123088f37f1"
+    }
+  ],
+  "runtimeEvidence": "No live Revit or desktop A8 test in Task 5; codec tests load no Autodesk types."
+}

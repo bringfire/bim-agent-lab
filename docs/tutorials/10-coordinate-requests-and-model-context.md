@@ -1,5 +1,7 @@
 # Carry review lessons into the next feature
 
+**Follow-up:** Task 4 is [independently closed at 24a72cf](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-4-closure.md). The submission observations below are preserved as history. Task 5 implementation/live acceptance is separate.
+
 The bridge could already connect Windows processes. The next question was whether it could coordinate requests without reading the wrong model, starting canceled work, or letting unfinished work block cleanup. This is Task 4 of the approved plan; the actual Revit event adapter comes in Task 5.
 
 ## How the person directed the agent

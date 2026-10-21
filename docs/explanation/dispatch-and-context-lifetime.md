@@ -1,5 +1,7 @@
 # Dispatch and context lifetime
 
+**Follow-up:** Task 4 is [independently closed at 24a72cf](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-4-closure.md). The submission observations below are preserved as history. Task 5 implementation/live acceptance is separate.
+
 Task 4 implementation model, written before code against independently closed Task 3 at af4c67b. It carries the [reviewed execution/waiting model](bridge-execution-and-waiting.md) into the queue. This is an implementation argument and test design, not live Revit evidence.
 
 ## Owners, threads and permitted waits

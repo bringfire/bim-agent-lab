@@ -7,4 +7,8 @@
     <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
   </PropertyGroup>
   <ItemGroup><ProjectReference Include="../../src/bridge-runtime/BimAgentLab.RevitBridge.Runtime.csproj" /></ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+    <ProjectReference Include="../../src/revit-addin/BimAgentLab.RevitReadiness.csproj" />
+    <Reference Include="System.Web.Extensions" />
+  </ItemGroup>
 </Project>

@@ -1,0 +1,17 @@
+# Revit MCP host acceptance — pending
+
+Task 5 supplies compiled adapter code and offline boundary tests. This checklist is future live evidence, not a completed test record. Installation/recovery is Task 7; both desktop applications' A8 workflow and independent report comparisons remain required.
+
+Use the recorded Revit 2024 build and disposable copies of the existing three samples. Record binary hashes, model and sidecar hashes, process/session IDs and actual MCP traffic. Never run fixture editing as part of a query. Keep SDK 2.2.0, compatible desktop policy and strict July regression unchanged.
+
+1. Load application with no document: no descriptor/listener until explicit Start. Start twice: exactly one session. Stop twice: no owned descriptor. Start again: fresh session and old contexts invalid.
+2. Context with no project, family, unsaved project, missing/invalid/oversize checklist, foreign project/file, missing level/phase: exact documented errors, no reader/export/dialog. Start remains possible without an active document.
+3. Acquire a valid context, then switch documents (including a copy sharing project UniqueId), close/reopen, Save As, change checklist bytes, expire token or stop/restart: no read with stale binding. Reacquire after each intentional change. Same-document value edits must be read freshly.
+4. Hold Revit in modal/edit activity; queue work then cancel, disconnect, expire deadline or Stop. On eventual scheduling, no canceled request may begin reading. Observe every native Raise outcome possible; document unavailable outcomes instead of claiming them.
+5. Cancel during preparation and during a started reader using an instrumented diagnostic build if needed; identify instrumentation and hashes. No new read after preparation cancellation; already-started read may unwind, but no late success. No model write, transaction, report export or readiness dialog on this route.
+6. Stop/shutdown with queued requests, executing API callback, partial frames and connected idle clients; observe network progress independently of borrowed callbacks. Check event disposal in valid API context, Idling hook removal, owned descriptor removal and restart selection. In-flight native Raise at final application shutdown needs explicit observation; if no API callback remains, retained event ownership ends at process exit.
+7. Three principal samples retain 0/0, 2/6 and 3/8 finding/affected counts. Compare complete reports independently against native schedules and prior expectations; inspect both modified-state flags and input hashes. Do not infer unchanged memory from disk hashes.
+8. NC1/NC2 must pass through the complete pipeline, preserving exact unexamined identities/reasons and distinct CoverageComplete/Evaluation.Complete flags; prepare controls before acquiring fresh context. Both desktop clients must present incomplete coverage truthfully.
+9. Actual Codex desktop and Claude Desktop: discovery, context, readiness, structured error, protocol trace. The synthetic CP0 probe and offline harness do not satisfy this acceptance.
+
+Do not install the Task 5 build before the CP1 lifecycle/dependency review and Task 7 recovery work. No installer or client settings are changed by Task 5.

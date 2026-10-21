@@ -1,5 +1,7 @@
 # Task 4 dispatch and context verification — 2026-10-21
 
+**Follow-up:** Task 4 is [independently closed at 24a72cf](../../../../docs/superpowers/reviews/revit-mcp-bridge/2026-10-21-task-4-closure.md). The submission observations below are preserved as history. Task 5 implementation/live acceptance is separate.
+
 **Implementing-agent verification; independent Task 4 review pending.** Baseline: af4c67bd4391fd00019799ff1436a4f53b744fe4, [independently closed Task 3](../../../../docs/superpowers/reviews/revit-mcp-bridge/2026-10-21-task-3-closure.md). The Task 4 execution model and closure record were committed at **638e288 before production changes**. The implementation is the commit titled **`feat: coordinate bounded host dispatch and context lifetime`** that adds this record; locate it with `git log --diff-filter=A --format="%H %s" -- projects/revit-readiness/docs/verification/2026-10-21-dispatch-and-context.md`.
 
 ## Observed results

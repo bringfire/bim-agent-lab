@@ -16,7 +16,7 @@ public sealed class PipeEvent
     public string RequestId { get; set; } = "";
     public Exception? Error { get; set; }
 }
-public sealed class PipeEndpoint
+public sealed class PipeEndpoint : IHostBridgeEndpoint
 {
     readonly BridgeSessionDescriptor descriptor;
     readonly SessionCatalog catalog;

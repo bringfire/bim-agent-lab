@@ -1,0 +1,444 @@
+  Determining projects to restore...
+  Restored D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\BimAgentLab.RevitBridge.Contract.csproj (in 67 ms).
+  Restored D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\BimAgentLab.RevitBridge.Runtime.csproj (in 72 ms).
+  1 of 3 projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net48\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net48\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.Bridge.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\bin\Release\net48\BimAgentLab.Bridge.Tests.exe
+  BimAgentLab.Bridge.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\bin\Release\net10.0\BimAgentLab.Bridge.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:04.34
+DISPATCH_TARGET framework=net48
+PASS Incomplete bindings cannot issue a reusable context
+PASS Context capacity rejects 33rd without evicting live tokens
+PASS Context is valid at 4:59 and expires exactly at 5:00
+PASS Context expiry ignores wall-clock jumps
+PASS Expired contexts free capacity but newer live contexts remain valid
+PASS Context rejects changed session
+PASS Context rejects changed reopened document
+PASS Context rejects changed project ID
+PASS Context rejects changed copied ID different path
+PASS Context rejects changed checklist ID
+PASS Context rejects changed checklist path
+PASS Context rejects changed checklist bytes
+PASS Context snapshots mutable input and accepts equivalent Windows casing
+PASS Revoking an unpublished lease is idempotent and restores one slot
+PASS Clear and replacement store invalidate old tokens
+PASS Concurrent context issuance preserves the capacity bound
+PASS Unknown context cannot select a different model
+DISPATCH_PIPE_PROOF origin=stop executing=False networkBeforeRelease=true lateSuccess=false
+PASS Real endpoint stop with production queued dispatcher
+DISPATCH_PIPE_PROOF origin=stop executing=True networkBeforeRelease=true lateSuccess=false
+PASS Real endpoint stop with production executing dispatcher
+DISPATCH_PIPE_PROOF origin=disconnect executing=False networkBeforeRelease=true lateSuccess=false
+PASS Real endpoint disconnect with production queued dispatcher
+DISPATCH_PIPE_PROOF origin=disconnect executing=True networkBeforeRelease=true lateSuccess=false
+PASS Real endpoint disconnect with production executing dispatcher
+PASS Publication and immediate cancellation share one linearization gate
+PASS Admission defers execution and passes the original context and budget
+PASS One executing plus four waiting rejects fifth and admits after progress
+PASS Raise Accepted leaves no orphan work
+PASS Raise Pending leaves no orphan work
+PASS Raise Denied leaves no orphan work
+PASS Raise TimedOut leaves no orphan work
+PASS Throwing Raise rejects waiting work and a later request recovers
+PASS Pending signal is rearmed by Idling and executes once
+PASS Arrival after final dequeue is re-signaled without exceeding batch
+PASS Raise returning after drain cannot strand a new generation
+PASS Drain caps a handler at four even with a larger requested batch
+PASS Reentrant and concurrent Drain never run a second executor
+PASS Queued cancellation removes the middle item and frees capacity
+PASS Held notification cannot delay queued response cancellation
+PASS Held notification cannot delay executing response cancellation
+PASS Already canceled admission cannot execute or borrow a disposed registration
+PASS Original deadline expires before read without late success
+PASS Original deadline expires during execution without late success
+PASS Stop settles queued and executing responses without awaiting the executor
+PASS Executor errors remain correlated and do not orphan later queued work
+PASS Invalid executor envelopes cannot publish success or strand the next request
+PASS Declared executor error retains code with current request identity
+PASS Cancellation inside executor wins response publication
+PASS Unchanged context identity reads fresh values on each execution
+PASS Production flow entry cancellation
+PASS Production flow entry expiry
+FAIL Production flow prepare cancellation: Exception Flow did not reach prepare
+System.Exception: Flow did not reach prepare
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 30
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__57.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Production flow prepare expiry: Exception Flow did not reach prepare
+System.Exception: Flow did not reach prepare
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 30
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__57.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Production flow read cancellation: Exception Flow did not reach read
+System.Exception: Flow did not reach read
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 30
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__57.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Production flow read expiry: Exception Flow did not reach read
+System.Exception: Flow did not reach read
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 30
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__57.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Production flow serialize cancellation: Exception Flow did not reach serialize
+System.Exception: Flow did not reach serialize
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 30
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__57.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Production flow serialize expiry: Exception Flow did not reach serialize
+System.Exception: Flow did not reach serialize
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 30
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__57.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Production flow preserves original context, order and complete report: Exception Expected PRS, got 
+System.Exception: Expected PRS, got 
+   at BimAgentLab.Bridge.Tests.Program.Equal[T](T expected, T actual) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 67
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<ExecutorLifetimeTests>b__27_0>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 45
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__57.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Unpublished context revoked on serialize: NotImplementedException The method or operation is not implemented.
+System.NotImplementedException: The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.ReadinessExecutionFlow.IssueContext(BridgeExecutionContext context, ContextStore store, ContextBinding binding, Task`1 publication, Func`2 serialize) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\ReadinessExecutionFlow.cs:line 14
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_6.<<ExecutorLifetimeTests>b__14>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__57.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Unpublished context revoked on cancel: NotImplementedException The method or operation is not implemented.
+System.NotImplementedException: The method or operation is not implemented.
+FAIL Unpublished context revoked on expiry: NotImplementedException The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.ReadinessExecutionFlow.IssueContext(BridgeExecutionContext context, ContextStore store, ContextBinding binding, Task`1 publication, Func`2 serialize) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\ReadinessExecutionFlow.cs:line 14
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_6.<<ExecutorLifetimeTests>b__14>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__57.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+System.NotImplementedException: The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.ReadinessExecutionFlow.IssueContext(BridgeExecutionContext context, ContextStore store, ContextBinding binding, Task`1 publication, Func`2 serialize) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\ReadinessExecutionFlow.cs:line 14
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_6.<<ExecutorLifetimeTests>b__14>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__57.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Unpublished context revoked on queue-cancel: NotImplementedException The method or operation is not implemented.
+System.NotImplementedException: The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.ReadinessExecutionFlow.IssueContext(BridgeExecutionContext context, ContextStore store, ContextBinding binding, Task`1 publication, Func`2 serialize) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\ReadinessExecutionFlow.cs:line 14
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_6.<<ExecutorLifetimeTests>b__14>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__57.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Unpublished context revoked on queue-error: NotImplementedException The method or operation is not implemented.
+System.NotImplementedException: The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.ReadinessExecutionFlow.IssueContext(BridgeExecutionContext context, ContextStore store, ContextBinding binding, Task`1 publication, Func`2 serialize) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\ReadinessExecutionFlow.cs:line 14
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_6.<<ExecutorLifetimeTests>b__14>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__57.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Published context remains usable: NotImplementedException The method or operation is not implemented.
+System.NotImplementedException: The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.ReadinessExecutionFlow.IssueContext(BridgeExecutionContext context, ContextStore store, ContextBinding binding, Task`1 publication, Func`2 serialize) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\ReadinessExecutionFlow.cs:line 14
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<ExecutorLifetimeTests>b__27_1>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__57.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Production session acquisition/retirement event: NotImplementedException The method or operation is not implemented.
+System.NotImplementedException: The method or operation is not implemented.
+FAIL Production session acquisition/retirement listener: NotImplementedException The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.HostBridgeSession.StartInApiContext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\HostBridgeSession.cs:line 19
+   at BimAgentLab.Bridge.Tests.Program.Throws[T](Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 69
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass1_0.<AdapterBoundaryTests>b__4() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 30
+   at BimAgentLab.Bridge.Tests.Program.Sync(Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 65
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__57.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+System.NotImplementedException: The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.HostBridgeSession.StartInApiContext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\HostBridgeSession.cs:line 19
+   at BimAgentLab.Bridge.Tests.Program.Throws[T](Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 69
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass1_0.<AdapterBoundaryTests>b__4() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 30
+   at BimAgentLab.Bridge.Tests.Program.Sync(Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 65
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__57.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+System.NotImplementedException: The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.HostBridgeSession.StartInApiContext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\HostBridgeSession.cs:line 19
+   at BimAgentLab.Bridge.Tests.Program.Throws[T](Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 69
+FAIL Production session acquisition/retirement descriptor: NotImplementedException The method or operation is not implemented.
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass1_0.<AdapterBoundaryTests>b__4() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 30
+   at BimAgentLab.Bridge.Tests.Program.Sync(Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 65
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__57.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Production session acquisition/retirement none: NotImplementedException The method or operation is not implemented.
+System.NotImplementedException: The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.HostBridgeSession.StartInApiContext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\HostBridgeSession.cs:line 19
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass1_0.<AdapterBoundaryTests>b__4() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 29
+   at BimAgentLab.Bridge.Tests.Program.Sync(Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 65
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__57.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Event retirement never waits on an in-flight native Raise: NotImplementedException The method or operation is not implemented.
+System.NotImplementedException: The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.ApiEventLease.Raise() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\ApiEventLease.cs:line 7
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<AdapterBoundaryTests>b__1_0>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 41
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__57.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Session stop clears contexts and returns without network completion: NotImplementedException The method or operation is not implemented.
+System.NotImplementedException: The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.HostBridgeSession.StartInApiContext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\HostBridgeSession.cs:line 19
+   at BimAgentLab.Bridge.Tests.Program.<>c.<AdapterBoundaryTests>b__1_11() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 49
+   at BimAgentLab.Bridge.Tests.Program.Sync(Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 65
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__57.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Autodesk adapter source has only read-only query dependencies: Exception Missing adapter BridgeApplication.cs
+System.Exception: Missing adapter BridgeApplication.cs
+   at BimAgentLab.Bridge.Tests.Program.<>c.<AdapterBoundaryTests>b__1_17() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 56
+   at BimAgentLab.Bridge.Tests.Program.Sync(Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 65
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__57.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+Dispatch tests: 48 passed; 20 failed.
+DISPATCH_TARGET framework=net10.0
+PASS Incomplete bindings cannot issue a reusable context
+PASS Context capacity rejects 33rd without evicting live tokens
+PASS Context is valid at 4:59 and expires exactly at 5:00
+PASS Context expiry ignores wall-clock jumps
+PASS Expired contexts free capacity but newer live contexts remain valid
+PASS Context rejects changed session
+PASS Context rejects changed reopened document
+PASS Context rejects changed project ID
+PASS Context rejects changed copied ID different path
+PASS Context rejects changed checklist ID
+PASS Context rejects changed checklist path
+PASS Context rejects changed checklist bytes
+PASS Context snapshots mutable input and accepts equivalent Windows casing
+PASS Revoking an unpublished lease is idempotent and restores one slot
+PASS Clear and replacement store invalidate old tokens
+PASS Concurrent context issuance preserves the capacity bound
+PASS Unknown context cannot select a different model
+DISPATCH_PIPE_PROOF origin=stop executing=False networkBeforeRelease=true lateSuccess=false
+PASS Real endpoint stop with production queued dispatcher
+DISPATCH_PIPE_PROOF origin=stop executing=True networkBeforeRelease=true lateSuccess=false
+PASS Real endpoint stop with production executing dispatcher
+DISPATCH_PIPE_PROOF origin=disconnect executing=False networkBeforeRelease=true lateSuccess=false
+PASS Real endpoint disconnect with production queued dispatcher
+DISPATCH_PIPE_PROOF origin=disconnect executing=True networkBeforeRelease=true lateSuccess=false
+PASS Real endpoint disconnect with production executing dispatcher
+PASS Publication and immediate cancellation share one linearization gate
+PASS Admission defers execution and passes the original context and budget
+PASS One executing plus four waiting rejects fifth and admits after progress
+PASS Raise Accepted leaves no orphan work
+PASS Raise Pending leaves no orphan work
+PASS Raise Denied leaves no orphan work
+PASS Raise TimedOut leaves no orphan work
+PASS Throwing Raise rejects waiting work and a later request recovers
+PASS Pending signal is rearmed by Idling and executes once
+PASS Arrival after final dequeue is re-signaled without exceeding batch
+PASS Raise returning after drain cannot strand a new generation
+PASS Drain caps a handler at four even with a larger requested batch
+PASS Reentrant and concurrent Drain never run a second executor
+PASS Queued cancellation removes the middle item and frees capacity
+PASS Held notification cannot delay queued response cancellation
+PASS Held notification cannot delay executing response cancellation
+PASS Already canceled admission cannot execute or borrow a disposed registration
+PASS Original deadline expires before read without late success
+PASS Original deadline expires during execution without late success
+PASS Stop settles queued and executing responses without awaiting the executor
+PASS Executor errors remain correlated and do not orphan later queued work
+PASS Invalid executor envelopes cannot publish success or strand the next request
+PASS Declared executor error retains code with current request identity
+PASS Cancellation inside executor wins response publication
+PASS Unchanged context identity reads fresh values on each execution
+PASS Production flow entry cancellation
+PASS Production flow entry expiry
+FAIL Production flow prepare cancellation: Exception Flow did not reach prepare
+System.Exception: Flow did not reach prepare
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 66
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 28
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 30
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Production flow prepare expiry: Exception Flow did not reach prepare
+System.Exception: Flow did not reach prepare
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 66
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 28
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 30
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Production flow read cancellation: Exception Flow did not reach read
+System.Exception: Flow did not reach read
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 66
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 28
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 30
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Production flow read expiry: Exception Flow did not reach read
+System.Exception: Flow did not reach read
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 66
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 28
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 30
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Production flow serialize cancellation: Exception Flow did not reach serialize
+System.Exception: Flow did not reach serialize
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 66
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 28
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 30
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Production flow serialize expiry: Exception Flow did not reach serialize
+System.Exception: Flow did not reach serialize
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 66
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 28
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_1.<<ExecutorLifetimeTests>b__2>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 30
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Production flow preserves original context, order and complete report: Exception Expected PRS, got 
+System.Exception: Expected PRS, got 
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 66
+   at BimAgentLab.Bridge.Tests.Program.Equal[T](T expected, T actual) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 67
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<ExecutorLifetimeTests>b__27_0>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 45
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Unpublished context revoked on serialize: NotImplementedException The method or operation is not implemented.
+System.NotImplementedException: The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.ReadinessExecutionFlow.IssueContext(BridgeExecutionContext context, ContextStore store, ContextBinding binding, Task`1 publication, Func`2 serialize) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\ReadinessExecutionFlow.cs:line 14
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_6.<<ExecutorLifetimeTests>b__14>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 54
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Unpublished context revoked on cancel: NotImplementedException The method or operation is not implemented.
+System.NotImplementedException: The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.ReadinessExecutionFlow.IssueContext(BridgeExecutionContext context, ContextStore store, ContextBinding binding, Task`1 publication, Func`2 serialize) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\ReadinessExecutionFlow.cs:line 14
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_6.<<ExecutorLifetimeTests>b__14>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 54
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Unpublished context revoked on expiry: NotImplementedException The method or operation is not implemented.
+System.NotImplementedException: The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.ReadinessExecutionFlow.IssueContext(BridgeExecutionContext context, ContextStore store, ContextBinding binding, Task`1 publication, Func`2 serialize) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\ReadinessExecutionFlow.cs:line 14
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_6.<<ExecutorLifetimeTests>b__14>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 54
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Unpublished context revoked on queue-cancel: NotImplementedException The method or operation is not implemented.
+System.NotImplementedException: The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.ReadinessExecutionFlow.IssueContext(BridgeExecutionContext context, ContextStore store, ContextBinding binding, Task`1 publication, Func`2 serialize) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\ReadinessExecutionFlow.cs:line 14
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_6.<<ExecutorLifetimeTests>b__14>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 54
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Unpublished context revoked on queue-error: NotImplementedException The method or operation is not implemented.
+System.NotImplementedException: The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.ReadinessExecutionFlow.IssueContext(BridgeExecutionContext context, ContextStore store, ContextBinding binding, Task`1 publication, Func`2 serialize) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\ReadinessExecutionFlow.cs:line 14
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass27_6.<<ExecutorLifetimeTests>b__14>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 54
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Published context remains usable: NotImplementedException The method or operation is not implemented.
+System.NotImplementedException: The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.ReadinessExecutionFlow.IssueContext(BridgeExecutionContext context, ContextStore store, ContextBinding binding, Task`1 publication, Func`2 serialize) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\ReadinessExecutionFlow.cs:line 14
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<ExecutorLifetimeTests>b__27_1>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\ExecutorLifetimeTests.cs:line 73
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Production session acquisition/retirement event: NotImplementedException The method or operation is not implemented.
+System.NotImplementedException: The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.HostBridgeSession.StartInApiContext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\HostBridgeSession.cs:line 19
+FAIL Production session acquisition/retirement listener: NotImplementedException The method or operation is not implemented.
+   at BimAgentLab.Bridge.Tests.Program.Throws[T](Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 69
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass1_0.<AdapterBoundaryTests>b__4() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 30
+   at BimAgentLab.Bridge.Tests.Program.Sync(Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 65
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass1_0.<AdapterBoundaryTests>b__3() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 24
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+System.NotImplementedException: The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.HostBridgeSession.StartInApiContext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\HostBridgeSession.cs:line 19
+   at BimAgentLab.Bridge.Tests.Program.Throws[T](Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 69
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass1_0.<AdapterBoundaryTests>b__4() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 30
+   at BimAgentLab.Bridge.Tests.Program.Sync(Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 65
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass1_0.<AdapterBoundaryTests>b__3() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 24
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Production session acquisition/retirement descriptor: NotImplementedException The method or operation is not implemented.
+System.NotImplementedException: The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.HostBridgeSession.StartInApiContext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\HostBridgeSession.cs:line 19
+   at BimAgentLab.Bridge.Tests.Program.Throws[T](Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 69
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass1_0.<AdapterBoundaryTests>b__4() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 30
+   at BimAgentLab.Bridge.Tests.Program.Sync(Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 65
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass1_0.<AdapterBoundaryTests>b__3() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 24
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Production session acquisition/retirement none: NotImplementedException The method or operation is not implemented.
+System.NotImplementedException: The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.HostBridgeSession.StartInApiContext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\HostBridgeSession.cs:line 19
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass1_0.<AdapterBoundaryTests>b__4() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 29
+   at BimAgentLab.Bridge.Tests.Program.Sync(Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 65
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass1_0.<AdapterBoundaryTests>b__3() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 24
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Event retirement never waits on an in-flight native Raise: NotImplementedException The method or operation is not implemented.
+System.NotImplementedException: The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.ApiEventLease.Raise() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\ApiEventLease.cs:line 7
+   at System.Threading.Tasks.Task`1.InnerInvoke()
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<AdapterBoundaryTests>b__1_0>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 41
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Session stop clears contexts and returns without network completion: NotImplementedException The method or operation is not implemented.
+System.NotImplementedException: The method or operation is not implemented.
+   at BimAgentLab.RevitBridge.Runtime.HostBridgeSession.StartInApiContext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\HostBridgeSession.cs:line 19
+   at BimAgentLab.Bridge.Tests.Program.<>c.<AdapterBoundaryTests>b__1_11() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 49
+   at BimAgentLab.Bridge.Tests.Program.Sync(Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 65
+   at BimAgentLab.Bridge.Tests.Program.<>c.<AdapterBoundaryTests>b__1_1() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 44
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+FAIL Autodesk adapter source has only read-only query dependencies: Exception Missing adapter BridgeApplication.cs
+System.Exception: Missing adapter BridgeApplication.cs
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 66
+   at BimAgentLab.Bridge.Tests.Program.<>c.<AdapterBoundaryTests>b__1_17() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.Sync(Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 65
+   at BimAgentLab.Bridge.Tests.Program.<>c.<AdapterBoundaryTests>b__1_2() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 54
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 62
+Dispatch tests: 48 passed; 20 failed.
+Exception: D:\bim-agent-lab\projects\revit-readiness\scripts\Test-McpBridge.ps1:16
+Line |
+  16 |  … nt -ne 0) { throw "Dispatch behavioral tests failed: $($dispatchFailu …
+     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Dispatch behavioral tests failed: net48, net10.0
