@@ -1,0 +1,13 @@
+{
+  "pass": true,
+  "scope": "Implementing-agent Python comparison in the original Codex filesystem view; not external review or consumer acceptance",
+  "installedTargets": 97,
+  "backups": 97,
+  "changedTags": [
+    "Main",
+    "MainInventory",
+    "FixtureInventory"
+  ],
+  "fixtureInventoryMappingsIdentical": true,
+  "unchangedSampleFiles": 4
+}

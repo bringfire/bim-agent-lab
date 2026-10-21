@@ -1,0 +1,14 @@
+{
+    "Scope":  "Installed replacement Initialize outside Revit; not host acceptance",
+    "CapturedUtc":  "2026-10-21T23:13:45.9398028+00:00",
+    "ProcessId":  153152,
+    "Runtime":  "4.0.30319.42000",
+    "AssemblyPath":  "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitReadiness.dll",
+    "AssemblySha256":  "432c5337625124a0ebdebba9d5dc98526379506e73a7f16d5b806e237101b057",
+    "Root":  "C:\\Users\\bring\\.bim-agent-lab\\RevitBridge\\diagnostics",
+    "Selector":  "C:\\Users\\bring\\.bim-agent-lab\\RevitBridge\\diagnostics\\run.txt",
+    "Run":  "2c6e4b8b63b84e019deae35cd7532731",
+    "EventsPath":  "C:\\Users\\bring\\.bim-agent-lab\\RevitBridge\\diagnostics\\2c6e4b8b63b84e019deae35cd7532731\\153152\\events.tsv",
+    "Events":  "1\t2026-10-21T23:13:45.9377908+00:00\t6289165779197\t15\tApplicationStartup\t\t\t\t\n",
+    "Result":  "Initialize returned successfully"
+}

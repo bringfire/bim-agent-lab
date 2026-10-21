@@ -1,0 +1,81 @@
+{
+  "sourceCommit": "7b0987975b1ee019fec9013eb813f581a6020f6d",
+  "installedUtc": "2026-10-21T23:13:01.8587926+00:00",
+  "package": "D:/bim-agent-lab/projects/revit-readiness/samples/local/diagnostic-packages/50bb9b64fdee49b2bab5bb5a79fbc362",
+  "receiptLogical": "C:\\Users\\bring\\AppData\\Local\\BimAgentLab\\RevitReadiness\\InstallRecovery\\74e482b3f82e491283e66ed12eb6b8d9\\receipt.json",
+  "receiptPhysical": {
+    "Requested": "C:\\Users\\bring\\AppData\\Local\\BimAgentLab\\RevitReadiness\\InstallRecovery\\74e482b3f82e491283e66ed12eb6b8d9\\receipt.json",
+    "Physical": "\\\\?\\C:\\Users\\bring\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\BimAgentLab\\RevitReadiness\\InstallRecovery\\74e482b3f82e491283e66ed12eb6b8d9\\receipt.json",
+    "Redirected": true
+  },
+  "priorDiagnosticReceipt": "C:/Users/bring/AppData/Local/BimAgentLab/RevitReadiness/InstallRecovery/b0d82098d961433f9945d10fc9ebfa55/receipt.json",
+  "recoveryOrder": "Undo newest receipt in the original Codex filesystem view to restore the first diagnostic candidate, then undo b0d820... there to restore the normal candidate. Preserve physical backups and view context; no external-view replay.",
+  "verifiedTargets": 97,
+  "verifiedBackups": 97,
+  "changedTargets": [
+    {
+      "Target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitReadiness.dll",
+      "Before": "42B062D5FF3B0AE1AA599AE5C6692E65FCC8BA0AE171777B21B10DCFB2246958",
+      "After": "432C5337625124A0EBDEBBA9D5DC98526379506E73A7F16D5B806E237101B057",
+      "Tag": "Main"
+    },
+    {
+      "Target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\installed-files.json",
+      "Before": "CAE05AEB3402ED443F57B1B9E92ECAC300CCA955D4AF44EDBC98335AD7EDADED",
+      "After": "9996DD7B1D4E037A474E8A4B4CA8CB9A40E3154F80FA33451FE00ABF7EA7CBA2",
+      "Tag": "MainInventory"
+    },
+    {
+      "Target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.FixtureTools\\installed-files.json",
+      "Before": "69692B87CC502BE6F1D503291B9CCABC193F42347571E07026962564CF634420",
+      "After": "CF8F013A948448AC7D41457736B8285168772DCB29D98C824C6534321EA29655",
+      "Tag": "FixtureInventory"
+    }
+  ],
+  "inventoryOrderingControls": [
+    {
+      "Target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.FixtureTools\\installed-files.json",
+      "Tag": "FixtureInventory",
+      "Entries": 2,
+      "SameFileHashMapping": true
+    }
+  ],
+  "physicalChangedTargetsBefore": [
+    {
+      "Requested": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitReadiness.dll",
+      "Physical": "\\\\?\\C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitReadiness.dll",
+      "Redirected": false
+    },
+    {
+      "Requested": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\installed-files.json",
+      "Physical": "\\\\?\\C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\installed-files.json",
+      "Redirected": false
+    },
+    {
+      "Requested": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.FixtureTools\\installed-files.json",
+      "Physical": "\\\\?\\C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.FixtureTools\\installed-files.json",
+      "Redirected": false
+    }
+  ],
+  "physicalChangedTargetsAfter": [
+    {
+      "Requested": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitReadiness.dll",
+      "Physical": "\\\\?\\C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitReadiness.dll",
+      "Redirected": false
+    },
+    {
+      "Requested": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\installed-files.json",
+      "Physical": "\\\\?\\C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\installed-files.json",
+      "Redirected": false
+    },
+    {
+      "Requested": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.FixtureTools\\installed-files.json",
+      "Physical": "\\\\?\\C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.FixtureTools\\installed-files.json",
+      "Redirected": false
+    }
+  ],
+  "sharedDiagnosticRun": "C:\\Users\\bring\\.bim-agent-lab\\RevitBridge\\diagnostics\\2c6e4b8b63b84e019deae35cd7532731",
+  "serverPayloadBytesChanged": false,
+  "serverVisibilityCorrected": false,
+  "liveRevitStartupVerified": false
+}
