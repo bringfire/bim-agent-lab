@@ -1,0 +1,14 @@
+{
+  "protocol": "2025-11-25",
+  "clientNames": [
+    "local-agent-mode-bim-agent-lab-protocol-probe"
+  ],
+  "checks": [
+    "failure",
+    "initialize",
+    "initialized",
+    "list",
+    "success"
+  ],
+  "pass": true
+}

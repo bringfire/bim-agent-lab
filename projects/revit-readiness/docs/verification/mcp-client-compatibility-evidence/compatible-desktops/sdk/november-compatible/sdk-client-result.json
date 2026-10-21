@@ -1,0 +1,18 @@
+{
+  "clientKind": "SDK harness, not a desktop acceptance run",
+  "protocol": "2025-11-25",
+  "tools": [
+    "lab_protocol_probe"
+  ],
+  "success": {
+    "synthetic": true,
+    "revitAccess": false,
+    "code": "ProbeSuccess"
+  },
+  "failure": {
+    "synthetic": true,
+    "revitAccess": false,
+    "code": "ProbeFailure"
+  },
+  "pass": true
+}

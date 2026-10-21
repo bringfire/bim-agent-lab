@@ -1,0 +1,14 @@
+{
+  "protocol": "2025-06-18",
+  "clientNames": [
+    "codex-mcp-client"
+  ],
+  "checks": [
+    "failure",
+    "initialize",
+    "initialized",
+    "list",
+    "success"
+  ],
+  "pass": true
+}

@@ -3,19 +3,22 @@ using ModelContextProtocol.Protocol;
 
 namespace BimAgentLab.RevitReadiness.Mcp;
 
+public enum McpProtocolPolicy { Compatible, Strict20260728 }
+
 public static class McpHost
 {
-    public static Task RunStdioAsync(McpServerHandlers handlers, string? evidenceDirectory, CancellationToken hostStopping)
+    public static Task RunStdioAsync(McpServerHandlers handlers, string? evidenceDirectory, CancellationToken hostStopping,
+        McpProtocolPolicy protocolPolicy = McpProtocolPolicy.Compatible)
     {
         var input = Console.OpenStandardInput();
         Stream output;
         try { output = Console.OpenStandardOutput(); }
         catch { input.Dispose(); throw; }
-        return RunOwnedStreamsAsync(handlers, input, output, evidenceDirectory, hostStopping);
+        return RunOwnedStreamsAsync(handlers, input, output, evidenceDirectory, hostStopping, protocolPolicy);
     }
 
     internal static async Task RunOwnedStreamsAsync(McpServerHandlers handlers, Stream input, Stream output,
-        string? evidenceDirectory, CancellationToken hostStopping)
+        string? evidenceDirectory, CancellationToken hostStopping, McpProtocolPolicy protocolPolicy = McpProtocolPolicy.Compatible)
     {
         using var ownedInput = new CancellableInputStream(input);
         using var ownedOutput = output;
@@ -42,7 +45,14 @@ public static class McpHost
             }
             var options = new McpServerOptions
             {
-                ProtocolVersion = "2026-07-28",
+                // Let the official SDK accept both generations in production.
+                // The separate probe also exercises an explicit strict regression policy.
+                ProtocolVersion = protocolPolicy switch
+                {
+                    McpProtocolPolicy.Compatible => null,
+                    McpProtocolPolicy.Strict20260728 => "2026-07-28",
+                    _ => throw new ArgumentOutOfRangeException(nameof(protocolPolicy))
+                },
                 ServerInfo = new Implementation { Name = "bim-agent-lab", Version = "0.1.0" },
                 Capabilities = new ServerCapabilities { Tools = new ToolsCapability() },
                 Handlers = handlers

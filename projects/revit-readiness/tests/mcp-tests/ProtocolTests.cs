@@ -15,7 +15,11 @@ internal static partial class Program
         Probe = Path.GetFullPath(args[0]);
         Evidence = Path.GetFullPath(args[1]);
         Directory.CreateDirectory(Evidence);
-        await Test("Pinned SDK discovers only the synthetic probe and preserves structured success/failure", ProbeExchange);
+        foreach (string protocol in new[] { "2025-06-18", "2025-11-25", "2026-07-28" })
+            await Test($"Compatible host preserves exact protocol and results: {protocol}", () => ProbeExchange(protocol, false));
+        await Test("Strict July host preserves modern discovery and results", () => ProbeExchange("2026-07-28", true));
+        foreach (string protocol in new[] { "2025-06-18", "2025-11-25" })
+            await Test($"Strict July host rejects legacy initialization: {protocol}", () => StrictRejection(protocol));
         await Test("Trace preserves fragmented Unicode bytes and stream ownership", TraceBytes);
         await Test("Memory read cancellation retains pending buffer and suppresses late evidence", () => CancelPendingRead(false));
         await Test("Array read cancellation retains pending buffer and suppresses late evidence", () => CancelPendingRead(true));
@@ -37,25 +41,29 @@ internal static partial class Program
     internal static void Check(bool condition, string message)
     { if (!condition) throw new Exception(message); }
 
-    static async Task ProbeExchange()
+    static async Task ProbeExchange(string protocol, bool strict)
     {
         var trace = Path.Combine(Evidence, "sdk-" + Guid.NewGuid().ToString("N"));
         using var timeout = new CancellationTokenSource(TimeSpan.FromSeconds(10));
         var transport = new StdioClientTransport(new StdioClientTransportOptions
         {
-            Command = Probe, Arguments = ["--wire-evidence", trace],
+            Command = Probe, Arguments = strict ? ["--wire-evidence", trace, "--require-protocol", "2026-07-28"] : ["--wire-evidence", trace],
             Name = "test-only-protocol-probe"
         });
         await using (var client = await McpClient.CreateAsync(transport,
-            new McpClientOptions { ProtocolVersion = "2026-07-28" }, cancellationToken: timeout.Token))
+            new McpClientOptions { ProtocolVersion = protocol }, cancellationToken: timeout.Token))
         {
-            Check(client.NegotiatedProtocolVersion == "2026-07-28", "Expected exact dated protocol");
+            Check(client.NegotiatedProtocolVersion == protocol, "Expected exact dated protocol");
             var tools = await client.ListToolsAsync(cancellationToken: timeout.Token);
             Check(tools.Count == 1 && tools[0].Name == "lab_protocol_probe", "Expected only synthetic discovery");
             var success = await client.CallToolAsync("lab_protocol_probe", new Dictionary<string, object?> { ["fail"] = false }, cancellationToken: timeout.Token);
-            Check(success.IsError != true && success.StructuredContent!.Value.GetProperty("synthetic").GetBoolean(), "Missing synthetic success");
+            Check(success.IsError == false && success.StructuredContent!.Value.GetProperty("synthetic").GetBoolean()
+                && !success.StructuredContent.Value.GetProperty("revitAccess").GetBoolean()
+                && success.StructuredContent.Value.GetProperty("code").GetString() == "ProbeSuccess", "Missing explicit false flag or synthetic success");
             var failure = await client.CallToolAsync("lab_protocol_probe", new Dictionary<string, object?> { ["fail"] = true }, cancellationToken: timeout.Token);
-            Check(failure.IsError == true && failure.StructuredContent!.Value.GetProperty("code").GetString() == "ProbeFailure", "Missing structured failure");
+            Check(failure.IsError == true && failure.StructuredContent!.Value.GetProperty("code").GetString() == "ProbeFailure"
+                && failure.StructuredContent.Value.GetProperty("synthetic").GetBoolean()
+                && !failure.StructuredContent.Value.GetProperty("revitAccess").GetBoolean(), "Missing structured failure");
         }
         // Independent traffic assertions; SDK owns every protocol exchange above.
         trace = Directory.GetDirectories(trace).Single();
@@ -66,6 +74,32 @@ internal static partial class Program
             foreach (var line in lines) using (var doc = JsonDocument.Parse(line))
                 Check(doc.RootElement.GetProperty("jsonrpc").GetString() == "2.0", "Non-protocol stdout");
         }
-        Console.WriteLine("EVIDENCE " + trace);
+        Console.WriteLine($"EVIDENCE protocol={protocol} strict={strict} path={trace}");
+    }
+
+    static async Task StrictRejection(string protocol)
+    {
+        var trace = Path.Combine(Evidence, "strict-reject-" + Guid.NewGuid().ToString("N"));
+        using var timeout = new CancellationTokenSource(TimeSpan.FromSeconds(10));
+        bool rejected = false;
+        try
+        {
+            var transport = new StdioClientTransport(new StdioClientTransportOptions
+            {
+                Command = Probe, Arguments = ["--wire-evidence", trace, "--require-protocol", "2026-07-28"],
+                Name = "strict-regression-client"
+            });
+            await using var client = await McpClient.CreateAsync(transport,
+                new McpClientOptions { ProtocolVersion = protocol }, cancellationToken: timeout.Token);
+        }
+        catch (Exception error) when (error.ToString().Contains("initialize handshake")) { rejected = true; }
+        Check(rejected, "Strict host unexpectedly accepted legacy initialization");
+        trace = Directory.GetDirectories(trace).Single();
+        var responses = File.ReadAllLines(Path.Combine(trace, "server-to-client.jsonl"));
+        Check(responses.Any(line =>
+        {
+            using var doc = JsonDocument.Parse(line);
+            return doc.RootElement.TryGetProperty("error", out var error) && error.GetProperty("code").GetInt32() == -32022;
+        }), "Rejection was not the expected protocol error");
     }
 }

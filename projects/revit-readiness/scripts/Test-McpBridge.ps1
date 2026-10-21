@@ -12,15 +12,25 @@ try {
     if ($LASTEXITCODE -ne 0) { throw 'MCP Protocol behavioral tests failed.' }
     & python -m unittest discover -s tests -p 'test_mcp_*.py' -v
     if ($LASTEXITCODE -ne 0) { throw 'MCP independent checker/settings recovery tests failed.' }
-    $runRoot = Join-Path (Get-Location) ('samples/local/mcp-sdk-client/' + [guid]::NewGuid().ToString('N'))
-    $wire = Join-Path $runRoot 'wire'
     $probe = (Resolve-Path 'tests/mcp-probe/bin/Release/net10.0/BimAgentLab.Mcp.Probe.exe').Path
-    & './tests/mcp-client/bin/Release/net10.0/BimAgentLab.Mcp.Client.exe' --server $probe --server-arg '--wire-evidence' --server-arg $wire --scenario probe --evidence $runRoot
-    if ($LASTEXITCODE -ne 0) { throw 'Standalone SDK client failed.' }
-    $sessions = @(Get-ChildItem -LiteralPath $wire -Directory)
-    if ($sessions.Count -ne 1) { throw 'Expected one captured SDK session.' }
-    & python tests/verify_mcp_transcript.py $sessions[0].FullName --protocol 2026-07-28
-    if ($LASTEXITCODE -ne 0) { throw 'Independent wire comparison failed.' }
-    Write-Output "SDK_CLIENT_EVIDENCE $runRoot"
+    foreach ($case in @(
+        @{ Protocol = '2025-06-18'; Strict = $false },
+        @{ Protocol = '2025-11-25'; Strict = $false },
+        @{ Protocol = '2026-07-28'; Strict = $false },
+        @{ Protocol = '2026-07-28'; Strict = $true }
+    )) {
+        $runRoot = Join-Path (Get-Location) ('samples/local/mcp-sdk-client/' + [guid]::NewGuid().ToString('N'))
+        $wire = Join-Path $runRoot 'wire'
+        $clientArguments = @('--server', $probe, '--server-arg', '--wire-evidence', '--server-arg', $wire,
+            '--scenario', 'probe', '--evidence', $runRoot, '--protocol', $case.Protocol)
+        if ($case.Strict) { $clientArguments += @('--server-arg', '--require-protocol', '--server-arg', '2026-07-28') }
+        & './tests/mcp-client/bin/Release/net10.0/BimAgentLab.Mcp.Client.exe' @clientArguments
+        if ($LASTEXITCODE -ne 0) { throw 'Standalone SDK client failed.' }
+        $sessions = @(Get-ChildItem -LiteralPath $wire -Directory)
+        if ($sessions.Count -ne 1) { throw 'Expected one captured SDK session.' }
+        & python tests/verify_mcp_transcript.py $sessions[0].FullName --protocol $case.Protocol
+        if ($LASTEXITCODE -ne 0) { throw 'Independent wire comparison failed.' }
+        Write-Output "SDK_CLIENT_EVIDENCE protocol=$($case.Protocol) strict=$($case.Strict) path=$runRoot"
+    }
     Write-Output 'PASS available offline suites; desktop/Revit acceptance is separate.'
 } finally { Pop-Location }

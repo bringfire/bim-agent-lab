@@ -108,4 +108,27 @@ The author then supplied a decisive constraint: participants are beginners who w
 
 That changes the recommendation even though the Claude Code test passed. A technically working option can still be wrong for the audience. The [policy amendment](../superpowers/specs/2026-10-20-desktop-compatibility-amendment.md) keeps the newer SDK, supports both protocol generations through that SDK, and retains a separate new-protocol test. Participants continue with Codex desktop and Claude Desktop. When those applications support the new revision, fresh compatibility and model tests establish the upgraded baseline; the BIM logic does not need a rewrite.
 
-The author selected the direction, and the written requirements now reflect it. Applying the runtime change and proving both desktop workflows remain the next implementation work. This documentation is not a passing desktop test. Teach the distinction between choosing a sensible compromise and verifying that it works.
+The author selected the direction, and the written requirements now reflect it. At that documentation checkpoint, runtime implementation and both desktop tests were still pending. The next section records their execution. Teach the distinction between choosing a sensible compromise and verifying that it works.
+
+
+## Ask the agent to implement the choice and preserve the way forward
+
+The author's actual next instruction was:
+
+> Ok, let's apply the compatibility change and test it in Codex desktop and Claude Desktop. Keep the 2026-07-28 regression test and record the process in both teaching layers. Do we need an updated spec and plan?
+
+Yes: the requirement changed, so the specification and plan needed to say what would now count as success. Revision 3 already captured that direction. This explicit instruction authorized implementing it; another request to approve the same choice would have added no useful decision.
+
+The agent kept SDK 2.2.0, enabled its normal compatibility behavior and retained a separate strict new-protocol test. The author reloaded Codex, then handled Claude's tool-permission prompt and replied **“always allowed.”** Both applications discovered the test tool, returned a successful result and correctly handled the deliberate error. Codex used `2025-06-18`; Claude Desktop used `2025-11-25`. The strict `2026-07-28` test also passed. These are older desktop exchanges through the newer SDK, not evidence that either desktop used July's protocol.
+
+Testing the actual application caught something the library test missed: Claude left out an optional empty field when asking for the tool list. Our checker incorrectly required it. The agent checked the source definition, wrote a failing test, corrected the checker and reran it against the unchanged capture. This is why a test failure deserves investigation: the product, the test or the setup can be wrong. Changing evidence to make a test pass would teach the wrong lesson.
+
+The agent also found that a temporary registration was no longer present after an interruption. It saved the current configuration before reapplying that entry, then removed the test entries while preserving unrelated edits. Recovery must work with the settings that exist now, not assume nobody changed them since the experiment began.
+
+The [verification record](../../projects/revit-readiness/docs/verification/2026-10-20-desktop-mcp-compatibility.md) holds the exact versions, outcomes, evidence and limits. This checkpoint proves communication; it does not prove the still-unbuilt Revit connection. The agent's next implementation task is the bridge's messages, framing and shared request budgets. Full model tests and independent implementation review remain required.
+
+A **suggested prompt** for participants:
+
+> Apply our chosen compatibility policy in the applications our audience will use. Update the spec and plan so the acceptance criteria agree. Keep a regression test for the newer capability, and tell me how we will verify an upgrade later. Show successful and failed calls in the real applications, preserve the evidence, and explain any test or setup problems separately from product failures. Record my decisions for participants and the reproduction steps for agents.
+
+The useful human contribution was deciding whose experience mattered and insisting that today's compromise preserve tomorrow's option. The agent handled the implementation details and supplied evidence the author could judge.

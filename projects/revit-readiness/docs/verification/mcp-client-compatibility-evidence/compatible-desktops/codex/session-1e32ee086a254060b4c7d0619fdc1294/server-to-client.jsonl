@@ -1,0 +1,4 @@
+{"result":{"protocolVersion":"2025-06-18","capabilities":{"logging":{},"tools":{}},"serverInfo":{"name":"bim-agent-lab","version":"0.1.0"}},"id":0,"jsonrpc":"2.0"}
+{"result":{"tools":[{"name":"lab_protocol_probe","description":"Synthetic compatibility test only. No Revit access. Set fail=true for a deliberate structured error.","inputSchema":{"type":"object","properties":{"fail":{"type":"boolean"}},"required":["fail"],"additionalProperties":false},"annotations":{"destructiveHint":false,"openWorldHint":false,"readOnlyHint":true}}]},"id":1,"jsonrpc":"2.0"}
+{"error":{"code":-32601,"message":"Method \u0027resources/templates/list\u0027 is not available."},"id":3,"jsonrpc":"2.0"}
+{"error":{"code":-32601,"message":"Method \u0027resources/list\u0027 is not available."},"id":2,"jsonrpc":"2.0"}

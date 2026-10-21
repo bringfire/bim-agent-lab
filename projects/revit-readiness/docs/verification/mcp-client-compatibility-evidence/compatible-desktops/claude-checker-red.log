@@ -1,0 +1,24 @@
+test_accepted_legacy_revisions_preserve_complete_exchange (test_mcp_transcript.LegacyTranscriptTests.test_accepted_legacy_revisions_preserve_complete_exchange) ... ok
+test_legacy_capture_cannot_satisfy_strict_july (test_mcp_transcript.LegacyTranscriptTests.test_legacy_capture_cannot_satisfy_strict_july) ... ok
+test_legacy_negotiation_order_correlation_and_results_cannot_be_relaxed (test_mcp_transcript.LegacyTranscriptTests.test_legacy_negotiation_order_correlation_and_results_cannot_be_relaxed) ... ok
+test_legacy_tools_list_may_omit_optional_params (test_mcp_transcript.LegacyTranscriptTests.test_legacy_tools_list_may_omit_optional_params) ... ERROR
+test_unverified_protocol_is_rejected (test_mcp_transcript.LegacyTranscriptTests.test_unverified_protocol_is_rejected) ... ok
+test_complete_exchange (test_mcp_transcript.TranscriptTests.test_complete_exchange) ... ok
+test_missing_false_flag_wrong_protocol_id_and_diagnostics_are_rejected (test_mcp_transcript.TranscriptTests.test_missing_false_flag_wrong_protocol_id_and_diagnostics_are_rejected) ... ok
+
+======================================================================
+ERROR: test_legacy_tools_list_may_omit_optional_params (test_mcp_transcript.LegacyTranscriptTests.test_legacy_tools_list_may_omit_optional_params)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<REPO>\projects\revit-readiness\tests\test_mcp_transcript.py", line 97, in test_legacy_tools_list_may_omit_optional_params
+    self.assertTrue(verify(root, '2025-11-25')['pass'])
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<REPO>\projects\revit-readiness\tests\verify_mcp_transcript.py", line 34, in verify
+    params = row['params']
+             ~~~^^^^^^^^^^
+KeyError: 'params'
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.069s
+
+FAILED (errors=1)

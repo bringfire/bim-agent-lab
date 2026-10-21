@@ -1,0 +1,39 @@
+test_accepted_legacy_revisions_preserve_complete_exchange (test_mcp_transcript.LegacyTranscriptTests.test_accepted_legacy_revisions_preserve_complete_exchange) ... 
+  test_accepted_legacy_revisions_preserve_complete_exchange (test_mcp_transcript.LegacyTranscriptTests.test_accepted_legacy_revisions_preserve_complete_exchange) (protocol='2025-06-18') ... FAIL
+  test_accepted_legacy_revisions_preserve_complete_exchange (test_mcp_transcript.LegacyTranscriptTests.test_accepted_legacy_revisions_preserve_complete_exchange) (protocol='2025-11-25') ... FAIL
+test_complete_exchange (test_mcp_transcript.LegacyTranscriptTests.test_complete_exchange) ... ok
+test_legacy_capture_cannot_satisfy_strict_july (test_mcp_transcript.LegacyTranscriptTests.test_legacy_capture_cannot_satisfy_strict_july) ... ok
+test_legacy_negotiation_order_correlation_and_results_cannot_be_relaxed (test_mcp_transcript.LegacyTranscriptTests.test_legacy_negotiation_order_correlation_and_results_cannot_be_relaxed) ... ok
+test_missing_false_flag_wrong_protocol_id_and_diagnostics_are_rejected (test_mcp_transcript.LegacyTranscriptTests.test_missing_false_flag_wrong_protocol_id_and_diagnostics_are_rejected) ... ok
+test_unverified_protocol_is_rejected (test_mcp_transcript.LegacyTranscriptTests.test_unverified_protocol_is_rejected) ... ok
+test_complete_exchange (test_mcp_transcript.TranscriptTests.test_complete_exchange) ... ok
+test_missing_false_flag_wrong_protocol_id_and_diagnostics_are_rejected (test_mcp_transcript.TranscriptTests.test_missing_false_flag_wrong_protocol_id_and_diagnostics_are_rejected) ... ok
+
+======================================================================
+FAIL: test_accepted_legacy_revisions_preserve_complete_exchange (test_mcp_transcript.LegacyTranscriptTests.test_accepted_legacy_revisions_preserve_complete_exchange) (protocol='2025-06-18')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<REPO>\projects\revit-readiness\tests\test_mcp_transcript.py", line 63, in test_accepted_legacy_revisions_preserve_complete_exchange
+    result = verify(root, protocol)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "<REPO>\projects\revit-readiness\tests\verify_mcp_transcript.py", line 15, in verify
+    assert not any(row.get('method') == 'initialize' for row in incoming), 'Older handshake cannot satisfy CP0'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Older handshake cannot satisfy CP0
+
+======================================================================
+FAIL: test_accepted_legacy_revisions_preserve_complete_exchange (test_mcp_transcript.LegacyTranscriptTests.test_accepted_legacy_revisions_preserve_complete_exchange) (protocol='2025-11-25')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "<REPO>\projects\revit-readiness\tests\test_mcp_transcript.py", line 63, in test_accepted_legacy_revisions_preserve_complete_exchange
+    result = verify(root, protocol)
+             ^^^^^^^^^^^^^^^^^^^^^^
+  File "<REPO>\projects\revit-readiness\tests\verify_mcp_transcript.py", line 15, in verify
+    assert not any(row.get('method') == 'initialize' for row in incoming), 'Older handshake cannot satisfy CP0'
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Older handshake cannot satisfy CP0
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.145s
+
+FAILED (failures=2)

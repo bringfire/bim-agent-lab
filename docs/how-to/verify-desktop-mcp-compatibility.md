@@ -1,10 +1,10 @@
 # Verify desktop MCP compatibility before connecting Revit
 
-For agents and technical readers. The [participant story](../tutorials/07-test-desktop-compatibility-first.md) explains the author's direction. The [approved plan](../superpowers/plans/2026-10-20-revit-mcp-bridge.md) Task 1/CP0 is the contract; the [verification record](../../projects/revit-readiness/docs/verification/mcp-client-compatibility.md) contains observed results. The original strict CP0 failed; the author has now selected the [desktop-first compatibility amendment](../superpowers/specs/2026-10-20-desktop-compatibility-amendment.md). Its implementation and fresh desktop proof are pending. Historical strict-host procedures below remain useful for the separate July regression, not the amended desktop acceptance policy. Do not start Task 2 on the strength of the SDK harness alone.
+For agents and technical readers. The [participant story](../tutorials/07-test-desktop-compatibility-first.md) explains the author's direction. The [approved plan](../superpowers/plans/2026-10-20-revit-mcp-bridge.md) Task 1/CP0 is the contract; the [verification record](../../projects/revit-readiness/docs/verification/mcp-client-compatibility.md) contains observed results. The original strict CP0 failed; the author has now selected the [desktop-first compatibility amendment](../superpowers/specs/2026-10-20-desktop-compatibility-amendment.md). The [compatible-desktop verification](../../projects/revit-readiness/docs/verification/2026-10-20-desktop-mcp-compatibility.md) now passes in both actual apps. The strict policy remains a separate regression, not the desktop acceptance policy. Do not start Task 2 on the strength of the SDK harness alone.
 
 ## Sources and implementation boundaries
 
-- `projects/revit-readiness/src/mcp-server`: net10.0 host library, exact `[2.2.0]` package constraint and lockfile; official `McpServer.Create`, `StreamServerTransport`, `McpServerHandlers`, `ProtocolVersion = "2026-07-28"`.
+- `projects/revit-readiness/src/mcp-server`: net10.0 host library, exact `[2.2.0]` package constraint and lockfile; official `McpServer.Create`, `StreamServerTransport`, `McpServerHandlers`, `McpProtocolPolicy.Compatible` by default (`ProtocolVersion=null`), and explicit `Strict20260728` for regression tests.
 - `tests/mcp-probe`: separate executable exposing only `lab_protocol_probe` with required boolean `fail`. It cannot read Revit. No synthetic backend or probe switch is added to a production Revit server.
 - `tests/mcp-client`: official SDK client plus an evidence result explicitly labeled as a harness. `tests/mcp-tests` exercises protocol, stream ownership and actual Windows subprocess shutdown.
 - `tests/verify_mcp_transcript.py`: independent assertions over captured JSON lines, not a replacement MCP implementation. It requires discovery, tools/list, correlated success/error calls, exact protocol metadata, structured content, explicit false/true flags and clean stdout.
@@ -18,7 +18,7 @@ From the repository root with .NET SDK 10.0.204 and Python 3.12 available:
 & ./projects/revit-readiness/scripts/Test-McpBridge.ps1 -Suite Protocol
 ```
 
-`-Suite All` currently runs the same available Task 1 suites; it does not imply future bridge or host acceptance. Builds use locked restore. The script runs 14 C# behavioral tests, five Python test methods with subcases, the separate SDK client, and the independent wire checker. Each run creates fresh ignored evidence under `samples/local/`.
+`-Suite All` currently runs the same available Task 1 suites; it does not imply future bridge or host acceptance. Builds use locked restore. The script runs 19 C# behavioral tests, ten Python test methods with subcases, and four SDK-client/independent-wire comparisons: June compatible, November compatible, July compatible and July strict. C# tests also require strict rejection of both older initialization paths. Each run creates fresh ignored evidence under `samples/local/`.
 
 Windows child tests keep stdin open and signal cancellation through a test-only named event. Idle input, partial input and a pending tool must exit naturally within five seconds in both trace modes. EOF or watchdog termination cannot establish a pass. The input adapter owns a private pending-read buffer, cancels waiting, observes late faults, and rejects reuse. The host owns raw streams; the SDK receives wrappers that leave them open. SDK/transport disposal unwinds before trace sinks close. Trace files use CreateNew, flush captured bytes and cap each direction at 8 MiB. Capture failure fails the run visibly.
 
@@ -39,10 +39,14 @@ python ./projects/revit-readiness/scripts/manage_mcp_probe_settings.py apply --r
 
 Use `--format json` and the existing Claude config for Claude. Disclose the exact temporary entry and reload each actual application. Do not infer activation from a config write, or use a standalone CLI process as desktop proof. If the application window is unavailable to automation, request the user's reload rather than manipulating private app internals.
 
-Run `lab_protocol_probe` with `{"fail":false}` and `{"fail":true}` through each application if discovery succeeds. Capture installed app version, wire client identity/version, config location and owned entry, mode/model/permissions, discovery and both results. If handshake fails first, explicitly mark later stages and model/permission checks as not reached. Do not weaken protocol requirements or rewrite traffic to make the test pass.
+Run `lab_protocol_probe` with `{"fail":false}` and `{"fail":true}` through each application if discovery succeeds. Capture installed app version, wire client identity/version, config location and owned entry, mode/model/permissions, discovery and both results. If handshake fails first, explicitly mark later stages and model/permission checks as not reached. Use the revision 3 accepted baseline for each app; do not relax its result checks or rewrite traffic. Claude Desktop may create a discovery-only `claude-ai` session and a separate `local-agent-mode-<server>` session that makes calls. Require a complete exchange within one session; never combine them. Legacy `tools/list` may omit optional params. Modern requests still require protocol metadata.
 
 ```powershell
-python ./projects/revit-readiness/tests/verify_mcp_transcript.py <session-directory> --protocol 2026-07-28
+# Choose the exact observed and accepted revision: Codex June, Claude November.
+python ./projects/revit-readiness/tests/verify_mcp_transcript.py <codex-session> --protocol 2025-06-18
+python ./projects/revit-readiness/tests/verify_mcp_transcript.py <claude-session> --protocol 2025-11-25
+# Separate strict probe: launch with --require-protocol 2026-07-28, then verify its capture.
+python ./projects/revit-readiness/tests/verify_mcp_transcript.py <strict-july-session> --protocol 2026-07-28
 python ./projects/revit-readiness/scripts/manage_mcp_probe_settings.py restore --receipt $receipt
 ```
 
@@ -56,7 +60,7 @@ Under revision 2 both desktops had to show `2026-07-28`. Under the author-direct
 
 ## Diagnose a version restriction before changing acceptance
 
-Separate four facts: the installed SDK package, its supported wire revisions, the client exchange actually observed, and the server/acceptance policy. Inspect the pinned SDK source as well as current documentation. In SDK 2.2.0, `McpServerOptions.ProtocolVersion = null` supports its listed old/new revisions; our explicit `2026-07-28` pin rejects legacy initialization. The host is still strict at this recorded implementation checkpoint; spec revision 3 now directs a compatible production policy with a separate strict July test. That runtime change remains pending.
+Separate four facts: the installed SDK package, its supported wire revisions, the client exchange actually observed, and the server/acceptance policy. Inspect the pinned SDK source as well as current documentation. In SDK 2.2.0, `McpServerOptions.ProtocolVersion = null` supports its listed old/new revisions; our explicit `2026-07-28` pin rejects legacy initialization. That production compatibility change is now implemented and verified in both desktops. Strict July tests still exercise the same host with an explicit policy. The earlier isolated diagnostic remains historical supporting evidence, not a replacement for these host tests.
 
 Reproduce the isolated SDK comparison from the repository root:
 
@@ -150,3 +154,14 @@ Require discovery, list, correlated success/failure, exact metadata and explicit
 `auto` is a negotiation preference, not proof of the selected revision. Here the strict server advertised only July 2026 and each captured request carried that revision. Do not infer support for optional Tasks, channels or HTTP/OAuth from this tool test. Anthropic documents these runtime controls for Claude Code, not Claude Desktop.
 
 Verify no owned probe remains, retain only reviewed lab traffic and selected non-secret output with clear transformation notes, and hash the retained bytes. No persistent MCP registration or environment override needs restoring with this child-only approach. CLI authentication/cache bookkeeping can still change; do not claim the entire application's state was untouched. At the alternative-client research checkpoint the spec/plan and production host were unchanged. The author subsequently chose the desktop-first compatibility amendment. That direction is recorded in spec/plan revision 3; runtime changes and fresh desktop tests remain pending.
+
+
+## Completed compatibility increment and future upgrades
+
+The author explicitly requested applying revision 3; this authorized implementation without another approval loop. See the [fresh verification record](../../projects/revit-readiness/docs/verification/2026-10-20-desktop-mcp-compatibility.md), retained raw sessions, strict rejections, test logs and manifest. Both desktop calls use the same compatible host binary. The strict original failures and standalone Claude Code result remain separately labeled.
+
+Before claiming completion, run the independent checker against the retained **complete** session for each app and the strict July regression. Preserve incomplete startup sessions as such. Compare executable/host/SDK hashes and current configuration with the intended baseline. A configuration receipt proves preparation or a write, not that the application still has that entry; re-read it after interruptions. If absent with concurrent unrelated edits, prepare a fresh receipt around the current state before reapplying. Never conceal a changed owned entry by editing its old receipt.
+
+For a future desktop release, test that actual app with the separate probe's `--require-protocol 2026-07-28`. A successful strict connection is followed by its complete A8 workflow on the normal compatible production build. Record the new app/version/settings baseline only after both pass. Keep all three compatible-host regressions and strict July checks in place. No participant protocol control or BIM logic rewrite is required.
+
+CP0 now permits Task 2; it does not establish production tools, Revit reads, live sample comparisons, NC1/NC2 or R3 closure. The full bridge's original ownership/cancellation/rollback obligations remain.

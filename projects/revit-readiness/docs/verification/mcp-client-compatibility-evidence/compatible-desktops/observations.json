@@ -1,0 +1,128 @@
+{
+  "date": "2026-10-20",
+  "timezone": "America/New_York",
+  "sdk": "2.2.0",
+  "codexWindowsPackage": "26.1013.4894.0",
+  "claudeWindowsPackage": "3.1623.0.0",
+  "sessions": [
+    {
+      "client": "codex",
+      "path": "codex/session-1e32ee086a254060b4c7d0619fdc1294",
+      "protocol": "2025-06-18",
+      "pass": false,
+      "reason": "Incomplete compatibility exchange",
+      "scope": "startup/discovery-only session, not a full exchange"
+    },
+    {
+      "client": "codex",
+      "path": "codex/session-59c32b70ebf9422d9042e4a98c70fe22",
+      "protocol": "2025-06-18",
+      "clientNames": [
+        "codex-mcp-client"
+      ],
+      "checks": [
+        "failure",
+        "initialize",
+        "initialized",
+        "list",
+        "success"
+      ],
+      "pass": true
+    },
+    {
+      "client": "codex",
+      "path": "codex/session-72bcbc2cece041698786098ad25045c2",
+      "protocol": "2025-06-18",
+      "pass": false,
+      "reason": "Incomplete compatibility exchange",
+      "scope": "startup/discovery-only session, not a full exchange"
+    },
+    {
+      "client": "codex",
+      "path": "codex/session-72bcc0dbbe624b00a974349818ceebb8",
+      "protocol": "2025-06-18",
+      "pass": false,
+      "reason": "Incomplete compatibility exchange",
+      "scope": "startup/discovery-only session, not a full exchange"
+    },
+    {
+      "client": "codex",
+      "path": "codex/session-b5881f9fa9154c2986031cd14852d7ff",
+      "protocol": "2025-06-18",
+      "pass": false,
+      "reason": "Incomplete compatibility exchange",
+      "scope": "startup/discovery-only session, not a full exchange"
+    },
+    {
+      "client": "codex",
+      "path": "codex/session-e680c319ddc645f084d0cfa4d9e18054",
+      "protocol": "2025-06-18",
+      "pass": false,
+      "reason": "Incomplete compatibility exchange",
+      "scope": "startup/discovery-only session, not a full exchange"
+    },
+    {
+      "client": "claude",
+      "path": "claude/session-7e751b8dd90846beab0e6dfc07bd88ff",
+      "protocol": "2025-11-25",
+      "pass": false,
+      "reason": "Incomplete compatibility exchange",
+      "scope": "startup/discovery-only session, not a full exchange"
+    },
+    {
+      "client": "claude",
+      "path": "claude/session-b983f9d6c8f94a689548b4b4389d538d",
+      "protocol": "2025-11-25",
+      "clientNames": [
+        "local-agent-mode-bim-agent-lab-protocol-probe"
+      ],
+      "checks": [
+        "failure",
+        "initialize",
+        "initialized",
+        "list",
+        "success"
+      ],
+      "pass": true
+    }
+  ],
+  "binaries": [
+    {
+      "file": "tests/mcp-probe/bin/Release/net10.0/BimAgentLab.Mcp.Probe.exe",
+      "sha256": "dd290fc453131c937d63dcff771973cfbf65bb800f116516e88667b5a917d204"
+    },
+    {
+      "file": "tests/mcp-probe/bin/Release/net10.0/BimAgentLab.Mcp.Probe.dll",
+      "sha256": "8f5a23a09eb542883a91a1773a82622683fd4d22fa3d6be72fe069cb7b0f7803"
+    },
+    {
+      "file": "tests/mcp-probe/bin/Release/net10.0/ModelContextProtocol.dll",
+      "sha256": "8cd6f626c8d6a0a5ff3e154789d3fcde2b1d66a595c0ef0198e092c2c30fe93a"
+    },
+    {
+      "file": "tests/mcp-probe/bin/Release/net10.0/ModelContextProtocol.Core.dll",
+      "sha256": "b1752096ea9d2f38ba88e467f04aea43fb300d9a54d881c165f62b69028ee3ab"
+    },
+    {
+      "file": "tests/mcp-probe/bin/Release/net10.0/BimAgentLab.RevitReadiness.Mcp.dll",
+      "sha256": "73e74c11b142b216d7ceac6dc07675e261a020f0c24d54daeb059ae395e96933"
+    }
+  ],
+  "transformation": "Wire JSONL copied byte-for-byte. Diagnostic logs decode UTF-8 and replace author repo/home paths; no full app settings, credentials, unrelated chats or model files retained.",
+  "cleanup": {
+    "codex": "Owned entry removed; author screenshot and tool removal confirm reload. Unrelated settings preserved.",
+    "claude": "Fresh receipt baseline restored; MCP config reloaded; retained idle child explicitly stopped after exact identity check. User-selected Always allow permission was not reset.",
+    "probeProcessesAfterCleanup": 0,
+    "forcedCleanupIsShutdownAcceptance": false
+  },
+  "desktopExecutables": [
+    {
+      "file": "C:\\Program Files\\WindowsApps\\OpenAI.Codex_26.1013.4894.0_x64__2p2nqsd0c76g0\\app\\Codex.exe",
+      "sha256": "1a9f5f93bafa4c4afa3313622fae0898ffb78f56c04b2726f31c7465791d9c05"
+    },
+    {
+      "file": "C:\\Program Files\\WindowsApps\\Claude_3.1623.0.0_x64__pzs8sxrjxfjjc\\app\\claude.exe",
+      "sha256": "beedcc02addb8e0b86e20834f162d7d31277417cc04ab78b3097d95d5b2b32d5"
+    }
+  ]
+}

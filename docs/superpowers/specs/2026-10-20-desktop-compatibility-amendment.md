@@ -1,6 +1,6 @@
 # Desktop-first compatibility without abandoning the new protocol
 
-Date: 2026-10-20. Status: **author-directed policy amendment; implementation and desktop verification pending**. Applies to the [bridge specification](2026-10-20-revit-mcp-bridge-design.md) and [implementation plan](../plans/2026-10-20-revit-mcp-bridge.md). Their prior R1/R2 closures apply to revision 2; this amendment is not represented as independently reviewed or runtime-proven.
+Date: 2026-10-20. Status: **author-directed policy amendment; compatible host and synthetic desktop CP0 verified**. Applies to the [bridge specification](2026-10-20-revit-mcp-bridge-design.md) and [implementation plan](../plans/2026-10-20-revit-mcp-bridge.md). Their prior R1/R2 closures apply to revision 2; this amendment is not represented as independently reviewed. [Fresh CP0 evidence](../../../projects/revit-readiness/docs/verification/2026-10-20-desktop-mcp-compatibility.md) proves synthetic compatibility; full live acceptance remains pending.
 
 ## Author direction and purpose
 
@@ -22,7 +22,7 @@ The selected direction is **Codex desktop and Claude Desktop for participants, u
 
 **A2:** SDK-based tests through the actual host verify structured success/error, discovery, clean stdio and shutdown on the three listed revisions. The strict July test remains required, including rejection of old initialization. The existing separate SDK diagnostic is supporting research, not a substitute for tests of our host.
 
-**CP0:** Both actual desktop applications must independently discover the synthetic tool and make successful and deliberate-error calls against the same compatible host build. Record their exact versions, configuration and actual wire revision. A July SDK/Claude Code pass cannot substitute for either desktop. The original strict-server failures remain valid historical evidence; the amended checkpoint is **pending**, not passed.
+**CP0:** Both actual desktop applications must independently discover the synthetic tool and make successful and deliberate-error calls against the same compatible host build. Record their exact versions, configuration and actual wire revision. A July SDK/Claude Code pass cannot substitute for either desktop. The original strict-server failures remain valid historical evidence; the amended synthetic checkpoint now **passes**, as documented in the fresh evidence above.
 
 **A8/CP2:** Each desktop must perform the full live sequence already required: context, three principal samples, structured failure and NC1/NC2, with correct incomplete-coverage presentation. Its actual protocol must be one of the recorded accepted candidates above. Full live SDK-client coverage on July remains required under A2/A6. All other A1–A9 obligations remain.
 
@@ -38,4 +38,4 @@ Support in a release note is a candidate for testing, not automatic acceptance. 
 
 Participants learn that the human decides which tradeoff serves the audience. Here a successful technical alternative was rejected because its interface was unsuitable for beginners. Agents get the exact compatibility policy, separate test expectations and upgrade procedure.
 
-Include this amendment and its changed A2/A8/CP0 assertions in external implementation review. Preserve the prior review feedback/closure records unchanged. The architecture and lifetime protections remain reviewed requirements; this policy change does not close CP0 or R3. Task 2 still waits for actual compatible-desktop proof.
+Include this amendment and its changed A2/A8/CP0 assertions in external implementation review. Preserve the prior review feedback/closure records unchanged. The architecture and lifetime protections remain reviewed requirements; the policy text alone does not close CP0 or R3. The later actual compatible-desktop proof closes CP0 and permits Task 2; R3 remains outstanding.

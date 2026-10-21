@@ -4,8 +4,17 @@ using ModelContextProtocol.Protocol;
 using System.Text.Json;
 
 string? evidence = null;
-if (args.Length == 2 && args[0] == "--wire-evidence") evidence = Path.GetFullPath(args[1]);
-else if (args.Length != 0) throw new ArgumentException("Usage: probe [--wire-evidence <new-directory>]");
+var policy = McpProtocolPolicy.Compatible;
+for (int i = 0; i < args.Length; i += 2)
+{
+    if (i + 1 >= args.Length) throw new ArgumentException("Probe option requires a value.");
+    switch (args[i])
+    {
+        case "--wire-evidence": evidence = Path.GetFullPath(args[i + 1]); break;
+        case "--require-protocol" when args[i + 1] == "2026-07-28": policy = McpProtocolPolicy.Strict20260728; break;
+        default: throw new ArgumentException("Usage: probe [--wire-evidence <new-directory>] [--require-protocol 2026-07-28]");
+    }
+}
 if (evidence is not null) evidence = Path.Combine(evidence, "session-" + Guid.NewGuid().ToString("N"));
 var handlers = new McpServerHandlers
 {
@@ -39,5 +48,5 @@ var handlers = new McpServerHandlers
         });
     }
 };
-try { await McpHost.RunStdioAsync(handlers, evidence, CancellationToken.None); }
+try { await McpHost.RunStdioAsync(handlers, evidence, CancellationToken.None, policy); }
 catch (Exception error) { Console.Error.WriteLine(error); Environment.ExitCode = 1; }

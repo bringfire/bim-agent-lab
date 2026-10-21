@@ -1,0 +1,32 @@
+FAIL Compatible host preserves exact protocol and results: 2025-06-18: UnsupportedProtocolVersionException Request failed (remote): Protocol version '2026-07-28' is not available through the initialize handshake.
+FAIL Compatible host preserves exact protocol and results: 2025-11-25: UnsupportedProtocolVersionException Request failed (remote): Protocol version '2026-07-28' is not available through the initialize handshake.
+EVIDENCE protocol=2026-07-28 strict=False path=<REPO>\projects\revit-readiness\samples\local\mcp-compatibility-red\sdk-f9d4096176db447f93d1cf9ae3cc6047\session-268751d7ba3d4201b39d0c370374e119
+PASS Compatible host preserves exact protocol and results: 2026-07-28
+FAIL Strict July host preserves modern discovery and results: ClientTransportClosedException MCP server process exited unexpectedly (exit code: 3762504530)
+Server's stderr tail:
+Unhandled exception. System.ArgumentException: Usage: probe [--wire-evidence <new-directory>]
+   at Program.<Main>$(String[] args) in <REPO>\projects\revit-readiness\tests\mcp-probe\Program.cs:line 8
+   at Program.<Main>(String[] args)
+FAIL Strict July host rejects legacy initialization: 2025-06-18: ClientTransportClosedException MCP server process exited unexpectedly (exit code: 3762504530)
+Server's stderr tail:
+Unhandled exception. System.ArgumentException: Usage: probe [--wire-evidence <new-directory>]
+   at Program.<Main>$(String[] args) in <REPO>\projects\revit-readiness\tests\mcp-probe\Program.cs:line 8
+   at Program.<Main>(String[] args)
+FAIL Strict July host rejects legacy initialization: 2025-11-25: ClientTransportClosedException MCP server process exited unexpectedly (exit code: 3762504530)
+Server's stderr tail:
+Unhandled exception. System.ArgumentException: Usage: probe [--wire-evidence <new-directory>]
+   at Program.<Main>$(String[] args) in <REPO>\projects\revit-readiness\tests\mcp-probe\Program.cs:line 8
+   at Program.<Main>(String[] args)
+PASS Trace preserves fragmented Unicode bytes and stream ownership
+PASS Memory read cancellation retains pending buffer and suppresses late evidence
+PASS Array read cancellation retains pending buffer and suppresses late evidence
+PASS Trace size bound fails visibly without silent truncation
+PASS Host releases each owned stream once
+PASS Partial trace construction releases streams and preserves existing evidence
+PASS Windows open-stdin shutdown: trace=False, idle
+PASS Windows open-stdin shutdown: trace=False, partial
+PASS Windows open-stdin shutdown: trace=False, pending
+PASS Windows open-stdin shutdown: trace=True, idle
+PASS Windows open-stdin shutdown: trace=True, partial
+PASS Windows open-stdin shutdown: trace=True, pending
+PASS Windows open-stdin shutdown after trace initialization failure

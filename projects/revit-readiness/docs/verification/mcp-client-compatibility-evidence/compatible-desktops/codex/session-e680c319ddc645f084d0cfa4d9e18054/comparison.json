@@ -1,0 +1,5 @@
+{
+  "pass": false,
+  "reason": "Incomplete compatibility exchange",
+  "scope": "startup/discovery-only session, not a full exchange"
+}
