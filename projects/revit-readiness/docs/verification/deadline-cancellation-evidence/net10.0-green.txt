@@ -1,0 +1,23 @@
+DEADLINE_CHILD mode=control exit=0
+DEADLINE_SUBMITTED mode=control originalBudgetPreserved=true
+DEADLINE_PROOF mode=control survived=true cleanup=true replacement=true callbacks=2
+PASS Deadline child survives and cleans up: control
+DEADLINE_CHILD mode=throw exit=0
+DEADLINE_SUBMITTED mode=throw originalBudgetPreserved=true
+DEADLINE_PROOF mode=throw survived=true cleanup=true replacement=true callbacks=2
+PASS Deadline child survives and cleans up: throw
+DEADLINE_CHILD mode=held exit=0
+DEADLINE_SUBMITTED mode=held originalBudgetPreserved=true
+DEADLINE_PROOF mode=held survived=true cleanup=true replacement=true callbacks=2
+PASS Deadline child survives and cleans up: held
+DEADLINE_CHILD mode=complete exit=0
+DEADLINE_SUBMITTED mode=complete originalBudgetPreserved=true
+DEADLINE_PROOF mode=complete survived=true cleanup=true replacement=true callbacks=0
+PASS Deadline child survives and cleans up: complete
+DEADLINE_CHILD mode=upstream-timer exit=0
+DEADLINE_PROOF mode=upstream-timer survived=true cleanup=true replacement=true originalBudgetUnexpired=true
+PASS Deadline child survives and cleans up: upstream-timer
+DEADLINE_CHILD mode=owner-timer exit=0
+DEADLINE_PROOF mode=owner-timer survived=true cleanup=true replacement=true originalBudgetUnexpired=true
+PASS Deadline child survives and cleans up: owner-timer
+Deadline tests: 6 passed; 0 failed.

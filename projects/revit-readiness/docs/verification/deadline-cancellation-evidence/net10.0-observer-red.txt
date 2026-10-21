@@ -1,0 +1,6 @@
+DEADLINE_SUBMITTED mode=throw originalBudgetPreserved=true
+System.Exception: Expected AggregateException
+   at BimAgentLab.Bridge.Tests.Program.ThrowsAsync[T](Func`1 action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 58
+   at BimAgentLab.Bridge.Tests.Program.RunDeadlineChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\DeadlineProcessTests.cs:line 124
+   at BimAgentLab.Bridge.Tests.Program.RunDeadlineChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\DeadlineProcessTests.cs:line 144
+   at BimAgentLab.Bridge.Tests.Program.DeadlineChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\DeadlineProcessTests.cs:line 42

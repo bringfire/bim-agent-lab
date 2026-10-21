@@ -51,3 +51,18 @@ The useful follow-up is not merely “catch that exception.” A **suggested pro
 > Reproduce the finding first. Apply the reviewer's diagnosis across the operation: if a preceding step throws, which cleanup must still happen, and who owns it? Prove recovery and retained error reporting separately. Keep resources alive until unfinished work releases them. Record the failed tests, the corrections and what still needs independent review.
 
 The [correction evidence](../../projects/revit-readiness/docs/verification/2026-10-21-local-pipe-transport-review.md) shows five new cases passing on both runtimes. The person can now hand the [follow-up packet](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-3-review.md) to the reviewer. The coder's successful corrections do not declare the review closed or start Task 4.
+
+
+## Ask who runs the callback
+
+The author returned another independent review: the earlier P2 was closed, but a deadline expiring while a cancellation callback threw could terminate the whole host. All supplied tests had passed. The reviewer had tested a different route to the same action: a timer initiated the cancellation, outside the handler that had protected stop and disconnect.
+
+The author did not need to prescribe a timer implementation. Forwarding the finding, reproduction and requirement for a child-process regression gave the agent a concrete correction to prove. The agent reproduced the crash on both runtimes, then examined every cancellation origin. That uncovered the same danger when another owner supplied a token canceled by its own timer. A further test held a callback open after the executor said it was finished; cleanup still had to wait for that callback.
+
+For participants, the useful question is **who is still doing work, and who will catch its failure?** A catch block around the original request cannot protect work started later on a different execution path. “The caller has finished,” “the executor has finished,” and “all cancellation callbacks have finished” are separate facts.
+
+A **suggested follow-up prompt**, not a transcript of the author's words:
+
+> Reproduce the crash in a disposable child process. Trace every way cancellation can begin, including timers owned elsewhere. Show where each exception is contained, which resources are still borrowed, and what happens if shutdown finishes before a callback does. Prove survival, retained error reporting, cleanup and a usable next session. Preserve the failed evidence and explain what the earlier tests missed.
+
+The [new evidence](../../projects/revit-readiness/docs/verification/2026-10-21-deadline-cancellation.md) records six child cases passing on each runtime, plus the earlier tests and protocol regressions. The original P2 remains closed. The [new P1 follow-up packet](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-3-deadline-review.md) is ready for independent review; the agent's passing tests do not provide that closure. No Revit model was involved in this increment. Agents can reproduce it using the [technical guide](../how-to/build-and-verify-local-pipe-transport.md#contain-cancellation-at-every-origin).

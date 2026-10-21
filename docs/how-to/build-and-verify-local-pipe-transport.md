@@ -1,6 +1,6 @@
 # Build and verify the Windows-local connection
 
-Agent companion to the [participant story](../tutorials/09-connect-the-bridge-processes.md). Follow root/project AGENTS, approved spec/plan revision 3, [research/provenance](../research/revit-local-pipe-transport.md) and the [Task 3 record](../../projects/revit-readiness/docs/verification/2026-10-21-local-pipe-transport-review.md). Task 2 was [independently closed](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-2-follow-up.md); this does not close Task 3 or full R3.
+Agent companion to the [participant story](../tutorials/09-connect-the-bridge-processes.md). Follow root/project AGENTS, approved spec/plan revision 3, [research/provenance](../research/revit-local-pipe-transport.md) and the [Task 3 record](../../projects/revit-readiness/docs/verification/2026-10-21-deadline-cancellation.md). Task 2 was [independently closed](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-2-follow-up.md); this does not close Task 3 or full R3.
 
 ## Source and ownership
 
@@ -40,10 +40,10 @@ git status --short --branch
 & ./projects/revit-readiness/scripts/Test-McpBridge.ps1 -Suite Pipe
 & ./projects/revit-readiness/scripts/Test-McpBridge.ps1 -Suite All
 & ./projects/revit-readiness/scripts/Test-Readiness.ps1
-python projects/revit-readiness/tests/verify_pipe_evidence.py projects/revit-readiness/docs/verification/local-pipe-transport-review-evidence/pipe-output.txt
+python projects/revit-readiness/tests/verify_pipe_evidence.py projects/revit-readiness/docs/verification/deadline-cancellation-evidence/pipe-output.txt
 ```
 
-Pipe runs 32 named cases on each target, including a net48 child serving simultaneous clients and a response above 8192 bytes. Each target fills all eight slots separately with no bytes, partial headers, partial bodies and trickles. A ninth connection is denied until capacity recovers. Capture accept/close ticks and frequency; the independent checker recomputes durations, requires every connection and successful successor, and rejects incomplete evidence. The production cap is five seconds; the spec permits one additional second of test scheduling tolerance.
+Pipe runs 38 named cases on each target, including a net48 child serving simultaneous clients and a response above 8192 bytes. Each target fills all eight slots separately with no bytes, partial headers, partial bodies and trickles. A ninth connection is denied until capacity recovers. Capture accept/close ticks and frequency; the independent checker recomputes durations, requires every connection and successful successor, and rejects incomplete evidence. The production cap is five seconds; the spec permits one additional second of test scheduling tolerance.
 
 The tests use internal catalog-root injection under ignored `samples/local/`, not the live discovery directory. Output and working artifacts remain ignored until selected, reviewed and copied into a verification record. Foreign-logon DACL denial is a local access-control test, not an actual second-user session. A remote machine and separate-logon client were not tested. Do not create accounts or alter security policy to manufacture them.
 
@@ -51,7 +51,7 @@ All retains 33 foundation cases per target, bilateral/Python exchange, MCP proto
 
 ## Handoff
 
-Task 4 must implement the real bounded dispatcher and verify cancellation at its own execution boundaries. Task 5 supplies the Revit adapter; Task 6 supplies production MCP tools. Preserve RequestLifetime/DispatchTicket responsibilities, actual-client A8, all three principal sample cases and NC1/NC2. Use the [Task 3 review packet](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-3-review.md) to challenge this increment before treating its evidence as independently reviewed.
+Task 4 must implement the real bounded dispatcher and verify cancellation at its own execution boundaries. Task 5 supplies the Revit adapter; Task 6 supplies production MCP tools. Preserve RequestLifetime/DispatchTicket responsibilities, actual-client A8, all three principal sample cases and NC1/NC2. Use the [Task 3 review packet](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-3-deadline-review.md) to challenge this increment before treating its evidence as independently reviewed.
 
 ## Cleanup after exceptional completion
 
@@ -59,8 +59,31 @@ The [peer-exit review](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-3
 
 Shutdown drains network workers whether they succeed or fault, attempts owned-descriptor removal, disposes the stop source, then reports retained cancellation/worker/cleanup errors. Multiple errors remain distinguishable. A failed cleanup can be retried without canceling a disposed source. A repeated stop after an unexpected worker fault can still report that original fault even though cleanup is complete; error reporting and resource cleanup are separate outcomes. Peer disappearance itself is recoverable and does not fault shutdown.
 
-The disconnect monitor can fault when a borrowed cancellation callback throws. Register lifetime cleanup in finally around awaiting that monitor. The endpoint's network completion still must not dispose a lifetime borrowed by an unfinished callback; DisposeAfterQuiescenceAsync retains that responsibility.
+The earlier correction handled a disconnect monitor fault caused by a throwing borrowed cancellation callback. The later deadline correction contains that callback failure inside RequestLifetime and reports it separately. Register lifetime cleanup in finally around awaiting that monitor. The endpoint's network completion still must not dispose a lifetime borrowed by an unfinished callback; DisposeAfterQuiescenceAsync retains that responsibility.
 
 `PipeReviewTests.cs` adds five regressions to the existing suite: real child exit at the observer barrier, worker fault alone, worker fault plus locked descriptor, and throwing cancellation callbacks during stop/disconnect. Prove all eight replacement connections concurrently; one successful call alone can hide a dead worker. Resolve the replacement with and without explicit PID and call through the actual provider. Preserve worker/callback error identities while testing that cleanup completed.
 
-The [corrected evidence](../../projects/revit-readiness/docs/verification/2026-10-21-local-pipe-transport-review.md) supersedes the original implementation's completeness claim. Current Pipe has 32 cases per target. To verify the unchanged original 27-case timing capture, pass `--expected-cases 27`; never infer an expected case count from the capture being checked. No normative spec change or new dependency was needed. Independent follow-up is pending and Task 4 remains unstarted.
+The [corrected evidence](../../projects/revit-readiness/docs/verification/2026-10-21-deadline-cancellation.md) supersedes the original implementation's completeness claim. That checkpoint had 32 cases per target; the deadline correction below brings the current count to 38. To verify the unchanged original 27-case timing capture, pass `--expected-cases 27`; never infer an expected case count from the capture being checked. No normative spec change or new dependency was needed. The peer-exit P2 is now independently closed. The later deadline P1 follow-up is pending and Task 4 remains unstarted.
+
+
+## Contain cancellation at every origin
+
+The [deadline review](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-3-deadline-review.md) closed the peer-exit P2 and found a P1 outside the endpoint's exception handlers. `CancelAfter` invoked borrowed callbacks on a timer thread. Merely replacing the local timer while keeping linked sources left the same escape path through an upstream owner's timer. See [API research/provenance](../research/revit-cancellation-boundaries.md) and [current evidence](../../projects/revit-readiness/docs/verification/2026-10-21-deadline-cancellation.md).
+
+`RequestLifetime` owns an ordinary CTS and explicit registrations on upstream and owner tokens. Both registrations and the owned asynchronous deadline operation enter `CancelOwned`. It counts active invocations, calls Cancel without holding the gate, contains callback errors and reports them before releasing its ownership. The asynchronous delay rechecks the SAME RequestBudget after waking; no layer starts another allowance. The first failure remains available as `CancellationFailure` even after disposal. A throwing internal reporter is contained too.
+
+Dispose marks disposal requested, stops the private delay and initiates nonblocking cleanup. `DisposeAfterQuiescenceAsync` waits for executor Quiesced, initiates Dispose, then awaits physical disposal. Physical cleanup awaits both deadline work and all active cancellation invocations before disposing registrations and sources. This avoids destroying a source still used by a held callback, including when that callback originated on a foreign timer thread. A caller must not synchronously wait for its own completion inside its callback. The network owner still releases its slot before a borrowed executor/callback completes.
+
+`PipeEndpoint` emits a local `CancellationCallbackFailed` event with connection/request identity and the original error. It retains the first exception separately from the mutable event and emits every failure; observer mutation or failure cannot erase retained state or escape. Stop drains network resources and attempts owned-descriptor removal before reporting errors. If cancellation reports its error after a successful network stop, a later Stop reports the retained error. This is local diagnostics, never a late response or exception stack sent to the client. Future Revit integration must supply an appropriate local diagnostic sink.
+
+From the **project directory**, after the normal dual-target build:
+
+```powershell
+dotnet build tests/bridge-tests/BimAgentLab.Bridge.Tests.csproj -c Release -p:RestoreLockedMode=true
+& ./tests/bridge-tests/bin/Release/net48/BimAgentLab.Bridge.Tests.exe --deadline-review
+& ./tests/bridge-tests/bin/Release/net10.0/BimAgentLab.Bridge.Tests.exe --deadline-review
+```
+
+`DeadlineProcessTests.cs` runs six isolated child cases: normal deadline, two throwing callbacks, a callback held beyond Quiesced/network stop, completion before expiry, and upstream/owner timers independently firing before the original budget expires. Require exit 0, empty stderr, proof markers, retained errors, eventual disposal and usable replacement. A child timeout is a failure, not evidence of survival. Do not use a global unhandled-exception handler or change Revit's crash policy.
+
+Pipe/All include all six cases, giving 38 cases per target. Recheck the unchanged historical timing captures with explicit `--expected-cases 27` or `32`; do not update their retained bytes. Preserve both teaching layers, baseline and failed evidence. No new dependency or normative spec change was needed. Task 4 remains unstarted and independent P1 follow-up is pending.

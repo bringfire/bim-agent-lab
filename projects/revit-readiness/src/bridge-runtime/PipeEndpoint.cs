@@ -13,6 +13,8 @@ public sealed class PipeEvent
     public long ConnectionId { get; set; }
     public string Stage { get; set; } = "";
     public long Timestamp { get; set; }
+    public string RequestId { get; set; } = "";
+    public Exception? Error { get; set; }
 }
 public sealed class PipeEndpoint
 {
@@ -28,6 +30,7 @@ public sealed class PipeEndpoint
     bool ownsDescriptor;
     bool stoppingDisposed;
     Exception? cancellationFailure;
+    Exception? callbackFailure; // bounded retention: first asynchronous failure; every failure is emitted
     long connections;
     public PipeEndpoint(BridgeSessionDescriptor descriptor, SessionCatalog catalog, IBridgeClock clock, Action<PipeEvent>? observe = null)
     {
@@ -57,7 +60,7 @@ public sealed class PipeEndpoint
     {
         lock (gate)
         {
-            if (stop == null || stop.IsFaulted)
+            if (stop == null || stop.IsFaulted || (stop.IsCompleted && Volatile.Read(ref callbackFailure) != null))
             {
                 // Cancellation callbacks are borrowed code and can throw. Cancel still
                 // signals every callback; retain the error and continue draining/cleanup.
@@ -79,6 +82,8 @@ public sealed class PipeEndpoint
         try { await drained.ConfigureAwait(false); }
         catch (Exception error)
         { if (drained.Exception != null) failures.AddRange(drained.Exception.InnerExceptions); else failures.Add(error); }
+        var callbackError = Volatile.Read(ref callbackFailure);
+        if (callbackError != null) failures.Add(callbackError);
         try { RemoveDescriptor(); } // changed/locked files are preserved; later Stop can retry
         catch (Exception cleanupFailure) { failures.Add(cleanupFailure); }
         finally { stopping.Dispose(); stoppingDisposed = true; }
@@ -109,7 +114,7 @@ public sealed class PipeEndpoint
                     stopping.Token.ThrowIfCancellationRequested();
                     long accepted = clock.Timestamp, id = Interlocked.Increment(ref connections);
                     Emit(id, "Accepted", accepted);
-                    try { await Handle(pipe, accepted, submit).ConfigureAwait(false); }
+                    try { await Handle(pipe, id, accepted, submit).ConfigureAwait(false); }
                     catch (Exception error) when (Expected(error)) { Emit(id, "Rejected", clock.Timestamp); }
                     finally { pipe.Dispose(); Emit(id, "Closed", clock.Timestamp); }
                 }
@@ -121,7 +126,7 @@ public sealed class PipeEndpoint
         { if (!stopping.IsCancellationRequested) { Emit(0, "ListenerFailed", clock.Timestamp); stopping.Cancel(); } }
         finally { pipe?.Dispose(); }
     }
-    async Task Handle(NamedPipeServerStream pipe, long accepted, Func<BridgeExecutionContext, DispatchTicket> submit)
+    async Task Handle(NamedPipeServerStream pipe, long id, long accepted, Func<BridgeExecutionContext, DispatchTicket> submit)
     {
         using var frame = CancellationTokenSource.CreateLinkedTokenSource(stopping.Token);
         TimeSpan receiveRemaining = TimeSpan.FromSeconds(5) - clock.ElapsedSince(accepted);
@@ -150,7 +155,8 @@ public sealed class PipeEndpoint
         }
         frame.CancelAfter(Timeout.Infinite);
         using var disconnected = new CancellationTokenSource();
-        var lifetime = new RequestLifetime(request, budget, disconnected.Token, stopping.Token);
+        var lifetime = new RequestLifetime(request, budget, disconnected.Token, stopping.Token,
+            error => RecordCancellationFailure(id, request.RequestId, error));
         DispatchTicket? ticket = null;
         using var monitorStop = CancellationTokenSource.CreateLinkedTokenSource(stopping.Token);
         var monitor = MonitorDisconnect(pipe, disconnected, monitorStop.Token);
@@ -208,4 +214,12 @@ public sealed class PipeEndpoint
         error is OperationCanceledException || error is ObjectDisposedException || error is BridgeException || error is System.ComponentModel.Win32Exception || error is InvalidOperationException;
     void Emit(long id, string stage, long timestamp)
     { try { observe?.Invoke(new PipeEvent { ConnectionId = id, Stage = stage, Timestamp = timestamp }); } catch { /* Diagnostics cannot acquire ownership of an operation. */ } }
+    void RecordCancellationFailure(long id, string requestId, Exception error)
+    {
+        var failure = new PipeEvent { ConnectionId = id, RequestId = requestId, Stage = "CancellationCallbackFailed", Error = error };
+        // Retain the error independently of mutable data lent to the diagnostic observer.
+        Interlocked.CompareExchange(ref callbackFailure, error, null);
+        // This is a local diagnostic, not a late response to the expired request.
+        try { failure.Timestamp = clock.Timestamp; observe?.Invoke(failure); } catch { }
+    }
 }

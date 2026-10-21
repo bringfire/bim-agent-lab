@@ -1,0 +1,73 @@
+DEADLINE_CHILD mode=control exit=0
+DEADLINE_SUBMITTED mode=control originalBudgetPreserved=true
+DEADLINE_PROOF mode=control survived=true cleanup=true replacement=true callbacks=2
+PASS Deadline child survives and cleans up: control
+DEADLINE_CHILD mode=throw exit=-532462766
+DEADLINE_SUBMITTED mode=throw originalBudgetPreserved=true
+Unhandled exception. System.AggregateException: One or more errors occurred. (deadline callback first) (deadline callback second)
+ ---> System.InvalidOperationException: deadline callback first
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass3_1.<RunDeadlineChild>b__3() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\DeadlineProcessTests.cs:line 74
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.CancellationTokenSource.ExecuteCallbackHandlers(Boolean throwOnFirstException)
+   --- End of inner exception stack trace ---
+   at System.Threading.CancellationTokenSource.ExecuteCallbackHandlers(Boolean throwOnFirstException)
+   at System.Threading.TimerQueueTimer.Fire(Boolean isThreadPool)
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+   at System.Threading.Thread.StartCallback()
+ ---> (Inner Exception #1) System.ArgumentException: deadline callback second
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass3_0.<RunDeadlineChild>b__2() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\DeadlineProcessTests.cs:line 65
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.CancellationTokenSource.ExecuteCallbackHandlers(Boolean throwOnFirstException)<---
+
+FAIL Deadline child survives and cleans up: throw: Exception Expected 0, got -532462766
+System.Exception: Expected 0, got -532462766
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 53
+   at BimAgentLab.Bridge.Tests.Program.Equal[T](T expected, T actual) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 54
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass0_0.<<DeadlineProcessTests>b__0>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\DeadlineProcessTests.cs:line 31
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 49
+DEADLINE_CHILD mode=held exit=-532462766
+DEADLINE_SUBMITTED mode=held originalBudgetPreserved=true
+Unhandled exception. System.AggregateException: One or more errors occurred. (The CancellationTokenSource has been disposed.) (deadline callback second)
+ ---> System.ObjectDisposedException: The CancellationTokenSource has been disposed.
+   at System.Threading.CancellationTokenSource.get_WaitHandle()
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass3_1.<RunDeadlineChild>b__3() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\DeadlineProcessTests.cs:line 72
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.CancellationTokenSource.ExecuteCallbackHandlers(Boolean throwOnFirstException)
+   --- End of inner exception stack trace ---
+   at System.Threading.CancellationTokenSource.ExecuteCallbackHandlers(Boolean throwOnFirstException)
+   at System.Threading.TimerQueueTimer.Fire(Boolean isThreadPool)
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+   at System.Threading.Thread.StartCallback()
+ ---> (Inner Exception #1) System.ArgumentException: deadline callback second
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass3_0.<RunDeadlineChild>b__2() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\DeadlineProcessTests.cs:line 65
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.CancellationTokenSource.ExecuteCallbackHandlers(Boolean throwOnFirstException)<---
+
+System.ObjectDisposedException: The CancellationTokenSource has been disposed.
+   at System.Threading.CancellationTokenSource.get_WaitHandle()
+   at BimAgentLab.Bridge.Tests.Program.RunDeadlineChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\DeadlineProcessTests.cs:line 107
+   at BimAgentLab.Bridge.Tests.Program.RunDeadlineChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\DeadlineProcessTests.cs:line 138
+   at BimAgentLab.Bridge.Tests.Program.DeadlineChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\DeadlineProcessTests.cs:line 42
+FAIL Deadline child survives and cleans up: held: Exception Expected 0, got -532462766
+System.Exception: Expected 0, got -532462766
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 53
+   at BimAgentLab.Bridge.Tests.Program.Equal[T](T expected, T actual) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 54
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass0_0.<<DeadlineProcessTests>b__0>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\DeadlineProcessTests.cs:line 31
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 49
+DEADLINE_CHILD mode=complete exit=0
+DEADLINE_SUBMITTED mode=complete originalBudgetPreserved=true
+DEADLINE_PROOF mode=complete survived=true cleanup=true replacement=true callbacks=0
+PASS Deadline child survives and cleans up: complete
+Deadline tests: 2 passed; 2 failed.

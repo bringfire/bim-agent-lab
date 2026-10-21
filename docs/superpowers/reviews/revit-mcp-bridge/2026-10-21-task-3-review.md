@@ -1,5 +1,7 @@
 # Task 3 peer-exit review and implementing-agent response
 
+**Later independent review:** the P2 below is closed at `f79506d`. The [new deadline P1 feedback and correction packet](2026-10-21-task-3-deadline-review.md) govern the remaining Task 3 follow-up. The original feedback/disposition below are preserved.
+
 Reviewed revision: **`3e20251a966c826fea4d4c2968b6be9a43e97842`**. Reviewer identity was not supplied in the author's message. This records one P2 finding; **independent follow-up remains pending**. Task 4 is unstarted.
 
 ## Feedback supplied by the author

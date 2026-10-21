@@ -1,5 +1,7 @@
 # Task 3 exceptional-completion corrections — 2026-10-21
 
+**Later independent review:** the peer-exit P2 was closed at `f79506d`; a new deadline-callback P1 prevented Task 3 closure. See the [deadline correction and fresh evidence](2026-10-21-deadline-cancellation.md). This record and its evidence remain historical.
+
 **Implementing-agent verification; independent follow-up pending.** Baseline: `3e20251a966c826fea4d4c2968b6be9a43e97842`. The correction checkpoint is the commit titled **`fix: preserve bridge cleanup after peer and worker failures`** that adds this record. Locate it with `git log --diff-filter=A --format="%H %s" -- projects/revit-readiness/docs/verification/2026-10-21-local-pipe-transport-review.md`.
 
 The [external feedback and separate disposition](../../../../docs/superpowers/reviews/revit-mcp-bridge/2026-10-21-task-3-review.md) retain the P2 finding and its underlying diagnosis. The original [Task 3 results](2026-10-21-local-pipe-transport.md) and all 30 original evidence files remain unchanged. They passed their supplied tests but did not cover this handoff.

@@ -17,6 +17,13 @@ internal static partial class Program
         if (args.Length == 2 && args[0] == "--pipe-host") return await PipeHost(args[1]);
         if (args.Length == 2 && args[0] == "--pipe-imposter") return await PipeImposter(args[1]);
         if (args.Length == 2 && args[0] == "--pipe-connect-exit") return await PipeConnectExit(args[1]);
+        if (args.Length == 2 && args[0] == "--deadline-child") return await DeadlineChild(args[1]);
+        if (args.Length == 1 && args[0] == "--deadline-review")
+        {
+            await DeadlineProcessTests();
+            Console.WriteLine($"Deadline tests: {passed} passed; {failures} failed.");
+            return failures == 0 ? 0 : 1;
+        }
         if (args.Length == 1 && args[0] == "--pipe-review")
         {
             await PipeReviewTests();

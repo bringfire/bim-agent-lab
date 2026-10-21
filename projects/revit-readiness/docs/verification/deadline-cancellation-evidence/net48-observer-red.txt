@@ -1,0 +1,14 @@
+DEADLINE_SUBMITTED mode=throw originalBudgetPreserved=true
+System.Exception: Expected AggregateException
+   at BimAgentLab.Bridge.Tests.Program.<ThrowsAsync>d__39`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<RunDeadlineChild>d__3.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\DeadlineProcessTests.cs:line 124
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.Bridge.Tests.Program.<RunDeadlineChild>d__3.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\DeadlineProcessTests.cs:line 144
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<DeadlineChild>d__2.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\DeadlineProcessTests.cs:line 42

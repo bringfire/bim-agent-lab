@@ -1,0 +1,4 @@
+RUNTIME .NET Framework 4.8.10008.0 CHILD_EXIT=0
+SUBMITTED callback registered; awaiting server deadline
+CONTROL cancellation callback returned normally
+SURVIVED server deadline

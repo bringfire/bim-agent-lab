@@ -1,0 +1,17 @@
+Unhandled exception. System.AggregateException: One or more errors occurred. (One or more errors occurred. (borrowed timer callback))
+ ---> System.AggregateException: One or more errors occurred. (borrowed timer callback)
+ ---> System.InvalidOperationException: borrowed timer callback
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass5_0.<BorrowedTimerChild>b__1() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\DeadlineProcessTests.cs:line 169
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.CancellationTokenSource.ExecuteCallbackHandlers(Boolean throwOnFirstException)
+   --- End of inner exception stack trace ---
+   at System.Threading.CancellationTokenSource.ExecuteCallbackHandlers(Boolean throwOnFirstException)
+   at System.Threading.CancellationTokenSource.ExecuteCallbackHandlers(Boolean throwOnFirstException)
+   --- End of inner exception stack trace ---
+   at System.Threading.CancellationTokenSource.ExecuteCallbackHandlers(Boolean throwOnFirstException)
+   at System.Threading.TimerQueueTimer.Fire(Boolean isThreadPool)
+   at System.Threading.ThreadPoolWorkQueue.Dispatch()
+   at System.Threading.PortableThreadPool.WorkerThread.WorkerThreadStart()
+   at System.Threading.Thread.StartCallback()
