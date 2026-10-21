@@ -19,6 +19,17 @@ Copy this form into the relevant feature's review folder when an actual review o
 
 Severity: **blocker** prevents the stated contract or evidence from being reliable; **major** needs correction before the relevant stage can proceed; **minor** is a bounded improvement; **question** asks for information without asserting a defect. Do not inflate a preference into a blocker. If there are no findings, state the inspected scope and limits rather than claiming universal correctness.
 
+## Shared-concept diagnosis, when warranted
+
+Two or three major findings, or more, are a cue for the author to ask the independent reviewer whether a missing concept or reasoning framework connects them. This is a heuristic, not proof of a common cause; one systemic finding can also warrant it. “No supported common cause” is a valid conclusion. Preserve the original findings above.
+
+- Diagnosis author/reviewer, date, and exact artifact/source revision:
+- Proposed missing concept or assumption, explained for the coder:
+- Finding IDs it connects and evidence for each connection:
+- Findings it does not explain, contrary evidence, and uncertainty:
+- Reusable reasoning procedure; other relevant places to inspect:
+- What changes and verification would demonstrate application of the concept:
+
 ## Author/implementer dispositions
 
 Preserve the reviewer's original wording above. This section records the response, not a rewritten review.
@@ -27,6 +38,8 @@ Preserve the reviewer's original wording above. This section records the respons
 |---|---|---|---|---|---|
 
 Rejection requires evidence. Deferral identifies the remaining limitation and whether it blocks the intended use. Do not call a finding fixed because a file was edited; point to the relevant verification.
+
+If a shared-concept diagnosis was supplied, also record the coder's source-based assessment, its application beyond the listed defects, correction/test references, and the reviewer's follow-up assessment. A statement of understanding alone is not evidence of correction. Link the durable teaching or agent note that preserves the insight.
 
 ## Gate decision
 

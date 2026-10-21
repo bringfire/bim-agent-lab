@@ -75,6 +75,14 @@ The plan separates plain shared DTO/runtime code from Revit API access and SDK c
 
 ### Review operations over time, not just individual tasks
 
+When independent review reports two or three major findings or more, prepare a diagnostic follow-up for the author to give the reviewer. Ask whether the findings share a missing concept, assumption or reasoning framework. The number is a heuristic for investigation, not evidence of a common cause or an acceptance threshold. A single systemic finding can justify the same inquiry. Keep unsupported or unrelated findings separate; do not force one explanation onto all defects.
+
+Give the reviewer the original findings and exact reviewed artifact/source revision. Request a proposed shared cause, the finding IDs and source evidence it explains, contrary evidence or limits, and a reusable reasoning procedure with verification implications. Keep this diagnosis attributed to its source and separate from the original findings and implementer dispositions. Preparing the prompt does not authorize sending messages to a reviewer.
+
+The coding agent should validate the diagnosis against source, restate the concept, map it to each relevant finding, inspect adjacent operations for the same pattern, and turn it into concrete contracts, interfaces and tests. Preserve justified local fixes for unrelated findings. Record disagreements with evidence; an independent recommendation still needs technical assessment. Hand the revised artifact and mapping back for review of both the specific corrections and the wider application. Acknowledging the concept is not verification of it.
+
+Use the shared-concept fields in the [review template](../../templates/external-review.md) and the paired prompts in the [participant lesson](../tutorials/06-direct-design-and-external-review.md#ask-what-connects-several-findings). Record transferable insight in the relevant agent guide or repository instructions so later agents can apply it. This is a review technique for specs, plans and code; it does not automatically require an architecture change or additional dependency.
+
 The author's response to R2 asked for a cross-cutting revision before local fixes. Preserve the supplied diagnosis separately from the external findings. A task may mention a requirement while its interface drops the state needed to enforce it. First trace the operation, then update signatures and tests; adding more acceptance prose alone does not repair the handoff.
 
 For each operation, record: admission and identity, original deadline/cancellation, resource owner, conditions required at the next action, terminal outcome, and who releases resources if execution stops between steps. Distinguish a logical response becoming canceled from physical execution finishing. Interrupt each handoff deterministically; test the production boundary with controlled dependencies, not a separate mock algorithm that already has the desired guards.

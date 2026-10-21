@@ -481,6 +481,16 @@ The next decision is **author approval of the written plan and execution-method 
 
 This is a documentation checkpoint. No product code, dependency adoption, installation, client settings or runtime tests are included. CP0 still precedes connection work; both desktop applications, all three live samples, NC1/NC2, interruption/recovery tests and A1–A9 still need implementation evidence before R3 closure. Documentation checks resolved 757 local Markdown links, confirmed the approved specification and three historical review records unchanged, and compared the reviewed plan’s substantive content against `cfbfe04` without differences. Only Markdown files changed; whitespace checks passed.
 
+## 2026-10-20 — Teach participants to ask the reviewer for the missing concept
+
+Before execution, the author asked to make the general lesson explicit: when independent review produces “2-3 or more major findings,” the user should have the reviewer investigate whether the coder is missing an underlying concept or framework, then pass that insight back to the coder. This extends the R2 example into a reusable way to direct agents.
+
+The [participant lesson](../tutorials/06-direct-design-and-external-review.md#ask-what-connects-several-findings) now gives paired, clearly labeled suggested prompts: first ask the independent reviewer for an evidence-backed diagnosis; then ask the coding agent to assess and apply it, inspect related work, and show verification. The number of findings is presented as a practical signal to investigate, not a measured frequency claim or proof that all defects share one cause. The human can request the diagnosis without already knowing the technical answer.
+
+The [agent procedure](../how-to/run-spec-plan-and-implementation-reviews.md#review-operations-over-time-not-just-individual-tasks), root instructions and [review template](../../templates/external-review.md) capture the lower-level responsibilities: exact revisions, supporting and contrary evidence, finding-to-concept mapping, broader application, test references and reviewer follow-up. The workshop guide and existing review block in the HTML agenda point to this lesson; both one-hour timings remain unchanged. The R2 records retain their actual attribution and wording; the new reusable prompts are not presented as historical messages.
+
+This is a teaching-material update before implementation. It does not reopen the closed R2 review, change the reviewed plan or specification, or supply runtime evidence. Author plan approval and execution-method selection remain pending. Documentation checks passed for 764 local Markdown links and agenda links/section targets. Both session timings remain 60 minutes; the specification, plan and nine review records are unchanged. Whitespace checks passed.
+
 ## A reusable research prompt
 
 The following is a teaching template, not an additional instruction from the author:

@@ -36,6 +36,8 @@ Give future agents a linked technical guide in `docs/how-to/` or the project's d
 
 Use the [lesson template](templates/lesson.md). The [learning path](docs/tutorials/README.md) pairs participant stories and technical guides for research, Git, Revit setup, readiness, and Excel output. When updating an existing lesson, preserve useful technical detail in its companion guide and maintain links.
 
+When independent review finds two or three major issues or more, prepare a question for the reviewer about a shared missing concept or reasoning framework. Treat the count as a signal, not proof; a single systemic finding can also warrant this. Verify the diagnosis against source, apply supported insight beyond the named defects, and retain it for future agents. Keep reviewer diagnosis, coder response and verification distinct; see the [review procedure](docs/how-to/run-spec-plan-and-implementation-reviews.md#review-operations-over-time-not-just-individual-tasks).
+
 ## Route readers to the right layer
 
 | Work | Participant story | Agent procedure |

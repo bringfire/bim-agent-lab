@@ -95,6 +95,22 @@ The [R2 packet](../superpowers/reviews/revit-mcp-bridge/02-plan-review.md) gives
 
 ## Ask what connects several findings
 
+**When an independent reviewer reports two or three major findings, or more, ask whether the coder is missing a shared concept or way of reasoning.** Treat the cluster as a signal to investigate. The count alone cannot establish a common cause: findings can be unrelated, and even one finding can expose a deeper gap. This is a practical teaching heuristic, not a measured rule about how often coders make mistakes.
+
+The person directing the work does not need to diagnose the technical issue themselves. Ask the **independent reviewer** to look across the findings and explain any shared weakness in the coder's current approach. A useful explanation connects the evidence, teaches the missing concept, and helps the coder recognize other places where it applies. A vague label such as “needs better error handling” gives the coder little guidance.
+
+This is a **suggested prompt to the reviewer**, not a historical quotation:
+
+> You found several major issues. Before we ask the coding agent to fix them, do they point to an underlying concept, assumption, or framework it is missing? Explain which findings that would connect and what evidence supports it. If they are separate problems, say so. If there is a shared gap, explain the concept in plain language and give the coder a way to apply it, including where else to look and how to verify the correction.
+
+Then pass the reviewer's explanation, along with the original findings, back to the **coding agent**. This is a suggested follow-up:
+
+> Read the reviewer's diagnosis and check it against the actual work. Explain the missing concept in your own words, show how it connects the findings, and inspect other relevant parts for the same mistake. Revise the plan or implementation using that understanding. Map each correction to evidence or a test, and identify any part of the diagnosis you disagree with and why.
+
+Ask the reviewer to check the revised work for both the individual fixes and application of the concept elsewhere. The evidence of learning is a better artifact and appropriate verification, not the coding agent saying “I understand.” Keep the insight in the repo so the next agent can use it without needing this conversation. A concept or framework here means a way to reason about the problem; it does not necessarily mean adding a software library or redesigning the architecture.
+
+### Our example: what remains safe when work stops halfway through?
+
 The [external R2 review](../superpowers/reviews/revit-mcp-bridge/2026-10-20-r2-feedback.md) recommended **revise before implementation**. It found three major gaps: cancellation could be lost before a Revit read, stopping the server could leave it waiting on stdin, and an interrupted installation might lack the backups needed to recover. A smaller inconsistency concerned how instance-selection errors reached the agent.
 
 The author did more than ask for four local fixes. The accompanying message identified a common reasoning gap:
