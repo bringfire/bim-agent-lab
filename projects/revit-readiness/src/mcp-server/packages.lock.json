@@ -98,6 +98,15 @@
           "Microsoft.Extensions.AI.Abstractions": "10.8.3",
           "Microsoft.Extensions.Logging.Abstractions": "10.0.10"
         }
+      },
+      "bimagentlab.revitbridge.contract": {
+        "type": "Project"
+      },
+      "bimagentlab.revitbridge.runtime": {
+        "type": "Project",
+        "dependencies": {
+          "BimAgentLab.RevitBridge.Contract": "[1.0.0, )"
+        }
       }
     }
   }

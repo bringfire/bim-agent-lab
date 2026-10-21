@@ -28,3 +28,4 @@ projects/revit-readiness/docs/verification/cancellation-progress-evidence/** -te
 projects/revit-readiness/docs/verification/dispatch-context-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/revit-adapter-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/revit-adapter-review-evidence/** -text -whitespace
+projects/revit-readiness/docs/verification/mcp-tools-evidence/** -text -whitespace

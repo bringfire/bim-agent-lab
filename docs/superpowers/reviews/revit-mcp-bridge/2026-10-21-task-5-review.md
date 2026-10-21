@@ -1,6 +1,8 @@
 # Task 5 focused implementation and CP1 review
 
-**Review follow-up:** Task 5 remains open. One P2 checklist-error mapping finding was reproduced and corrected, with new adapter/queue regression tests. [Feedback, disposition and follow-up packet](2026-10-21-task-5-checklist-review.md) distinguish implementing-agent verification from independent closure. The original submission below is preserved.
+**Later disposition:** [Task 5 and T5-01 independently closed at 5e9a5dd](2026-10-21-task-5-closure.md) for implementation/offline checks.
+
+**Earlier review follow-up:** Task 5 remained open. One P2 checklist-error mapping finding was reproduced and corrected, with new adapter/queue regression tests. [Feedback, disposition and follow-up packet](2026-10-21-task-5-checklist-review.md) distinguish implementing-agent verification from independent closure. The original submission below is preserved.
 
 Review baseline **24a72cfd28665fd6f9d93875cfabe9621ced940d** through the commit titled **`feat: expose readiness through a read-only Revit event adapter`** adding this packet. Resolve HEAD with `git log --diff-filter=A --format="%H %s" -- docs/superpowers/reviews/revit-mcp-bridge/2026-10-21-task-5-review.md`. [Task 4 closure](2026-10-21-task-4-closure.md) is preserved separately. The [execution model](../../../explanation/revit-adapter-lifetime.md) was committed at b44ea23 before production changes.
 

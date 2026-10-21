@@ -1,0 +1,73 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+  BimAgentLab.Mcp.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\bin\Release\net10.0\BimAgentLab.Mcp.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.43
+TOOLS_EVIDENCE scenario=nc1 protocol=2025-06-18 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc1-8ba148c3b04d4c5c991c7111d814984b
+PASS Production tools preserve full nc1 report on 2025-06-18
+TOOLS_EVIDENCE scenario=nc2 protocol=2025-06-18 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc2-38a5c837b57b434c845bc95f2e7a1683
+PASS Production tools preserve full nc2 report on 2025-06-18
+TOOLS_EVIDENCE scenario=nc1 protocol=2025-11-25 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc1-a5f45bf3b3b54c8dba5cf32410a0246e
+PASS Production tools preserve full nc1 report on 2025-11-25
+TOOLS_EVIDENCE scenario=nc2 protocol=2025-11-25 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc2-f622b8f42eb34d59b1fc7f05ee748201
+PASS Production tools preserve full nc2 report on 2025-11-25
+TOOLS_EVIDENCE scenario=nc1 protocol=2026-07-28 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc1-6a3e4c16be4444f894275969d5ad8d7e
+PASS Production tools preserve full nc1 report on 2026-07-28
+TOOLS_EVIDENCE scenario=nc2 protocol=2026-07-28 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc2-70d5998181284630b5b82acf13418a69
+PASS Production tools preserve full nc2 report on 2026-07-28
+TOOLS_EVIDENCE scenario=strict protocol=2026-07-28 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\strict-f281fe6b0c3a467f8bc720648a7da8a9
+PASS Production tools preserve strict July
+PASS Production provider path: none
+PASS Production provider path: multiple
+PASS Production provider path: retry
+PASS Production provider path: concurrent
+PASS Production provider path: restart
+Readiness request f73da17d0dba468b94425b07088fec44 failed (InvalidDataException).
+PASS Invalid bridge evidence never becomes a report: crossed
+Readiness request 9a469fc020d9402d8957632638b0c0f5 failed (InvalidDataException).
+PASS Invalid bridge evidence never becomes a report: error-crossed
+Readiness request 74496d1c498f4b5b91c378794e96049f failed (InvalidDataException).
+PASS Invalid bridge evidence never becomes a report: bad-hash
+Readiness request 71ca9051db87469e9ef116ec256af6b4 failed (InvalidDataException).
+PASS Invalid bridge evidence never becomes a report: both
+Readiness request 1951d54b7c564fa79068cbcb26745cb7 failed (JsonReaderException).
+PASS Invalid bridge evidence never becomes a report: bad-json
+Readiness request 17ed4ce267e04950856c7657a96af242 failed (InvalidDataException).
+PASS Invalid bridge evidence never becomes a report: missing-flags
+Readiness request 6205f135cbd34791ba5e70fb5b134b96 failed (Exception).
+PASS Invalid bridge evidence never becomes a report: thrown
+PASS Original context rejects late success: cancel=False guard=1
+PASS Original context rejects late success: cancel=False guard=2
+PASS Original context rejects late success: cancel=False guard=3
+PASS Original context rejects late success: cancel=True guard=1
+PASS Original context rejects late success: cancel=True guard=2
+PASS Original context rejects late success: cancel=True guard=3
+Readiness request 5698492e45c04ef88bf88be404caf224: cancellation callback failed (AggregateException).
+Readiness request 05e825fc227d4d9299139c450a7a7d77: cancellation callback failed (AggregateException).
+Readiness request 071da6bd5bd849c196897b76063e712c: cancellation callback failed (AggregateException).
+Readiness request 049e6f0bcb704cac8b63ba3fdaabcdbf: cancellation callback failed (AggregateException).
+Readiness request 5c697ca94de14b4584df3a785ca9ee27: cancellation callback failed (AggregateException).
+Readiness request 8418edb7c97b418096b809e1c984fdb2: cancellation callback failed (AggregateException).
+Readiness request f8837c0cd1bf4067ab94ce461ab2ca4b: cancellation callback failed (AggregateException).
+Readiness request 9b41706cd5034111923f912d6081f246: cancellation callback failed (AggregateException).
+PASS Held cancellation callbacks retain bounded capacity without blocking tool return
+PASS Production executable discovers without a Revit instance
+FAIL Deadline observed as transport cancellation retains DeadlineExceeded: OperationCanceledException Transport deadline cancellation
+PASS Bridge domain failures preserve stable correlated errors without report
+PASS Production tool host strict rejection: 2025-06-18
+PASS Production tool host strict rejection: 2025-11-25
+FAIL Production tools shutdown while callbacks held and stdin open: trace=False: TimeoutException The operation has timed out.
+FAIL Production tools shutdown while callbacks held and stdin open: trace=True: TimeoutException The operation has timed out.
+Tools tests: 30 passed; 3 failed.
+Exception: D:\bim-agent-lab\projects\revit-readiness\scripts\Test-McpBridge.ps1:11
+Line |
+  11 |  …  ($LASTEXITCODE -ne 0) { throw 'MCP Tools behavioral tests failed.' }
+     |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | MCP Tools behavioral tests failed.

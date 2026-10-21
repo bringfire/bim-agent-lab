@@ -1,9 +1,15 @@
 [CmdletBinding()]
-param([ValidateSet('Protocol','Framing','Pipe','Dispatch','All')][string]$Suite = 'Protocol')
+param([ValidateSet('Protocol','Framing','Pipe','Dispatch','Tools','All')][string]$Suite = 'Protocol')
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path $PSScriptRoot -Parent
 Push-Location $projectRoot
 try {
+    if ($Suite -in @('Tools','All')) {
+        & dotnet build 'tests/mcp-tests/BimAgentLab.Mcp.Tests.csproj' -c Release --nologo -p:RestoreLockedMode=true
+        if ($LASTEXITCODE -ne 0) { throw 'MCP tools test build failed.' }
+        & './tests/mcp-tests/bin/Release/net10.0/BimAgentLab.Mcp.Tests.exe' --tools './samples/local/mcp-tools-tests'
+        if ($LASTEXITCODE -ne 0) { throw 'MCP Tools behavioral tests failed.' }
+    }
     if ($Suite -in @('Dispatch','All')) {
         & dotnet build 'tests/bridge-tests/BimAgentLab.Bridge.Tests.csproj' -c Release --nologo -p:RestoreLockedMode=true
         if ($LASTEXITCODE -ne 0) { throw 'Bridge dual-target build failed.' }

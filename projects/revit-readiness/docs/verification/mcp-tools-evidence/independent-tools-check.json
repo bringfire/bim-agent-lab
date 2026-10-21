@@ -1,0 +1,54 @@
+{
+  "scope": "Independent literal transport-fixture assertions only; not BIM acceptance",
+  "exchanges": [
+    {
+      "scenario": "nc1",
+      "protocol": "2025-06-18",
+      "fixtureComparison": "pass",
+      "errors": 7,
+      "source": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-tools-tests\\nc1-3b21f0c944374600842a8335f2f2d59d"
+    },
+    {
+      "scenario": "nc2",
+      "protocol": "2025-06-18",
+      "fixtureComparison": "pass",
+      "errors": 7,
+      "source": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-tools-tests\\nc2-1b44b6feb50f41eea5ede34ecba3aafb"
+    },
+    {
+      "scenario": "nc1",
+      "protocol": "2025-11-25",
+      "fixtureComparison": "pass",
+      "errors": 7,
+      "source": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-tools-tests\\nc1-58e0ec799df74435b19d5ef878616ad6"
+    },
+    {
+      "scenario": "nc2",
+      "protocol": "2025-11-25",
+      "fixtureComparison": "pass",
+      "errors": 7,
+      "source": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-tools-tests\\nc2-c73f30e97b6349f7b885804d9b00c13b"
+    },
+    {
+      "scenario": "nc1",
+      "protocol": "2026-07-28",
+      "fixtureComparison": "pass",
+      "errors": 7,
+      "source": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-tools-tests\\nc1-cc3f0bf37f094c1697cd3f2d4fa9eb62"
+    },
+    {
+      "scenario": "nc2",
+      "protocol": "2026-07-28",
+      "fixtureComparison": "pass",
+      "errors": 7,
+      "source": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-tools-tests\\nc2-99134095e084498fac55d124ac8cc88a"
+    },
+    {
+      "scenario": "strict",
+      "protocol": "2026-07-28",
+      "fixtureComparison": "pass",
+      "errors": 7,
+      "source": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-tools-tests\\strict-c1c6d3d5eff14ba1a252450fea43c1a6"
+    }
+  ]
+}

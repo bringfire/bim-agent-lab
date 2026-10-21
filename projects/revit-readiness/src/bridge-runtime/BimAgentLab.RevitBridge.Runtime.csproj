@@ -9,6 +9,8 @@
   <ItemGroup>
     <ProjectReference Include="../bridge-contract/BimAgentLab.RevitBridge.Contract.csproj" />
     <InternalsVisibleTo Include="BimAgentLab.Bridge.Tests" />
+    <InternalsVisibleTo Include="BimAgentLab.Mcp.Tests" />
+    <InternalsVisibleTo Include="BimAgentLab.RevitReadiness.Mcp" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
     <Reference Include="System.Web.Extensions" />

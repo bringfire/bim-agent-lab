@@ -11,6 +11,9 @@ internal static partial class Program
 
     static async Task<int> Main(string[] args)
     {
+        if (args[0] == "--tools-child") return await ToolsChild(args);
+        if (args[0] == "--tools-shutdown-child") return await ToolsShutdownChild(args);
+        if (args[0] == "--tools") return await ToolsTests(args);
         if (args[0] == "--shutdown-child") return await ShutdownChild(args);
         Probe = Path.GetFullPath(args[0]);
         Evidence = Path.GetFullPath(args[1]);

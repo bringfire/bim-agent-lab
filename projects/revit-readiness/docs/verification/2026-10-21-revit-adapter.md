@@ -1,5 +1,7 @@
 # Task 5 Revit adapter verification
 
+**Later independent disposition:** [Task 5/T5-01 closed at 5e9a5dd](../../../../docs/superpowers/reviews/revit-mcp-bridge/2026-10-21-task-5-closure.md), implementation/offline scope only. Original evidence below remains historical.
+
 **Review follow-up:** Task 5 remains open. One P2 checklist-error mapping finding was reproduced and corrected, with new adapter/queue regression tests. [Feedback, disposition and follow-up packet](../../../../docs/superpowers/reviews/revit-mcp-bridge/2026-10-21-task-5-checklist-review.md) distinguish implementing-agent verification from independent closure. The original submission below is preserved.
 
 Date: 2026-10-21. Implementing-agent observations; independent Task 5/CP1 review is pending. Baseline: **24a72cfd28665fd6f9d93875cfabe9621ced940d**, independently closed Task 4. Ownership model committed before code at **b44ea23**. The implementation checkpoint is the commit titled `feat: expose readiness through a read-only Revit event adapter` adding this record; resolve with `git log --diff-filter=A --format="%H %s" -- projects/revit-readiness/docs/verification/2026-10-21-revit-adapter.md`.

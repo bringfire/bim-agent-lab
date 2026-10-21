@@ -1,0 +1,40 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+  BimAgentLab.Mcp.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\bin\Release\net10.0\BimAgentLab.Mcp.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.14
+FAIL Production tools preserve full nc1 report on 2025-06-18: Exception Expected exactly two production tools
+FAIL Production tools preserve full nc2 report on 2025-06-18: Exception Expected exactly two production tools
+FAIL Production tools preserve full nc1 report on 2025-11-25: Exception Expected exactly two production tools
+FAIL Production tools preserve full nc2 report on 2025-11-25: Exception Expected exactly two production tools
+FAIL Production tools preserve full nc1 report on 2026-07-28: Exception Expected exactly two production tools
+FAIL Production tools preserve full nc2 report on 2026-07-28: Exception Expected exactly two production tools
+FAIL Production tools preserve strict July: Exception Expected exactly two production tools
+FAIL Production provider path: none: Exception Discovery selected Revit early
+FAIL Production provider path: multiple: Exception Discovery selected Revit early
+FAIL Production provider path: retry: Exception Discovery selected Revit early
+FAIL Production provider path: concurrent: Exception Discovery selected Revit early
+FAIL Production provider path: restart: Exception Discovery selected Revit early
+FAIL Invalid bridge evidence never becomes a report: crossed: Exception No structured result
+FAIL Invalid bridge evidence never becomes a report: error-crossed: Exception No structured result
+FAIL Invalid bridge evidence never becomes a report: bad-hash: Exception No structured result
+FAIL Invalid bridge evidence never becomes a report: both: Exception No structured result
+FAIL Invalid bridge evidence never becomes a report: bad-json: Exception No structured result
+FAIL Invalid bridge evidence never becomes a report: missing-flags: Exception No structured result
+FAIL Invalid bridge evidence never becomes a report: thrown: Exception No structured result
+FAIL Original context rejects late success: cancel=False guard=1: Exception No structured result
+FAIL Original context rejects late success: cancel=False guard=2: Exception No structured result
+FAIL Original context rejects late success: cancel=False guard=3: Exception No structured result
+FAIL Original context rejects late success: cancel=True guard=1: Exception Canceled tool returned a result
+FAIL Original context rejects late success: cancel=True guard=2: Exception Canceled tool returned a result
+FAIL Original context rejects late success: cancel=True guard=3: Exception Canceled tool returned a result
+FAIL Held cancellation callbacks retain bounded capacity without blocking tool return: Exception Cancellation did not return while callback held
+FAIL Production executable discovers without a Revit instance: Exception Child exited unsuccessfully
+Tools tests: 0 passed; 27 failed.

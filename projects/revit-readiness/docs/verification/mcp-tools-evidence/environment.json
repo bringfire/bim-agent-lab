@@ -1,0 +1,85 @@
+{
+  "date": "2026-10-21",
+  "baseline": "5e9a5dda1b69b30cac070c415e7e7f13ff249bf6",
+  "modelCommit": "a8cab35",
+  "sdk": "10.0.204",
+  "scope": "offline SDK/Windows IPC tools; synthetic reports; no installation/live Revit/desktop acceptance",
+  "sources": [
+    {
+      "path": "projects/revit-readiness/src/mcp-server/Program.cs",
+      "sha256": "9ece05136e6baf664cf366f17e16dc5785a6a2f7c3bbb15e373ccab3f97b897b"
+    },
+    {
+      "path": "projects/revit-readiness/src/mcp-server/ReadinessTools.cs",
+      "sha256": "5df19f39a05edb70815b83b67195f006a13b4edc6aca7f23e768a69df327cfba"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-tests/ToolTests.cs",
+      "sha256": "84a10457a03518075f2b23f6f2506ddec3ac8fa605781523c699b8ac8e240080"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/BimAgentLab.RevitBridge.Runtime.csproj",
+      "sha256": "48e43662d24bf15534517293474ee6b2093605a408474955243eb227c42ea0a4"
+    },
+    {
+      "path": "projects/revit-readiness/src/mcp-server/bin/Release/net10.0/BimAgentLab.RevitReadiness.Mcp.dll",
+      "sha256": "7bd0795f17290b8f9a61b15917937d8318f349d5490a197fd3741b40a903863e"
+    }
+  ],
+  "packageRecords": [
+    {
+      "path": "projects/revit-readiness/src/mcp-server/packages.lock.json",
+      "externalGraphUnchanged": true,
+      "sha256": "d245047605da76d2e5e0bae9cf423e9c9e89e28e6abc85c6d67abe1e5580a8b1"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-tests/packages.lock.json",
+      "externalGraphUnchanged": true,
+      "sha256": "7e158b3ebafbe0d26cc07c53ca72f6d1aabd6912b6a3b7fa16cf19cd4969c514"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-client/packages.lock.json",
+      "externalGraphUnchanged": true,
+      "sha256": "7e158b3ebafbe0d26cc07c53ca72f6d1aabd6912b6a3b7fa16cf19cd4969c514"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-probe/packages.lock.json",
+      "externalGraphUnchanged": true,
+      "sha256": "7e158b3ebafbe0d26cc07c53ca72f6d1aabd6912b6a3b7fa16cf19cd4969c514"
+    }
+  ],
+  "supplementalCaptures": [
+    {
+      "scenario": "none",
+      "source": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-tools-tests\\none-0701aeeda9a347d5bcd7f0dcb0d90c3d"
+    },
+    {
+      "scenario": "multiple",
+      "source": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-tools-tests\\multiple-f43b129796fa439f866d8efb33aa393f"
+    },
+    {
+      "scenario": "retry",
+      "source": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-tools-tests\\retry-a055ac46ccdd44fc97fd88189d67f311"
+    },
+    {
+      "scenario": "concurrent",
+      "source": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-tools-tests\\concurrent-9a4509ca258f4ae98ff1afe3242c86f3"
+    },
+    {
+      "scenario": "restart",
+      "source": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-tools-tests\\restart-ca8bd559766e4926b5ba47496f110b88"
+    },
+    {
+      "scenario": "late-cancel",
+      "source": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-tools-tests\\late-cancel-40f23b14eb674bc5a398da37ec4e496c"
+    },
+    {
+      "scenario": "late-expire",
+      "source": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-tools-tests\\late-expire-4e4b3a6ee9bc4c568504da86ee6422f0"
+    },
+    {
+      "scenario": "entry",
+      "source": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-tools-tests\\entry-9efaa3a21a854bbe891fa7ce93f72865"
+    }
+  ]
+}

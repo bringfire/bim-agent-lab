@@ -1,5 +1,7 @@
 # Task 5 checklist error correction verification
 
+**Later independent disposition:** [Task 5/T5-01 closed at 5e9a5dd](../../../../docs/superpowers/reviews/revit-mcp-bridge/2026-10-21-task-5-closure.md), implementation/offline scope only. Original evidence below remains historical.
+
 Baseline **f5510ec**, reviewed Task 5 implementation. The author relayed one P2 finding: empty and oversized sidecars became InternalError instead of ChecklistInvalid. [Original feedback and separate implementing-agent disposition](../../../../docs/superpowers/reviews/revit-mcp-bridge/2026-10-21-task-5-checklist-review.md) are preserved. Task 5 remains open pending independent follow-up.
 
 | Evidence | Observation |

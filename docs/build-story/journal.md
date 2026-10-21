@@ -727,3 +727,11 @@ The [participant follow-up](../tutorials/11-connect-the-readiness-reader-to-revi
 ## Task 5 independent implementation closure — 2026-10-21
 
 The author relayed: “No new findings. T5-01 is closed, and Task 5 passes independent implementation review at `5e9a5dd`.” The reviewer reran the unchanged reproduction, ten handoff cases, full regressions and API build, and verified 295 evidence hashes. [Original follow-up](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-5-closure.md) is separate from our disposition. The participant lesson is to name the scope of approval; the agent instruction is to preserve the boundaries and continue Task 6 without claiming installation or live acceptance.
+
+## Task 6 — production MCP tools, 2026-10-21
+
+Continuing the approved Native plan after the author relayed Task 5 closure, the agent added the two named production tools. The [execution/waiting extension](../explanation/bridge-execution-and-waiting.md#task-6-mcp-tool-lifetime-and-permitted-waits) was committed at a8cab35 before implementation. New tests first failed against empty stubs. One additional deadline case exposed a real classification gap; two apparent shutdown failures were traced to a test waiting for EOF after the host had already stopped. Both the failures and diagnosis are retained. A deliberate final-guard mutation fails four direct/SDK cases.
+
+The project-reference addition also exposed a stale lock in the separate SDK client during the first full run. Locked restore correctly refused it. The remaining lock was refreshed and its external package graph compared with the prior commit; only lab Project entries changed. This is a dependency-graph propagation lesson, not a new SDK upgrade.
+
+The [participant layer](../tutorials/12-expose-readiness-to-an-agent.md) focuses on asking for complete evidence, cancellation behavior and explicit proof boundaries. The [agent layer](../how-to/build-and-verify-mcp-readiness-tools.md) gives the concrete source, dependencies, tests and retirement contract. [Verification](../../projects/revit-readiness/docs/verification/2026-10-21-mcp-readiness-tools.md) and the [external review packet](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-6-review.md) keep synthetic report transport separate from live Revit acceptance. No installation, client configuration or model changes.
