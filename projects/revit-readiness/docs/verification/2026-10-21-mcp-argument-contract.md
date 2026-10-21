@@ -1,5 +1,7 @@
 # Task 6: complete argument-contract verification
 
+**Subsequent independent disposition:** [T6-02 and Task 6 closed at b4cdb1f](../../../../docs/superpowers/reviews/revit-mcp-bridge/2026-10-21-task-6-closure.md); shutdown closure stands. The author-verification record below remains historical. The reviewer separately verified the retained evidence and additional concurrent controls; installation and live acceptance remain outstanding.
+
 Baseline: `332934cb144148a9d8af79fe57cd745ac110f6a0`. Author verification on Windows, 2026-10-21. [Independent feedback and author dispositions](../../../../docs/superpowers/reviews/revit-mcp-bridge/2026-10-21-task-6-argument-contract-review.md) close disconnect T6-01 at the baseline and keep T6-02 open. **These implementation checks do not independently close Task 6.**
 
 ## Contract and scope

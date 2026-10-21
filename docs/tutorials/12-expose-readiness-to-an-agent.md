@@ -46,7 +46,7 @@ Suggested prompt for participants, not a quotation from the author:
 
 > Reproduce the reviewer's failure before changing anything. Show me where the input or shutdown signal first becomes meaningful, and whether it reaches the safeguard you propose. Test through the actual program, keep valid controls, and retain failed attempts as well as the final evidence. Ask for independent follow-up before calling the task closed.
 
-The [follow-up record](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-6-boundary-review.md) separates the reviewer's findings from the coding agent's corrections. The lesson is to investigate a recurring class of failure across paths, rather than count passing examples. Task 6 remains open pending that independent follow-up; these tests still do not prove live Revit or desktop acceptance.
+The [follow-up record](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-6-boundary-review.md) separates the reviewer's findings from the coding agent's corrections. The lesson is to investigate a recurring class of failure across paths, rather than count passing examples. At that checkpoint, Task 6 remained open pending independent follow-up; these tests did not prove live Revit or desktop acceptance.
 
 ## When the reviewer keeps finding variants
 
@@ -60,4 +60,12 @@ Suggested reusable prompt, based on the author's supplied guidance:
 
 > Stop patching individual examples. Write the full contract for this handoff: what may be accepted, what must be rejected, and how rejection finishes safely. Derive a test matrix from that contract, include combinations and valid controls, and show that rejected work never reaches the application. Explain why the accepted and rejected paths are safe before requesting review again.
 
-The [current review record](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-6-argument-contract-review.md) keeps the closed shutdown finding separate from the remaining validation review. Participants can use the [boundary explanation](../explanation/readiness-argument-boundary.md) to see the reasoning; agents should follow the [technical guide](../how-to/build-and-verify-mcp-readiness-tools.md). Independent closure and live demonstration evidence are still separate obligations.
+The [correction review record](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-6-argument-contract-review.md) preserves the checkpoint where shutdown was closed and validation still needed review. Participants can use the [boundary explanation](../explanation/readiness-argument-boundary.md) to see the reasoning; agents should follow the [technical guide](../how-to/build-and-verify-mcp-readiness-tools.md). Independent closure and live demonstration evidence are still separate obligations.
+
+## What allowed us to close this step
+
+The author brought back [independent closure at b4cdb1f](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-6-closure.md). The reviewer reran the original reproductions and full suites, then challenged the boundary with 120 additional concurrent invalid calls and five valid follow-up controls. No actionable findings remained. The review also confirmed the reasoning: accepted input is fully checked before handoff; rejected input cannot be revisited by later conversion; the original request identity and deadline survive.
+
+For participants, the useful action was to direct a change in reasoning and then seek an independent challenge to it. More passing examples alone did not close the earlier gaps. A complete rule explained what all paths must preserve, and new tests challenged that rule beyond the examples used to build it. This supports the scoped closure without claiming every possible defect has been disproved.
+
+Ask the agent to record the reviewed commit and the limits of the conclusion. Here Task 6 is closed for implementation and offline verification. Installation with recoverable failure handling, actual Revit behavior, and the demonstration in both desktop applications still need their own evidence. The next planned step is Task 7 installation/recovery.

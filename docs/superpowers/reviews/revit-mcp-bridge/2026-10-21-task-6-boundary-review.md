@@ -1,5 +1,7 @@
 # Task 6 boundary review and author dispositions
 
+**Subsequent independent disposition:** [Task 6 and T6-02 closed at b4cdb1f](2026-10-21-task-6-closure.md); T6-01 shutdown closure at 332934c stands. The submission/findings/dispositions below preserve their original checkpoint. Installation and live acceptance remain outstanding.
+
 Reviewed baseline: `189fd78841f07f3b8b4ad999c7ed32aa3a6a36f1`. This feedback was supplied by the author from an independent review. Original submission: [Task 6 packet](2026-10-21-task-6-review.md). The sections below keep reviewer findings separate from implementation dispositions; a correction is not independent closure.
 
 ## Original reviewer feedback

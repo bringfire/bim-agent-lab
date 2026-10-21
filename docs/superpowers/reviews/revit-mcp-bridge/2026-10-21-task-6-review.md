@@ -1,5 +1,7 @@
 # Task 6 focused implementation review
 
+**Subsequent independent disposition:** [Task 6 and T6-02 closed at b4cdb1f](2026-10-21-task-6-closure.md); T6-01 shutdown closure at 332934c stands. The submission/findings/dispositions below preserve their original checkpoint. Installation and live acceptance remain outstanding.
+
 Baseline **5e9a5dda1b69b30cac070c415e7e7f13ff249bf6** through the commit titled **`feat: expose two MCP readiness tools with complete reports`** that adds this packet. Resolve its exact SHA with `git log --diff-filter=A --format="%H %s" -- docs/superpowers/reviews/revit-mcp-bridge/2026-10-21-task-6-review.md`. [Task 5 closure](2026-10-21-task-5-closure.md) is separate. Model/closure commit `a8cab35` precedes production tool implementation.
 
 This increment adds the executable and two MCP tools using SDK 2.2.0, the existing runtime and compatible host. No Revit source, private IPC policy, package version, installer, model or desktop configuration changes. Lockfiles add lab project references only. The runtime project grants internal access to the server for existing retention/disposal ownership and to tests for production selection seams.

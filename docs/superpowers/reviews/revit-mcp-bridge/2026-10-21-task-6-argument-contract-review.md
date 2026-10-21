@@ -1,5 +1,7 @@
 # Task 6 complete argument-contract review
 
+**Subsequent independent disposition:** [Task 6 and T6-02 closed at b4cdb1f](2026-10-21-task-6-closure.md); T6-01 shutdown closure at 332934c stands. The submission/findings/dispositions below preserve their original checkpoint. Installation and live acceptance remain outstanding.
+
 Reviewed baseline: `332934cb144148a9d8af79fe57cd745ac110f6a0`. This is author-relayed independent feedback, followed by separate author dispositions. Prior [boundary review](2026-10-21-task-6-boundary-review.md) and evidence remain historical.
 
 ## Independent follow-up supplied by the author
