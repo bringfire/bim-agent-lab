@@ -7,7 +7,7 @@ import re
 from pathlib import Path
 
 
-def verify(text: str, expected_cases: int = 38) -> dict:
+def verify(text: str, expected_cases: int = 53) -> dict:
     assert expected_cases > 0, "Expected case count must be supplied independently"
     assert "PIPE_SUITE_COMPLETE" in text, "Incomplete pipe evidence"
     assert not re.search(r"^FAIL ", text, re.M), "Failed behavioral case"
@@ -52,7 +52,7 @@ def verify(text: str, expected_cases: int = 38) -> dict:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("log", type=Path)
-    parser.add_argument("--expected-cases", type=int, default=38,
-                        help="Expected cases per runtime; use 27 or 32 for the historical Task 3 checkpoints")
+    parser.add_argument("--expected-cases", type=int, default=53,
+                        help="Expected cases per runtime; use 27, 32 or 38 for historical Task 3 checkpoints")
     args = parser.parse_args()
     print(json.dumps(verify(args.log.read_text(encoding="utf-8-sig"), args.expected_cases), indent=2))

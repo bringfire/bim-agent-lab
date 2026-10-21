@@ -1,0 +1,8 @@
+{
+  "observedAt": "2026-10-21T11:22:01.1108460-04:00",
+  "os": "Microsoft Windows NT 10.0.26300.0",
+  "powershell": "7.6.6",
+  "dotnetSdk": "10.0.204",
+  "net48Release": 534296,
+  "scope": "Windows IPC synthetic executors; no live Revit or desktop acceptance"
+}

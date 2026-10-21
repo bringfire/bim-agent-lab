@@ -66,3 +66,24 @@ A **suggested follow-up prompt**, not a transcript of the author's words:
 > Reproduce the crash in a disposable child process. Trace every way cancellation can begin, including timers owned elsewhere. Show where each exception is contained, which resources are still borrowed, and what happens if shutdown finishes before a callback does. Prove survival, retained error reporting, cleanup and a usable next session. Preserve the failed evidence and explain what the earlier tests missed.
 
 The [new evidence](../../projects/revit-readiness/docs/verification/2026-10-21-deadline-cancellation.md) records six child cases passing on each runtime, plus the earlier tests and protocol regressions. The original P2 remains closed. The [new P1 follow-up packet](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-3-deadline-review.md) is ready for independent review; the agent's passing tests do not provide that closure. No Revit model was involved in this increment. Agents can reproduce it using the [technical guide](../how-to/build-and-verify-local-pipe-transport.md#contain-cancellation-at-every-origin).
+
+
+## Ask what must progress while work is still running
+
+The author returned independent closure of the deadline crash, followed by another finding: a callback that stayed running could block shutdown or prevent a connection slot from reopening. The author also supplied the diagnosis that the coder understood resource ownership better than execution and waiting. Earlier tests followed each reported example too closely and did not establish the broader guarantee through every real endpoint path.
+
+The author's direction included this excerpt:
+
+> Before patching again, map every cancellation origin through the real endpoint. Show which thread executes each callback, every lock held, and every completion that shutdown waits for.
+
+This changed the agent's deliverable. Before editing production code, it committed an [execution/waiting model](../explanation/bridge-execution-and-waiting.md) at 373e5a8. The model separates five facts: cancellation requested, connection released, executor finished, callbacks finished and resources disposed. Keeping resources safe is one obligation; allowing shutdown to progress while work remains unfinished is another.
+
+The agent then derived a matrix of tests from those facts. It held callbacks open through actual stop, disconnect and deadline paths, with executor completion both before and after network release. Ten of the initial fourteen cases failed on each runtime, while the four deadline cases passed. That pattern explains why the previous successful deadline test was insufficient. A later exceptional-completion test also caught an error in the new capacity accounting before the correction was submitted for review.
+
+The person can judge the result without learning thread APIs: **did shutdown finish while the callback was still held, and could all connection slots be used again?** The [evidence](../../projects/revit-readiness/docs/verification/2026-10-21-cancellation-progress.md) records those before-release observations, rather than only saying cleanup eventually succeeded. It also proves that unfinished work is limited: at capacity, new requests receive Busy instead of building an unlimited backlog.
+
+A **suggested prompt** for another project:
+
+> We have corrected several related failures. Pause local patching and identify the missing model. Draw who executes each step and what each step waits for. Separate safety from progress, list the allowed waits and capacity limits, and derive interruption tests across the real paths. Prove the required progress while the troublesome operation remains unfinished. Preserve the old evidence and explain any changed test assumptions.
+
+The [agent guide](../how-to/build-and-verify-local-pipe-transport.md#prove-progress-separately-from-safety) contains the precise implementation and repeat commands. The [review packet](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-3-progress-review.md) asks the independent reviewer to challenge the model as well as the code. The deadline P1 remains closed; the new P2 still needs independent follow-up. Task 4 and live Revit acceptance remain ahead.

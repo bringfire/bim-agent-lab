@@ -26,11 +26,11 @@ public sealed class PipeBridgeClient : IBridgeClient
             using var pipe = new NamedPipeClientStream(".", descriptor.PipeName, PipeDirection.InOut, PipeOptions.Asynchronous, System.Security.Principal.TokenImpersonationLevel.Identification);
             // The existing lifetime cancels sooner when its budget is shorter. Avoid
             // converting that deadline to a second, coarse Windows connect timeout.
-            await pipe.ConnectAsync(2000, execution.Cancellation).ConfigureAwait(false);
+            await pipe.ConnectAsync(2000, execution.TransportCancellation).ConfigureAwait(false);
             execution.ThrowIfInactive();
             // One cancellation owner after connect. Do not race close with a second
             // framework CancelIoEx callback on the same handle (net48).
-            using var cancelPipe = execution.Cancellation.Register(pipe.Dispose);
+            using var cancelPipe = execution.TransportCancellation.Register(pipe.Dispose);
             NativeWindows.ValidateServer(pipe, descriptor.RevitPid); BridgeIdentity.ValidateLive(descriptor);
             byte[] requestBytes = BridgeJson.Serialize(request); execution.ThrowIfInactive();
             await FrameCodec.WriteAsync(pipe, requestBytes, BridgeLimits.MaxRequestBytes, CancellationToken.None).ConfigureAwait(false);

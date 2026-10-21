@@ -1,0 +1,33 @@
+RUNTIME .NET Framework 4.8.10008.0 CHILD_EXIT=0
+SUBMITTED callback registered; awaiting server deadline
+SURVIVED server deadline
+STOP reported System.AggregateException: One or more errors occurred. ---> System.InvalidOperationException: INJECTED cancellation callback failure at original deadline
+   at Review.<>c.<Main>b__1_1() in D:\bim-agent-lab\.superpowers\sdd\2026-10-20-revit-mcp-bridge\deadline-reviewer-rerun\Program.cs:line 31
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.CancellationCallbackInfo.ExecuteCallback()
+   at System.Threading.CancellationTokenSource.ExecuteCallbackHandlers(Boolean throwOnFirstException)
+   --- End of inner exception stack trace ---
+   at System.Threading.CancellationTokenSource.ExecuteCallbackHandlers(Boolean throwOnFirstException)
+   at System.Threading.CancellationTokenSource.NotifyCancellation(Boolean throwOnFirstException)
+   at BimAgentLab.RevitBridge.Runtime.RequestLifetime.<>c__DisplayClass22_0.<CancelOwned>b__0() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\RequestLifetime.cs:line 74
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.<FinishStop>d__18.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 95
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.<CompleteStop>d__17.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 77
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Review.<Main>d__1.MoveNext() in D:\bim-agent-lab\.superpowers\sdd\2026-10-20-revit-mcp-bridge\deadline-reviewer-rerun\Program.cs:line 42
+---> (Inner Exception #0) System.InvalidOperationException: INJECTED cancellation callback failure at original deadline
+   at Review.<>c.<Main>b__1_1() in D:\bim-agent-lab\.superpowers\sdd\2026-10-20-revit-mcp-bridge\deadline-reviewer-rerun\Program.cs:line 31
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.CancellationCallbackInfo.ExecuteCallback()
+   at System.Threading.CancellationTokenSource.ExecuteCallbackHandlers(Boolean throwOnFirstException)<---
+

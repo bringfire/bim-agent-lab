@@ -1,0 +1,40 @@
+PASS Fragmented headers and Unicode bodies larger than 8192 bytes survive
+PASS Coalesced frames leave the next frame unread
+PASS Header and body EOF cannot become a complete payload
+PASS Zero, over-limit and unsigned-overflow lengths fail before body reads
+PASS Request and response exact byte limits pass; one byte over writes nothing
+PASS Invalid UTF-8 fails without replacement characters
+PASS Cancellation releases a blocked frame read and write
+PASS Already canceled frame cannot touch output; caller retains stream ownership
+PASS Request wire preserves required members and Unicode
+PASS Malformed, duplicate, unknown, missing and wrongly typed envelope members fail
+PASS Unknown version and operation report stable contract errors
+PASS UTC timestamps reject culture-dependent, local and invalid values
+PASS Opaque report preserves casing, false flags, Unicode and prompt-like text
+PASS Response requires exactly one result/error and matching error request identity
+PASS Oversized response becomes a small correlated error without truncation or mutation
+PASS Context DTO preserves paths and rejects incomplete identity
+PASS Date-shaped strings survive round trips with escaped and unescaped slashes
+PASS Date-shaped opaque results and nested error strings stay literal
+PASS Raw control in quoted JSON normalizes to InvalidDataException: 10
+PASS Raw control in quoted JSON normalizes to InvalidDataException: 9
+PASS Raw control in quoted JSON normalizes to InvalidDataException: 0
+PASS Escaped controls remain valid literal string content
+PASS Admission uses one monotonic 30-second budget despite wall-clock jumps
+PASS Slow receipt consumes original budget and accept cap cannot be reset
+PASS Expired and beyond-policy deadlines are rejected at receipt
+PASS Context keeps same budget and a defensive request snapshot
+PASS Borrowed lifetime cannot extend its wire deadline
+FAIL Cancellation during preparation prevents a new read: ownerStopping=False: Exception Cancellation lost across context
+System.Exception: Cancellation lost across context
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass18_2.<LifetimeTests>b__19() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\LifetimeTests.cs:line 57
+   at BimAgentLab.Bridge.Tests.Program.Sync(Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 59
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass18_2.<LifetimeTests>b__18() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\LifetimeTests.cs:line 51
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 56
+PASS Cancellation during preparation prevents a new read: ownerStopping=True
+PASS Expiry during preparation and after execution suppresses new reads and publication
+PASS Remaining deadline timer wakes blocked work without upstream cancellation
+PASS Canceled response retains lifetime until callback quiesces
+PASS Cancellation racing quiescence leaves cleanup settled without disposed-source faults
+Bridge tests: 32 passed; 1 failed.

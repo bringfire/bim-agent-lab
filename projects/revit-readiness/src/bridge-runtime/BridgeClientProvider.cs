@@ -17,7 +17,7 @@ public sealed class BridgeClientProvider : IBridgeClient
     public async Task<BridgeResponse> SendAsync(BridgeExecutionContext execution)
     {
         execution.ThrowIfInactive();
-        await binding.WaitAsync(execution.Cancellation).ConfigureAwait(false);
+        await binding.WaitAsync(execution.TransportCancellation).ConfigureAwait(false);
         IBridgeClient client;
         try
         {

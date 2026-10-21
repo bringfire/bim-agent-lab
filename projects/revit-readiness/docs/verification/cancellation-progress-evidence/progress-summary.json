@@ -1,0 +1,9 @@
+{
+  "pass": true,
+  "casesPerRuntime": 15,
+  "targets": [
+    "net10.0",
+    "net48"
+  ],
+  "scope": "Held-callback network progress, bounded retention and exceptional quiescence; no Revit/A8"
+}

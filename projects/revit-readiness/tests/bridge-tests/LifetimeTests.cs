@@ -54,7 +54,7 @@ internal static partial class Program
                 using var lifetime = new RequestLifetime(Request(), RequestBudget.Admit(clock), stopping ? CancellationToken.None : cancel.Token, stopping ? cancel.Token : CancellationToken.None);
                 lifetime.Context.ThrowIfInactive(); cancel.Cancel(); int reads = 0;
                 Throws<OperationCanceledException>(() => { lifetime.Context.ThrowIfInactive(); reads++; });
-                Equal(0, reads); Check(lifetime.Context.Cancellation.IsCancellationRequested, "Cancellation lost across context");
+                Equal(0, reads); Check(lifetime.Context.IsCancellationRequested, "Immediate invalidation lost across context");
             }));
         await Test("Expiry during preparation and after execution suppresses new reads and publication", () => Sync(() =>
         {
@@ -83,7 +83,8 @@ internal static partial class Program
             Task cleanup = lifetime.DisposeAfterQuiescenceAsync(ticket);
             cancel.Cancel(); response.SetCanceled();
             Check(ticket.Response.IsCanceled && !ticket.Quiesced.IsCompleted && !cleanup.IsCompleted, "Logical finish disposed physical context");
-            Check(lifetime.Context.Cancellation.WaitHandle.WaitOne(0), "Cancellation unavailable while callback still uses context");
+            Check(lifetime.Context.IsCancellationRequested, "Immediate invalidation unavailable");
+            _ = lifetime.Context.Cancellation.WaitHandle; // borrowed source remains usable; notification is asynchronous
             Throws<OperationCanceledException>(lifetime.Context.ThrowIfInactive);
             quiesced.SetResult(true); await cleanup;
             Throws<ObjectDisposedException>(() => { var handle = lifetime.Context.Cancellation.WaitHandle; });

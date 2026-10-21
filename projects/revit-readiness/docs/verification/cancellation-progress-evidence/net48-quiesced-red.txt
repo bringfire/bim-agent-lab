@@ -1,0 +1,10 @@
+System.Exception: Expected InternalError, got Busy
+   at BimAgentLab.Bridge.Tests.Program.Equal[T](T expected, T actual) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 61
+   at BimAgentLab.Bridge.Tests.Program.<FaultedQuiescenceChild>d__9.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 238
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.Bridge.Tests.Program.<FaultedQuiescenceChild>d__9.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<ProgressChild>d__1.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 47

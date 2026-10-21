@@ -1,0 +1,24 @@
+PEER_EXIT exited before identity validation; runtime=4.0.30319.42000
+PEER_EXIT recoveredSlots=8 submissionsBeforeValidRequest=0 stops=2 replacementSelected=true
+PASS Client exit before identity validation restores all eight slots and permits shutdown and restart
+FAIL Throwing cancellation callback cannot skip shutdown cleanup: Exception Expected AggregateException
+System.Exception: Expected AggregateException
+   at BimAgentLab.Bridge.Tests.Program.<ThrowsAsync>d__49`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass23_1.<<PipeReviewTests>b__11>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeReviewTests.cs:line 93
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass23_1.<<PipeReviewTests>b__11>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeReviewTests.cs:line 112
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__44.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 56
+CALLBACK_FAULT ownerStop=False descriptorRemoved=true lifetimeDisposedAfterQuiescence=true errorRetained=true
+PASS Throwing cancellation callback cannot skip deferred lifetime cleanup on disconnect
+WORKER_FAULT cleanupRetried=False descriptorRemoved=true originalErrorRetained=true replacementSelected=true
+PASS Unexpected worker fault still cleans owned descriptor and preserves its error
+WORKER_FAULT cleanupRetried=True descriptorRemoved=true originalErrorRetained=true replacementSelected=true
+PASS Unexpected worker fault still cleans owned descriptor after a retryable cleanup failure
+Pipe review tests: 4 passed; 1 failed.

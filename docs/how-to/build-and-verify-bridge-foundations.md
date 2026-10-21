@@ -1,5 +1,7 @@
 # Build and verify the private bridge foundation
 
+**Current lifetime contract:** Task 3 subsequently separates immediate context invalidation from asynchronous executor notification, and network release from physical retirement. Use Context.ThrowIfInactive/IsCancellationRequested for immediate guards; the public token is cooperative notification. Runtime control uses its private signal. Follow the [execution/waiting model](../explanation/bridge-execution-and-waiting.md) and [current transport procedure](build-and-verify-local-pipe-transport.md#prove-progress-separately-from-safety). Historical Task 2 results below do not override that contract.
+
 This is the agent companion to the [participant story](../tutorials/08-build-and-test-the-bridge-foundation.md). Follow root/project `AGENTS.md`, [current status](../reference/development-status.md), [spec revision 3](../superpowers/specs/2026-10-20-revit-mcp-bridge-design.md) and [Task 2 of the plan](../superpowers/plans/2026-10-20-revit-mcp-bridge.md#task-2-plain-messages-framing-and-shared-request-budgets). The author explicitly requested this task under Native execution. Historical evidence does not establish a new build's result.
 
 The [dated verification record](../../projects/revit-readiness/docs/verification/2026-10-21-bridge-foundations-review.md) identifies the baseline, checkpoint, retained evidence and acceptance limits. This increment supplies API-independent components for later IPC, queue and Revit adapters. Do not expose synthetic fixtures as production tools or claim live-model acceptance.

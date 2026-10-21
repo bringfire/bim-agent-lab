@@ -1,0 +1,6 @@
+System.Exception: Expected InternalError, got Busy
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.Equal[T](T expected, T actual) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 61
+   at BimAgentLab.Bridge.Tests.Program.FaultedQuiescenceChild() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 237
+   at BimAgentLab.Bridge.Tests.Program.FaultedQuiescenceChild() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 245
+   at BimAgentLab.Bridge.Tests.Program.ProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 47

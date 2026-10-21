@@ -20,6 +20,8 @@ try {
         'PIPE_SUITE_COMPLETE' | Tee-Object -FilePath $pipeLog -Append
         & python tests/verify_pipe_evidence.py $pipeLog
         if ($LASTEXITCODE -ne 0) { throw 'Independent pipe evidence verification failed.' }
+        & python tests/verify_cancellation_progress.py $pipeLog
+        if ($LASTEXITCODE -ne 0) { throw 'Independent cancellation-progress evidence verification failed.' }
         Write-Output "PIPE_EVIDENCE path=$pipeRun"
     }
     if ($Suite -in @('Framing','All')) {

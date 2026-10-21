@@ -1,5 +1,7 @@
 # Task 3 deadline review and implementing-agent response
 
+**Later independent review:** the deadline P1 is closed at b334385. The new [held-callback P2 and execution/waiting correction](2026-10-21-task-3-progress-review.md) govern the remaining Task 3 follow-up. This feedback and evidence remain historical.
+
 Reviewed baseline: **`f79506defedd020f0ac3c5aaacc76f8c74c510e7`**. Reviewer identity was not supplied in the author's message. The original peer-exit P2 is independently closed. The new P1 is corrected and verified by the implementing agent below; **independent follow-up remains pending. Task 4 is unstarted.**
 
 ## Feedback supplied by the author

@@ -1,0 +1,166 @@
+PROGRESS_CHILD mode=stop-return-before exit=1
+System.Exception: Progress blocked at StopAsync returning task
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.Progress(Task task, String boundary) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 53
+   at BimAgentLab.Bridge.Tests.Program.EndpointProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 103
+   at BimAgentLab.Bridge.Tests.Program.EndpointProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 138
+   at BimAgentLab.Bridge.Tests.Program.ProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 47
+FAIL Cancellation progress child: stop-return-before: Exception Expected 0, got 1
+System.Exception: Expected 0, got 1
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.Equal[T](T expected, T actual) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 61
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass0_0.<<CancellationProgressTests>b__4>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 34
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 56
+PROGRESS_CHILD mode=stop-return-after exit=1
+System.Exception: Progress blocked at StopAsync returning task
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.Progress(Task task, String boundary) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 53
+   at BimAgentLab.Bridge.Tests.Program.EndpointProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 103
+   at BimAgentLab.Bridge.Tests.Program.EndpointProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 138
+   at BimAgentLab.Bridge.Tests.Program.ProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 47
+FAIL Cancellation progress child: stop-return-after: Exception Expected 0, got 1
+System.Exception: Expected 0, got 1
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.Equal[T](T expected, T actual) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 61
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass0_0.<<CancellationProgressTests>b__4>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 34
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 56
+PROGRESS_CHILD mode=stop-throw-before exit=1
+System.Exception: Progress blocked at StopAsync returning task
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.Progress(Task task, String boundary) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 53
+   at BimAgentLab.Bridge.Tests.Program.EndpointProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 103
+   at BimAgentLab.Bridge.Tests.Program.EndpointProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 138
+   at BimAgentLab.Bridge.Tests.Program.ProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 47
+FAIL Cancellation progress child: stop-throw-before: Exception Expected 0, got 1
+System.Exception: Expected 0, got 1
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.Equal[T](T expected, T actual) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 61
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass0_0.<<CancellationProgressTests>b__4>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 34
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 56
+PROGRESS_CHILD mode=stop-throw-after exit=1
+System.Exception: Progress blocked at StopAsync returning task
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.Progress(Task task, String boundary) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 53
+   at BimAgentLab.Bridge.Tests.Program.EndpointProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 103
+   at BimAgentLab.Bridge.Tests.Program.EndpointProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 138
+   at BimAgentLab.Bridge.Tests.Program.ProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 47
+FAIL Cancellation progress child: stop-throw-after: Exception Expected 0, got 1
+System.Exception: Expected 0, got 1
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.Equal[T](T expected, T actual) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 61
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass0_0.<<CancellationProgressTests>b__4>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 34
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 56
+PROGRESS_CHILD mode=disconnect-return-before exit=1
+System.Exception: Progress blocked at connection release
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.Progress(Task task, String boundary) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 53
+   at BimAgentLab.Bridge.Tests.Program.EndpointProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 111
+   at BimAgentLab.Bridge.Tests.Program.EndpointProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 138
+   at BimAgentLab.Bridge.Tests.Program.ProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 47
+FAIL Cancellation progress child: disconnect-return-before: Exception Expected 0, got 1
+System.Exception: Expected 0, got 1
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.Equal[T](T expected, T actual) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 61
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass0_0.<<CancellationProgressTests>b__4>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 34
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 56
+PROGRESS_CHILD mode=disconnect-return-after exit=1
+System.Exception: Progress blocked at connection release
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.Progress(Task task, String boundary) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 53
+   at BimAgentLab.Bridge.Tests.Program.EndpointProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 111
+   at BimAgentLab.Bridge.Tests.Program.EndpointProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 138
+   at BimAgentLab.Bridge.Tests.Program.ProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 47
+FAIL Cancellation progress child: disconnect-return-after: Exception Expected 0, got 1
+System.Exception: Expected 0, got 1
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.Equal[T](T expected, T actual) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 61
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass0_0.<<CancellationProgressTests>b__4>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 34
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 56
+PROGRESS_CHILD mode=disconnect-throw-before exit=1
+System.Exception: Progress blocked at connection release
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.Progress(Task task, String boundary) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 53
+   at BimAgentLab.Bridge.Tests.Program.EndpointProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 111
+   at BimAgentLab.Bridge.Tests.Program.EndpointProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 138
+   at BimAgentLab.Bridge.Tests.Program.ProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 47
+FAIL Cancellation progress child: disconnect-throw-before: Exception Expected 0, got 1
+System.Exception: Expected 0, got 1
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.Equal[T](T expected, T actual) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 61
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass0_0.<<CancellationProgressTests>b__4>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 34
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 56
+PROGRESS_CHILD mode=disconnect-throw-after exit=1
+System.Exception: Progress blocked at connection release
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.Progress(Task task, String boundary) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 53
+   at BimAgentLab.Bridge.Tests.Program.EndpointProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 111
+   at BimAgentLab.Bridge.Tests.Program.EndpointProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 138
+   at BimAgentLab.Bridge.Tests.Program.ProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 47
+FAIL Cancellation progress child: disconnect-throw-after: Exception Expected 0, got 1
+System.Exception: Expected 0, got 1
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.Equal[T](T expected, T actual) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 61
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass0_0.<<CancellationProgressTests>b__4>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 34
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 56
+PROGRESS_CHILD mode=deadline-return-before exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=deadline-return-before stopReturned=true networkReleased=true descriptorRemoved=true quiesced=True
+PROGRESS_PROOF mode=deadline-return-before
+PASS Cancellation progress child: deadline-return-before
+PROGRESS_CHILD mode=deadline-return-after exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=deadline-return-after stopReturned=true networkReleased=true descriptorRemoved=true quiesced=False
+PROGRESS_PROOF mode=deadline-return-after
+PASS Cancellation progress child: deadline-return-after
+PROGRESS_CHILD mode=deadline-throw-before exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=deadline-throw-before stopReturned=true networkReleased=true descriptorRemoved=true quiesced=True
+PROGRESS_PROOF mode=deadline-throw-before
+PASS Cancellation progress child: deadline-throw-before
+PROGRESS_CHILD mode=deadline-throw-after exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=deadline-throw-after stopReturned=true networkReleased=true descriptorRemoved=true quiesced=False
+PROGRESS_PROOF mode=deadline-throw-after
+PASS Cancellation progress child: deadline-throw-after
+PROGRESS_CHILD mode=capacity exit=1
+System.TimeoutException: The operation has timed out.
+   at System.IO.Pipes.NamedPipeClientStream.ConnectInternal(Int32 timeout, CancellationToken cancellationToken, Int32 startTime)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.EightOpenSlots(BridgeSessionDescriptor descriptor) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 63
+   at BimAgentLab.Bridge.Tests.Program.RetainedCapacityChild() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 173
+   at BimAgentLab.Bridge.Tests.Program.RetainedCapacityChild() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 187
+   at BimAgentLab.Bridge.Tests.Program.ProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 45
+FAIL Cancellation progress child: capacity: Exception Expected 0, got 1
+System.Exception: Expected 0, got 1
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.Equal[T](T expected, T actual) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 61
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass0_0.<<CancellationProgressTests>b__4>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 34
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 56
+PROGRESS_CHILD mode=client exit=1
+System.Exception: Progress blocked at upstream cancellation return
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.Progress(Task task, String boundary) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 53
+   at BimAgentLab.Bridge.Tests.Program.ClientProgressChild() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 205
+   at BimAgentLab.Bridge.Tests.Program.ClientProgressChild() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 217
+   at BimAgentLab.Bridge.Tests.Program.ProgressChild(String mode) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 46
+FAIL Cancellation progress child: client: Exception Expected 0, got 1
+System.Exception: Expected 0, got 1
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.Equal[T](T expected, T actual) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 61
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass0_0.<<CancellationProgressTests>b__4>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 34
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 56
+Progress tests: 4 passed; 10 failed.

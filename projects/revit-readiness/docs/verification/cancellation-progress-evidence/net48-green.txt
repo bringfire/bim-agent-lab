@@ -1,0 +1,70 @@
+PROGRESS_CHILD mode=stop-return-before exit=0
+WHILE_HELD mode=stop-return-before stopReturned=true networkReleased=true descriptorRemoved=true quiesced=True
+PROGRESS_PROOF mode=stop-return-before
+PASS Cancellation progress child: stop-return-before
+PROGRESS_CHILD mode=stop-return-after exit=0
+WHILE_HELD mode=stop-return-after stopReturned=true networkReleased=true descriptorRemoved=true quiesced=False
+PROGRESS_PROOF mode=stop-return-after
+PASS Cancellation progress child: stop-return-after
+PROGRESS_CHILD mode=stop-throw-before exit=0
+WHILE_HELD mode=stop-throw-before stopReturned=true networkReleased=true descriptorRemoved=true quiesced=True
+PROGRESS_PROOF mode=stop-throw-before
+PASS Cancellation progress child: stop-throw-before
+PROGRESS_CHILD mode=stop-throw-after exit=0
+WHILE_HELD mode=stop-throw-after stopReturned=true networkReleased=true descriptorRemoved=true quiesced=False
+PROGRESS_PROOF mode=stop-throw-after
+PASS Cancellation progress child: stop-throw-after
+PROGRESS_CHILD mode=disconnect-return-before exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=disconnect-return-before stopReturned=true networkReleased=true descriptorRemoved=true quiesced=True
+PROGRESS_PROOF mode=disconnect-return-before
+PASS Cancellation progress child: disconnect-return-before
+PROGRESS_CHILD mode=disconnect-return-after exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=disconnect-return-after stopReturned=true networkReleased=true descriptorRemoved=true quiesced=False
+PROGRESS_PROOF mode=disconnect-return-after
+PASS Cancellation progress child: disconnect-return-after
+PROGRESS_CHILD mode=disconnect-throw-before exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=disconnect-throw-before stopReturned=true networkReleased=true descriptorRemoved=true quiesced=True
+PROGRESS_PROOF mode=disconnect-throw-before
+PASS Cancellation progress child: disconnect-throw-before
+PROGRESS_CHILD mode=disconnect-throw-after exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=disconnect-throw-after stopReturned=true networkReleased=true descriptorRemoved=true quiesced=False
+PROGRESS_PROOF mode=disconnect-throw-after
+PASS Cancellation progress child: disconnect-throw-after
+PROGRESS_CHILD mode=deadline-return-before exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=deadline-return-before stopReturned=true networkReleased=true descriptorRemoved=true quiesced=True
+PROGRESS_PROOF mode=deadline-return-before
+PASS Cancellation progress child: deadline-return-before
+PROGRESS_CHILD mode=deadline-return-after exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=deadline-return-after stopReturned=true networkReleased=true descriptorRemoved=true quiesced=False
+PROGRESS_PROOF mode=deadline-return-after
+PASS Cancellation progress child: deadline-return-after
+PROGRESS_CHILD mode=deadline-throw-before exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=deadline-throw-before stopReturned=true networkReleased=true descriptorRemoved=true quiesced=True
+PROGRESS_PROOF mode=deadline-throw-before
+PASS Cancellation progress child: deadline-throw-before
+PROGRESS_CHILD mode=deadline-throw-after exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=deadline-throw-after stopReturned=true networkReleased=true descriptorRemoved=true quiesced=False
+PROGRESS_PROOF mode=deadline-throw-after
+PASS Cancellation progress child: deadline-throw-after
+PROGRESS_CHILD mode=capacity exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD capacity=8 overload=Busy restartBypass=false submissions=8
+PROGRESS_PROOF mode=capacity
+PASS Cancellation progress child: capacity
+PROGRESS_CHILD mode=client exit=0
+WHILE_HELD clientNetworkReleased=true immediateInvalidation=true
+PROGRESS_PROOF mode=client
+PASS Cancellation progress child: client
+PROGRESS_CHILD mode=quiesced-fault exit=0
+EXCEPTIONAL_QUIESCENCE disposed=9 capacityRecovered=true errorRetained=true
+PROGRESS_PROOF mode=quiesced-fault
+PASS Cancellation progress child: quiesced-fault
+Progress tests: 15 passed; 0 failed.

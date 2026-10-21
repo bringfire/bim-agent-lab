@@ -58,19 +58,24 @@ public sealed class PipeEndpoint
     }
     public Task StopAsync()
     {
+        TaskCompletionSource<bool> completion;
+        bool cancel;
         lock (gate)
         {
-            if (stop == null || stop.IsFaulted || (stop.IsCompleted && Volatile.Read(ref callbackFailure) != null))
-            {
-                // Cancellation callbacks are borrowed code and can throw. Cancel still
-                // signals every callback; retain the error and continue draining/cleanup.
-                if (!stoppingDisposed)
-                    try { stopping.Cancel(); }
-                    catch (Exception error) { cancellationFailure = error; }
-                stop = FinishStop();
-            }
-            return stop;
+            if (stop != null && !stop.IsFaulted && !(stop.IsCompleted && Volatile.Read(ref callbackFailure) != null)) return stop;
+            completion = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+            stop = completion.Task; cancel = !stoppingDisposed;
         }
+        // No callback or I/O is invoked while holding the endpoint gate. This source
+        // only runs bridge-owned signaling; executor notification has its own worker.
+        if (cancel) try { stopping.Cancel(); } catch (Exception error) { cancellationFailure = error; }
+        _ = CompleteStop(completion);
+        return completion.Task;
+    }
+    async Task CompleteStop(TaskCompletionSource<bool> completion)
+    {
+        try { await FinishStop().ConfigureAwait(false); completion.TrySetResult(true); }
+        catch (Exception error) { completion.TrySetException(error); }
     }
     async Task FinishStop()
     {
@@ -153,21 +158,33 @@ public sealed class PipeEndpoint
                 return;
             }
         }
+        // Capacity includes lifetimes retained AFTER their network connection closes.
+        var retention = RetainedRequestSlot.TryAcquire();
+        if (retention == null)
+        {
+            using (frame.Token.Register(pipe.Dispose))
+                await FrameCodec.WriteAsync(pipe, BridgeJson.SerializeResponse(Failure(BridgeFailures.Create(
+                    "Busy", "The bridge is retaining unfinished requests. Retry after they finish.", request.RequestId).Error)),
+                    BridgeLimits.MaxResponseBytes, CancellationToken.None).ConfigureAwait(false);
+            return;
+        }
         frame.CancelAfter(Timeout.Infinite);
         using var disconnected = new CancellationTokenSource();
-        var lifetime = new RequestLifetime(request, budget, disconnected.Token, stopping.Token,
-            error => RecordCancellationFailure(id, request.RequestId, error));
+        RequestLifetime lifetime;
+        try { lifetime = new RequestLifetime(request, budget, disconnected.Token, stopping.Token,
+            error => RecordCancellationFailure(id, request.RequestId, error)); }
+        catch { retention.Dispose(); throw; }
         DispatchTicket? ticket = null;
         using var monitorStop = CancellationTokenSource.CreateLinkedTokenSource(stopping.Token);
         var monitor = MonitorDisconnect(pipe, disconnected, monitorStop.Token);
         try
         {
-            using var closeOnCancel = lifetime.Context.Cancellation.Register(pipe.Dispose);
+            using var closeOnCancel = lifetime.Context.TransportCancellation.Register(pipe.Dispose);
             BridgeResponse response;
             try
             {
                 lifetime.Context.ThrowIfInactive(); ticket = submit(lifetime.Context);
-                response = await AwaitResponse(ticket.Response, lifetime.Context.Cancellation).ConfigureAwait(false);
+                response = await AwaitResponse(ticket.Response, lifetime.Context.TransportCancellation).ConfigureAwait(false);
             }
             catch (BridgeException error) { response = Failure(new BridgeError { Code = error.Error.Code, Message = error.Error.Message, RequestId = request.RequestId, Retryable = error.Error.Retryable }); }
             catch (Exception error) when (!(error is OperationCanceledException))
@@ -187,9 +204,24 @@ public sealed class PipeEndpoint
             finally
             {
                 // A faulted disconnect monitor also finishes borrowing this lifetime.
-                if (ticket == null) lifetime.Dispose();
-                else Observe(lifetime.DisposeAfterQuiescenceAsync(ticket)); // callback owns its remaining use, not network slot
+                Observe(Retire(lifetime, ticket, retention, id, request.RequestId)); // never part of network shutdown
             }
+        }
+    }
+    async Task Retire(RequestLifetime lifetime, DispatchTicket? ticket, RetainedRequestSlot retention, long id, string requestId)
+    {
+        // A pre-dispatch failure has no executor borrower. Retirement still awaits
+        // notification work and disposes origin registrations before releasing capacity.
+        ticket ??= new DispatchTicket(Task.FromResult(new BridgeResponse()), Task.CompletedTask);
+        try { await lifetime.DisposeAfterQuiescenceAsync(ticket).ConfigureAwait(false); }
+        catch (Exception error) { RecordFailure(id, requestId, error, "LifetimeCleanupFailed"); }
+        finally
+        {
+            // A faulted Quiesced task also means the executor finished. Release after
+            // successful physical disposal, independently of that logical outcome.
+            var disposal = lifetime.DisposalCompleted;
+            if (disposal.Status == TaskStatus.RanToCompletion) retention.Dispose();
+            // Failed physical cleanup intentionally keeps its permit and reports failure.
         }
     }
     BridgeResponse Failure(BridgeError error) => new BridgeResponse
@@ -215,8 +247,10 @@ public sealed class PipeEndpoint
     void Emit(long id, string stage, long timestamp)
     { try { observe?.Invoke(new PipeEvent { ConnectionId = id, Stage = stage, Timestamp = timestamp }); } catch { /* Diagnostics cannot acquire ownership of an operation. */ } }
     void RecordCancellationFailure(long id, string requestId, Exception error)
+        => RecordFailure(id, requestId, error, "CancellationCallbackFailed");
+    void RecordFailure(long id, string requestId, Exception error, string stage)
     {
-        var failure = new PipeEvent { ConnectionId = id, RequestId = requestId, Stage = "CancellationCallbackFailed", Error = error };
+        var failure = new PipeEvent { ConnectionId = id, RequestId = requestId, Stage = stage, Error = error };
         // Retain the error independently of mutable data lent to the diagnostic observer.
         Interlocked.CompareExchange(ref callbackFailure, error, null);
         // This is a local diagnostic, not a late response to the expired request.

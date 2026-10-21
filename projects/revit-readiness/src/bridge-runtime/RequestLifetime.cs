@@ -8,15 +8,16 @@ namespace BimAgentLab.RevitBridge.Runtime;
 public sealed class RequestLifetime : IDisposable
 {
     readonly CancellationTokenSource cancellation;
+    readonly CancellationTokenSource transportCancellation = new CancellationTokenSource();
     readonly CancellationTokenSource deadlineStopping = new CancellationTokenSource();
     readonly TaskCompletionSource<bool> disposalCompleted = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
     readonly object gate = new object();
-    readonly TaskCompletionSource<bool> cancellationReleased = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
     readonly Action<Exception>? reportCancellationFailure;
     CancellationTokenRegistration upstreamRegistration, ownerRegistration;
     Task deadlineWork = Task.CompletedTask;
+    Task notificationWork = Task.CompletedTask;
     Exception? cancellationFailure;
-    int activeCancellations;
+    int cancellationRequested;
     int disposed;
     public RequestLifetime(BridgeRequest request, RequestBudget budget, CancellationToken upstreamCancellation, CancellationToken ownerStopping)
         : this(request, budget, upstreamCancellation, ownerStopping, null) { }
@@ -31,9 +32,9 @@ public sealed class RequestLifetime : IDisposable
         this.reportCancellationFailure = reportCancellationFailure;
         try
         {
-            Context = new BridgeExecutionContext(request, budget, cancellation.Token);
-            // Explicit registrations contain borrowed callback failures before they can
-            // escape onto an upstream owner's thread (which may itself be a timer).
+            Context = new BridgeExecutionContext(request, budget, cancellation.Token, transportCancellation.Token,
+                () => Volatile.Read(ref cancellationRequested) != 0);
+            // Origins invalidate and wake trusted transport code, never run borrowed callbacks.
             upstreamRegistration = upstreamCancellation.Register(CancelOwned);
             ownerRegistration = ownerStopping.Register(CancelOwned);
             Context.ThrowIfInactive();
@@ -46,23 +47,37 @@ public sealed class RequestLifetime : IDisposable
     public BridgeExecutionContext Context { get; }
     // Kept as data, never an unobserved faulted timer task. Available after disposal.
     public Exception? CancellationFailure => Volatile.Read(ref cancellationFailure);
+    internal Task DisposalCompleted => disposalCompleted.Task;
     void CancelOwned()
     {
+        TaskCompletionSource<bool> finished;
         lock (gate)
         {
-            if (Volatile.Read(ref disposed) != 0) return;
-            activeCancellations++;
+            if (disposed != 0 || cancellationRequested != 0) return;
+            Volatile.Write(ref cancellationRequested, 1);
+            finished = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+            notificationWork = finished.Task; // publish ownership BEFORE releasing the gate
         }
-        try { cancellation.Cancel(); }
-        catch (Exception error) { ReportFailure(error); }
-        finally
+        Exception? signalFailure = null;
+        try { transportCancellation.Cancel(); } // private: only bounded bridge-owned wakeups
+        catch (Exception error) { signalFailure = error; }
+        try
         {
-            lock (gate)
+            // One dedicated background worker per canceled lifetime. Endpoint admission
+            // reserves retained capacity before dispatch, so held callbacks cannot create
+            // an unbounded work queue or starve the pool needed for network completion.
+            new Thread(() =>
             {
-                activeCancellations--;
-                if (disposed != 0 && activeCancellations == 0) cancellationReleased.TrySetResult(true);
-            }
+                try
+                {
+                    if (signalFailure != null) ReportFailure(signalFailure);
+                    try { cancellation.Cancel(); }
+                    catch (Exception error) { ReportFailure(error); }
+                }
+                finally { finished.TrySetResult(true); }
+            }) { IsBackground = true, Name = "BIM bridge cancellation" }.Start();
         }
+        catch (Exception error) { ReportFailure(error); finished.TrySetResult(true); }
     }
     void ReportFailure(Exception error)
     {
@@ -84,7 +99,7 @@ public sealed class RequestLifetime : IDisposable
                 await Task.Delay(TimeSpan.FromMilliseconds(Math.Ceiling(remaining.TotalMilliseconds)), deadlineStopping.Token).ConfigureAwait(false);
             }
             deadlineStopping.Token.ThrowIfCancellationRequested();
-            CancelOwned(); // all callbacks run; their aggregate stays inside this lifetime
+            CancelOwned();
         }
         catch (OperationCanceledException) when (deadlineStopping.IsCancellationRequested) { }
         catch (Exception error) { ReportFailure(error); }
@@ -99,8 +114,7 @@ public sealed class RequestLifetime : IDisposable
     }
     public void Dispose()
     {
-        if (Interlocked.Exchange(ref disposed, 1) != 0) return;
-        lock (gate) { if (activeCancellations == 0) cancellationReleased.TrySetResult(true); }
+        lock (gate) { if (disposed != 0) return; disposed = 1; }
         deadlineStopping.Cancel(); // only the owned delay is registered on this source
         _ = FinishDisposalAsync(); // nonblocking even if called by a deadline callback itself
     }
@@ -108,12 +122,13 @@ public sealed class RequestLifetime : IDisposable
     {
         try
         {
-            // Quiesced releases the executor; cancellationReleased releases borrowed callbacks.
+            // Quiesced releases the executor; notificationWork releases borrowed callbacks.
             // Neither logical completion alone permits destroying the shared source.
             await deadlineWork.ConfigureAwait(false);
-            await cancellationReleased.Task.ConfigureAwait(false);
+            Task notification; lock (gate) { notification = notificationWork; }
+            await notification.ConfigureAwait(false);
             upstreamRegistration.Dispose(); ownerRegistration.Dispose();
-            cancellation.Dispose(); deadlineStopping.Dispose();
+            cancellation.Dispose(); transportCancellation.Dispose(); deadlineStopping.Dispose();
             disposalCompleted.TrySetResult(true);
         }
         catch (Exception error) { disposalCompleted.TrySetException(error); }

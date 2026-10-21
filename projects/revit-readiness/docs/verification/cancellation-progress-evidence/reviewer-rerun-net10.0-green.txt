@@ -1,0 +1,6 @@
+RUNTIME .NET 10.0.13
+BEFORE RELEASE mode=stop executorQuiesced=True StopAsyncReturned=True StopCompleted=True ConnectionClosedEvent=True DescriptorExists=False
+AFTER RELEASE mode=stop StopCompleted=True ConnectionClosedEvent=True DescriptorExists=False
+HELD DISCONNECT concurrentConnections=8 expected=8
+BEFORE RELEASE mode=disconnect executorQuiesced=True StopAsyncReturned=True StopCompleted=True ConnectionClosedEvent=True DescriptorExists=False
+AFTER RELEASE mode=disconnect StopCompleted=True ConnectionClosedEvent=True DescriptorExists=False

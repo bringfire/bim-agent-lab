@@ -1,0 +1,7 @@
+RUNTIME .NET Framework 4.8.10008.0
+BEFORE RELEASE mode=stop executorQuiesced=True StopAsyncReturned=False StopCompleted=False ConnectionClosedEvent=True DescriptorExists=True
+AFTER RELEASE mode=stop StopCompleted=True ConnectionClosedEvent=True DescriptorExists=False
+HELD DISCONNECT slot=8 failed=IOException
+HELD DISCONNECT concurrentConnections=7 expected=8
+BEFORE RELEASE mode=disconnect executorQuiesced=True StopAsyncReturned=True StopCompleted=False ConnectionClosedEvent=False DescriptorExists=True
+AFTER RELEASE mode=disconnect StopCompleted=True ConnectionClosedEvent=True DescriptorExists=False

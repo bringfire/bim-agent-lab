@@ -1,5 +1,7 @@
 # Task 3 deadline cancellation correction — 2026-10-21
 
+**Later independent review:** deadline P1 closed at b334385; held callbacks still blocked stop/disconnect. The [progress correction](2026-10-21-cancellation-progress.md) supersedes the synchronous notification mechanism. All evidence below is preserved.
+
 **Implementing-agent verification; independent P1 follow-up pending.** Baseline: `f79506defedd020f0ac3c5aaacc76f8c74c510e7`. The correction checkpoint is the commit titled **`fix: contain cancellation callback failures across timer boundaries`** that adds this record. Resolve it with `git log --diff-filter=A --format="%H %s" -- projects/revit-readiness/docs/verification/2026-10-21-deadline-cancellation.md`.
 
 The author forwarded independent closure of the earlier P2 and a new process-terminating P1. [Original feedback and separate disposition](../../../../docs/superpowers/reviews/revit-mcp-bridge/2026-10-21-task-3-deadline-review.md) preserve both. The previous 30 + 32 Task 3 evidence files remain unchanged; their supplied tests passed but omitted deadline-triggered callback failure.

@@ -1,0 +1,18 @@
+PASS timing rejects missing completion
+PASS timing rejects failed summary
+PASS timing rejects missing interval
+PASS timing rejects duplicate interval
+PASS timing rejects late interval
+PASS timing rejects misreported duration
+PASS progress rejects nonzero child exit
+PASS progress rejects missing proof
+PASS progress rejects missing case
+PASS progress rejects false task-return progress
+PASS progress rejects quiescence timing changed
+PASS progress rejects seven replacement slots
+PASS progress rejects unbounded admission
+PASS progress rejects restart bypass
+PASS progress rejects retired error lost
+PASS historical 27-case timing requires explicit expected count
+PASS historical 32-case timing requires explicit expected count
+PASS historical 38-case timing requires explicit expected count

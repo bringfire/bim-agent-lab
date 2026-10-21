@@ -90,12 +90,15 @@ internal static partial class Program
                     var context = await Within(ready.Task);
                     if (ownerStops)
                     {
-                        var error = await ThrowsAsync<AggregateException>(() => Within(endpoint.StopAsync()));
-                        Check(error.Flatten().InnerExceptions.Any(e => ReferenceEquals(e, failure)), "Cancellation failure was lost");
+                        // Network shutdown may finish before asynchronous notification reports.
+                        try { await Within(endpoint.StopAsync()); }
+                        catch (AggregateException error)
+                        { Check(error.Flatten().InnerExceptions.Any(e => ReferenceEquals(e, failure)), "Cancellation failure was lost"); }
                         Check(!File.Exists(Path.Combine(directory, descriptor.BridgeSessionId + ".json")), "Cancellation failure skipped shutdown cleanup");
                     }
                     else caller.Cancel();
                     await Until(() => events.Any(e => e.Stage == "Closed"));
+                    await Until(() => events.Any(e => e.Stage == "CancellationCallbackFailed"));
                     Check(context.Cancellation.WaitHandle.WaitOne(0), "Unfinished callback lost its borrowed lifetime");
                     Check(!quiesced.Task.IsCompleted, "Test did not retain a physical callback");
                     quiesced.TrySetResult(true); response.TrySetCanceled();
