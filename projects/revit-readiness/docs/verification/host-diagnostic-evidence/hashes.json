@@ -1,6 +1,8 @@
 {
   "algorithm": "SHA256",
   "files": {
+    "changed-targets-verified.json": "e8e0a5d29627afca61093c6b28fab27ac80df0a838a648fb869a213b05577be6",
+    "changed-targets.json": "1bb13d9ed7ceb9effcdf9dd064bd63f295787689ffd42dace2facfab8ba48388",
     "diagnostic-all.txt": "9d37f1664bb8a6932261fe58ed1fd9d09d46dcba0ad1375b55bfb3de9ae4a508",
     "diagnostic-controls-final.txt": "a419f5bbe5406fcc5c50fed4bb07c96e4633b7c0f0a45392137f9eae4146e619",
     "diagnostic-dispatch-net48-correct-cwd.txt": "14f305ee632dba4106a6a8392e2b94e5a0fae2417585038f7a98ef68a76cb6fa",
@@ -8,8 +10,15 @@
     "diagnostic-dispatch.txt": "b8551f2636ce8ec5e5b2da928c4cf6137bb893939973176814abd3cd6997d6ed",
     "diagnostic-package-corrected.txt": "03a8548b673c00f35c4531dd68fbcdb65755a17ff4574281307e39a119914b39",
     "diagnostic-package-final.txt": "5d96274ab0cca6553f14e6f0e50658063c7dec8198004905711da832e254ae4d",
+    "diagnostic-package-pinned.txt": "7151ebdfc365400b04ab100e21529781e8bd832e87416e1153bc782c6aecab93",
     "diagnostic-package-preparation.txt": "8a8f8fc48d12954e3c60d52a1c84b28622f213e3d0be9b3057e19e4c3f7b4c87",
+    "diagnostic-package.json": "8e4ff075c0a3b3da19c613be1863ec6c394116aec8d83654ae5dd412ac80f80e",
     "diagnostic-readiness.txt": "c709394dd7970c22b659453d63d0965903ebf76181d30a11565817c4c27f8b50",
-    "diagnostic-red.txt": "c73f205df6d40a3318e3a2ecad1c6fea22dab04366bb76f4c9f52518ca40abe3"
+    "diagnostic-red.txt": "c73f205df6d40a3318e3a2ecad1c6fea22dab04366bb76f4c9f52518ca40abe3",
+    "installation.json": "eb55f7fe91fda6e2034f3b920c3550e45194e2abaf6fb89237d73576200b6b56",
+    "installed-verification.json": "32e625e6fe8b72acd90915ff9616a4a2189900921779ce926e713c0fa4deeabf",
+    "journal.jsonl": "16fb127424a5b1c908ff147af599f7ee6a429984713cdf5c5a5e89c6c8656abe",
+    "receipt.json": "40033500cbc891b683d10bca446541305abdde4e5a539e3cb25b39e3069bc79c",
+    "state.json": "22368abdbdce959b9f5ce258eaad700a66cfd2e73de2538c5d53f5335a2485d4"
   }
 }

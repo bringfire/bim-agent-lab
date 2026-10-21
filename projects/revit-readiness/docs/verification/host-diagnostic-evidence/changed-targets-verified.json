@@ -1,0 +1,14 @@
+[
+  {
+    "Target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitReadiness.dll",
+    "Before": "FF8A2D12C89AA15F44AEA6AB6943A047D9482A98C23E34FE6B44E116E876FDD4",
+    "After": "42B062D5FF3B0AE1AA599AE5C6692E65FCC8BA0AE171777B21B10DCFB2246958",
+    "Tag": "Main"
+  },
+  {
+    "Target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\installed-files.json",
+    "Before": "BD5BCFFDE8C3B3AC9D9E990E60FDD3DEF683B59E5DA25843C810B9858FB7CFE7",
+    "After": "CAE05AEB3402ED443F57B1B9E92ECAC300CCA955D4AF44EDBC98335AD7EDADED",
+    "Tag": "MainInventory"
+  }
+]
