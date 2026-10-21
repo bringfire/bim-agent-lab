@@ -138,6 +138,7 @@ public static class BridgeJson
                 }
                 break;
             case BridgeError error: Required(error.Code); Required(error.Message); Required(error.RequestId); break;
+            case BridgeSessionDescriptor descriptor: BridgeIdentity.ValidateShape(descriptor); break;
             case ReadinessContextResult context:
                 if (context.RevitPid <= 0) throw new InvalidDataException("Invalid Revit process identity.");
                 Required(context.RevitBuild); Required(context.DocumentLifetimeId); Required(context.ProjectUniqueId);
@@ -166,6 +167,7 @@ public static class BridgeJson
     static int LimitFor(Type type)
     {
         if (type == typeof(BridgeRequest)) return BridgeLimits.MaxRequestBytes;
+        if (type == typeof(BridgeSessionDescriptor)) return 8192;
         if (type == typeof(BridgeResponse) || type == typeof(BridgeError) || type == typeof(ReadinessContextResult)) return BridgeLimits.MaxResponseBytes;
         throw new ArgumentException("Unsupported private bridge DTO.", nameof(type));
     }

@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-21",
+  "os": "Microsoft Windows NT 10.0.26300.0",
+  "powershell": "7.6.6",
+  "dotnetSdk": "10.0.204",
+  "net48Release": 534296,
+  "net48SystemCore": "4.8.10008.0 built by: d5c29ab0c000000",
+  "actualAlternateLogonClient": "not performed",
+  "actualRemoteMachineClient": "not performed",
+  "defaultSessionDirectoryUsedByTests": false
+}

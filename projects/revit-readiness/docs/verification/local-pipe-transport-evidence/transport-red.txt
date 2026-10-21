@@ -1,0 +1,47 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net48\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.Bridge.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\bin\Release\net10.0\BimAgentLab.Bridge.Tests.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net48\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.Bridge.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\bin\Release\net48\BimAgentLab.Bridge.Tests.exe
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.72
+PASS Catalog refuses zero or ambiguous instances and honors explicit PID
+PASS Native identity verifies process start, logon, session and pipe identity
+PASS Published descriptors are restricted, selected and removed only by their owner
+PASS Stale and changed descriptors cannot be selected or silently deleted
+FAIL Two real pipe clients preserve separate request and session identities: NotImplementedException The method or operation is not implemented.
+FAIL All eight no-bytes slots expire once and admit a valid successor: NotImplementedException The method or operation is not implemented.
+FAIL All eight partial-header slots expire once and admit a valid successor: NotImplementedException The method or operation is not implemented.
+FAIL All eight partial-body slots expire once and admit a valid successor: NotImplementedException The method or operation is not implemented.
+FAIL All eight trickle slots expire once and admit a valid successor: NotImplementedException The method or operation is not implemented.
+FAIL Disconnect cancels work and frees connection before callback quiescence: NotImplementedException The method or operation is not implemented.
+FAIL Stop closes idle and partial receive connections with no dispatch: NotImplementedException The method or operation is not implemented.
+FAIL Lazy provider retries before binding and never follows a replacement session: NotImplementedException The method or operation is not implemented.
+FAIL net48 child endpoint serves modern client and removes its descriptor on stop: Exception Child endpoint startup failed: 
+Pipe tests: 4 passed; 9 failed.
+PASS Catalog refuses zero or ambiguous instances and honors explicit PID
+PASS Native identity verifies process start, logon, session and pipe identity
+PASS Published descriptors are restricted, selected and removed only by their owner
+PASS Stale and changed descriptors cannot be selected or silently deleted
+FAIL Two real pipe clients preserve separate request and session identities: NotImplementedException The method or operation is not implemented.
+FAIL All eight no-bytes slots expire once and admit a valid successor: NotImplementedException The method or operation is not implemented.
+FAIL All eight partial-header slots expire once and admit a valid successor: NotImplementedException The method or operation is not implemented.
+FAIL All eight partial-body slots expire once and admit a valid successor: NotImplementedException The method or operation is not implemented.
+FAIL All eight trickle slots expire once and admit a valid successor: NotImplementedException The method or operation is not implemented.
+FAIL Disconnect cancels work and frees connection before callback quiescence: NotImplementedException The method or operation is not implemented.
+FAIL Stop closes idle and partial receive connections with no dispatch: NotImplementedException The method or operation is not implemented.
+FAIL Lazy provider retries before binding and never follows a replacement session: NotImplementedException The method or operation is not implemented.
+FAIL net48 child endpoint serves modern client and removes its descriptor on stop: Exception Child endpoint startup failed: 
+Pipe tests: 4 passed; 9 failed.
+Exception: D:\bim-agent-lab\projects\revit-readiness\scripts\Test-McpBridge.ps1:15
+Line |
+  15 |  … nt -ne 0) { throw "Pipe behavioral tests failed: $($pipeFailures -joi …
+     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Pipe behavioral tests failed: net48, net10.0

@@ -1,0 +1,123 @@
+PIPE_TARGET framework=net48
+PASS Catalog refuses zero or ambiguous instances and honors explicit PID
+PASS Native identity verifies process start, logon, session and pipe identity
+PASS Published descriptors are restricted, selected and removed only by their owner
+PASS Stale and changed descriptors cannot be selected or silently deleted
+PASS Two real pipe clients preserve separate request and session identities
+FRAME_TIMING mode=no-bytes connection=1 accepted=5939636960167 closed=5939687094268 frequency=10000000 seconds=5.013410
+FRAME_TIMING mode=no-bytes connection=2 accepted=5939636962871 closed=5939687093837 frequency=10000000 seconds=5.013097
+FRAME_TIMING mode=no-bytes connection=3 accepted=5939636963333 closed=5939687094175 frequency=10000000 seconds=5.013084
+FRAME_TIMING mode=no-bytes connection=4 accepted=5939636963360 closed=5939687094057 frequency=10000000 seconds=5.013070
+FRAME_TIMING mode=no-bytes connection=5 accepted=5939636964231 closed=5939687094014 frequency=10000000 seconds=5.012978
+FRAME_TIMING mode=no-bytes connection=6 accepted=5939636964331 closed=5939687096060 frequency=10000000 seconds=5.013173
+FRAME_TIMING mode=no-bytes connection=7 accepted=5939636964463 closed=5939687093838 frequency=10000000 seconds=5.012938
+FRAME_TIMING mode=no-bytes connection=8 accepted=5939636964721 closed=5939687093839 frequency=10000000 seconds=5.012912
+PASS All eight no-bytes slots expire once and admit a valid successor
+FRAME_TIMING mode=partial-header connection=1 accepted=5939688420987 closed=5939738433200 frequency=10000000 seconds=5.001221
+FRAME_TIMING mode=partial-header connection=2 accepted=5939688421142 closed=5939738433195 frequency=10000000 seconds=5.001205
+FRAME_TIMING mode=partial-header connection=3 accepted=5939688421248 closed=5939738434267 frequency=10000000 seconds=5.001302
+FRAME_TIMING mode=partial-header connection=4 accepted=5939688421394 closed=5939738433208 frequency=10000000 seconds=5.001181
+FRAME_TIMING mode=partial-header connection=5 accepted=5939688421515 closed=5939738433159 frequency=10000000 seconds=5.001164
+FRAME_TIMING mode=partial-header connection=6 accepted=5939688421692 closed=5939738433207 frequency=10000000 seconds=5.001152
+FRAME_TIMING mode=partial-header connection=7 accepted=5939688421853 closed=5939738434560 frequency=10000000 seconds=5.001271
+FRAME_TIMING mode=partial-header connection=8 accepted=5939688421938 closed=5939738433318 frequency=10000000 seconds=5.001138
+PASS All eight partial-header slots expire once and admit a valid successor
+FRAME_TIMING mode=partial-body connection=1 accepted=5939739940123 closed=5939790035757 frequency=10000000 seconds=5.009563
+FRAME_TIMING mode=partial-body connection=2 accepted=5939739940244 closed=5939790035709 frequency=10000000 seconds=5.009547
+FRAME_TIMING mode=partial-body connection=3 accepted=5939739940373 closed=5939790035695 frequency=10000000 seconds=5.009532
+FRAME_TIMING mode=partial-body connection=4 accepted=5939739940505 closed=5939790035694 frequency=10000000 seconds=5.009519
+FRAME_TIMING mode=partial-body connection=5 accepted=5939739940534 closed=5939790035798 frequency=10000000 seconds=5.009526
+FRAME_TIMING mode=partial-body connection=6 accepted=5939739940656 closed=5939790035638 frequency=10000000 seconds=5.009498
+FRAME_TIMING mode=partial-body connection=7 accepted=5939739940822 closed=5939790035613 frequency=10000000 seconds=5.009479
+FRAME_TIMING mode=partial-body connection=8 accepted=5939739940859 closed=5939790036109 frequency=10000000 seconds=5.009525
+PASS All eight partial-body slots expire once and admit a valid successor
+FRAME_TIMING mode=trickle connection=1 accepted=5939791416491 closed=5939841432440 frequency=10000000 seconds=5.001595
+FRAME_TIMING mode=trickle connection=2 accepted=5939791416882 closed=5939841432315 frequency=10000000 seconds=5.001543
+FRAME_TIMING mode=trickle connection=3 accepted=5939791416978 closed=5939841432132 frequency=10000000 seconds=5.001515
+FRAME_TIMING mode=trickle connection=4 accepted=5939791417840 closed=5939841433136 frequency=10000000 seconds=5.001530
+FRAME_TIMING mode=trickle connection=5 accepted=5939791418178 closed=5939841432502 frequency=10000000 seconds=5.001432
+FRAME_TIMING mode=trickle connection=6 accepted=5939791419015 closed=5939841434109 frequency=10000000 seconds=5.001509
+FRAME_TIMING mode=trickle connection=7 accepted=5939791419234 closed=5939841432285 frequency=10000000 seconds=5.001305
+FRAME_TIMING mode=trickle connection=8 accepted=5939791419788 closed=5939841433391 frequency=10000000 seconds=5.001360
+PASS All eight trickle slots expire once and admit a valid successor
+PASS Disconnect cancels work and frees connection before callback quiescence
+PASS Stop closes idle and partial receive connections with no dispatch
+PASS Lazy provider retries before binding and never follows a replacement session
+PASS net48 child endpoint serves simultaneous clients and large Unicode results, then removes its descriptor
+PASS Native pipe is asynchronous byte mode and a foreign-logon ACL denies access
+PASS Failed descriptor publication unwinds every acquired native pipe
+PASS Stop releases network even if descriptor cleanup fails and can retry cleanup
+PASS Valid expired and beyond-policy requests get correlated failures without dispatch
+PASS Submit errors retain correlation and unexpected errors expose no stack or message
+PASS Client rejects wrong response request, session, contract and malformed JSON
+PASS Client connect is capped at two seconds and respects a shorter original budget
+PASS Frame receipt consumes the request's existing budget
+PASS Stop during a blocked large response write releases the network worker
+PASS Cancellation and expiry during selection prevent binding or a connection
+PASS Actual foreign server PID is rejected before any request bytes
+PASS Provider rejects ambiguity through its real call path and retries only before binding
+PASS Stop at the acceptance handoff prevents parsing and submission
+PASS Failed duplicate start cannot remove the live owner's descriptor
+Pipe tests: 27 passed; 0 failed.
+PIPE_TARGET framework=net10.0
+PASS Catalog refuses zero or ambiguous instances and honors explicit PID
+PASS Native identity verifies process start, logon, session and pipe identity
+PASS Published descriptors are restricted, selected and removed only by their owner
+PASS Stale and changed descriptors cannot be selected or silently deleted
+PASS Two real pipe clients preserve separate request and session identities
+FRAME_TIMING mode=no-bytes connection=1 accepted=5939920831718 closed=5939970982174 frequency=10000000 seconds=5.015046
+FRAME_TIMING mode=no-bytes connection=2 accepted=5939920839616 closed=5939970982083 frequency=10000000 seconds=5.014247
+FRAME_TIMING mode=no-bytes connection=3 accepted=5939920840094 closed=5939970981961 frequency=10000000 seconds=5.014187
+FRAME_TIMING mode=no-bytes connection=4 accepted=5939920840296 closed=5939970980432 frequency=10000000 seconds=5.014014
+FRAME_TIMING mode=no-bytes connection=5 accepted=5939920841730 closed=5939970980384 frequency=10000000 seconds=5.013865
+FRAME_TIMING mode=no-bytes connection=6 accepted=5939920842418 closed=5939970983005 frequency=10000000 seconds=5.014059
+FRAME_TIMING mode=no-bytes connection=7 accepted=5939920842668 closed=5939970982108 frequency=10000000 seconds=5.013944
+FRAME_TIMING mode=no-bytes connection=8 accepted=5939920843135 closed=5939970980381 frequency=10000000 seconds=5.013725
+PASS All eight no-bytes slots expire once and admit a valid successor
+FRAME_TIMING mode=partial-header connection=1 accepted=5939972300952 closed=5940022453336 frequency=10000000 seconds=5.015238
+FRAME_TIMING mode=partial-header connection=3 accepted=5939972301240 closed=5940022454144 frequency=10000000 seconds=5.015290
+FRAME_TIMING mode=partial-header connection=2 accepted=5939972301237 closed=5940022453379 frequency=10000000 seconds=5.015214
+FRAME_TIMING mode=partial-header connection=4 accepted=5939972301407 closed=5940022454102 frequency=10000000 seconds=5.015269
+FRAME_TIMING mode=partial-header connection=5 accepted=5939972301830 closed=5940022453532 frequency=10000000 seconds=5.015170
+FRAME_TIMING mode=partial-header connection=6 accepted=5939972302514 closed=5940022454396 frequency=10000000 seconds=5.015188
+FRAME_TIMING mode=partial-header connection=7 accepted=5939972302597 closed=5940022455093 frequency=10000000 seconds=5.015250
+FRAME_TIMING mode=partial-header connection=8 accepted=5939972304644 closed=5940022453813 frequency=10000000 seconds=5.014917
+PASS All eight partial-header slots expire once and admit a valid successor
+FRAME_TIMING mode=partial-body connection=1 accepted=5940023711876 closed=5940073706652 frequency=10000000 seconds=4.999478
+FRAME_TIMING mode=partial-body connection=2 accepted=5940023711889 closed=5940073705984 frequency=10000000 seconds=4.999409
+FRAME_TIMING mode=partial-body connection=3 accepted=5940023712004 closed=5940073706238 frequency=10000000 seconds=4.999423
+FRAME_TIMING mode=partial-body connection=4 accepted=5940023712202 closed=5940073707112 frequency=10000000 seconds=4.999491
+FRAME_TIMING mode=partial-body connection=5 accepted=5940023712414 closed=5940073706308 frequency=10000000 seconds=4.999389
+FRAME_TIMING mode=partial-body connection=6 accepted=5940023712703 closed=5940073705997 frequency=10000000 seconds=4.999329
+FRAME_TIMING mode=partial-body connection=7 accepted=5940023712929 closed=5940073705977 frequency=10000000 seconds=4.999305
+FRAME_TIMING mode=partial-body connection=8 accepted=5940023713070 closed=5940073706344 frequency=10000000 seconds=4.999327
+PASS All eight partial-body slots expire once and admit a valid successor
+FRAME_TIMING mode=trickle connection=1 accepted=5940075020222 closed=5940125049570 frequency=10000000 seconds=5.002935
+FRAME_TIMING mode=trickle connection=2 accepted=5940075020251 closed=5940125049575 frequency=10000000 seconds=5.002932
+FRAME_TIMING mode=trickle connection=3 accepted=5940075020268 closed=5940125049788 frequency=10000000 seconds=5.002952
+FRAME_TIMING mode=trickle connection=4 accepted=5940075020323 closed=5940125049527 frequency=10000000 seconds=5.002920
+FRAME_TIMING mode=trickle connection=5 accepted=5940075020385 closed=5940125049526 frequency=10000000 seconds=5.002914
+FRAME_TIMING mode=trickle connection=6 accepted=5940075020407 closed=5940125049579 frequency=10000000 seconds=5.002917
+FRAME_TIMING mode=trickle connection=7 accepted=5940075020780 closed=5940125050767 frequency=10000000 seconds=5.002999
+FRAME_TIMING mode=trickle connection=8 accepted=5940075025372 closed=5940125049527 frequency=10000000 seconds=5.002415
+PASS All eight trickle slots expire once and admit a valid successor
+PASS Disconnect cancels work and frees connection before callback quiescence
+PASS Stop closes idle and partial receive connections with no dispatch
+PASS Lazy provider retries before binding and never follows a replacement session
+PASS net48 child endpoint serves simultaneous clients and large Unicode results, then removes its descriptor
+PASS Native pipe is asynchronous byte mode and a foreign-logon ACL denies access
+PASS Failed descriptor publication unwinds every acquired native pipe
+PASS Stop releases network even if descriptor cleanup fails and can retry cleanup
+PASS Valid expired and beyond-policy requests get correlated failures without dispatch
+PASS Submit errors retain correlation and unexpected errors expose no stack or message
+PASS Client rejects wrong response request, session, contract and malformed JSON
+PASS Client connect is capped at two seconds and respects a shorter original budget
+PASS Frame receipt consumes the request's existing budget
+PASS Stop during a blocked large response write releases the network worker
+PASS Cancellation and expiry during selection prevent binding or a connection
+PASS Actual foreign server PID is rejected before any request bytes
+PASS Provider rejects ambiguity through its real call path and retries only before binding
+PASS Stop at the acceptance handoff prevents parsing and submission
+PASS Failed duplicate start cannot remove the live owner's descriptor
+Pipe tests: 27 passed; 0 failed.
+PIPE_SUITE_COMPLETE

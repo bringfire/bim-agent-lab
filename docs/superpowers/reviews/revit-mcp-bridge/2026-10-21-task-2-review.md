@@ -1,5 +1,7 @@
 # Task 2 implementation review and author dispositions
 
+**Subsequent status:** [independent follow-up](2026-10-21-task-2-follow-up.md) closed T2-01/02/03 at `3cefe5116ec1368e0bfdcc387209bbb1e176df66` and recommended Task 3. The original correction-stage record below is retained as history.
+
 Received through the author on 2026-10-21. Reviewed commit: **`eefb1563fdf7073dc7065668da355b0642f99709`**. This is a focused independent review of Task 2, not closure of the full R3 implementation/live-evidence review. The reviewer's identity was not supplied in this message. The original feedback and the implementing agent's dispositions are kept separate below.
 
 ## Original reviewer feedback

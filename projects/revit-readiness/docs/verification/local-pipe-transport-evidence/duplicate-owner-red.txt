@@ -1,0 +1,25 @@
+PASS Native pipe is asynchronous byte mode and a foreign-logon ACL denies access
+PASS Failed descriptor publication unwinds every acquired native pipe
+PASS Stop releases network even if descriptor cleanup fails and can retry cleanup
+PASS Valid expired and beyond-policy requests get correlated failures without dispatch
+PASS Submit errors retain correlation and unexpected errors expose no stack or message
+PASS Client rejects wrong response request, session, contract and malformed JSON
+PASS Client connect is capped at two seconds and respects a shorter original budget
+PASS Frame receipt consumes the request's existing budget
+PASS Stop during a blocked large response write releases the network worker
+PASS Cancellation and expiry during selection prevent binding or a connection
+PASS Actual foreign server PID is rejected before any request bytes
+PASS Provider rejects ambiguity through its real call path and retries only before binding
+PASS Stop at the acceptance handoff prevents parsing and submission
+FAIL Failed duplicate start cannot remove the live owner's descriptor: BridgeException Start a bridge in the selected Revit instance.
+BimAgentLab.RevitBridge.Contract.BridgeException: Start a bridge in the selected Revit instance.
+Pipe tests: 13 passed; 1 failed.
+   at BimAgentLab.RevitBridge.Runtime.SessionCatalog.Resolve(Nullable`1 revitPid) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\SessionCatalog.cs:line 24
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<PipeFailureTests>b__4_13>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeFailureTests.cs:line 201
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<PipeFailureTests>b__4_13>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeFailureTests.cs:line 207
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__24.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 35

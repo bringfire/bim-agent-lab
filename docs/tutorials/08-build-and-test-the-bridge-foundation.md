@@ -61,4 +61,4 @@ A **suggested follow-up prompt**:
 
 > Reproduce each review finding before changing the code. Check the full journey from the received data to the returned value, and verify the expected answers against the original contract or independent observations. Preserve the old evidence with an explanation of its limits, generate fresh evidence after the correction, and give the reviewer a focused follow-up packet. Keep the participant story about how I directed the work and the agent guide precise enough to reproduce it.
 
-The agent's fixes and passing tests are ready for follow-up review. They do not constitute the reviewer's approval or live Revit acceptance, and Task 3 has not started.
+The author subsequently returned an [independent follow-up](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-2-follow-up.md) closing all three findings at `3cefe51` after reproducing the checks. That closes Task 2, not live Revit acceptance. The [next story](09-connect-the-bridge-processes.md) follows Task 3 into actual Windows pipes.

@@ -1,0 +1,201 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net48\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net48\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.Bridge.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\bin\Release\net48\BimAgentLab.Bridge.Tests.exe
+  BimAgentLab.Bridge.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\bin\Release\net10.0\BimAgentLab.Bridge.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.91
+PASS Catalog refuses zero or ambiguous instances and honors explicit PID
+PASS Native identity verifies process start, logon, session and pipe identity
+PASS Published descriptors are restricted, selected and removed only by their owner
+PASS Stale and changed descriptors cannot be selected or silently deleted
+PASS Two real pipe clients preserve separate request and session identities
+FRAME_TIMING mode=no-bytes connection=1 accepted=5922759220775 closed=5922809298321 frequency=10000000 seconds=5.007755
+FRAME_TIMING mode=no-bytes connection=2 accepted=5922759226979 closed=5922809296228 frequency=10000000 seconds=5.006925
+FRAME_TIMING mode=no-bytes connection=3 accepted=5922759227556 closed=5922809296933 frequency=10000000 seconds=5.006938
+FRAME_TIMING mode=no-bytes connection=4 accepted=5922759227586 closed=5922809297206 frequency=10000000 seconds=5.006962
+FRAME_TIMING mode=no-bytes connection=5 accepted=5922759227745 closed=5922809296227 frequency=10000000 seconds=5.006848
+FRAME_TIMING mode=no-bytes connection=6 accepted=5922759227764 closed=5922809296731 frequency=10000000 seconds=5.006897
+FRAME_TIMING mode=no-bytes connection=7 accepted=5922759227974 closed=5922809297799 frequency=10000000 seconds=5.006983
+FRAME_TIMING mode=no-bytes connection=8 accepted=5922759229486 closed=5922809297791 frequency=10000000 seconds=5.006831
+PASS All eight no-bytes slots expire once and admit a valid successor
+FRAME_TIMING mode=partial-header connection=1 accepted=5922810587326 closed=5922860647258 frequency=10000000 seconds=5.005993
+FRAME_TIMING mode=partial-header connection=2 accepted=5922810587869 closed=5922860649388 frequency=10000000 seconds=5.006152
+FRAME_TIMING mode=partial-header connection=3 accepted=5922810587933 closed=5922860647243 frequency=10000000 seconds=5.005931
+FRAME_TIMING mode=partial-header connection=4 accepted=5922810588066 closed=5922860649789 frequency=10000000 seconds=5.006172
+FRAME_TIMING mode=partial-header connection=5 accepted=5922810588384 closed=5922860647434 frequency=10000000 seconds=5.005905
+FRAME_TIMING mode=partial-header connection=6 accepted=5922810588450 closed=5922860648336 frequency=10000000 seconds=5.005989
+FRAME_TIMING mode=partial-header connection=7 accepted=5922810588511 closed=5922860647245 frequency=10000000 seconds=5.005873
+FRAME_TIMING mode=partial-header connection=8 accepted=5922810588781 closed=5922860649452 frequency=10000000 seconds=5.006067
+PASS All eight partial-header slots expire once and admit a valid successor
+FRAME_TIMING mode=partial-body connection=1 accepted=5922861937271 closed=5922912059049 frequency=10000000 seconds=5.012178
+FRAME_TIMING mode=partial-body connection=2 accepted=5922861937616 closed=5922912059423 frequency=10000000 seconds=5.012181
+FRAME_TIMING mode=partial-body connection=3 accepted=5922861937847 closed=5922912058605 frequency=10000000 seconds=5.012076
+FRAME_TIMING mode=partial-body connection=4 accepted=5922861937907 closed=5922912060365 frequency=10000000 seconds=5.012246
+FRAME_TIMING mode=partial-body connection=5 accepted=5922861938064 closed=5922912058589 frequency=10000000 seconds=5.012053
+FRAME_TIMING mode=partial-body connection=6 accepted=5922861938307 closed=5922912060931 frequency=10000000 seconds=5.012262
+FRAME_TIMING mode=partial-body connection=7 accepted=5922861938448 closed=5922912058507 frequency=10000000 seconds=5.012006
+FRAME_TIMING mode=partial-body connection=8 accepted=5922861939159 closed=5922912058555 frequency=10000000 seconds=5.011940
+PASS All eight partial-body slots expire once and admit a valid successor
+FRAME_TIMING mode=trickle connection=1 accepted=5922913282421 closed=5922963388653 frequency=10000000 seconds=5.010623
+FRAME_TIMING mode=trickle connection=2 accepted=5922913282797 closed=5922963389775 frequency=10000000 seconds=5.010698
+FRAME_TIMING mode=trickle connection=3 accepted=5922913283021 closed=5922963388557 frequency=10000000 seconds=5.010554
+FRAME_TIMING mode=trickle connection=4 accepted=5922913283426 closed=5922963391541 frequency=10000000 seconds=5.010812
+FRAME_TIMING mode=trickle connection=5 accepted=5922913283642 closed=5922963388557 frequency=10000000 seconds=5.010492
+FRAME_TIMING mode=trickle connection=6 accepted=5922913283674 closed=5922963389785 frequency=10000000 seconds=5.010611
+FRAME_TIMING mode=trickle connection=7 accepted=5922913283922 closed=5922963389766 frequency=10000000 seconds=5.010584
+FRAME_TIMING mode=trickle connection=8 accepted=5922913284399 closed=5922963388626 frequency=10000000 seconds=5.010423
+PASS All eight trickle slots expire once and admit a valid successor
+PASS Disconnect cancels work and frees connection before callback quiescence
+PASS Stop closes idle and partial receive connections with no dispatch
+PASS Lazy provider retries before binding and never follows a replacement session
+PASS net48 child endpoint serves modern client and removes its descriptor on stop
+PASS Native pipe is asynchronous byte mode and a foreign-logon ACL denies access
+PASS Failed descriptor publication unwinds every acquired native pipe
+FAIL Stop releases network even if descriptor cleanup fails and can retry cleanup: IOException Cannot acquire descriptor for cleanup.
+System.IO.IOException: Cannot acquire descriptor for cleanup. ---> System.ComponentModel.Win32Exception: The process cannot access the file because it is being used by another process
+   --- End of inner exception stack trace ---
+   at BimAgentLab.RevitBridge.Runtime.NativeWindows.DeleteOwnedFile(String path, Byte[] expected) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\NativeWindows.cs:line 90
+   at BimAgentLab.RevitBridge.Runtime.SessionCatalog.RemoveOwned(BridgeSessionDescriptor descriptor) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\SessionCatalog.cs:line 84
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.<FinishStop>d__13.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 62
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<PipeFailureTests>b__4_2>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeFailureTests.cs:line 45
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__22.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 34
+FAIL Valid expired and beyond-policy requests get correlated failures without dispatch: EndOfStreamException Incomplete bridge frame.
+System.IO.EndOfStreamException: Incomplete bridge frame.
+   at BimAgentLab.RevitBridge.Runtime.FrameCodec.<ReadExactlyAsync>d__3.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\FrameCodec.cs:line 52
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.RevitBridge.Runtime.FrameCodec.<ReadAsync>d__1.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\FrameCodec.cs:line 19
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Within>d__17`1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<PipeFailureTests>b__4_3>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeFailureTests.cs:line 59
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<PipeFailureTests>b__4_3>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeFailureTests.cs:line 64
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__22.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 34
+FAIL Submit errors retain correlation and unexpected errors expose no stack or message: BridgeException The bound bridge did not return a valid correlated response. Reconnect explicitly if it restarted.
+BimAgentLab.RevitBridge.Contract.BridgeException: The bound bridge did not return a valid correlated response. Reconnect explicitly if it restarted.
+   at BimAgentLab.RevitBridge.Runtime.PipeBridgeClient.<SendAsync>d__2.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeBridgeClient.cs:line 45
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<PipeFailureTests>b__4_4>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeFailureTests.cs:line 74
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<PipeFailureTests>b__4_4>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeFailureTests.cs:line 79
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__22.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 34
+PASS Client rejects wrong response request, session, contract and malformed JSON
+PASS Client connect is capped at two seconds and respects a shorter original budget
+PASS Frame receipt consumes the request's existing budget
+PASS Stop during a blocked large response write releases the network worker
+PASS Cancellation and expiry during selection prevent binding or a connection
+Pipe tests: 20 passed; 3 failed.
+PASS Catalog refuses zero or ambiguous instances and honors explicit PID
+PASS Native identity verifies process start, logon, session and pipe identity
+PASS Published descriptors are restricted, selected and removed only by their owner
+PASS Stale and changed descriptors cannot be selected or silently deleted
+PASS Two real pipe clients preserve separate request and session identities
+FRAME_TIMING mode=no-bytes connection=1 accepted=5923036754666 closed=5923086840348 frequency=10000000 seconds=5.008568
+FRAME_TIMING mode=no-bytes connection=2 accepted=5923036760683 closed=5923086840360 frequency=10000000 seconds=5.007968
+FRAME_TIMING mode=no-bytes connection=3 accepted=5923036760942 closed=5923086840370 frequency=10000000 seconds=5.007943
+FRAME_TIMING mode=no-bytes connection=4 accepted=5923036761280 closed=5923086841814 frequency=10000000 seconds=5.008053
+FRAME_TIMING mode=no-bytes connection=5 accepted=5923036761298 closed=5923086840415 frequency=10000000 seconds=5.007912
+FRAME_TIMING mode=no-bytes connection=6 accepted=5923036761324 closed=5923086840561 frequency=10000000 seconds=5.007924
+FRAME_TIMING mode=no-bytes connection=7 accepted=5923036762984 closed=5923086840322 frequency=10000000 seconds=5.007734
+FRAME_TIMING mode=no-bytes connection=8 accepted=5923036763294 closed=5923086841579 frequency=10000000 seconds=5.007828
+PASS All eight no-bytes slots expire once and admit a valid successor
+FRAME_TIMING mode=partial-header connection=1 accepted=5923088188813 closed=5923138252566 frequency=10000000 seconds=5.006375
+FRAME_TIMING mode=partial-header connection=2 accepted=5923088189418 closed=5923138253573 frequency=10000000 seconds=5.006416
+FRAME_TIMING mode=partial-header connection=3 accepted=5923088189450 closed=5923138252445 frequency=10000000 seconds=5.006299
+FRAME_TIMING mode=partial-header connection=4 accepted=5923088189740 closed=5923138252168 frequency=10000000 seconds=5.006243
+FRAME_TIMING mode=partial-header connection=5 accepted=5923088189771 closed=5923138253959 frequency=10000000 seconds=5.006419
+FRAME_TIMING mode=partial-header connection=6 accepted=5923088189887 closed=5923138253034 frequency=10000000 seconds=5.006315
+FRAME_TIMING mode=partial-header connection=7 accepted=5923088190163 closed=5923138252355 frequency=10000000 seconds=5.006219
+FRAME_TIMING mode=partial-header connection=8 accepted=5923088192466 closed=5923138253388 frequency=10000000 seconds=5.006092
+PASS All eight partial-header slots expire once and admit a valid successor
+FRAME_TIMING mode=partial-body connection=1 accepted=5923139698932 closed=5923189742996 frequency=10000000 seconds=5.004406
+FRAME_TIMING mode=partial-body connection=2 accepted=5923139699059 closed=5923189742681 frequency=10000000 seconds=5.004362
+FRAME_TIMING mode=partial-body connection=3 accepted=5923139699064 closed=5923189743741 frequency=10000000 seconds=5.004468
+FRAME_TIMING mode=partial-body connection=4 accepted=5923139699080 closed=5923189742681 frequency=10000000 seconds=5.004360
+FRAME_TIMING mode=partial-body connection=5 accepted=5923139699271 closed=5923189744207 frequency=10000000 seconds=5.004494
+FRAME_TIMING mode=partial-body connection=6 accepted=5923139699521 closed=5923189743455 frequency=10000000 seconds=5.004393
+FRAME_TIMING mode=partial-body connection=7 accepted=5923139699636 closed=5923189744269 frequency=10000000 seconds=5.004463
+FRAME_TIMING mode=partial-body connection=8 accepted=5923139699771 closed=5923189744050 frequency=10000000 seconds=5.004428
+PASS All eight partial-body slots expire once and admit a valid successor
+FRAME_TIMING mode=trickle connection=1 accepted=5923191177741 closed=5923241253658 frequency=10000000 seconds=5.007592
+FRAME_TIMING mode=trickle connection=2 accepted=5923191177793 closed=5923241253075 frequency=10000000 seconds=5.007528
+FRAME_TIMING mode=trickle connection=3 accepted=5923191178090 closed=5923241253072 frequency=10000000 seconds=5.007498
+FRAME_TIMING mode=trickle connection=4 accepted=5923191178379 closed=5923241253477 frequency=10000000 seconds=5.007510
+FRAME_TIMING mode=trickle connection=5 accepted=5923191178807 closed=5923241253624 frequency=10000000 seconds=5.007482
+FRAME_TIMING mode=trickle connection=6 accepted=5923191178991 closed=5923241253512 frequency=10000000 seconds=5.007452
+FRAME_TIMING mode=trickle connection=7 accepted=5923191179336 closed=5923241253643 frequency=10000000 seconds=5.007431
+FRAME_TIMING mode=trickle connection=8 accepted=5923191179514 closed=5923241253071 frequency=10000000 seconds=5.007356
+PASS All eight trickle slots expire once and admit a valid successor
+PASS Disconnect cancels work and frees connection before callback quiescence
+PASS Stop closes idle and partial receive connections with no dispatch
+PASS Lazy provider retries before binding and never follows a replacement session
+PASS net48 child endpoint serves modern client and removes its descriptor on stop
+PASS Native pipe is asynchronous byte mode and a foreign-logon ACL denies access
+PASS Failed descriptor publication unwinds every acquired native pipe
+FAIL Stop releases network even if descriptor cleanup fails and can retry cleanup: IOException Cannot acquire descriptor for cleanup.
+System.IO.IOException: Cannot acquire descriptor for cleanup.
+ ---> System.ComponentModel.Win32Exception (32): The process cannot access the file because it is being used by another process.
+   --- End of inner exception stack trace ---
+   at BimAgentLab.RevitBridge.Runtime.NativeWindows.DeleteOwnedFile(String path, Byte[] expected) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\NativeWindows.cs:line 95
+   at BimAgentLab.RevitBridge.Runtime.SessionCatalog.RemoveOwned(BridgeSessionDescriptor descriptor) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\SessionCatalog.cs:line 83
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.FinishStop() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 61
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<PipeFailureTests>b__4_2>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeFailureTests.cs:line 45
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 34
+FAIL Valid expired and beyond-policy requests get correlated failures without dispatch: EndOfStreamException Incomplete bridge frame.
+System.IO.EndOfStreamException: Incomplete bridge frame.
+   at BimAgentLab.RevitBridge.Runtime.FrameCodec.ReadExactlyAsync(Stream stream, Byte[] target, CancellationToken cancellation) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\FrameCodec.cs:line 53
+   at BimAgentLab.RevitBridge.Runtime.FrameCodec.ReadAsync(Stream stream, Int32 limit, CancellationToken cancellation) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\FrameCodec.cs:line 18
+   at BimAgentLab.Bridge.Tests.Program.Within[T](Task`1 task) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeTransportTests.cs:line 162
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<PipeFailureTests>b__4_3>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeFailureTests.cs:line 59
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<PipeFailureTests>b__4_3>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeFailureTests.cs:line 64
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 34
+FAIL Submit errors retain correlation and unexpected errors expose no stack or message: BridgeException The bound bridge did not return a valid correlated response. Reconnect explicitly if it restarted.
+BimAgentLab.RevitBridge.Contract.BridgeException: The bound bridge did not return a valid correlated response. Reconnect explicitly if it restarted.
+   at BimAgentLab.RevitBridge.Runtime.PipeBridgeClient.SendAsync(BridgeExecutionContext execution) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeBridgeClient.cs:line 45
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<PipeFailureTests>b__4_4>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeFailureTests.cs:line 74
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<PipeFailureTests>b__4_4>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeFailureTests.cs:line 79
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 34
+PASS Client rejects wrong response request, session, contract and malformed JSON
+PASS Client connect is capped at two seconds and respects a shorter original budget
+PASS Frame receipt consumes the request's existing budget
+PASS Stop during a blocked large response write releases the network worker
+PASS Cancellation and expiry during selection prevent binding or a connection
+Pipe tests: 20 passed; 3 failed.
+Exception: D:\bim-agent-lab\projects\revit-readiness\scripts\Test-McpBridge.ps1:15
+Line |
+  15 |  … nt -ne 0) { throw "Pipe behavioral tests failed: $($pipeFailures -joi …
+     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Pipe behavioral tests failed: net48, net10.0

@@ -14,8 +14,16 @@ internal static partial class Program
     static int failures, passed;
     static async Task<int> Main(string[] args)
     {
+        if (args.Length == 2 && args[0] == "--pipe-host") return await PipeHost(args[1]);
+        if (args.Length == 2 && args[0] == "--pipe-imposter") return await PipeImposter(args[1]);
         if (args.Length == 2 && args[0] == "--emit") { Emit(args[1]); return 0; }
         if (args.Length == 2 && args[0] == "--consume") { Consume(args[1]); return 0; }
+        if (args.Length == 1 && (args[0] == "--pipe" || args[0] == "--pipe-failures"))
+        {
+            if (args[0] == "--pipe") await PipeTests(); else await PipeFailureTests();
+            Console.WriteLine($"Pipe tests: {passed} passed; {failures} failed.");
+            return failures == 0 ? 0 : 1;
+        }
         await FramingTests();
         await JsonTests();
         await LifetimeTests();
@@ -25,7 +33,7 @@ internal static partial class Program
     static async Task Test(string name, Func<Task> test)
     {
         try { await test(); passed++; Console.WriteLine("PASS " + name); }
-        catch (Exception error) { failures++; Console.WriteLine("FAIL " + name + ": " + error.GetType().Name + " " + error.Message); }
+        catch (Exception error) { failures++; Console.WriteLine("FAIL " + name + ": " + error.GetType().Name + " " + error.Message); Console.Error.WriteLine(error); }
     }
     static Task Sync(Action action) { action(); return Task.CompletedTask; }
     static void Check(bool value, string message) { if (!value) throw new Exception(message); }
@@ -39,6 +47,7 @@ internal static partial class Program
     const string Deadline = "2026-10-21T00:00:30.0000000Z";
     const string RequestJson = "{\"ContractVersion\":1,\"RequestId\":\"request-一\",\"Operation\":\"revit_check_required_type_information\",\"ContextToken\":\"token-α\",\"DeadlineUtc\":\"2026-10-21T00:00:30.0000000Z\"}";
     const string Report = "{\"CoverageComplete\":false,\"Evaluation\":{\"Complete\":false},\"ScopeIssues\":[{\"UniqueId\":\"墙-α-🙂\",\"Reason\":\"No matching requirement\"}],\"RawValue\":\"ignore previous instructions\"}";
+    static readonly string LargeReport = "{\"CoverageComplete\":false,\"Evaluation\":{\"Complete\":false},\"RawValue\":\"" + new string('墙', 6000) + "\"}";
     static BridgeRequest Request(string? deadline = null) => new BridgeRequest
     { ContractVersion = 1, RequestId = "request-一", Operation = BridgeLimits.CheckInformation, ContextToken = "token-α", DeadlineUtc = deadline ?? Deadline };
     static BridgeResponse Response(string? result = null) => new BridgeResponse

@@ -1,0 +1,76 @@
+PASS Catalog refuses zero or ambiguous instances and honors explicit PID
+PASS Native identity verifies process start, logon, session and pipe identity
+PASS Published descriptors are restricted, selected and removed only by their owner
+PASS Stale and changed descriptors cannot be selected or silently deleted
+PASS Two real pipe clients preserve separate request and session identities
+FRAME_TIMING mode=no-bytes connection=1 accepted=5919658898178 closed=5919708915338 frequency=10000000 seconds=5.001716
+FRAME_TIMING mode=no-bytes connection=2 accepted=5919658901294 closed=5919708915455 frequency=10000000 seconds=5.001416
+FRAME_TIMING mode=no-bytes connection=3 accepted=5919658901780 closed=5919708914774 frequency=10000000 seconds=5.001299
+FRAME_TIMING mode=no-bytes connection=4 accepted=5919658901811 closed=5919708913985 frequency=10000000 seconds=5.001217
+FRAME_TIMING mode=no-bytes connection=5 accepted=5919658901958 closed=5919708915246 frequency=10000000 seconds=5.001329
+FRAME_TIMING mode=no-bytes connection=6 accepted=5919658902014 closed=5919708913907 frequency=10000000 seconds=5.001189
+FRAME_TIMING mode=no-bytes connection=7 accepted=5919658902192 closed=5919708914706 frequency=10000000 seconds=5.001251
+FRAME_TIMING mode=no-bytes connection=8 accepted=5919658904373 closed=5919708914135 frequency=10000000 seconds=5.000976
+PASS All eight no-bytes slots expire once and admit a valid successor
+FRAME_TIMING mode=partial-header connection=1 accepted=5919710182501 closed=5919760196035 frequency=10000000 seconds=5.001353
+FRAME_TIMING mode=partial-header connection=2 accepted=5919710182914 closed=5919760197334 frequency=10000000 seconds=5.001442
+FRAME_TIMING mode=partial-header connection=3 accepted=5919710183253 closed=5919760195430 frequency=10000000 seconds=5.001218
+FRAME_TIMING mode=partial-header connection=4 accepted=5919710183398 closed=5919760197163 frequency=10000000 seconds=5.001377
+FRAME_TIMING mode=partial-header connection=5 accepted=5919710183417 closed=5919760195374 frequency=10000000 seconds=5.001196
+FRAME_TIMING mode=partial-header connection=6 accepted=5919710183511 closed=5919760196026 frequency=10000000 seconds=5.001252
+FRAME_TIMING mode=partial-header connection=7 accepted=5919710183832 closed=5919760195534 frequency=10000000 seconds=5.001170
+FRAME_TIMING mode=partial-header connection=8 accepted=5919710184847 closed=5919760195843 frequency=10000000 seconds=5.001100
+PASS All eight partial-header slots expire once and admit a valid successor
+FRAME_TIMING mode=partial-body connection=1 accepted=5919761557456 closed=5919811588120 frequency=10000000 seconds=5.003066
+FRAME_TIMING mode=partial-body connection=2 accepted=5919761557837 closed=5919811587517 frequency=10000000 seconds=5.002968
+FRAME_TIMING mode=partial-body connection=3 accepted=5919761557942 closed=5919811588150 frequency=10000000 seconds=5.003021
+FRAME_TIMING mode=partial-body connection=4 accepted=5919761559001 closed=5919811588858 frequency=10000000 seconds=5.002986
+FRAME_TIMING mode=partial-body connection=5 accepted=5919761559064 closed=5919811587602 frequency=10000000 seconds=5.002854
+FRAME_TIMING mode=partial-body connection=6 accepted=5919761560995 closed=5919811587868 frequency=10000000 seconds=5.002687
+FRAME_TIMING mode=partial-body connection=7 accepted=5919761561135 closed=5919811587466 frequency=10000000 seconds=5.002633
+FRAME_TIMING mode=partial-body connection=8 accepted=5919761562101 closed=5919811589106 frequency=10000000 seconds=5.002701
+FAIL All eight partial-body slots expire once and admit a valid successor: AggregateException One or more errors occurred.
+System.AggregateException: One or more errors occurred. ---> System.ObjectDisposedException: Safe handle has been closed
+   at System.Runtime.InteropServices.SafeHandle.DangerousAddRef(Boolean& success)
+   at System.StubHelpers.StubHelpers.SafeHandleAddRef(SafeHandle pHandle, Boolean& success)
+   at Microsoft.Win32.UnsafeNativeMethods.CancelIoEx(SafeHandle handle, NativeOverlapped* lpOverlapped)
+   at System.IO.Pipes.IOCancellationHelper.Cancel()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.CancellationCallbackInfo.ExecuteCallback()
+   at System.Threading.CancellationTokenSource.ExecuteCallbackHandlers(Boolean throwOnFirstException)
+   --- End of inner exception stack trace ---
+   at System.Threading.CancellationTokenSource.ExecuteCallbackHandlers(Boolean throwOnFirstException)
+   at System.Threading.CancellationTokenSource.NotifyCancellation(Boolean throwOnFirstException)
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.StopAsync() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 54
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass10_1.<<PipeTransportTests>b__6>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeTransportTests.cs:line 65
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__21.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 34
+---> (Inner Exception #0) System.ObjectDisposedException: Safe handle has been closed
+   at System.Runtime.InteropServices.SafeHandle.DangerousAddRef(Boolean& success)
+   at System.StubHelpers.StubHelpers.SafeHandleAddRef(SafeHandle pHandle, Boolean& success)
+   at Microsoft.Win32.UnsafeNativeMethods.CancelIoEx(SafeHandle handle, NativeOverlapped* lpOverlapped)
+   at System.IO.Pipes.IOCancellationHelper.Cancel()
+   at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.CancellationCallbackInfo.ExecuteCallback()
+   at System.Threading.CancellationTokenSource.ExecuteCallbackHandlers(Boolean throwOnFirstException)<---
+
+FRAME_TIMING mode=trickle connection=1 accepted=5919813448399 closed=5919863578879 frequency=10000000 seconds=5.013048
+FRAME_TIMING mode=trickle connection=2 accepted=5919813448928 closed=5919863580385 frequency=10000000 seconds=5.013146
+FRAME_TIMING mode=trickle connection=3 accepted=5919813449018 closed=5919863578934 frequency=10000000 seconds=5.012992
+FRAME_TIMING mode=trickle connection=4 accepted=5919813449179 closed=5919863578723 frequency=10000000 seconds=5.012954
+FRAME_TIMING mode=trickle connection=5 accepted=5919813449284 closed=5919863578724 frequency=10000000 seconds=5.012944
+FRAME_TIMING mode=trickle connection=6 accepted=5919813449685 closed=5919863578723 frequency=10000000 seconds=5.012904
+FRAME_TIMING mode=trickle connection=7 accepted=5919813449731 closed=5919863580108 frequency=10000000 seconds=5.013038
+FRAME_TIMING mode=trickle connection=8 accepted=5919813450426 closed=5919863578937 frequency=10000000 seconds=5.012851
+PASS All eight trickle slots expire once and admit a valid successor
+PASS Disconnect cancels work and frees connection before callback quiescence
+PASS Stop closes idle and partial receive connections with no dispatch
+PASS Lazy provider retries before binding and never follows a replacement session
+PASS net48 child endpoint serves modern client and removes its descriptor on stop
+Pipe tests: 12 passed; 1 failed.

@@ -1,9 +1,27 @@
 [CmdletBinding()]
-param([ValidateSet('Protocol','Framing','All')][string]$Suite = 'Protocol')
+param([ValidateSet('Protocol','Framing','Pipe','All')][string]$Suite = 'Protocol')
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path $PSScriptRoot -Parent
 Push-Location $projectRoot
 try {
+    if ($Suite -in @('Pipe','All')) {
+        & dotnet build 'tests/bridge-tests/BimAgentLab.Bridge.Tests.csproj' -c Release --nologo -p:RestoreLockedMode=true
+        if ($LASTEXITCODE -ne 0) { throw 'Bridge dual-target build failed.' }
+        $pipeRun = Join-Path (Get-Location) ('samples/local/pipe-evidence/' + [guid]::NewGuid().ToString('N'))
+        New-Item -ItemType Directory -Path $pipeRun -Force | Out-Null
+        $pipeLog = Join-Path $pipeRun 'pipe-output.txt'
+        $pipeFailures = @()
+        foreach ($framework in @('net48','net10.0')) {
+            "PIPE_TARGET framework=$framework" | Tee-Object -FilePath $pipeLog -Append
+            & "./tests/bridge-tests/bin/Release/$framework/BimAgentLab.Bridge.Tests.exe" --pipe 2>&1 | Tee-Object -FilePath $pipeLog -Append
+            if ($LASTEXITCODE -ne 0) { $pipeFailures += $framework }
+        }
+        if ($pipeFailures.Count -ne 0) { throw "Pipe behavioral tests failed: $($pipeFailures -join ', ')" }
+        'PIPE_SUITE_COMPLETE' | Tee-Object -FilePath $pipeLog -Append
+        & python tests/verify_pipe_evidence.py $pipeLog
+        if ($LASTEXITCODE -ne 0) { throw 'Independent pipe evidence verification failed.' }
+        Write-Output "PIPE_EVIDENCE path=$pipeRun"
+    }
     if ($Suite -in @('Framing','All')) {
         & dotnet build 'tests/bridge-tests/BimAgentLab.Bridge.Tests.csproj' -c Release --nologo -p:RestoreLockedMode=true
         if ($LASTEXITCODE -ne 0) { throw 'Bridge dual-target build failed.' }

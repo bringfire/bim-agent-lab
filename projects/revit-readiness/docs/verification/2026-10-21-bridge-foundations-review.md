@@ -1,5 +1,7 @@
 # Task 2 review corrections — 2026-10-21
 
+**Subsequent status:** [independent follow-up](../../../../docs/superpowers/reviews/revit-mcp-bridge/2026-10-21-task-2-follow-up.md) closed T2-01/02/03 at `3cefe5116ec1368e0bfdcc387209bbb1e176df66` and recommended Task 3. The original correction-stage record below is retained as history.
+
 **All three reported defects reproduced and were corrected; final offline verification is recorded below. Independent follow-up review remains pending.** Task 3 was not started. This is a correction to the initial Task 2 increment, not a change to the SDK or desktop compatibility policy.
 
 Baseline: **`eefb1563fdf7073dc7065668da355b0642f99709`** on `feat/revit-mcp-bridge`. The checkpoint is the commit titled **`fix: preserve bridge strings and correct completeness evidence`** that first adds this record. Locate its exact hash with `git log --diff-filter=A --format="%H %s" -- projects/revit-readiness/docs/verification/2026-10-21-bridge-foundations-review.md`.

@@ -1,0 +1,29 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net48\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net48\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.Bridge.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\bin\Release\net48\BimAgentLab.Bridge.Tests.exe
+  BimAgentLab.Bridge.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\bin\Release\net10.0\BimAgentLab.Bridge.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.42
+FAIL Catalog refuses zero or ambiguous instances and honors explicit PID: NotImplementedException The method or operation is not implemented.
+FAIL Native identity verifies process start, logon, session and pipe identity: NotImplementedException The method or operation is not implemented.
+FAIL Published descriptors are restricted, selected and removed only by their owner: NotImplementedException The method or operation is not implemented.
+FAIL Stale and changed descriptors cannot be selected or silently deleted: NotImplementedException The method or operation is not implemented.
+Pipe tests: 0 passed; 4 failed.
+FAIL Catalog refuses zero or ambiguous instances and honors explicit PID: NotImplementedException The method or operation is not implemented.
+FAIL Native identity verifies process start, logon, session and pipe identity: NotImplementedException The method or operation is not implemented.
+FAIL Published descriptors are restricted, selected and removed only by their owner: NotImplementedException The method or operation is not implemented.
+FAIL Stale and changed descriptors cannot be selected or silently deleted: NotImplementedException The method or operation is not implemented.
+Pipe tests: 0 passed; 4 failed.
+Exception: D:\bim-agent-lab\projects\revit-readiness\scripts\Test-McpBridge.ps1:15
+Line |
+  15 |  … nt -ne 0) { throw "Pipe behavioral tests failed: $($pipeFailures -joi …
+     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Pipe behavioral tests failed: net48, net10.0
