@@ -1,0 +1,145 @@
+PIPE_TARGET framework=net48
+PASS Catalog refuses zero or ambiguous instances and honors explicit PID
+PASS Native identity verifies process start, logon, session and pipe identity
+PASS Published descriptors are restricted, selected and removed only by their owner
+PASS Stale and changed descriptors cannot be selected or silently deleted
+PASS Two real pipe clients preserve separate request and session identities
+FRAME_TIMING mode=no-bytes connection=1 accepted=5955106393032 closed=5955156525144 frequency=10000000 seconds=5.013211
+FRAME_TIMING mode=no-bytes connection=2 accepted=5955106396188 closed=5955156525167 frequency=10000000 seconds=5.012898
+FRAME_TIMING mode=no-bytes connection=3 accepted=5955106396342 closed=5955156525142 frequency=10000000 seconds=5.012880
+FRAME_TIMING mode=no-bytes connection=4 accepted=5955106396529 closed=5955156525172 frequency=10000000 seconds=5.012864
+FRAME_TIMING mode=no-bytes connection=5 accepted=5955106396645 closed=5955156525140 frequency=10000000 seconds=5.012850
+FRAME_TIMING mode=no-bytes connection=6 accepted=5955106396880 closed=5955156525231 frequency=10000000 seconds=5.012835
+FRAME_TIMING mode=no-bytes connection=7 accepted=5955106398851 closed=5955156527367 frequency=10000000 seconds=5.012852
+FRAME_TIMING mode=no-bytes connection=8 accepted=5955106400232 closed=5955156525828 frequency=10000000 seconds=5.012560
+PASS All eight no-bytes slots expire once and admit a valid successor
+FRAME_TIMING mode=partial-header connection=1 accepted=5955157840899 closed=5955207980780 frequency=10000000 seconds=5.013988
+FRAME_TIMING mode=partial-header connection=2 accepted=5955157841573 closed=5955207983124 frequency=10000000 seconds=5.014155
+FRAME_TIMING mode=partial-header connection=3 accepted=5955157841799 closed=5955207981013 frequency=10000000 seconds=5.013921
+FRAME_TIMING mode=partial-header connection=4 accepted=5955157841931 closed=5955207980394 frequency=10000000 seconds=5.013846
+FRAME_TIMING mode=partial-header connection=5 accepted=5955157842081 closed=5955207980561 frequency=10000000 seconds=5.013848
+FRAME_TIMING mode=partial-header connection=6 accepted=5955157842163 closed=5955207980439 frequency=10000000 seconds=5.013828
+FRAME_TIMING mode=partial-header connection=7 accepted=5955157843653 closed=5955207980440 frequency=10000000 seconds=5.013679
+FRAME_TIMING mode=partial-header connection=8 accepted=5955157845117 closed=5955207980698 frequency=10000000 seconds=5.013558
+PASS All eight partial-header slots expire once and admit a valid successor
+FRAME_TIMING mode=partial-body connection=1 accepted=5955209551933 closed=5955259667836 frequency=10000000 seconds=5.011590
+FRAME_TIMING mode=partial-body connection=2 accepted=5955209552494 closed=5955259667138 frequency=10000000 seconds=5.011464
+FRAME_TIMING mode=partial-body connection=3 accepted=5955209552659 closed=5955259666858 frequency=10000000 seconds=5.011420
+FRAME_TIMING mode=partial-body connection=4 accepted=5955209552777 closed=5955259667180 frequency=10000000 seconds=5.011440
+FRAME_TIMING mode=partial-body connection=5 accepted=5955209552835 closed=5955259666656 frequency=10000000 seconds=5.011382
+FRAME_TIMING mode=partial-body connection=6 accepted=5955209553108 closed=5955259666957 frequency=10000000 seconds=5.011385
+FRAME_TIMING mode=partial-body connection=8 accepted=5955209553537 closed=5955259667159 frequency=10000000 seconds=5.011362
+FRAME_TIMING mode=partial-body connection=7 accepted=5955209553537 closed=5955259666719 frequency=10000000 seconds=5.011318
+PASS All eight partial-body slots expire once and admit a valid successor
+FRAME_TIMING mode=trickle connection=1 accepted=5955261165248 closed=5955311244385 frequency=10000000 seconds=5.007914
+FRAME_TIMING mode=trickle connection=2 accepted=5955261165775 closed=5955311243551 frequency=10000000 seconds=5.007778
+FRAME_TIMING mode=trickle connection=3 accepted=5955261166146 closed=5955311243413 frequency=10000000 seconds=5.007727
+FRAME_TIMING mode=trickle connection=4 accepted=5955261166432 closed=5955311244086 frequency=10000000 seconds=5.007765
+FRAME_TIMING mode=trickle connection=5 accepted=5955261167012 closed=5955311247029 frequency=10000000 seconds=5.008002
+FRAME_TIMING mode=trickle connection=6 accepted=5955261167407 closed=5955311243413 frequency=10000000 seconds=5.007601
+FRAME_TIMING mode=trickle connection=7 accepted=5955261167596 closed=5955311244038 frequency=10000000 seconds=5.007644
+FRAME_TIMING mode=trickle connection=8 accepted=5955261167683 closed=5955311243429 frequency=10000000 seconds=5.007575
+PASS All eight trickle slots expire once and admit a valid successor
+PASS Disconnect cancels work and frees connection before callback quiescence
+PASS Stop closes idle and partial receive connections with no dispatch
+PASS Lazy provider retries before binding and never follows a replacement session
+PASS net48 child endpoint serves simultaneous clients and large Unicode results, then removes its descriptor
+PEER_EXIT exited before identity validation; runtime=4.0.30319.42000
+PEER_EXIT recoveredSlots=8 submissionsBeforeValidRequest=0 stops=2 replacementSelected=true
+PASS Client exit before identity validation restores all eight slots and permits shutdown and restart
+CALLBACK_FAULT ownerStop=True descriptorRemoved=true lifetimeDisposedAfterQuiescence=true errorRetained=true
+PASS Throwing cancellation callback cannot skip shutdown cleanup
+CALLBACK_FAULT ownerStop=False descriptorRemoved=true lifetimeDisposedAfterQuiescence=true errorRetained=true
+PASS Throwing cancellation callback cannot skip deferred lifetime cleanup on disconnect
+WORKER_FAULT cleanupRetried=False descriptorRemoved=true originalErrorRetained=true replacementSelected=true
+PASS Unexpected worker fault still cleans owned descriptor and preserves its error
+WORKER_FAULT cleanupRetried=True descriptorRemoved=true originalErrorRetained=true replacementSelected=true
+PASS Unexpected worker fault still cleans owned descriptor after a retryable cleanup failure
+PASS Native pipe is asynchronous byte mode and a foreign-logon ACL denies access
+PASS Failed descriptor publication unwinds every acquired native pipe
+PASS Stop releases network even if descriptor cleanup fails and can retry cleanup
+PASS Valid expired and beyond-policy requests get correlated failures without dispatch
+PASS Submit errors retain correlation and unexpected errors expose no stack or message
+PASS Client rejects wrong response request, session, contract and malformed JSON
+PASS Client connect is capped at two seconds and respects a shorter original budget
+PASS Frame receipt consumes the request's existing budget
+PASS Stop during a blocked large response write releases the network worker
+PASS Cancellation and expiry during selection prevent binding or a connection
+PASS Actual foreign server PID is rejected before any request bytes
+PASS Provider rejects ambiguity through its real call path and retries only before binding
+PASS Stop at the acceptance handoff prevents parsing and submission
+PASS Failed duplicate start cannot remove the live owner's descriptor
+Pipe tests: 32 passed; 0 failed.
+PIPE_TARGET framework=net10.0
+PASS Catalog refuses zero or ambiguous instances and honors explicit PID
+PASS Native identity verifies process start, logon, session and pipe identity
+PASS Published descriptors are restricted, selected and removed only by their owner
+PASS Stale and changed descriptors cannot be selected or silently deleted
+PASS Two real pipe clients preserve separate request and session identities
+FRAME_TIMING mode=no-bytes connection=1 accepted=5955402316546 closed=5955452437255 frequency=10000000 seconds=5.012071
+FRAME_TIMING mode=no-bytes connection=2 accepted=5955402322006 closed=5955452437208 frequency=10000000 seconds=5.011520
+FRAME_TIMING mode=no-bytes connection=3 accepted=5955402322469 closed=5955452437170 frequency=10000000 seconds=5.011470
+FRAME_TIMING mode=no-bytes connection=4 accepted=5955402322658 closed=5955452438094 frequency=10000000 seconds=5.011544
+FRAME_TIMING mode=no-bytes connection=5 accepted=5955402322840 closed=5955452437198 frequency=10000000 seconds=5.011436
+FRAME_TIMING mode=no-bytes connection=6 accepted=5955402325487 closed=5955452437225 frequency=10000000 seconds=5.011174
+FRAME_TIMING mode=no-bytes connection=7 accepted=5955402325698 closed=5955452437623 frequency=10000000 seconds=5.011192
+FRAME_TIMING mode=no-bytes connection=8 accepted=5955402325712 closed=5955452438041 frequency=10000000 seconds=5.011233
+PASS All eight no-bytes slots expire once and admit a valid successor
+FRAME_TIMING mode=partial-header connection=1 accepted=5955453790077 closed=5955503842778 frequency=10000000 seconds=5.005270
+FRAME_TIMING mode=partial-header connection=2 accepted=5955453790476 closed=5955503842764 frequency=10000000 seconds=5.005229
+FRAME_TIMING mode=partial-header connection=3 accepted=5955453790721 closed=5955503843245 frequency=10000000 seconds=5.005252
+FRAME_TIMING mode=partial-header connection=4 accepted=5955453791011 closed=5955503843645 frequency=10000000 seconds=5.005263
+FRAME_TIMING mode=partial-header connection=5 accepted=5955453791012 closed=5955503842751 frequency=10000000 seconds=5.005174
+FRAME_TIMING mode=partial-header connection=6 accepted=5955453791193 closed=5955503843691 frequency=10000000 seconds=5.005250
+FRAME_TIMING mode=partial-header connection=7 accepted=5955453791262 closed=5955503842827 frequency=10000000 seconds=5.005157
+FRAME_TIMING mode=partial-header connection=8 accepted=5955453791447 closed=5955503843277 frequency=10000000 seconds=5.005183
+PASS All eight partial-header slots expire once and admit a valid successor
+FRAME_TIMING mode=partial-body connection=1 accepted=5955505162672 closed=5955555219516 frequency=10000000 seconds=5.005684
+FRAME_TIMING mode=partial-body connection=2 accepted=5955505162981 closed=5955555217689 frequency=10000000 seconds=5.005471
+FRAME_TIMING mode=partial-body connection=3 accepted=5955505163015 closed=5955555217718 frequency=10000000 seconds=5.005470
+FRAME_TIMING mode=partial-body connection=4 accepted=5955505163061 closed=5955555217823 frequency=10000000 seconds=5.005476
+FRAME_TIMING mode=partial-body connection=5 accepted=5955505163551 closed=5955555217687 frequency=10000000 seconds=5.005414
+FRAME_TIMING mode=partial-body connection=6 accepted=5955505163868 closed=5955555217892 frequency=10000000 seconds=5.005402
+FRAME_TIMING mode=partial-body connection=7 accepted=5955505164400 closed=5955555217695 frequency=10000000 seconds=5.005330
+FRAME_TIMING mode=partial-body connection=8 accepted=5955505164421 closed=5955555218477 frequency=10000000 seconds=5.005406
+PASS All eight partial-body slots expire once and admit a valid successor
+FRAME_TIMING mode=trickle connection=1 accepted=5955556725267 closed=5955606874481 frequency=10000000 seconds=5.014921
+FRAME_TIMING mode=trickle connection=2 accepted=5955556725334 closed=5955606873902 frequency=10000000 seconds=5.014857
+FRAME_TIMING mode=trickle connection=3 accepted=5955556725347 closed=5955606873507 frequency=10000000 seconds=5.014816
+FRAME_TIMING mode=trickle connection=4 accepted=5955556725589 closed=5955606873504 frequency=10000000 seconds=5.014792
+FRAME_TIMING mode=trickle connection=5 accepted=5955556725785 closed=5955606874102 frequency=10000000 seconds=5.014832
+FRAME_TIMING mode=trickle connection=6 accepted=5955556726044 closed=5955606873690 frequency=10000000 seconds=5.014765
+FRAME_TIMING mode=trickle connection=7 accepted=5955556726085 closed=5955606873813 frequency=10000000 seconds=5.014773
+FRAME_TIMING mode=trickle connection=8 accepted=5955556726574 closed=5955606874234 frequency=10000000 seconds=5.014766
+PASS All eight trickle slots expire once and admit a valid successor
+PASS Disconnect cancels work and frees connection before callback quiescence
+PASS Stop closes idle and partial receive connections with no dispatch
+PASS Lazy provider retries before binding and never follows a replacement session
+PASS net48 child endpoint serves simultaneous clients and large Unicode results, then removes its descriptor
+PEER_EXIT exited before identity validation; runtime=10.0.13
+PEER_EXIT recoveredSlots=8 submissionsBeforeValidRequest=0 stops=2 replacementSelected=true
+PASS Client exit before identity validation restores all eight slots and permits shutdown and restart
+CALLBACK_FAULT ownerStop=True descriptorRemoved=true lifetimeDisposedAfterQuiescence=true errorRetained=true
+PASS Throwing cancellation callback cannot skip shutdown cleanup
+CALLBACK_FAULT ownerStop=False descriptorRemoved=true lifetimeDisposedAfterQuiescence=true errorRetained=true
+PASS Throwing cancellation callback cannot skip deferred lifetime cleanup on disconnect
+WORKER_FAULT cleanupRetried=False descriptorRemoved=true originalErrorRetained=true replacementSelected=true
+PASS Unexpected worker fault still cleans owned descriptor and preserves its error
+WORKER_FAULT cleanupRetried=True descriptorRemoved=true originalErrorRetained=true replacementSelected=true
+PASS Unexpected worker fault still cleans owned descriptor after a retryable cleanup failure
+PASS Native pipe is asynchronous byte mode and a foreign-logon ACL denies access
+PASS Failed descriptor publication unwinds every acquired native pipe
+PASS Stop releases network even if descriptor cleanup fails and can retry cleanup
+PASS Valid expired and beyond-policy requests get correlated failures without dispatch
+PASS Submit errors retain correlation and unexpected errors expose no stack or message
+PASS Client rejects wrong response request, session, contract and malformed JSON
+PASS Client connect is capped at two seconds and respects a shorter original budget
+PASS Frame receipt consumes the request's existing budget
+PASS Stop during a blocked large response write releases the network worker
+PASS Cancellation and expiry during selection prevent binding or a connection
+PASS Actual foreign server PID is rejected before any request bytes
+PASS Provider rejects ambiguity through its real call path and retries only before binding
+PASS Stop at the acceptance handoff prevents parsing and submission
+PASS Failed duplicate start cannot remove the live owner's descriptor
+Pipe tests: 32 passed; 0 failed.
+PIPE_SUITE_COMPLETE

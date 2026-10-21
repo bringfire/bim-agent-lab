@@ -1,0 +1,167 @@
+{
+  "date": "2026-10-21",
+  "baseline": "3e20251a966c826fea4d4c2968b6be9a43e97842",
+  "scope": "Task 3 peer-exit and exceptional-completion corrections; independent follow-up pending; no Revit/A8",
+  "files": [
+    {
+      "path": "all-offline-green.txt",
+      "bytes": 29146,
+      "sha256": "4c96c1b160f6be5a87c5847be3a2a1ccdf6ef4dea66da1dd5bd93cf80d747456"
+    },
+    {
+      "path": "assembly-references.json",
+      "bytes": 1712,
+      "sha256": "d7abf8c4374d0bbf7b7b8b81245fea9bfa1abec76516ca4dde77520400b35e88"
+    },
+    {
+      "path": "environment.json",
+      "bytes": 270,
+      "sha256": "8835d84d11a1ae0638913cc2b056774d6e4d163ef014063e926b237ba5b82fae"
+    },
+    {
+      "path": "exchange/net10.0/context.json",
+      "bytes": 375,
+      "sha256": "a339e604a2fbba285c2fca2b238ebc4a970ded58c3fdb485df6ee257c97b54d8"
+    },
+    {
+      "path": "exchange/net10.0/date-context-escaped.json",
+      "bytes": 388,
+      "sha256": "2fdad39c4516e68cb7dac24b764eeaa26b2cde5ec9178f48d4909011f8f1e653"
+    },
+    {
+      "path": "exchange/net10.0/date-context-plain.json",
+      "bytes": 384,
+      "sha256": "e7e551e5aeedd89db3b0e172831723f173653ceb473b7bf94c5676ffb50c9afa"
+    },
+    {
+      "path": "exchange/net10.0/request.json",
+      "bytes": 170,
+      "sha256": "ce92a54a31cffd88e0d7cf3f78cacb2b74f61f9d18db7285a02f6eef382e7a8f"
+    },
+    {
+      "path": "exchange/net10.0/response.json",
+      "bytes": 397,
+      "sha256": "11ec4b72e8ba63e3c7c737c27a36932ac650ce9f65480222d0371a61eaaad78a"
+    },
+    {
+      "path": "exchange/net48/context.json",
+      "bytes": 375,
+      "sha256": "a339e604a2fbba285c2fca2b238ebc4a970ded58c3fdb485df6ee257c97b54d8"
+    },
+    {
+      "path": "exchange/net48/date-context-escaped.json",
+      "bytes": 388,
+      "sha256": "2fdad39c4516e68cb7dac24b764eeaa26b2cde5ec9178f48d4909011f8f1e653"
+    },
+    {
+      "path": "exchange/net48/date-context-plain.json",
+      "bytes": 384,
+      "sha256": "e7e551e5aeedd89db3b0e172831723f173653ceb473b7bf94c5676ffb50c9afa"
+    },
+    {
+      "path": "exchange/net48/request.json",
+      "bytes": 170,
+      "sha256": "ce92a54a31cffd88e0d7cf3f78cacb2b74f61f9d18db7285a02f6eef382e7a8f"
+    },
+    {
+      "path": "exchange/net48/response.json",
+      "bytes": 397,
+      "sha256": "11ec4b72e8ba63e3c7c737c27a36932ac650ce9f65480222d0371a61eaaad78a"
+    },
+    {
+      "path": "net10.0-callback-red.txt",
+      "bytes": 2678,
+      "sha256": "cfad17f302b54dd0f96bc6a5381b3ac3c67f3799adb40d8b4cfd95d1ad7f0731"
+    },
+    {
+      "path": "net10.0-green.txt",
+      "bytes": 1071,
+      "sha256": "d179f88567954a15906da6db4fd86314543870acfe3fae369ee4d6afe11d16d3"
+    },
+    {
+      "path": "net10.0-red.txt",
+      "bytes": 5648,
+      "sha256": "3603493db8e45f8883a89a9c2b7345d5cb8c3728b3e19933e685cac674e7b05e"
+    },
+    {
+      "path": "net48-callback-red.txt",
+      "bytes": 3716,
+      "sha256": "68baf9ce131617849aa0d113ecf98ffaa10aa7f0d12800da17422989bdd5b2a8"
+    },
+    {
+      "path": "net48-green.txt",
+      "bytes": 1079,
+      "sha256": "0ee58aece8840cc1d8b86e697d33c2b48086479c3d3d3172d88730c21f7ddb44"
+    },
+    {
+      "path": "net48-red.txt",
+      "bytes": 7713,
+      "sha256": "eb85cf44c1862e718759c49594820ec875d25e7bbbaa714ef2cebcbc132bac7f"
+    },
+    {
+      "path": "pipe-output.txt",
+      "bytes": 14349,
+      "sha256": "66aaab9f99e8302dbf27d6d617ead919f11775a4f96f04d4aa5067ab35e0edc3"
+    },
+    {
+      "path": "protocol/2025-06-18-compatible/client-to-server.jsonl",
+      "bytes": 525,
+      "sha256": "0c0ee15a6a309cfc5be76323b5a4400192fa3d4103b69f3a85377828643f7247"
+    },
+    {
+      "path": "protocol/2025-06-18-compatible/server-to-client.jsonl",
+      "bytes": 1102,
+      "sha256": "b7dfb6acc305927924b9a416fcfbb425279eb63d86dbd3dd04a6275b2095456a"
+    },
+    {
+      "path": "protocol/2025-11-25-compatible/client-to-server.jsonl",
+      "bytes": 525,
+      "sha256": "edc189918efe522c685348a98992fc4c1b5d97cb3ce072c821a294666f876ddb"
+    },
+    {
+      "path": "protocol/2025-11-25-compatible/server-to-client.jsonl",
+      "bytes": 1102,
+      "sha256": "2aac23e8f2d6dfe9a16fb5241783c15e8de332af347817e59e4daf0fe30b4f86"
+    },
+    {
+      "path": "protocol/2026-07-28-compatible/client-to-server.jsonl",
+      "bytes": 1162,
+      "sha256": "2280004f874c20d3f1fdf563f040233b7e10b6eac3d897e0eada2e0dd34aced4"
+    },
+    {
+      "path": "protocol/2026-07-28-compatible/server-to-client.jsonl",
+      "bytes": 1572,
+      "sha256": "2ce70baef931472e971cb472720eca767673c66ddd9b6818605dbed7f3b0e254"
+    },
+    {
+      "path": "protocol/2026-07-28-strict/client-to-server.jsonl",
+      "bytes": 1162,
+      "sha256": "2280004f874c20d3f1fdf563f040233b7e10b6eac3d897e0eada2e0dd34aced4"
+    },
+    {
+      "path": "protocol/2026-07-28-strict/server-to-client.jsonl",
+      "bytes": 1572,
+      "sha256": "2ce70baef931472e971cb472720eca767673c66ddd9b6818605dbed7f3b0e254"
+    },
+    {
+      "path": "readiness-green.txt",
+      "bytes": 3091,
+      "sha256": "2e48b24ef48cb8fd61592d41553a5050d80661d39d4b90cf93fafd27a6662437"
+    },
+    {
+      "path": "reviewer-peer-exit.txt",
+      "bytes": 3385,
+      "sha256": "d4a851461736bcc18d588164bb987bcda147cd6e91675d249b619273c6f015e0"
+    },
+    {
+      "path": "timing-summary.json",
+      "bytes": 345,
+      "sha256": "548df233bd58b7ddc88bc1bf0f9d18624dd5f7341ba9486593db0b8f614daf19"
+    },
+    {
+      "path": "verifier-negative-controls.txt",
+      "bytes": 300,
+      "sha256": "fd4604f8c017fed9b244b1ae3c249dbd3f25b79f32e427410daf0e7a05e80a94"
+    }
+  ]
+}

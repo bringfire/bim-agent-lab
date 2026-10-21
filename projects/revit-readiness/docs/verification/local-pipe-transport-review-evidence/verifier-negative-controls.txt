@@ -1,0 +1,7 @@
+PASS rejects missing completion marker
+PASS rejects failed summary
+PASS rejects missing connection
+PASS rejects duplicate connection
+PASS rejects late cleanup
+PASS rejects printed duration disagrees
+PASS original 27-case evidence requires explicit historical count; current default rejects it

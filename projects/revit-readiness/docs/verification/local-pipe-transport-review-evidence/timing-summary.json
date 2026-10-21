@@ -1,0 +1,16 @@
+{
+  "pass": true,
+  "targets": {
+    "net48": {
+      "cases": 32,
+      "stalledConnections": 32,
+      "maximumCleanupSeconds": 5.0141551
+    },
+    "net10.0": {
+      "cases": 32,
+      "stalledConnections": 32,
+      "maximumCleanupSeconds": 5.0149214
+    }
+  },
+  "scope": "Windows IPC; no Revit or desktop A8 acceptance"
+}

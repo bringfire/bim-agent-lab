@@ -31,4 +31,12 @@ internal static partial class Program
         int received = await pipe.ReadAsync(new byte[1], 0, 1, CancellationToken.None);
         Console.WriteLine("BYTES " + received); return received == 0 ? 0 : 1;
     }
+    static async Task<int> PipeConnectExit(string pipeName)
+    {
+        using var pipe = new System.IO.Pipes.NamedPipeClientStream(".", pipeName,
+            System.IO.Pipes.PipeDirection.InOut, System.IO.Pipes.PipeOptions.Asynchronous);
+        await pipe.ConnectAsync(2000);
+        Console.WriteLine("CONNECTED"); Console.Out.Flush();
+        return Console.ReadLine() == "exit" ? 0 : 1;
+    }
 }

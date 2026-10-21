@@ -1,0 +1,36 @@
+PEER_EXIT exited before identity validation; runtime=4.0.30319.42000
+PEER_EXIT recoveredSlots=8 submissionsBeforeValidRequest=0 stops=2 replacementSelected=true
+PASS Client exit before identity validation restores all eight slots and permits shutdown and restart
+FAIL Throwing cancellation callback cannot skip shutdown cleanup: TimeoutException Condition did not settle.
+System.TimeoutException: Condition did not settle.
+   at BimAgentLab.Bridge.Tests.Program.<Until>d__23.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeTransportTests.cs:line 171
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass8_1.<<PipeReviewTests>b__11>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeReviewTests.cs:line 103
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass8_1.<<PipeReviewTests>b__11>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeReviewTests.cs:line 112
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__29.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 42
+FAIL Throwing cancellation callback cannot skip deferred lifetime cleanup on disconnect: TimeoutException Condition did not settle.
+System.TimeoutException: Condition did not settle.
+   at BimAgentLab.Bridge.Tests.Program.<Until>d__23.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeTransportTests.cs:line 171
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass8_1.<<PipeReviewTests>b__11>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeReviewTests.cs:line 103
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass8_1.<<PipeReviewTests>b__11>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeReviewTests.cs:line 112
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__29.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 42
+WORKER_FAULT cleanupRetried=False descriptorRemoved=true originalErrorRetained=true replacementSelected=true
+PASS Unexpected worker fault still cleans owned descriptor and preserves its error
+WORKER_FAULT cleanupRetried=True descriptorRemoved=true originalErrorRetained=true replacementSelected=true
+PASS Unexpected worker fault still cleans owned descriptor after a retryable cleanup failure
+Pipe review tests: 3 passed; 2 failed.

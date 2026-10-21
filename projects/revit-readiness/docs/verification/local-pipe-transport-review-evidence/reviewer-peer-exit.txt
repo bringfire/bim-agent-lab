@@ -1,0 +1,37 @@
+RUNTIME .NET Framework 4.8.10008.0
+CONNECTED
+CLIENT exited pid=196412
+WORKER FAULT System.AggregateException: One or more errors occurred. ---> System.ArgumentException: Process with an Id of 196412 is not running.
+   at System.Diagnostics.Process.GetProcessById(Int32 processId, String machineName)
+   at BimAgentLab.RevitBridge.Runtime.NativeWindows.ValidateClient(NamedPipeServerStream pipe, String logonSid, Int32 sessionId) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\NativeWindows.cs:line 19
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.<Handle>d__17.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 113
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.<Serve>d__16.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 90
+   --- End of inner exception stack trace ---
+---> (Inner Exception #0) System.ArgumentException: Process with an Id of 196412 is not running.
+   at System.Diagnostics.Process.GetProcessById(Int32 processId, String machineName)
+   at BimAgentLab.RevitBridge.Runtime.NativeWindows.ValidateClient(NamedPipeServerStream pipe, String logonSid, Int32 sessionId) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\NativeWindows.cs:line 19
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.<Handle>d__17.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 113
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.<Serve>d__16.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 90<---
+
+STOP FAIL ArgumentException: Process with an Id of 196412 is not running.
+STOP FAIL ArgumentException: Process with an Id of 196412 is not running.
+DESCRIPTOR remains=True
+RESTART selection FAIL AmbiguousRevitInstance
+RUNTIME .NET 10.0.13
+CONNECTED
+CLIENT exited pid=145512
+WORKER FAULT System.AggregateException: One or more errors occurred. (Process with an Id of 145512 is not running.)
+ ---> System.ArgumentException: Process with an Id of 145512 is not running.
+   at System.Diagnostics.Process.GetProcessById(Int32 processId, String machineName)
+   at BimAgentLab.RevitBridge.Runtime.NativeWindows.ValidateClient(NamedPipeServerStream pipe, String logonSid, Int32 sessionId) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\NativeWindows.cs:line 20
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.Handle(NamedPipeServerStream pipe, Int64 accepted, Func`2 submit) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 112
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.Serve(NamedPipeServerStream initial, Func`2 submit) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 90
+   --- End of inner exception stack trace ---
+STOP FAIL ArgumentException: Process with an Id of 145512 is not running.
+STOP FAIL ArgumentException: Process with an Id of 145512 is not running.
+DESCRIPTOR remains=True
+RESTART selection FAIL AmbiguousRevitInstance

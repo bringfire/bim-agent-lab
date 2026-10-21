@@ -1,0 +1,43 @@
+PEER_EXIT exited before identity validation; runtime=10.0.13
+PEER_EXIT cleanup failure: System.ArgumentException: Process with an Id of 60568 is not running.
+   at System.Diagnostics.Process.GetProcessById(Int32 processId, String machineName)
+   at BimAgentLab.RevitBridge.Runtime.NativeWindows.ValidateClient(NamedPipeServerStream pipe, String logonSid, Int32 sessionId) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\NativeWindows.cs:line 20
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.Handle(NamedPipeServerStream pipe, Int64 accepted, Func`2 submit) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 112
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.Serve(NamedPipeServerStream initial, Func`2 submit) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 90
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.FinishStop() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 62
+   at BimAgentLab.Bridge.Tests.Program.Within(Task task) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeTransportTests.cs:line 175
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<PipeReviewTests>b__8_0>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeReviewTests.cs:line 67
+FAIL Client exit before identity validation restores all eight slots and permits shutdown and restart: TimeoutException The operation has timed out.
+System.TimeoutException: The operation has timed out.
+   at System.IO.Pipes.NamedPipeClientStream.ConnectInternal(Int32 timeout, CancellationToken cancellationToken, Int32 startTime)
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+--- End of stack trace from previous location ---
+   at System.Threading.ExecutionContext.RunFromThreadPoolDispatchLoop(Thread threadPoolThread, ExecutionContext executionContext, ContextCallback callback, Object state)
+   at System.Threading.Tasks.Task.ExecuteWithThreadLocal(Task& currentTaskSlot, Thread threadPoolThread)
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<PipeReviewTests>b__8_0>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeReviewTests.cs:line 49
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<PipeReviewTests>b__8_0>d.MoveNext()
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 42
+FAIL Unexpected worker fault still cleans owned descriptor and preserves its error: Exception Worker fault skipped descriptor cleanup
+System.Exception: Worker fault skipped descriptor cleanup
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 46
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass8_1.<<PipeReviewTests>b__11>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeReviewTests.cs:line 101
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass8_1.<<PipeReviewTests>b__11>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeReviewTests.cs:line 110
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 42
+FAIL Unexpected worker fault still cleans owned descriptor after a retryable cleanup failure: InjectedWorkerException Exception of type 'BimAgentLab.Bridge.Tests.Program+InjectedWorkerException' was thrown.
+BimAgentLab.Bridge.Tests.Program+InjectedWorkerException: Exception of type 'BimAgentLab.Bridge.Tests.Program+InjectedWorkerException' was thrown.
+   at BimAgentLab.Bridge.Tests.Program.FailingReceiveClock.ElapsedSince(Int64 timestamp) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeReviewTests.cs:line 136
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.Handle(NamedPipeServerStream pipe, Int64 accepted, Func`2 submit) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 105
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.Serve(NamedPipeServerStream initial, Func`2 submit) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 90
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.FinishStop() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 62
+   at BimAgentLab.Bridge.Tests.Program.Within(Task task) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeTransportTests.cs:line 175
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass8_1.<<PipeReviewTests>b__11>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeReviewTests.cs:line 109
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass8_1.<<PipeReviewTests>b__11>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeReviewTests.cs:line 110
+--- End of stack trace from previous location ---
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 42
+Pipe review tests: 0 passed; 3 failed.

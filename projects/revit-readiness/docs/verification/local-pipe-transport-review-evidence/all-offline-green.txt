@@ -1,0 +1,393 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net48\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net48\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.Bridge.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\bin\Release\net48\BimAgentLab.Bridge.Tests.exe
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.Bridge.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\bin\Release\net10.0\BimAgentLab.Bridge.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.06
+PIPE_TARGET framework=net48
+PASS Catalog refuses zero or ambiguous instances and honors explicit PID
+PASS Native identity verifies process start, logon, session and pipe identity
+PASS Published descriptors are restricted, selected and removed only by their owner
+PASS Stale and changed descriptors cannot be selected or silently deleted
+PASS Two real pipe clients preserve separate request and session identities
+FRAME_TIMING mode=no-bytes connection=1 accepted=5955106393032 closed=5955156525144 frequency=10000000 seconds=5.013211
+FRAME_TIMING mode=no-bytes connection=2 accepted=5955106396188 closed=5955156525167 frequency=10000000 seconds=5.012898
+FRAME_TIMING mode=no-bytes connection=3 accepted=5955106396342 closed=5955156525142 frequency=10000000 seconds=5.012880
+FRAME_TIMING mode=no-bytes connection=4 accepted=5955106396529 closed=5955156525172 frequency=10000000 seconds=5.012864
+FRAME_TIMING mode=no-bytes connection=5 accepted=5955106396645 closed=5955156525140 frequency=10000000 seconds=5.012850
+FRAME_TIMING mode=no-bytes connection=6 accepted=5955106396880 closed=5955156525231 frequency=10000000 seconds=5.012835
+FRAME_TIMING mode=no-bytes connection=7 accepted=5955106398851 closed=5955156527367 frequency=10000000 seconds=5.012852
+FRAME_TIMING mode=no-bytes connection=8 accepted=5955106400232 closed=5955156525828 frequency=10000000 seconds=5.012560
+PASS All eight no-bytes slots expire once and admit a valid successor
+FRAME_TIMING mode=partial-header connection=1 accepted=5955157840899 closed=5955207980780 frequency=10000000 seconds=5.013988
+FRAME_TIMING mode=partial-header connection=2 accepted=5955157841573 closed=5955207983124 frequency=10000000 seconds=5.014155
+FRAME_TIMING mode=partial-header connection=3 accepted=5955157841799 closed=5955207981013 frequency=10000000 seconds=5.013921
+FRAME_TIMING mode=partial-header connection=4 accepted=5955157841931 closed=5955207980394 frequency=10000000 seconds=5.013846
+FRAME_TIMING mode=partial-header connection=5 accepted=5955157842081 closed=5955207980561 frequency=10000000 seconds=5.013848
+FRAME_TIMING mode=partial-header connection=6 accepted=5955157842163 closed=5955207980439 frequency=10000000 seconds=5.013828
+FRAME_TIMING mode=partial-header connection=7 accepted=5955157843653 closed=5955207980440 frequency=10000000 seconds=5.013679
+FRAME_TIMING mode=partial-header connection=8 accepted=5955157845117 closed=5955207980698 frequency=10000000 seconds=5.013558
+PASS All eight partial-header slots expire once and admit a valid successor
+FRAME_TIMING mode=partial-body connection=1 accepted=5955209551933 closed=5955259667836 frequency=10000000 seconds=5.011590
+FRAME_TIMING mode=partial-body connection=2 accepted=5955209552494 closed=5955259667138 frequency=10000000 seconds=5.011464
+FRAME_TIMING mode=partial-body connection=3 accepted=5955209552659 closed=5955259666858 frequency=10000000 seconds=5.011420
+FRAME_TIMING mode=partial-body connection=4 accepted=5955209552777 closed=5955259667180 frequency=10000000 seconds=5.011440
+FRAME_TIMING mode=partial-body connection=5 accepted=5955209552835 closed=5955259666656 frequency=10000000 seconds=5.011382
+FRAME_TIMING mode=partial-body connection=6 accepted=5955209553108 closed=5955259666957 frequency=10000000 seconds=5.011385
+FRAME_TIMING mode=partial-body connection=8 accepted=5955209553537 closed=5955259667159 frequency=10000000 seconds=5.011362
+FRAME_TIMING mode=partial-body connection=7 accepted=5955209553537 closed=5955259666719 frequency=10000000 seconds=5.011318
+PASS All eight partial-body slots expire once and admit a valid successor
+FRAME_TIMING mode=trickle connection=1 accepted=5955261165248 closed=5955311244385 frequency=10000000 seconds=5.007914
+FRAME_TIMING mode=trickle connection=2 accepted=5955261165775 closed=5955311243551 frequency=10000000 seconds=5.007778
+FRAME_TIMING mode=trickle connection=3 accepted=5955261166146 closed=5955311243413 frequency=10000000 seconds=5.007727
+FRAME_TIMING mode=trickle connection=4 accepted=5955261166432 closed=5955311244086 frequency=10000000 seconds=5.007765
+FRAME_TIMING mode=trickle connection=5 accepted=5955261167012 closed=5955311247029 frequency=10000000 seconds=5.008002
+FRAME_TIMING mode=trickle connection=6 accepted=5955261167407 closed=5955311243413 frequency=10000000 seconds=5.007601
+FRAME_TIMING mode=trickle connection=7 accepted=5955261167596 closed=5955311244038 frequency=10000000 seconds=5.007644
+FRAME_TIMING mode=trickle connection=8 accepted=5955261167683 closed=5955311243429 frequency=10000000 seconds=5.007575
+PASS All eight trickle slots expire once and admit a valid successor
+PASS Disconnect cancels work and frees connection before callback quiescence
+PASS Stop closes idle and partial receive connections with no dispatch
+PASS Lazy provider retries before binding and never follows a replacement session
+PASS net48 child endpoint serves simultaneous clients and large Unicode results, then removes its descriptor
+PEER_EXIT exited before identity validation; runtime=4.0.30319.42000
+PEER_EXIT recoveredSlots=8 submissionsBeforeValidRequest=0 stops=2 replacementSelected=true
+PASS Client exit before identity validation restores all eight slots and permits shutdown and restart
+CALLBACK_FAULT ownerStop=True descriptorRemoved=true lifetimeDisposedAfterQuiescence=true errorRetained=true
+PASS Throwing cancellation callback cannot skip shutdown cleanup
+CALLBACK_FAULT ownerStop=False descriptorRemoved=true lifetimeDisposedAfterQuiescence=true errorRetained=true
+PASS Throwing cancellation callback cannot skip deferred lifetime cleanup on disconnect
+WORKER_FAULT cleanupRetried=False descriptorRemoved=true originalErrorRetained=true replacementSelected=true
+PASS Unexpected worker fault still cleans owned descriptor and preserves its error
+WORKER_FAULT cleanupRetried=True descriptorRemoved=true originalErrorRetained=true replacementSelected=true
+PASS Unexpected worker fault still cleans owned descriptor after a retryable cleanup failure
+PASS Native pipe is asynchronous byte mode and a foreign-logon ACL denies access
+PASS Failed descriptor publication unwinds every acquired native pipe
+PASS Stop releases network even if descriptor cleanup fails and can retry cleanup
+PASS Valid expired and beyond-policy requests get correlated failures without dispatch
+PASS Submit errors retain correlation and unexpected errors expose no stack or message
+PASS Client rejects wrong response request, session, contract and malformed JSON
+PASS Client connect is capped at two seconds and respects a shorter original budget
+PASS Frame receipt consumes the request's existing budget
+PASS Stop during a blocked large response write releases the network worker
+PASS Cancellation and expiry during selection prevent binding or a connection
+PASS Actual foreign server PID is rejected before any request bytes
+PASS Provider rejects ambiguity through its real call path and retries only before binding
+PASS Stop at the acceptance handoff prevents parsing and submission
+PASS Failed duplicate start cannot remove the live owner's descriptor
+Pipe tests: 32 passed; 0 failed.
+PIPE_TARGET framework=net10.0
+PASS Catalog refuses zero or ambiguous instances and honors explicit PID
+PASS Native identity verifies process start, logon, session and pipe identity
+PASS Published descriptors are restricted, selected and removed only by their owner
+PASS Stale and changed descriptors cannot be selected or silently deleted
+PASS Two real pipe clients preserve separate request and session identities
+FRAME_TIMING mode=no-bytes connection=1 accepted=5955402316546 closed=5955452437255 frequency=10000000 seconds=5.012071
+FRAME_TIMING mode=no-bytes connection=2 accepted=5955402322006 closed=5955452437208 frequency=10000000 seconds=5.011520
+FRAME_TIMING mode=no-bytes connection=3 accepted=5955402322469 closed=5955452437170 frequency=10000000 seconds=5.011470
+FRAME_TIMING mode=no-bytes connection=4 accepted=5955402322658 closed=5955452438094 frequency=10000000 seconds=5.011544
+FRAME_TIMING mode=no-bytes connection=5 accepted=5955402322840 closed=5955452437198 frequency=10000000 seconds=5.011436
+FRAME_TIMING mode=no-bytes connection=6 accepted=5955402325487 closed=5955452437225 frequency=10000000 seconds=5.011174
+FRAME_TIMING mode=no-bytes connection=7 accepted=5955402325698 closed=5955452437623 frequency=10000000 seconds=5.011192
+FRAME_TIMING mode=no-bytes connection=8 accepted=5955402325712 closed=5955452438041 frequency=10000000 seconds=5.011233
+PASS All eight no-bytes slots expire once and admit a valid successor
+FRAME_TIMING mode=partial-header connection=1 accepted=5955453790077 closed=5955503842778 frequency=10000000 seconds=5.005270
+FRAME_TIMING mode=partial-header connection=2 accepted=5955453790476 closed=5955503842764 frequency=10000000 seconds=5.005229
+FRAME_TIMING mode=partial-header connection=3 accepted=5955453790721 closed=5955503843245 frequency=10000000 seconds=5.005252
+FRAME_TIMING mode=partial-header connection=4 accepted=5955453791011 closed=5955503843645 frequency=10000000 seconds=5.005263
+FRAME_TIMING mode=partial-header connection=5 accepted=5955453791012 closed=5955503842751 frequency=10000000 seconds=5.005174
+FRAME_TIMING mode=partial-header connection=6 accepted=5955453791193 closed=5955503843691 frequency=10000000 seconds=5.005250
+FRAME_TIMING mode=partial-header connection=7 accepted=5955453791262 closed=5955503842827 frequency=10000000 seconds=5.005157
+FRAME_TIMING mode=partial-header connection=8 accepted=5955453791447 closed=5955503843277 frequency=10000000 seconds=5.005183
+PASS All eight partial-header slots expire once and admit a valid successor
+FRAME_TIMING mode=partial-body connection=1 accepted=5955505162672 closed=5955555219516 frequency=10000000 seconds=5.005684
+FRAME_TIMING mode=partial-body connection=2 accepted=5955505162981 closed=5955555217689 frequency=10000000 seconds=5.005471
+FRAME_TIMING mode=partial-body connection=3 accepted=5955505163015 closed=5955555217718 frequency=10000000 seconds=5.005470
+FRAME_TIMING mode=partial-body connection=4 accepted=5955505163061 closed=5955555217823 frequency=10000000 seconds=5.005476
+FRAME_TIMING mode=partial-body connection=5 accepted=5955505163551 closed=5955555217687 frequency=10000000 seconds=5.005414
+FRAME_TIMING mode=partial-body connection=6 accepted=5955505163868 closed=5955555217892 frequency=10000000 seconds=5.005402
+FRAME_TIMING mode=partial-body connection=7 accepted=5955505164400 closed=5955555217695 frequency=10000000 seconds=5.005330
+FRAME_TIMING mode=partial-body connection=8 accepted=5955505164421 closed=5955555218477 frequency=10000000 seconds=5.005406
+PASS All eight partial-body slots expire once and admit a valid successor
+FRAME_TIMING mode=trickle connection=1 accepted=5955556725267 closed=5955606874481 frequency=10000000 seconds=5.014921
+FRAME_TIMING mode=trickle connection=2 accepted=5955556725334 closed=5955606873902 frequency=10000000 seconds=5.014857
+FRAME_TIMING mode=trickle connection=3 accepted=5955556725347 closed=5955606873507 frequency=10000000 seconds=5.014816
+FRAME_TIMING mode=trickle connection=4 accepted=5955556725589 closed=5955606873504 frequency=10000000 seconds=5.014792
+FRAME_TIMING mode=trickle connection=5 accepted=5955556725785 closed=5955606874102 frequency=10000000 seconds=5.014832
+FRAME_TIMING mode=trickle connection=6 accepted=5955556726044 closed=5955606873690 frequency=10000000 seconds=5.014765
+FRAME_TIMING mode=trickle connection=7 accepted=5955556726085 closed=5955606873813 frequency=10000000 seconds=5.014773
+FRAME_TIMING mode=trickle connection=8 accepted=5955556726574 closed=5955606874234 frequency=10000000 seconds=5.014766
+PASS All eight trickle slots expire once and admit a valid successor
+PASS Disconnect cancels work and frees connection before callback quiescence
+PASS Stop closes idle and partial receive connections with no dispatch
+PASS Lazy provider retries before binding and never follows a replacement session
+PASS net48 child endpoint serves simultaneous clients and large Unicode results, then removes its descriptor
+PEER_EXIT exited before identity validation; runtime=10.0.13
+PEER_EXIT recoveredSlots=8 submissionsBeforeValidRequest=0 stops=2 replacementSelected=true
+PASS Client exit before identity validation restores all eight slots and permits shutdown and restart
+CALLBACK_FAULT ownerStop=True descriptorRemoved=true lifetimeDisposedAfterQuiescence=true errorRetained=true
+PASS Throwing cancellation callback cannot skip shutdown cleanup
+CALLBACK_FAULT ownerStop=False descriptorRemoved=true lifetimeDisposedAfterQuiescence=true errorRetained=true
+PASS Throwing cancellation callback cannot skip deferred lifetime cleanup on disconnect
+WORKER_FAULT cleanupRetried=False descriptorRemoved=true originalErrorRetained=true replacementSelected=true
+PASS Unexpected worker fault still cleans owned descriptor and preserves its error
+WORKER_FAULT cleanupRetried=True descriptorRemoved=true originalErrorRetained=true replacementSelected=true
+PASS Unexpected worker fault still cleans owned descriptor after a retryable cleanup failure
+PASS Native pipe is asynchronous byte mode and a foreign-logon ACL denies access
+PASS Failed descriptor publication unwinds every acquired native pipe
+PASS Stop releases network even if descriptor cleanup fails and can retry cleanup
+PASS Valid expired and beyond-policy requests get correlated failures without dispatch
+PASS Submit errors retain correlation and unexpected errors expose no stack or message
+PASS Client rejects wrong response request, session, contract and malformed JSON
+PASS Client connect is capped at two seconds and respects a shorter original budget
+PASS Frame receipt consumes the request's existing budget
+PASS Stop during a blocked large response write releases the network worker
+PASS Cancellation and expiry during selection prevent binding or a connection
+PASS Actual foreign server PID is rejected before any request bytes
+PASS Provider rejects ambiguity through its real call path and retries only before binding
+PASS Stop at the acceptance handoff prevents parsing and submission
+PASS Failed duplicate start cannot remove the live owner's descriptor
+Pipe tests: 32 passed; 0 failed.
+PIPE_SUITE_COMPLETE
+{
+  "pass": true,
+  "targets": {
+    "net48": {
+      "cases": 32,
+      "stalledConnections": 32,
+      "maximumCleanupSeconds": 5.0141551
+    },
+    "net10.0": {
+      "cases": 32,
+      "stalledConnections": 32,
+      "maximumCleanupSeconds": 5.0149214
+    }
+  },
+  "scope": "Windows IPC; no Revit or desktop A8 acceptance"
+}
+PIPE_EVIDENCE path=D:\bim-agent-lab\projects\revit-readiness\samples\local\pipe-evidence\b9be668c29f34f03aedb8d3d1fdec727
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net48\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net48\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.Bridge.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\bin\Release\net48\BimAgentLab.Bridge.Tests.exe
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.Bridge.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\bin\Release\net10.0\BimAgentLab.Bridge.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.94
+PASS Fragmented headers and Unicode bodies larger than 8192 bytes survive
+PASS Coalesced frames leave the next frame unread
+PASS Header and body EOF cannot become a complete payload
+PASS Zero, over-limit and unsigned-overflow lengths fail before body reads
+PASS Request and response exact byte limits pass; one byte over writes nothing
+PASS Invalid UTF-8 fails without replacement characters
+PASS Cancellation releases a blocked frame read and write
+PASS Already canceled frame cannot touch output; caller retains stream ownership
+PASS Request wire preserves required members and Unicode
+PASS Malformed, duplicate, unknown, missing and wrongly typed envelope members fail
+PASS Unknown version and operation report stable contract errors
+PASS UTC timestamps reject culture-dependent, local and invalid values
+PASS Opaque report preserves casing, false flags, Unicode and prompt-like text
+PASS Response requires exactly one result/error and matching error request identity
+PASS Oversized response becomes a small correlated error without truncation or mutation
+PASS Context DTO preserves paths and rejects incomplete identity
+PASS Date-shaped strings survive round trips with escaped and unescaped slashes
+PASS Date-shaped opaque results and nested error strings stay literal
+PASS Raw control in quoted JSON normalizes to InvalidDataException: 10
+PASS Raw control in quoted JSON normalizes to InvalidDataException: 9
+PASS Raw control in quoted JSON normalizes to InvalidDataException: 0
+PASS Escaped controls remain valid literal string content
+PASS Admission uses one monotonic 30-second budget despite wall-clock jumps
+PASS Slow receipt consumes original budget and accept cap cannot be reset
+PASS Expired and beyond-policy deadlines are rejected at receipt
+PASS Context keeps same budget and a defensive request snapshot
+PASS Borrowed lifetime cannot extend its wire deadline
+PASS Cancellation during preparation prevents a new read: ownerStopping=False
+PASS Cancellation during preparation prevents a new read: ownerStopping=True
+PASS Expiry during preparation and after execution suppresses new reads and publication
+PASS Remaining deadline timer wakes blocked work without upstream cancellation
+PASS Canceled response retains lifetime until callback quiesces
+PASS Cancellation racing quiescence leaves cleanup settled without disposed-source faults
+Bridge tests: 33 passed; 0 failed.
+PASS Fragmented headers and Unicode bodies larger than 8192 bytes survive
+PASS Coalesced frames leave the next frame unread
+PASS Header and body EOF cannot become a complete payload
+PASS Zero, over-limit and unsigned-overflow lengths fail before body reads
+PASS Request and response exact byte limits pass; one byte over writes nothing
+PASS Invalid UTF-8 fails without replacement characters
+PASS Cancellation releases a blocked frame read and write
+PASS Already canceled frame cannot touch output; caller retains stream ownership
+PASS Request wire preserves required members and Unicode
+PASS Malformed, duplicate, unknown, missing and wrongly typed envelope members fail
+PASS Unknown version and operation report stable contract errors
+PASS UTC timestamps reject culture-dependent, local and invalid values
+PASS Opaque report preserves casing, false flags, Unicode and prompt-like text
+PASS Response requires exactly one result/error and matching error request identity
+PASS Oversized response becomes a small correlated error without truncation or mutation
+PASS Context DTO preserves paths and rejects incomplete identity
+PASS Date-shaped strings survive round trips with escaped and unescaped slashes
+PASS Date-shaped opaque results and nested error strings stay literal
+PASS Raw control in quoted JSON normalizes to InvalidDataException: 10
+PASS Raw control in quoted JSON normalizes to InvalidDataException: 9
+PASS Raw control in quoted JSON normalizes to InvalidDataException: 0
+PASS Escaped controls remain valid literal string content
+PASS Admission uses one monotonic 30-second budget despite wall-clock jumps
+PASS Slow receipt consumes original budget and accept cap cannot be reset
+PASS Expired and beyond-policy deadlines are rejected at receipt
+PASS Context keeps same budget and a defensive request snapshot
+PASS Borrowed lifetime cannot extend its wire deadline
+PASS Cancellation during preparation prevents a new read: ownerStopping=False
+PASS Cancellation during preparation prevents a new read: ownerStopping=True
+PASS Expiry during preparation and after execution suppresses new reads and publication
+PASS Remaining deadline timer wakes blocked work without upstream cancellation
+PASS Canceled response retains lifetime until callback quiesces
+PASS Cancellation racing quiescence leaves cleanup settled without disposed-source faults
+Bridge tests: 33 passed; 0 failed.
+PASS cross-runtime request, opaque report, CoverageComplete/Evaluation.Complete and literal date-shaped strings in both slash spellings
+PASS cross-runtime request, opaque report, CoverageComplete/Evaluation.Complete and literal date-shaped strings in both slash spellings
+PASS independent Python bridge exchange: both runtimes, CoverageComplete/Evaluation.Complete false, Unicode and literal date-shaped strings
+BRIDGE_EXCHANGE_EVIDENCE path=D:\bim-agent-lab\projects\revit-readiness\samples\local\bridge-exchange\225b1e82c7d04ad9bebc175b2f6f7d7c
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+  BimAgentLab.Mcp.Probe -> D:\bim-agent-lab\projects\revit-readiness\tests\mcp-probe\bin\Release\net10.0\BimAgentLab.Mcp.Probe.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.74
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+  BimAgentLab.Mcp.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\bin\Release\net10.0\BimAgentLab.Mcp.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.73
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+  BimAgentLab.Mcp.Client -> D:\bim-agent-lab\projects\revit-readiness\tests\mcp-client\bin\Release\net10.0\BimAgentLab.Mcp.Client.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.74
+EVIDENCE protocol=2025-06-18 strict=False path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-protocol-tests\sdk-199c3667f2ad46a7a5b80746cd40709e\session-ba80092f4a5b43f281884960f0249081
+PASS Compatible host preserves exact protocol and results: 2025-06-18
+EVIDENCE protocol=2025-11-25 strict=False path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-protocol-tests\sdk-786e3d5f9a1e49fd94ed99cf06a3592a\session-6c88f524ce2c4733873a8f67c281ff04
+PASS Compatible host preserves exact protocol and results: 2025-11-25
+EVIDENCE protocol=2026-07-28 strict=False path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-protocol-tests\sdk-5e279b9c19094fe2827eb5cdbb0d6ba5\session-b67c10cdbe4d4e19a841a012a50c77e6
+PASS Compatible host preserves exact protocol and results: 2026-07-28
+EVIDENCE protocol=2026-07-28 strict=True path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-protocol-tests\sdk-3fbc8bcc921448eda03849e1eda982fe\session-942c9f46d66d43a8809504dbc3229e7a
+PASS Strict July host preserves modern discovery and results
+PASS Strict July host rejects legacy initialization: 2025-06-18
+PASS Strict July host rejects legacy initialization: 2025-11-25
+PASS Trace preserves fragmented Unicode bytes and stream ownership
+PASS Memory read cancellation retains pending buffer and suppresses late evidence
+PASS Array read cancellation retains pending buffer and suppresses late evidence
+PASS Trace size bound fails visibly without silent truncation
+PASS Host releases each owned stream once
+PASS Partial trace construction releases streams and preserves existing evidence
+PASS Windows open-stdin shutdown: trace=False, idle
+PASS Windows open-stdin shutdown: trace=False, partial
+PASS Windows open-stdin shutdown: trace=False, pending
+PASS Windows open-stdin shutdown: trace=True, idle
+PASS Windows open-stdin shutdown: trace=True, partial
+PASS Windows open-stdin shutdown: trace=True, pending
+PASS Windows open-stdin shutdown after trace initialization failure
+test_apply_refuses_changed_configuration (test_mcp_probe_settings.SettingsTests.test_apply_refuses_changed_configuration) ... ok
+test_prepared_recovery_exists_before_mutation_and_restores_after_interruption (test_mcp_probe_settings.SettingsTests.test_prepared_recovery_exists_before_mutation_and_restores_after_interruption) ... ok
+test_recovery_preserves_unrelated_edits_and_rejects_foreign_owned_entry (test_mcp_probe_settings.SettingsTests.test_recovery_preserves_unrelated_edits_and_rejects_foreign_owned_entry) ... ok
+test_accepted_legacy_revisions_preserve_complete_exchange (test_mcp_transcript.LegacyTranscriptTests.test_accepted_legacy_revisions_preserve_complete_exchange) ... ok
+test_legacy_capture_cannot_satisfy_strict_july (test_mcp_transcript.LegacyTranscriptTests.test_legacy_capture_cannot_satisfy_strict_july) ... ok
+test_legacy_negotiation_order_correlation_and_results_cannot_be_relaxed (test_mcp_transcript.LegacyTranscriptTests.test_legacy_negotiation_order_correlation_and_results_cannot_be_relaxed) ... ok
+test_legacy_tools_list_may_omit_optional_params (test_mcp_transcript.LegacyTranscriptTests.test_legacy_tools_list_may_omit_optional_params) ... ok
+test_unverified_protocol_is_rejected (test_mcp_transcript.LegacyTranscriptTests.test_unverified_protocol_is_rejected) ... ok
+test_complete_exchange (test_mcp_transcript.TranscriptTests.test_complete_exchange) ... ok
+test_missing_false_flag_wrong_protocol_id_and_diagnostics_are_rejected (test_mcp_transcript.TranscriptTests.test_missing_false_flag_wrong_protocol_id_and_diagnostics_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.448s
+
+OK
+PASS SDK probe (desktop verification remains separate)
+{
+  "protocol": "2025-06-18",
+  "clientNames": [
+    "BimAgentLab.Mcp.Client"
+  ],
+  "checks": [
+    "failure",
+    "initialize",
+    "initialized",
+    "list",
+    "success"
+  ],
+  "pass": true
+}
+SDK_CLIENT_EVIDENCE protocol=2025-06-18 strict=False path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-sdk-client\5ea0ddafcc9e4e5685da0fe132c71a03
+PASS SDK probe (desktop verification remains separate)
+{
+  "protocol": "2025-11-25",
+  "clientNames": [
+    "BimAgentLab.Mcp.Client"
+  ],
+  "checks": [
+    "failure",
+    "initialize",
+    "initialized",
+    "list",
+    "success"
+  ],
+  "pass": true
+}
+SDK_CLIENT_EVIDENCE protocol=2025-11-25 strict=False path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-sdk-client\ad21d4c818cd41dfbad3cea45faf6b6e
+PASS SDK probe (desktop verification remains separate)
+{
+  "protocol": "2026-07-28",
+  "clientNames": [
+    "BimAgentLab.Mcp.Client"
+  ],
+  "checks": [
+    "discover",
+    "failure",
+    "list",
+    "success"
+  ],
+  "pass": true
+}
+SDK_CLIENT_EVIDENCE protocol=2026-07-28 strict=False path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-sdk-client\2aa4d4848c5d4514a122f9178d3aa67a
+PASS SDK probe (desktop verification remains separate)
+{
+  "protocol": "2026-07-28",
+  "clientNames": [
+    "BimAgentLab.Mcp.Client"
+  ],
+  "checks": [
+    "discover",
+    "failure",
+    "list",
+    "success"
+  ],
+  "pass": true
+}
+SDK_CLIENT_EVIDENCE protocol=2026-07-28 strict=True path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-sdk-client\e2de744913244f698eac7a76115f45f2
+PASS available offline suites; desktop/Revit acceptance is separate.

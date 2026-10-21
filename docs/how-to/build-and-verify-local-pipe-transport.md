@@ -1,6 +1,6 @@
 # Build and verify the Windows-local connection
 
-Agent companion to the [participant story](../tutorials/09-connect-the-bridge-processes.md). Follow root/project AGENTS, approved spec/plan revision 3, [research/provenance](../research/revit-local-pipe-transport.md) and the [Task 3 record](../../projects/revit-readiness/docs/verification/2026-10-21-local-pipe-transport.md). Task 2 was [independently closed](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-2-follow-up.md); this does not close Task 3 or full R3.
+Agent companion to the [participant story](../tutorials/09-connect-the-bridge-processes.md). Follow root/project AGENTS, approved spec/plan revision 3, [research/provenance](../research/revit-local-pipe-transport.md) and the [Task 3 record](../../projects/revit-readiness/docs/verification/2026-10-21-local-pipe-transport-review.md). Task 2 was [independently closed](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-2-follow-up.md); this does not close Task 3 or full R3.
 
 ## Source and ownership
 
@@ -40,10 +40,10 @@ git status --short --branch
 & ./projects/revit-readiness/scripts/Test-McpBridge.ps1 -Suite Pipe
 & ./projects/revit-readiness/scripts/Test-McpBridge.ps1 -Suite All
 & ./projects/revit-readiness/scripts/Test-Readiness.ps1
-python projects/revit-readiness/tests/verify_pipe_evidence.py projects/revit-readiness/docs/verification/local-pipe-transport-evidence/pipe-output.txt
+python projects/revit-readiness/tests/verify_pipe_evidence.py projects/revit-readiness/docs/verification/local-pipe-transport-review-evidence/pipe-output.txt
 ```
 
-Pipe runs 27 named cases on each target, including a net48 child serving simultaneous clients and a response above 8192 bytes. Each target fills all eight slots separately with no bytes, partial headers, partial bodies and trickles. A ninth connection is denied until capacity recovers. Capture accept/close ticks and frequency; the independent checker recomputes durations, requires every connection and successful successor, and rejects incomplete evidence. The production cap is five seconds; the spec permits one additional second of test scheduling tolerance.
+Pipe runs 32 named cases on each target, including a net48 child serving simultaneous clients and a response above 8192 bytes. Each target fills all eight slots separately with no bytes, partial headers, partial bodies and trickles. A ninth connection is denied until capacity recovers. Capture accept/close ticks and frequency; the independent checker recomputes durations, requires every connection and successful successor, and rejects incomplete evidence. The production cap is five seconds; the spec permits one additional second of test scheduling tolerance.
 
 The tests use internal catalog-root injection under ignored `samples/local/`, not the live discovery directory. Output and working artifacts remain ignored until selected, reviewed and copied into a verification record. Foreign-logon DACL denial is a local access-control test, not an actual second-user session. A remote machine and separate-logon client were not tested. Do not create accounts or alter security policy to manufacture them.
 
@@ -51,4 +51,16 @@ All retains 33 foundation cases per target, bilateral/Python exchange, MCP proto
 
 ## Handoff
 
-Task 4 must implement the real bounded dispatcher and verify cancellation at its own execution boundaries. Task 5 supplies the Revit adapter; Task 6 supplies production MCP tools. Preserve RequestLifetime/DispatchTicket responsibilities, actual-client A8, all three principal sample cases and NC1/NC2. Use the [Task 3 review packet](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-3-review-packet.md) to challenge this increment before treating its evidence as independently reviewed.
+Task 4 must implement the real bounded dispatcher and verify cancellation at its own execution boundaries. Task 5 supplies the Revit adapter; Task 6 supplies production MCP tools. Preserve RequestLifetime/DispatchTicket responsibilities, actual-client A8, all three principal sample cases and NC1/NC2. Use the [Task 3 review packet](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-3-review.md) to challenge this increment before treating its evidence as independently reviewed.
+
+## Cleanup after exceptional completion
+
+The [peer-exit review](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-3-review.md) found a missing exceptional-completion path. `NativeWindows.ValidateClient` normalizes ArgumentException only around the connected peer's process lookup; that connection is rejected and its worker returns to admission. Do not treat a disappeared peer as a reason to permanently reduce capacity, and do not globally swallow programming exceptions.
+
+Shutdown drains network workers whether they succeed or fault, attempts owned-descriptor removal, disposes the stop source, then reports retained cancellation/worker/cleanup errors. Multiple errors remain distinguishable. A failed cleanup can be retried without canceling a disposed source. A repeated stop after an unexpected worker fault can still report that original fault even though cleanup is complete; error reporting and resource cleanup are separate outcomes. Peer disappearance itself is recoverable and does not fault shutdown.
+
+The disconnect monitor can fault when a borrowed cancellation callback throws. Register lifetime cleanup in finally around awaiting that monitor. The endpoint's network completion still must not dispose a lifetime borrowed by an unfinished callback; DisposeAfterQuiescenceAsync retains that responsibility.
+
+`PipeReviewTests.cs` adds five regressions to the existing suite: real child exit at the observer barrier, worker fault alone, worker fault plus locked descriptor, and throwing cancellation callbacks during stop/disconnect. Prove all eight replacement connections concurrently; one successful call alone can hide a dead worker. Resolve the replacement with and without explicit PID and call through the actual provider. Preserve worker/callback error identities while testing that cleanup completed.
+
+The [corrected evidence](../../projects/revit-readiness/docs/verification/2026-10-21-local-pipe-transport-review.md) supersedes the original implementation's completeness claim. Current Pipe has 32 cases per target. To verify the unchanged original 27-case timing capture, pass `--expected-cases 27`; never infer an expected case count from the capture being checked. No normative spec change or new dependency was needed. Independent follow-up is pending and Task 4 remains unstarted.

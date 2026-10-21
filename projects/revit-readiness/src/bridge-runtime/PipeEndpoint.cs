@@ -1,7 +1,9 @@
 using System;
+using System.Collections.Generic;
 using System.IO;
 using System.IO.Pipes;
 using System.Linq;
+using System.Runtime.ExceptionServices;
 using System.Threading;
 using System.Threading.Tasks;
 using BimAgentLab.RevitBridge.Contract;
@@ -24,6 +26,8 @@ public sealed class PipeEndpoint
     Task? stop;
     bool started;
     bool ownsDescriptor;
+    bool stoppingDisposed;
+    Exception? cancellationFailure;
     long connections;
     public PipeEndpoint(BridgeSessionDescriptor descriptor, SessionCatalog catalog, IBridgeClock clock, Action<PipeEvent>? observe = null)
     {
@@ -53,15 +57,33 @@ public sealed class PipeEndpoint
     {
         lock (gate)
         {
-            if (stop == null || stop.IsFaulted) { stopping.Cancel(); stop = FinishStop(); }
+            if (stop == null || stop.IsFaulted)
+            {
+                // Cancellation callbacks are borrowed code and can throw. Cancel still
+                // signals every callback; retain the error and continue draining/cleanup.
+                if (!stoppingDisposed)
+                    try { stopping.Cancel(); }
+                    catch (Exception error) { cancellationFailure = error; }
+                stop = FinishStop();
+            }
             return stop;
         }
     }
     async Task FinishStop()
     {
-        await Task.WhenAll(workers).ConfigureAwait(false); // network workers, never Revit callbacks
-        RemoveDescriptor(); // failure stays observable; foreign descriptor is preserved
-        stopping.Dispose();
+        // Faulted workers have finished borrowing network resources too. Their error
+        // must remain observable, but cannot make owned cleanup unreachable.
+        var drained = Task.WhenAll(workers); // network workers, never Revit callbacks
+        var failures = new List<Exception>();
+        if (cancellationFailure != null) failures.Add(cancellationFailure);
+        try { await drained.ConfigureAwait(false); }
+        catch (Exception error)
+        { if (drained.Exception != null) failures.AddRange(drained.Exception.InnerExceptions); else failures.Add(error); }
+        try { RemoveDescriptor(); } // changed/locked files are preserved; later Stop can retry
+        catch (Exception cleanupFailure) { failures.Add(cleanupFailure); }
+        finally { stopping.Dispose(); stoppingDisposed = true; }
+        if (failures.Count == 1) ExceptionDispatchInfo.Capture(failures[0]).Throw();
+        if (failures.Count > 1) throw new AggregateException(failures);
     }
     void RemoveDescriptor()
     {
@@ -154,9 +176,14 @@ public sealed class PipeEndpoint
         }
         finally
         {
-            monitorStop.Cancel(); pipe.Dispose(); await monitor.ConfigureAwait(false);
-            if (ticket == null) lifetime.Dispose();
-            else Observe(lifetime.DisposeAfterQuiescenceAsync(ticket)); // callback owns its remaining use, not network slot
+            monitorStop.Cancel(); pipe.Dispose();
+            try { await monitor.ConfigureAwait(false); }
+            finally
+            {
+                // A faulted disconnect monitor also finishes borrowing this lifetime.
+                if (ticket == null) lifetime.Dispose();
+                else Observe(lifetime.DisposeAfterQuiescenceAsync(ticket)); // callback owns its remaining use, not network slot
+            }
         }
     }
     BridgeResponse Failure(BridgeError error) => new BridgeResponse

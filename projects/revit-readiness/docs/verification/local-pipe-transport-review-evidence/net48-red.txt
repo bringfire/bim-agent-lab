@@ -1,0 +1,74 @@
+PEER_EXIT exited before identity validation; runtime=4.0.30319.42000
+PEER_EXIT cleanup failure: System.ArgumentException: Process with an Id of 215536 is not running.
+   at System.Diagnostics.Process.GetProcessById(Int32 processId, String machineName)
+   at BimAgentLab.RevitBridge.Runtime.NativeWindows.ValidateClient(NamedPipeServerStream pipe, String logonSid, Int32 sessionId) in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\NativeWindows.cs:line 19
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.<Handle>d__17.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 113
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.<Serve>d__16.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 90
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.<FinishStop>d__14.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 63
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Within>d__25.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeTransportTests.cs:line 175
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<PipeReviewTests>b__8_0>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeReviewTests.cs:line 67
+FAIL Client exit before identity validation restores all eight slots and permits shutdown and restart: IOException The semaphore timeout period has expired.
+
+System.IO.IOException: The semaphore timeout period has expired.
+
+   at System.IO.__Error.WinIOError(Int32 errorCode, String maybeFullPath)
+   at System.IO.Pipes.NamedPipeClientStream.ConnectInternal(Int32 timeout, CancellationToken cancellationToken, Int32 startTime)
+   at System.Threading.Tasks.Task.Execute()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<PipeReviewTests>b__8_0>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeReviewTests.cs:line 49
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.Bridge.Tests.Program.<>c.<<PipeReviewTests>b__8_0>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeReviewTests.cs:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__29.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 42
+FAIL Unexpected worker fault still cleans owned descriptor and preserves its error: Exception Worker fault skipped descriptor cleanup
+System.Exception: Worker fault skipped descriptor cleanup
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass8_1.<<PipeReviewTests>b__11>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeReviewTests.cs:line 100
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass8_1.<<PipeReviewTests>b__11>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__29.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 42
+FAIL Unexpected worker fault still cleans owned descriptor after a retryable cleanup failure: InjectedWorkerException Exception of type 'BimAgentLab.Bridge.Tests.Program+InjectedWorkerException' was thrown.
+BimAgentLab.Bridge.Tests.Program+InjectedWorkerException: Exception of type 'BimAgentLab.Bridge.Tests.Program+InjectedWorkerException' was thrown.
+Pipe review tests: 0 passed; 3 failed.
+   at BimAgentLab.Bridge.Tests.Program.FailingReceiveClock.ElapsedSince(Int64 timestamp) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeReviewTests.cs:line 136
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.<Handle>d__17.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 104
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.<Serve>d__16.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 90
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.RevitBridge.Runtime.PipeEndpoint.<FinishStop>d__14.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\PipeEndpoint.cs:line 63
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Within>d__25.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeTransportTests.cs:line 175
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass8_1.<<PipeReviewTests>b__11>d.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeReviewTests.cs:line 109
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at BimAgentLab.Bridge.Tests.Program.<>c__DisplayClass8_1.<<PipeReviewTests>b__11>d.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__29.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 42

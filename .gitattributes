@@ -22,3 +22,4 @@ projects/revit-readiness/docs/verification/mcp-client-compatibility-evidence/** 
 projects/revit-readiness/docs/verification/bridge-foundations-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/bridge-foundations-review-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/local-pipe-transport-evidence/** -text -whitespace
+projects/revit-readiness/docs/verification/local-pipe-transport-review-evidence/** -text -whitespace

@@ -7,7 +7,8 @@ import re
 from pathlib import Path
 
 
-def verify(text: str) -> dict:
+def verify(text: str, expected_cases: int = 32) -> dict:
+    assert expected_cases > 0, "Expected case count must be supplied independently"
     assert "PIPE_SUITE_COMPLETE" in text, "Incomplete pipe evidence"
     assert not re.search(r"^FAIL ", text, re.M), "Failed behavioral case"
     current = None
@@ -35,7 +36,7 @@ def verify(text: str) -> dict:
             targets[current]["successors"] += 1
         elif line.startswith("Pipe tests:"):
             assert current is not None and not targets[current]["summary"]
-            assert re.fullmatch(r"Pipe tests: 27 passed; 0 failed\.", line), line
+            assert line == f"Pipe tests: {expected_cases} passed; 0 failed.", line
             targets[current]["summary"] = True
     assert set(targets) == {"net48", "net10.0"}
     for target, data in targets.items():
@@ -43,7 +44,7 @@ def verify(text: str) -> dict:
         assert set(data["frames"]) == {"no-bytes", "partial-header", "partial-body", "trickle"}
         for frames in data["frames"].values():
             assert set(frames) == {str(n) for n in range(1, 9)}, (target, frames)
-    return {"pass": True, "targets": {key: {"cases": 27, "stalledConnections": 32,
+    return {"pass": True, "targets": {key: {"cases": expected_cases, "stalledConnections": 32,
         "maximumCleanupSeconds": max(value for group in data["frames"].values() for value in group.values())}
         for key, data in targets.items()}, "scope": "Windows IPC; no Revit or desktop A8 acceptance"}
 
@@ -51,5 +52,7 @@ def verify(text: str) -> dict:
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument("log", type=Path)
+    parser.add_argument("--expected-cases", type=int, default=32,
+                        help="Expected cases per runtime; use 27 for the original Task 3 checkpoint")
     args = parser.parse_args()
-    print(json.dumps(verify(args.log.read_text(encoding="utf-8-sig")), indent=2))
+    print(json.dumps(verify(args.log.read_text(encoding="utf-8-sig"), args.expected_cases), indent=2))

@@ -1,0 +1,12 @@
+PEER_EXIT exited before identity validation; runtime=4.0.30319.42000
+PEER_EXIT recoveredSlots=8 submissionsBeforeValidRequest=0 stops=2 replacementSelected=true
+PASS Client exit before identity validation restores all eight slots and permits shutdown and restart
+CALLBACK_FAULT ownerStop=True descriptorRemoved=true lifetimeDisposedAfterQuiescence=true errorRetained=true
+PASS Throwing cancellation callback cannot skip shutdown cleanup
+CALLBACK_FAULT ownerStop=False descriptorRemoved=true lifetimeDisposedAfterQuiescence=true errorRetained=true
+PASS Throwing cancellation callback cannot skip deferred lifetime cleanup on disconnect
+WORKER_FAULT cleanupRetried=False descriptorRemoved=true originalErrorRetained=true replacementSelected=true
+PASS Unexpected worker fault still cleans owned descriptor and preserves its error
+WORKER_FAULT cleanupRetried=True descriptorRemoved=true originalErrorRetained=true replacementSelected=true
+PASS Unexpected worker fault still cleans owned descriptor after a retryable cleanup failure
+Pipe review tests: 5 passed; 0 failed.

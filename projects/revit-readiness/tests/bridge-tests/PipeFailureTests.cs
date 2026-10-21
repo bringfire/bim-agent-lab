@@ -14,6 +14,7 @@ internal static partial class Program
 {
     static async Task PipeFailureTests()
     {
+        await PipeReviewTests();
         await Test("Native pipe is asynchronous byte mode and a foreign-logon ACL denies access", async () =>
         {
             var descriptor = ManualDescriptor();

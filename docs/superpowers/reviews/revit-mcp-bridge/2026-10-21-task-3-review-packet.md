@@ -1,5 +1,7 @@
 # Task 3 implementation review packet
 
+**Subsequent review:** use the [peer-exit feedback, correction and follow-up packet](2026-10-21-task-3-review.md). The original packet below remains historical; the P2 correction requires independent follow-up.
+
 Baseline: **`3cefe5116ec1368e0bfdcc387209bbb1e176df66`**, independently closed Task 2. Review through the commit titled **`feat: add restricted local Revit pipe transport`** that first adds this packet. Obtain the exact range with `git log --diff-filter=A --format="%H %s" -- docs/superpowers/reviews/revit-mcp-bridge/2026-10-21-task-3-review-packet.md`.
 
 Task 3 is implemented and verified by its authoring agent; **no independent Task 3 closure is claimed**. Read the approved [spec](../../specs/2026-10-20-revit-mcp-bridge-design.md), [plan/ownership table](../../plans/2026-10-20-revit-mcp-bridge.md), [Task 2 follow-up](2026-10-21-task-2-follow-up.md), [Task 3 record](../../../../projects/revit-readiness/docs/verification/2026-10-21-local-pipe-transport.md), [research](../../../research/revit-local-pipe-transport.md) and [agent procedure](../../../how-to/build-and-verify-local-pipe-transport.md).

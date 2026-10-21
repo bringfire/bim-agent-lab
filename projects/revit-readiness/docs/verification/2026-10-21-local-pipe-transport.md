@@ -1,5 +1,7 @@
 # Task 3: Windows-local pipe transport — 2026-10-21
 
+**Subsequent review:** the external reviewer found a peer-exit/exceptional-cleanup P2 in this checkpoint despite the supplied suites passing. The [correction record](2026-10-21-local-pipe-transport-review.md) supersedes its implementation-completeness claim; original evidence remains preserved below. Independent follow-up is pending.
+
 **Implementation verification; independent Task 3 review pending.** This establishes the tested Windows IPC increment, not live Revit or desktop A8 acceptance. Task 2 independently closed at `3cefe5116ec1368e0bfdcc387209bbb1e176df66`; its [follow-up](../../../../docs/superpowers/reviews/revit-mcp-bridge/2026-10-21-task-2-follow-up.md) is retained separately.
 
 Source baseline: **`3cefe5116ec1368e0bfdcc387209bbb1e176df66`**, branch `feat/revit-mcp-bridge`. The implementation checkpoint is the commit titled **`feat: add restricted local Revit pipe transport`** that first adds this file. Find its exact hash with `git log --diff-filter=A --format="%H %s" -- projects/revit-readiness/docs/verification/2026-10-21-local-pipe-transport.md`.

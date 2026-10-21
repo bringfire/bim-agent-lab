@@ -17,8 +17,12 @@ internal static class NativeWindows
     internal static void ValidateClient(NamedPipeServerStream pipe, string logonSid, int sessionId)
     {
         if (!GetNamedPipeClientProcessId(pipe.SafePipeHandle, out uint pid)) throw new Win32Exception(Marshal.GetLastWin32Error());
-        using var process = System.Diagnostics.Process.GetProcessById(checked((int)pid));
-        if (process.SessionId != sessionId || LogonSid(process.Id) != logonSid) throw new UnauthorizedAccessException("Foreign pipe client.");
+        System.Diagnostics.Process process;
+        try { process = System.Diagnostics.Process.GetProcessById(checked((int)pid)); }
+        catch (ArgumentException error)
+        { throw new IOException("The connected pipe client exited before identity validation.", error); }
+        using (process)
+            if (process.SessionId != sessionId || LogonSid(process.Id) != logonSid) throw new UnauthorizedAccessException("Foreign pipe client.");
     }
     internal static void ValidateServer(NamedPipeClientStream pipe, int expectedPid)
     {

@@ -1,0 +1,61 @@
+[
+  {
+    "target": "net48",
+    "component": "Contract",
+    "sha256": "3ebf7d62b84f285d92940c787c139c528afcd8d1aabae516fee749dc58ab2bf7",
+    "references": [
+      "mscorlib"
+    ]
+  },
+  {
+    "target": "net48",
+    "component": "Runtime",
+    "sha256": "e776448f2e61d7c066a70a73e576da9113d457b3c20acc5af8ab8900d45b09e6",
+    "references": [
+      "mscorlib",
+      "BimAgentLab.RevitBridge.Contract",
+      "System",
+      "System.Xml.Linq",
+      "System.Runtime.Serialization",
+      "System.Xml",
+      "System.Core",
+      "System.Web.Extensions"
+    ]
+  },
+  {
+    "target": "net10.0",
+    "component": "Contract",
+    "sha256": "d95ee075a34c1838658e36431e86a959cea2df41fd8250b59691c198c8287c75",
+    "references": [
+      "System.Runtime"
+    ]
+  },
+  {
+    "target": "net10.0",
+    "component": "Runtime",
+    "sha256": "0280b91a56666f23cb0cc7bd7d1eec7477e231ef289d8bf4d29fac4b113464dd",
+    "references": [
+      "System.Runtime",
+      "System.Threading",
+      "BimAgentLab.RevitBridge.Contract",
+      "System.Diagnostics.Process",
+      "System.Xml.XDocument",
+      "System.Runtime.Serialization.Xml",
+      "System.Text.Json",
+      "System.Xml.ReaderWriter",
+      "System.Collections",
+      "System.Text.Encoding.Extensions",
+      "System.IO.Pipes",
+      "System.Security.AccessControl",
+      "System.IO.FileSystem.AccessControl",
+      "System.Text.RegularExpressions",
+      "Microsoft.Win32.Primitives",
+      "System.Runtime.Serialization.Json",
+      "System.Linq",
+      "System.Runtime.InteropServices",
+      "System.Security.Principal.Windows",
+      "System.Collections.NonGeneric",
+      "System.Memory"
+    ]
+  }
+]
