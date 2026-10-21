@@ -1,0 +1,32 @@
+[
+  {
+    "source": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\required-information\\BAL-info-complete.rvt",
+    "copy": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-complete.rvt",
+    "sha256": "B4A7A1E1733F857BA9E31A1659594A01076560E31E2F11BB6192789BD64524DE"
+  },
+  {
+    "source": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\required-information\\BAL-info-complete.checklist.json",
+    "copy": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-complete.checklist.json",
+    "sha256": "6EDD2E120D6EB77536AFB4D620295B9A5B88BF332730E7CD85303122E50C8729"
+  },
+  {
+    "source": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\required-information\\BAL-info-wall-defects.rvt",
+    "copy": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-wall-defects.rvt",
+    "sha256": "EFD2717188956F7A070480323D85BCFFE765007135915C1908A909FE04D50D17"
+  },
+  {
+    "source": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\required-information\\BAL-info-wall-defects.checklist.json",
+    "copy": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-wall-defects.checklist.json",
+    "sha256": "B58387090CDD4704086172EB4D45773F3E7E3B36F5D6480226417A82CA695011"
+  },
+  {
+    "source": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\required-information\\BAL-info-ceiling-negative.rvt",
+    "copy": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-ceiling-negative.rvt",
+    "sha256": "520EE45B056D004F10189A4BF26EDE3CE22FF2B06A9CBE0A25C1EB79D384A003"
+  },
+  {
+    "source": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\required-information\\BAL-info-ceiling-negative.checklist.json",
+    "copy": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-ceiling-negative.checklist.json",
+    "sha256": "3F7C58277F550A1A52B0F75CB9AD2FC818B771B172F91AE0B48BA4E4340A0CC0"
+  }
+]

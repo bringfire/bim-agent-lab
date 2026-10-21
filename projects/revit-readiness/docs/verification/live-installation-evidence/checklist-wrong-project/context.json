@@ -1,0 +1,22 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\u0022code\u0022:\u0022ChecklistMismatch\u0022,\u0022message\u0022:\u0022The checklist belongs to a different project or file.\u0022,\u0022requestId\u0022:\u00220803cf377ca44b32aad7d14e3c3e441e\u0022,\u0022retryable\u0022:false}"
+    }
+  ],
+  "structuredContent": {
+    "code": "ChecklistMismatch",
+    "message": "The checklist belongs to a different project or file.",
+    "requestId": "0803cf377ca44b32aad7d14e3c3e441e",
+    "retryable": false
+  },
+  "isError": true,
+  "_meta": {
+    "io.modelcontextprotocol/serverInfo": {
+      "name": "bim-agent-lab",
+      "version": "0.1.0"
+    }
+  },
+  "resultType": "complete"
+}

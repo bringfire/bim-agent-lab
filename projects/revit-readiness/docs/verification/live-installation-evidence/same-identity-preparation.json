@@ -1,0 +1,7 @@
+{
+  "sourceBeforeOpenSha256": "B4A7A1E1733F857BA9E31A1659594A01076560E31E2F11BB6192789BD64524DE",
+  "copySha256": "B4A7A1E1733F857BA9E31A1659594A01076560E31E2F11BB6192789BD64524DE",
+  "projectUniqueId": "7cacd49c-ac17-4591-ad0a-cbc9bb40015a-00012b83",
+  "intent": "Identical saved bytes; checklist filename adjusted before acquisition.",
+  "hashObservation": "Open-file hash was denied; retained original hash matches new copy. An initial slash-specific selector missed the record; filename parsing corrected the checker."
+}

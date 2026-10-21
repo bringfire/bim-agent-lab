@@ -1,0 +1,22 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\u0022code\u0022:\u0022ChecklistMismatch\u0022,\u0022message\u0022:\u0022Checklist level or phase is absent from this project.\u0022,\u0022requestId\u0022:\u0022a8bc8b20d64d46fd9022661934a3a44f\u0022,\u0022retryable\u0022:false}"
+    }
+  ],
+  "structuredContent": {
+    "code": "ChecklistMismatch",
+    "message": "Checklist level or phase is absent from this project.",
+    "requestId": "a8bc8b20d64d46fd9022661934a3a44f",
+    "retryable": false
+  },
+  "isError": true,
+  "_meta": {
+    "io.modelcontextprotocol/serverInfo": {
+      "name": "bim-agent-lab",
+      "version": "0.1.0"
+    }
+  },
+  "resultType": "complete"
+}

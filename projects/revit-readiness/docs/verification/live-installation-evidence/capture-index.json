@@ -1,0 +1,45 @@
+{
+  "installedSource": "9a93f6d29bf3c46972701db53bfaee598ec4fd0c",
+  "revitPid": 82836,
+  "revitBuild": "24.3.60.12",
+  "sdk": "2.2.0",
+  "successfulCaptures": {
+    "before-start-unavailable-correct-path": "BridgeUnavailable",
+    "no-project-first": "NoProject",
+    "stopped-unavailable": "BridgeUnavailable",
+    "complete-first-report": "ReadinessReport",
+    "context-before-checklist-change": "Context",
+    "changed-checklist-stale-token": "ContextChanged",
+    "checklist-missing": "ChecklistMissing",
+    "checklist-empty": "ChecklistInvalid",
+    "checklist-oversize": "ChecklistInvalid",
+    "checklist-invalid-json": "ChecklistInvalid",
+    "checklist-invalid-utf8": "ChecklistInvalid",
+    "checklist-wrong-project": "ChecklistMismatch",
+    "checklist-wrong-file": "ChecklistMismatch",
+    "checklist-absent-level": "ChecklistMismatch",
+    "checklist-absent-phase": "ChecklistMismatch",
+    "after-checklist-controls-report": "ReadinessReport",
+    "queued-document-switch": "ContextChanged",
+    "modal-deadline": "DeadlineExceeded",
+    "after-modal-report": "ReadinessReport",
+    "closed-reopened-stale-token": "ContextChanged",
+    "reopened-fresh-context": "Context",
+    "family-loaded-document": "UnsupportedDocument",
+    "unsaved-project": "UnsavedProject",
+    "before-save-as-context": "Context",
+    "before-save-as-context-retry": "Context",
+    "expired-context-before-save-as": "ContextExpired"
+  },
+  "failedOrPartialCaptures": {
+    "before-start-unavailable": "Incorrect executable name; failed before connection.",
+    "family-document": "Open dialog was still held, so actual DeadlineExceeded did not satisfy UnsupportedDocument. New capture after family loaded passed."
+  },
+  "limitations": [
+    "Not Task 7 closure or desktop A8 acceptance.",
+    "No internal reader-entry counters or native scheduler instrumentation.",
+    "SDK report shape checks are not Task 8 independent BIM comparisons.",
+    "Modal deadline client disposed before UI modal release; no continuously connected late-response proof.",
+    "Working models and backup/staged binary bytes are private and deliberately excluded."
+  ]
+}

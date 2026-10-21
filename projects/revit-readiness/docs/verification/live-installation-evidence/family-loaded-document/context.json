@@ -1,0 +1,22 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\u0022code\u0022:\u0022UnsupportedDocument\u0022,\u0022message\u0022:\u0022Use a host project document.\u0022,\u0022requestId\u0022:\u002297af2c090e75428b9e70fc3850e4f433\u0022,\u0022retryable\u0022:false}"
+    }
+  ],
+  "structuredContent": {
+    "code": "UnsupportedDocument",
+    "message": "Use a host project document.",
+    "requestId": "97af2c090e75428b9e70fc3850e4f433",
+    "retryable": false
+  },
+  "isError": true,
+  "_meta": {
+    "io.modelcontextprotocol/serverInfo": {
+      "name": "bim-agent-lab",
+      "version": "0.1.0"
+    }
+  },
+  "resultType": "complete"
+}

@@ -1,0 +1,22 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\u0022code\u0022:\u0022ChecklistMissing\u0022,\u0022message\u0022:\u0022Supply the saved project\\u0027s .checklist.json sidecar.\u0022,\u0022requestId\u0022:\u00228e2f10454b2748d3b6ab404835952c7c\u0022,\u0022retryable\u0022:false}"
+    }
+  ],
+  "structuredContent": {
+    "code": "ChecklistMissing",
+    "message": "Supply the saved project\u0027s .checklist.json sidecar.",
+    "requestId": "8e2f10454b2748d3b6ab404835952c7c",
+    "retryable": false
+  },
+  "isError": true,
+  "_meta": {
+    "io.modelcontextprotocol/serverInfo": {
+      "name": "bim-agent-lab",
+      "version": "0.1.0"
+    }
+  },
+  "resultType": "complete"
+}

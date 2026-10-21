@@ -1,0 +1,22 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\u0022code\u0022:\u0022ChecklistInvalid\u0022,\u0022message\u0022:\u0022The checklist cannot be read within the four MiB limit.\u0022,\u0022requestId\u0022:\u002266b575f93710432a88e30b3bb10b240e\u0022,\u0022retryable\u0022:false}"
+    }
+  ],
+  "structuredContent": {
+    "code": "ChecklistInvalid",
+    "message": "The checklist cannot be read within the four MiB limit.",
+    "requestId": "66b575f93710432a88e30b3bb10b240e",
+    "retryable": false
+  },
+  "isError": true,
+  "_meta": {
+    "io.modelcontextprotocol/serverInfo": {
+      "name": "bim-agent-lab",
+      "version": "0.1.0"
+    }
+  },
+  "resultType": "complete"
+}

@@ -1,0 +1,11 @@
+{
+  "findingCount": 0,
+  "affectedCount": 0,
+  "coverageComplete": true,
+  "evaluationComplete": true,
+  "modifiedBefore": false,
+  "modifiedAfter": false,
+  "examined": 16,
+  "requested": 16,
+  "revitBuild": "24.3.60.12"
+}

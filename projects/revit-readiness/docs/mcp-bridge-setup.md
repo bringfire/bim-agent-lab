@@ -2,14 +2,16 @@
 
 Task 7 working procedure. Task 6 is independently closed at b4cdb1f; installation and live-host acceptance are being verified separately. Follow the [operation model](../../../docs/explanation/recoverable-readiness-installation.md), [approved Task 7 plan](../../../docs/superpowers/plans/2026-10-20-revit-mcp-bridge.md#task-7-explicit-deployment-rollback-and-live-lifecycle-checks), and [host checklist](../tests/mcp-host-acceptance.md).
 
+The [real-installation record](verification/2026-10-21-live-installation.md) now distinguishes verified install/undo/reinstall and initial live requests from outstanding lifecycle and desktop checks. Use the actual installed executable name, `BimAgentLab.RevitReadiness.Mcp.exe`; the installer does not create a shorter `BimAgentLab.Mcp.exe` alias.
+
 Use 64-bit PowerShell 7, the existing .NET SDK/10 runtime, Revit 2024 and its net48 API references. This increment adds no package dependency and does not change SDK 2.2.0 or the compatible/strict-July policy. The existing core, Excel helper and fixture remain separate from the external modern server.
 
 From the repository root:
 
 ```powershell
+# Close Revit before Deployment/All tests and installation; preserve user work normally.
 pwsh -NoProfile -File projects/revit-readiness/scripts/Test-McpBridge.ps1 -Suite Deployment
 pwsh -NoProfile -File projects/revit-readiness/scripts/Build-McpBridge.ps1
-# Close Revit before installation; preserve any user work normally.
 pwsh -NoProfile -File projects/revit-readiness/scripts/Install-Readiness.ps1 -IncludeMcpBridge
 ```
 
@@ -49,3 +51,11 @@ projects/revit-readiness/tests/mcp-client/bin/Release/net10.0/BimAgentLab.Mcp.Cl
 ```
 
 `--expected ReadinessReport` acquires context and requests the full report; it checks transport/result shape, not the independent BIM answer. An exact error-code expectation requires a correlated error with no report. `--context-token` checks a previously captured token without reacquisition. `--pause-file` acquires context, writes `context-ready.json`, and waits for a new release file so explicit test preparation can occur before checking. The SDK driver writes a completion marker only after client disposal. Keep full results, wire traffic and failed captures. Task 8 must still add independent report comparisons and actual desktop acceptance.
+
+## Read the live checkpoint accurately
+
+The first installed-build checkpoint captures 26 successful SDK exchanges plus two failed/partial setup attempts. Run `tests/verify_live_lifecycle_capture.py docs/verification/live-installation-evidence` from this project directory, then `tests/test_verify_live_lifecycle_capture.py` with Python. The checker compares saved results to actual wire data and compares original installation snapshots with both undo snapshots. It checks the captured July traffic; it does not substitute for the existing multi-version regressions or desktop A8.
+
+The modal expiry attempt disposed its client before closing Revit's dialog. Do not reuse it as proof of no later reader entry or no late response on a still-connected client. The remaining test must retain the client until after modal release and observe the production read boundary. Instrumentation must be explicitly diagnostic, identify source/binary hashes, preserve the same guard/queue paths and be kept separate from production-binary observations. During preparation and executing-read controls, record cancellation requested, transport released, reader entered/exited, callback quiescence and disposal as distinct events.
+
+UI setup is part of the test. Confirm the intended model or dialog is actually active before issuing its request. A failed click is not an opened model. Failed/partial captures stay immutable; deliberate retries use a new directory. The working Save As control uses a new model filename with a separately prepared sidecar, never overwrites an original sample, and requires a fresh unexpired pre-change context. All remaining gates are listed in the linked live record; Task 7 is still open.

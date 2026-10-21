@@ -32,3 +32,4 @@ projects/revit-readiness/docs/verification/mcp-tools-evidence/** -text -whitespa
 projects/revit-readiness/docs/verification/mcp-tool-boundary-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/mcp-argument-contract-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/deployment-evidence/** -text -whitespace
+projects/revit-readiness/docs/verification/live-installation-evidence/** -text -whitespace

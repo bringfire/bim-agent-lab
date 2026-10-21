@@ -1,0 +1,22 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\u0022code\u0022:\u0022NoProject\u0022,\u0022message\u0022:\u0022Open a saved project before requesting readiness context.\u0022,\u0022requestId\u0022:\u0022edc610c88b5c462ca58d274835c38eb2\u0022,\u0022retryable\u0022:false}"
+    }
+  ],
+  "structuredContent": {
+    "code": "NoProject",
+    "message": "Open a saved project before requesting readiness context.",
+    "requestId": "edc610c88b5c462ca58d274835c38eb2",
+    "retryable": false
+  },
+  "isError": true,
+  "_meta": {
+    "io.modelcontextprotocol/serverInfo": {
+      "name": "bim-agent-lab",
+      "version": "0.1.0"
+    }
+  },
+  "resultType": "complete"
+}

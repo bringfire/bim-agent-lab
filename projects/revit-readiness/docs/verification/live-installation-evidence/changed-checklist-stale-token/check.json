@@ -1,0 +1,22 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\u0022code\u0022:\u0022ContextChanged\u0022,\u0022message\u0022:\u0022The document or checklist identity changed. Obtain a fresh context.\u0022,\u0022requestId\u0022:\u0022b0811a4c59404a50983c14d4c9a4f060\u0022,\u0022retryable\u0022:false}"
+    }
+  ],
+  "structuredContent": {
+    "code": "ContextChanged",
+    "message": "The document or checklist identity changed. Obtain a fresh context.",
+    "requestId": "b0811a4c59404a50983c14d4c9a4f060",
+    "retryable": false
+  },
+  "isError": true,
+  "_meta": {
+    "io.modelcontextprotocol/serverInfo": {
+      "name": "bim-agent-lab",
+      "version": "0.1.0"
+    }
+  },
+  "resultType": "complete"
+}

@@ -1,0 +1,2 @@
+Prepared recovery receipt: C:\Users\bring\AppData\Local\BimAgentLab\RevitReadiness\InstallRecovery\abc3286c81554bf89841c13a92ed14bc\receipt.json
+Installed; recovery receipt: C:\Users\bring\AppData\Local\BimAgentLab\RevitReadiness\InstallRecovery\abc3286c81554bf89841c13a92ed14bc\receipt.json

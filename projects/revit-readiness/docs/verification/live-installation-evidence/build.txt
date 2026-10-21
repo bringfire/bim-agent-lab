@@ -1,0 +1,63 @@
+{
+  "checkedUtc": "2026-10-21T20:22:29.4575315Z",
+  "selectedSdk": "10.0.204",
+  "git": "git version 2.53.0.windows.2",
+  "files": [
+    {
+      "path": "C:\\Program Files\\Autodesk\\Revit 2024\\Revit.exe",
+      "fileVersion": "24.3.60.12",
+      "exists": true
+    },
+    {
+      "path": "C:\\Program Files\\Autodesk\\Revit 2024\\RevitAPI.dll",
+      "fileVersion": "24.3.60.12",
+      "exists": true
+    },
+    {
+      "path": "C:\\Program Files\\Autodesk\\Revit 2024\\RevitAPIUI.dll",
+      "fileVersion": "24.3.60.12",
+      "exists": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8\\mscorlib.dll",
+      "fileVersion": "4.8.3761.0 built by: NET48REL1",
+      "exists": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8\\System.dll",
+      "fileVersion": "4.8.3761.0 built by: NET48REL1",
+      "exists": true
+    },
+    {
+      "path": "C:\\Program Files (x86)\\Reference Assemblies\\Microsoft\\Framework\\.NETFramework\\v4.8\\System.Core.dll",
+      "fileVersion": "4.8.3761.0 built by: NET48REL1",
+      "exists": true
+    }
+  ],
+  "missing": [],
+  "note": "Inventory only. Build and Revit host acceptance are separate checks."
+}
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net48\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net48\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.Readiness.Core -> D:\bim-agent-lab\projects\revit-readiness\src\readiness-core\bin\Release\net48\BimAgentLab.Readiness.Core.dll
+  BimAgentLab.Readiness.Excel -> D:\bim-agent-lab\projects\revit-readiness\src\excel-report\bin\Release\net48\BimAgentLab.Readiness.Excel.exe
+  BimAgentLab.RevitReadiness -> D:\bim-agent-lab\projects\revit-readiness\src\revit-addin\bin\Release\net48\BimAgentLab.RevitReadiness.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.36
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(58,13): warning CA1416: This call site is reachable on all platforms. 'BridgeJson.Serialize<BridgeRequest>(BridgeRequest)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(35,22): warning CA1416: This call site is reachable on all platforms. 'RequestBudget.Admit(IBridgeClock)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(57,53): warning CA1416: This call site is reachable on all platforms. 'BridgeJson.FormatUtc(DateTimeOffset)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(57,74): warning CA1416: This call site is reachable on all platforms. 'RequestBudget.DeadlineUtc' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-publish\
+Published Windows x64 framework-dependent server: D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-publish

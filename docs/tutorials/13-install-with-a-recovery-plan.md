@@ -25,3 +25,19 @@ The [technical procedure](../../projects/revit-readiness/docs/mcp-bridge-setup.m
 ## Why the earlier research and records mattered
 
 Inspection found that the actual fixture installation was older than its inventory mechanism. The agent did not simply label every existing file as owned. It compared the DLL hashes with the repository's earlier verification records and added a narrowly checked migration for that known version. A test confirms that undo restores the original state, including the absence of an inventory; an unknown version is rejected before any installed-file change. This is a practical reason to keep source versions and evidence from earlier lessons: they can resolve a later installation question without guessing.
+
+## Ask for proof on the real machine too
+
+After the disposable tests passed, the agent installed the bridge, undid it twice in separate processes and compared the real installation with its original 59-file snapshot. Every original hash and folder inventory matched. It then reinstalled and checked Revit: loading stayed inactive, Start twice reused a session, Stop removed it, and restart created a new session. A disposable complete-model copy produced the first live readiness report without changing its reported modified state.
+
+The [live record](../../projects/revit-readiness/docs/verification/2026-10-21-live-installation.md) keeps those observations separate from tests that remain to be done. For participants, the useful follow-up is: **“Which claims have now been demonstrated in the real application, and which are still supported only by simulations or source inspection?”** Successful installation and one report are milestones; they do not answer every cancellation, document-change or desktop-client question.
+
+## Ask whether the test reached the intended situation
+
+One attempted family-document check returned a timeout. The automation had failed to finish opening the family, leaving Revit's Open dialog in place. The agent kept the failed attempt, confirmed the actual screen state and reran the check after the family loaded. The expected unsupported-document error then passed. Changing the plugin to satisfy the first attempt would have fixed the wrong problem.
+
+A separate modal-dialog test correctly returned a timeout and allowed a later request. That still did not show whether an expired request could enter the reader after the dialog closed: the original client had already disconnected. We kept that stronger claim open. This carries the earlier review lesson into application testing: evidence for one part of an operation is not proof of its entire lifetime.
+
+Suggested participant follow-up:
+
+> Show that the test reached the situation we intended. Which observation proves the claim, and which part remains unobserved? Keep failed attempts, explain the retry, and don't count an error message as proof of cleanup or cancellation inside the application.

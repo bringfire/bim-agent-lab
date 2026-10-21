@@ -1,0 +1,53 @@
+{
+  "controls": [
+    {
+      "control": "empty",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "expected": "ChecklistInvalid"
+    },
+    {
+      "control": "oversize",
+      "bytes": 4194305,
+      "sha256": "2650f5452459081abf6602c1620ef8c809a8a1887a2f4692369575bd10ea2b85",
+      "expected": "ChecklistInvalid"
+    },
+    {
+      "control": "invalid-json",
+      "bytes": 1,
+      "sha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+      "expected": "ChecklistInvalid"
+    },
+    {
+      "control": "invalid-utf8",
+      "bytes": 1,
+      "sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+      "expected": "ChecklistInvalid"
+    },
+    {
+      "control": "wrong-project",
+      "bytes": 3520,
+      "sha256": "3ade539e284dd02230d945c8017e89e8767f24c924f667cd116788189f0c1ce0",
+      "expected": "ChecklistMismatch"
+    },
+    {
+      "control": "wrong-file",
+      "bytes": 3510,
+      "sha256": "88d2973c03cee1dcc8e3f46822eb6f2080812916cc3653768615dd47cc9e113c",
+      "expected": "ChecklistMismatch"
+    },
+    {
+      "control": "absent-level",
+      "bytes": 3520,
+      "sha256": "8096c12e5d517bd4f7b42518df77998ad4d39a4c5e0c4458378ab5a835b35eef",
+      "expected": "ChecklistMismatch"
+    },
+    {
+      "control": "absent-phase",
+      "bytes": 3520,
+      "sha256": "29d26abcaa860cee7faf7724a47ab68f0c639c40e24332e676da44fe4fc41291",
+      "expected": "ChecklistMismatch"
+    }
+  ],
+  "restoredSha256": "6edd2e120d6eb77536afb4d620295b9a5b88bf332730e7cd85303122e50c8729"
+}

@@ -1,6 +1,6 @@
-# Revit MCP host acceptance — pending
+# Revit MCP host acceptance — in progress
 
-Task 5 supplies compiled adapter code and offline boundary tests. This checklist is future live evidence, not a completed test record. Installation/recovery is Task 7; both desktop applications' A8 workflow and independent report comparisons remain required.
+Task 5 supplies compiled adapter code and offline boundary tests. The [Task 7 live record](../docs/verification/2026-10-21-live-installation.md) now records real installation/recovery and initial SDK exchanges, with observed versus pending items. This checklist is the full required scope, not a completed test record. Both desktop applications' A8 workflow and independent report comparisons remain required.
 
 Use the recorded Revit 2024 build and disposable copies of the existing three samples. Record binary hashes, model and sidecar hashes, process/session IDs and actual MCP traffic. Never run fixture editing as part of a query. Keep SDK 2.2.0, compatible desktop policy and strict July regression unchanged.
 

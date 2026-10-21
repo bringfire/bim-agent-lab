@@ -1,0 +1,22 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\u0022code\u0022:\u0022ChecklistInvalid\u0022,\u0022message\u0022:\u0022The checklist must contain valid UTF-8.\u0022,\u0022requestId\u0022:\u00225c9c8695237445edabc6d0bfb12727f5\u0022,\u0022retryable\u0022:false}"
+    }
+  ],
+  "structuredContent": {
+    "code": "ChecklistInvalid",
+    "message": "The checklist must contain valid UTF-8.",
+    "requestId": "5c9c8695237445edabc6d0bfb12727f5",
+    "retryable": false
+  },
+  "isError": true,
+  "_meta": {
+    "io.modelcontextprotocol/serverInfo": {
+      "name": "bim-agent-lab",
+      "version": "0.1.0"
+    }
+  },
+  "resultType": "complete"
+}
