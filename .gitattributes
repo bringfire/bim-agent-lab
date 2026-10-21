@@ -31,3 +31,4 @@ projects/revit-readiness/docs/verification/revit-adapter-review-evidence/** -tex
 projects/revit-readiness/docs/verification/mcp-tools-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/mcp-tool-boundary-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/mcp-argument-contract-evidence/** -text -whitespace
+projects/revit-readiness/docs/verification/deployment-evidence/** -text -whitespace

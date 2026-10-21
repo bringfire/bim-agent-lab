@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>BIM Agent Lab readiness bridge</Name>
+    <Assembly>{{ASSEMBLY}}</Assembly>
+    <AddInId>1C77DD07-259D-44DF-86FF-F6D859E95569</AddInId>
+    <FullClassName>BimAgentLab.RevitReadiness.BridgeApplication</FullClassName>
+    <VendorId>BIAL</VendorId><VendorDescription>BIM Agent Lab</VendorDescription>
+    <AllowLoadIntoExistingSession>false</AllowLoadIntoExistingSession>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>BIM Agent Lab - Start readiness bridge</Text>
+    <Assembly>{{ASSEMBLY}}</Assembly>
+    <AddInId>1F280D99-D9EF-4DB0-94B3-CC3D13990E99</AddInId>
+    <FullClassName>BimAgentLab.RevitReadiness.StartReadinessBridgeCommand</FullClassName>
+    <VendorId>BIAL</VendorId><VendorDescription>BIM Agent Lab</VendorDescription>
+    <AvailabilityClassName>BimAgentLab.RevitReadiness.BridgeCommandAvailable</AvailabilityClassName>
+    <AllowLoadIntoExistingSession>false</AllowLoadIntoExistingSession>
+  </AddIn>
+  <AddIn Type="Command">
+    <Text>BIM Agent Lab - Stop readiness bridge</Text>
+    <Assembly>{{ASSEMBLY}}</Assembly>
+    <AddInId>EFEE79D7-E46B-4AD9-ADA0-83D1B5DB8FB8</AddInId>
+    <FullClassName>BimAgentLab.RevitReadiness.StopReadinessBridgeCommand</FullClassName>
+    <VendorId>BIAL</VendorId><VendorDescription>BIM Agent Lab</VendorDescription>
+    <AvailabilityClassName>BimAgentLab.RevitReadiness.BridgeCommandAvailable</AvailabilityClassName>
+    <AllowLoadIntoExistingSession>false</AllowLoadIntoExistingSession>
+  </AddIn>
+</RevitAddIns>

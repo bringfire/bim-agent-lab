@@ -3,6 +3,9 @@ using System.Text.Json;
 
 string? server = null, evidence = null;
 string protocol = "2026-07-28";
+string scenario = "probe", expected = "ReadinessReport";
+string? contextToken = null, pauseFile = null;
+int? revitPid = null;
 List<string> serverArgs = [];
 for (int i = 0; i < args.Length; i += 2)
 {
@@ -11,13 +14,18 @@ for (int i = 0; i < args.Length; i += 2)
     {
         case "--server": server = Path.GetFullPath(args[i + 1]); break;
         case "--server-arg": serverArgs.Add(args[i + 1]); break;
-        case "--scenario" when args[i + 1] == "probe": break;
+        case "--scenario" when args[i + 1] is "probe" or "readiness": scenario = args[i + 1]; break;
+        case "--expected": expected = args[i + 1]; break;
+        case "--context-token": contextToken = args[i + 1]; break;
+        case "--pause-file": pauseFile = Path.GetFullPath(args[i + 1]); break;
+        case "--revit-pid": revitPid = int.Parse(args[i + 1]); if(revitPid <= 0) throw new ArgumentException("Positive Revit PID required."); break;
         case "--evidence": evidence = Path.GetFullPath(args[i + 1]); break;
         case "--protocol" when args[i + 1] is "2025-06-18" or "2025-11-25" or "2026-07-28": protocol = args[i + 1]; break;
         default: throw new ArgumentException("Expected --server, --server-arg, --scenario probe, --evidence, --protocol (accepted revision).");
     }
 }
 if (server is null || evidence is null) throw new ArgumentException("--server and --evidence are required.");
+if (scenario == "readiness") return await ReadinessScenario.Run(server,serverArgs,evidence,protocol,expected,revitPid,contextToken,pauseFile);
 Directory.CreateDirectory(evidence);
 using var stop = new CancellationTokenSource(TimeSpan.FromSeconds(20));
 var transport = new StdioClientTransport(new StdioClientTransportOptions { Command = server, Arguments = serverArgs, Name = "lab SDK verification client" });

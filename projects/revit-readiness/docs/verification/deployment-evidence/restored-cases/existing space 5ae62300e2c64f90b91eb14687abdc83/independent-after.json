@@ -1,0 +1,21 @@
+{
+  "addins/": "directory",
+  "addins\\BimAgentLab.FixtureTools/": "directory",
+  "addins\\BimAgentLab.FixtureTools.addin": "DCC302967F9D3ABAFEAF5AB4FEFE35D0B7584D4EB3558C1B55AB76D2C9160D36",
+  "addins\\BimAgentLab.RequiredInformation/": "directory",
+  "addins\\BimAgentLab.RequiredInformation.addin": "C5B7E9C59776818AA8CAA4D4BCC8DE187924DFE14A9F5E54C4E27845A2FF198A",
+  "addins\\unrelated.addin": "90B04F77AB3DF56C90A4EB8995D1274EC1F3A48998A12921218E70377ACE2800",
+  "addins\\BimAgentLab.FixtureTools\\BimAgentLab.FixtureTools.dll": "255317D7B6EACA2AD739DBEC1ECFE4CB81968AE18CEC2753772BBE190BC4D3FD",
+  "addins\\BimAgentLab.FixtureTools\\BimAgentLab.Readiness.Core.dll": "3D645CEC4C7139E7DC551A7E9E9D438111F93F251799D22E30E7EDA2ADF79022",
+  "addins\\BimAgentLab.FixtureTools\\installed-files.json": "62BD4653FC9CCDC07691395592E21EC9AB616D46ECD538E4C3B6FA0745833848",
+  "addins\\BimAgentLab.FixtureTools\\obsolete.dll": "772B470AA24F1E1F5D0FEDE20DE9C84639BF260020596F6EB3F2FB77C2100718",
+  "addins\\BimAgentLab.FixtureTools\\unrelated.txt": "F88DB5176B5182ABF1F9BEAF4E29F32018B2C39DFE394FA6BA244F6D9EC79D7C",
+  "addins\\BimAgentLab.RequiredInformation\\BimAgentLab.Readiness.Core.dll": "70CF157958ACA1976078282D3BA04B334D19DCB62EBFE90D101AFB4DE03EE588",
+  "addins\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitReadiness.dll": "65A2636AEEBAD8DC2BBBC992820CC5F10765544066E4D9B38AE4528861A4CD04",
+  "addins\\BimAgentLab.RequiredInformation\\installed-files.json": "39268E66D8C8C736C760A9BBFF9588A6202DBAA44BEE7902E63AF8CA0E5B6FAF",
+  "addins\\BimAgentLab.RequiredInformation\\obsolete.dll": "C6372965F3E81EB293514F633DE7AE2DCD1EBA23DA9E86D9AD7A687D1240994B",
+  "addins\\BimAgentLab.RequiredInformation\\unrelated.txt": "F88DB5176B5182ABF1F9BEAF4E29F32018B2C39DFE394FA6BA244F6D9EC79D7C",
+  "server/": "directory",
+  "server\\unrelated.txt": "FA2C71436E0B810150599DF3FD7BA1E34401B23844896AF57909B48ABE749D11",
+  "client-settings.json": "{\"other-server\":true}"
+}

@@ -1,0 +1,34 @@
+{
+  "clientKind": "SDK harness, not desktop A8 acceptance",
+  "protocol": "2026-07-28",
+  "tools": [
+    "revit_check_required_type_information",
+    "revit_get_readiness_context"
+  ],
+  "expected": "ReadinessReport",
+  "context": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\u0022code\u0022:\u0022BridgeUnavailable\u0022,\u0022message\u0022:\u0022Start a bridge in the selected Revit instance.\u0022,\u0022requestId\u0022:\u00224d987d44ef0443d39998717c6d9046ea\u0022,\u0022retryable\u0022:true}"
+      }
+    ],
+    "structuredContent": {
+      "code": "BridgeUnavailable",
+      "message": "Start a bridge in the selected Revit instance.",
+      "requestId": "4d987d44ef0443d39998717c6d9046ea",
+      "retryable": true
+    },
+    "isError": true,
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "bim-agent-lab",
+        "version": "0.1.0"
+      }
+    },
+    "resultType": "complete"
+  },
+  "check": null,
+  "pass": false,
+  "completedUtc": "2026-10-21T20:16:27.4972435Z"
+}

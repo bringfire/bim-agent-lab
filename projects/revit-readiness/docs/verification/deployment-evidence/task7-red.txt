@@ -1,0 +1,47 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(57,74): warning CA1416: This call site is reachable on all platforms. 'RequestBudget.DeadlineUtc' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(35,22): warning CA1416: This call site is reachable on all platforms. 'RequestBudget.Admit(IBridgeClock)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(58,13): warning CA1416: This call site is reachable on all platforms. 'BridgeJson.Serialize<BridgeRequest>(BridgeRequest)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(57,53): warning CA1416: This call site is reachable on all platforms. 'BridgeJson.FormatUtc(DateTimeOffset)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\DeploymentTests.cs(57,9): error CS0103: The name 'Equal' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\DeploymentTests.cs(59,92): error CS0103: The name 'Equal' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\DeploymentTests.cs(70,9): error CS0103: The name 'Equal' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\DeploymentTests.cs(73,40): error CS0103: The name 'Equal' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\DeploymentTests.cs(73,76): error CS0103: The name 'Equal' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\DeploymentTests.cs(77,53): error CS0103: The name 'Equal' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\DeploymentTests.cs(78,13): error CS0103: The name 'Equal' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\DeploymentTests.cs(81,13): error CS0103: The name 'Equal' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\DeploymentTests.cs(84,9): error CS0103: The name 'Equal' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\DeploymentTests.cs(85,9): error CS0103: The name 'Equal' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\DeploymentTests.cs(94,9): error CS0103: The name 'Equal' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+
+Build FAILED.
+
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(57,74): warning CA1416: This call site is reachable on all platforms. 'RequestBudget.DeadlineUtc' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(35,22): warning CA1416: This call site is reachable on all platforms. 'RequestBudget.Admit(IBridgeClock)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(58,13): warning CA1416: This call site is reachable on all platforms. 'BridgeJson.Serialize<BridgeRequest>(BridgeRequest)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(57,53): warning CA1416: This call site is reachable on all platforms. 'BridgeJson.FormatUtc(DateTimeOffset)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\DeploymentTests.cs(57,9): error CS0103: The name 'Equal' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\DeploymentTests.cs(59,92): error CS0103: The name 'Equal' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\DeploymentTests.cs(70,9): error CS0103: The name 'Equal' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\DeploymentTests.cs(73,40): error CS0103: The name 'Equal' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\DeploymentTests.cs(73,76): error CS0103: The name 'Equal' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\DeploymentTests.cs(77,53): error CS0103: The name 'Equal' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\DeploymentTests.cs(78,13): error CS0103: The name 'Equal' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\DeploymentTests.cs(81,13): error CS0103: The name 'Equal' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\DeploymentTests.cs(84,9): error CS0103: The name 'Equal' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\DeploymentTests.cs(85,9): error CS0103: The name 'Equal' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\DeploymentTests.cs(94,9): error CS0103: The name 'Equal' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+    4 Warning(s)
+    11 Error(s)
+
+Time Elapsed 00:00:05.03
+Exception: D:\bim-agent-lab\projects\revit-readiness\scripts\Test-McpBridge.ps1:9
+Line |
+   9 |  …    if ($LASTEXITCODE -ne 0) { throw 'Deployment test build failed.' }
+     |                                  ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Deployment test build failed.

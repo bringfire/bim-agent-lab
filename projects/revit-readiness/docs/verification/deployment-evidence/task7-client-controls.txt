@@ -1,0 +1,5 @@
+PASS SDK readiness: expected=BridgeUnavailable; evidence=D:\bim-agent-lab\projects\revit-readiness\samples\local\task7-client-controls\7532b4935c3e4685b472d1e6152fd2f3\2025-06-18
+PASS SDK readiness: expected=BridgeUnavailable; evidence=D:\bim-agent-lab\projects\revit-readiness\samples\local\task7-client-controls\7532b4935c3e4685b472d1e6152fd2f3\2025-11-25
+PASS SDK readiness: expected=BridgeUnavailable; evidence=D:\bim-agent-lab\projects\revit-readiness\samples\local\task7-client-controls\7532b4935c3e4685b472d1e6152fd2f3\2026-07-28
+FAIL SDK readiness: expected=ReadinessReport; evidence=D:\bim-agent-lab\projects\revit-readiness\samples\local\task7-client-controls\7532b4935c3e4685b472d1e6152fd2f3\wrong-expected
+PASS three compatible readiness-client controls and deliberately wrong expectation

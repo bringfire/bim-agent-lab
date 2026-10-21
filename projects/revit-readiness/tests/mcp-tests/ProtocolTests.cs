@@ -11,6 +11,7 @@ internal static partial class Program
 
     static async Task<int> Main(string[] args)
     {
+        if (args[0] == "--deployment") return await DeploymentTests(args);
         if (args[0] == "--tools-child") return await ToolsChild(args);
         if (args[0] == "--tools-shutdown-child") return await ToolsShutdownChild(args);
         if (args[0] == "--tools") return await ToolsTests(args);

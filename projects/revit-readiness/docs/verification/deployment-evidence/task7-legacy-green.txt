@@ -1,0 +1,2 @@
+PASS Documented legacy fixture migrates and undoes to no inventory
+PASS Unknown legacy fixture rejected with zero changes

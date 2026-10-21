@@ -1,0 +1,48 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+  BimAgentLab.Mcp.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\bin\Release\net10.0\BimAgentLab.Mcp.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.34
+FAIL Deployment success, exact undo twice: none: Exception Expected 0; actual 1
+FAIL Deployment success, exact undo twice: existing: Exception Expected 0; actual 1
+FAIL Deployment success, exact undo twice: explicit: Exception Expected 0; actual 1
+FAIL Deployment success, exact undo twice: normal: Exception Expected 0; actual 1
+PASS Deployment preflight zero mutations: invalid-fixture
+PASS Deployment preflight zero mutations: forbidden
+PASS Deployment preflight zero mutations: modern-in-host
+FAIL Deployment throw at FirstCopy, fresh-process undo twice: Exception Expected 0; actual 1
+FAIL Deployment exit at FirstCopy, fresh-process undo twice: Exception Expected 91; actual 1
+FAIL Deployment throw at ObsoleteDelete, fresh-process undo twice: Exception Expected 0; actual 1
+FAIL Deployment exit at ObsoleteDelete, fresh-process undo twice: Exception Expected 91; actual 1
+FAIL Deployment throw at FixtureCore, fresh-process undo twice: Exception Expected 0; actual 1
+FAIL Deployment exit at FixtureCore, fresh-process undo twice: Exception Expected 91; actual 1
+FAIL Deployment throw at FixtureInventory, fresh-process undo twice: Exception Expected 0; actual 1
+FAIL Deployment exit at FixtureInventory, fresh-process undo twice: Exception Expected 91; actual 1
+FAIL Deployment throw at Manifest, fresh-process undo twice: Exception Expected 0; actual 1
+FAIL Deployment exit at Manifest, fresh-process undo twice: Exception Expected 91; actual 1
+FAIL Deployment throw at MainInventory, fresh-process undo twice: Exception Expected 0; actual 1
+FAIL Deployment exit at MainInventory, fresh-process undo twice: Exception Expected 91; actual 1
+FAIL Deployment throw at BeforeCommit, fresh-process undo twice: Exception Expected 0; actual 1
+FAIL Deployment exit at BeforeCommit, fresh-process undo twice: Exception Expected 91; actual 1
+FAIL Deployment throw at AfterMutation, fresh-process undo twice: Exception Expected 0; actual 1
+FAIL Deployment exit at AfterMutation, fresh-process undo twice: Exception Expected 91; actual 1
+FAIL Recovery interrupted, trailing journal fragment, resumes twice: Exception Expected 0; actual 1
+FAIL Deployment recovery preflight: foreign: Exception Expected 0; actual 1
+PASS Deployment recovery preflight: missing-backup
+PASS Deployment recovery preflight: changed-stage
+PASS Deployment recovery preflight: pending
+PASS Deployment recovery preflight: backup-failure
+PASS Deployment recovery preflight: changed-after-preflight
+Deployment tests: 8 passed; 22 failed. Evidence: D:\bim-agent-lab\projects\revit-readiness\samples/local/deployment-tests\a5c34d67dd194f799a8cc6f5b66cb25e
+Exception: D:\bim-agent-lab\projects\revit-readiness\scripts\Test-McpBridge.ps1:11
+Line |
+  11 |  … ($LASTEXITCODE -ne 0) { throw 'Deployment behavioral tests failed.' }
+     |                            ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Deployment behavioral tests failed.

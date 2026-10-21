@@ -1,0 +1,14 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+  BimAgentLab.Mcp.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\bin\Release\net10.0\BimAgentLab.Mcp.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.89
+FAIL Server redistribution includes exact source notices: DirectoryNotFoundException Could not find a part of the path 'D:\bim-agent-lab\projects\revit-readiness\samples\local\deployment-tests\3c3197ecee6848d2a63c7d7aa0c8e5f7\existing space 7f5ce29bb18c43d0a2f6ead70b9e659a\server\third-party\csharp-sdk-LICENSE.txt'.
+FAIL Missing MCP license fails before any target write: Exception Invalid package accepted

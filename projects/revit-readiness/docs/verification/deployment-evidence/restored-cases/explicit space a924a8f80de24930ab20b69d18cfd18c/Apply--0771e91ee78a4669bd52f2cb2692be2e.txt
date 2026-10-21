@@ -1,0 +1,1 @@
+Installed; recovery receipt: D:\bim-agent-lab\projects\revit-readiness\samples\local\deployment-tests\56dfc7dd23774c408f885bf2d1c0740e\explicit space a924a8f80de24930ab20b69d18cfd18c\InstallRecovery\f31bf19e105642f999e77952dc43db50\receipt.json

@@ -1,0 +1,14 @@
+[
+  {
+    "File": "BimAgentLab.FixtureTools.dll",
+    "Sha256": "F776364EB597AB8B5F14A9AD6A4117E4B909A60B65A86A689AC78C491916D99D",
+    "Evidence": "docs/verification/required-information-evidence/assembly-hashes.json",
+    "EvidenceCommit": "c7c2ad9cb3e49e72b042a1d6697ab93f98c55ade"
+  },
+  {
+    "File": "BimAgentLab.Readiness.Core.dll",
+    "Sha256": "A3A2DD5D1F64A96018F600E5EA7604F8B5B2636B5016210A5DD97F63DD326A93",
+    "Evidence": "docs/verification/excel-evidence/installed-files.json",
+    "EvidenceCommit": "4d40788d5fc2a22866e59cc78ce074471c831531"
+  }
+]

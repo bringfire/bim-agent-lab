@@ -1,0 +1,5 @@
+Exception: D:\bim-agent-lab\projects\revit-readiness\tests\deployment-fault-host.ps1:74
+Line |
+  74 |  .  -eq 'exit'){[Environment]::Exit(91)}; throw "INJECTED $name" }}.GetN .
+     |                                           ~~~~~~~~~~~~~~~~~~~~~~
+     | INJECTED Manifest

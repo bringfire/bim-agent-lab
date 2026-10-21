@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-21",
+  "baseline": "e25ecb1c888abb3b219b32d55dc4d8306a6ae882",
+  "modelCommit": "96669dc",
+  "deploymentTests": 41,
+  "independentlyComparedRestoredTrees": 23,
+  "sdk": "2.2.0",
+  "externalDependencyChanges": false,
+  "realInstallation": "not yet performed in this capture",
+  "liveRevit": false,
+  "desktopA8": false
+}

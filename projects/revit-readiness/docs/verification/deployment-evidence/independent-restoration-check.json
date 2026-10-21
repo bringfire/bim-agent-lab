@@ -1,0 +1,144 @@
+{
+  "checker": "implementing agent Python comparison against pre-install C# snapshots; not external review",
+  "cases": [
+    {
+      "case": "existing space 13f30ae897fd45e08a75e72b07a07ab0",
+      "entries": 19,
+      "state": "Restored",
+      "pass": true
+    },
+    {
+      "case": "existing space 145456c17b504913a1a7d8c29ab15474",
+      "entries": 19,
+      "state": "Restored",
+      "pass": true
+    },
+    {
+      "case": "existing space 21130749f2384d999f87d677a294b704",
+      "entries": 19,
+      "state": "Restored",
+      "pass": true
+    },
+    {
+      "case": "existing space 28f987cc6a9d4c7b83515d14613b78ad",
+      "entries": 19,
+      "state": "Restored",
+      "pass": true
+    },
+    {
+      "case": "existing space 573cfe81cc1243c5a29038141cf7375f",
+      "entries": 19,
+      "state": "Restored",
+      "pass": true
+    },
+    {
+      "case": "existing space 5ae62300e2c64f90b91eb14687abdc83",
+      "entries": 19,
+      "state": "Restored",
+      "pass": true
+    },
+    {
+      "case": "existing space 77ae812332fc41baad3edb23d81f535c",
+      "entries": 19,
+      "state": "Restored",
+      "pass": true
+    },
+    {
+      "case": "existing space c3ba8aa8cef346479276f023363f578f",
+      "entries": 19,
+      "state": "Restored",
+      "pass": true
+    },
+    {
+      "case": "existing space c4be538cc77748ea8e8e5f9efac60cee",
+      "entries": 19,
+      "state": "Restored",
+      "pass": true
+    },
+    {
+      "case": "existing space c9ce111baa2a44259bcb2df26111d798",
+      "entries": 19,
+      "state": "Restored",
+      "pass": true
+    },
+    {
+      "case": "existing space d9ed68e61a2f420787270ed9ae135ef1",
+      "entries": 19,
+      "state": "Restored",
+      "pass": true
+    },
+    {
+      "case": "existing space dedebc130224469796b42936d2b2c6af",
+      "entries": 19,
+      "state": "Restored",
+      "pass": true
+    },
+    {
+      "case": "existing space e7ef0dcc0f8449659c4a9ec4caeb2b0e",
+      "entries": 19,
+      "state": "Restored",
+      "pass": true
+    },
+    {
+      "case": "existing space ec27c733b3454b7eae42d400632693d2",
+      "entries": 19,
+      "state": "Restored",
+      "pass": true
+    },
+    {
+      "case": "existing space f3443d944ddb4fc0a9ece66956311894",
+      "entries": 19,
+      "state": "Restored",
+      "pass": true
+    },
+    {
+      "case": "existing space f4211733d43e4733baab626dff536504",
+      "entries": 19,
+      "state": "Restored",
+      "pass": true
+    },
+    {
+      "case": "existing space f91637b9971449d5a9db5db92fc48ef1",
+      "entries": 19,
+      "state": "Restored",
+      "pass": true
+    },
+    {
+      "case": "existing space fe057e7680354fe39d1e0bc44b9b31be",
+      "entries": 19,
+      "state": "Restored",
+      "pass": true
+    },
+    {
+      "case": "explicit space a924a8f80de24930ab20b69d18cfd18c",
+      "entries": 12,
+      "state": "Restored",
+      "pass": true
+    },
+    {
+      "case": "fresh-parent space 0acc5a1a8f854bb694b97a8e00f4c0b7",
+      "entries": 17,
+      "state": "Restored",
+      "pass": true
+    },
+    {
+      "case": "legacy space 55237ddccdc044b9ae2602bc887a476f",
+      "entries": 19,
+      "state": "Restored",
+      "pass": true
+    },
+    {
+      "case": "none space 7ff3f207603b4425aed139bcd5421ac7",
+      "entries": 12,
+      "state": "Restored",
+      "pass": true
+    },
+    {
+      "case": "normal space 8a4ca81e58c74e63984057ef892b7ab3",
+      "entries": 19,
+      "state": "Restored",
+      "pass": true
+    }
+  ],
+  "pass": true
+}
