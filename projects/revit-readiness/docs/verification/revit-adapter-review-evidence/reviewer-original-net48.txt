@@ -1,0 +1,9 @@
+.NET Framework 4.8.10008.0
+PASS actual HostBridgeSession stop during held native Raise; stop returns before release; later API poll disposes once
+SIDECAR mode=missing capture=BridgeException queueResult=ChecklistMissing readerCalls=0
+SIDECAR mode=empty capture=InvalidDataException queueResult=InternalError readerCalls=0
+FAIL expected ChecklistInvalid for empty; actual=InternalError
+SIDECAR mode=oversize capture=InvalidDataException queueResult=InternalError readerCalls=0
+FAIL expected ChecklistInvalid for oversize; actual=InternalError
+SIDECAR mode=valid capture=success queueResult=success readerCalls=0
+ADAPTER_PROOF actual unmodified catalog/executor/codec source and runtime; only Autodesk objects and reader are doubles; no live Revit claim

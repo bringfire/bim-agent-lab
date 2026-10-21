@@ -27,3 +27,4 @@ projects/revit-readiness/docs/verification/deadline-cancellation-evidence/** -te
 projects/revit-readiness/docs/verification/cancellation-progress-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/dispatch-context-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/revit-adapter-evidence/** -text -whitespace
+projects/revit-readiness/docs/verification/revit-adapter-review-evidence/** -text -whitespace

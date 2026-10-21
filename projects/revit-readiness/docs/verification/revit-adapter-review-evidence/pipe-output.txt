@@ -1,0 +1,327 @@
+PIPE_TARGET framework=net48
+PASS Catalog refuses zero or ambiguous instances and honors explicit PID
+PASS Native identity verifies process start, logon, session and pipe identity
+PASS Published descriptors are restricted, selected and removed only by their owner
+PASS Stale and changed descriptors cannot be selected or silently deleted
+PASS Two real pipe clients preserve separate request and session identities
+FRAME_TIMING mode=no-bytes connection=1 accepted=6072594485943 closed=6072644532769 frequency=10000000 seconds=5.004683
+FRAME_TIMING mode=no-bytes connection=2 accepted=6072594489088 closed=6072644533255 frequency=10000000 seconds=5.004417
+FRAME_TIMING mode=no-bytes connection=3 accepted=6072594489625 closed=6072644533664 frequency=10000000 seconds=5.004404
+FRAME_TIMING mode=no-bytes connection=4 accepted=6072594489657 closed=6072644533498 frequency=10000000 seconds=5.004384
+FRAME_TIMING mode=no-bytes connection=5 accepted=6072594489799 closed=6072644534080 frequency=10000000 seconds=5.004428
+FRAME_TIMING mode=no-bytes connection=6 accepted=6072594490057 closed=6072644531184 frequency=10000000 seconds=5.004113
+FRAME_TIMING mode=no-bytes connection=7 accepted=6072594490239 closed=6072644531184 frequency=10000000 seconds=5.004095
+FRAME_TIMING mode=no-bytes connection=8 accepted=6072594490742 closed=6072644532501 frequency=10000000 seconds=5.004176
+PASS All eight no-bytes slots expire once and admit a valid successor
+FRAME_TIMING mode=partial-header connection=1 accepted=6072645961435 closed=6072696071103 frequency=10000000 seconds=5.010967
+FRAME_TIMING mode=partial-header connection=2 accepted=6072645962001 closed=6072696071202 frequency=10000000 seconds=5.010920
+FRAME_TIMING mode=partial-header connection=3 accepted=6072645962322 closed=6072696071079 frequency=10000000 seconds=5.010876
+FRAME_TIMING mode=partial-header connection=4 accepted=6072645962654 closed=6072696071267 frequency=10000000 seconds=5.010861
+FRAME_TIMING mode=partial-header connection=5 accepted=6072645962955 closed=6072696072589 frequency=10000000 seconds=5.010963
+FRAME_TIMING mode=partial-header connection=6 accepted=6072645963108 closed=6072696071418 frequency=10000000 seconds=5.010831
+FRAME_TIMING mode=partial-header connection=7 accepted=6072645963566 closed=6072696071332 frequency=10000000 seconds=5.010777
+FRAME_TIMING mode=partial-header connection=8 accepted=6072645964928 closed=6072696072266 frequency=10000000 seconds=5.010734
+PASS All eight partial-header slots expire once and admit a valid successor
+FRAME_TIMING mode=partial-body connection=1 accepted=6072697707376 closed=6072747757709 frequency=10000000 seconds=5.005033
+FRAME_TIMING mode=partial-body connection=2 accepted=6072697708002 closed=6072747758318 frequency=10000000 seconds=5.005032
+FRAME_TIMING mode=partial-body connection=3 accepted=6072697708735 closed=6072747758691 frequency=10000000 seconds=5.004996
+FRAME_TIMING mode=partial-body connection=4 accepted=6072697709441 closed=6072747758385 frequency=10000000 seconds=5.004894
+FRAME_TIMING mode=partial-body connection=5 accepted=6072697710248 closed=6072747757649 frequency=10000000 seconds=5.004740
+FRAME_TIMING mode=partial-body connection=6 accepted=6072697710955 closed=6072747757639 frequency=10000000 seconds=5.004668
+FRAME_TIMING mode=partial-body connection=7 accepted=6072697711387 closed=6072747757739 frequency=10000000 seconds=5.004635
+FRAME_TIMING mode=partial-body connection=8 accepted=6072697711672 closed=6072747757637 frequency=10000000 seconds=5.004597
+PASS All eight partial-body slots expire once and admit a valid successor
+FRAME_TIMING mode=trickle connection=1 accepted=6072749342617 closed=6072799448768 frequency=10000000 seconds=5.010615
+FRAME_TIMING mode=trickle connection=2 accepted=6072749343031 closed=6072799450921 frequency=10000000 seconds=5.010789
+FRAME_TIMING mode=trickle connection=3 accepted=6072749343201 closed=6072799451310 frequency=10000000 seconds=5.010811
+FRAME_TIMING mode=trickle connection=4 accepted=6072749343381 closed=6072799450201 frequency=10000000 seconds=5.010682
+FRAME_TIMING mode=trickle connection=5 accepted=6072749343432 closed=6072799450987 frequency=10000000 seconds=5.010756
+FRAME_TIMING mode=trickle connection=6 accepted=6072749344161 closed=6072799449685 frequency=10000000 seconds=5.010552
+FRAME_TIMING mode=trickle connection=7 accepted=6072749344326 closed=6072799449212 frequency=10000000 seconds=5.010489
+FRAME_TIMING mode=trickle connection=8 accepted=6072749344495 closed=6072799450767 frequency=10000000 seconds=5.010627
+PASS All eight trickle slots expire once and admit a valid successor
+PASS Disconnect cancels work and frees connection before callback quiescence
+PASS Stop closes idle and partial receive connections with no dispatch
+PASS Lazy provider retries before binding and never follows a replacement session
+PASS net48 child endpoint serves simultaneous clients and large Unicode results, then removes its descriptor
+PEER_EXIT exited before identity validation; runtime=4.0.30319.42000
+PEER_EXIT recoveredSlots=8 submissionsBeforeValidRequest=0 stops=2 replacementSelected=true
+PASS Client exit before identity validation restores all eight slots and permits shutdown and restart
+CALLBACK_FAULT ownerStop=True descriptorRemoved=true lifetimeDisposedAfterQuiescence=true errorRetained=true
+PASS Throwing cancellation callback cannot skip shutdown cleanup
+CALLBACK_FAULT ownerStop=False descriptorRemoved=true lifetimeDisposedAfterQuiescence=true errorRetained=true
+PASS Throwing cancellation callback cannot skip deferred lifetime cleanup on disconnect
+WORKER_FAULT cleanupRetried=False descriptorRemoved=true originalErrorRetained=true replacementSelected=true
+PASS Unexpected worker fault still cleans owned descriptor and preserves its error
+WORKER_FAULT cleanupRetried=True descriptorRemoved=true originalErrorRetained=true replacementSelected=true
+PASS Unexpected worker fault still cleans owned descriptor after a retryable cleanup failure
+DEADLINE_CHILD mode=control exit=0
+DEADLINE_SUBMITTED mode=control originalBudgetPreserved=true
+DEADLINE_PROOF mode=control survived=true cleanup=true replacement=true callbacks=2
+PASS Deadline child survives and cleans up: control
+DEADLINE_CHILD mode=throw exit=0
+DEADLINE_SUBMITTED mode=throw originalBudgetPreserved=true
+DEADLINE_PROOF mode=throw survived=true cleanup=true replacement=true callbacks=2
+PASS Deadline child survives and cleans up: throw
+DEADLINE_CHILD mode=held exit=0
+DEADLINE_SUBMITTED mode=held originalBudgetPreserved=true
+DEADLINE_PROOF mode=held survived=true cleanup=true replacement=true callbacks=2
+PASS Deadline child survives and cleans up: held
+DEADLINE_CHILD mode=complete exit=0
+DEADLINE_SUBMITTED mode=complete originalBudgetPreserved=true
+DEADLINE_PROOF mode=complete survived=true cleanup=true replacement=true callbacks=0
+PASS Deadline child survives and cleans up: complete
+DEADLINE_CHILD mode=upstream-timer exit=0
+DEADLINE_PROOF mode=upstream-timer survived=true cleanup=true replacement=true originalBudgetUnexpired=true
+PASS Deadline child survives and cleans up: upstream-timer
+DEADLINE_CHILD mode=owner-timer exit=0
+DEADLINE_PROOF mode=owner-timer survived=true cleanup=true replacement=true originalBudgetUnexpired=true
+PASS Deadline child survives and cleans up: owner-timer
+PROGRESS_CHILD mode=stop-return-before exit=0
+WHILE_HELD mode=stop-return-before stopReturned=true networkReleased=true descriptorRemoved=true quiesced=True
+PROGRESS_PROOF mode=stop-return-before
+PASS Cancellation progress child: stop-return-before
+PROGRESS_CHILD mode=stop-return-after exit=0
+WHILE_HELD mode=stop-return-after stopReturned=true networkReleased=true descriptorRemoved=true quiesced=False
+PROGRESS_PROOF mode=stop-return-after
+PASS Cancellation progress child: stop-return-after
+PROGRESS_CHILD mode=stop-throw-before exit=0
+WHILE_HELD mode=stop-throw-before stopReturned=true networkReleased=true descriptorRemoved=true quiesced=True
+PROGRESS_PROOF mode=stop-throw-before
+PASS Cancellation progress child: stop-throw-before
+PROGRESS_CHILD mode=stop-throw-after exit=0
+WHILE_HELD mode=stop-throw-after stopReturned=true networkReleased=true descriptorRemoved=true quiesced=False
+PROGRESS_PROOF mode=stop-throw-after
+PASS Cancellation progress child: stop-throw-after
+PROGRESS_CHILD mode=disconnect-return-before exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=disconnect-return-before stopReturned=true networkReleased=true descriptorRemoved=true quiesced=True
+PROGRESS_PROOF mode=disconnect-return-before
+PASS Cancellation progress child: disconnect-return-before
+PROGRESS_CHILD mode=disconnect-return-after exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=disconnect-return-after stopReturned=true networkReleased=true descriptorRemoved=true quiesced=False
+PROGRESS_PROOF mode=disconnect-return-after
+PASS Cancellation progress child: disconnect-return-after
+PROGRESS_CHILD mode=disconnect-throw-before exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=disconnect-throw-before stopReturned=true networkReleased=true descriptorRemoved=true quiesced=True
+PROGRESS_PROOF mode=disconnect-throw-before
+PASS Cancellation progress child: disconnect-throw-before
+PROGRESS_CHILD mode=disconnect-throw-after exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=disconnect-throw-after stopReturned=true networkReleased=true descriptorRemoved=true quiesced=False
+PROGRESS_PROOF mode=disconnect-throw-after
+PASS Cancellation progress child: disconnect-throw-after
+PROGRESS_CHILD mode=deadline-return-before exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=deadline-return-before stopReturned=true networkReleased=true descriptorRemoved=true quiesced=True
+PROGRESS_PROOF mode=deadline-return-before
+PASS Cancellation progress child: deadline-return-before
+PROGRESS_CHILD mode=deadline-return-after exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=deadline-return-after stopReturned=true networkReleased=true descriptorRemoved=true quiesced=False
+PROGRESS_PROOF mode=deadline-return-after
+PASS Cancellation progress child: deadline-return-after
+PROGRESS_CHILD mode=deadline-throw-before exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=deadline-throw-before stopReturned=true networkReleased=true descriptorRemoved=true quiesced=True
+PROGRESS_PROOF mode=deadline-throw-before
+PASS Cancellation progress child: deadline-throw-before
+PROGRESS_CHILD mode=deadline-throw-after exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=deadline-throw-after stopReturned=true networkReleased=true descriptorRemoved=true quiesced=False
+PROGRESS_PROOF mode=deadline-throw-after
+PASS Cancellation progress child: deadline-throw-after
+PROGRESS_CHILD mode=capacity exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD capacity=8 overload=Busy restartBypass=false submissions=8
+PROGRESS_PROOF mode=capacity
+PASS Cancellation progress child: capacity
+PROGRESS_CHILD mode=client exit=0
+WHILE_HELD clientNetworkReleased=true immediateInvalidation=true
+PROGRESS_PROOF mode=client
+PASS Cancellation progress child: client
+PROGRESS_CHILD mode=quiesced-fault exit=0
+EXCEPTIONAL_QUIESCENCE disposed=9 capacityRecovered=true errorRetained=true
+PROGRESS_PROOF mode=quiesced-fault
+PASS Cancellation progress child: quiesced-fault
+PASS Native pipe is asynchronous byte mode and a foreign-logon ACL denies access
+PASS Failed descriptor publication unwinds every acquired native pipe
+PASS Stop releases network even if descriptor cleanup fails and can retry cleanup
+PASS Valid expired and beyond-policy requests get correlated failures without dispatch
+PASS Submit errors retain correlation and unexpected errors expose no stack or message
+PASS Client rejects wrong response request, session, contract and malformed JSON
+PASS Client connect is capped at two seconds and respects a shorter original budget
+PASS Frame receipt consumes the request's existing budget
+PASS Stop during a blocked large response write releases the network worker
+PASS Cancellation and expiry during selection prevent binding or a connection
+PASS Actual foreign server PID is rejected before any request bytes
+PASS Provider rejects ambiguity through its real call path and retries only before binding
+PASS Stop at the acceptance handoff prevents parsing and submission
+PASS Failed duplicate start cannot remove the live owner's descriptor
+Pipe tests: 53 passed; 0 failed.
+PIPE_TARGET framework=net10.0
+PASS Catalog refuses zero or ambiguous instances and honors explicit PID
+PASS Native identity verifies process start, logon, session and pipe identity
+PASS Published descriptors are restricted, selected and removed only by their owner
+PASS Stale and changed descriptors cannot be selected or silently deleted
+PASS Two real pipe clients preserve separate request and session identities
+FRAME_TIMING mode=no-bytes connection=1 accepted=6073063850355 closed=6073113952572 frequency=10000000 seconds=5.010222
+FRAME_TIMING mode=no-bytes connection=2 accepted=6073063855996 closed=6073113952575 frequency=10000000 seconds=5.009658
+FRAME_TIMING mode=no-bytes connection=3 accepted=6073063856518 closed=6073113953569 frequency=10000000 seconds=5.009705
+FRAME_TIMING mode=no-bytes connection=4 accepted=6073063856556 closed=6073113953046 frequency=10000000 seconds=5.009649
+FRAME_TIMING mode=no-bytes connection=5 accepted=6073063856595 closed=6073113952869 frequency=10000000 seconds=5.009627
+FRAME_TIMING mode=no-bytes connection=6 accepted=6073063856994 closed=6073113954933 frequency=10000000 seconds=5.009794
+FRAME_TIMING mode=no-bytes connection=7 accepted=6073063857023 closed=6073113952583 frequency=10000000 seconds=5.009556
+FRAME_TIMING mode=no-bytes connection=8 accepted=6073063862964 closed=6073113953891 frequency=10000000 seconds=5.009093
+PASS All eight no-bytes slots expire once and admit a valid successor
+FRAME_TIMING mode=partial-header connection=1 accepted=6073115490701 closed=6073165625775 frequency=10000000 seconds=5.013507
+FRAME_TIMING mode=partial-header connection=2 accepted=6073115491355 closed=6073165625767 frequency=10000000 seconds=5.013441
+FRAME_TIMING mode=partial-header connection=3 accepted=6073115491434 closed=6073165627206 frequency=10000000 seconds=5.013577
+FRAME_TIMING mode=partial-header connection=4 accepted=6073115492018 closed=6073165627470 frequency=10000000 seconds=5.013545
+FRAME_TIMING mode=partial-header connection=5 accepted=6073115492699 closed=6073165625770 frequency=10000000 seconds=5.013307
+FRAME_TIMING mode=partial-header connection=6 accepted=6073115492859 closed=6073165625771 frequency=10000000 seconds=5.013291
+FRAME_TIMING mode=partial-header connection=7 accepted=6073115493670 closed=6073165627472 frequency=10000000 seconds=5.013380
+FRAME_TIMING mode=partial-header connection=8 accepted=6073115494742 closed=6073165627410 frequency=10000000 seconds=5.013267
+PASS All eight partial-header slots expire once and admit a valid successor
+FRAME_TIMING mode=partial-body connection=1 accepted=6073167041192 closed=6073217196296 frequency=10000000 seconds=5.015510
+FRAME_TIMING mode=partial-body connection=2 accepted=6073167041192 closed=6073217196286 frequency=10000000 seconds=5.015509
+FRAME_TIMING mode=partial-body connection=3 accepted=6073167041540 closed=6073217196346 frequency=10000000 seconds=5.015481
+FRAME_TIMING mode=partial-body connection=4 accepted=6073167041779 closed=6073217196978 frequency=10000000 seconds=5.015520
+FRAME_TIMING mode=partial-body connection=5 accepted=6073167041836 closed=6073217196417 frequency=10000000 seconds=5.015458
+FRAME_TIMING mode=partial-body connection=6 accepted=6073167043252 closed=6073217196381 frequency=10000000 seconds=5.015313
+FRAME_TIMING mode=partial-body connection=7 accepted=6073167043687 closed=6073217196288 frequency=10000000 seconds=5.015260
+FRAME_TIMING mode=partial-body connection=8 accepted=6073167044223 closed=6073217196285 frequency=10000000 seconds=5.015206
+PASS All eight partial-body slots expire once and admit a valid successor
+FRAME_TIMING mode=trickle connection=1 accepted=6073218545821 closed=6073268558046 frequency=10000000 seconds=5.001222
+FRAME_TIMING mode=trickle connection=2 accepted=6073218546107 closed=6073268557932 frequency=10000000 seconds=5.001182
+FRAME_TIMING mode=trickle connection=3 accepted=6073218546679 closed=6073268557867 frequency=10000000 seconds=5.001119
+FRAME_TIMING mode=trickle connection=4 accepted=6073218546836 closed=6073268558040 frequency=10000000 seconds=5.001120
+FRAME_TIMING mode=trickle connection=5 accepted=6073218546923 closed=6073268558125 frequency=10000000 seconds=5.001120
+FRAME_TIMING mode=trickle connection=6 accepted=6073218547106 closed=6073268557870 frequency=10000000 seconds=5.001076
+FRAME_TIMING mode=trickle connection=7 accepted=6073218547919 closed=6073268557929 frequency=10000000 seconds=5.001001
+FRAME_TIMING mode=trickle connection=8 accepted=6073218547997 closed=6073268558243 frequency=10000000 seconds=5.001025
+PASS All eight trickle slots expire once and admit a valid successor
+PASS Disconnect cancels work and frees connection before callback quiescence
+PASS Stop closes idle and partial receive connections with no dispatch
+PASS Lazy provider retries before binding and never follows a replacement session
+PASS net48 child endpoint serves simultaneous clients and large Unicode results, then removes its descriptor
+PEER_EXIT exited before identity validation; runtime=10.0.13
+PEER_EXIT recoveredSlots=8 submissionsBeforeValidRequest=0 stops=2 replacementSelected=true
+PASS Client exit before identity validation restores all eight slots and permits shutdown and restart
+CALLBACK_FAULT ownerStop=True descriptorRemoved=true lifetimeDisposedAfterQuiescence=true errorRetained=true
+PASS Throwing cancellation callback cannot skip shutdown cleanup
+CALLBACK_FAULT ownerStop=False descriptorRemoved=true lifetimeDisposedAfterQuiescence=true errorRetained=true
+PASS Throwing cancellation callback cannot skip deferred lifetime cleanup on disconnect
+WORKER_FAULT cleanupRetried=False descriptorRemoved=true originalErrorRetained=true replacementSelected=true
+PASS Unexpected worker fault still cleans owned descriptor and preserves its error
+WORKER_FAULT cleanupRetried=True descriptorRemoved=true originalErrorRetained=true replacementSelected=true
+PASS Unexpected worker fault still cleans owned descriptor after a retryable cleanup failure
+DEADLINE_CHILD mode=control exit=0
+DEADLINE_SUBMITTED mode=control originalBudgetPreserved=true
+DEADLINE_PROOF mode=control survived=true cleanup=true replacement=true callbacks=2
+PASS Deadline child survives and cleans up: control
+DEADLINE_CHILD mode=throw exit=0
+DEADLINE_SUBMITTED mode=throw originalBudgetPreserved=true
+DEADLINE_PROOF mode=throw survived=true cleanup=true replacement=true callbacks=2
+PASS Deadline child survives and cleans up: throw
+DEADLINE_CHILD mode=held exit=0
+DEADLINE_SUBMITTED mode=held originalBudgetPreserved=true
+DEADLINE_PROOF mode=held survived=true cleanup=true replacement=true callbacks=2
+PASS Deadline child survives and cleans up: held
+DEADLINE_CHILD mode=complete exit=0
+DEADLINE_SUBMITTED mode=complete originalBudgetPreserved=true
+DEADLINE_PROOF mode=complete survived=true cleanup=true replacement=true callbacks=0
+PASS Deadline child survives and cleans up: complete
+DEADLINE_CHILD mode=upstream-timer exit=0
+DEADLINE_PROOF mode=upstream-timer survived=true cleanup=true replacement=true originalBudgetUnexpired=true
+PASS Deadline child survives and cleans up: upstream-timer
+DEADLINE_CHILD mode=owner-timer exit=0
+DEADLINE_PROOF mode=owner-timer survived=true cleanup=true replacement=true originalBudgetUnexpired=true
+PASS Deadline child survives and cleans up: owner-timer
+PROGRESS_CHILD mode=stop-return-before exit=0
+WHILE_HELD mode=stop-return-before stopReturned=true networkReleased=true descriptorRemoved=true quiesced=True
+PROGRESS_PROOF mode=stop-return-before
+PASS Cancellation progress child: stop-return-before
+PROGRESS_CHILD mode=stop-return-after exit=0
+WHILE_HELD mode=stop-return-after stopReturned=true networkReleased=true descriptorRemoved=true quiesced=False
+PROGRESS_PROOF mode=stop-return-after
+PASS Cancellation progress child: stop-return-after
+PROGRESS_CHILD mode=stop-throw-before exit=0
+WHILE_HELD mode=stop-throw-before stopReturned=true networkReleased=true descriptorRemoved=true quiesced=True
+PROGRESS_PROOF mode=stop-throw-before
+PASS Cancellation progress child: stop-throw-before
+PROGRESS_CHILD mode=stop-throw-after exit=0
+WHILE_HELD mode=stop-throw-after stopReturned=true networkReleased=true descriptorRemoved=true quiesced=False
+PROGRESS_PROOF mode=stop-throw-after
+PASS Cancellation progress child: stop-throw-after
+PROGRESS_CHILD mode=disconnect-return-before exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=disconnect-return-before stopReturned=true networkReleased=true descriptorRemoved=true quiesced=True
+PROGRESS_PROOF mode=disconnect-return-before
+PASS Cancellation progress child: disconnect-return-before
+PROGRESS_CHILD mode=disconnect-return-after exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=disconnect-return-after stopReturned=true networkReleased=true descriptorRemoved=true quiesced=False
+PROGRESS_PROOF mode=disconnect-return-after
+PASS Cancellation progress child: disconnect-return-after
+PROGRESS_CHILD mode=disconnect-throw-before exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=disconnect-throw-before stopReturned=true networkReleased=true descriptorRemoved=true quiesced=True
+PROGRESS_PROOF mode=disconnect-throw-before
+PASS Cancellation progress child: disconnect-throw-before
+PROGRESS_CHILD mode=disconnect-throw-after exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=disconnect-throw-after stopReturned=true networkReleased=true descriptorRemoved=true quiesced=False
+PROGRESS_PROOF mode=disconnect-throw-after
+PASS Cancellation progress child: disconnect-throw-after
+PROGRESS_CHILD mode=deadline-return-before exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=deadline-return-before stopReturned=true networkReleased=true descriptorRemoved=true quiesced=True
+PROGRESS_PROOF mode=deadline-return-before
+PASS Cancellation progress child: deadline-return-before
+PROGRESS_CHILD mode=deadline-return-after exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=deadline-return-after stopReturned=true networkReleased=true descriptorRemoved=true quiesced=False
+PROGRESS_PROOF mode=deadline-return-after
+PASS Cancellation progress child: deadline-return-after
+PROGRESS_CHILD mode=deadline-throw-before exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=deadline-throw-before stopReturned=true networkReleased=true descriptorRemoved=true quiesced=True
+PROGRESS_PROOF mode=deadline-throw-before
+PASS Cancellation progress child: deadline-throw-before
+PROGRESS_CHILD mode=deadline-throw-after exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD mode=deadline-throw-after stopReturned=true networkReleased=true descriptorRemoved=true quiesced=False
+PROGRESS_PROOF mode=deadline-throw-after
+PASS Cancellation progress child: deadline-throw-after
+PROGRESS_CHILD mode=capacity exit=0
+WHILE_HELD openConnections=8
+WHILE_HELD capacity=8 overload=Busy restartBypass=false submissions=8
+PROGRESS_PROOF mode=capacity
+PASS Cancellation progress child: capacity
+PROGRESS_CHILD mode=client exit=0
+WHILE_HELD clientNetworkReleased=true immediateInvalidation=true
+PROGRESS_PROOF mode=client
+PASS Cancellation progress child: client
+PROGRESS_CHILD mode=quiesced-fault exit=0
+EXCEPTIONAL_QUIESCENCE disposed=9 capacityRecovered=true errorRetained=true
+PROGRESS_PROOF mode=quiesced-fault
+PASS Cancellation progress child: quiesced-fault
+PASS Native pipe is asynchronous byte mode and a foreign-logon ACL denies access
+PASS Failed descriptor publication unwinds every acquired native pipe
+PASS Stop releases network even if descriptor cleanup fails and can retry cleanup
+PASS Valid expired and beyond-policy requests get correlated failures without dispatch
+PASS Submit errors retain correlation and unexpected errors expose no stack or message
+PASS Client rejects wrong response request, session, contract and malformed JSON
+PASS Client connect is capped at two seconds and respects a shorter original budget
+PASS Frame receipt consumes the request's existing budget
+PASS Stop during a blocked large response write releases the network worker
+PASS Cancellation and expiry during selection prevent binding or a connection
+PASS Actual foreign server PID is rejected before any request bytes
+PASS Provider rejects ambiguity through its real call path and retries only before binding
+PASS Stop at the acceptance handoff prevents parsing and submission
+PASS Failed duplicate start cannot remove the live owner's descriptor
+Pipe tests: 53 passed; 0 failed.
+PIPE_SUITE_COMPLETE

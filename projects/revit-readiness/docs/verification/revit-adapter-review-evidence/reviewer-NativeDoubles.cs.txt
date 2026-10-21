@@ -1,0 +1,23 @@
+#if NET48
+namespace Autodesk.Revit.DB {
+ public class Element { public string UniqueId {get;set;} public string Name {get;set;} }
+ public class Level : Element { }
+ public class Phase : Element { }
+ public class Document {
+  public bool IsFamilyDocument {get;set;} public bool IsLinked {get;set;} public bool IsValidObject {get;set;}=true;
+  public string PathName {get;set;} public Element ProjectInformation {get;set;}=new Element { UniqueId="p" };
+  public Element GetElement(string id) { return id=="l" ? (Element)new Level {Name="Level 1"} : id=="h" ? new Phase {Name="New"} : null; }
+ }
+}
+namespace Autodesk.Revit.UI {
+ public class UIDocument { public Autodesk.Revit.DB.Document Document {get;set;} }
+ public class Application { public string VersionBuild=>"fake-native-boundary"; }
+ public class UIApplication { public UIDocument ActiveUIDocument {get;set;} public Application Application {get;set;}=new Application(); }
+}
+namespace BimAgentLab.RevitReadiness {
+ static class RequiredInformationReader {
+  public static int Calls;
+  internal static BimAgentLab.Readiness.Core.InformationReport Read(Autodesk.Revit.DB.Document d,BimAgentLab.Readiness.Core.Checklist c,string path) { Calls++;return new BimAgentLab.Readiness.Core.InformationReport(); }
+ }
+}
+#endif

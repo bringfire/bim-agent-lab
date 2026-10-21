@@ -1,0 +1,11 @@
+# Adapter/queue handoff tests
+
+Run through `Test-McpBridge.ps1 -Suite Dispatch` or `-Suite All` from the project scripts. This net48 executable adds ten tests, separately counted from the existing 87 net48 / 82 net10.0 Dispatch cases.
+
+The project links **unchanged production** RevitContextCatalog, RevitReadinessExecutor and ReadinessPayloadCodec source and references the actual runtime/core assemblies. It does not copy their control flow. Autodesk objects and the final RequiredInformationReader are deliberately small test doubles; event signaling and endpoint acquisition are doubles too. HostBridgeSession, queue, context, flow, snapshot file reading and JSON/error mapping are production code. No Autodesk DLL is referenced by this harness and no real model is read. The existing bridge-tests net48 target still builds the real add-in against installed Autodesk references.
+
+Each named operation receives missing, empty, larger-than-four-MiB, valid and exactly-four-MiB valid checklist input. Readiness negative controls first acquire a valid production context; exact-limit valid content gets a fresh context after its bytes change. Error checks assert code/correlation/retryability, null result and zero reader calls. Valid readiness checks assert one reader-double invocation and preservation of its false completeness flags. All scratch sidecars use unique directories under ignored `samples/local/adapter-handoff`; the `.rvt` path is an identity double, not a created Revit model.
+
+The author's independent reviewer supplied an unchanged-source reproduction that exposed this missing test boundary. That reproduction was read and rerun as evidence/test-design precedent. This harness is new lab test code; the reviewer's source is retained separately as attributed evidence, not a production dependency. No new external package is added.
+
+Read the [review/disposition](../../../../docs/superpowers/reviews/revit-mcp-bridge/2026-10-21-task-5-checklist-review.md), [verification](../../docs/verification/2026-10-21-revit-adapter-review.md) and [agent procedure](../../../../docs/how-to/build-and-verify-revit-adapter.md#review-follow-up-sidecar-error-handoff). These tests do not demonstrate live Autodesk scheduling, actual reader/evaluator results, installation or desktop acceptance.

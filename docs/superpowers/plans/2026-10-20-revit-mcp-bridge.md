@@ -234,6 +234,8 @@ Equal(0, lateResponsesPublished);
 
 **Task 5 implementation checkpoint:** build, Dispatch, All and readiness checks pass. The final step retains its open checkbox for focused independent CP1 review before installation. See the [Task 5 review packet](../reviews/revit-mcp-bridge/2026-10-21-task-5-review.md). Runtime lifecycle/snapshot and net48 codec helpers refine the file list to test actual production boundaries; no spec or acceptance policy changed.
 
+**Task 5 review correction:** one P2 sidecar mapping finding at f5510ec was reproduced through the adapter/queue and corrected with an explicit InvalidDataException filter. Dispatch/All now include ten additional net48 handoff cases. [Independent follow-up](../reviews/revit-mcp-bridge/2026-10-21-task-5-checklist-review.md) is pending; Task 5 stays open. No spec change or new approval cycle is needed for this contract correction.
+
 ### Task 6: Two production MCP tools with intact evidence
 
 **Files:** Add server `Program.cs`, `ReadinessTools.cs`; update SDK csproj executable/project references; tests `mcp-tests/ToolTests.cs`; Tools suite. Probe remains a separate project.

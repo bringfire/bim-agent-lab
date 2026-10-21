@@ -1,0 +1,72 @@
+using System;
+using System.IO;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Runtime.InteropServices;
+using BimAgentLab.RevitBridge.Contract;
+using BimAgentLab.RevitBridge.Runtime;
+#if NET48
+using BimAgentLab.RevitReadiness;
+using Autodesk.Revit.UI;
+using Autodesk.Revit.DB;
+#endif
+class Review {
+ static int failures;
+ sealed class Endpoint : IHostBridgeEndpoint {
+  public void Start(Func<BridgeExecutionContext,DispatchTicket> submit) { }
+  public Task StopAsync()=>Task.CompletedTask;
+ }
+ static void Check(bool ok,string s) { if(!ok)throw new Exception(s); }
+ static RequestLifetime NewLifetime() {
+  var budget=RequestBudget.Admit(new SystemBridgeClock());
+  return new RequestLifetime(new BridgeRequest { ContractVersion=1,RequestId=Guid.NewGuid().ToString("N"),Operation=BridgeLimits.GetContext,DeadlineUtc=BridgeJson.FormatUtc(budget.DeadlineUtc) },budget,CancellationToken.None,CancellationToken.None);
+ }
+ static void HeldRaise() {
+  using var entered=new ManualResetEventSlim(); using var release=new ManualResetEventSlim();
+  int disposal=0, apiThread=Thread.CurrentThread.ManagedThreadId, disposalThread=0;
+  var host=new HostBridgeSession("review",new SystemBridgeClock(),()=>new ApiEventLease(()=> {entered.Set();Check(release.Wait(5000),"release timeout");return DispatchSignalResult.Pending;},()=>{disposal++;disposalThread=Thread.CurrentThread.ManagedThreadId;}),()=>new Endpoint());
+  host.StartInApiContext();using var lifetime=NewLifetime();var submit=Task.Run(()=>host.Submit(lifetime.Context));
+  try {
+   Check(entered.Wait(2000),"native Raise not reached"); var stop=host.StopInApiContext();
+   Check(stop.IsCompleted && !host.IsRunning && disposal==0,"Stop blocked or disposed native borrower");
+   Check(!host.PollRetirementInApiContext(),"Retired too early");
+   release.Set();Check(submit.Wait(2000),"Submit did not return");var ticket=submit.Result;
+   Check(ticket.Response.IsCanceled && ticket.Quiesced.Wait(2000),"Stopped ticket not retired");
+   Check(host.PollRetirementInApiContext(),"Later API poll not retired");
+   Check(disposal==1 && disposalThread==apiThread,"Wrong event disposal ownership");
+   host.StopInApiContext();Check(disposal==1,"Double event disposal");
+   lifetime.DisposeAfterQuiescenceAsync(ticket).GetAwaiter().GetResult();
+   Console.WriteLine("PASS actual HostBridgeSession stop during held native Raise; stop returns before release; later API poll disposes once");
+  } finally {release.Set();host.StopInApiContext();}
+ }
+#if NET48
+ static void Sidecars() {
+  string dir=Path.Combine(Path.GetTempPath(),"codex-task5-sidecars-"+Guid.NewGuid().ToString("N"));Directory.CreateDirectory(dir);
+  string file=Path.Combine(dir,"model.rvt"), sidecar=Path.ChangeExtension(file,".checklist.json");
+  var document=new Document {PathName=file};var ui=new UIApplication {ActiveUIDocument=new UIDocument{Document=document}};
+  var descriptor=new BridgeSessionDescriptor {BridgeSessionId="review",RevitPid=123};
+  var host=new HostBridgeSession("review",new SystemBridgeClock(),()=>new ApiEventLease(()=>DispatchSignalResult.Accepted,()=>{}),()=>new Endpoint());
+  var catalog=new RevitContextCatalog("review");var executor=new RevitReadinessExecutor(descriptor,host,catalog);host.StartInApiContext();
+  foreach(string mode in new[]{"missing","empty","oversize","valid"}) {
+   if(mode=="empty")File.WriteAllBytes(sidecar,Array.Empty<byte>());
+   if(mode=="oversize")File.WriteAllBytes(sidecar,new byte[ChecklistSnapshot.MaxBytes+1]);
+   if(mode=="valid")File.WriteAllText(sidecar,"{\"SchemaVersion\":1,\"ChecklistId\":\"c\",\"ProjectUniqueId\":\"p\",\"ProjectFileName\":\"model.rvt\",\"LevelUniqueId\":\"l\",\"PhaseUniqueId\":\"h\",\"Cases\":[{\"UniqueId\":\"e\",\"CaseId\":\"C1\"}],\"Requirements\":[]}");
+   string capture;try{catalog.Capture(ui);capture="success";}catch(Exception e){capture=e.GetType().Name;}
+   using var lifetime=NewLifetime();var ticket=host.Submit(lifetime.Context);host.DrainInApiContext(c=>executor.Execute(ui,c));var result=ticket.Response.GetAwaiter().GetResult();
+   Console.WriteLine("SIDECAR mode="+mode+" capture="+capture+" queueResult="+(result.Error?.Code??"success")+" readerCalls="+RequiredInformationReader.Calls);
+   if(mode=="missing")Check(result.Error?.Code=="ChecklistMissing","Missing control failed");
+   if(mode=="valid")Check(result.Error==null,"Valid control failed");
+   if((mode=="empty"||mode=="oversize") && result.Error?.Code!="ChecklistInvalid") { failures++; Console.WriteLine("FAIL expected ChecklistInvalid for "+mode+"; actual="+result.Error?.Code); }
+   lifetime.DisposeAfterQuiescenceAsync(ticket).GetAwaiter().GetResult();
+  }
+  host.StopInApiContext().GetAwaiter().GetResult();
+  Console.WriteLine("ADAPTER_PROOF actual unmodified catalog/executor/codec source and runtime; only Autodesk objects and reader are doubles; no live Revit claim");
+ }
+#endif
+ static void Main(){ Console.WriteLine(RuntimeInformation.FrameworkDescription);HeldRaise();
+#if NET48
+ Sidecars(); Environment.ExitCode=failures==0?0:1;
+#endif
+ }
+}
+

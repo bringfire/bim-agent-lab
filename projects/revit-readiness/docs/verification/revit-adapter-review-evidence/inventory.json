@@ -1,0 +1,186 @@
+{
+  "date": "2026-10-21",
+  "baseline": "f5510ec",
+  "files": [
+    {
+      "path": "all-green.txt",
+      "bytes": 56882,
+      "sha256": "4508b32f3e65d0e11517bf0213aa1fe0da3350b8424a265be73ded49700d8273"
+    },
+    {
+      "path": "build-green.txt",
+      "bytes": 2222,
+      "sha256": "a387d4eab907a4edb7c8e2135dab062de182ce7c84039e3059ba0eb2ef52e8fc"
+    },
+    {
+      "path": "environment.json",
+      "bytes": 2164,
+      "sha256": "6dbe54a2790b071db6786c6bced4c35998fef91a011a55f07b0a4d849f11d90e"
+    },
+    {
+      "path": "exchange/net10.0/context.json",
+      "bytes": 375,
+      "sha256": "a339e604a2fbba285c2fca2b238ebc4a970ded58c3fdb485df6ee257c97b54d8"
+    },
+    {
+      "path": "exchange/net10.0/date-context-escaped.json",
+      "bytes": 388,
+      "sha256": "2fdad39c4516e68cb7dac24b764eeaa26b2cde5ec9178f48d4909011f8f1e653"
+    },
+    {
+      "path": "exchange/net10.0/date-context-plain.json",
+      "bytes": 384,
+      "sha256": "e7e551e5aeedd89db3b0e172831723f173653ceb473b7bf94c5676ffb50c9afa"
+    },
+    {
+      "path": "exchange/net10.0/request.json",
+      "bytes": 170,
+      "sha256": "ce92a54a31cffd88e0d7cf3f78cacb2b74f61f9d18db7285a02f6eef382e7a8f"
+    },
+    {
+      "path": "exchange/net10.0/response.json",
+      "bytes": 397,
+      "sha256": "11ec4b72e8ba63e3c7c737c27a36932ac650ce9f65480222d0371a61eaaad78a"
+    },
+    {
+      "path": "exchange/net48/context.json",
+      "bytes": 375,
+      "sha256": "a339e604a2fbba285c2fca2b238ebc4a970ded58c3fdb485df6ee257c97b54d8"
+    },
+    {
+      "path": "exchange/net48/date-context-escaped.json",
+      "bytes": 388,
+      "sha256": "2fdad39c4516e68cb7dac24b764eeaa26b2cde5ec9178f48d4909011f8f1e653"
+    },
+    {
+      "path": "exchange/net48/date-context-plain.json",
+      "bytes": 384,
+      "sha256": "e7e551e5aeedd89db3b0e172831723f173653ceb473b7bf94c5676ffb50c9afa"
+    },
+    {
+      "path": "exchange/net48/request.json",
+      "bytes": 170,
+      "sha256": "ce92a54a31cffd88e0d7cf3f78cacb2b74f61f9d18db7285a02f6eef382e7a8f"
+    },
+    {
+      "path": "exchange/net48/response.json",
+      "bytes": 397,
+      "sha256": "11ec4b72e8ba63e3c7c737c27a36932ac650ce9f65480222d0371a61eaaad78a"
+    },
+    {
+      "path": "handoff-green.txt",
+      "bytes": 15726,
+      "sha256": "98d52abdd1971b0ff311b3b83cf91ea2b25a0a82f8fc3425f78c90ff98ce142a"
+    },
+    {
+      "path": "handoff-red.txt",
+      "bytes": 16634,
+      "sha256": "cb67682b1909e5fc3cd09af681b4b11bf08ae559cb445ed7d198f87bb7972668"
+    },
+    {
+      "path": "pipe-output.txt",
+      "bytes": 25001,
+      "sha256": "9a6b6b83e29e21e704439ff2f805afc2d583e46cc3b092d25f7e462a9c06f3b9"
+    },
+    {
+      "path": "protocol/2025-06-18-compatible/client-to-server.jsonl",
+      "bytes": 525,
+      "sha256": "0c0ee15a6a309cfc5be76323b5a4400192fa3d4103b69f3a85377828643f7247"
+    },
+    {
+      "path": "protocol/2025-06-18-compatible/result.json",
+      "bytes": 359,
+      "sha256": "05cbd45a90bcfc3a8d9aaeedbe55c0e02f04ea3338dd9ad498218f6fc9d1d166"
+    },
+    {
+      "path": "protocol/2025-06-18-compatible/server-to-client.jsonl",
+      "bytes": 1102,
+      "sha256": "b7dfb6acc305927924b9a416fcfbb425279eb63d86dbd3dd04a6275b2095456a"
+    },
+    {
+      "path": "protocol/2025-11-25-compatible/client-to-server.jsonl",
+      "bytes": 525,
+      "sha256": "edc189918efe522c685348a98992fc4c1b5d97cb3ce072c821a294666f876ddb"
+    },
+    {
+      "path": "protocol/2025-11-25-compatible/result.json",
+      "bytes": 359,
+      "sha256": "af82916cde83e66779c7518a60d797075f9e861bc7a1408524981304902e26ac"
+    },
+    {
+      "path": "protocol/2025-11-25-compatible/server-to-client.jsonl",
+      "bytes": 1102,
+      "sha256": "2aac23e8f2d6dfe9a16fb5241783c15e8de332af347817e59e4daf0fe30b4f86"
+    },
+    {
+      "path": "protocol/2026-07-28-compatible/client-to-server.jsonl",
+      "bytes": 1162,
+      "sha256": "2280004f874c20d3f1fdf563f040233b7e10b6eac3d897e0eada2e0dd34aced4"
+    },
+    {
+      "path": "protocol/2026-07-28-compatible/result.json",
+      "bytes": 359,
+      "sha256": "1162e585c666e2a3f43b8541ae3f80bad993f35428e8457deccb0af9c33540f1"
+    },
+    {
+      "path": "protocol/2026-07-28-compatible/server-to-client.jsonl",
+      "bytes": 1572,
+      "sha256": "2ce70baef931472e971cb472720eca767673c66ddd9b6818605dbed7f3b0e254"
+    },
+    {
+      "path": "protocol/2026-07-28-strict/client-to-server.jsonl",
+      "bytes": 1162,
+      "sha256": "2280004f874c20d3f1fdf563f040233b7e10b6eac3d897e0eada2e0dd34aced4"
+    },
+    {
+      "path": "protocol/2026-07-28-strict/result.json",
+      "bytes": 359,
+      "sha256": "1162e585c666e2a3f43b8541ae3f80bad993f35428e8457deccb0af9c33540f1"
+    },
+    {
+      "path": "protocol/2026-07-28-strict/server-to-client.jsonl",
+      "bytes": 1572,
+      "sha256": "2ce70baef931472e971cb472720eca767673c66ddd9b6818605dbed7f3b0e254"
+    },
+    {
+      "path": "readiness-green.txt",
+      "bytes": 3091,
+      "sha256": "d39ce094d1f09967efffb95019c0d802aacae4d5b0ce1948e0d368e1541a4fda"
+    },
+    {
+      "path": "reproducer-net10.0-green.txt",
+      "bytes": 134,
+      "sha256": "494395148ed4aab6ab942cba4017e9f7b07bac494d6397bbd217c6dcf2ade1c6"
+    },
+    {
+      "path": "reproducer-net48-green.txt",
+      "bytes": 626,
+      "sha256": "b94c9d54e43fe54c6716f6c8ade6a404f34080716b7b9011de7a52f427ef6f05"
+    },
+    {
+      "path": "reproducer-red.txt",
+      "bytes": 761,
+      "sha256": "b1b4908eec6ed016cb709106cefff5d6215b0980a30054b5467586cd2b87693a"
+    },
+    {
+      "path": "reviewer-NativeDoubles.cs.txt",
+      "bytes": 1272,
+      "sha256": "b658858a3c19ab9509135dde36ba1fcbdcc293c3300a27b0184478225822ae1b"
+    },
+    {
+      "path": "reviewer-original-net48.txt",
+      "bytes": 761,
+      "sha256": "b1b4908eec6ed016cb709106cefff5d6215b0980a30054b5467586cd2b87693a"
+    },
+    {
+      "path": "reviewer-Program.cs.txt",
+      "bytes": 5052,
+      "sha256": "fee7e184b5466d4d33f1ca22d82eb1b0a971761671eb252331b6226fc1412ede"
+    },
+    {
+      "path": "reviewer-Review.csproj.txt",
+      "bytes": 1169,
+      "sha256": "e952fff56a1be0c7af6e3d8d92ba78b271cab40bd6a1c6dbbbfb3819e46b668a"
+    }
+  ]
+}

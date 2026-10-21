@@ -1,0 +1,2 @@
+.NET 10.0.13
+PASS actual HostBridgeSession stop during held native Raise; stop returns before release; later API poll disposes once

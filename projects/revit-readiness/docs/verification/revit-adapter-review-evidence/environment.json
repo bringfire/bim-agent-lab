@@ -1,0 +1,48 @@
+{
+  "baseline": "f5510ec",
+  "date": "2026-10-21",
+  "dotnetSdk": "10.0.204",
+  "sourceAndBinaryRecords": [
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\src\\revit-addin\\RevitContextCatalog.cs",
+      "bytes": 5066,
+      "sha256": "d91841a9ebcaeb856be9a735fad04d523bdde68331acae57b1d1d5eff393d918"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\src\\revit-addin\\RevitReadinessExecutor.cs",
+      "bytes": 3185,
+      "sha256": "1b58fd7d0f543da3576fd4507290958ebb3e54b19ce47afc3b3be00b04d34b9d"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\src\\revit-addin\\ReadinessPayloadCodec.cs",
+      "bytes": 2439,
+      "sha256": "d541db753fc433a866c7944c494300eaa5556e70f60785fe398eb451819d07b9"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\tests\\adapter-handoff-tests\\Program.cs",
+      "bytes": 7608,
+      "sha256": "1a16e247cbc1c2d56674139d9ce32c58358d354b3f4e4ce3da689dfcbfe76d09"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\tests\\adapter-handoff-tests\\AutodeskBoundaryDoubles.cs",
+      "bytes": 1850,
+      "sha256": "3810600ec822942fed219ad3721c8a454e923cad8fa177f22b72479f59652def"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\tests\\adapter-handoff-tests\\BimAgentLab.AdapterHandoff.Tests.csproj",
+      "bytes": 1186,
+      "sha256": "e78e93c14035215de0bd58886db597dce56a48c6ac7ff1cc90c3dd40dcb8e824"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\scripts\\Test-McpBridge.ps1",
+      "bytes": 6727,
+      "sha256": "f3d1be6d7cf049602c49886afbc882d18d9b9fa5119130f4dcc8540eec094fbd"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\src\\revit-addin\\bin\\Release\\net48\\BimAgentLab.RevitReadiness.dll",
+      "bytes": 35328,
+      "sha256": "7fb76e380d0e11a40505f1a88ed799e30f8cfae781356f46d2d0180da479a628"
+    }
+  ],
+  "scope": "Original reviewer harness unchanged; new source-linked tests replace Autodesk objects/reader/native scheduling only. No live Revit or desktop acceptance."
+}

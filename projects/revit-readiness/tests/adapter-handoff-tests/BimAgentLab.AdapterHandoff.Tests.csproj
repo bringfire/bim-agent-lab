@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net48</TargetFramework>
+    <LangVersion>latest</LangVersion><TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/bridge-runtime/BimAgentLab.RevitBridge.Runtime.csproj" />
+    <ProjectReference Include="../../src/readiness-core/BimAgentLab.Readiness.Core.csproj" />
+    <Reference Include="System.Web.Extensions" /><Reference Include="System.Runtime.Serialization" />
+    <!-- Compile the production handoff unchanged. Only Autodesk and the final API reader are doubles. -->
+    <Compile Include="../../src/revit-addin/RevitContextCatalog.cs" Link="Production/RevitContextCatalog.cs" />
+    <Compile Include="../../src/revit-addin/RevitReadinessExecutor.cs" Link="Production/RevitReadinessExecutor.cs" />
+    <Compile Include="../../src/revit-addin/ReadinessPayloadCodec.cs" Link="Production/ReadinessPayloadCodec.cs" />
+  </ItemGroup>
+</Project>

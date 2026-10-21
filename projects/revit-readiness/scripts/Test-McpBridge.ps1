@@ -14,6 +14,10 @@ try {
             if ($LASTEXITCODE -ne 0) { $dispatchFailures += $framework }
         }
         if ($dispatchFailures.Count -ne 0) { throw "Dispatch behavioral tests failed: $($dispatchFailures -join ', ')" }
+        & dotnet build 'tests/adapter-handoff-tests/BimAgentLab.AdapterHandoff.Tests.csproj' -c Release --nologo -p:RestoreLockedMode=true
+        if ($LASTEXITCODE -ne 0) { throw 'Adapter handoff test build failed.' }
+        & './tests/adapter-handoff-tests/bin/Release/net48/BimAgentLab.AdapterHandoff.Tests.exe'
+        if ($LASTEXITCODE -ne 0) { throw 'Adapter/queue handoff tests failed.' }
     }
     if ($Suite -in @('Pipe','All')) {
         & dotnet build 'tests/bridge-tests/BimAgentLab.Bridge.Tests.csproj' -c Release --nologo -p:RestoreLockedMode=true

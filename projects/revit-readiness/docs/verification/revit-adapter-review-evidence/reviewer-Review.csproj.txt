@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+<PropertyGroup><OutputType>Exe</OutputType><TargetFrameworks>net48;net10.0</TargetFrameworks><LangVersion>latest</LangVersion><AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages></PropertyGroup>
+<ItemGroup><ProjectReference Include="D:/bim-agent-lab/projects/revit-readiness/src/bridge-runtime/BimAgentLab.RevitBridge.Runtime.csproj" /></ItemGroup>
+<ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+<ProjectReference Include="D:/bim-agent-lab/projects/revit-readiness/src/readiness-core/BimAgentLab.Readiness.Core.csproj" />
+<Reference Include="System.Web.Extensions" /><Reference Include="System.Runtime.Serialization" />
+<Compile Include="D:/bim-agent-lab/projects/revit-readiness/src/revit-addin/RevitContextCatalog.cs" Link="Production/RevitContextCatalog.cs" />
+<Compile Include="D:/bim-agent-lab/projects/revit-readiness/src/revit-addin/RevitReadinessExecutor.cs" Link="Production/RevitReadinessExecutor.cs" />
+<Compile Include="D:/bim-agent-lab/projects/revit-readiness/src/revit-addin/ReadinessPayloadCodec.cs" Link="Production/ReadinessPayloadCodec.cs" />
+</ItemGroup></Project>

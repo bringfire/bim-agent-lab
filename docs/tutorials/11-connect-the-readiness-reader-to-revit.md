@@ -33,3 +33,17 @@ A build is not a demonstration in Revit. These checks do not show the real appli
 > The reviewer has closed the previous increment. Continue the next approved task. Before coding, show how its new boundaries preserve cancellation, identity and cleanup. Reuse the existing computation. Test interruptions in the production path, and tell me which claims still require the actual application. Record the result for participants and future agents, then prepare the focused review packet.
 
 The participant's job is to set the purpose and evidence standard, recognize the limits of a passing check, and use independent review at the next boundary. The [agent procedure](../how-to/build-and-verify-revit-adapter.md) carries the implementation detail.
+
+## Review follow-up: test the returned error
+
+The author then relayed an independent finding: **“One P2 finding; Task 5 should remain open.”** Empty and oversized checklists were rejected, but the bridge called them InternalError instead of ChecklistInvalid. That distinction matters: the person needs to know that the input needs attention.
+
+The existing green tests had checked the file reader and JSON conversion separately. They had not carried these rejected inputs through the actual adapter to the returned error. The agent reproduced the reviewer's result before fixing it, then added that missing journey to the regular test command. The new tests failed first and passed after the narrow correction, while missing-file and valid-file controls continued to work.
+
+This does not mean every finding demands a redesign. Here the reviewer identified one concrete gap, and the evidence supported a small correction. The transferable habit is to ask what the person actually receives, rather than accepting “the bad file was rejected” as the whole answer.
+
+**Suggested follow-up prompt, not historical dialogue:**
+
+> Reproduce the reviewer's result before changing the code. Test the failure through the real components that return the answer, keep a valid-input control, and record both the correction and what remains unverified.
+
+The [review/disposition](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-5-checklist-review.md) and [new evidence](../../projects/revit-readiness/docs/verification/2026-10-21-revit-adapter-review.md) distinguish the agent's verified correction from the independent follow-up still needed. Task 5 remains open; live Revit and desktop acceptance have not been demonstrated by these tests.

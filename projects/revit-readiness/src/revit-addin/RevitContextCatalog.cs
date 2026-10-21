@@ -49,7 +49,7 @@ namespace BimAgentLab.RevitReadiness
             try { bytes = ChecklistSnapshot.Read(checklistPath); }
             catch (FileNotFoundException) { throw Failure("ChecklistMissing", "Supply the saved project's .checklist.json sidecar."); }
             catch (DirectoryNotFoundException) { throw Failure("ChecklistMissing", "The saved project's sidecar directory is unavailable."); }
-            catch (Exception error) when (error is IOException || error is UnauthorizedAccessException)
+            catch (Exception error) when (error is InvalidDataException || error is IOException || error is UnauthorizedAccessException)
             { throw Failure("ChecklistInvalid", "The checklist cannot be read within the four MiB limit."); }
             var checklist = ReadinessPayloadCodec.DecodeChecklist(bytes);
             if (checklist.ProjectUniqueId != document.ProjectInformation.UniqueId ||
