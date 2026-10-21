@@ -8,7 +8,7 @@ BIM Agent Lab is a teaching repository for BIM professionals. It pairs worked ex
 
 ## Choose your starting point
 
-The next bridge increment has a [revised specification and external-review record](docs/superpowers/reviews/revit-mcp-bridge/README.md). External R1 returned three findings; spec revision 2 addresses them and awaits follow-up/author approval. The author requested the superpowers brainstorming sequence: review the written spec, write/review the implementation plan, then implement and verify. The [participant story](docs/tutorials/06-direct-design-and-external-review.md) teaches that direction and the choice of Codex desktop and Claude Desktop; the plan and bridge are still pending.
+The next bridge increment has an [approved specification and external-review record](docs/superpowers/reviews/revit-mcp-bridge/README.md). The reviewer closed all three R1 findings on spec revision 2, and the author approved it. The [nine-task implementation plan](docs/superpowers/plans/2026-10-20-revit-mcp-bridge.md) and [R2 packet](docs/superpowers/reviews/revit-mcp-bridge/02-plan-review.md) are ready for review. The [participant story](docs/tutorials/06-direct-design-and-external-review.md) explains that process and why protocol compatibility in both Codex desktop and Claude Desktop is the first execution checkpoint. Plan review/execution choice and bridge implementation remain pending.
 
 | I want to… | Start here |
 |---|---|

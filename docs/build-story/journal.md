@@ -439,6 +439,22 @@ The [participant story](../tutorials/06-direct-design-and-external-review.md) no
 
 Documentation checks resolved 650 local Markdown links without missing targets, retained all nine acceptance IDs, mapped all three R1 findings to corrections, confirmed the three principal sample rows are unchanged, and checked current status text against the received review. The diff contains Markdown only; whitespace checks passed. The negative-control expectations were checked against reader/evaluator semantics, including NC1's additional other-host instance, without running or altering production code.
 
+## 2026-10-20 — Close specification review and turn approval into an implementation plan
+
+The author supplied the external R1 follow-up on spec revision 2 at `0ef8cdacb5112545a9aa6fbc59e0823df52f2e44`. It closed all three findings at the specification level, found no new blocker, and recommended proceeding to planning after author approval. It identified both desktop applications' untested protocol behavior as the remaining risk to check early. The reviewer inspected documents/diff/source and ran no builds or runtime tests. The [separate follow-up record](../superpowers/reviews/revit-mcp-bridge/2026-10-20-r1-follow-up.md) preserves that response; the original R1 feedback/dispositions remain unchanged.
+
+The author's actual approval was:
+
+> Approve revision 2 and write the plan
+
+The agent recorded approval of that exact written spec and used superpowers writing-plans 6.4.2. It wrote a [nine-task implementation plan](../superpowers/plans/2026-10-20-revit-mcp-bridge.md) with files/interfaces, behavioral tests, exact limits, expected results, deployment/rollback, independent evidence, and A1–A9 traceability. It inspected the pinned official C# SDK server/client options and handler/transport interfaces to make the first checkpoint concrete. The spec's normative sections 1–8 were preserved; only status/review metadata changed.
+
+The first execution checkpoint will use a separate synthetic SDK probe in **both actual desktop applications**, capturing protocol 2026-07-28 and structured success/failure before implementing the Revit connection. An SDK harness pass or older fallback cannot substitute. A probe pass would prove protocol compatibility only; live Revit evaluation, three principal cases, both incomplete controls, independent comparison and truthful client presentation remain later required work.
+
+The participant layer explains how review, exact-revision approval, and asking for a plan shaped the agent's next action. The agent layer describes the task interfaces, checkable tests, package adoption, evidence boundaries and handoff. The [R2 packet](../superpowers/reviews/revit-mcp-bridge/02-plan-review.md) now has the real plan and read set. The agent recommends Native execution because the tasks share tightly coupled interfaces, leaving selection to the author and retaining the requested external review sessions.
+
+This checkpoint changes documentation only. No SDK dependency was installed, no client configuration changed, no bridge built, and no model/runtime test performed. Document checks resolved 712 local Markdown links without missing targets, confirmed approved spec sections 1–8 and the original R1 feedback unchanged, and checked nine tasks/A1–A9 coverage with no placeholders. Whitespace checks passed. Document self-review supports the planning artifact; external R2 recommendation, author plan review/execution choice and all implementation acceptance remain pending. Use `git log --oneline -- docs/superpowers/plans/2026-10-20-revit-mcp-bridge.md` for the actual plan checkpoint rather than inventing a hash inside its own commit.
+
 ## A reusable research prompt
 
 The following is a teaching template, not an additional instruction from the author:
@@ -467,4 +483,4 @@ Research can reveal that the problem or architecture needs revision. Return to t
 
 Record the author's prompt or a clearly labeled excerpt; the decision requested; constraints supplied; the agent's actions; the evidence; any correction or rejected approach; the outcome; and the lesson worth showing on stage. Label a suggested prompt as a suggestion, never as a historical prompt.
 
-Current next action: hand back [spec revision 2 and the R1 follow-up packet](../superpowers/reviews/revit-mcp-bridge/README.md), record reviewer follow-up and the author's spec decision, then write/review the implementation plan using the requested superpowers protocol. The authorized build and three-case MCP/Revit acceptance plus incomplete controls and both desktop clients follow that process. Current-version checks remain required. Physical-condition and quantity checks remain separate increments in the working demo brief.
+Current next action: hand over the [implementation plan and R2 packet](../superpowers/reviews/revit-mcp-bridge/02-plan-review.md), record external findings/dispositions, and obtain author review/execution choice. The approved spec at `0ef8cda` remains the contract. The authorized build, three-case MCP/Revit acceptance, incomplete controls and both desktop clients follow that process; CP0 checks actual desktop protocol compatibility first. Current-version checks remain required. Physical-condition and quantity checks remain separate increments in the working demo brief.

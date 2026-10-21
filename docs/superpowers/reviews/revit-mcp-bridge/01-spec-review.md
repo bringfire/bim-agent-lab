@@ -1,6 +1,6 @@
 # R1: external specification review packet
 
-Revision 1 was reviewed at `b56c0dc219e1269f5b90542004267a2d388f338d` with recommendation **revise before approval**. [Feedback and dispositions](2026-10-20-r1-feedback.md) are retained. This packet now targets revision 2 for focused follow-up; that follow-up has not occurred. Use the full new Git revision from the [handoff procedure](README.md), not just a moving branch name.
+Revision 1 was reviewed at `b56c0dc219e1269f5b90542004267a2d388f338d` with recommendation **revise before approval**. [Feedback and dispositions](2026-10-20-r1-feedback.md) are retained. The [external follow-up](2026-10-20-r1-follow-up.md) closed all three findings on revision 2 at `0ef8cdacb5112545a9aa6fbc59e0823df52f2e44`, which the author then explicitly approved. The prompts below preserve the R1 handoff; the current next session is [R2 plan review](02-plan-review.md).
 
 ## Reviewer brief
 

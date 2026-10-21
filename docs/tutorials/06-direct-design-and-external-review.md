@@ -1,6 +1,6 @@
 # Ask for a design, a plan, and independent review
 
-This participant story explains how the author changed the next step from immediate bridge construction into a reviewable design process. Its [agent guide](../how-to/run-spec-plan-and-implementation-reviews.md) provides the technical procedure. An external review of the first [spec](../superpowers/specs/2026-10-20-revit-mcp-bridge-design.md) has now returned three findings; revision 2 addresses them and awaits follow-up and author approval. The implementation plan and bridge remain pending.
+This participant story explains how the author changed the next step from immediate bridge construction into a reviewable design process. Its [agent guide](../how-to/run-spec-plan-and-implementation-reviews.md) provides the technical procedure. An external review of the first [spec](../superpowers/specs/2026-10-20-revit-mcp-bridge-design.md) returned three findings. The reviewer subsequently closed them on revision 2, and the author approved that spec. The [implementation plan](../superpowers/plans/2026-10-20-revit-mcp-bridge.md) is now written for external review; the bridge remains unimplemented.
 
 ## Begin with the work already done
 
@@ -79,6 +79,20 @@ The author chose the BIM purpose, custom-bridge direction, versions, three-case 
 
 The spec gives the author practical questions to assess: Does the operation remain limited to our declared checklist? Does it reject a changed document? Do missing values remain findings rather than errors? Do failures remain distinguishable from a zero-finding result? Will the same 0/0, 2/6, and 3/8 sample answers be verified independently?
 
+## Approve the artifact, then ask for the next one
+
+The [follow-up reviewer](../superpowers/reviews/revit-mcp-bridge/2026-10-20-r1-follow-up.md) closed all three findings at the specification level and recommended proceeding to planning after author approval. The author then gave this actual instruction:
+
+> Approve revision 2 and write the plan
+
+This separates two decisions participants can reuse: the reviewer assesses whether the corrections resolve the issues; the person directing the work decides to proceed with the written design. Neither decision demonstrates that software works yet.
+
+The agent turned the approved design into a [nine-task implementation plan](../superpowers/plans/2026-10-20-revit-mcp-bridge.md). Participants need not review every method signature. Look for whether the plan tests the riskiest assumption early, protects the existing plugin, defines independently checkable results, and provides a way to undo installation.
+
+Here, the reviewer identified the remaining uncertainty: can **both desktop applications actually use the required protocol?** The plan begins with a clearly labeled test-only probe in Codex desktop and Claude Desktop before building the Revit connection. A probe pass would establish communication compatibility; later tests still have to demonstrate the real model check, including incomplete results. Ask the agent what each piece of evidence proves before accepting a confident summary.
+
+The [R2 packet](../superpowers/reviews/revit-mcp-bridge/02-plan-review.md) gives an external reviewer the plan, approved spec, relevant source, and questions that can expose missing steps. The agent recommends implementing in the current session because the connection, queue, and document checks share interfaces; the author has not yet chosen an execution method. External plan and implementation reviews remain part of either approach. This demonstrates directing the agent to make a recommendation while retaining the human decision.
+
 ## Reuse this way of directing an agent
 
 This is a **suggested teaching prompt**, not another historical instruction:
@@ -87,4 +101,4 @@ This is a **suggested teaching prompt**, not another historical instruction:
 
 As an exercise, open the spec-review packet and identify one way a check could return the wrong model's data. Ask a reviewer to show whether the spec prevents it and what test would demonstrate that. Then compare the response with the written requirement rather than accepting a confident summary.
 
-Current evidence includes the external R1 review, source-backed dispositions, observed client versions, and spec revision 2. Follow-up review, author approval, implementation, and runtime acceptance remain pending. Find the design and revision checkpoints using `git log --oneline -- docs/superpowers/specs/2026-10-20-revit-mcp-bridge-design.md`; do not use earlier runtime passes as proof that the bridge works.
+Current evidence includes external R1 findings and closure, source-backed dispositions, spec revision 2 approval, and a self-reviewed implementation plan. External R2, author review/execution choice, implementation, and runtime acceptance remain pending. Find the actual checkpoints using `git log --oneline -- docs/superpowers/`; earlier readiness runtime passes do not prove the bridge works.
