@@ -13,12 +13,14 @@ using BimAgentLab.RevitReadiness;
 [assembly: System.Runtime.Versioning.SupportedOSPlatform("windows")]
 #endif
 
-internal static class Program
+internal static partial class Program
 {
     static int Main()
     {
         var tests = new Action[] { RecordsIdentity, ReleasesExplicitly, PreparationCancellation, PreparationExpiry,
-            ReaderCancellation, BoundedHold, RejectsStaleRelease, RejectsInvalidControl, SingleUse, StopWhileHeld };
+            ReaderCancellation, BoundedHold, RejectsStaleRelease, RejectsInvalidControl, SingleUse, StopWhileHeld,
+            RootIsOutsideAppData, SharedFileResolvesToRequestedPath, ValidPreparedRun,
+            MissingSelector, InvalidSelector, MissingPreparedDirectory, ExistingProcessDirectory };
         int failed = 0;
         foreach (var test in tests)
         {

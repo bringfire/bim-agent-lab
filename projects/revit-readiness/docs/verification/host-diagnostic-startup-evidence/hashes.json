@@ -1,9 +1,21 @@
 {
   "algorithm": "SHA256",
   "files": {
+    "after-normal-close.json": "4eae2cf88d7963a0195b0aee16489326647d9d5b760696b6b7e9da9fee35a461",
+    "deployment-regression.txt": "2e6928c5a55b6de015a0c3941f6c7168707f9a5e26cb52f4eb32abd6c235d907",
     "failure-observation.json": "a43e9279cae36a8ffa6c51a0453db4618212b4de20ff54751d54548e9b4372e8",
     "outside-revit-probe.json": "32d918980cb5bb4c2a9171ca62ddf51aca72387f91d3923403b9f0ef509cf3cb",
+    "physical-path-audit.json": "663e6d3e3269d681fedf467aacf818e5e97db6df871feda6b3a53672d94a5051",
+    "prepared-shared-run.json": "4d3e302cb90237b46988391d64ffc3c96af10ca3c75428b309401bdf89c70d42",
     "probe-startup.ps1": "c490f44fdd28e4a5b26ec884cf88d58be3ee13f941f77b593e20a804a5b88793",
-    "revit-journal-excerpt.txt": "e84f58b07b7b4acdaf63717b65d429996c4583fa1b28a7e4f4582929f97ee2e3"
+    "protocol-regression.txt": "a29d74fc79e94c52913f4a221a2138365ba8cc935bdc6216c352072aff815887",
+    "readiness-regression.txt": "ec749a0350da1fc228a0eaaa64912e1bf06750c24ab07b13fd4cbdb76c5fa49b",
+    "repeated-startup-journal.txt": "a8bc37fe07a9a9f91fe197aa192a66818128bc47b1a48d61f27cce4695db9b0e",
+    "revit-journal-excerpt.txt": "e84f58b07b7b4acdaf63717b65d429996c4583fa1b28a7e4f4582929f97ee2e3",
+    "shared-boundary-paths.json": "36be25d6666ab80ed8d173c4435c36d82d0c6b30990b4be73706de0e1fae1fc7",
+    "startup-green.txt": "59f471cd3d0bd05b36f0224faacecbc41fa1234fbaf3d97e449c2460c4be10c7",
+    "startup-red-build.txt": "095d21e2bf44a34d9b6366f89dd18bcdec62efca16324721f78ec3749a4d88a6",
+    "startup-red-net10.txt": "c385d61976a2c88ee66d65e7d96c6e99ce57e1bb454ba789bba566ff774abead",
+    "startup-red-net48.txt": "e2fa9475fef348819fa6fb8faa51b62103dcfe9f22757a5066a90fdb43b9bbe6"
   }
 }

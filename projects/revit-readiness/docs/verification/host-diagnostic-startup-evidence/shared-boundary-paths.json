@@ -1,0 +1,37 @@
+[
+  {
+    "Requested": "C:\\Users\\bring\\AppData\\Local\\BimAgentLab\\RevitBridge\\diagnostics\\run.txt",
+    "Physical": "\\\\?\\C:\\Users\\bring\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\BimAgentLab\\RevitBridge\\diagnostics\\run.txt",
+    "Redirected": true
+  },
+  {
+    "Requested": "C:\\Users\\bring\\.bim-agent-lab\\RevitBridge\\diagnostics\\run.txt",
+    "Physical": "\\\\?\\C:\\Users\\bring\\.bim-agent-lab\\RevitBridge\\diagnostics\\run.txt",
+    "Redirected": false
+  },
+  {
+    "Requested": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitReadiness.dll",
+    "Physical": "\\\\?\\C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitReadiness.dll",
+    "Redirected": false
+  },
+  {
+    "Requested": "C:\\Users\\bring\\AppData\\Local\\BimAgentLab\\RevitReadiness\\McpServer\\BimAgentLab.RevitReadiness.Mcp.exe",
+    "Physical": "\\\\?\\C:\\Users\\bring\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\BimAgentLab\\RevitReadiness\\McpServer\\BimAgentLab.RevitReadiness.Mcp.exe",
+    "Redirected": true
+  },
+  {
+    "Requested": "C:\\Users\\bring\\AppData\\Local\\BimAgentLab\\RevitReadiness\\InstallRecovery\\b0d82098d961433f9945d10fc9ebfa55\\receipt.json",
+    "Physical": "\\\\?\\C:\\Users\\bring\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\BimAgentLab\\RevitReadiness\\InstallRecovery\\b0d82098d961433f9945d10fc9ebfa55\\receipt.json",
+    "Redirected": true
+  },
+  {
+    "Requested": "C:\\Users\\bring\\.codex\\config.toml",
+    "Physical": "\\\\?\\C:\\Users\\bring\\.codex\\config.toml",
+    "Redirected": false
+  },
+  {
+    "Requested": "C:\\Users\\bring\\AppData\\Roaming\\Claude\\claude_desktop_config.json",
+    "Physical": "\\\\?\\C:\\Users\\bring\\AppData\\Roaming\\Claude\\claude_desktop_config.json",
+    "Redirected": false
+  }
+]

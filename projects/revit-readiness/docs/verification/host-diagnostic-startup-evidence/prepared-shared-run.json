@@ -1,0 +1,22 @@
+{
+  "preparedUtc": "2026-10-21T23:05:36.5469047+00:00",
+  "previousRun": "C:\\Users\\bring\\AppData\\Local\\BimAgentLab\\RevitBridge\\diagnostics\\d45983eb4bff4602b7f1f0047dcec592",
+  "newRun": "C:\\Users\\bring\\.bim-agent-lab\\RevitBridge\\diagnostics\\2c6e4b8b63b84e019deae35cd7532731",
+  "runId": "2c6e4b8b63b84e019deae35cd7532731",
+  "selector": {
+    "Requested": "C:\\Users\\bring\\.bim-agent-lab\\RevitBridge\\diagnostics\\run.txt",
+    "Physical": "\\\\?\\C:\\Users\\bring\\.bim-agent-lab\\RevitBridge\\diagnostics\\run.txt",
+    "Redirected": false
+  },
+  "selectorSha256": "6fa7fb1db08401af5af1abe5a5130a3819118fab61f16b567cc698f804169e2c",
+  "priorSelectorPreserved": true,
+  "activeArmCount": 0,
+  "repeatedRevitPid": 109780,
+  "repeatedStartup": "Same DirectoryNotFoundException at Home before model loading, confirmed by user screenshot and journal",
+  "journalPrivateCopy": "C:\\Users\\bring\\AppData\\Local\\BimAgentLab\\RevitBridge\\diagnostics\\d45983eb4bff4602b7f1f0047dcec592\\startup-investigation\\journal.0012.closed.txt",
+  "journalSha256": "4785f4598b7ed18b755db8b8ad1d6a5c0d542d0c693554c53a56ef8c7c93eb3a",
+  "screenshotSource": "C:/Users/bring/AppData/Local/Temp/codex-clipboard-788f67a5-23a0-4914-89c8-4b98a6cd3717.png",
+  "screenshotSha256": "7c02226b036f0b62aeafce40a422c0cc8311aadab61d6091114b17b4c39aa84a",
+  "sourceCorrection": "Diagnostic-only selector/control root outside AppData; host startup remains to be tested",
+  "serverDeploymentGap": "30 installed server targets and the audited receipt resolve into Codex LocalCache; not yet corrected or accepted for both desktops"
+}

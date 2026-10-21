@@ -93,3 +93,13 @@ Suggested participant prompt:
 > Here is the actual error. Explain which part failed and what your evidence establishes. Preserve the failed attempt, tell me the next manual step, and do not call the issue fixed just because it works outside the application or on a retry.
 
 The [investigation record](../../projects/revit-readiness/docs/verification/2026-10-21-host-diagnostics.md#first-revit-launch-failed-cause-still-under-investigation) distinguishes the actual Revit failure from the successful external probe. The startup issue and the remaining live tests are still open.
+
+After the person closed Revit, the agent confirmed normal exit and unchanged plugin and sample files. It then requested just one step: open Revit to its Home screen. Checking application startup before loading a model keeps the next observation specific enough to interpret.
+
+The same error returned. This time the agent checked where Windows had actually stored the file, using its open file handle. Windows had redirected the agent's new AppData files into Codex's private cache while showing the ordinary folder name. Revit looked in the ordinary folder. The agent's earlier extra PowerShell process saw the same redirected view, so that check had not crossed the boundary that mattered.
+
+Suggested follow-up prompt:
+
+> Check whether both applications are accessing the same physical files, not just displaying the same path. Apply that finding to the other shared files, preserve recovery information, and prove the correction in the application that failed.
+
+The agent added tests that reproduced this difference, moved the diagnostic controls to a shared user folder, and found that the installed MCP server needed a separate visibility correction too. The [technical investigation](../../projects/revit-readiness/docs/verification/2026-10-21-host-diagnostics.md#physical-path-investigation-established-the-cause) records both the correction and the remaining deployment work. Passing file hashes, another child process, and a successful build were useful checks, but none established that Revit or the other desktop application could see the same files.

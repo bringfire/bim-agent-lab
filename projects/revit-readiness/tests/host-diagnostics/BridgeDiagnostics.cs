@@ -17,15 +17,7 @@ namespace BimAgentLab.RevitReadiness
         [ThreadStatic] static BridgeExecutionContext current;
         internal static void Initialize()
         {
-            string root = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData), "BimAgentLab", "RevitBridge", "diagnostics");
-            string run = File.ReadAllText(Path.Combine(root, "run.txt")).Trim();
-            Guid id;
-            if (!Guid.TryParseExact(run, "N", out id)) throw new InvalidDataException("A prepared diagnostic run is required.");
-            string prepared = Path.Combine(root, run);
-            if (!Directory.Exists(prepared)) throw new DirectoryNotFoundException(prepared);
-            directory = Path.Combine(prepared, Process.GetCurrentProcess().Id.ToString());
-            if (Directory.Exists(directory)) throw new InvalidOperationException("Diagnostic capture already exists.");
-            Directory.CreateDirectory(directory);
+            directory = DiagnosticRunDirectory.CreateProcessDirectory(DiagnosticRunDirectory.Root, Process.GetCurrentProcess().Id);
             recorder = new DiagnosticRecorder(directory);
             Record("ApplicationStartup");
         }

@@ -8,5 +8,6 @@
   <ItemGroup>
     <ProjectReference Include="../../src/bridge-runtime/BimAgentLab.RevitBridge.Runtime.csproj" />
     <Compile Include="../host-diagnostics/DiagnosticRecorder.cs" Link="DiagnosticRecorder.cs" />
+    <Compile Include="../host-diagnostics/DiagnosticRunDirectory.cs" Link="DiagnosticRunDirectory.cs" />
   </ItemGroup>
 </Project>

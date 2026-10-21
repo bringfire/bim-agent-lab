@@ -14,7 +14,7 @@ if ($LASTEXITCODE -ne 0) { throw 'Diagnostic Revit API build failed.' }
 if ($LASTEXITCODE -ne 0) { throw 'Normal Revit API build failed.' }
 $normal=[Text.Encoding]::UTF8.GetString([IO.File]::ReadAllBytes((Join-Path $project 'src/revit-addin/bin/Release/net48/BimAgentLab.RevitReadiness.dll')))
 $diagnostic=[Text.Encoding]::UTF8.GetString([IO.File]::ReadAllBytes((Join-Path $PSScriptRoot 'bin/Release/net48/BimAgentLab.RevitReadiness.dll')))
-foreach($type in 'BridgeDiagnostics','DiagnosticRecorder') {
+foreach($type in 'BridgeDiagnostics','DiagnosticRecorder','DiagnosticRunDirectory') {
     if ($normal.Contains($type) -or -not $diagnostic.Contains($type)) { throw 'Diagnostic type leaked into normal build or is missing from diagnostic build.' }
 }
 Write-Output 'PASS: diagnostic types only in separate diagnostic assembly; normal build has no diagnostic control helper.'

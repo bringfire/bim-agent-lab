@@ -6,6 +6,8 @@ The [real-installation record](verification/2026-10-21-live-installation.md) now
 
 Use 64-bit PowerShell 7, the existing .NET SDK/10 runtime, Revit 2024 and its net48 API references. This increment adds no package dependency and does not change SDK 2.2.0 or the compatible/strict-July policy. The existing core, Excel helper and fixture remain separate from the external modern server.
 
+**Current deployment caveat:** the [physical-path investigation](verification/2026-10-21-host-diagnostics.md#physical-path-investigation-established-the-cause) found the server and recovery files redirected into Codex's private AppData cache. The logical paths below alone are not proof of shared installation. Inspect open files with `scripts/Get-PhysicalFilePath.ps1`, preserve existing recovery bytes, and verify access from the intended application before accepting deployment. Do not replay an old receipt from a different filesystem view. This deployment correction remains required before Task 8/A8; the diagnostic-only control-folder correction does not resolve it.
+
 From the repository root:
 
 ```powershell

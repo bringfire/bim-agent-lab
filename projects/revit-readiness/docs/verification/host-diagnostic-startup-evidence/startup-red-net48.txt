@@ -1,0 +1,18 @@
+PASS RecordsIdentity
+PASS ReleasesExplicitly
+PASS PreparationCancellation
+PASS PreparationExpiry
+PASS ReaderCancellation
+PASS BoundedHold
+PASS RejectsStaleRelease
+PASS RejectsInvalidControl
+PASS SingleUse
+PASS StopWhileHeld
+FAIL RootIsOutsideAppData: Shared diagnostic controls must not depend on a virtualized AppData view: C:\Users\bring\AppData\Local\BimAgentLab\RevitBridge\diagnostics
+FAIL SharedFileResolvesToRequestedPath: Requested path resolves into another filesystem view: \\?\C:\Users\bring\AppData\Local\Packages\OpenAI.Codex_2p2nqsd0c76g0\LocalCache\Local\BimAgentLab\RevitBridge\diagnostics\visibility-test-c667adf3cadc4f7bb8fb1a522ca6f8c2.tmp
+PASS ValidPreparedRun
+PASS MissingSelector
+PASS InvalidSelector
+PASS MissingPreparedDirectory
+PASS ExistingProcessDirectory
+Diagnostic controls: 15 passed; 2 failed. No live Revit proof.
