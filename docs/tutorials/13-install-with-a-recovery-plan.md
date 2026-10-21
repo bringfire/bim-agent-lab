@@ -81,3 +81,15 @@ Suggested participant prompt:
 > If our current evidence cannot prove the claim, explain what we need to observe. Prepare a bounded diagnostic test, show how we return to the normal plugin, and distinguish tests of the diagnostic controls from results inside Revit.
 
 The [diagnostic procedure](../../projects/revit-readiness/tests/host-diagnostics/README.md) gives agents the execution model, commands, file formats and limits. The source and logs should make it possible for a reviewer to distinguish an actual reader entry from an inferred one.
+
+## Report the failure and keep the agent's explanation accountable
+
+The author next sent a screenshot with “getting this”. Revit could not start the temporary diagnostic add-in because it could not read a test configuration file. The agent found the file present and verified that the installed diagnostic code could read it outside Revit. That narrowed the investigation, but did not explain the failure inside Revit. No readiness check had run.
+
+The useful response is to separate observation from explanation: preserve the error, identify what failed, state what remains unknown, and give the person one application step at a time. A successful retry would show recovery; it would not, by itself, prove the cause was understood or corrected.
+
+Suggested participant prompt:
+
+> Here is the actual error. Explain which part failed and what your evidence establishes. Preserve the failed attempt, tell me the next manual step, and do not call the issue fixed just because it works outside the application or on a retry.
+
+The [investigation record](../../projects/revit-readiness/docs/verification/2026-10-21-host-diagnostics.md#first-revit-launch-failed-cause-still-under-investigation) distinguishes the actual Revit failure from the successful external probe. The startup issue and the remaining live tests are still open.

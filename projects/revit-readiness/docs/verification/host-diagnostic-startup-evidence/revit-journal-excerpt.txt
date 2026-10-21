@@ -1,0 +1,2 @@
+1092: ' 0:< API_ERROR { Starting External Application: BIM Agent Lab readiness bridge, Class: BimAgentLab.RevitReadiness.BridgeApplication, Vendor : BIAL(BIM Agent Lab), Assembly: C:\Users\bring\AppData\Roaming\Autodesk\Revit\Addins\2024\BimAgentLab.RequiredInformation\BimAgentLab.RevitReadiness.dll,  Assembly Version: 0.3.0.0 } 
+1510: ' 0:< TaskDialog "Revit cannot run the external application "BIM Agent Lab readiness bridge". Contact the provider for assistance.  Information they provided to Revit about their identity: BIM Agent Lab."

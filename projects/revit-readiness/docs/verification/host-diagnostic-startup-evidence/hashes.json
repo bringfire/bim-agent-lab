@@ -1,0 +1,9 @@
+{
+  "algorithm": "SHA256",
+  "files": {
+    "failure-observation.json": "a43e9279cae36a8ffa6c51a0453db4618212b4de20ff54751d54548e9b4372e8",
+    "outside-revit-probe.json": "32d918980cb5bb4c2a9171ca62ddf51aca72387f91d3923403b9f0ef509cf3cb",
+    "probe-startup.ps1": "c490f44fdd28e4a5b26ec884cf88d58be3ee13f941f77b593e20a804a5b88793",
+    "revit-journal-excerpt.txt": "e84f58b07b7b4acdaf63717b65d429996c4583fa1b28a7e4f4582929f97ee2e3"
+  }
+}

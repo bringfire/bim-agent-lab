@@ -1,0 +1,10 @@
+{
+  "CapturedUtc": "2026-10-21T22:39:45.2948113+00:00",
+  "RevitPid": 203368,
+  "RevitStartedUtc": "2026-10-21T22:33:31.4525676Z",
+  "Journal": "C:/Users/bring/AppData/Local/Autodesk/Revit/Autodesk Revit 2024/Journals/journal.0011.txt",
+  "RevitTraceExists": false,
+  "ScreenshotSource": "C:/Users/bring/AppData/Local/Temp/codex-clipboard-3d965c81-275d-4068-a766-315210bb721b.png",
+  "ScreenshotSha256": "6ba32b8811b53fe8df76ebfefc8090919e1fe59d94eb4ccd23581eda37b182c2",
+  "Observation": "User screenshot reports DirectoryNotFoundException reading diagnostics/run.txt in BridgeDiagnostics.Initialize during BridgeApplication.OnStartup. Exact cause remains unestablished."
+}

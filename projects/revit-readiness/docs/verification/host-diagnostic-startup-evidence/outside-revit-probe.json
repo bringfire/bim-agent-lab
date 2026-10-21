@@ -1,0 +1,15 @@
+{
+    "Scope":  "Installed diagnostic Initialize outside Revit; not host acceptance",
+    "CapturedUtc":  "2026-10-21T22:39:45.1000738+00:00",
+    "ProcessId":  10624,
+    "Identity":  "BRINGFIRE_ALIEN\\bring",
+    "Runtime":  "4.0.30319.42000",
+    "AssemblyPath":  "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitReadiness.dll",
+    "AssemblySha256":  "42b062d5ff3b0ae1aa599ae5c6692e65fcc8ba0ae171777b21b10dcfb2246958",
+    "Selector":  "C:\\Users\\bring\\AppData\\Local\\BimAgentLab\\RevitBridge\\diagnostics\\run.txt",
+    "SelectorCreatedUtc":  "2026-10-21T22:07:13.6918053Z",
+    "Run":  "d45983eb4bff4602b7f1f0047dcec592",
+    "EventsPath":  "C:\\Users\\bring\\AppData\\Local\\BimAgentLab\\RevitBridge\\diagnostics\\d45983eb4bff4602b7f1f0047dcec592\\10624\\events.tsv",
+    "Events":  "1\t2026-10-21T22:39:45.0980730+00:00\t6268757381362\t15\tApplicationStartup\t\t\t\t\n",
+    "Result":  "Initialize returned successfully"
+}
