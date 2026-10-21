@@ -1,0 +1,31 @@
+{
+  "sourceCommit": "eefb1563fdf7073dc7065668da355b0642f99709",
+  "actualMembers": [
+    "InformationReport.CoverageComplete",
+    "Evaluation.Complete"
+  ],
+  "sources": [
+    {
+      "path": "projects/revit-readiness/src/readiness-core/InformationReport.cs",
+      "gitBlob": "d1adb345ccf1823f32b216f57d2078cb6f19c3c3",
+      "sha256OfGitBytes": "b8ad9a54ff71dae4b0451cee3516a98f8604aeaf095541a9bf531c4451d8612f"
+    },
+    {
+      "path": "projects/revit-readiness/src/readiness-core/TypeInformation.cs",
+      "gitBlob": "31b9935f1c4227decc6f7d625e949766527bd270",
+      "sha256OfGitBytes": "0d17c4f29a99a9e994c56fca0f2133fb18946601e3c9933db39f8a412eb03065"
+    },
+    {
+      "path": "projects/revit-readiness/docs/verification/required-information-evidence/BAL-info-complete.readiness.json",
+      "gitBlob": "2130e1ed5dfea1fcf79fafcf245ff5033c0431f0",
+      "sha256OfGitBytes": "90f42179912ac8ca2b1ff8e494292efdc034a95e01c27ab6831d3c87df4b7683"
+    }
+  ],
+  "syntheticExpectedValues": {
+    "CoverageComplete": false,
+    "Evaluation": {
+      "Complete": false
+    }
+  },
+  "note": "Field names checked in source and retained native-Revit report; false values are synthetic, not fresh model observations."
+}

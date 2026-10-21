@@ -90,5 +90,41 @@ internal static partial class Program
             Equal(value.DocumentPath, decoded.DocumentPath); Equal(value.ExpiresUtc, decoded.ExpiresUtc);
             value.RevitPid = 0; Throws<InvalidDataException>(() => BridgeJson.Serialize(value));
         }));
+        await Test("Date-shaped strings survive round trips with escaped and unescaped slashes", () => Sync(() =>
+        {
+            foreach (string text in new[] { "/Date(0)/", "/Date(-1)/", "/Date(0+0100)/", "/Date(315537897600000)/", "/Date(9223372036854775807)/" })
+            {
+                var context = ContextResult(); context.Level = text;
+                string wire = Encoding.UTF8.GetString(BridgeJson.Serialize(context));
+                Check(wire.Contains("\\/Date("), "Test must exercise the Framework date escape spelling");
+                Equal(text, BridgeJson.Deserialize<ReadinessContextResult>(Utf8(wire)).Level);
+                Equal(text, BridgeJson.Deserialize<ReadinessContextResult>(Utf8(wire.Replace("\\/", "/"))).Level);
+                Throws<InvalidDataException>(() => BridgeJson.Deserialize<ReadinessContextResult>(Utf8(wire + "{}")));
+                Throws<InvalidDataException>(() => BridgeJson.Deserialize<ReadinessContextResult>(Utf8(wire.Substring(0, wire.Length - 1) + ",}")));
+            }
+            foreach (string text in new[] { "\\/Date(0)\\/", "\"/Date(0)/\"" })
+            {
+                var literal = ContextResult(); literal.Level = text;
+                Equal(text, BridgeJson.Deserialize<ReadinessContextResult>(BridgeJson.Serialize(literal)).Level);
+            }
+        }));
+        await Test("Date-shaped opaque results and nested error strings stay literal", () => Sync(() =>
+        {
+            Equal("/Date(0)/", BridgeJson.Deserialize<BridgeResponse>(BridgeJson.SerializeResponse(Response("/Date(0)/"))).ResultJson);
+            var response = Response(); response.ResultJson = null;
+            response.Error = new BridgeError { Code = "Busy", Message = "/Date(0)/", RequestId = response.RequestId, Retryable = false };
+            Equal("/Date(0)/", BridgeJson.Deserialize<BridgeResponse>(BridgeJson.SerializeResponse(response)).Error!.Message);
+        }));
+        foreach (char control in new[] { '\n', '\t', '\0' })
+            await Test("Raw control in quoted JSON normalizes to InvalidDataException: " + (int)control, () => Sync(() =>
+            {
+                string invalid = RequestJson.Replace("request-一", "before" + control + "after");
+                Throws<InvalidDataException>(() => BridgeJson.Deserialize<BridgeRequest>(Utf8(invalid)));
+            }));
+        await Test("Escaped controls remain valid literal string content", () => Sync(() =>
+        {
+            var context = ContextResult(); context.Level = "before\n\t\0after";
+            Equal(context.Level, BridgeJson.Deserialize<ReadinessContextResult>(BridgeJson.Serialize(context)).Level);
+        }));
     }
 }

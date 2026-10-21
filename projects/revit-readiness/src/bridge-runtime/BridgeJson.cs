@@ -40,26 +40,35 @@ public static class BridgeJson
         FrameCodec.ValidateUtf8(bytes);
         try
         {
-            // Use each runtime's complete-input parser. The JSON infoset reader alone
-            // accepts trailing objects/commas; the DTO parsers alone lose duplicates
-            // and missing false values. Both validations are required before returning.
+            // Validate original tokens first. Framework DTO conversion may reinterpret
+            // valid strings (notably Microsoft /Date(...)/ spellings on net48).
+            XElement root;
             var quotas = new XmlDictionaryReaderQuotas
             { MaxDepth = 8, MaxStringContentLength = limit, MaxArrayLength = limit, MaxBytesPerRead = 4096, MaxNameTableCharCount = 16384 };
             using (var reader = JsonReaderWriterFactory.CreateJsonReader(bytes, quotas))
             {
                 var document = XDocument.Load(reader);
-                ValidateShape(document.Root ?? throw new InvalidDataException("Missing bridge object."), typeof(T));
+                root = document.Root ?? throw new InvalidDataException("Missing bridge object.");
+                ValidateShape(root, typeof(T));
             }
+            // The infoset reader alone accepts trailing objects/commas. A separate
+            // complete-input syntax check is necessary; never use its converted values.
 #if NET48
             var serializer = new JavaScriptSerializer { MaxJsonLength = limit, RecursionLimit = 8 };
-            T value = serializer.Deserialize<T>(FrameCodec.StrictUtf8.GetString(bytes));
+            // These two slash spellings are equivalent JSON string data. Normalize only
+            // this prefix in a throwaway syntax-check copy to bypass automatic date
+            // interpretation, which can also overflow for perfectly valid string data.
+            string syntaxOnly = FrameCodec.StrictUtf8.GetString(bytes).Replace("\"\\/Date(", "\"/Date(");
+            serializer.DeserializeObject(syntaxOnly);
 #else
-            T value = JsonSerializer.Deserialize<T>(bytes, new JsonSerializerOptions { MaxDepth = 8 })!;
+            using var syntaxOnly = JsonDocument.Parse(bytes, new JsonDocumentOptions { MaxDepth = 8 });
 #endif
+            T value = (T)ReadValidatedObject(root, typeof(T));
             ValidateValue(value);
             return value;
         }
         catch (XmlException error) { throw new InvalidDataException("Malformed bridge JSON.", error); }
+        catch (FormatException error) { throw new InvalidDataException("Malformed bridge JSON.", error); }
         catch (SerializationException error) { throw new InvalidDataException("Malformed bridge JSON.", error); }
 #if NET48
         catch (ArgumentException error) { throw new InvalidDataException("Malformed bridge JSON.", error); }
@@ -195,6 +204,26 @@ public static class BridgeJson
     static bool Optional(Type type, string name) =>
         (type == typeof(BridgeRequest) && name == nameof(BridgeRequest.ContextToken)) ||
         (type == typeof(BridgeResponse) && (name == nameof(BridgeResponse.ChecklistSha256) || name == nameof(BridgeResponse.ResultJson) || name == nameof(BridgeResponse.Error)));
+
+    static object ReadValidatedObject(XElement root, Type type)
+    {
+        // Only the allowlisted plain DTO types reach here, after ValidateShape.
+        // JSON escapes are decoded by the infoset reader; strings have no other coercion.
+        object result = Activator.CreateInstance(type)!;
+        foreach (var property in type.GetProperties())
+        {
+            var member = root.Element(property.Name);
+            if (member == null || (string?)member.Attribute("type") == "null") continue;
+            object value;
+            if (property.PropertyType == typeof(string)) value = member.Value;
+            else if (property.PropertyType == typeof(int)) value = int.Parse(member.Value, CultureInfo.InvariantCulture);
+            else if (property.PropertyType == typeof(bool)) value = member.Value == "true";
+            else if (property.PropertyType == typeof(BridgeError)) value = ReadValidatedObject(member, typeof(BridgeError));
+            else throw new InvalidDataException("Unsupported bridge member type.");
+            property.SetValue(result, value);
+        }
+        return result;
+    }
 
     sealed class PayloadTooLargeException : IOException
     { public PayloadTooLargeException() : base("Bridge JSON exceeds its byte limit.") { } }

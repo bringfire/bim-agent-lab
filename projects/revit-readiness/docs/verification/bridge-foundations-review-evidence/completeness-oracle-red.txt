@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_bridge_exchange.py", line 51, in <module>
+    verify(Path(sys.argv[1]))
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_bridge_exchange.py", line 36, in verify
+    assert report["CoverageComplete"] is False and report["Evaluation"]["Complete"] is False
+                                                   ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+KeyError: 'Complete'

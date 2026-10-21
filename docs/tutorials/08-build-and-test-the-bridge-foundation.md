@@ -1,6 +1,6 @@
 # Ask for a small, tested step toward the Revit connection
 
-Participants: this follows the [desktop compatibility story](07-test-desktop-compatibility-first.md). Agents: use the [technical guide](../how-to/build-and-verify-bridge-foundations.md). Both link to the same [Task 2 evidence](../../projects/revit-readiness/docs/verification/2026-10-21-bridge-foundations.md).
+Participants: this follows the [desktop compatibility story](07-test-desktop-compatibility-first.md). Agents: use the [technical guide](../how-to/build-and-verify-bridge-foundations.md). Both link to the [current Task 2 verification](../../projects/revit-readiness/docs/verification/2026-10-21-bridge-foundations-review.md), retaining the initial checkpoint below.
 
 ## How the author directed the next step
 
@@ -41,3 +41,24 @@ This is a **suggested prompt**, not an additional historical instruction:
 > Implement the next named task in our approved plan. Carry forward the decisions we already made and preserve the earlier regression tests. Show that the new tests fail before the behavior exists, then pass after implementation. Use the reviewer's broader insight to test interruptions between steps. Explain any library assumptions the tests disprove. Record how I directed the work for participants, and give the next agent precise reproduction steps and limits.
 
 For a short exercise, ask your agent to explain the difference between a canceled response and finished work. Have it point to the test that waits to release resources until the callback finishes. A satisfactory answer identifies both moments and explicitly says that this test does not prove the later Revit callback integration.
+
+
+## Use independent review to challenge the tests
+
+The author brought back an independent review of the committed increment. Its recommendation was:
+
+> Recommendation: revise Task 2 before proceeding to Task 3.
+
+This is a reviewer excerpt, not a new prompt invented for the author. The reviewer reran all supplied tests successfully, then found cases the tests did not cover. Text that looked like a date could change during decoding, some malformed messages produced an unexpected error type, and both our C# and Python examples used the same incorrect name for a completeness flag. The [original feedback](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-2-review.md) remains separate from the agent's response.
+
+The useful direction was to bring those findings back before building the next layer. The agent reproduced each problem before fixing it. It then added the reviewer's examples, checked the actual evaluator's field names, regenerated evidence and reran the existing regressions. The corrected increment has 33 checks on each runtime plus exchanges in both directions. The older evidence remains available with its limitation clearly marked.
+
+Two ideas matter for participants. First, accepting a message as valid does not prove its contents stayed unchanged. Second, using a different programming language for a checker does not make its expected answer independent if it repeats the same mistaken assumption. Ask where the expected answer came from, and ask the agent to test the value after conversion, not just before it.
+
+This is the implementing agent's lesson from the reproduced findings; it is not a broader diagnosis attributed to the reviewer. There was one data-preservation defect and two smaller findings here, rather than the earlier set of major lifetime issues. The reviewer's observation that the framing and ownership boundaries held is preserved too.
+
+A **suggested follow-up prompt**:
+
+> Reproduce each review finding before changing the code. Check the full journey from the received data to the returned value, and verify the expected answers against the original contract or independent observations. Preserve the old evidence with an explanation of its limits, generate fresh evidence after the correction, and give the reviewer a focused follow-up packet. Keep the participant story about how I directed the work and the agent guide precise enough to reproduce it.
+
+The agent's fixes and passing tests are ready for follow-up review. They do not constitute the reviewer's approval or live Revit acceptance, and Task 3 has not started.

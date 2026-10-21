@@ -1,0 +1,6 @@
+PASS independent verifier rejects wrong_nested_name
+PASS independent verifier rejects overall_false_to_true
+PASS independent verifier rejects evaluation_false_to_true
+PASS independent verifier rejects missing_evaluation_flag
+PASS independent verifier rejects changed_date_string
+PASS independent verifier rejects changed_unicode

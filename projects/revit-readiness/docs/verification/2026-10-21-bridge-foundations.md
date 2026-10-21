@@ -1,5 +1,7 @@
 # Private bridge foundation — 2026-10-21
 
+**Historical initial checkpoint.** Independent review of `eefb156` subsequently found date-shaped string conversion, a malformed-input exception leak and the wrong nested completeness member in the synthetic fixture. Its original tests passed, but the two-real-flags claim below was inaccurate: the fixture used `Evaluation.CoverageComplete` instead of `Evaluation.Complete`. See the [corrected verification and regenerated evidence](2026-10-21-bridge-foundations-review.md). Original captures/logs remain unchanged for the teaching history.
+
 **Task 2 passes its offline acceptance on net48 and net10.0.** This implements the messages, framing, budgets and lifetime foundation. It does not establish a running pipe endpoint, live Revit bridge, full desktop A8 or external R3 closure.
 
 The author explicitly requested Task 2, the updated plan, preserved compatibility tests and both teaching layers. Native execution continued on `feat/revit-mcp-bridge` from **`9b4eb516819f4c6fc5d90ccdefc7751b0705e694`**. The implementation checkpoint is the Git commit titled **`feat: define bounded Revit bridge messages and framing`** that first adds this record; locate it with `git log --diff-filter=A --format="%H %s" -- projects/revit-readiness/docs/verification/2026-10-21-bridge-foundations.md`. This avoids placing an invented self-referential hash in the commit.

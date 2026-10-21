@@ -20,3 +20,4 @@ projects/revit-readiness/third-party/** -text -whitespace
 # MCP wire captures and hashed verification evidence must keep exact bytes.
 projects/revit-readiness/docs/verification/mcp-client-compatibility-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/bridge-foundations-evidence/** -text -whitespace
+projects/revit-readiness/docs/verification/bridge-foundations-review-evidence/** -text -whitespace
