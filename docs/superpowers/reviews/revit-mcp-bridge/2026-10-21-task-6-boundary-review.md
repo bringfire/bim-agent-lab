@@ -29,3 +29,5 @@ Independent follow-up remains **pending**. Task 6 stays open; Task 7, installati
 ## Follow-up review packet
 
 [Fresh verification and retained evidence](../../../../projects/revit-readiness/docs/verification/2026-10-21-mcp-tool-boundaries.md) record 50 passing Tools cases, unchanged reviewer probes, full regressions and the Autodesk-reference build. Review the correction commit against 189fd78. Challenge EOF and exceptional channel completion before SDK draining, held callbacks, per-message Unicode-marker isolation and rejection before IPC, unchanged valid strings, all compatible revisions and strict July. Re-run the supplied unchanged probes and raw-wire regressions. The initial July fixture mistake and handler-only failed correction remain in the evidence. This is author verification; please provide an independent finding disposition before Task 7.
+
+Subsequent independent follow-up at 332934c: [disconnect closed, complete argument validation still open](2026-10-21-task-6-argument-contract-review.md). The leaf-specific correction above is historical and superseded by the complete argument contract.

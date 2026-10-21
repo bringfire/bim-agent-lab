@@ -264,7 +264,7 @@ Equal(0, reportsAfterCancellationBeforeMcpReturn);
 
 Implementation note: Task 6 uses the existing runtime retained-slot/disposal primitives through internal assembly access; no runtime algorithm or package versions changed. [Execution model](../../explanation/bridge-execution-and-waiting.md#task-6-mcp-tool-lifetime-and-permitted-waits) preceded production code. [Verification](../../../projects/revit-readiness/docs/verification/2026-10-21-mcp-readiness-tools.md) and [focused review packet](../reviews/revit-mcp-bridge/2026-10-21-task-6-review.md) distinguish offline implementation from pending independent/live acceptance. Task 5 is independently closed at 5e9a5dd.
 
-Task 6 review checkpoint: two P2 findings at `189fd78` remain open pending independent follow-up of the [boundary corrections](../reviews/revit-mcp-bridge/2026-10-21-task-6-boundary-review.md). The completed implementation checkboxes do not imply review closure. Acceptance requirements and plan revision remain unchanged; Task 7 has not begun.
+Task 6 review checkpoint: disconnect T6-01 is independently closed at `332934c`; complete argument validation T6-02 remains open pending [contract follow-up](../reviews/revit-mcp-bridge/2026-10-21-task-6-argument-contract-review.md). Preparation now establishes one ID/budget before SDK typed conversion and carries it through CallAsync; rejected application trees cannot reach conversion. The completed implementation checkboxes do not imply review closure. Acceptance requirements and plan revision remain unchanged; Task 7 has not begun.
 
 ### Task 7: Explicit deployment, rollback, and live lifecycle checks
 

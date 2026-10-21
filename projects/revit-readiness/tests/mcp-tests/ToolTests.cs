@@ -62,6 +62,12 @@ internal static partial class Program
             await Case("Input failure cancels handler and preserves cause: trace=" + tracing, () => FaultedInputCancelsHandler(tracing));
             await Case("EOF host shutdown while callbacks held: trace=" + tracing, () => ToolsOpenStdinShutdown(tracing, true));
         }
+        foreach (string revision in new[] { "2025-06-18", "2025-11-25", "2026-07-28" })
+            foreach (bool tracing in new[] { false, true })
+                await Case($"Complete argument boundary over raw stdio: {revision} trace={tracing}", () => ArgumentBoundaryMatrix(revision, tracing));
+        await Case("Prepared arguments preserve input identity and the single admission budget", () => ArgumentHandoff(false));
+        await Case("Expiry between argument preparation and typed dispatch cannot restart budget", () => ArgumentHandoff(true));
+        await Case("Downstream conversion/execution failure is not caught as an argument error", ArgumentContinuationFailure);
         Console.WriteLine($"Tools tests: {cases - failures} passed; {failures} failed.");
         return failures == 0 ? 0 : 1;
     }

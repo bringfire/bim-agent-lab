@@ -1,0 +1,14 @@
+{
+  "baseline": "332934cb144148a9d8af79fe57cd745ac110f6a0",
+  "date": "2026-10-21",
+  "sdk": "2.2.0",
+  "packagesChanged": false,
+  "shutdownCodeChanged": false,
+  "liveAcceptance": false,
+  "applicationCases": 1860,
+  "rejectedCases": 1794,
+  "acceptedCases": 66,
+  "sdkMethodControls": 6,
+  "handoffTests": 3,
+  "toolsTests": 59
+}

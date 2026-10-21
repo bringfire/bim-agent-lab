@@ -47,3 +47,17 @@ Suggested prompt for participants, not a quotation from the author:
 > Reproduce the reviewer's failure before changing anything. Show me where the input or shutdown signal first becomes meaningful, and whether it reaches the safeguard you propose. Test through the actual program, keep valid controls, and retain failed attempts as well as the final evidence. Ask for independent follow-up before calling the task closed.
 
 The [follow-up record](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-6-boundary-review.md) separates the reviewer's findings from the coding agent's corrections. The lesson is to investigate a recurring class of failure across paths, rather than count passing examples. Task 6 remains open pending that independent follow-up; these tests still do not prove live Revit or desktop acceptance.
+
+## When the reviewer keeps finding variants
+
+The next independent review closed the disconnect issue but found five more malformed-input cases. We had found the correct SDK boundary. We still allowed rejected data to continue through it. Fixing one bad field left other bad fields able to break the rejection itself.
+
+The author's direction changed the unit of reasoning to the complete argument object. Before handing it onward, the agent must establish one of two outcomes: the whole object is safe and valid, or rejection can finish using safe information alone. That instruction led to a written contract for both tools and a generated test matrix, including combinations the reviewer had not supplied.
+
+This was the useful intervention: ask the reviewer to identify the missing guarantee, then have the coding agent explain how every path preserves it. The generated cases also caught a case-insensitive property lookup that violated the exact field name. The agent corrected the general comparison rule, preserving the failed attempt in the record.
+
+Suggested reusable prompt, based on the author's supplied guidance:
+
+> Stop patching individual examples. Write the full contract for this handoff: what may be accepted, what must be rejected, and how rejection finishes safely. Derive a test matrix from that contract, include combinations and valid controls, and show that rejected work never reaches the application. Explain why the accepted and rejected paths are safe before requesting review again.
+
+The [current review record](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-6-argument-contract-review.md) keeps the closed shutdown finding separate from the remaining validation review. Participants can use the [boundary explanation](../explanation/readiness-argument-boundary.md) to see the reasoning; agents should follow the [technical guide](../how-to/build-and-verify-mcp-readiness-tools.md). Independent closure and live demonstration evidence are still separate obligations.

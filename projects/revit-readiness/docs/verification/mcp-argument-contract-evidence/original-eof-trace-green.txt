@@ -1,0 +1,5 @@
+INITIALIZE {"result":{"protocolVersion":"2025-11-25","capabilities":{"logging":{},"tools":{}},"serverInfo":{"name":"bim-agent-lab","version":"0.1.0"}},"id":1,"jsonrpc":"2.0"}
+{"mode":"eof","trace":true,"promptExit":true,"canceledBeforeRelease":true,"finalGuardAllowed":false,"elapsedMs":16,"remainingMs":29818.4028,"traceDir":"D:\\bim-agent-lab\\.superpowers\\sdd\\2026-10-20-revit-mcp-bridge\\task6-review-repro\\eof\\bin\\Release\\net10.0\\wire-06e698ae0cdd4ef6ac830f510b4d8c22"}
+EXIT 0 AFTER_RELEASE 31ms
+STDOUT 
+STDERR 

@@ -15,8 +15,7 @@ public sealed class ReadinessTools
     readonly IBridgeClient client;
     readonly IBridgeClock clock;
     readonly CancellationToken hostStopping;
-    const string InvalidUnicodeKey = "BimAgentLab.InvalidContextTokenUnicode";
-    static readonly object InvalidUnicodeMarker = new();
+    const string PreparedCallKey = "BimAgentLab.PreparedReadinessCall";
     public ReadinessTools(IBridgeClient client, IBridgeClock clock, CancellationToken hostStopping)
     { this.client = client ?? throw new ArgumentNullException(nameof(client)); this.clock = clock ?? throw new ArgumentNullException(nameof(clock)); this.hostStopping = hostStopping; }
 
@@ -36,59 +35,45 @@ public sealed class ReadinessTools
     }
     static ToolAnnotations Annotations() => new() { ReadOnlyHint = true, DestructiveHint = false, OpenWorldHint = false, IdempotentHint = false };
 
-    // SDK 2.2.0 converts JsonNode parameters before calling typed handlers. Its
-    // conversion can decode malformed strings first. Mark rejection at the SDK
-    // message seam and remove ONLY the undecodable value from that conversion.
-    // The ordinary handler must reject the marker; this is never a repaired token.
+    // Decide the WHOLE application argument contract before SDK typed conversion.
+    // Rejection continues with a fresh safe subtree, never with rejected leaves.
     public McpMessageHandler ValidateIncomingArguments(McpMessageHandler next) => async (message, cancellation) =>
     {
         if (message.JsonRpcMessage is JsonRpcRequest { Method: "tools/call", Params: JsonObject parameters }
-            && parameters["name"] is JsonValue name && name.TryGetValue<string>(out var tool) && tool == BridgeLimits.CheckInformation
-            && parameters["arguments"] is JsonObject arguments
-            && arguments["contextToken"] is JsonValue token && token.GetValueKind() == JsonValueKind.String)
+            && ReadinessArgumentBoundary.TryRecognize(parameters, out var operation))
         {
-            try { _ = token.GetValue<string>(); }
-            catch (InvalidOperationException)
-            {
-                message.Items[InvalidUnicodeKey] = InvalidUnicodeMarker;
-                arguments["contextToken"] = null;
-            }
+            cancellation.ThrowIfCancellationRequested(); hostStopping.ThrowIfCancellationRequested();
+            var prepared = ReadinessArgumentBoundary.Prepare(operation!, clock, () =>
+                new ArgumentInput(parameters.TryGetPropertyValue("arguments", out var arguments), arguments));
+            message.Items[PreparedCallKey] = prepared;
+            // The envelope was safely recognized already. Replacing this member detaches
+            // its old subtree without enumerating/decoding any of its names or values.
+            if (prepared.Request is null) parameters["arguments"] = new JsonObject();
         }
         await next(message, cancellation).ConfigureAwait(false);
     };
 
     public async ValueTask<CallToolResult> CallAsync(RequestContext<CallToolRequestParams> request, CancellationToken cancellation)
     {
-        string id = Guid.NewGuid().ToString("N");
-        var budget = RequestBudget.Admit(clock);
         cancellation.ThrowIfCancellationRequested(); hostStopping.ThrowIfCancellationRequested();
-        if (request.Items.TryGetValue(InvalidUnicodeKey, out var rejected) && ReferenceEquals(rejected, InvalidUnicodeMarker))
-            return Failure("InvalidRequest", "The contextToken contains invalid Unicode text.", id);
-        var args = request.Params?.Arguments;
-        string? token = null;
-        string? operation = request.Params?.Name;
-        if (operation == BridgeLimits.GetContext)
+        PreparedReadinessCall prepared;
+        if (request.Items.TryGetValue(PreparedCallKey, out var value) && value is PreparedReadinessCall owned)
+            prepared = owned;
+        else // direct typed invocation: same policy, without a preceding wire filter
         {
-            if (args is not null && args.Count != 0) return Failure("InvalidRequest", "Context acquisition accepts an empty argument object.", id);
+            string? name = request.Params?.Name;
+            if (!ReadinessArgumentBoundary.Recognized(name))
+                return Failure("UnsupportedOperation", "Use one of the two named readiness tools.", Guid.NewGuid().ToString("N"));
+            prepared = ReadinessArgumentBoundary.Prepare(name!, clock, () => {
+                var arguments = request.Params?.Arguments;
+                return new ArgumentInput(arguments is not null, arguments is null ? null : JsonSerializer.SerializeToNode(arguments));
+            });
         }
-        else if (operation == BridgeLimits.CheckInformation)
-        {
-            if (args is null || args.Count != 1 || !args.TryGetValue("contextToken", out var supplied) || supplied.ValueKind != JsonValueKind.String)
-                return Failure("InvalidRequest", "Supply only the nonblank contextToken from context acquisition.", id);
-            // JSON can retain an unpaired surrogate escape until GetString decodes it.
-            // Keep this fallible caller-input conversion inside the validation boundary.
-            try { token = supplied.GetString(); }
-            catch (InvalidOperationException)
-            { return Failure("InvalidRequest", "The contextToken contains invalid Unicode text.", id); }
-            if (string.IsNullOrWhiteSpace(token))
-                return Failure("InvalidRequest", "Supply only the nonblank contextToken from context acquisition.", id);
-        }
-        else return Failure("UnsupportedOperation", "Use one of the two named readiness tools.", id);
-
-        var bridgeRequest = new BridgeRequest { ContractVersion = 1, RequestId = id, Operation = operation, ContextToken = token, DeadlineUtc = BridgeJson.FormatUtc(budget.DeadlineUtc) };
-        try { BridgeJson.Serialize(bridgeRequest); }
-        catch (Exception error) when (error is InvalidDataException || error is IOException || error is EncoderFallbackException)
-        { return Failure("InvalidRequest", "Arguments exceed the bridge request limits or contain invalid text.", id); }
+        string id = prepared.RequestId;
+        var budget = prepared.Budget;
+        var bridgeRequest = prepared.Request;
+        if (bridgeRequest is null) return Failure("InvalidRequest", "Arguments do not satisfy the readiness tool's object, field, text or size requirements.", id);
+        string operation = bridgeRequest.Operation;
         var slot = RetainedRequestSlot.TryAcquire();
         if (slot is null) return Failure("Busy", "Previous bridge requests are still retiring. Retry after they finish.", id, true);
         RequestLifetime? lifetime = null;

@@ -103,10 +103,10 @@ internal static partial class Program
         readonly string revision, folder;
         readonly Task<string> stderr;
         readonly List<string> sent = new(), received = new();
-        internal RawToolChild(int pid, bool tracing, string revision)
+        internal RawToolChild(int pid, bool tracing, string revision, string label = "review")
         {
             this.revision = revision;
-            folder = Path.Combine(Evidence, "review-" + Guid.NewGuid().ToString("N")); Directory.CreateDirectory(folder);
+            folder = Path.Combine(Evidence, label + "-" + Guid.NewGuid().ToString("N")); Directory.CreateDirectory(folder);
             var start = new ProcessStartInfo(Path.Combine(AppContext.BaseDirectory, "BimAgentLab.RevitReadiness.Mcp.exe")) {
                 UseShellExecute = false, CreateNoWindow = true, RedirectStandardInput = true, RedirectStandardOutput = true, RedirectStandardError = true };
             start.ArgumentList.Add("--revit-pid"); start.ArgumentList.Add(pid.ToString());

@@ -1,0 +1,118 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+  BimAgentLab.Mcp.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\bin\Release\net10.0\BimAgentLab.Mcp.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:03.60
+TOOLS_EVIDENCE scenario=nc1 protocol=2025-06-18 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc1-923958adfc9b43bd90eab5dde649fb1b
+PASS Production tools preserve full nc1 report on 2025-06-18
+TOOLS_EVIDENCE scenario=nc2 protocol=2025-06-18 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc2-7d3f1d1e20544220b3fe8c994191c971
+PASS Production tools preserve full nc2 report on 2025-06-18
+TOOLS_EVIDENCE scenario=nc1 protocol=2025-11-25 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc1-1a0b317e907146e89fe536c893f1d259
+PASS Production tools preserve full nc1 report on 2025-11-25
+TOOLS_EVIDENCE scenario=nc2 protocol=2025-11-25 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc2-cea9f24d7010499dbb8efdfe097fefd4
+PASS Production tools preserve full nc2 report on 2025-11-25
+TOOLS_EVIDENCE scenario=nc1 protocol=2026-07-28 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc1-43e371a1c2ee4313b3b6be5d74d6e767
+PASS Production tools preserve full nc1 report on 2026-07-28
+TOOLS_EVIDENCE scenario=nc2 protocol=2026-07-28 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc2-63737bf3fafd41b891cb63c09a13fc6d
+PASS Production tools preserve full nc2 report on 2026-07-28
+TOOLS_EVIDENCE scenario=strict protocol=2026-07-28 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\strict-c55b321177504ecb808c79ae46f2f070
+PASS Production tools preserve strict July
+PASS Production provider path: none
+PASS Production provider path: multiple
+PASS Production provider path: retry
+PASS Production provider path: concurrent
+PASS Production provider path: restart
+Readiness request d066cec1ce7c42e39b42f1ee1b6d7b0a failed (InvalidDataException).
+PASS Invalid bridge evidence never becomes a report: crossed
+Readiness request 7be44c44a84c4cafa57ada39ea2a2318 failed (InvalidDataException).
+PASS Invalid bridge evidence never becomes a report: error-crossed
+Readiness request e4ab91c224ee48ea80a32a45961b63b4 failed (InvalidDataException).
+PASS Invalid bridge evidence never becomes a report: bad-hash
+Readiness request 8ed265fb67e64a66b551bb91c5a7f0a4 failed (InvalidDataException).
+PASS Invalid bridge evidence never becomes a report: both
+Readiness request a5ecee3eb68a4296bec6db793d436c6d failed (JsonReaderException).
+PASS Invalid bridge evidence never becomes a report: bad-json
+Readiness request 823dd8aafec642a69f9d2eff8ee99a46 failed (InvalidDataException).
+PASS Invalid bridge evidence never becomes a report: missing-flags
+Readiness request 2608192432084d1698f3940c4a5f4190 failed (Exception).
+PASS Invalid bridge evidence never becomes a report: thrown
+PASS Original context rejects late success: cancel=False guard=1
+PASS Original context rejects late success: cancel=False guard=2
+PASS Original context rejects late success: cancel=False guard=3
+PASS Original context rejects late success: cancel=True guard=1
+PASS Original context rejects late success: cancel=True guard=2
+PASS Original context rejects late success: cancel=True guard=3
+Readiness request ecf7b7c595324da3a8da2ae11463c3cf: cancellation callback failed (AggregateException).
+Readiness request af7c81d24ba543c5972b1346366ffd72: cancellation callback failed (AggregateException).
+Readiness request b6fcffb8c20b4207a751c3c560b750d0: cancellation callback failed (AggregateException).
+Readiness request d28f02e44af04c58bcb446f09189f8ae: cancellation callback failed (AggregateException).
+Readiness request d79fc1d0e31a4cfdb5f1583991318d64: cancellation callback failed (AggregateException).
+Readiness request 3cfcf38e5ed841a79d4f5fa94d47d211: cancellation callback failed (AggregateException).
+Readiness request e16221104fe047d6bcc6790d90127c72: cancellation callback failed (AggregateException).
+Readiness request 1392753a99524e16907fcd9112d06804: cancellation callback failed (AggregateException).
+PASS Held cancellation callbacks retain bounded capacity without blocking tool return
+PASS Production executable discovers without a Revit instance
+PASS Deadline observed as transport cancellation retains DeadlineExceeded
+PASS Bridge domain failures preserve stable correlated errors without report
+PASS SDK suppresses success after IPC: late-cancel
+PASS SDK suppresses success after IPC: late-expire
+PASS Production tool host strict rejection: 2025-06-18
+PASS Production tool host strict rejection: 2025-11-25
+TOOLS_SHUTDOWN trace=False marker=CALLBACK_HELD
+TOOLS_SHUTDOWN trace=False marker=HOST_STOPPED
+PASS Production tools shutdown while callbacks held and stdin open: trace=False
+TOOLS_SHUTDOWN trace=True marker=CALLBACK_HELD
+TOOLS_SHUTDOWN trace=True marker=HOST_STOPPED
+PASS Production tools shutdown while callbacks held and stdin open: trace=True
+EOF_OBSERVATION {"revision":"2025-06-18","tracing":false,"explicitCancel":false,"exited":true,"canceled":true,"guardRejected":true,"elapsedMs":15,"remainingMs":29828.684,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+PASS Actual production EOF cancels pending pipe work: 2025-06-18 trace=False
+EOF_OBSERVATION {"revision":"2025-06-18","tracing":true,"explicitCancel":false,"exited":true,"canceled":true,"guardRejected":true,"elapsedMs":16,"remainingMs":29832.3825,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+PASS Actual production EOF cancels pending pipe work: 2025-06-18 trace=True
+PASS Raw Unicode argument contract: 2025-06-18
+EOF_OBSERVATION {"revision":"2025-11-25","tracing":false,"explicitCancel":false,"exited":true,"canceled":true,"guardRejected":true,"elapsedMs":15,"remainingMs":29834.5457,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+PASS Actual production EOF cancels pending pipe work: 2025-11-25 trace=False
+EOF_OBSERVATION {"revision":"2025-11-25","tracing":true,"explicitCancel":false,"exited":true,"canceled":true,"guardRejected":true,"elapsedMs":15,"remainingMs":29828.5418,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+PASS Actual production EOF cancels pending pipe work: 2025-11-25 trace=True
+PASS Raw Unicode argument contract: 2025-11-25
+EOF_OBSERVATION {"revision":"2026-07-28","tracing":false,"explicitCancel":false,"exited":true,"canceled":true,"guardRejected":true,"elapsedMs":17,"remainingMs":29821.8803,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+PASS Actual production EOF cancels pending pipe work: 2026-07-28 trace=False
+EOF_OBSERVATION {"revision":"2026-07-28","tracing":true,"explicitCancel":false,"exited":true,"canceled":true,"guardRejected":true,"elapsedMs":16,"remainingMs":29835.8793,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+PASS Actual production EOF cancels pending pipe work: 2026-07-28 trace=True
+PASS Raw Unicode argument contract: 2026-07-28
+EOF_OBSERVATION {"revision":"2025-11-25","tracing":false,"explicitCancel":true,"exited":true,"canceled":true,"guardRejected":true,"elapsedMs":15,"remainingMs":29828.2911,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+PASS Actual production explicit cancellation control: trace=False
+PASS Input failure cancels handler and preserves cause: trace=False
+TOOLS_SHUTDOWN trace=False marker=CALLBACK_HELD
+TOOLS_SHUTDOWN trace=False marker=HOST_STOPPED
+PASS EOF host shutdown while callbacks held: trace=False
+EOF_OBSERVATION {"revision":"2025-11-25","tracing":true,"explicitCancel":true,"exited":true,"canceled":true,"guardRejected":true,"elapsedMs":15,"remainingMs":29838.9388,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+PASS Actual production explicit cancellation control: trace=True
+PASS Input failure cancels handler and preserves cause: trace=True
+TOOLS_SHUTDOWN trace=True marker=CALLBACK_HELD
+TOOLS_SHUTDOWN trace=True marker=HOST_STOPPED
+PASS EOF host shutdown while callbacks held: trace=True
+ARGUMENT_MATRIX revision=2025-06-18 trace=False accepted=11 rejected=299 failures=221
+FAIL Complete argument boundary over raw stdio: 2025-06-18 trace=False: Exception root-kind-null: Wrong argument rejection; root-kind-true: JSON-RPC error escaped application boundary; root-kind-false: JSON-RPC error escaped application boundary; root-kind-0: JSON-RPC error escaped application boundary; root-kind-1.25: JSON-RPC error escaped application boundary; root-kind-"text": JSON-RPC error escaped application boundary; root-kind-"\ud800": JSON-RPC error escaped application boundary; root-kind-"\udc00": JSON-RPC error escaped application boundary; root-kind-[]: JSON-RPC error escaped application boundary; token-kind-"\ud800": JSON-RPC error escaped application boundary; unknown-property-"\ud800": JSON-RPC error escaped application boundary; token-kind-"\udc00": JSON-RPC error escaped application boundary
+ARGUMENT_MATRIX revision=2025-06-18 trace=True accepted=11 rejected=299 failures=221
+FAIL Complete argument boundary over raw stdio: 2025-06-18 trace=True: Exception root-kind-null: Wrong argument rejection; root-kind-true: JSON-RPC error escaped application boundary; root-kind-false: JSON-RPC error escaped application boundary; root-kind-0: JSON-RPC error escaped application boundary; root-kind-1.25: JSON-RPC error escaped application boundary; root-kind-"text": JSON-RPC error escaped application boundary; root-kind-"\ud800": JSON-RPC error escaped application boundary; root-kind-"\udc00": JSON-RPC error escaped application boundary; root-kind-[]: JSON-RPC error escaped application boundary; token-kind-"\ud800": JSON-RPC error escaped application boundary; unknown-property-"\ud800": JSON-RPC error escaped application boundary; token-kind-"\udc00": JSON-RPC error escaped application boundary
+ARGUMENT_MATRIX revision=2025-11-25 trace=False accepted=11 rejected=299 failures=221
+FAIL Complete argument boundary over raw stdio: 2025-11-25 trace=False: Exception root-kind-null: Wrong argument rejection; root-kind-true: JSON-RPC error escaped application boundary; root-kind-false: JSON-RPC error escaped application boundary; root-kind-0: JSON-RPC error escaped application boundary; root-kind-1.25: JSON-RPC error escaped application boundary; root-kind-"text": JSON-RPC error escaped application boundary; root-kind-"\ud800": JSON-RPC error escaped application boundary; root-kind-"\udc00": JSON-RPC error escaped application boundary; root-kind-[]: JSON-RPC error escaped application boundary; token-kind-"\ud800": JSON-RPC error escaped application boundary; unknown-property-"\ud800": JSON-RPC error escaped application boundary; token-kind-"\udc00": JSON-RPC error escaped application boundary
+ARGUMENT_MATRIX revision=2025-11-25 trace=True accepted=11 rejected=299 failures=221
+FAIL Complete argument boundary over raw stdio: 2025-11-25 trace=True: Exception root-kind-null: Wrong argument rejection; root-kind-true: JSON-RPC error escaped application boundary; root-kind-false: JSON-RPC error escaped application boundary; root-kind-0: JSON-RPC error escaped application boundary; root-kind-1.25: JSON-RPC error escaped application boundary; root-kind-"text": JSON-RPC error escaped application boundary; root-kind-"\ud800": JSON-RPC error escaped application boundary; root-kind-"\udc00": JSON-RPC error escaped application boundary; root-kind-[]: JSON-RPC error escaped application boundary; token-kind-"\ud800": JSON-RPC error escaped application boundary; unknown-property-"\ud800": JSON-RPC error escaped application boundary; token-kind-"\udc00": JSON-RPC error escaped application boundary
+ARGUMENT_MATRIX revision=2026-07-28 trace=False accepted=11 rejected=299 failures=221
+FAIL Complete argument boundary over raw stdio: 2026-07-28 trace=False: Exception root-kind-null: Wrong argument rejection; root-kind-true: JSON-RPC error escaped application boundary; root-kind-false: JSON-RPC error escaped application boundary; root-kind-0: JSON-RPC error escaped application boundary; root-kind-1.25: JSON-RPC error escaped application boundary; root-kind-"text": JSON-RPC error escaped application boundary; root-kind-"\ud800": JSON-RPC error escaped application boundary; root-kind-"\udc00": JSON-RPC error escaped application boundary; root-kind-[]: JSON-RPC error escaped application boundary; token-kind-"\ud800": JSON-RPC error escaped application boundary; unknown-property-"\ud800": JSON-RPC error escaped application boundary; token-kind-"\udc00": JSON-RPC error escaped application boundary
+ARGUMENT_MATRIX revision=2026-07-28 trace=True accepted=11 rejected=299 failures=221
+FAIL Complete argument boundary over raw stdio: 2026-07-28 trace=True: Exception root-kind-null: Wrong argument rejection; root-kind-true: JSON-RPC error escaped application boundary; root-kind-false: JSON-RPC error escaped application boundary; root-kind-0: JSON-RPC error escaped application boundary; root-kind-1.25: JSON-RPC error escaped application boundary; root-kind-"text": JSON-RPC error escaped application boundary; root-kind-"\ud800": JSON-RPC error escaped application boundary; root-kind-"\udc00": JSON-RPC error escaped application boundary; root-kind-[]: JSON-RPC error escaped application boundary; token-kind-"\ud800": JSON-RPC error escaped application boundary; unknown-property-"\ud800": JSON-RPC error escaped application boundary; token-kind-"\udc00": JSON-RPC error escaped application boundary
+Tools tests: 50 passed; 6 failed.
+Exception: D:\bim-agent-lab\projects\revit-readiness\scripts\Test-McpBridge.ps1:11
+Line |
+  11 |  …  ($LASTEXITCODE -ne 0) { throw 'MCP Tools behavioral tests failed.' }
+     |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | MCP Tools behavioral tests failed.

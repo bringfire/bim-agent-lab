@@ -1,0 +1,92 @@
+[
+  {
+    "path": "matrix/2025-06-18-trace-false/received.jsonl.gz",
+    "uncompressedBytes": 1438900,
+    "uncompressedSha256": "8a68ad94362308db941b952263a9fa6a704bf941cae86b014972ef27f6289d19"
+  },
+  {
+    "path": "matrix/2025-06-18-trace-false/sent.jsonl.gz",
+    "uncompressedBytes": 306085,
+    "uncompressedSha256": "8d4ad00fe11229e8107c04b1b17d35b3e19e0d6a47d0b079b3e5e0880699b7b5"
+  },
+  {
+    "path": "matrix/2025-06-18-trace-true/received.jsonl.gz",
+    "uncompressedBytes": 1438900,
+    "uncompressedSha256": "30fdc31f7eb610df0169a0dc0b69b490e091471f7903ab05b518f4069812a575"
+  },
+  {
+    "path": "matrix/2025-06-18-trace-true/sent.jsonl.gz",
+    "uncompressedBytes": 306085,
+    "uncompressedSha256": "8d4ad00fe11229e8107c04b1b17d35b3e19e0d6a47d0b079b3e5e0880699b7b5"
+  },
+  {
+    "path": "matrix/2025-06-18-trace-true/wire/client-to-server.jsonl.gz",
+    "uncompressedBytes": 306398,
+    "uncompressedSha256": "0d03b9cff1bd4f8722f0d1072a4611c734a419e2ec0e8b7d807240da56d97df0"
+  },
+  {
+    "path": "matrix/2025-06-18-trace-true/wire/server-to-client.jsonl.gz",
+    "uncompressedBytes": 1438900,
+    "uncompressedSha256": "30fdc31f7eb610df0169a0dc0b69b490e091471f7903ab05b518f4069812a575"
+  },
+  {
+    "path": "matrix/2025-11-25-trace-false/received.jsonl.gz",
+    "uncompressedBytes": 1438900,
+    "uncompressedSha256": "0241b148e5c59766c45c2265fdcf327158f6086a1d387aed89a1403cc65c5ff2"
+  },
+  {
+    "path": "matrix/2025-11-25-trace-false/sent.jsonl.gz",
+    "uncompressedBytes": 306085,
+    "uncompressedSha256": "e40705ed8a4633283b4f5c9c79ea20cb519a14d8de7ce271f87f687de8b4fcff"
+  },
+  {
+    "path": "matrix/2025-11-25-trace-true/received.jsonl.gz",
+    "uncompressedBytes": 1438900,
+    "uncompressedSha256": "89306a0ef1b7d18c700d2c449c52d7bdd068b6e7c712710ce4410d43d7126894"
+  },
+  {
+    "path": "matrix/2025-11-25-trace-true/sent.jsonl.gz",
+    "uncompressedBytes": 306085,
+    "uncompressedSha256": "e40705ed8a4633283b4f5c9c79ea20cb519a14d8de7ce271f87f687de8b4fcff"
+  },
+  {
+    "path": "matrix/2025-11-25-trace-true/wire/client-to-server.jsonl.gz",
+    "uncompressedBytes": 306398,
+    "uncompressedSha256": "0a774d4747272eb06b09f53be9bbaa054cf72f7476823e174a73d2d41174a4ff"
+  },
+  {
+    "path": "matrix/2025-11-25-trace-true/wire/server-to-client.jsonl.gz",
+    "uncompressedBytes": 1438900,
+    "uncompressedSha256": "89306a0ef1b7d18c700d2c449c52d7bdd068b6e7c712710ce4410d43d7126894"
+  },
+  {
+    "path": "matrix/2026-07-28-trace-false/received.jsonl.gz",
+    "uncompressedBytes": 1474335,
+    "uncompressedSha256": "73c028ce30535f9179b3370f238f0fa75c941e1b025deb9b76cc67189fb89703"
+  },
+  {
+    "path": "matrix/2026-07-28-trace-false/sent.jsonl.gz",
+    "uncompressedBytes": 366145,
+    "uncompressedSha256": "5a5bcf422f6caf798b71915a8e3316c6c3a22f46aee6a2ee77b047d9042e9dc7"
+  },
+  {
+    "path": "matrix/2026-07-28-trace-true/received.jsonl.gz",
+    "uncompressedBytes": 1474335,
+    "uncompressedSha256": "09e55c3996b503b3c389134b9d044aadde1ffc51e038a1dd9221975ac3f6ae01"
+  },
+  {
+    "path": "matrix/2026-07-28-trace-true/sent.jsonl.gz",
+    "uncompressedBytes": 366145,
+    "uncompressedSha256": "5a5bcf422f6caf798b71915a8e3316c6c3a22f46aee6a2ee77b047d9042e9dc7"
+  },
+  {
+    "path": "matrix/2026-07-28-trace-true/wire/client-to-server.jsonl.gz",
+    "uncompressedBytes": 366457,
+    "uncompressedSha256": "1d9a1ff4f25ff5d171b194391d463d0a880845467fb88b5284f678e7ddd3c7a7"
+  },
+  {
+    "path": "matrix/2026-07-28-trace-true/wire/server-to-client.jsonl.gz",
+    "uncompressedBytes": 1474335,
+    "uncompressedSha256": "09e55c3996b503b3c389134b9d044aadde1ffc51e038a1dd9221975ac3f6ae01"
+  }
+]
