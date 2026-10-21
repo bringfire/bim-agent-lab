@@ -33,3 +33,17 @@ Suggested follow-up prompt, not a quotation from the author:
 [Task 5's independent closure](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-5-closure.md) covers its implementation and offline checks. Task 6's [verification record](../../projects/revit-readiness/docs/verification/2026-10-21-mcp-readiness-tools.md) records these new tool checks. Installation/recovery, actual Revit scheduling/shutdown, the three sample cases and incomplete-coverage controls in both desktops, and final independent review still have their own gates.
 
 Future agents should use the [technical procedure](../how-to/build-and-verify-mcp-readiness-tools.md). Participants can use the [review packet](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-6-review.md) to ask for an independent challenge before deployment.
+
+## Review follow-up: ask what actually reaches the safeguard
+
+The author brought back an independent review that kept Task 6 open. Although the existing tests passed, closing the desktop connection left a pending request able to read, and two malformed text inputs produced an internal error instead of our useful argument error. The author supplied working reproductions, giving the coding agent something concrete to challenge.
+
+The productive direction was to follow the operation through its real entry and exit points. A test that presses Cancel does not prove what happens when the desktop disconnects. A validation check cannot protect a conversion that happens before it. The agent reproduced both failures before editing, kept the reviewer's probes unchanged, and added cases through the actual executable.
+
+The first text correction was still too late: an SDK conversion failed before our command received the request. Temporary diagnostics revealed that. The agent moved rejection to the SDK's earlier message-filter boundary, then verified the useful error reached the caller. It did not upgrade the SDK or replace MCP with a custom protocol.
+
+Suggested prompt for participants, not a quotation from the author:
+
+> Reproduce the reviewer's failure before changing anything. Show me where the input or shutdown signal first becomes meaningful, and whether it reaches the safeguard you propose. Test through the actual program, keep valid controls, and retain failed attempts as well as the final evidence. Ask for independent follow-up before calling the task closed.
+
+The [follow-up record](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-6-boundary-review.md) separates the reviewer's findings from the coding agent's corrections. The lesson is to investigate a recurring class of failure across paths, rather than count passing examples. Task 6 remains open pending that independent follow-up; these tests still do not prove live Revit or desktop acceptance.

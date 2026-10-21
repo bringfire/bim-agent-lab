@@ -1,0 +1,107 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+C:\Program Files\dotnet\sdk\10.0.204\Microsoft.Common.CurrentVersion.targets(5395,5): warning MSB3026: Could not copy "D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\obj\Release\net10.0\apphost.exe" to "bin\Release\net10.0\BimAgentLab.Mcp.Tests.exe". Beginning retry 1 in 1000ms. The process cannot access the file 'D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\bin\Release\net10.0\BimAgentLab.Mcp.Tests.exe' because it is being used by another process. The file is locked by: "BimAgentLab.Mcp.Tests (64696), BimAgentLab.Mcp.Tests (87432)" [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+C:\Program Files\dotnet\sdk\10.0.204\Microsoft.Common.CurrentVersion.targets(5395,5): warning MSB3026: Could not copy "D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\obj\Release\net10.0\apphost.exe" to "bin\Release\net10.0\BimAgentLab.Mcp.Tests.exe". Beginning retry 2 in 1000ms. The process cannot access the file 'D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\bin\Release\net10.0\BimAgentLab.Mcp.Tests.exe' because it is being used by another process. The file is locked by: "BimAgentLab.Mcp.Tests (64696), BimAgentLab.Mcp.Tests (87432)" [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+  BimAgentLab.Mcp.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\bin\Release\net10.0\BimAgentLab.Mcp.Tests.dll
+
+Build succeeded.
+
+C:\Program Files\dotnet\sdk\10.0.204\Microsoft.Common.CurrentVersion.targets(5395,5): warning MSB3026: Could not copy "D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\obj\Release\net10.0\apphost.exe" to "bin\Release\net10.0\BimAgentLab.Mcp.Tests.exe". Beginning retry 1 in 1000ms. The process cannot access the file 'D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\bin\Release\net10.0\BimAgentLab.Mcp.Tests.exe' because it is being used by another process. The file is locked by: "BimAgentLab.Mcp.Tests (64696), BimAgentLab.Mcp.Tests (87432)" [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+C:\Program Files\dotnet\sdk\10.0.204\Microsoft.Common.CurrentVersion.targets(5395,5): warning MSB3026: Could not copy "D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\obj\Release\net10.0\apphost.exe" to "bin\Release\net10.0\BimAgentLab.Mcp.Tests.exe". Beginning retry 2 in 1000ms. The process cannot access the file 'D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\bin\Release\net10.0\BimAgentLab.Mcp.Tests.exe' because it is being used by another process. The file is locked by: "BimAgentLab.Mcp.Tests (64696), BimAgentLab.Mcp.Tests (87432)" [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\BimAgentLab.Mcp.Tests.csproj]
+    2 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:04.21
+TOOLS_EVIDENCE scenario=nc1 protocol=2025-06-18 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc1-59a4b073ac6843f1bf43ee8e75bda8fe
+PASS Production tools preserve full nc1 report on 2025-06-18
+TOOLS_EVIDENCE scenario=nc2 protocol=2025-06-18 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc2-ed3b16e2d9d64eee8a9a4c8404c06bbc
+PASS Production tools preserve full nc2 report on 2025-06-18
+TOOLS_EVIDENCE scenario=nc1 protocol=2025-11-25 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc1-412a6b2a5531414f933e457f9f5a7b1b
+PASS Production tools preserve full nc1 report on 2025-11-25
+TOOLS_EVIDENCE scenario=nc2 protocol=2025-11-25 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc2-6e6e47ffa88846b3b7937a9f425d1027
+PASS Production tools preserve full nc2 report on 2025-11-25
+TOOLS_EVIDENCE scenario=nc1 protocol=2026-07-28 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc1-8d6a0268d8274d3ba36fda87070476f1
+PASS Production tools preserve full nc1 report on 2026-07-28
+TOOLS_EVIDENCE scenario=nc2 protocol=2026-07-28 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc2-e06ef9640b0a4557945ebc92474372a8
+PASS Production tools preserve full nc2 report on 2026-07-28
+TOOLS_EVIDENCE scenario=strict protocol=2026-07-28 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\strict-406685c600d44407a67b8877e8d8c0fb
+PASS Production tools preserve strict July
+PASS Production provider path: none
+PASS Production provider path: multiple
+PASS Production provider path: retry
+PASS Production provider path: concurrent
+PASS Production provider path: restart
+Readiness request b6cb4356f1a14bbc88450dff09ed88d4 failed (InvalidDataException).
+PASS Invalid bridge evidence never becomes a report: crossed
+Readiness request 5851d038c2524b02ba350376e2bf77bc failed (InvalidDataException).
+PASS Invalid bridge evidence never becomes a report: error-crossed
+Readiness request 17e222dbc67648fe81b61794c6b0c4af failed (InvalidDataException).
+PASS Invalid bridge evidence never becomes a report: bad-hash
+Readiness request ea580ecc9a2a48fc88441c58f984af97 failed (InvalidDataException).
+PASS Invalid bridge evidence never becomes a report: both
+Readiness request f5fe2a7290ca49e88d724855f708f79e failed (JsonReaderException).
+PASS Invalid bridge evidence never becomes a report: bad-json
+Readiness request 0feb396adb5444cea85c79c3b31ae4d1 failed (InvalidDataException).
+PASS Invalid bridge evidence never becomes a report: missing-flags
+Readiness request 28e65f95fc484891938933c9ae79a66e failed (Exception).
+PASS Invalid bridge evidence never becomes a report: thrown
+PASS Original context rejects late success: cancel=False guard=1
+PASS Original context rejects late success: cancel=False guard=2
+PASS Original context rejects late success: cancel=False guard=3
+PASS Original context rejects late success: cancel=True guard=1
+PASS Original context rejects late success: cancel=True guard=2
+PASS Original context rejects late success: cancel=True guard=3
+Readiness request aa6f38c5fec144c5a25f1a4375d635a1: cancellation callback failed (AggregateException).
+Readiness request e24b2541631a43d4a63b40e2582f96d8: cancellation callback failed (AggregateException).
+Readiness request 111ec456335d48b3ac64d66af736e428: cancellation callback failed (AggregateException).
+Readiness request cfd6a4a74ace4c78b9d67b23da5155cb: cancellation callback failed (AggregateException).
+Readiness request b14b3751820e498f85375fa3f1390f3a: cancellation callback failed (AggregateException).
+Readiness request 7b415b178630465ea62c3f2ee8d21a93: cancellation callback failed (AggregateException).
+Readiness request e23ee693ffbc40c9a851d6a17e762205: cancellation callback failed (AggregateException).
+Readiness request 4e9c34de1c02487d8db85624437eca50: cancellation callback failed (AggregateException).
+PASS Held cancellation callbacks retain bounded capacity without blocking tool return
+PASS Production executable discovers without a Revit instance
+PASS Deadline observed as transport cancellation retains DeadlineExceeded
+PASS Bridge domain failures preserve stable correlated errors without report
+PASS SDK suppresses success after IPC: late-cancel
+PASS SDK suppresses success after IPC: late-expire
+PASS Production tool host strict rejection: 2025-06-18
+PASS Production tool host strict rejection: 2025-11-25
+TOOLS_SHUTDOWN trace=False marker=CALLBACK_HELD
+TOOLS_SHUTDOWN trace=False marker=HOST_STOPPED
+PASS Production tools shutdown while callbacks held and stdin open: trace=False
+TOOLS_SHUTDOWN trace=True marker=CALLBACK_HELD
+TOOLS_SHUTDOWN trace=True marker=HOST_STOPPED
+PASS Production tools shutdown while callbacks held and stdin open: trace=True
+EOF_OBSERVATION {"revision":"2025-06-18","tracing":false,"explicitCancel":false,"exited":false,"canceled":false,"guardRejected":false,"elapsedMs":5008,"remainingMs":24849.2137,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+FAIL Actual production EOF cancels pending pipe work: 2025-06-18 trace=False: Exception EOF did not naturally stop the production process before executor release
+EOF_OBSERVATION {"revision":"2025-06-18","tracing":true,"explicitCancel":false,"exited":false,"canceled":false,"guardRejected":false,"elapsedMs":5011,"remainingMs":24837.0656,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+FAIL Actual production EOF cancels pending pipe work: 2025-06-18 trace=True: Exception EOF did not naturally stop the production process before executor release
+FAIL Raw Unicode argument contract: 2025-06-18: Exception high escaped as JSON-RPC error; low escaped as JSON-RPC error
+EOF_OBSERVATION {"revision":"2025-11-25","tracing":false,"explicitCancel":false,"exited":false,"canceled":false,"guardRejected":false,"elapsedMs":5011,"remainingMs":24852.6484,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+FAIL Actual production EOF cancels pending pipe work: 2025-11-25 trace=False: Exception EOF did not naturally stop the production process before executor release
+EOF_OBSERVATION {"revision":"2025-11-25","tracing":true,"explicitCancel":false,"exited":false,"canceled":false,"guardRejected":false,"elapsedMs":5015,"remainingMs":24842.3189,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+FAIL Actual production EOF cancels pending pipe work: 2025-11-25 trace=True: Exception EOF did not naturally stop the production process before executor release
+FAIL Raw Unicode argument contract: 2025-11-25: Exception high escaped as JSON-RPC error; low escaped as JSON-RPC error
+EOF_OBSERVATION {"revision":"2026-07-28","tracing":false,"explicitCancel":false,"exited":false,"canceled":false,"guardRejected":false,"elapsedMs":5013,"remainingMs":24840.5452,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+FAIL Actual production EOF cancels pending pipe work: 2026-07-28 trace=False: Exception EOF did not naturally stop the production process before executor release
+EOF_OBSERVATION {"revision":"2026-07-28","tracing":true,"explicitCancel":false,"exited":false,"canceled":false,"guardRejected":false,"elapsedMs":5000,"remainingMs":24857.2078,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+FAIL Actual production EOF cancels pending pipe work: 2026-07-28 trace=True: Exception EOF did not naturally stop the production process before executor release
+FAIL Raw Unicode argument contract: 2026-07-28: Exception high escaped as JSON-RPC error; low escaped as JSON-RPC error
+EOF_OBSERVATION {"revision":"2025-11-25","tracing":false,"explicitCancel":true,"exited":true,"canceled":true,"guardRejected":true,"elapsedMs":16,"remainingMs":29845.0166,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+PASS Actual production explicit cancellation control: trace=False
+FAIL Input failure cancels handler and preserves cause: trace=False: Exception Input failure lost or shutdown waited for handler
+FAIL EOF host shutdown while callbacks held: trace=False: TimeoutException The operation has timed out.
+EOF_OBSERVATION {"revision":"2025-11-25","tracing":true,"explicitCancel":true,"exited":true,"canceled":true,"guardRejected":true,"elapsedMs":18,"remainingMs":29849.4319,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+PASS Actual production explicit cancellation control: trace=True
+FAIL Input failure cancels handler and preserves cause: trace=True: Exception Input failure lost or shutdown waited for handler
+FAIL EOF host shutdown while callbacks held: trace=True: TimeoutException The operation has timed out.
+Tools tests: 37 passed; 13 failed.
+Exception: D:\bim-agent-lab\projects\revit-readiness\scripts\Test-McpBridge.ps1:11
+Line |
+  11 |  …  ($LASTEXITCODE -ne 0) { throw 'MCP Tools behavioral tests failed.' }
+     |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | MCP Tools behavioral tests failed.

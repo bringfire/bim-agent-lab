@@ -50,6 +50,18 @@ internal static partial class Program
             await Case("Production tool host strict rejection: " + revision, () => ToolsStrictRejection(revision));
         foreach (bool tracing in new[] { false, true })
             await Case("Production tools shutdown while callbacks held and stdin open: trace=" + tracing, () => ToolsOpenStdinShutdown(tracing));
+        foreach (string revision in new[] { "2025-06-18", "2025-11-25", "2026-07-28" })
+        {
+            foreach (bool tracing in new[] { false, true })
+                await Case($"Actual production EOF cancels pending pipe work: {revision} trace={tracing}", () => ProductionEof(revision, tracing));
+            await Case("Raw Unicode argument contract: " + revision, () => UnicodeArguments(revision));
+        }
+        foreach (bool tracing in new[] { false, true })
+        {
+            await Case("Actual production explicit cancellation control: trace=" + tracing, () => ProductionEof("2025-11-25", tracing, true));
+            await Case("Input failure cancels handler and preserves cause: trace=" + tracing, () => FaultedInputCancelsHandler(tracing));
+            await Case("EOF host shutdown while callbacks held: trace=" + tracing, () => ToolsOpenStdinShutdown(tracing, true));
+        }
         Console.WriteLine($"Tools tests: {cases - failures} passed; {failures} failed.");
         return failures == 0 ? 0 : 1;
     }
@@ -109,7 +121,7 @@ internal static partial class Program
                 return await tools.CallAsync(request, linked.Token);
             } },
                 Path.Combine(args[2], "wire"), CancellationToken.None,
-                scenario == "strict" ? McpProtocolPolicy.Strict20260728 : McpProtocolPolicy.Compatible);
+                scenario == "strict" ? McpProtocolPolicy.Strict20260728 : McpProtocolPolicy.Compatible, tools.ValidateIncomingArguments);
             return 0;
         }
         finally { if (endpoint is not null) await endpoint.StopAsync(); }
@@ -409,12 +421,13 @@ internal static partial class Program
         });
         var tools = new ReadinessTools(bridge, new SystemBridgeClock(), stop.Token);
         Console.Error.WriteLine("READY");
-        await McpHost.RunStdioAsync(new McpServerHandlers { ListToolsHandler = tools.ListAsync, CallToolHandler = tools.CallAsync }, args[3] == "off" ? null : args[3], stop.Token);
+        await McpHost.RunStdioAsync(new McpServerHandlers { ListToolsHandler = tools.ListAsync, CallToolHandler = tools.CallAsync }, args[3] == "off" ? null : args[3], stop.Token,
+            incomingFilter: tools.ValidateIncomingArguments);
         Console.Error.WriteLine("HOST_STOPPED");
         release.WaitOne(); // test process remains alive to prove host progress before callback release
         return 0;
     }
-    static async Task ToolsOpenStdinShutdown(bool tracing)
+    static async Task ToolsOpenStdinShutdown(bool tracing, bool eof = false)
     {
         string suffix = Guid.NewGuid().ToString("N"), stopName = "Local\\BAL-Tools-Stop-" + suffix, releaseName = "Local\\BAL-Tools-Release-" + suffix;
         using var stop = new EventWaitHandle(false, EventResetMode.ManualReset, stopName);
@@ -431,20 +444,20 @@ internal static partial class Program
             client = await McpClient.CreateAsync(new StreamClientTransport(child.StandardInput.BaseStream, child.StandardOutput.BaseStream));
             var pending = Call(client, ProductionNames[1]);
             Check(await child.StandardError.ReadLineAsync().WaitAsync(TimeSpan.FromSeconds(5)) == "CALL_STARTED", "Tool not admitted");
-            stop.Set();
+            if (eof) child.StandardInput.Close(); else stop.Set();
             var markers = new List<string?>();
             while (!markers.Contains("HOST_STOPPED") || !markers.Contains("CALLBACK_HELD"))
             {
                 string? marker = await child.StandardError.ReadLineAsync().WaitAsync(TimeSpan.FromSeconds(5));
                 markers.Add(marker); Console.WriteLine("TOOLS_SHUTDOWN trace=" + tracing + " marker=" + marker);
             }
-            Check(child.StandardInput.BaseStream.CanWrite && !child.HasExited, "No open-stdin held-callback observation");
+            Check((eof || child.StandardInput.BaseStream.CanWrite) && !child.HasExited, "No held-callback observation");
             // HOST_STOPPED proves server shutdown before release. The deliberately
             // live child still owns stdout, so the remote client need not see EOF yet.
             Check(!pending.IsCompletedSuccessfully || pending.Result.IsError == true, "Host shutdown published late success");
             release.Set();
             await child.WaitForExitAsync().WaitAsync(TimeSpan.FromSeconds(5));
-            Check(child.ExitCode == 0 && child.StandardInput.BaseStream.CanWrite, "Shutdown needed EOF or forced termination");
+            Check(child.ExitCode == 0 && (eof || child.StandardInput.BaseStream.CanWrite), "Shutdown needed unexpected EOF or forced termination");
             bool success = false;
             try { success = (await pending.WaitAsync(TimeSpan.FromSeconds(3))).IsError != true; }
             catch (Exception error) when (error is not TimeoutException) { }

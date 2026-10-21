@@ -1,0 +1,35 @@
+import json, pathlib, queue, subprocess, threading
+ROOT=pathlib.Path(__file__).parent
+exe=r'D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.exe'
+p=subprocess.Popen([exe,'--revit-pid','2147483647'],stdin=subprocess.PIPE,stdout=subprocess.PIPE,stderr=subprocess.PIPE,text=True,encoding='utf-8')
+output=queue.Queue(); errors=[]
+def read_stdout():
+    for line in p.stdout: output.put(line)
+def read_stderr():
+    for line in p.stderr: errors.append(line)
+threading.Thread(target=read_stdout,daemon=True).start();threading.Thread(target=read_stderr,daemon=True).start()
+def send(raw): p.stdin.write(raw+'\n');p.stdin.flush()
+def response(id):
+    while True:
+        value=json.loads(output.get(timeout=8))
+        if value.get('id')==id:return value
+failures=0; results=[]
+try:
+    send(json.dumps({'jsonrpc':'2.0','id':1,'method':'initialize','params':{'protocolVersion':'2025-11-25','capabilities':{},'clientInfo':{'name':'independent-review','version':'1'}}}))
+    initial=response(1);assert initial['result']['protocolVersion']=='2025-11-25',initial
+    send('{"jsonrpc":"2.0","method":"notifications/initialized"}')
+    cases=[('valid-token','"opaque"','BridgeUnavailable'),('wrong-type','42','InvalidRequest'),('oversize',json.dumps('x'*70000),'InvalidRequest'),('lone-high-surrogate',r'"\ud800"','InvalidRequest'),('lone-low-surrogate',r'"\udc00"','InvalidRequest'),('valid-surrogate-pair',r'"\ud83d\ude00"','BridgeUnavailable')]
+    for id,(name,value,expected) in enumerate(cases,2):
+        send('{"jsonrpc":"2.0","id":'+str(id)+',"method":"tools/call","params":{"name":"revit_check_required_type_information","arguments":{"contextToken":'+value+'}}}')
+        reply=response(id);actual=reply.get('result',{}).get('structuredContent',{}).get('code')
+        item={'case':name,'expected':expected,'actual':actual,'reply':reply}
+        results.append(item);print(json.dumps(item,ensure_ascii=True))
+        if actual!=expected: failures+=1
+finally:
+    p.stdin.close()
+    try:p.wait(timeout=8)
+    except subprocess.TimeoutExpired:p.kill();p.wait();raise
+    (ROOT/'arguments-wire-results.json').write_text(json.dumps(results,indent=2),encoding='utf-8')
+    (ROOT/'arguments-stderr.txt').write_text(''.join(errors),encoding='utf-8')
+print('PRODUCTION_EXIT='+str(p.returncode)+' ASSERTION_FAILURES='+str(failures))
+raise SystemExit(1 if failures else 0)

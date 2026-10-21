@@ -1,0 +1,33 @@
+{
+  "baseline": "189fd78841f07f3b8b4ad999c7ed32aa3a6a36f1",
+  "sdkVersion": "2.2.0",
+  "sdkSourceCommit": "6fa3825973949a9c4f0cd8af344e15a8db09dc35",
+  "sdkSourceInspected": [
+    {
+      "path": "references/csharp-sdk-2.2.0/src/ModelContextProtocol.Core/Server/StreamServerTransport.cs",
+      "sha256": "75f36e3749dad16b1d26fb017d4ddee21ac0244909fdcbc71feb9ee31e43d316"
+    },
+    {
+      "path": "references/csharp-sdk-2.2.0/src/ModelContextProtocol.Core/McpSessionHandler.cs",
+      "sha256": "8cd9beddc095c337e26013509e6a9f260e85de18c18eaa9f5042936a196cdc07"
+    },
+    {
+      "path": "references/csharp-sdk-2.2.0/src/ModelContextProtocol.Core/RequestHandlers.cs",
+      "sha256": "ca9935f14f6cedb176ca5050fc2fc754e16d4e5ece84ddfb74123089c8bbc23b"
+    },
+    {
+      "path": "references/csharp-sdk-2.2.0/src/ModelContextProtocol.Core/Server/McpServerImpl.cs",
+      "sha256": "1b665841f09a315b2be22525805d1a40aa0c805759db392c90dfce7eb65a34dd"
+    }
+  ],
+  "dependenciesChanged": false,
+  "stdinHelperChanged": false,
+  "productionFiles": [
+    "McpHost.cs",
+    "Program.cs",
+    "ReadinessTools.cs"
+  ],
+  "runtimeChanges": false,
+  "desktopSettingsChanges": false,
+  "liveAcceptance": false
+}

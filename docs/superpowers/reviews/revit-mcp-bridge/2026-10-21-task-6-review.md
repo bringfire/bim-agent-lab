@@ -15,3 +15,5 @@ Read the [technical guide](../../../how-to/build-and-verify-mcp-readiness-tools.
 > Rerun Tools, All, readiness and Autodesk-reference builds. Check retained evidence hashes, initial failures, deadline correction, corrected shutdown-test diagnosis and final-guard mutation. Audit dependency locks/source provenance and deployment boundaries. Report findings and whether the implementation may proceed to Task 7. Actual installation/recovery, Autodesk scheduling/shutdown, sample comparisons, both desktops' A8 and full R3 remain outstanding.
 
 Independent disposition: **pending**. Nothing has been transmitted to another reviewer automatically. Task 7 is unstarted; no installation or live acceptance is claimed.
+
+Review received after this submission: [two P2 findings, author corrections and follow-up packet](2026-10-21-task-6-boundary-review.md). Task 6 remains open pending independent follow-up; this original submission remains historical.

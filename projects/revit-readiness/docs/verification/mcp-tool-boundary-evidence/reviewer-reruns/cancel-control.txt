@@ -1,0 +1,5 @@
+INITIALIZE {"result":{"protocolVersion":"2025-11-25","capabilities":{"logging":{},"tools":{}},"serverInfo":{"name":"bim-agent-lab","version":"0.1.0"}},"id":1,"jsonrpc":"2.0"}
+{"mode":"cancel","trace":false,"promptExit":true,"canceledBeforeRelease":true,"finalGuardAllowed":false,"elapsedMs":16,"remainingMs":29823.782,"traceDir":null}
+EXIT 0 AFTER_RELEASE 29ms
+STDOUT 
+STDERR 

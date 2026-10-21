@@ -1,0 +1,57 @@
+using System.Diagnostics;
+using System.Text.Json;
+using BimAgentLab.RevitBridge.Contract;
+using BimAgentLab.RevitBridge.Runtime;
+
+string mode = args.Length > 0 ? args[0] : "eof";
+bool trace = args.Length > 1 && args[1] == "trace";
+var descriptor = BridgeIdentity.CreateCurrent();
+var endpoint = new PipeEndpoint(descriptor, new SessionCatalog(), new SystemBridgeClock());
+var admitted = new TaskCompletionSource<BridgeExecutionContext>(TaskCreationOptions.RunContinuationsAsynchronously);
+var response = new TaskCompletionSource<BridgeResponse>(TaskCreationOptions.RunContinuationsAsynchronously);
+var quiesced = new TaskCompletionSource<bool>(TaskCreationOptions.RunContinuationsAsynchronously);
+endpoint.Start(context => { admitted.TrySetResult(context); return new DispatchTicket(response.Task, quiesced.Task); });
+using var child = new Process { StartInfo = new ProcessStartInfo {
+    FileName = @"D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.exe",
+    UseShellExecute = false, RedirectStandardInput = true, RedirectStandardOutput = true, RedirectStandardError = true, CreateNoWindow = true } };
+child.StartInfo.ArgumentList.Add("--revit-pid"); child.StartInfo.ArgumentList.Add(Environment.ProcessId.ToString());
+string? traceDir = null;
+if (trace) { traceDir = Path.Combine(AppContext.BaseDirectory, "wire-" + Guid.NewGuid().ToString("N")); child.StartInfo.ArgumentList.Add("--wire-evidence"); child.StartInfo.ArgumentList.Add(traceDir); }
+Task<string>? stderr = null;
+bool promptExit = false, canceledBeforeRelease = false, finalGuardAllowed = false;
+try {
+    child.Start(); stderr = child.StandardError.ReadToEndAsync();
+    await child.StandardInput.WriteLineAsync("{\"jsonrpc\":\"2.0\",\"id\":1,\"method\":\"initialize\",\"params\":{\"protocolVersion\":\"2025-11-25\",\"capabilities\":{},\"clientInfo\":{\"name\":\"independent-eof-review\",\"version\":\"1\"}}}");
+    await child.StandardInput.FlushAsync();
+    string? initialized = await child.StandardOutput.ReadLineAsync().WaitAsync(TimeSpan.FromSeconds(5));
+    Console.WriteLine("INITIALIZE " + initialized);
+    var stdout = child.StandardOutput.ReadToEndAsync();
+    await child.StandardInput.WriteLineAsync("{\"jsonrpc\":\"2.0\",\"method\":\"notifications/initialized\"}");
+    await child.StandardInput.WriteLineAsync("{\"jsonrpc\":\"2.0\",\"id\":2,\"method\":\"tools/call\",\"params\":{\"name\":\"revit_get_readiness_context\",\"arguments\":{}}}");
+    await child.StandardInput.FlushAsync();
+    var context = await admitted.Task.WaitAsync(TimeSpan.FromSeconds(5));
+    if (mode == "cancel") {
+        await child.StandardInput.WriteLineAsync("{\"jsonrpc\":\"2.0\",\"method\":\"notifications/cancelled\",\"params\":{\"requestId\":2,\"reason\":\"review control\"}}");
+        await child.StandardInput.FlushAsync();
+    }
+    var elapsed = Stopwatch.StartNew();
+    child.StandardInput.Close();
+    try { await child.WaitForExitAsync().WaitAsync(TimeSpan.FromSeconds(5)); promptExit = true; } catch (TimeoutException) { }
+    // Allow the pipe peer-exit monitor to observe a successful shutdown, without releasing the synthetic executor.
+    if (promptExit) { for (int i = 0; i < 50 && !context.IsCancellationRequested; i++) await Task.Delay(20); }
+    canceledBeforeRelease = context.IsCancellationRequested;
+    try { context.ThrowIfInactive(); finalGuardAllowed = true; } catch (Exception) { }
+    Console.WriteLine(JsonSerializer.Serialize(new { mode, trace, promptExit, canceledBeforeRelease, finalGuardAllowed, elapsedMs = elapsed.ElapsedMilliseconds, remainingMs = context.Budget.Remaining.TotalMilliseconds, traceDir }));
+    response.TrySetResult(new BridgeResponse { ContractVersion = 1, RequestId = context.Request.RequestId, BridgeSessionId = descriptor.BridgeSessionId,
+        Error = new BridgeError { Code = "NoActiveDocument", Message = "Synthetic review endpoint released after observation.", RequestId = context.Request.RequestId, Retryable = false } });
+    quiesced.TrySetResult(true);
+    await child.WaitForExitAsync().WaitAsync(TimeSpan.FromSeconds(8));
+    Console.WriteLine("EXIT " + child.ExitCode + " AFTER_RELEASE " + elapsed.ElapsedMilliseconds + "ms");
+    Console.WriteLine("STDOUT " + await stdout); Console.WriteLine("STDERR " + await stderr);
+    return promptExit && canceledBeforeRelease && !finalGuardAllowed && child.ExitCode == 0 ? 0 : 1;
+}
+finally {
+    quiesced.TrySetResult(true);
+    if (child.Id > 0 && !child.HasExited) { child.Kill(); await child.WaitForExitAsync(); }
+    await endpoint.StopAsync();
+}

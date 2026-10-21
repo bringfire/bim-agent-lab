@@ -5,6 +5,7 @@ using ModelContextProtocol.Server;
 using System.Runtime.Versioning;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Nodes;
 
 namespace BimAgentLab.RevitReadiness.Mcp;
 
@@ -14,6 +15,8 @@ public sealed class ReadinessTools
     readonly IBridgeClient client;
     readonly IBridgeClock clock;
     readonly CancellationToken hostStopping;
+    const string InvalidUnicodeKey = "BimAgentLab.InvalidContextTokenUnicode";
+    static readonly object InvalidUnicodeMarker = new();
     public ReadinessTools(IBridgeClient client, IBridgeClock clock, CancellationToken hostStopping)
     { this.client = client ?? throw new ArgumentNullException(nameof(client)); this.clock = clock ?? throw new ArgumentNullException(nameof(clock)); this.hostStopping = hostStopping; }
 
@@ -33,11 +36,34 @@ public sealed class ReadinessTools
     }
     static ToolAnnotations Annotations() => new() { ReadOnlyHint = true, DestructiveHint = false, OpenWorldHint = false, IdempotentHint = false };
 
+    // SDK 2.2.0 converts JsonNode parameters before calling typed handlers. Its
+    // conversion can decode malformed strings first. Mark rejection at the SDK
+    // message seam and remove ONLY the undecodable value from that conversion.
+    // The ordinary handler must reject the marker; this is never a repaired token.
+    public McpMessageHandler ValidateIncomingArguments(McpMessageHandler next) => async (message, cancellation) =>
+    {
+        if (message.JsonRpcMessage is JsonRpcRequest { Method: "tools/call", Params: JsonObject parameters }
+            && parameters["name"] is JsonValue name && name.TryGetValue<string>(out var tool) && tool == BridgeLimits.CheckInformation
+            && parameters["arguments"] is JsonObject arguments
+            && arguments["contextToken"] is JsonValue token && token.GetValueKind() == JsonValueKind.String)
+        {
+            try { _ = token.GetValue<string>(); }
+            catch (InvalidOperationException)
+            {
+                message.Items[InvalidUnicodeKey] = InvalidUnicodeMarker;
+                arguments["contextToken"] = null;
+            }
+        }
+        await next(message, cancellation).ConfigureAwait(false);
+    };
+
     public async ValueTask<CallToolResult> CallAsync(RequestContext<CallToolRequestParams> request, CancellationToken cancellation)
     {
         string id = Guid.NewGuid().ToString("N");
         var budget = RequestBudget.Admit(clock);
         cancellation.ThrowIfCancellationRequested(); hostStopping.ThrowIfCancellationRequested();
+        if (request.Items.TryGetValue(InvalidUnicodeKey, out var rejected) && ReferenceEquals(rejected, InvalidUnicodeMarker))
+            return Failure("InvalidRequest", "The contextToken contains invalid Unicode text.", id);
         var args = request.Params?.Arguments;
         string? token = null;
         string? operation = request.Params?.Name;
@@ -47,8 +73,14 @@ public sealed class ReadinessTools
         }
         else if (operation == BridgeLimits.CheckInformation)
         {
-            if (args is null || args.Count != 1 || !args.TryGetValue("contextToken", out var supplied) || supplied.ValueKind != JsonValueKind.String
-                || string.IsNullOrWhiteSpace(token = supplied.GetString()))
+            if (args is null || args.Count != 1 || !args.TryGetValue("contextToken", out var supplied) || supplied.ValueKind != JsonValueKind.String)
+                return Failure("InvalidRequest", "Supply only the nonblank contextToken from context acquisition.", id);
+            // JSON can retain an unpaired surrogate escape until GetString decodes it.
+            // Keep this fallible caller-input conversion inside the validation boundary.
+            try { token = supplied.GetString(); }
+            catch (InvalidOperationException)
+            { return Failure("InvalidRequest", "The contextToken contains invalid Unicode text.", id); }
+            if (string.IsNullOrWhiteSpace(token))
                 return Failure("InvalidRequest", "Supply only the nonblank contextToken from context acquisition.", id);
         }
         else return Failure("UnsupportedOperation", "Use one of the two named readiness tools.", id);

@@ -1,0 +1,106 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+  BimAgentLab.Mcp.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\bin\Release\net10.0\BimAgentLab.Mcp.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.65
+TOOLS_EVIDENCE scenario=nc1 protocol=2025-06-18 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc1-8ed06b6383cb48d5ac891feb9c01f01b
+PASS Production tools preserve full nc1 report on 2025-06-18
+TOOLS_EVIDENCE scenario=nc2 protocol=2025-06-18 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc2-e342b20299ae460483a35036afeb0388
+PASS Production tools preserve full nc2 report on 2025-06-18
+TOOLS_EVIDENCE scenario=nc1 protocol=2025-11-25 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc1-44712856795747aabce12ba927ef839f
+PASS Production tools preserve full nc1 report on 2025-11-25
+TOOLS_EVIDENCE scenario=nc2 protocol=2025-11-25 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc2-d648620106ce4a8eb78745ec82b8eb2e
+PASS Production tools preserve full nc2 report on 2025-11-25
+TOOLS_EVIDENCE scenario=nc1 protocol=2026-07-28 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc1-4fe7b4edbb474f5aac6c0f83b1a01af6
+PASS Production tools preserve full nc1 report on 2026-07-28
+TOOLS_EVIDENCE scenario=nc2 protocol=2026-07-28 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\nc2-0e915541147043d9973c9e3b7e1cfed1
+PASS Production tools preserve full nc2 report on 2026-07-28
+TOOLS_EVIDENCE scenario=strict protocol=2026-07-28 path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-tools-tests\strict-772a6cceafb44dc2a14183b8af38a1e4
+PASS Production tools preserve strict July
+PASS Production provider path: none
+PASS Production provider path: multiple
+PASS Production provider path: retry
+PASS Production provider path: concurrent
+PASS Production provider path: restart
+Readiness request 0aef5eb20d764f36a51bbe9a5a5d7c08 failed (InvalidDataException).
+PASS Invalid bridge evidence never becomes a report: crossed
+Readiness request 310f290681ad40d18a10f76986b61b5b failed (InvalidDataException).
+PASS Invalid bridge evidence never becomes a report: error-crossed
+Readiness request 083c3cb710644b8b8c501bfe692e8d58 failed (InvalidDataException).
+PASS Invalid bridge evidence never becomes a report: bad-hash
+Readiness request 54a5df8b2eb441caa7b92661ffecc5b2 failed (InvalidDataException).
+PASS Invalid bridge evidence never becomes a report: both
+Readiness request bda45caa99f0489db48be3d88dfceb5f failed (JsonReaderException).
+PASS Invalid bridge evidence never becomes a report: bad-json
+Readiness request d3b85f1a8da146eda48f7f682cccc4ba failed (InvalidDataException).
+PASS Invalid bridge evidence never becomes a report: missing-flags
+Readiness request ef928e043363486aa1d00c9024203285 failed (Exception).
+PASS Invalid bridge evidence never becomes a report: thrown
+PASS Original context rejects late success: cancel=False guard=1
+PASS Original context rejects late success: cancel=False guard=2
+PASS Original context rejects late success: cancel=False guard=3
+PASS Original context rejects late success: cancel=True guard=1
+PASS Original context rejects late success: cancel=True guard=2
+PASS Original context rejects late success: cancel=True guard=3
+Readiness request e01d44893e0a4a099e56fe3a1a523965: cancellation callback failed (AggregateException).
+Readiness request bd430f402ef14216b3855cb90d11eb3e: cancellation callback failed (AggregateException).
+Readiness request 73278998771f4d97a104642e5fb6ab6f: cancellation callback failed (AggregateException).
+Readiness request 067eac22bb974a1b8dd5d30906013b3e: cancellation callback failed (AggregateException).
+Readiness request ebe2a332874544f6a7e9b0883aabeb0d: cancellation callback failed (AggregateException).
+Readiness request 50aba6adb2fc4b80913e92b77b918332: cancellation callback failed (AggregateException).
+Readiness request 180fb2a3def74da084e75b38239f6154: cancellation callback failed (AggregateException).
+Readiness request a3161071a3e641b695689c938157ad0f: cancellation callback failed (AggregateException).
+PASS Held cancellation callbacks retain bounded capacity without blocking tool return
+PASS Production executable discovers without a Revit instance
+PASS Deadline observed as transport cancellation retains DeadlineExceeded
+PASS Bridge domain failures preserve stable correlated errors without report
+PASS SDK suppresses success after IPC: late-cancel
+PASS SDK suppresses success after IPC: late-expire
+PASS Production tool host strict rejection: 2025-06-18
+PASS Production tool host strict rejection: 2025-11-25
+TOOLS_SHUTDOWN trace=False marker=CALLBACK_HELD
+TOOLS_SHUTDOWN trace=False marker=HOST_STOPPED
+PASS Production tools shutdown while callbacks held and stdin open: trace=False
+TOOLS_SHUTDOWN trace=True marker=CALLBACK_HELD
+TOOLS_SHUTDOWN trace=True marker=HOST_STOPPED
+PASS Production tools shutdown while callbacks held and stdin open: trace=True
+EOF_OBSERVATION {"revision":"2025-06-18","tracing":false,"explicitCancel":false,"exited":true,"canceled":true,"guardRejected":true,"elapsedMs":15,"remainingMs":29849.0123,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+PASS Actual production EOF cancels pending pipe work: 2025-06-18 trace=False
+EOF_OBSERVATION {"revision":"2025-06-18","tracing":true,"explicitCancel":false,"exited":true,"canceled":true,"guardRejected":true,"elapsedMs":15,"remainingMs":29834.2448,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+PASS Actual production EOF cancels pending pipe work: 2025-06-18 trace=True
+FAIL Raw Unicode argument contract: 2025-06-18: Exception high escaped as JSON-RPC error; low escaped as JSON-RPC error
+EOF_OBSERVATION {"revision":"2025-11-25","tracing":false,"explicitCancel":false,"exited":true,"canceled":true,"guardRejected":true,"elapsedMs":15,"remainingMs":29847.2377,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+PASS Actual production EOF cancels pending pipe work: 2025-11-25 trace=False
+EOF_OBSERVATION {"revision":"2025-11-25","tracing":true,"explicitCancel":false,"exited":true,"canceled":true,"guardRejected":true,"elapsedMs":15,"remainingMs":29839.5467,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+PASS Actual production EOF cancels pending pipe work: 2025-11-25 trace=True
+FAIL Raw Unicode argument contract: 2025-11-25: Exception high escaped as JSON-RPC error; low escaped as JSON-RPC error
+EOF_OBSERVATION {"revision":"2026-07-28","tracing":false,"explicitCancel":false,"exited":true,"canceled":true,"guardRejected":true,"elapsedMs":15,"remainingMs":29838.1352,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+PASS Actual production EOF cancels pending pipe work: 2026-07-28 trace=False
+EOF_OBSERVATION {"revision":"2026-07-28","tracing":true,"explicitCancel":false,"exited":true,"canceled":true,"guardRejected":true,"elapsedMs":16,"remainingMs":29839.2017,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+PASS Actual production EOF cancels pending pipe work: 2026-07-28 trace=True
+FAIL Raw Unicode argument contract: 2026-07-28: Exception high escaped as JSON-RPC error; low escaped as JSON-RPC error
+EOF_OBSERVATION {"revision":"2025-11-25","tracing":false,"explicitCancel":true,"exited":true,"canceled":true,"guardRejected":true,"elapsedMs":15,"remainingMs":29840.8401,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+PASS Actual production explicit cancellation control: trace=False
+PASS Input failure cancels handler and preserves cause: trace=False
+TOOLS_SHUTDOWN trace=False marker=CALLBACK_HELD
+TOOLS_SHUTDOWN trace=False marker=HOST_STOPPED
+PASS EOF host shutdown while callbacks held: trace=False
+EOF_OBSERVATION {"revision":"2025-11-25","tracing":true,"explicitCancel":true,"exited":true,"canceled":true,"guardRejected":true,"elapsedMs":15,"remainingMs":29845.095,"responseHeld":true,"quiescedHeld":true,"deadlineUnchanged":true}
+PASS Actual production explicit cancellation control: trace=True
+PASS Input failure cancels handler and preserves cause: trace=True
+TOOLS_SHUTDOWN trace=True marker=CALLBACK_HELD
+TOOLS_SHUTDOWN trace=True marker=HOST_STOPPED
+PASS EOF host shutdown while callbacks held: trace=True
+Tools tests: 47 passed; 3 failed.
+Exception: D:\bim-agent-lab\projects\revit-readiness\scripts\Test-McpBridge.ps1:11
+Line |
+  11 |  …  ($LASTEXITCODE -ne 0) { throw 'MCP Tools behavioral tests failed.' }
+     |                             ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | MCP Tools behavioral tests failed.

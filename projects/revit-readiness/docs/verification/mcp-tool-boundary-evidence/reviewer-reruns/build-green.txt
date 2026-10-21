@@ -1,0 +1,13 @@
+  Determining projects to restore...
+  Restored D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\BimAgentLab.RevitBridge.Contract.csproj (in 86 ms).
+  Restored D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\BimAgentLab.RevitBridge.Runtime.csproj (in 91 ms).
+  1 of 3 projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  EofReview -> D:\bim-agent-lab\.superpowers\sdd\2026-10-20-revit-mcp-bridge\task6-review-repro\eof\bin\Release\net10.0\BimAgentLab.Mcp.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.09

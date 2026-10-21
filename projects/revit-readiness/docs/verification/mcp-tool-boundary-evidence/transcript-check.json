@@ -1,0 +1,9 @@
+{
+  "authorVerification": true,
+  "offlineOnly": true,
+  "eofObservations": 6,
+  "explicitCancellationControls": 2,
+  "rawUnicodeSessions": 3,
+  "rawUnicodeCalls": 18,
+  "allAssertionsPassed": true
+}

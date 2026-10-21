@@ -30,7 +30,8 @@ internal static class Program
                 var clock = new SystemBridgeClock();
                 var provider = new BridgeClientProvider(new SessionCatalog(), pid, clock);
                 var tools = new ReadinessTools(provider, clock, stop.Token);
-                await McpHost.RunStdioAsync(new McpServerHandlers { ListToolsHandler = tools.ListAsync, CallToolHandler = tools.CallAsync }, evidence, stop.Token);
+                await McpHost.RunStdioAsync(new McpServerHandlers { ListToolsHandler = tools.ListAsync, CallToolHandler = tools.CallAsync }, evidence, stop.Token,
+                    incomingFilter: tools.ValidateIncomingArguments);
             }
             finally { Console.CancelKeyPress -= onCancel; }
             return 0;

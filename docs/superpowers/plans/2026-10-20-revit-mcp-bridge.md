@@ -264,6 +264,8 @@ Equal(0, reportsAfterCancellationBeforeMcpReturn);
 
 Implementation note: Task 6 uses the existing runtime retained-slot/disposal primitives through internal assembly access; no runtime algorithm or package versions changed. [Execution model](../../explanation/bridge-execution-and-waiting.md#task-6-mcp-tool-lifetime-and-permitted-waits) preceded production code. [Verification](../../../projects/revit-readiness/docs/verification/2026-10-21-mcp-readiness-tools.md) and [focused review packet](../reviews/revit-mcp-bridge/2026-10-21-task-6-review.md) distinguish offline implementation from pending independent/live acceptance. Task 5 is independently closed at 5e9a5dd.
 
+Task 6 review checkpoint: two P2 findings at `189fd78` remain open pending independent follow-up of the [boundary corrections](../reviews/revit-mcp-bridge/2026-10-21-task-6-boundary-review.md). The completed implementation checkboxes do not imply review closure. Acceptance requirements and plan revision remain unchanged; Task 7 has not begun.
+
 ### Task 7: Explicit deployment, rollback, and live lifecycle checks
 
 **Files:** Create `scripts/Build-McpBridge.ps1`, `scripts/Undo-McpBridgeInstall.ps1`, `scripts/McpDeployment.psm1`, `tests/mcp-tests/DeploymentTests.cs`, `tests/deployment-fault-host.ps1`, `docs/mcp-bridge-setup.md`; refactor `scripts/Install-Readiness.ps1` into the preflight/prepare/apply pipeline below, add opt-in `-IncludeMcpBridge`, and update host acceptance/build as needed. Add `src/revit-addin/BimAgentLab.ReadinessBridge.addin.template` with application/Start/Stop entries and three distinct permanent GUIDs generated once here; existing command/fixture GUIDs stay unchanged.
