@@ -48,3 +48,7 @@ Revoke is idempotent and restores capacity for an unpublished lease. Clear remov
 - All binding members independently changed; copied project ID/different path; close/reopen lifetime; changed checklist; snapshot mutation; 32/33 capacity, revoke/clear/restart, 4:59/5:00 expiry, wall-clock changes, concurrent issuance, and fresh values under unchanged identity.
 
 Test doubles stand only at the host signal, clock and API callback boundaries. Production queue/lifetime/store paths are exercised. Controlled barriers occur in those doubles, not test hooks in production. Tests assert progress before held work is released. Actual Revit scheduling/modal behavior remains a later host acceptance requirement.
+
+## Implementation refinements
+
+The original model above was committed at 638e288 before production code. During implementation, failing tests established two additional handoff guards: Issue rejects incomplete/noncanonical bindings before creating a usable lease; a null or crossed executor response becomes a correlated InternalError and does not strand the next entry. A deliberate mutation replacing the shared publication gate by an unrelated lock was rejected on both runtimes, then restored before the final full regression run. These are implementing-agent observations; [Task 4 independent review](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-4-review.md) remains pending.

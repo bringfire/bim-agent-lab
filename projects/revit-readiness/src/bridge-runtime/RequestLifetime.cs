@@ -33,7 +33,7 @@ public sealed class RequestLifetime : IDisposable
         try
         {
             Context = new BridgeExecutionContext(request, budget, cancellation.Token, transportCancellation.Token,
-                () => Volatile.Read(ref cancellationRequested) != 0);
+                () => Volatile.Read(ref cancellationRequested) != 0, gate);
             // Origins invalidate and wake trusted transport code, never run borrowed callbacks.
             upstreamRegistration = upstreamCancellation.Register(CancelOwned);
             ownerRegistration = ownerStopping.Register(CancelOwned);

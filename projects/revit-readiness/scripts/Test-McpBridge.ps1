@@ -1,9 +1,20 @@
 [CmdletBinding()]
-param([ValidateSet('Protocol','Framing','Pipe','All')][string]$Suite = 'Protocol')
+param([ValidateSet('Protocol','Framing','Pipe','Dispatch','All')][string]$Suite = 'Protocol')
 $ErrorActionPreference = 'Stop'
 $projectRoot = Split-Path $PSScriptRoot -Parent
 Push-Location $projectRoot
 try {
+    if ($Suite -in @('Dispatch','All')) {
+        & dotnet build 'tests/bridge-tests/BimAgentLab.Bridge.Tests.csproj' -c Release --nologo -p:RestoreLockedMode=true
+        if ($LASTEXITCODE -ne 0) { throw 'Bridge dual-target build failed.' }
+        $dispatchFailures = @()
+        foreach ($framework in @('net48','net10.0')) {
+            Write-Output "DISPATCH_TARGET framework=$framework"
+            & "./tests/bridge-tests/bin/Release/$framework/BimAgentLab.Bridge.Tests.exe" --dispatch
+            if ($LASTEXITCODE -ne 0) { $dispatchFailures += $framework }
+        }
+        if ($dispatchFailures.Count -ne 0) { throw "Dispatch behavioral tests failed: $($dispatchFailures -join ', ')" }
+    }
     if ($Suite -in @('Pipe','All')) {
         & dotnet build 'tests/bridge-tests/BimAgentLab.Bridge.Tests.csproj' -c Release --nologo -p:RestoreLockedMode=true
         if ($LASTEXITCODE -ne 0) { throw 'Bridge dual-target build failed.' }

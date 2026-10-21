@@ -25,3 +25,4 @@ projects/revit-readiness/docs/verification/local-pipe-transport-evidence/** -tex
 projects/revit-readiness/docs/verification/local-pipe-transport-review-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/deadline-cancellation-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/cancellation-progress-evidence/** -text -whitespace
+projects/revit-readiness/docs/verification/dispatch-context-evidence/** -text -whitespace

@@ -1,0 +1,152 @@
+{
+  "date": "2026-10-21",
+  "baseline": "af4c67b",
+  "modelCommit": "638e288",
+  "files": [
+    {
+      "path": "all-offline-green.txt",
+      "bytes": 47691,
+      "sha256": "c47ca08dc855d7210b20f54dacebb468f268953071010bbcbab8ddfbbbaecfc4"
+    },
+    {
+      "path": "binding-red.txt",
+      "bytes": 9361,
+      "sha256": "8524759df6f413e49d29c4ef6e0baac2b8c22438230a52f11b0864dcf635b306"
+    },
+    {
+      "path": "dispatch-output.txt",
+      "bytes": 6624,
+      "sha256": "cc387bd97a870704caa9a5db019898fcf14bcba548268fae6390fdbd523c1531"
+    },
+    {
+      "path": "envelope-red.txt",
+      "bytes": 9250,
+      "sha256": "149e1b1c2bff10b2fee21914e5d8ac988c453191bf130912881fd8c7d2c7e517"
+    },
+    {
+      "path": "environment.json",
+      "bytes": 356,
+      "sha256": "232e7e15d8f7f94a40ef576cc3bf483e95287e77150ae4d8c9db52d46b422c84"
+    },
+    {
+      "path": "exchange/net10.0/context.json",
+      "bytes": 375,
+      "sha256": "a339e604a2fbba285c2fca2b238ebc4a970ded58c3fdb485df6ee257c97b54d8"
+    },
+    {
+      "path": "exchange/net10.0/date-context-escaped.json",
+      "bytes": 388,
+      "sha256": "2fdad39c4516e68cb7dac24b764eeaa26b2cde5ec9178f48d4909011f8f1e653"
+    },
+    {
+      "path": "exchange/net10.0/date-context-plain.json",
+      "bytes": 384,
+      "sha256": "e7e551e5aeedd89db3b0e172831723f173653ceb473b7bf94c5676ffb50c9afa"
+    },
+    {
+      "path": "exchange/net10.0/request.json",
+      "bytes": 170,
+      "sha256": "ce92a54a31cffd88e0d7cf3f78cacb2b74f61f9d18db7285a02f6eef382e7a8f"
+    },
+    {
+      "path": "exchange/net10.0/response.json",
+      "bytes": 397,
+      "sha256": "11ec4b72e8ba63e3c7c737c27a36932ac650ce9f65480222d0371a61eaaad78a"
+    },
+    {
+      "path": "exchange/net48/context.json",
+      "bytes": 375,
+      "sha256": "a339e604a2fbba285c2fca2b238ebc4a970ded58c3fdb485df6ee257c97b54d8"
+    },
+    {
+      "path": "exchange/net48/date-context-escaped.json",
+      "bytes": 388,
+      "sha256": "2fdad39c4516e68cb7dac24b764eeaa26b2cde5ec9178f48d4909011f8f1e653"
+    },
+    {
+      "path": "exchange/net48/date-context-plain.json",
+      "bytes": 384,
+      "sha256": "e7e551e5aeedd89db3b0e172831723f173653ceb473b7bf94c5676ffb50c9afa"
+    },
+    {
+      "path": "exchange/net48/request.json",
+      "bytes": 170,
+      "sha256": "ce92a54a31cffd88e0d7cf3f78cacb2b74f61f9d18db7285a02f6eef382e7a8f"
+    },
+    {
+      "path": "exchange/net48/response.json",
+      "bytes": 397,
+      "sha256": "11ec4b72e8ba63e3c7c737c27a36932ac650ce9f65480222d0371a61eaaad78a"
+    },
+    {
+      "path": "initial-green.txt",
+      "bytes": 6206,
+      "sha256": "f6de15f0c3f6661faab01a60a96dd01f10f4fcfca6ccb17c1ebf3d4a84a211df"
+    },
+    {
+      "path": "pipe-output.txt",
+      "bytes": 25001,
+      "sha256": "91fe6a7e2b46621de29ee7e89bb46ea671ab81ca16ac63b479a60c065788856c"
+    },
+    {
+      "path": "protocol/2025-06-18-compatible/client-to-server.jsonl",
+      "bytes": 525,
+      "sha256": "0c0ee15a6a309cfc5be76323b5a4400192fa3d4103b69f3a85377828643f7247"
+    },
+    {
+      "path": "protocol/2025-06-18-compatible/server-to-client.jsonl",
+      "bytes": 1102,
+      "sha256": "b7dfb6acc305927924b9a416fcfbb425279eb63d86dbd3dd04a6275b2095456a"
+    },
+    {
+      "path": "protocol/2025-11-25-compatible/client-to-server.jsonl",
+      "bytes": 525,
+      "sha256": "edc189918efe522c685348a98992fc4c1b5d97cb3ce072c821a294666f876ddb"
+    },
+    {
+      "path": "protocol/2025-11-25-compatible/server-to-client.jsonl",
+      "bytes": 1102,
+      "sha256": "2aac23e8f2d6dfe9a16fb5241783c15e8de332af347817e59e4daf0fe30b4f86"
+    },
+    {
+      "path": "protocol/2026-07-28-compatible/client-to-server.jsonl",
+      "bytes": 1162,
+      "sha256": "2280004f874c20d3f1fdf563f040233b7e10b6eac3d897e0eada2e0dd34aced4"
+    },
+    {
+      "path": "protocol/2026-07-28-compatible/server-to-client.jsonl",
+      "bytes": 1572,
+      "sha256": "2ce70baef931472e971cb472720eca767673c66ddd9b6818605dbed7f3b0e254"
+    },
+    {
+      "path": "protocol/2026-07-28-strict/client-to-server.jsonl",
+      "bytes": 1162,
+      "sha256": "2280004f874c20d3f1fdf563f040233b7e10b6eac3d897e0eada2e0dd34aced4"
+    },
+    {
+      "path": "protocol/2026-07-28-strict/server-to-client.jsonl",
+      "bytes": 1572,
+      "sha256": "2ce70baef931472e971cb472720eca767673c66ddd9b6818605dbed7f3b0e254"
+    },
+    {
+      "path": "publication-mutation-red.txt",
+      "bytes": 9340,
+      "sha256": "5e9aee5971e708ecd2934971e0f4dfb2e2ed628be2eddec8fcb5d301205122bc"
+    },
+    {
+      "path": "publication-stub-red.txt",
+      "bytes": 79934,
+      "sha256": "609a37ad35eaa3cbe6f13161986b40bf1ecda46a81d09bdba2bc55090f0a9e05"
+    },
+    {
+      "path": "readiness-green.txt",
+      "bytes": 3091,
+      "sha256": "be8b83e31414cbb75c10e021a7b13ec15608029c31fcc1a3b62518eeb52528f5"
+    },
+    {
+      "path": "stubs-red.txt",
+      "bytes": 78215,
+      "sha256": "5f1781f7a6b2ec7424abba292c1f7b18f4032b2a0c410a0f26f070016a8fd704"
+    }
+  ]
+}

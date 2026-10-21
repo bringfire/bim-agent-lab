@@ -1,5 +1,7 @@
 # Task 3 cancellation progress correction — 2026-10-21
 
+**Subsequent independent closure:** [Task 3 closed at af4c67b](../../../../docs/superpowers/reviews/revit-mcp-bridge/2026-10-21-task-3-closure.md). The packet below preserves the implementing-agent submission before that closure.
+
 **Implementing-agent verification; independent P2 follow-up pending.** Baseline `b334385f1c1b74b8f204058e1c2b98c092f818d8`; the deadline P1 is independently closed there. Before production changes, the coder committed the [execution/waiting model](../../../../docs/explanation/bridge-execution-and-waiting.md) at `373e5a8`. The correction is the commit titled **`fix: separate bridge cancellation signaling from callback execution`** that adds this record; locate it with `git log --diff-filter=A --format="%H %s" -- projects/revit-readiness/docs/verification/2026-10-21-cancellation-progress.md`.
 
 ## What was reproduced

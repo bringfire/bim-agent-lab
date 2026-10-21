@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-21",
+  "os": "Windows-11-10.0.26300-SP0",
+  "dotnetSdk": "10.0.204",
+  "baseline": "af4c67bd4391fd00019799ff1436a4f53b744fe4",
+  "modelCommit": "638e288",
+  "targets": [
+    "net48",
+    "net10.0"
+  ],
+  "scope": "Task 4; original queue/context code, API doubles plus real pipes; independent review pending; no Revit/A8"
+}

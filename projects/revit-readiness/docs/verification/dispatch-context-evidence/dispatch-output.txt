@@ -1,0 +1,104 @@
+DISPATCH_TARGET framework=net48
+PASS Incomplete bindings cannot issue a reusable context
+PASS Context capacity rejects 33rd without evicting live tokens
+PASS Context is valid at 4:59 and expires exactly at 5:00
+PASS Context expiry ignores wall-clock jumps
+PASS Expired contexts free capacity but newer live contexts remain valid
+PASS Context rejects changed session
+PASS Context rejects changed reopened document
+PASS Context rejects changed project ID
+PASS Context rejects changed copied ID different path
+PASS Context rejects changed checklist ID
+PASS Context rejects changed checklist path
+PASS Context rejects changed checklist bytes
+PASS Context snapshots mutable input and accepts equivalent Windows casing
+PASS Revoking an unpublished lease is idempotent and restores one slot
+PASS Clear and replacement store invalidate old tokens
+PASS Concurrent context issuance preserves the capacity bound
+PASS Unknown context cannot select a different model
+DISPATCH_PIPE_PROOF origin=stop executing=False networkBeforeRelease=true lateSuccess=false
+PASS Real endpoint stop with production queued dispatcher
+DISPATCH_PIPE_PROOF origin=stop executing=True networkBeforeRelease=true lateSuccess=false
+PASS Real endpoint stop with production executing dispatcher
+DISPATCH_PIPE_PROOF origin=disconnect executing=False networkBeforeRelease=true lateSuccess=false
+PASS Real endpoint disconnect with production queued dispatcher
+DISPATCH_PIPE_PROOF origin=disconnect executing=True networkBeforeRelease=true lateSuccess=false
+PASS Real endpoint disconnect with production executing dispatcher
+PASS Publication and immediate cancellation share one linearization gate
+PASS Admission defers execution and passes the original context and budget
+PASS One executing plus four waiting rejects fifth and admits after progress
+PASS Raise Accepted leaves no orphan work
+PASS Raise Pending leaves no orphan work
+PASS Raise Denied leaves no orphan work
+PASS Raise TimedOut leaves no orphan work
+PASS Throwing Raise rejects waiting work and a later request recovers
+PASS Pending signal is rearmed by Idling and executes once
+PASS Arrival after final dequeue is re-signaled without exceeding batch
+PASS Raise returning after drain cannot strand a new generation
+PASS Drain caps a handler at four even with a larger requested batch
+PASS Reentrant and concurrent Drain never run a second executor
+PASS Queued cancellation removes the middle item and frees capacity
+PASS Held notification cannot delay queued response cancellation
+PASS Held notification cannot delay executing response cancellation
+PASS Already canceled admission cannot execute or borrow a disposed registration
+PASS Original deadline expires before read without late success
+PASS Original deadline expires during execution without late success
+PASS Stop settles queued and executing responses without awaiting the executor
+PASS Executor errors remain correlated and do not orphan later queued work
+PASS Invalid executor envelopes cannot publish success or strand the next request
+PASS Declared executor error retains code with current request identity
+PASS Cancellation inside executor wins response publication
+PASS Unchanged context identity reads fresh values on each execution
+Dispatch tests: 46 passed; 0 failed.
+DISPATCH_TARGET framework=net10.0
+PASS Incomplete bindings cannot issue a reusable context
+PASS Context capacity rejects 33rd without evicting live tokens
+PASS Context is valid at 4:59 and expires exactly at 5:00
+PASS Context expiry ignores wall-clock jumps
+PASS Expired contexts free capacity but newer live contexts remain valid
+PASS Context rejects changed session
+PASS Context rejects changed reopened document
+PASS Context rejects changed project ID
+PASS Context rejects changed copied ID different path
+PASS Context rejects changed checklist ID
+PASS Context rejects changed checklist path
+PASS Context rejects changed checklist bytes
+PASS Context snapshots mutable input and accepts equivalent Windows casing
+PASS Revoking an unpublished lease is idempotent and restores one slot
+PASS Clear and replacement store invalidate old tokens
+PASS Concurrent context issuance preserves the capacity bound
+PASS Unknown context cannot select a different model
+DISPATCH_PIPE_PROOF origin=stop executing=False networkBeforeRelease=true lateSuccess=false
+PASS Real endpoint stop with production queued dispatcher
+DISPATCH_PIPE_PROOF origin=stop executing=True networkBeforeRelease=true lateSuccess=false
+PASS Real endpoint stop with production executing dispatcher
+DISPATCH_PIPE_PROOF origin=disconnect executing=False networkBeforeRelease=true lateSuccess=false
+PASS Real endpoint disconnect with production queued dispatcher
+DISPATCH_PIPE_PROOF origin=disconnect executing=True networkBeforeRelease=true lateSuccess=false
+PASS Real endpoint disconnect with production executing dispatcher
+PASS Publication and immediate cancellation share one linearization gate
+PASS Admission defers execution and passes the original context and budget
+PASS One executing plus four waiting rejects fifth and admits after progress
+PASS Raise Accepted leaves no orphan work
+PASS Raise Pending leaves no orphan work
+PASS Raise Denied leaves no orphan work
+PASS Raise TimedOut leaves no orphan work
+PASS Throwing Raise rejects waiting work and a later request recovers
+PASS Pending signal is rearmed by Idling and executes once
+PASS Arrival after final dequeue is re-signaled without exceeding batch
+PASS Raise returning after drain cannot strand a new generation
+PASS Drain caps a handler at four even with a larger requested batch
+PASS Reentrant and concurrent Drain never run a second executor
+PASS Queued cancellation removes the middle item and frees capacity
+PASS Held notification cannot delay queued response cancellation
+PASS Held notification cannot delay executing response cancellation
+PASS Already canceled admission cannot execute or borrow a disposed registration
+PASS Original deadline expires before read without late success
+PASS Original deadline expires during execution without late success
+PASS Stop settles queued and executing responses without awaiting the executor
+PASS Executor errors remain correlated and do not orphan later queued work
+PASS Invalid executor envelopes cannot publish success or strand the next request
+PASS Declared executor error retains code with current request identity
+PASS Cancellation inside executor wins response publication
+PASS Unchanged context identity reads fresh values on each execution
+Dispatch tests: 46 passed; 0 failed.

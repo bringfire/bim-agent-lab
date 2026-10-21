@@ -14,6 +14,12 @@ internal static partial class Program
     static int failures, passed;
     static async Task<int> Main(string[] args)
     {
+        if (args.Length == 1 && args[0] == "--dispatch")
+        {
+            await ContextTests(); await DispatchTests();
+            Console.WriteLine($"Dispatch tests: {passed} passed; {failures} failed.");
+            return failures == 0 ? 0 : 1;
+        }
         if (args.Length == 2 && args[0] == "--pipe-host") return await PipeHost(args[1]);
         if (args.Length == 2 && args[0] == "--pipe-imposter") return await PipeImposter(args[1]);
         if (args.Length == 2 && args[0] == "--pipe-connect-exit") return await PipeConnectExit(args[1]);
@@ -108,9 +114,10 @@ internal static partial class Program
     }
     sealed class FakeClock : IBridgeClock
     {
+        public Action? BeforeElapsed;
         public DateTimeOffset UtcNow { get; set; } = Epoch;
         public long Timestamp { get; private set; }
-        public TimeSpan ElapsedSince(long timestamp) => TimeSpan.FromTicks(Timestamp - timestamp);
+        public TimeSpan ElapsedSince(long timestamp) { BeforeElapsed?.Invoke(); return TimeSpan.FromTicks(Timestamp - timestamp); }
         public void Advance(TimeSpan elapsed) { Timestamp += elapsed.Ticks; UtcNow += elapsed; }
     }
     sealed class FragmentedStream : MemoryStream
