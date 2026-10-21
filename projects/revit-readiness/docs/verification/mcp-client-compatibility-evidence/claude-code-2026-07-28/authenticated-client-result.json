@@ -1,0 +1,9 @@
+{
+  "type": "result",
+  "is_error": false,
+  "terminal_reason": "completed",
+  "result": "I made both calls. The first one succeeded and the second returned the intentional test error, as expected.\n\n| Call | Result code | Marked as an error? |\n|---|---|---|\n| `fail=false` | `ProbeSuccess` | No, it came back as a normal result |\n| `fail=true` | `ProbeFailure` | Yes, it came back wrapped in an error |\n\nBoth responses also included `\"synthetic\": true` and `\"revitAccess\": false`, which confirms that neither call touched Revit.",
+  "num_turns": 3,
+  "total_cost_usd": 0.0205338,
+  "retentionNote": "Selected fields from private Claude Code JSON output; not the complete raw client log. The result text is unchanged."
+}

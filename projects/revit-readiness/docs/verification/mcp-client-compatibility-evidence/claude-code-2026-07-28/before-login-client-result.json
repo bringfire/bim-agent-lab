@@ -1,0 +1,9 @@
+{
+  "type": "result",
+  "is_error": true,
+  "terminal_reason": "api_error",
+  "result": "Failed to authenticate: OAuth session expired and could not be refreshed",
+  "num_turns": 1,
+  "total_cost_usd": 0,
+  "retentionNote": "Selected fields from private Claude Code JSON output; not the complete raw client log. The result text is unchanged."
+}

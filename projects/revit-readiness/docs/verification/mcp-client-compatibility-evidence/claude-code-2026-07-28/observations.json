@@ -1,0 +1,83 @@
+{
+  "observedAtUtc": "2026-10-21T03:05:20.442170+00:00",
+  "localObservationDate": "2026-10-20",
+  "timezone": "America/New_York",
+  "client": {
+    "application": "Claude Code CLI",
+    "version": "2.1.305",
+    "exeSha256": "0ce7a3942cdd0c89b3e32173362b713aea9e8c24e1219976bad3984e8efadfd1",
+    "initialInventoryVersion": "2.1.239",
+    "versionTransitionNote": "An earlier inventory printed 2.1.239. Actual probe traffic and a subsequent version check identify 2.1.305. The transition mechanism was not established; no install/update command was issued for this experiment."
+  },
+  "server": {
+    "sdk": "ModelContextProtocol 2.2.0",
+    "protocolPin": "2026-07-28",
+    "sourceCheckpoint": "9ea3151b323ae50b919fed2e4cb89e10362e598a",
+    "binariesSha256": {
+      "BimAgentLab.Mcp.Probe.exe": "23a907b517eb5cf3e2f68b61b5c95f4b0421491e29cd00bd20e010705dc20370",
+      "ModelContextProtocol.dll": "8cd6f626c8d6a0a5ff3e154789d3fcde2b1d66a595c0ef0198e092c2c30fe93a",
+      "ModelContextProtocol.Core.dll": "b1752096ea9d2f38ba88e467f04aea43fb300d9a54d881c165f62b69028ee3ab",
+      "BimAgentLab.Mcp.Probe.dll": "1fe3ac738be0da573c5bdc2f8bf30357a3c0162f4d86f1fd9b0bab8fdff92fba",
+      "BimAgentLab.RevitReadiness.Mcp.dll": "ab32de876a2a93de19ee2be43da6d84fb5b293e585c5e2c6ae8531a04ea4801b"
+    },
+    "productionCodeChanged": false
+  },
+  "invocation": {
+    "transport": "stdio",
+    "mode": "print",
+    "strictMcpConfig": true,
+    "builtinTools": [],
+    "allowedTools": [
+      "mcp__bim-lab-protocol-probe__lab_protocol_probe"
+    ],
+    "permissionMode": "dontAsk",
+    "settingSources": [],
+    "noSessionPersistence": true,
+    "budgetLimitUsd": 0.5,
+    "childEnvironmentOverrides": {
+      "MCP_SDK_GENERATION": "v2",
+      "MCP_PROTOCOL_NEGOTIATION": "auto",
+      "DISABLE_AUTOUPDATER": "1",
+      "CLAUDE_CODE_DISABLE_CLAUDE_MDS": "1",
+      "CLAUDE_CODE_DISABLE_AUTO_MEMORY": "1"
+    }
+  },
+  "outcomes": {
+    "beforeLogin": "Discovery and tool list succeeded on 2026-07-28; expired login blocked model tool calls; client exit 1.",
+    "authenticated": "Client exit 0; independent unchanged comparator passed discovery, list, success and deliberate structured failure; client presentation distinguished both outcomes.",
+    "probeProcessesRemaining": 0,
+    "requiredDesktopCP0": "still failed; Claude Code is outside approved client scope",
+    "revitAccess": false,
+    "optionalExtensionsTested": false
+  },
+  "files": [
+    {
+      "path": "authenticated/client-to-server.jsonl",
+      "sha256": "c427ebfff7a0559aab8998c4590d7a910533fdc703b2970c84d23bdb771d129b"
+    },
+    {
+      "path": "authenticated/server-to-client.jsonl",
+      "sha256": "377947bafd38ed5e1d27abd34df2e4ecc46bc299f84791b8684f1ab8d0256838"
+    },
+    {
+      "path": "authenticated-client-result.json",
+      "sha256": "0156550ebb0b776ed762c1ce56de10867fe2ca78251b98b35adc294dfaf8e945"
+    },
+    {
+      "path": "before-login/client-to-server.jsonl",
+      "sha256": "1056a78431624e498caed0d7eade64356d243b2dd53d48fa1bf35acd34e07f1e"
+    },
+    {
+      "path": "before-login/server-to-client.jsonl",
+      "sha256": "2ab932e1f1cc8be377b448651bf8cdb6eadb25e35316cc313f927793ffeec8fc"
+    },
+    {
+      "path": "before-login-client-result.json",
+      "sha256": "657439083b497b0b24d0d6fee0b64281a085cf1d3c492f026da8059dbc959ec7"
+    },
+    {
+      "path": "verification.json",
+      "sha256": "caeea4b87662359d61dce241c3b47d2f5230080f0bc5c0f0325a924f4fd81992"
+    }
+  ]
+}

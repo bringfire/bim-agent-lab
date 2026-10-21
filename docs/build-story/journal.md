@@ -521,6 +521,8 @@ Record the author's prompt or a clearly labeled excerpt; the decision requested;
 
 Current next action: resolve CP0 using the [desktop compatibility evidence](../../projects/revit-readiness/docs/verification/mcp-client-compatibility.md). Plan revision 2 is author-approved and Native execution selected. Both installed desktop clients fail the strict protocol requirement; Task 2 and dependent Revit work remain unstarted. An SDK pass does not change the approved acceptance contract.
 
+Later alternative-client finding: [Claude Code 2.1.305 passed the new-protocol probe](../../projects/revit-readiness/docs/verification/2026-10-20-claude-code-protocol.md). The current choice now includes preserving the protocol with a different seminar client scope. No scope/protocol revision has been approved; the original desktop CP0 remains failed.
+
 ## 2026-10-20 — Execute the compatibility checkpoint and retain a failed result
 
 Actual author prompt:
@@ -572,3 +574,16 @@ Follow-up verification resolved 153 local links in changed Markdown files, verif
 The author asked whether compatibility meant falling back to a 1.x protocol despite using SDK 2.2.0, then challenged the agent's naming-focused reply and explicitly requested web verification, citing prior versions 1.28 and 1.30. The agent's reply had obscured the practical consequence by emphasizing that protocol revisions have date labels.
 
 Official Python SDK 1.28.0 and 1.30.0 source both identify `2025-11-25` as latest and include `2025-06-18` in their supported revisions. The corrected answer is **yes: the proposed desktop exchanges would use a 1.x-era protocol through a 2.2.0 SDK**. They would not demonstrate the newer protocol behavior. The [research record](../research/mcp-desktop-protocol-investigation.md) pins the sources and avoids inferring either desktop's internal SDK or the exact package previously used by the author. Both teaching layers now explain that accurate terminology must still answer the user's practical question. This correction changes documentation only; the approved contract and runtime remain unchanged.
+## 2026-10-20 — Test another agent client before accepting a compromise
+
+Actual author prompt:
+
+> Ok, what would we give up by using the older protocol? Check whether Claude Code or another agent client can actually use 2026-07-28 before we change the requirement and is this specific to C# or is it across all supported languages?
+
+The author challenged the proposed fallback by requesting its practical cost and a concrete alternative. The agent researched official protocol changes and Claude Code's documented runtime selection, then tested the existing strict C# SDK 2.2.0 probe with child-process settings only. No production code, SDK pin or acceptance requirement changed.
+
+The first attempt reached discovery and the catalog using July 2026, but expired authentication prevented model calls. The author signed in and replied **“logged in.”** A fresh Claude Code **2.1.305** process then called the synthetic tool successfully and exercised its deliberate structured error. The existing independent transcript checker passed unchanged; the client's answer distinguished both outcomes. No probe process remained. An earlier inventory had shown 2.1.239; the actual exchange and executable inspection establish 2.1.305 as the tested version. The transition mechanism was not established, and no update command was issued by this experiment.
+
+This result demonstrates a viable new-protocol alternative and cross-language communication between the client's documented TypeScript runtime and our C# server. It does not satisfy the existing requirement for Codex desktop and Claude Desktop. Keeping the protocol while changing client scope is now an evidence-backed option; accepting older desktop exchanges remains a different option. Neither was selected. Current readiness and Excel functionality has no identified dependency on July's new mechanisms, but teaching the new protocol can itself justify choosing a supporting client. Optional extensions and future remote workflows need separate tests.
+
+The [participant story](../tutorials/07-test-desktop-compatibility-first.md#ask-what-we-lose-and-test-another-client) emphasizes how the author's questions changed the investigation. The [agent procedure](../how-to/verify-desktop-mcp-compatibility.md#test-an-alternative-client-without-changing-the-server) records a bounded, isolated invocation and verification. The [research comparison](../research/mcp-protocol-tradeoffs-and-agent-clients.md) and [runtime evidence](../../projects/revit-readiness/docs/verification/2026-10-20-claude-code-protocol.md) separate documented support, actual traffic and untested features. Raw lab traffic is retained with hashes; only labeled selected fields from the application output are public. SDK 1.x code was neither installed nor copied, and no MCP implementation was hand-written. Task 2 remains gated by the unresolved approved client contract.

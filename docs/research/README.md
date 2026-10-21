@@ -6,6 +6,7 @@ Research precedes selecting a stack or implementing a tool. Evaluate the BIM fit
 
 - [MCP bridge comparison](revit-mcp-bridge-comparison.md): current protocol/SDK releases, existing bridge migration work, and a minimal custom alternative; [source/version evidence](evidence/mcp-version-observations-2026-10-20.json).
 - [Desktop protocol investigation](mcp-desktop-protocol-investigation.md): update checks, an experimental Codex setting, and the distinction between SDK compatibility and our strict acceptance policy.
+- [Protocol tradeoffs and alternative clients](mcp-protocol-tradeoffs-and-agent-clients.md): what older exchanges would cost, cross-language support, and an actual Claude Code 2.1.305 pass on `2026-07-28`.
 - [ClosedXML dependency review](closedxml-dependency.md): the first adopted package, full resolved graph, licenses, embedded font, and runtime findings.
 - [Revit resource register](revit-resources.md): SDK/API sources, local observations, candidate roles, and open compatibility questions.
 - [Reference code map](reference-code-map.md): useful source entry points linked to inspected commits.

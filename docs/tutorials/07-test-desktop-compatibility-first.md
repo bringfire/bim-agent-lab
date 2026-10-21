@@ -78,6 +78,26 @@ This is a **suggested prompt**, not a historical instruction:
 
 The lesson is broader than MCP: challenge a proposed constraint by asking what purpose it serves and what evidence distinguishes an external limitation from a choice the agent made.
 
-The author also asked **“please explain what is going one here clearly.”** That matters: a series of technical experiments is not a substitute for explaining the decision. The agent's plain-language correction was that the toolkit understands several message formats, while our added rule rejects all but one. Its recommendation is to keep SDK 2.2.0, permit its built-in compatibility and verify the actual readiness workflow in both applications. The approved requirement has not been changed; doing so is a separate, explicit decision.
+The author also asked **“please explain what is going one here clearly.”** That matters: a series of technical experiments is not a substitute for explaining the decision. The agent's plain-language correction was that the toolkit understands several message formats, while our added rule rejects all but one. At that point its recommendation was to keep SDK 2.2.0, permit its built-in compatibility and verify the actual readiness workflow in both applications. The approved requirement has not been changed; doing so is a separate, explicit decision. The next experiment below adds another option.
 
 The author then challenged a further evasive distinction: whether this meant returning to the protocol generation associated with SDK versions 1.28 or 1.30. The agent had emphasized formal date-based protocol names instead of answering the consequence. Official source confirmed that those Python SDK 1.x releases support the very revisions the desktops requested. **Yes: the proposed desktop demonstration would use a 1.x-era protocol through SDK 2.2.0.** Keeping a newer toolkit does not make that exchange a demonstration of the new protocol. The [research correction](../research/mcp-desktop-protocol-investigation.md) records the exact sources. Teach participants to insist that an agent explain the practical tradeoff, even when its narrower terminology is technically defensible.
+
+## Ask what we lose and test another client
+
+The author's next actual prompt was:
+
+> Ok, what would we give up by using the older protocol? Check whether Claude Code or another agent client can actually use 2026-07-28 before we change the requirement and is this specific to C# or is it across all supported languages?
+
+This challenged the proposed compromise before approving it. The author asked three useful questions: what changes for our work, whether another application can meet the original intent, and whether changing the programming language would help.
+
+The agent found documented support in Claude Code and tested it with the same strict server. An expired login initially allowed discovery but stopped the agent from calling tools. The author signed in and replied **“logged in.”** The next run passed discovery, a successful call and a deliberate error on the new protocol; an independent check confirmed the actual messages. The tested client was **Claude Code 2.1.305**, not Claude Desktop. The [verification record](../../projects/revit-readiness/docs/verification/2026-10-20-claude-code-protocol.md) preserves both attempts.
+
+The result changed the choice. We could retain the new protocol by changing the seminar client scope, rather than accepting older exchanges in the original desktops. Our present readiness questions do not require the new mechanisms, but teaching the new protocol itself is a legitimate goal. The [tradeoff comparison](../research/mcp-protocol-tradeoffs-and-agent-clients.md) separates that goal from future remote-service and long-running-work benefits. No requirement changed during the experiment.
+
+The language question also received direct evidence: the alternative client's TypeScript-based runtime worked with our C# server. Changing our server language would not, by itself, change what the original desktops send.
+
+**Suggested follow-up prompt:**
+
+> Before recommending a compromise, tell me what my users would lose and test one concrete alternative that preserves the original goal. Keep the implementation fixed where possible. Show actual success and failure messages, distinguish application versions, and tell me exactly which requirement each option would change.
+
+The teaching point is to make the agent investigate the decision, not merely defend its first recommendation. A failed test narrows what is known about one configuration; it does not eliminate all alternatives.

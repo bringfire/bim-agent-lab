@@ -4,6 +4,8 @@ Observed **2026-10-20, America/New_York**. This follow-up qualifies the [origina
 
 ## Conclusion and correction
 
+**Later alternative-client result:** [Claude Code 2.1.305 passed](mcp-protocol-tradeoffs-and-agent-clients.md) discovery, successful and deliberate-error calls on `2026-07-28` against the unchanged strict C# server. This preserves a new-protocol option if the author changes the seminar client scope. It does not overturn the recorded desktop failures or satisfy their acceptance requirement.
+
 The protocol difference is real; making it block our demonstration is a policy we chose. Official C# SDK **2.2.0** can serve both the older desktop exchanges and `2026-07-28`. Our host explicitly sets `McpServerOptions.ProtocolVersion = "2026-07-28"`, disabling that normal compatibility. The approved acceptance contract separately requires the new revision in both desktops. A single configuration change would therefore not, by itself, satisfy the reviewed contract.
 
 The agent should have separated **use a modern SDK**, **support the current protocol**, and **require every client to use only that protocol** before recommending the strict requirement. The first two do not imply the third. Calling both desktop products unsupported without qualifying their versions, settings and tested connection path would also overstate the original result.
@@ -56,7 +58,7 @@ Private recovery remains ignored at `.superpowers/sdd/2026-10-20-revit-mcp-bridg
 
 ## Decision remains with the author
 
-The strict requirement remains unchanged. Given these results, the agent recommends keeping SDK 2.2.0 and support for the new protocol while explicitly accepting and testing the clients' supported revisions. Keep a strict new-protocol harness test as an additional check. Revise the spec, plan and independent assertions openly before changing acceptance; do not silently mark CP0 passed. This recommendation does not itself approve that revision or establish actual desktop readiness-tool acceptance.
+The strict requirement remains unchanged. After the desktop experiments, the agent recommended keeping SDK 2.2.0 while explicitly accepting and testing those clients' supported revisions, with a strict new-protocol harness as an additional check. The subsequent [Claude Code experiment](mcp-protocol-tradeoffs-and-agent-clients.md) adds a verified alternative that preserves the new protocol by changing client scope. Neither option has been approved. Revise the relevant spec/plan acceptance openly before changing it; do not silently mark CP0 passed. Actual readiness-tool acceptance remains outstanding in either path.
 
 The teaching lesson is to ask **which user-visible capability requires a version restriction, what compatibility the SDK already provides, and what fails when that restriction is removed in an isolated experiment**. “Latest” is a research question, not automatically an exclusive wire-version requirement.
 
