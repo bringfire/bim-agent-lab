@@ -1,6 +1,6 @@
 # Ask for a design, a plan, and independent review
 
-This participant story explains how the author directed a reviewable design process and then challenged the reasoning behind several review findings. Its [agent guide](../how-to/run-spec-plan-and-implementation-reviews.md) gives the technical procedure. Spec revision 2 is reviewed and approved. External R2 found three major gaps and one minor inconsistency in the first plan; [plan revision 2](../superpowers/plans/2026-10-20-revit-mcp-bridge.md) now addresses them and awaits follow-up. The bridge remains unimplemented.
+This participant story explains how the author directed a reviewable design process and then challenged the reasoning behind several review findings. Its [agent guide](../how-to/run-spec-plan-and-implementation-reviews.md) gives the technical procedure. Spec revision 2 is reviewed and approved. External R2 found three major gaps and one minor inconsistency in the first plan; [plan revision 2](../superpowers/plans/2026-10-20-revit-mcp-bridge.md) now has all four findings externally closed at the plan level on `cfbfe04`. Author plan approval and execution-method selection remain pending. The bridge remains unimplemented.
 
 ## Begin with the work already done
 
@@ -113,7 +113,15 @@ The plan now calls for tests that deliberately interrupt preparation, reads, shu
 
 The review also changed a provenance detail. The agent now proposes adapting a small stdin-cancellation helper from the **official C# SDK 2.2.0**, with source attribution and license/notice review. That is different from merely consuming its package. The old **TypeScript SDK 1.26.0 remains a learning precedent**, with no code selected for reuse. No helper code has been copied yet. Asking the agent to keep its provenance account current is part of directing the work.
 
-Hand the [focused R2 follow-up packet](../superpowers/reviews/revit-mcp-bridge/02-plan-review.md) to the reviewer. Ask whether the shared lifetime rules resolve the findings and whether any handoff still loses a guarantee. The drafting agent's acceptance of a finding is not the reviewer's closure of it.
+The author returned the [external R2 follow-up](../superpowers/reviews/revit-mcp-bridge/2026-10-20-r2-follow-up.md) on plan revision 2 at `cfbfe043bd6c4d0627424ea3b099d0007459cb91`. The reviewer closed all four findings **at the plan level** and explicitly said the underlying planning problem was addressed. It checked that ownership responsibilities appeared in interfaces and interruption tests, including settings changes and evidence capture. No builds, installation, desktop compatibility checks or Revit tests were performed.
+
+## Close the review loop without skipping the human decision
+
+The useful engagement pattern is now visible: the author asked what connected several findings; the agent revised its account of the whole operation; an external reviewer checked both the common reasoning and each correction. Keeping the original findings, revised plan and returned review makes that progress assessable. The agent cannot close a reviewer finding just by saying it has made a change.
+
+The reviewer's recommendation is to proceed to **author plan approval and execution-method selection**. That is the next decision, not another request to approve the already-approved specification. Native execution means this agent implements the connected tasks here; Subagent-driven execution assigns fresh implementers and reviewers per task. The agent recommends Native because these tasks share important interfaces. The author has not selected either method. Both retain the requested independent implementation/evidence review.
+
+A useful next prompt for participants to adapt is: **“Show me which reviewed revision I am approving, recommend an execution method, and explain what evidence still has to be produced.”** This is a suggested prompt, not a historical author instruction. Review closure establishes that the plan addresses the findings; the planned tests must still establish the software's behavior.
 
 ## Reuse this way of directing an agent
 
@@ -123,4 +131,4 @@ This is a **suggested teaching prompt**, not another historical instruction:
 
 As an exercise, open the spec-review packet and identify one way a check could return the wrong model's data. Ask a reviewer to show whether the spec prevents it and what test would demonstrate that. Then compare the response with the written requirement rather than accepting a confident summary.
 
-Current evidence includes approved spec revision 2, external R2 findings, the author's lifetime/ownership direction, source-backed dispositions and plan revision 2. R2 follow-up, author plan review/execution choice, implementation and runtime acceptance remain pending. Find actual checkpoints using `git log --oneline -- docs/superpowers/`; earlier readiness passes do not prove the bridge works.
+Current evidence includes approved spec revision 2, external R2 findings, the author's lifetime/ownership direction, source-backed dispositions, plan revision 2 and external closure of all four findings at the plan level. Author plan approval/execution choice, implementation and runtime acceptance remain pending. Find actual checkpoints using `git log --oneline -- docs/superpowers/`; earlier readiness passes do not prove the bridge works.
