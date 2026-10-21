@@ -1,0 +1,11 @@
+{
+  "utc": "2026-10-21T21:36:13.522314+00:00",
+  "revitPid": 178136,
+  "sourceModel": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-saved-as.rvt",
+  "targetModel": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-saveas-fresh.rvt",
+  "sourceChecklistSha256": "086b0babb5d17a974fae4069062f96bc2488ab781c6721dc8c719293e63cef77",
+  "targetChecklistSha256": "307951edb6aee460b7e2cb3eccc7bcf6de93845f9b9c81fd985c337dd6a4636f",
+  "onlyChecklistChange": "ProjectFileName",
+  "modelAlreadyExists": false,
+  "operator": "User performs native Save As; agent uses SDK client only."
+}

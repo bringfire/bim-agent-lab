@@ -55,3 +55,17 @@ Suggested follow-up for participants:
 > What other explanation could produce this result? Add a control that separates those explanations. Confirm that our test fails when the behavior we want to prove does not happen, and record any limits on the claim.
 
 The [technical guide](../../projects/revit-readiness/docs/mcp-bridge-setup.md) explains the timing controls and retained evidence. These observations advance Task 7; they do not close the remaining instrumented cancellation checks or either desktop application's final acceptance.
+
+## Let the person operate the application when that helps
+
+The author asked: “what do you need me to do to facilitate this, rather than you trying to use ‘computer use’ to accomplish this task?” We changed the division of work. The person operated Revit; the agent prepared the test, sent requests and checked the results. Participants do not need to learn a terminal interface to help verify their plugin.
+
+The author first replied “ready for save as test”. Only then did the agent acquire the five-minute context, confirm the active model, and give one instruction: save the disposable model under a specific new name, leave it active, and reply “saved”. The matching checklist had already been prepared. This kept setup time out of the short test window.
+
+After “saved”, the agent checked the original token immediately. Revit rejected it with `ContextChanged`, more than three minutes before expiry. A fresh context returned a complete report for the new file with the same project identity, a different document lifetime, 16 examined instances and zero findings. The earlier expired attempt remains in the record; this second attempt supplies the evidence it lacked.
+
+Suggested participant prompt, not a verbatim instruction from this session:
+
+> Prepare the test and tell me one application step at a time. Wait until I am ready before starting any time-limited check. I will operate Revit and report when the step is done; you verify the actual state through the plugin, preserve the evidence and explain what it proves.
+
+The useful boundary is responsibility, not whether every action is automated. A person's “saved” response triggers verification; the returned model identity and report establish the observed result. See the [agent procedure](../../projects/revit-readiness/docs/mcp-bridge-setup.md#coordinate-a-human-operated-save-as-test) and [fresh-token evidence](../../projects/revit-readiness/docs/verification/2026-10-21-live-installation.md#coordinated-fresh-token-save-as).

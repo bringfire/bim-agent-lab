@@ -1,8 +1,14 @@
 {
   "installedSource": "9a93f6d29bf3c46972701db53bfaee598ec4fd0c",
-  "revitPid": 82836,
+  "initialRevitPid": 82836,
   "revitBuild": "24.3.60.12",
   "sdk": "2.2.0",
+  "freshSaveAsRuns": {
+    "save-as-fresh-20261021T213613Z": {
+      "revitPid": 178136,
+      "referenceReport": "reopened-after-value-edit-report/check.json"
+    }
+  },
   "successfulCaptures": {
     "before-start-unavailable-correct-path": "BridgeUnavailable",
     "no-project-first": "NoProject",
@@ -38,7 +44,10 @@
     "reopened-after-value-edit-report": "ReadinessReport",
     "restart-stale-context": "ContextExpired",
     "modal-deadline-connected": "DeadlineExceeded",
-    "after-partial-stop-report": "ReadinessReport"
+    "after-partial-stop-report": "ReadinessReport",
+    "save-as-fresh-20261021T213613Z/before-save-as": "Context",
+    "save-as-fresh-20261021T213613Z/after-save-as-old-token": "ContextChanged",
+    "save-as-fresh-20261021T213613Z/after-save-as-fresh-report": "ReadinessReport"
   },
   "failedOrPartialCaptures": {
     "before-start-unavailable": "Incorrect executable name; failed before connection.",
@@ -57,7 +66,7 @@
     "No internal reader-entry counters or native scheduler instrumentation.",
     "SDK report shape checks are not Task 8 independent BIM comparisons.",
     "Initial modal deadline client disposed before release. Later modal-deadline-connected retains the SDK connection for at least three seconds after release; no late wire response observed. Reader-entry instrumentation remains pending.",
-    "Save As changed lifetime/path, but the pre-change token expired before the user save completed. Fresh-token Save As invalidation remains unisolated.",
+    "Initial Save As attempt expired before checking. A separate user-operated fresh-token run on PID 178136 returned ContextChanged before expiry and a fresh report; the earlier limited attempt remains retained.",
     "Working models and backup/staged binary bytes are private and deliberately excluded."
   ]
 }

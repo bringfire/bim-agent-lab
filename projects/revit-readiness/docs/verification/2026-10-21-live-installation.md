@@ -2,7 +2,7 @@
 
 Date: 2026-10-21. Installed source checkpoint: `9a93f6d29bf3c46972701db53bfaee598ec4fd0c`. This follows the [offline deployment verification](2026-10-21-recoverable-installation.md). Task 7 remains open until its remaining host checks and independent review are accounted for. SDK-harness observations are not desktop A8 acceptance.
 
-Retained evidence: [capture index](live-installation-evidence/capture-index.json), [SHA-256 inventory](live-installation-evidence/hashes.json), [installed target hashes](live-installation-evidence/installed-second-verification.json), [original snapshot](live-installation-evidence/before-install.json), [first undo](live-installation-evidence/after-undo-first.json) and [second undo](live-installation-evidence/after-undo-second.json). The index separates 35 successful SDK captures from failed/partial attempts and failed interpretations of otherwise valid reports. The manual workbook is retained; actual models and backup/staged binary bytes remain outside Git.
+Retained evidence: [capture index](live-installation-evidence/capture-index.json), [SHA-256 inventory](live-installation-evidence/hashes.json), [installed target hashes](live-installation-evidence/installed-second-verification.json), [original snapshot](live-installation-evidence/before-install.json), [first undo](live-installation-evidence/after-undo-first.json) and [second undo](live-installation-evidence/after-undo-second.json). The index separates 38 successful SDK captures from failed/partial attempts and failed interpretations of otherwise valid reports. The manual workbook is retained; actual models and backup/staged binary bytes remain outside Git.
 
 From the repository root, reproduce the evidence checks without running Revit:
 
@@ -11,7 +11,7 @@ python projects/revit-readiness/tests/verify_live_lifecycle_capture.py projects/
 python projects/revit-readiness/tests/test_verify_live_lifecycle_capture.py
 ```
 
-The first command independently checks actual wire revision, catalog, correlated response uniqueness, text/structured/saved-result agreement, exact expected outcomes, restoration snapshots and session/document identities. Sixteen checker tests challenge those properties, the connected observation window, edit freshness, token timing, Stop versus frame expiry, workbook freshness and recorded post-close hashes. These checks do not establish unobserved UI actions, reader-entry counts, or the Task 8 BIM oracle.
+The first command independently checks actual wire revision, catalog, correlated response uniqueness, text/structured/saved-result agreement, exact expected outcomes, restoration snapshots and session/document identities. Twenty-four checker tests challenge those properties, the connected observation window, edit freshness, token timing, Stop versus frame expiry, workbook freshness and recorded post-close hashes. These checks do not establish unobserved UI actions, reader-entry counts, or the Task 8 BIM oracle.
 
 ## Installation and recovery
 
@@ -58,6 +58,16 @@ On this disposable copy, the agent used native Type Properties to change wall A'
 
 Stop then removed the session descriptor. Restart issued a new session, and the prior token returned `ContextExpired` **before its recorded expiry time**. Unknown/revoked tokens share this error code by contract. This distinguishes restart invalidation from ordinary five-minute expiry.
 
+## Coordinated fresh-token Save As
+
+The author requested manual UI operation, then replied “ready for save as test” and “saved” at the coordinated checkpoints. This separate run used Revit PID **178136**, build `24.3.60.12`, and session `68aef270a7a04f21991b184b55f6762a`; the earlier PID 82836 observations remain historical. The agent used SDK/file operations only. It prepared the absent `BAL-info-saveas-fresh.rvt` sidecar before context acquisition, changing only `ProjectFileName` from the source `BAL-info-saved-as.rvt` checklist. Both sidecar snapshots and hashes are retained in [the new run](live-installation-evidence/save-as-fresh-20261021T213613Z/preparation.json).
+
+The pre-save context completed at **21:36:14.056 UTC** and expired at **21:41:14.026 UTC**. After the user's save, checking that exact token completed at **21:37:49.604 UTC** with correlated `ContextChanged` and no report: **204.4 seconds before expiry**. This distinguishes document/checklist identity invalidation from ordinary token expiry. It does not isolate the Save As event handler from the other identity guards, because both path and prepared checklist binding changed.
+
+A fresh context/report completed at **21:40:01.946 UTC** on `BAL-info-saveas-fresh.rvt`. The process, session and project ID stayed the same; the document lifetime changed from `7a843d7b448242b396a980c3d0d67a25` to `ceb21d161bba4db1b859b0a8c271f540`. The report contains 16 requested/examined instances, six types, 18 field results, zero findings/affected elements, both completeness flags true and both modified flags false. Every report field matches the earlier restored sample report except generation time and the two expected paths. That is a continuity check, not the independent Task 8 BIM oracle. No closed-file hash is claimed for this new model while it remains open.
+
+The checker validates the original token on the wire, response completion before expiry, stable session/project, changed path/lifetime, exact checklist bytes and the fresh report. Seven corrupted controls initially failed against an unimplemented checker, then all passed after implementation: late response, wrong token, unchanged lifetime, changed session, unchanged path, changed modified state and an extra checklist change despite consistent replacement hashes. All **24 checker tests** and **38 retained SDK capture checks** pass. The earlier expired Save As attempt remains intact. Production source remains `9a93f6d`; no build, install, new package or desktop configuration change was needed.
+
 ## Connected timeout, incomplete connections and normal shutdown
 
 The SDK test driver now accepts `--finish-file`: after the expected response it keeps its SDK connection alive until a separate release file appears, observes for at least three further seconds, and verifies the catalog again on the same connection. Two subprocess tests first failed against the missing option and then passed; a wire-path assumption in the test was corrected separately. Protocol regression, including compatible revisions and strict July/legacy rejection, passed. These are test-only changes; the installed production build remains `9a93f6d`.
@@ -80,7 +90,7 @@ The installed manual Required type information command produced JSON, text and t
 | Explicit Start, repeated Start/Stop, fresh restart session | Observed, including rejection of an unexpired token from the stopped session |
 | No project, family, unsaved project, checklist controls | Expected error results observed; reader-entry instrumentation not included |
 | Copied project switch, close/reopen, changed checklist, expired token | Expected invalidation observed |
-| Save As, same-document value edits | Save As lifetime/path observed; fresh-token invalidation still unisolated. Same-token fresh value and restoration observed |
+| Save As, same-document value edits | Fresh-token Save As invalidation observed before expiry in a coordinated manual retry; fresh report verified. Same-token fresh value and restoration observed |
 | Modal request expiry and subsequent request | Connected three-second post-release window has no late wire result; internal reader-entry evidence pending |
 | Actual cancellation/disconnect during preparation or an executing read | Pending; offline tests are separate evidence |
 | Stop/shutdown with queued/executing work, partial/idle connections | Stop with three incomplete input states and ordinary application shutdown observed; queued/executing shutdown remains pending |

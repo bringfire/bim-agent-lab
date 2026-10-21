@@ -8,7 +8,7 @@ import tempfile
 import unittest
 from unittest.mock import patch
 from pathlib import Path
-from verify_live_lifecycle_capture import check_capture, check_restoration, check_followup, read, main
+from verify_live_lifecycle_capture import check_capture, check_restoration, check_followup, check_save_as, read, main
 
 EVIDENCE = Path(__file__).resolve().parents[1] / 'docs/verification/live-installation-evidence'
 
@@ -140,6 +140,74 @@ class CaptureCheckerTests(unittest.TestCase):
         changed['structuredContent']['documentLifetimeId'] = read(self.root/'after-modal-report/context.json')['structuredContent']['documentLifetimeId']
         path.write_text(json.dumps(changed))
         with self.assertRaises(AssertionError): check_restoration(self.root)
+
+
+class SaveAsCheckerTests(unittest.TestCase):
+    def setUp(self):
+        self.temp = tempfile.TemporaryDirectory(prefix='bal-saveas-check-')
+        self.root = Path(self.temp.name)
+        self.addCleanup(self.temp.cleanup)
+        self.run, self.metadata = next(iter(read(EVIDENCE / 'capture-index.json')['freshSaveAsRuns'].items()))
+        shutil.copytree(EVIDENCE / self.run, self.root / self.run)
+        reference = self.root / self.metadata['referenceReport']
+        reference.parent.mkdir(parents=True)
+        shutil.copyfile(EVIDENCE / self.metadata['referenceReport'], reference)
+        self.check()
+
+    def check(self):
+        check_save_as(self.root, self.run, self.metadata)
+
+    def corrupt(self, relative, change):
+        path = self.root / self.run / relative
+        data = read(path)
+        change(data)
+        path.write_text(json.dumps(data))
+        with self.assertRaises(AssertionError): self.check()
+
+    def test_original(self):
+        self.check()
+
+    def test_response_after_expiry_despite_early_start(self):
+        expiry = read(self.root / self.run / 'before-save-as/context.json')['structuredContent']['expiresUtc']
+        self.corrupt('after-save-as-old-token/sdk-client-result.json', lambda d:d.update(completedUtc=expiry))
+
+    def test_wrong_token_sent(self):
+        path = self.root / self.run / 'after-save-as-old-token/wire/client-to-server.jsonl'
+        rows = [json.loads(s) for s in path.read_text().splitlines()]
+        next(r for r in rows if r['method'] == 'tools/call')['params']['arguments']['contextToken'] = 'another-token'
+        path.write_text(''.join(json.dumps(r)+'\n' for r in rows))
+        with self.assertRaises(AssertionError): self.check()
+
+    def test_unchanged_lifetime(self):
+        old = read(self.root / self.run / 'before-save-as/context.json')['structuredContent']
+        self.corrupt('after-save-as-fresh-report/context.json', lambda d:d['structuredContent'].update(documentLifetimeId=old['documentLifetimeId']))
+
+    def test_restart_instead_of_save_as(self):
+        self.corrupt('after-save-as-fresh-report/context.json', lambda d:d['structuredContent'].update(bridgeSessionId='another-session'))
+
+    def test_unchanged_path(self):
+        old = read(self.root / self.run / 'before-save-as/context.json')['structuredContent']
+        self.corrupt('after-save-as-fresh-report/context.json', lambda d:d['structuredContent'].update(documentPath=old['documentPath']))
+
+    def test_changed_model_state(self):
+        self.corrupt('after-save-as-fresh-report/check.json', lambda d:d['structuredContent']['report'].update(ModifiedAfter=True))
+
+    def test_checklist_changed_beyond_filename_even_with_matching_hash(self):
+        import hashlib
+        path = self.root / self.run / 'target-checklist.json'
+        changed = read(path)
+        changed['ChecklistId'] = 'different-checklist'
+        path.write_text(json.dumps(changed))
+        sha = hashlib.sha256(path.read_bytes()).hexdigest()
+        for relative, change in [
+            ('preparation.json', lambda d:d.update(targetChecklistSha256=sha)),
+            ('after-save-as-fresh-report/context.json', lambda d:d['structuredContent'].update(checklistSha256=sha)),
+        ]:
+            p = self.root / self.run / relative
+            data = read(p)
+            change(data)
+            p.write_text(json.dumps(data))
+        with self.assertRaises(AssertionError): self.check()
 
 
 if __name__ == '__main__': unittest.main()

@@ -1,9 +1,10 @@
 """Check retained Task 7 SDK traffic and restoration evidence, not desktop or BIM oracle acceptance."""
 import argparse
+import hashlib
 import json
 import re
 from datetime import datetime
-from pathlib import Path
+from pathlib import Path, PureWindowsPath
 from verify_excel_evidence import workbook, table
 
 
@@ -85,6 +86,66 @@ def check_restoration(directory):
 
 def utc(value):
     return datetime.fromisoformat(value.replace("Z", "+00:00"))
+
+
+def check_save_as(directory, run, metadata):
+    """Validate a coordinated Save As observation separately from the earlier expired attempt."""
+    directory = Path(directory)
+    capture = directory / run
+    before = read(capture / 'before-save-as/context.json')['structuredContent']
+    after = read(capture / 'after-save-as-fresh-report/context.json')['structuredContent']
+    preparation = read(capture / 'preparation.json')
+    timing = read(capture / 'before-stale-token-check.json')
+    acquired = utc(read(capture / 'before-save-as/sdk-client-result.json')['completedUtc'])
+    completed = utc(read(capture / 'after-save-as-old-token/sdk-client-result.json')['completedUtc'])
+    expires = utc(before['expiresUtc'])
+    started = utc(timing['checkedAtUtc'])
+    assert utc(preparation['utc']) <= acquired <= started <= completed < expires, 'Save As test did not finish before expiry'
+    assert timing['expiresUtc'] == before['expiresUtc'] and timing['userReportedSaved'] is True
+    assert abs(timing['secondsRemaining'] - (expires - started).total_seconds()) < 0.0001
+
+    requests = [json.loads(s) for s in (capture / 'after-save-as-old-token/wire/client-to-server.jsonl').read_text().splitlines()]
+    calls = [r['params'] for r in requests if r['method'] == 'tools/call']
+    assert len(calls) == 1 and calls[0]['name'] == 'revit_check_required_type_information'
+    assert calls[0]['arguments'] == {'contextToken':before['contextToken']}, 'Must send the actual pre-save token without reacquisition'
+    rejected = read(capture / 'after-save-as-old-token/check.json')
+    assert rejected['isError'] is True and rejected['structuredContent']['code'] == 'ContextChanged'
+    assert 'report' not in rejected['structuredContent']
+    for key in ('revitPid', 'bridgeSessionId', 'projectUniqueId', 'revitBuild', 'checklistId', 'scope', 'level', 'phase'):
+        assert before[key] == after[key], key
+    assert before['revitPid'] == metadata['revitPid'] == preparation['revitPid']
+    assert before['documentLifetimeId'] != after['documentLifetimeId']
+    assert before['contextToken'] != after['contextToken']
+    old_path, new_path = PureWindowsPath(before['documentPath']), PureWindowsPath(after['documentPath'])
+    assert old_path != new_path
+    assert old_path == PureWindowsPath(preparation['sourceModel'])
+    assert new_path == PureWindowsPath(preparation['targetModel']) and preparation['modelAlreadyExists'] is False
+
+    checklists = []
+    for name, context, model in [('source', before, old_path), ('target', after, new_path)]:
+        path = capture / (name + '-checklist.json')
+        digest = hashlib.sha256(path.read_bytes()).hexdigest()
+        assert digest == preparation[name + 'ChecklistSha256'] == context['checklistSha256']
+        assert PureWindowsPath(context['checklistPath']) == model.with_suffix('.checklist.json')
+        data = read(path)
+        assert data['ProjectFileName'] == model.name
+        checklists.append(data)
+    assert {k:v for k,v in checklists[0].items() if k != 'ProjectFileName'} == {k:v for k,v in checklists[1].items() if k != 'ProjectFileName'}, 'Only checklist filename may change'
+
+    report = read(capture / 'after-save-as-fresh-report/check.json')['structuredContent']['report']
+    for report_key, context_key in [('DocumentPath','documentPath'), ('ChecklistPath','checklistPath'), ('ProjectUniqueId','projectUniqueId')]:
+        assert report[report_key] == after[context_key]
+    assert report['RequestedInstances'] == report['ExaminedInstances'] == 16
+    assert report['CoverageComplete'] is True and report['Evaluation']['Complete'] is True
+    assert report['ModifiedBefore'] is False and report['ModifiedAfter'] is False
+    assert report['Evaluation']['FindingCount'] == 0 and not report['Evaluation']['AffectedElements']
+    assert not report['ScopeIssues'] and not report['Evaluation']['UnexaminedElements']
+    assert len(report['Evaluation']['Types']) == 6
+    assert sum(len(t['Fields']) for t in report['Evaluation']['Types']) == 18
+    # This is a continuity comparison with a retained earlier report, not the Task 8 independent BIM oracle.
+    reference = read(directory / metadata['referenceReport'])['structuredContent']['report']
+    changes = {'GeneratedUtc', 'DocumentPath', 'ChecklistPath'}
+    assert {k:v for k,v in report.items() if k not in changes} == {k:v for k,v in reference.items() if k not in changes}
 
 
 def check_followup(directory):
@@ -194,6 +255,8 @@ def main():
     check_restoration(args.directory)
     if manifest.get("connectedObservationCaptures"):
         check_followup(args.directory)
+    for run, metadata in manifest.get("freshSaveAsRuns", {}).items():
+        check_save_as(args.directory, run, metadata)
     print(f"PASS {len(manifest['successfulCaptures'])} SDK lifecycle captures, restoration snapshots and session/document transitions; not full host/A8 acceptance")
 
 
