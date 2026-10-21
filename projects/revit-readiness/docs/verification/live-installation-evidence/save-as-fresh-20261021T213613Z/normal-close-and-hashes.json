@@ -1,0 +1,29 @@
+{
+  "observedUtc": "2026-10-21T21:47:42.3169826+00:00",
+  "userReportedClosed": true,
+  "revitPid": 178136,
+  "revitProcessAlive": false,
+  "descriptorCount": 0,
+  "files": [
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-saved-as.rvt",
+      "length": 94343168,
+      "sha256": "426e8c7cfd7563d0986d89eb0fc4f9d5b02efc36c1298a0239414f3f7dc987f2"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-saveas-fresh.rvt",
+      "length": 94343168,
+      "sha256": "f55856b361cf92aee57d6ea939523d8f280cd3543ee8afa62ad39d3174601f72"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-saved-as.checklist.json",
+      "length": 3341,
+      "sha256": "086b0babb5d17a974fae4069062f96bc2488ab781c6721dc8c719293e63cef77"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-saveas-fresh.checklist.json",
+      "length": 4415,
+      "sha256": "307951edb6aee460b7e2cb3eccc7bcf6de93845f9b9c81fd985c337dd6a4636f"
+    }
+  ]
+}
