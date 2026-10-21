@@ -4,7 +4,7 @@ using System.Text.Json;
 string? server = null, evidence = null;
 string protocol = "2026-07-28";
 string scenario = "probe", expected = "ReadinessReport";
-string? contextToken = null, pauseFile = null;
+string? contextToken = null, pauseFile = null, finishFile = null;
 int? revitPid = null;
 List<string> serverArgs = [];
 for (int i = 0; i < args.Length; i += 2)
@@ -18,6 +18,7 @@ for (int i = 0; i < args.Length; i += 2)
         case "--expected": expected = args[i + 1]; break;
         case "--context-token": contextToken = args[i + 1]; break;
         case "--pause-file": pauseFile = Path.GetFullPath(args[i + 1]); break;
+        case "--finish-file": finishFile = Path.GetFullPath(args[i + 1]); break;
         case "--revit-pid": revitPid = int.Parse(args[i + 1]); if(revitPid <= 0) throw new ArgumentException("Positive Revit PID required."); break;
         case "--evidence": evidence = Path.GetFullPath(args[i + 1]); break;
         case "--protocol" when args[i + 1] is "2025-06-18" or "2025-11-25" or "2026-07-28": protocol = args[i + 1]; break;
@@ -25,7 +26,8 @@ for (int i = 0; i < args.Length; i += 2)
     }
 }
 if (server is null || evidence is null) throw new ArgumentException("--server and --evidence are required.");
-if (scenario == "readiness") return await ReadinessScenario.Run(server,serverArgs,evidence,protocol,expected,revitPid,contextToken,pauseFile);
+if (scenario == "readiness") return await ReadinessScenario.Run(server,serverArgs,evidence,protocol,expected,revitPid,contextToken,pauseFile,finishFile);
+if (finishFile is not null) throw new ArgumentException("--finish-file requires --scenario readiness.");
 Directory.CreateDirectory(evidence);
 using var stop = new CancellationTokenSource(TimeSpan.FromSeconds(20));
 var transport = new StdioClientTransport(new StdioClientTransportOptions { Command = server, Arguments = serverArgs, Name = "lab SDK verification client" });

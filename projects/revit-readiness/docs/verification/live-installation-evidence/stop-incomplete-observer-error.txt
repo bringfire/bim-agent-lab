@@ -1,0 +1,6 @@
+Exception: D:\bim-agent-lab\projects\revit-readiness\tests\Observe-LivePipeStop.ps1:45
+Line |
+  45 |  . ot $pass) { throw 'Stop was not observed before the frame deadline, o .
+     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | Stop was not observed before the frame deadline, or cleanup did not match. Retain this attempt and retry with a
+     | new directory.

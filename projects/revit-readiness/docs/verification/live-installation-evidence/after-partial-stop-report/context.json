@@ -1,0 +1,34 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\u0022contractVersion\u0022:1,\u0022requestId\u0022:\u00224fcf36764f684c868bde96a4c357b16d\u0022,\u0022bridgeSessionId\u0022:\u0022ed6489c2698d4f3584abc5b8ee6ebb39\u0022,\u0022checklistSha256\u0022:\u0022086b0babb5d17a974fae4069062f96bc2488ab781c6721dc8c719293e63cef77\u0022,\u0022revitPid\u0022:82836,\u0022revitBuild\u0022:\u002224.3.60.12\u0022,\u0022documentLifetimeId\u0022:\u00226c8bfc5ea38e4e83954ade8d2508e7d2\u0022,\u0022projectUniqueId\u0022:\u00227cacd49c-ac17-4591-ad0a-cbc9bb40015a-00012b83\u0022,\u0022documentPath\u0022:\u0022D:\\\\bim-agent-lab\\\\projects\\\\revit-readiness\\\\samples\\\\local\\\\mcp-live-task7\\\\a10630e39dae448ba55abbfe0bc7ab6b\\\\models\\\\BAL-info-saved-as.rvt\u0022,\u0022checklistId\u0022:\u0022BAL-TYPE-INFO-v1\u0022,\u0022checklistPath\u0022:\u0022D:\\\\bim-agent-lab\\\\projects\\\\revit-readiness\\\\samples\\\\local\\\\mcp-live-task7\\\\a10630e39dae448ba55abbfe0bc7ab6b\\\\models\\\\BAL-info-saved-as.checklist.json\u0022,\u0022scope\u0022:\u0022Explicit checklist element UniqueIds; host basic walls and ceilings on the declared level, New in the declared phase. Types are checked once; links and other elements excluded. No view/selection filter or result cap.\u0022,\u0022level\u0022:\u0022L1 - Block 43\u0022,\u0022phase\u0022:\u0022New Construction\u0022,\u0022contextToken\u0022:\u0022a3AHRLt\\u002BCI2jy2jyjnKOulUGeSxrIy9HL/54ZvgxkHg=\u0022,\u0022expiresUtc\u0022:\u00222026-10-21T21:28:26.0747474Z\u0022}"
+    }
+  ],
+  "structuredContent": {
+    "contractVersion": 1,
+    "requestId": "4fcf36764f684c868bde96a4c357b16d",
+    "bridgeSessionId": "ed6489c2698d4f3584abc5b8ee6ebb39",
+    "checklistSha256": "086b0babb5d17a974fae4069062f96bc2488ab781c6721dc8c719293e63cef77",
+    "revitPid": 82836,
+    "revitBuild": "24.3.60.12",
+    "documentLifetimeId": "6c8bfc5ea38e4e83954ade8d2508e7d2",
+    "projectUniqueId": "7cacd49c-ac17-4591-ad0a-cbc9bb40015a-00012b83",
+    "documentPath": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-saved-as.rvt",
+    "checklistId": "BAL-TYPE-INFO-v1",
+    "checklistPath": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-saved-as.checklist.json",
+    "scope": "Explicit checklist element UniqueIds; host basic walls and ceilings on the declared level, New in the declared phase. Types are checked once; links and other elements excluded. No view/selection filter or result cap.",
+    "level": "L1 - Block 43",
+    "phase": "New Construction",
+    "contextToken": "a3AHRLt\u002BCI2jy2jyjnKOulUGeSxrIy9HL/54ZvgxkHg=",
+    "expiresUtc": "2026-10-21T21:28:26.0747474Z"
+  },
+  "isError": false,
+  "_meta": {
+    "io.modelcontextprotocol/serverInfo": {
+      "name": "bim-agent-lab",
+      "version": "0.1.0"
+    }
+  },
+  "resultType": "complete"
+}

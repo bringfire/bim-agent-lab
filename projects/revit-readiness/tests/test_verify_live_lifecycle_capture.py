@@ -1,11 +1,14 @@
 """Negative controls for the retained live-evidence checker. No Revit access."""
 import copy
+import contextlib
+import io
 import json
 import shutil
 import tempfile
 import unittest
+from unittest.mock import patch
 from pathlib import Path
-from verify_live_lifecycle_capture import check_capture, check_restoration, read
+from verify_live_lifecycle_capture import check_capture, check_restoration, check_followup, read, main
 
 EVIDENCE = Path(__file__).resolve().parents[1] / 'docs/verification/live-installation-evidence'
 
@@ -75,6 +78,46 @@ class CaptureCheckerTests(unittest.TestCase):
             rows.append(extra)
         self.mutate_wire('server-to-client.jsonl', add_unknown)
         self.rejected()
+
+    def test_followup_rejects_short_connected_observation(self):
+        shutil.copytree(EVIDENCE, self.root, dirs_exist_ok=True)
+        path = self.root / 'modal-deadline-connected/post-release-observation.json'
+        changed = read(path)
+        changed['elapsedMilliseconds'] = 0
+        path.write_text(json.dumps(changed))
+        with patch('sys.argv', ['checker', str(self.root)]), contextlib.redirect_stdout(io.StringIO()):
+            with self.assertRaises(AssertionError): main()
+
+    def corrupt_followup(self, name, change):
+        shutil.copytree(EVIDENCE, self.root, dirs_exist_ok=True)
+        check_followup(self.root)
+        path = self.root / name
+        data = read(path)
+        change(data)
+        path.write_text(json.dumps(data))
+        with self.assertRaises(AssertionError): check_followup(self.root)
+
+    def test_followup_rejects_client_closed_before_ui_release(self):
+        self.corrupt_followup('modal-connected-ui-released.json', lambda d:d.update(clientCompleteAtUiRelease=True))
+
+    def test_followup_rejects_cached_value(self):
+        def change(d):
+            for t in d['structuredContent']['report']['Evaluation']['Types']:
+                if t['TypeName'] == 'BAL INFO Wall A':
+                    next(f for f in t['Fields'] if f['Field'] == 'Code')['ObservedValue'] = 'W-A'
+        self.corrupt_followup('same-token-after-value-edit/check.json', change)
+
+    def test_followup_rejects_expired_restart_control(self):
+        self.corrupt_followup('restart-stale-context/sdk-client-result.json', lambda d:d.update(completedUtc='2026-10-22T00:00:00Z'))
+
+    def test_followup_rejects_timeout_as_stop(self):
+        self.corrupt_followup('stop-incomplete-connections-retry/result.json', lambda d:d['results'][0].update(elapsedMilliseconds=5000))
+
+    def test_followup_rejects_stale_workbook(self):
+        self.corrupt_followup('manual-export/BAL-info-saved-as.readiness.json', lambda d:d.update(GeneratedUtc='2026-10-22T00:00:00Z'))
+
+    def test_followup_rejects_changed_postclose_hash(self):
+        self.corrupt_followup('final-closed-model-hashes.json', lambda d:d['verified'][0].update(sha256='0'*64))
 
     def test_restoration_and_document_lifetime_controls(self):
         for name in ('before-install.json','after-undo-first.json','after-undo-second.json',

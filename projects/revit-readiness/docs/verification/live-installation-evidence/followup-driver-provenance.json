@@ -1,0 +1,14 @@
+{
+  "utc": "2026-10-21T21:29:28.534698+00:00",
+  "installedSource": "9a93f6d29bf3c46972701db53bfaee598ec4fd0c",
+  "installedTargetsRechecked": 97,
+  "sdk": "2.2.0",
+  "scope": "Only test driver/observer and evidence checking changed; no production binary or package graph change. Existing SDK 1.26 reference remains precedent-only.",
+  "files": {
+    "projects/revit-readiness/tests/mcp-client/Program.cs": "b53e2ce2f290dfbe26ce11d1f34f2090834ae96c187b1ac42170e7a6ba6e7e68",
+    "projects/revit-readiness/tests/mcp-client/ReadinessScenario.cs": "9a73a25d514acfb43edbdd87657274ef7842c312a146828da5d91d6f95197e08",
+    "projects/revit-readiness/tests/mcp-client/packages.lock.json": "7e158b3ebafbe0d26cc07c53ca72f6d1aabd6912b6a3b7fa16cf19cd4969c514",
+    "projects/revit-readiness/tests/mcp-client/bin/Release/net10.0/BimAgentLab.Mcp.Client.dll": "d98168e8f3ad786ee75a4c68af75e302f7798c084e92a6caf6f9e82830312904",
+    "projects/revit-readiness/tests/Observe-LivePipeStop.ps1": "e7e5169385df735fdfaac63438009836a18746720e67661a5b76e9a32e51d662"
+  }
+}

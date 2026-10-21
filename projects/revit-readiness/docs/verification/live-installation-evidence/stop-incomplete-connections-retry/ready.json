@@ -1,0 +1,19 @@
+{
+  "utc": "2026-10-21T21:22:53.1589845Z",
+  "revitPid": 82836,
+  "descriptor": {
+    "BridgeSessionId": "a2bfda8c5bc24ccea1a2955ab3358a10",
+    "ContractVersion": 1,
+    "LogonSid": "S-1-5-5-0-163499087",
+    "PipeName": "BimAgentLab.Revit.82836.639282112344110121.1.S-1-5-5-0-163499087.a2bfda8c5bc24ccea1a2955ab3358a10",
+    "ProcessStartUtc": "2026-10-21T20:27:14.4110121Z",
+    "RevitPid": 82836,
+    "WindowsSessionId": 1
+  },
+  "modes": [
+    "no-bytes",
+    "partial-header",
+    "partial-body"
+  ],
+  "instruction": "Run native Stop now. Closure at the five-second receive deadline does not satisfy this test."
+}

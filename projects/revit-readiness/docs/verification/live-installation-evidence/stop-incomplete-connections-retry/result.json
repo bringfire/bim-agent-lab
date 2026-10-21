@@ -1,0 +1,25 @@
+{
+  "utc": "2026-10-21T21:22:53.5429897Z",
+  "results": [
+    {
+      "mode": "no-bytes",
+      "bytesReturned": 0,
+      "elapsedMilliseconds": 286
+    },
+    {
+      "mode": "partial-header",
+      "bytesReturned": 0,
+      "elapsedMilliseconds": 284
+    },
+    {
+      "mode": "partial-body",
+      "bytesReturned": 0,
+      "elapsedMilliseconds": 282
+    }
+  ],
+  "descriptorRemoved": true,
+  "descriptorWaitMilliseconds": 101,
+  "revitProcessAlive": true,
+  "pass": true,
+  "scope": "Observed transport cleanup only; no callback/event-disposal inference."
+}

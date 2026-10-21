@@ -1,10 +1,10 @@
-# Task 7 initial live evidence
+# Task 7 live lifecycle evidence
 
-Read the [verification record](../2026-10-21-live-installation.md) for scope and limitations. `capture-index.json` names every successful capture and both failed/partial attempts; `hashes.json` records retained bytes. These are official-SDK exchanges against installed source `9a93f6d` and actual Revit 2024.3, not desktop acceptance or independent BIM-answer comparisons.
+Read the [verification record](../2026-10-21-live-installation.md) for scope and limitations. `capture-index.json` names 35 successful SDK captures and distinguishes failed/partial attempts and failed interpretations; `hashes.json` records retained bytes. These are official-SDK exchanges against installed source `9a93f6d` and actual Revit 2024.3, not desktop acceptance or independent BIM-answer comparisons.
 
-Receipts and journals are metadata only. Original backup bytes, staged binaries and working Revit models stay in private local storage. The retained before/after snapshots independently record exact restoration of the actual installation. The final read-only recheck matches all 97 installed targets and all six original sample/model-sidecar source files; the two currently open working models have not yet received their final post-close disk-hash check.
+Receipts and journals are metadata only. Original backup bytes, staged binaries and working Revit models stay in private local storage. The retained before/after snapshots independently record exact restoration of the actual installation. The final read-only recheck matches all 97 installed targets and all six original sample/model-sidecar source files; the later final-closed-model-hashes.json records 14 source/working-file comparisons after normal Revit shutdown.
 
-Do not repair or overwrite a failed capture. A deliberate retry has a different directory. Context tokens and session IDs here are historical, expire, and are not reusable client configuration. No desktop settings were changed for these tests.
+Do not repair or overwrite a failed capture. A deliberate retry has a different directory. Context tokens and session IDs here are historical, expire, and are not reusable client configuration. No desktop settings were changed for these tests. The manual-export folder retains the actual XLSX as well as its JSON/text outputs and independent decoded XML data. The follow-up driver is test-only; installed production bytes remain from 9a93f6d.
 
 Recheck from the repository root:
 

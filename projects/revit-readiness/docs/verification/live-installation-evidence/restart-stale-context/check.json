@@ -1,0 +1,22 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\u0022code\u0022:\u0022ContextExpired\u0022,\u0022message\u0022:\u0022The context is unknown or expired. Obtain a fresh context.\u0022,\u0022requestId\u0022:\u0022c76cf2a7a676405fa9326136bb1a8d09\u0022,\u0022retryable\u0022:false}"
+    }
+  ],
+  "structuredContent": {
+    "code": "ContextExpired",
+    "message": "The context is unknown or expired. Obtain a fresh context.",
+    "requestId": "c76cf2a7a676405fa9326136bb1a8d09",
+    "retryable": false
+  },
+  "isError": true,
+  "_meta": {
+    "io.modelcontextprotocol/serverInfo": {
+      "name": "bim-agent-lab",
+      "version": "0.1.0"
+    }
+  },
+  "resultType": "complete"
+}

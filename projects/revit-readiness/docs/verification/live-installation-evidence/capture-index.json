@@ -29,17 +29,35 @@
     "unsaved-project": "UnsavedProject",
     "before-save-as-context": "Context",
     "before-save-as-context-retry": "Context",
-    "expired-context-before-save-as": "ContextExpired"
+    "expired-context-before-save-as": "ContextExpired",
+    "after-user-save-as-report": "ReadinessReport",
+    "after-user-save-as-expired-prior-token": "ContextExpired",
+    "before-value-edit-report": "ReadinessReport",
+    "same-token-after-value-edit": "ReadinessReport",
+    "after-value-edit-undo-report": "ReadinessReport",
+    "reopened-after-value-edit-report": "ReadinessReport",
+    "restart-stale-context": "ContextExpired",
+    "modal-deadline-connected": "DeadlineExceeded",
+    "after-partial-stop-report": "ReadinessReport"
   },
   "failedOrPartialCaptures": {
     "before-start-unavailable": "Incorrect executable name; failed before connection.",
     "family-document": "Open dialog was still held, so actual DeadlineExceeded did not satisfy UnsupportedDocument. New capture after family loaded passed."
   },
+  "connectedObservationCaptures": {
+    "modal-deadline-connected": "modal-connected-ui-released.json"
+  },
+  "failedTestInterpretations": {
+    "after-value-edit-undo-report": "Valid report, but restoration assertion failed: Ctrl-Z did not restore W-A. Closing without saving and reopening restored it; see value-edit-restoration.json.",
+    "stop-incomplete-connections": "EOF observed before descriptor removal; first test incorrectly required simultaneous cleanup. Bounded two-stage retry passed.",
+    "incomplete-connections-no-stop-control": "Intentional negative control: ordinary frame timeout is not native Stop."
+  },
   "limitations": [
     "Not Task 7 closure or desktop A8 acceptance.",
     "No internal reader-entry counters or native scheduler instrumentation.",
     "SDK report shape checks are not Task 8 independent BIM comparisons.",
-    "Modal deadline client disposed before UI modal release; no continuously connected late-response proof.",
+    "Initial modal deadline client disposed before release. Later modal-deadline-connected retains the SDK connection for at least three seconds after release; no late wire response observed. Reader-entry instrumentation remains pending.",
+    "Save As changed lifetime/path, but the pre-change token expired before the user save completed. Fresh-token Save As invalidation remains unisolated.",
     "Working models and backup/staged binary bytes are private and deliberately excluded."
   ]
 }

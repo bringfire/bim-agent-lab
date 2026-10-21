@@ -1,0 +1,15 @@
+{
+  "previousValue": "W-A",
+  "newValue": "W-A-LIVE",
+  "sameTokenUsed": true,
+  "beforeModified": [
+    false,
+    false
+  ],
+  "afterModified": [
+    true,
+    true
+  ],
+  "deliberateNativeEditOutsideQuery": true,
+  "nextStep": "restore Type Mark to W-A through native Type Properties"
+}

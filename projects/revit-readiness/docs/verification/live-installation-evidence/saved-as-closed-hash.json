@@ -1,0 +1,6 @@
+{
+  "utc": "2026-10-21T21:10:55.936478+00:00",
+  "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-saved-as.rvt",
+  "sha256": "426e8c7cfd7563d0986d89eb0fc4f9d5b02efc36c1298a0239414f3f7dc987f2",
+  "scope": "Saved-as file after closing without saving only the deliberately introduced test value; no pre-save-as byte equality claim."
+}

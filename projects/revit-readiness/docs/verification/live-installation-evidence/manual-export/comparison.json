@@ -1,0 +1,17 @@
+{
+  "utc": "2026-10-21T21:18:24.404524+00:00",
+  "pass": true,
+  "comparison": "Manual JSON equals MCP report except GeneratedUtc; text includes six used types and 16 case IDs; XLSX independently decoded from ZIP/XML and checked against manual JSON and literal complete-case counts. Full Task 8 native schedule oracle is separate.",
+  "ruleRows": 18,
+  "sheets": [
+    "Summary",
+    "Findings",
+    "Affected elements",
+    "Rules and coverage"
+  ],
+  "files": {
+    "BAL-info-saved-as.readiness.json": "922f73c2d4e70ca7de1ce57a7082022e696a4e85ef6e8b524ac5f2bab91567d3",
+    "BAL-info-saved-as.readiness.txt": "6b2277e261dfb01844c61495f7753adf9f087b830efb98e5e56311f05954eb6b",
+    "BAL-info-saved-as.readiness.xlsx": "ba093ceaa8a9bdea1fb2c724096b7884369cc4d73d4f87b44a0e7bc605577958"
+  }
+}

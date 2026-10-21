@@ -1,0 +1,14 @@
+.E
+======================================================================
+ERROR: test_keeps_sdk_connection_until_explicit_release (__main__.ReadinessDriverTests.test_keeps_sdk_connection_until_explicit_release)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_driver.py", line 40, in test_keeps_sdk_connection_until_explicit_release
+    calls = [json.loads(line)["method"] for line in wires[0].read_text().splitlines()]
+                                                    ~~~~~^^^
+IndexError: list index out of range
+
+----------------------------------------------------------------------
+Ran 2 tests in 11.439s
+
+FAILED (errors=1)

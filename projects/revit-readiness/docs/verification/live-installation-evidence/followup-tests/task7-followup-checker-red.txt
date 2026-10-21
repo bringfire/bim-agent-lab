@@ -1,0 +1,14 @@
+...F......
+======================================================================
+FAIL: test_followup_rejects_short_connected_observation (__main__.CaptureCheckerTests.test_followup_rejects_short_connected_observation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_live_lifecycle_capture.py", line 89, in test_followup_rejects_short_connected_observation
+    with self.assertRaises(AssertionError): main()
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: AssertionError not raised
+
+----------------------------------------------------------------------
+Ran 10 tests in 0.506s
+
+FAILED (failures=1)

@@ -1,0 +1,575 @@
+{
+  "Summary": {
+    "1": {
+      "A": "BIM AGENT LAB | Summary",
+      "B": ""
+    },
+    "2": {
+      "A": "Required type information | Snapshot of a read-only check. Text completeness only; no certification or measured quantities.",
+      "B": ""
+    },
+    "4": {
+      "A": "Metric / context",
+      "B": "Result"
+    },
+    "5": {
+      "A": "Generated (UTC)",
+      "B": "2026-10-21T21:15:47.7670892Z"
+    },
+    "6": {
+      "A": "Model",
+      "B": "BAL-info-saved-as.rvt"
+    },
+    "7": {
+      "A": "Checklist",
+      "B": "BAL-TYPE-INFO-v1"
+    },
+    "8": {
+      "A": "Missing required type values",
+      "B": 0.0
+    },
+    "9": {
+      "A": "Distinct affected elements",
+      "B": 0.0
+    },
+    "10": {
+      "A": "Used types examined",
+      "B": 6.0
+    },
+    "11": {
+      "A": "Requested instances",
+      "B": 16.0
+    },
+    "12": {
+      "A": "Examined instances",
+      "B": 16.0
+    },
+    "13": {
+      "A": "Coverage",
+      "B": "Complete for checklist scope"
+    },
+    "14": {
+      "A": "Distinct unexamined elements",
+      "B": 0.0
+    },
+    "15": {
+      "A": "Other host wall/ceiling instances",
+      "B": 1196.0
+    },
+    "16": {
+      "A": "Link instances excluded",
+      "B": 6.0
+    },
+    "17": {
+      "A": "Level",
+      "B": "L1 - Block 43"
+    },
+    "18": {
+      "A": "Phase (New)",
+      "B": "New Construction"
+    },
+    "19": {
+      "A": "Units",
+      "B": "Instance counts and text; no measured quantities."
+    },
+    "20": {
+      "A": "Model modified before read",
+      "B": false
+    },
+    "21": {
+      "A": "Model modified after read",
+      "B": false
+    },
+    "22": {
+      "A": "Model path",
+      "B": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-saved-as.rvt"
+    },
+    "23": {
+      "A": "Project unique ID",
+      "B": "7cacd49c-ac17-4591-ad0a-cbc9bb40015a-00012b83"
+    },
+    "24": {
+      "A": "Checklist path",
+      "B": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-saved-as.checklist.json"
+    },
+    "25": {
+      "A": "Revit build",
+      "B": "24.3.60.12"
+    },
+    "27": {
+      "A": "Explicit checklist element UniqueIds; host basic walls and ceilings on the declared level, New in the declared phase. Types are checked once; links and other elements excluded. No view/selection filter or result cap.\nThis is a saved snapshot. Editing cells does not rerun Revit checks; rerun the command to refresh.",
+      "B": ""
+    },
+    "28": {
+      "A": "",
+      "B": ""
+    },
+    "29": {
+      "A": "",
+      "B": ""
+    }
+  },
+  "Findings": {
+    "1": {
+      "A": "BIM AGENT LAB | Findings",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": "",
+      "F": "",
+      "G": "",
+      "H": "",
+      "I": "",
+      "J": "",
+      "K": ""
+    },
+    "2": {
+      "A": "One row per missing type field. Affected counts overlap when one type has multiple gaps; use Summary for the distinct count. Complete for checklist scope",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": "",
+      "F": "",
+      "G": "",
+      "H": "",
+      "I": "",
+      "J": "",
+      "K": ""
+    },
+    "4": {
+      "A": "Category",
+      "B": "Type",
+      "C": "Type unique ID",
+      "D": "Field",
+      "E": "Status",
+      "F": "Reason",
+      "G": "Observed value",
+      "H": "Rule ID",
+      "I": "Requirement source",
+      "J": "Parameter ID",
+      "K": "Affected instances"
+    },
+    "6": {
+      "A": "No rows in this scope."
+    }
+  },
+  "Affected elements": {
+    "1": {
+      "A": "BIM AGENT LAB | Affected elements",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": "",
+      "F": "",
+      "G": "",
+      "H": "",
+      "I": ""
+    },
+    "2": {
+      "A": "One row per distinct instance with a missing required type value. Unexamined cases are listed on Rules and coverage. Complete for checklist scope",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": "",
+      "F": "",
+      "G": "",
+      "H": "",
+      "I": ""
+    },
+    "4": {
+      "A": "Case ID",
+      "B": "Element ID",
+      "C": "Element unique ID",
+      "D": "Category",
+      "E": "Type",
+      "F": "Type unique ID",
+      "G": "Type status",
+      "H": "Missing fields",
+      "I": "Rule IDs"
+    },
+    "6": {
+      "A": "No rows in this scope."
+    }
+  },
+  "Rules and coverage": {
+    "1": {
+      "A": "BIM AGENT LAB | Rules and coverage",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": "",
+      "F": "",
+      "G": "",
+      "H": "",
+      "I": "",
+      "J": "",
+      "K": "",
+      "L": ""
+    },
+    "2": {
+      "A": "Required, optional and unexamined fields are retained. Nonempty text does not validate rating, assembly, quantity or code compliance.",
+      "B": "",
+      "C": "",
+      "D": "",
+      "E": "",
+      "F": "",
+      "G": "",
+      "H": "",
+      "I": "",
+      "J": "",
+      "K": "",
+      "L": ""
+    },
+    "4": {
+      "A": "Coverage",
+      "B": "Complete for checklist scope",
+      "C": "",
+      "D": "",
+      "E": "",
+      "F": ""
+    },
+    "5": {
+      "A": "Scope",
+      "B": "Explicit checklist element UniqueIds; host basic walls and ceilings on the declared level, New in the declared phase. Types are checked once; links and other elements excluded. No view/selection filter or result cap.",
+      "C": "",
+      "D": "",
+      "E": "",
+      "F": ""
+    },
+    "6": {
+      "A": "Checklist ID",
+      "B": "BAL-TYPE-INFO-v1",
+      "C": "",
+      "D": "",
+      "E": "",
+      "F": ""
+    },
+    "7": {
+      "A": "Checklist path",
+      "B": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-saved-as.checklist.json",
+      "C": "",
+      "D": "",
+      "E": "",
+      "F": ""
+    },
+    "8": {
+      "A": "Level / phase",
+      "B": "L1 - Block 43 / New Construction (New)",
+      "C": "",
+      "D": "",
+      "E": "",
+      "F": ""
+    },
+    "9": {
+      "A": "Units",
+      "B": "Instance counts and text; no measured quantities.",
+      "C": "",
+      "D": "",
+      "E": "",
+      "F": ""
+    },
+    "10": {
+      "A": "Exclusions",
+      "B": "1196 other host wall/ceiling instances; 6 link instances",
+      "C": "",
+      "D": "",
+      "E": "",
+      "F": ""
+    },
+    "14": {
+      "A": "Category",
+      "B": "Type",
+      "C": "Type unique ID",
+      "D": "Rule ID",
+      "E": "Field",
+      "F": "Required",
+      "G": "Status",
+      "H": "Reason",
+      "I": "Observed value",
+      "J": "Parameter ID",
+      "K": "Requirement source",
+      "L": "Type status"
+    },
+    "15": {
+      "A": "Ceilings",
+      "B": "BAL INFO Ceiling ACT",
+      "C": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026097e",
+      "D": "TYPE-INFO-Code",
+      "E": "Code",
+      "F": "Yes",
+      "G": "Present",
+      "H": "NonemptyText",
+      "I": "C-ACT",
+      "J": "BuiltInParameter.ALL_MODEL_TYPE_MARK",
+      "K": "BAL-TYPE-INFO-v1: BAL INFO Ceiling ACT",
+      "L": "Pass"
+    },
+    "16": {
+      "A": "Ceilings",
+      "B": "BAL INFO Ceiling ACT",
+      "C": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026097e",
+      "D": "TYPE-INFO-FireRating",
+      "E": "FireRating",
+      "F": "No",
+      "G": "NotRequired",
+      "H": "ExplicitChecklistException",
+      "I": "",
+      "J": "BuiltInParameter.FIRE_RATING",
+      "K": "BAL-TYPE-INFO-v1: BAL INFO Ceiling ACT",
+      "L": "Pass"
+    },
+    "17": {
+      "A": "Ceilings",
+      "B": "BAL INFO Ceiling ACT",
+      "C": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026097e",
+      "D": "TYPE-INFO-AssemblyReference",
+      "E": "AssemblyReference",
+      "F": "No",
+      "G": "NotRequired",
+      "H": "ExplicitChecklistException",
+      "I": "",
+      "J": "SharedParameter:cd425f17-1bb4-4d3f-a088-902728147491",
+      "K": "BAL-TYPE-INFO-v1: BAL INFO Ceiling ACT",
+      "L": "Pass"
+    },
+    "18": {
+      "A": "Ceilings",
+      "B": "BAL INFO Ceiling GWB",
+      "C": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026098e",
+      "D": "TYPE-INFO-Code",
+      "E": "Code",
+      "F": "Yes",
+      "G": "Present",
+      "H": "NonemptyText",
+      "I": "C-GWB",
+      "J": "BuiltInParameter.ALL_MODEL_TYPE_MARK",
+      "K": "BAL-TYPE-INFO-v1: BAL INFO Ceiling GWB",
+      "L": "Pass"
+    },
+    "19": {
+      "A": "Ceilings",
+      "B": "BAL INFO Ceiling GWB",
+      "C": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026098e",
+      "D": "TYPE-INFO-FireRating",
+      "E": "FireRating",
+      "F": "No",
+      "G": "NotRequired",
+      "H": "ExplicitChecklistException",
+      "I": "",
+      "J": "BuiltInParameter.FIRE_RATING",
+      "K": "BAL-TYPE-INFO-v1: BAL INFO Ceiling GWB",
+      "L": "Pass"
+    },
+    "20": {
+      "A": "Ceilings",
+      "B": "BAL INFO Ceiling GWB",
+      "C": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026098e",
+      "D": "TYPE-INFO-AssemblyReference",
+      "E": "AssemblyReference",
+      "F": "No",
+      "G": "NotRequired",
+      "H": "ExplicitChecklistException",
+      "I": "",
+      "J": "SharedParameter:cd425f17-1bb4-4d3f-a088-902728147491",
+      "K": "BAL-TYPE-INFO-v1: BAL INFO Ceiling GWB",
+      "L": "Pass"
+    },
+    "21": {
+      "A": "Walls",
+      "B": "BAL INFO Wall A",
+      "C": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026096a",
+      "D": "TYPE-INFO-Code",
+      "E": "Code",
+      "F": "Yes",
+      "G": "Present",
+      "H": "NonemptyText",
+      "I": "W-A",
+      "J": "BuiltInParameter.ALL_MODEL_TYPE_MARK",
+      "K": "BAL-TYPE-INFO-v1: BAL INFO Wall A",
+      "L": "Pass"
+    },
+    "22": {
+      "A": "Walls",
+      "B": "BAL INFO Wall A",
+      "C": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026096a",
+      "D": "TYPE-INFO-FireRating",
+      "E": "FireRating",
+      "F": "Yes",
+      "G": "Present",
+      "H": "NonemptyText",
+      "I": "60 min",
+      "J": "BuiltInParameter.FIRE_RATING",
+      "K": "BAL-TYPE-INFO-v1: BAL INFO Wall A",
+      "L": "Pass"
+    },
+    "23": {
+      "A": "Walls",
+      "B": "BAL INFO Wall A",
+      "C": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026096a",
+      "D": "TYPE-INFO-AssemblyReference",
+      "E": "AssemblyReference",
+      "F": "Yes",
+      "G": "Present",
+      "H": "NonemptyText",
+      "I": "DEMO-ASM-01",
+      "J": "SharedParameter:cd425f17-1bb4-4d3f-a088-902728147491",
+      "K": "BAL-TYPE-INFO-v1: BAL INFO Wall A",
+      "L": "Pass"
+    },
+    "24": {
+      "A": "Walls",
+      "B": "BAL INFO Wall B",
+      "C": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026096f",
+      "D": "TYPE-INFO-Code",
+      "E": "Code",
+      "F": "Yes",
+      "G": "Present",
+      "H": "NonemptyText",
+      "I": "W-B",
+      "J": "BuiltInParameter.ALL_MODEL_TYPE_MARK",
+      "K": "BAL-TYPE-INFO-v1: BAL INFO Wall B",
+      "L": "Pass"
+    },
+    "25": {
+      "A": "Walls",
+      "B": "BAL INFO Wall B",
+      "C": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026096f",
+      "D": "TYPE-INFO-FireRating",
+      "E": "FireRating",
+      "F": "Yes",
+      "G": "Present",
+      "H": "NonemptyText",
+      "I": "60 min",
+      "J": "BuiltInParameter.FIRE_RATING",
+      "K": "BAL-TYPE-INFO-v1: BAL INFO Wall B",
+      "L": "Pass"
+    },
+    "26": {
+      "A": "Walls",
+      "B": "BAL INFO Wall B",
+      "C": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026096f",
+      "D": "TYPE-INFO-AssemblyReference",
+      "E": "AssemblyReference",
+      "F": "Yes",
+      "G": "Present",
+      "H": "NonemptyText",
+      "I": "DEMO-ASM-01",
+      "J": "SharedParameter:cd425f17-1bb4-4d3f-a088-902728147491",
+      "K": "BAL-TYPE-INFO-v1: BAL INFO Wall B",
+      "L": "Pass"
+    },
+    "27": {
+      "A": "Walls",
+      "B": "BAL INFO Wall C",
+      "C": "6e5a3689-c170-4e43-b22b-e80a27806cdb-00260974",
+      "D": "TYPE-INFO-Code",
+      "E": "Code",
+      "F": "Yes",
+      "G": "Present",
+      "H": "NonemptyText",
+      "I": "W-C",
+      "J": "BuiltInParameter.ALL_MODEL_TYPE_MARK",
+      "K": "BAL-TYPE-INFO-v1: BAL INFO Wall C",
+      "L": "Pass"
+    },
+    "28": {
+      "A": "Walls",
+      "B": "BAL INFO Wall C",
+      "C": "6e5a3689-c170-4e43-b22b-e80a27806cdb-00260974",
+      "D": "TYPE-INFO-FireRating",
+      "E": "FireRating",
+      "F": "No",
+      "G": "NotRequired",
+      "H": "ExplicitChecklistException",
+      "I": "",
+      "J": "BuiltInParameter.FIRE_RATING",
+      "K": "BAL-TYPE-INFO-v1: BAL INFO Wall C",
+      "L": "Pass"
+    },
+    "29": {
+      "A": "Walls",
+      "B": "BAL INFO Wall C",
+      "C": "6e5a3689-c170-4e43-b22b-e80a27806cdb-00260974",
+      "D": "TYPE-INFO-AssemblyReference",
+      "E": "AssemblyReference",
+      "F": "No",
+      "G": "NotRequired",
+      "H": "ExplicitChecklistException",
+      "I": "",
+      "J": "SharedParameter:cd425f17-1bb4-4d3f-a088-902728147491",
+      "K": "BAL-TYPE-INFO-v1: BAL INFO Wall C",
+      "L": "Pass"
+    },
+    "30": {
+      "A": "Walls",
+      "B": "BAL INFO Wall D",
+      "C": "6e5a3689-c170-4e43-b22b-e80a27806cdb-00260979",
+      "D": "TYPE-INFO-Code",
+      "E": "Code",
+      "F": "Yes",
+      "G": "Present",
+      "H": "NonemptyText",
+      "I": "W-D",
+      "J": "BuiltInParameter.ALL_MODEL_TYPE_MARK",
+      "K": "BAL-TYPE-INFO-v1: BAL INFO Wall D",
+      "L": "Pass"
+    },
+    "31": {
+      "A": "Walls",
+      "B": "BAL INFO Wall D",
+      "C": "6e5a3689-c170-4e43-b22b-e80a27806cdb-00260979",
+      "D": "TYPE-INFO-FireRating",
+      "E": "FireRating",
+      "F": "No",
+      "G": "NotRequired",
+      "H": "ExplicitChecklistException",
+      "I": "",
+      "J": "BuiltInParameter.FIRE_RATING",
+      "K": "BAL-TYPE-INFO-v1: BAL INFO Wall D",
+      "L": "Pass"
+    },
+    "32": {
+      "A": "Walls",
+      "B": "BAL INFO Wall D",
+      "C": "6e5a3689-c170-4e43-b22b-e80a27806cdb-00260979",
+      "D": "TYPE-INFO-AssemblyReference",
+      "E": "AssemblyReference",
+      "F": "No",
+      "G": "NotRequired",
+      "H": "ExplicitChecklistException",
+      "I": "",
+      "J": "SharedParameter:cd425f17-1bb4-4d3f-a088-902728147491",
+      "K": "BAL-TYPE-INFO-v1: BAL INFO Wall D",
+      "L": "Pass"
+    },
+    "35": {
+      "A": "Scope issues (unexamined cases)"
+    },
+    "36": {
+      "A": "Case ID",
+      "B": "Element unique ID",
+      "C": "Status",
+      "D": "Reason"
+    },
+    "37": {
+      "A": "No scope issues."
+    },
+    "40": {
+      "A": "Elements with unexamined type fields"
+    },
+    "41": {
+      "A": "Case ID",
+      "B": "Element unique ID",
+      "C": "Element ID",
+      "D": "Type",
+      "E": "Type unique ID",
+      "F": "Category",
+      "G": "Unexamined fields",
+      "H": "Reasons",
+      "I": "Rule IDs"
+    },
+    "42": {
+      "A": "No unexamined type fields."
+    }
+  }
+}

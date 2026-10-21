@@ -1,0 +1,16 @@
+{
+  "observedUtc": "2026-10-21T21:04:39.732178+00:00",
+  "userReportedSaveAs": true,
+  "oldPath": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-same-identity.rvt",
+  "newPath": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-saved-as.rvt",
+  "oldLifetime": "8a2d13a1843241b4be27c85e012dec94",
+  "newLifetime": "e777e293d22645f3b464b4e7c7dd2a71",
+  "sameProject": true,
+  "differentLifetime": true,
+  "priorTokenExpiry": "2026-10-21T20:53:38.0384898Z",
+  "priorTokenResult": "ContextExpired",
+  "limitation": "Prior token expired before post-SaveAs request; this is not a fresh-token ContextChanged reproduction.",
+  "ModifiedBefore": false,
+  "ModifiedAfter": false,
+  "FindingCount": 0
+}

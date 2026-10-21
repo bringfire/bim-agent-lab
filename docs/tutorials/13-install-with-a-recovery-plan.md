@@ -41,3 +41,17 @@ A separate modal-dialog test correctly returned a timeout and allowed a later re
 Suggested participant follow-up:
 
 > Show that the test reached the situation we intended. Which observation proves the claim, and which part remains unobserved? Keep failed attempts, explain the retry, and don't count an error message as proof of cleanup or cancellation inside the application.
+
+## Ask what else could explain a passing result
+
+The author completed the manual Save As and replied, “BAL-info-saved-as is now saved.” The agent verified the new file and document lifetime. But the earlier context token had already expired: rejecting it could be explained by expiry alone. We kept the narrower result and left the specific Save As invalidation check open. A useful test must distinguish the explanation we intend to prove from other explanations that fit the same result.
+
+The agent then changed one type value in the disposable model through Revit, reused the earlier token and confirmed that the report contained the new value. A query made after the change is evidence of fresh data only if we compare the actual value. The first attempt to undo the test edit did not restore it; a second report exposed that. Closing without saving the temporary edit and reopening restored the saved baseline. The manual JSON, text and four-sheet Excel outputs were also compared with the MCP result.
+
+For shutdown, the agent connected clients that had sent incomplete input. Stop closed those connections promptly. A separate control deliberately omitted Stop: those connections eventually closed through their ordinary timeout. The observer correctly refused to count that as a Stop result. The first observer also checked session cleanup too early, at connection closure; it was corrected to observe the two stages separately. This applies the review lesson to tests themselves: a test can contain a mistaken model of an operation's lifetime too.
+
+Suggested follow-up for participants:
+
+> What other explanation could produce this result? Add a control that separates those explanations. Confirm that our test fails when the behavior we want to prove does not happen, and record any limits on the claim.
+
+The [technical guide](../../projects/revit-readiness/docs/mcp-bridge-setup.md) explains the timing controls and retained evidence. These observations advance Task 7; they do not close the remaining instrumented cancellation checks or either desktop application's final acceptance.

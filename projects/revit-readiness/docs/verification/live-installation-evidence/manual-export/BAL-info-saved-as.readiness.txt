@@ -1,0 +1,12 @@
+Ceilings / BAL INFO Ceiling ACT: 2 instances; Pass
+  Cases: BAL-INFO-CACT-01, BAL-INFO-CACT-02
+Ceilings / BAL INFO Ceiling GWB: 2 instances; Pass
+  Cases: BAL-INFO-CGWB-01, BAL-INFO-CGWB-02
+Walls / BAL INFO Wall A: 3 instances; Pass
+  Cases: BAL-INFO-WA-01, BAL-INFO-WA-02, BAL-INFO-WA-03
+Walls / BAL INFO Wall B: 3 instances; Pass
+  Cases: BAL-INFO-WB-01, BAL-INFO-WB-02, BAL-INFO-WB-03
+Walls / BAL INFO Wall C: 3 instances; Pass
+  Cases: BAL-INFO-WC-01, BAL-INFO-WC-02, BAL-INFO-WC-03
+Walls / BAL INFO Wall D: 3 instances; Pass
+  Cases: BAL-INFO-WD-01, BAL-INFO-WD-02, BAL-INFO-WD-03

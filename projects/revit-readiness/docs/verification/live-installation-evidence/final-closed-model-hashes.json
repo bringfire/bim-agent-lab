@@ -1,0 +1,63 @@
+{
+  "utc": "2026-10-21T21:24:55.994212+00:00",
+  "pass": true,
+  "verified": [
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\required-information\\BAL-info-complete.rvt",
+      "sha256": "b4a7a1e1733f857ba9e31a1659594a01076560e31e2f11bb6192789bd64524de"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-complete.rvt",
+      "sha256": "b4a7a1e1733f857ba9e31a1659594a01076560e31e2f11bb6192789bd64524de"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\required-information\\BAL-info-complete.checklist.json",
+      "sha256": "6edd2e120d6eb77536afb4d620295b9a5b88bf332730e7cd85303122e50c8729"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-complete.checklist.json",
+      "sha256": "6edd2e120d6eb77536afb4d620295b9a5b88bf332730e7cd85303122e50c8729"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\required-information\\BAL-info-wall-defects.rvt",
+      "sha256": "efd2717188956f7a070480323d85bcffe765007135915c1908a909fe04d50d17"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-wall-defects.rvt",
+      "sha256": "efd2717188956f7a070480323d85bcffe765007135915c1908a909fe04d50d17"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\required-information\\BAL-info-wall-defects.checklist.json",
+      "sha256": "b58387090cdd4704086172eb4d45773f3e7e3b36f5d6480226417a82ca695011"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-wall-defects.checklist.json",
+      "sha256": "b58387090cdd4704086172eb4d45773f3e7e3b36f5d6480226417a82ca695011"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\required-information\\BAL-info-ceiling-negative.rvt",
+      "sha256": "520ee45b056d004f10189a4bf26ede3ce22ff2b06a9cbe0a25c1eb79d384a003"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-ceiling-negative.rvt",
+      "sha256": "520ee45b056d004f10189a4bf26ede3ce22ff2b06a9cbe0a25c1eb79d384a003"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\required-information\\BAL-info-ceiling-negative.checklist.json",
+      "sha256": "3f7c58277f550a1a52b0f75cb9ad2fc818b771b172f91ae0b48ba4e4340a0cc0"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-ceiling-negative.checklist.json",
+      "sha256": "3f7c58277f550a1a52b0f75cb9ad2fc818b771b172f91ae0b48ba4e4340a0cc0"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-saved-as.rvt",
+      "sha256": "426e8c7cfd7563d0986d89eb0fc4f9d5b02efc36c1298a0239414f3f7dc987f2",
+      "comparison": "Matches saved-as closed hash after discarding temporary edit, before reopening and manual export."
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-same-identity.rvt",
+      "sha256": "b4a7a1e1733f857ba9e31a1659594a01076560e31e2f11bb6192789bd64524de"
+    }
+  ]
+}

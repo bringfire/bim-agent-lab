@@ -2,7 +2,7 @@
 
 Date: 2026-10-21. Installed source checkpoint: `9a93f6d29bf3c46972701db53bfaee598ec4fd0c`. This follows the [offline deployment verification](2026-10-21-recoverable-installation.md). Task 7 remains open until its remaining host checks and independent review are accounted for. SDK-harness observations are not desktop A8 acceptance.
 
-Retained text evidence: [capture index](live-installation-evidence/capture-index.json), [SHA-256 inventory](live-installation-evidence/hashes.json), [installed target hashes](live-installation-evidence/installed-second-verification.json), [original snapshot](live-installation-evidence/before-install.json), [first undo](live-installation-evidence/after-undo-first.json) and [second undo](live-installation-evidence/after-undo-second.json). The index explicitly separates 26 successful captures from the failed/partial attempts. Actual model and backup/staged binary bytes remain outside Git.
+Retained evidence: [capture index](live-installation-evidence/capture-index.json), [SHA-256 inventory](live-installation-evidence/hashes.json), [installed target hashes](live-installation-evidence/installed-second-verification.json), [original snapshot](live-installation-evidence/before-install.json), [first undo](live-installation-evidence/after-undo-first.json) and [second undo](live-installation-evidence/after-undo-second.json). The index separates 35 successful SDK captures from failed/partial attempts and failed interpretations of otherwise valid reports. The manual workbook is retained; actual models and backup/staged binary bytes remain outside Git.
 
 From the repository root, reproduce the evidence checks without running Revit:
 
@@ -11,7 +11,7 @@ python projects/revit-readiness/tests/verify_live_lifecycle_capture.py projects/
 python projects/revit-readiness/tests/test_verify_live_lifecycle_capture.py
 ```
 
-The first command independently checks actual wire revision, catalog, correlated response uniqueness, text/structured/saved-result agreement, exact expected outcomes, restoration snapshots and session/document identities. Nine checker tests include deliberately missing/duplicate/unsolicited responses, wrong protocol, wrong expected outcome, altered saved/text data, false completion, changed restoration state and lost document lifetime. These checks do not establish unobserved UI actions, reader-entry counts, or the Task 8 BIM oracle.
+The first command independently checks actual wire revision, catalog, correlated response uniqueness, text/structured/saved-result agreement, exact expected outcomes, restoration snapshots and session/document identities. Sixteen checker tests challenge those properties, the connected observation window, edit freshness, token timing, Stop versus frame expiry, workbook freshness and recorded post-close hashes. These checks do not establish unobserved UI actions, reader-entry counts, or the Task 8 BIM oracle.
 
 ## Installation and recovery
 
@@ -50,21 +50,43 @@ Closing and reopening the same saved copy rejected its old token with `ContextCh
 
 A disposable copy of Autodesk's `rac_basic_sample_family.rfa` returned `UnsupportedDocument`; a new unsaved project returned `UnsavedProject`. The first attempted family check ran while the Open dialog was still held after a failed UI action. It returned `DeadlineExceeded`, failing its expected-family assertion. That capture is retained as a setup failure. After observing the family loaded in the Family Editor, a new capture passed. A failed UI action must not silently become evidence for the intended document state.
 
-## Remaining gates
+## Save As, fresh values and restored test state
+
+The author reported “BAL-info-saved-as is now saved.” A new context on that file retained the project identity but changed the document path and lifetime; a full report returned zero findings with both modified flags false. The pre-Save As token had expired before the manual step finished. Its `ContextExpired` result is retained but **does not isolate fresh-token Save As invalidation**. See the [observation](live-installation-evidence/save-as-observation.json).
+
+On this disposable copy, the agent used native Type Properties to change wall A's Type Mark from `W-A` to `W-A-LIVE`. The same pre-edit context token returned the new value, with modified state true before and after the query. A Ctrl-Z attempt did not restore it; the resulting report correctly still contained `W-A-LIVE`. Closing without saving this deliberately introduced edit, then reopening the saved file, restored `W-A` and false/false modified flags. Both the unsuccessful attempt and [verified restoration](live-installation-evidence/value-edit-restoration.json) remain recorded. An initial comparison script searched for the UI label `TypeMark`; the report's contract calls that field `Code`. Correcting the selector used the actual declared schema, not a changed expected value.
+
+Stop then removed the session descriptor. Restart issued a new session, and the prior token returned `ContextExpired` **before its recorded expiry time**. Unknown/revoked tokens share this error code by contract. This distinguishes restart invalidation from ordinary five-minute expiry.
+
+## Connected timeout, incomplete connections and normal shutdown
+
+The SDK test driver now accepts `--finish-file`: after the expected response it keeps its SDK connection alive until a separate release file appears, observes for at least three further seconds, and verifies the catalog again on the same connection. Two subprocess tests first failed against the missing option and then passed; a wire-path assumption in the test was corrected separately. Protocol regression, including compatible revisions and strict July/legacy rejection, passed. These are test-only changes; the installed production build remains `9a93f6d`.
+
+In [modal-deadline-connected](live-installation-evidence/modal-deadline-connected/sdk-client-result.json), the request expired while Open remained visibly held. After cancellation of that UI dialog, the client stayed connected for 3,005 ms and completed its final catalog call. Independent wire checking found one correlated deadline response and no duplicate or unsolicited late response. This is a bounded traffic observation, **not a reader-entry count**.
+
+The [pipe observer](../../tests/Observe-LivePipeStop.ps1) connected three actual private-pipe clients: no bytes, a partial header, and a partial body. Native Stop produced EOF in 282–286 ms and descriptor cleanup within a further 101 ms, while Revit remained running. The first observer incorrectly checked descriptor absence immediately at EOF and failed; source inspection confirmed descriptor removal follows draining all workers. The corrected observer separately waits up to two seconds for cleanup. The original failed capture stays intact. A no-Stop negative control produced EOF only at 5,004–5,012 ms, retained the descriptor and correctly failed the Stop claim. A subsequent restart and full report passed.
+
+Finally, native Alt-F4 closed the application normally; the process exited and the descriptor was absent. No valid request was deliberately held during this normal-shutdown control, so it does not establish in-flight callback shutdown. Fourteen [post-close hash comparisons](live-installation-evidence/final-closed-model-hashes.json) matched the six original source files, their six working copies, the same-identity copy and the saved-as file's separately recorded closed baseline.
+
+## Existing manual outputs still work
+
+The installed manual Required type information command produced JSON, text and the four-sheet Excel workbook from the restored saved-as copy. JSON matched the prior MCP report except its generation timestamp. The independent Python ZIP/XML reader checked workbook freshness, model/checklist identity, scope counts, exclusions, false modified flags, empty findings/affected sheets and all 18 rule rows against the JSON. Text retained all six types and 16 case IDs. See [comparison and hashes](live-installation-evidence/manual-export/comparison.json) and the [workbook](live-installation-evidence/manual-export/BAL-info-saved-as.readiness.xlsx). The three principal samples and their native-schedule oracle remain Task 8 work.
+
+## Remaining gates at the follow-up checkpoint
 
 | Gate | Observation at this checkpoint |
 |---|---|
 | Real installation, exact undo twice, reinstall | Observed; private backup bytes retained |
-| Explicit Start, repeated Start/Stop, fresh restart session | Observed; old-context-after-restart check still pending |
+| Explicit Start, repeated Start/Stop, fresh restart session | Observed, including rejection of an unexpired token from the stopped session |
 | No project, family, unsaved project, checklist controls | Expected error results observed; reader-entry instrumentation not included |
 | Copied project switch, close/reopen, changed checklist, expired token | Expected invalidation observed |
-| Save As, same-document value edits | Pending |
-| Modal request expiry and subsequent request | Observed; continuously connected no-late-success and reader-entry evidence pending |
+| Save As, same-document value edits | Save As lifetime/path observed; fresh-token invalidation still unisolated. Same-token fresh value and restoration observed |
+| Modal request expiry and subsequent request | Connected three-second post-release window has no late wire result; internal reader-entry evidence pending |
 | Actual cancellation/disconnect during preparation or an executing read | Pending; offline tests are separate evidence |
-| Stop/shutdown with queued/executing work, partial/idle connections | Pending |
+| Stop/shutdown with queued/executing work, partial/idle connections | Stop with three incomplete input states and ordinary application shutdown observed; queued/executing shutdown remains pending |
 | Every native Raise outcome, event retirement and Idling unhook | Not instrumented in this production build |
 | Two actual Revit instances | Not exercised |
-| Manual JSON/text/Excel command after installation | Pending |
+| Manual JSON/text/Excel command after installation | Observed and compared on the restored saved-as complete copy |
 | Three samples, NC1/NC2 independent comparison, both desktops | Task 8; not established by this SDK lifecycle run |
 
 Diagnostic instrumentation, if used later, must be identified and hashed separately from this installed production build. No Task 7/R3 closure is asserted here.

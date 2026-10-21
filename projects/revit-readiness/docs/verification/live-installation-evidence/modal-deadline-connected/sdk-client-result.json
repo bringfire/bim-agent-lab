@@ -1,0 +1,67 @@
+{
+  "clientKind": "SDK harness, not desktop A8 acceptance",
+  "protocol": "2026-07-28",
+  "tools": [
+    "revit_check_required_type_information",
+    "revit_get_readiness_context"
+  ],
+  "expected": "DeadlineExceeded",
+  "context": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\u0022contractVersion\u0022:1,\u0022requestId\u0022:\u002280bd6f88461148bc8e86e3f8933aabd8\u0022,\u0022bridgeSessionId\u0022:\u00226d57ac3679974b33a549d798d6c7a785\u0022,\u0022checklistSha256\u0022:\u0022086b0babb5d17a974fae4069062f96bc2488ab781c6721dc8c719293e63cef77\u0022,\u0022revitPid\u0022:82836,\u0022revitBuild\u0022:\u002224.3.60.12\u0022,\u0022documentLifetimeId\u0022:\u0022f29a4c2fd6f743bfbfad5ec7bfbb7ca7\u0022,\u0022projectUniqueId\u0022:\u00227cacd49c-ac17-4591-ad0a-cbc9bb40015a-00012b83\u0022,\u0022documentPath\u0022:\u0022D:\\\\bim-agent-lab\\\\projects\\\\revit-readiness\\\\samples\\\\local\\\\mcp-live-task7\\\\a10630e39dae448ba55abbfe0bc7ab6b\\\\models\\\\BAL-info-saved-as.rvt\u0022,\u0022checklistId\u0022:\u0022BAL-TYPE-INFO-v1\u0022,\u0022checklistPath\u0022:\u0022D:\\\\bim-agent-lab\\\\projects\\\\revit-readiness\\\\samples\\\\local\\\\mcp-live-task7\\\\a10630e39dae448ba55abbfe0bc7ab6b\\\\models\\\\BAL-info-saved-as.checklist.json\u0022,\u0022scope\u0022:\u0022Explicit checklist element UniqueIds; host basic walls and ceilings on the declared level, New in the declared phase. Types are checked once; links and other elements excluded. No view/selection filter or result cap.\u0022,\u0022level\u0022:\u0022L1 - Block 43\u0022,\u0022phase\u0022:\u0022New Construction\u0022,\u0022contextToken\u0022:\u0022pi5VtrpS42f6Hw8MB1/JOsehaXiJ3sP3hdrbmilnMa8=\u0022,\u0022expiresUtc\u0022:\u00222026-10-21T21:23:25.2386175Z\u0022}"
+      }
+    ],
+    "structuredContent": {
+      "contractVersion": 1,
+      "requestId": "80bd6f88461148bc8e86e3f8933aabd8",
+      "bridgeSessionId": "6d57ac3679974b33a549d798d6c7a785",
+      "checklistSha256": "086b0babb5d17a974fae4069062f96bc2488ab781c6721dc8c719293e63cef77",
+      "revitPid": 82836,
+      "revitBuild": "24.3.60.12",
+      "documentLifetimeId": "f29a4c2fd6f743bfbfad5ec7bfbb7ca7",
+      "projectUniqueId": "7cacd49c-ac17-4591-ad0a-cbc9bb40015a-00012b83",
+      "documentPath": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-saved-as.rvt",
+      "checklistId": "BAL-TYPE-INFO-v1",
+      "checklistPath": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-saved-as.checklist.json",
+      "scope": "Explicit checklist element UniqueIds; host basic walls and ceilings on the declared level, New in the declared phase. Types are checked once; links and other elements excluded. No view/selection filter or result cap.",
+      "level": "L1 - Block 43",
+      "phase": "New Construction",
+      "contextToken": "pi5VtrpS42f6Hw8MB1/JOsehaXiJ3sP3hdrbmilnMa8=",
+      "expiresUtc": "2026-10-21T21:23:25.2386175Z"
+    },
+    "isError": false,
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "bim-agent-lab",
+        "version": "0.1.0"
+      }
+    },
+    "resultType": "complete"
+  },
+  "check": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\u0022code\u0022:\u0022DeadlineExceeded\u0022,\u0022message\u0022:\u0022The original request deadline expired. No report was returned.\u0022,\u0022requestId\u0022:\u002284ed57c47e654e2bb401f88c78014b6e\u0022,\u0022retryable\u0022:false}"
+      }
+    ],
+    "structuredContent": {
+      "code": "DeadlineExceeded",
+      "message": "The original request deadline expired. No report was returned.",
+      "requestId": "84ed57c47e654e2bb401f88c78014b6e",
+      "retryable": false
+    },
+    "isError": true,
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "bim-agent-lab",
+        "version": "0.1.0"
+      }
+    },
+    "resultType": "complete"
+  },
+  "pass": true,
+  "completedUtc": "2026-10-21T21:19:15.466683Z"
+}

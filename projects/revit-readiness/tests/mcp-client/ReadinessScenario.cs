@@ -5,10 +5,12 @@ using System.Text.Json;
 // Verification driver only: all MCP transport and tool dispatch use the official SDK.
 internal static class ReadinessScenario
 {
-    public static async Task<int> Run(string server,List<string> serverArgs,string evidence,string protocol,string expected,int? pid,string? token,string? pauseFile)
+    public static async Task<int> Run(string server,List<string> serverArgs,string evidence,string protocol,string expected,int? pid,string? token,string? pauseFile,string? finishFile)
     {
         if(Directory.Exists(evidence))throw new ArgumentException("Use a new evidence directory for each attempt.");
         if(pauseFile is not null && File.Exists(pauseFile))throw new ArgumentException("Pause-release file must be absent at admission.");
+        if(finishFile is not null && File.Exists(finishFile))throw new ArgumentException("Finish-release file must be absent at admission.");
+        if(finishFile is not null && finishFile==pauseFile)throw new ArgumentException("Preparation and finish release files must be distinct.");
         Directory.CreateDirectory(evidence);
         var json=new JsonSerializerOptions{WriteIndented=true};
         File.WriteAllText(Path.Combine(evidence,"partial.json"),JsonSerializer.Serialize(new{startedUtc=DateTime.UtcNow,expected,protocol,pid},json));
@@ -49,6 +51,19 @@ internal static class ReadinessScenario
             _=>result.IsError==true && data.TryGetProperty("code",out var code) && code.GetString()==expected && !data.TryGetProperty("report",out _)
         };
         File.WriteAllText(Path.Combine(evidence,"sdk-client-result.json"),JsonSerializer.Serialize(new{clientKind="SDK harness, not desktop A8 acceptance",protocol=client.NegotiatedProtocolVersion,tools=names,expected,context,check,pass,completedUtc=DateTime.UtcNow},json));
+        if(finishFile is not null) {
+            // Keep the actual SDK transport alive while the operator releases the host UI.
+            // This is a bounded observation, not proof of internal reader-entry counts.
+            File.WriteAllText(Path.Combine(evidence,"response-ready.json"),JsonSerializer.Serialize(new{receivedUtc=DateTime.UtcNow,waitingFor=finishFile,pass},json));
+            Console.WriteLine("Response received; SDK connection retained until explicit finish release.");
+            while(!File.Exists(finishFile))await Task.Delay(100,stop.Token);
+            var releasedUtc=DateTime.UtcNow;
+            var observation=System.Diagnostics.Stopwatch.StartNew();
+            await Task.Delay(TimeSpan.FromSeconds(3),stop.Token);
+            var after=await client.ListToolsAsync(cancellationToken:stop.Token);
+            pass &= after.Select(t=>t.Name).Order(StringComparer.Ordinal).SequenceEqual(names);
+            File.WriteAllText(Path.Combine(evidence,"post-release-observation.json"),JsonSerializer.Serialize(new{releasedUtc,observedUntilUtc=DateTime.UtcNow,elapsedMilliseconds=observation.ElapsedMilliseconds,catalogCount=after.Count,pass},json));
+        }
         } finally { await client.DisposeAsync(); }
         // Completion is published only after the SDK transport has shut down.
         // Completion describes capture/test outcome; a failed assertion is retained, never overwritten as a retry.
