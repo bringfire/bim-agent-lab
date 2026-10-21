@@ -24,9 +24,19 @@
     "observedProtocol": "2025-06-18",
     "error": -32022,
     "toolCalls": "Not reached",
-    "fullApplicationRestartTest": "Pending",
-    "runtimeFeatureActivation": "Unverified; recognized CLI setting plus MCP reload did not change wire behavior",
-    "cleanup": "Temporary feature and probe remain on disk for pending full-restart test; private durable recovery retained"
+    "fullApplicationRestartTest": "Author reported restarted the app; six fresh connections still requested 2025-06-18 and received -32022",
+    "runtimeFeatureActivation": "CLI listed flag true after reported restart; desktop still used old exchange. Why the setting did not affect that path is unestablished.",
+    "cleanup": {
+      "ownedFeatureAndProbeRemoved": true,
+      "unrelatedCurrentSettingsPreserved": true,
+      "exactOriginalBytesRestored": false,
+      "originalParsedSettingsRestored": false,
+      "explanation": "Other settings changed during the experiment and were preserved; no full-file rollback.",
+      "featureListAfterCleanup": "Both relevant flags false",
+      "remainingProbeProcesses": 0,
+      "applicationCacheRefreshAfterCleanup": "Not claimed; disk restoration verified"
+    },
+    "restartCapturedConnections": 6
   },
   "claude": {
     "windowsPackageVersion": "3.1623.0.0",
@@ -103,8 +113,60 @@
       "sha256": "ce6725745d4d809f2a6f637d66ee9e7fe54abed38bfa952919a4fe3149b3b4e4"
     },
     {
+      "path": "codex-feature-restart/session-69fb59b2fc014e5fb1c9621f002b88d0/client-to-server.jsonl",
+      "sha256": "5aa98cc3fdc54a94c24b92dc2404c8e81af88f47ace5c09b184702cee2c1e83d"
+    },
+    {
+      "path": "codex-feature-restart/session-69fb59b2fc014e5fb1c9621f002b88d0/server-to-client.jsonl",
+      "sha256": "ce6725745d4d809f2a6f637d66ee9e7fe54abed38bfa952919a4fe3149b3b4e4"
+    },
+    {
+      "path": "codex-feature-restart/session-6c208a5ce5244349bb0e12bb242be95d/client-to-server.jsonl",
+      "sha256": "5aa98cc3fdc54a94c24b92dc2404c8e81af88f47ace5c09b184702cee2c1e83d"
+    },
+    {
+      "path": "codex-feature-restart/session-6c208a5ce5244349bb0e12bb242be95d/server-to-client.jsonl",
+      "sha256": "ce6725745d4d809f2a6f637d66ee9e7fe54abed38bfa952919a4fe3149b3b4e4"
+    },
+    {
+      "path": "codex-feature-restart/session-79a66ba7f09e442ba7384b29da30ad5f/client-to-server.jsonl",
+      "sha256": "5aa98cc3fdc54a94c24b92dc2404c8e81af88f47ace5c09b184702cee2c1e83d"
+    },
+    {
+      "path": "codex-feature-restart/session-79a66ba7f09e442ba7384b29da30ad5f/server-to-client.jsonl",
+      "sha256": "ce6725745d4d809f2a6f637d66ee9e7fe54abed38bfa952919a4fe3149b3b4e4"
+    },
+    {
+      "path": "codex-feature-restart/session-adb8abd35f4b43209c36bebc354de599/client-to-server.jsonl",
+      "sha256": "64c62e9614f91db65ee42af6e9bac26de3760260ec8fdd96492353cba2c587d7"
+    },
+    {
+      "path": "codex-feature-restart/session-adb8abd35f4b43209c36bebc354de599/server-to-client.jsonl",
+      "sha256": "ce6725745d4d809f2a6f637d66ee9e7fe54abed38bfa952919a4fe3149b3b4e4"
+    },
+    {
+      "path": "codex-feature-restart/session-c9505e49cb604c9c870cbb5cf8ba1d44/client-to-server.jsonl",
+      "sha256": "5aa98cc3fdc54a94c24b92dc2404c8e81af88f47ace5c09b184702cee2c1e83d"
+    },
+    {
+      "path": "codex-feature-restart/session-c9505e49cb604c9c870cbb5cf8ba1d44/server-to-client.jsonl",
+      "sha256": "ce6725745d4d809f2a6f637d66ee9e7fe54abed38bfa952919a4fe3149b3b4e4"
+    },
+    {
+      "path": "codex-feature-restart/session-eecb5df9aae241f99e7c4444f697044f/client-to-server.jsonl",
+      "sha256": "64c62e9614f91db65ee42af6e9bac26de3760260ec8fdd96492353cba2c587d7"
+    },
+    {
+      "path": "codex-feature-restart/session-eecb5df9aae241f99e7c4444f697044f/server-to-client.jsonl",
+      "sha256": "ce6725745d4d809f2a6f637d66ee9e7fe54abed38bfa952919a4fe3149b3b4e4"
+    },
+    {
       "path": "codex-features-experiment.txt",
       "sha256": "f8f01b95574989938b9843860478d7a6c5a132e25fb92107e8417f2e0f402d72"
+    },
+    {
+      "path": "codex-features-restored.txt",
+      "sha256": "c477a73301877a4ce77bf4a1299692bc48c0f82e220b84ef0fc4b76edf690ec9"
     },
     {
       "path": "sdk-default-comparison.json",
