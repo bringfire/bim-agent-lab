@@ -47,3 +47,7 @@ This does not mean every finding demands a redesign. Here the reviewer identifie
 > Reproduce the reviewer's result before changing the code. Test the failure through the real components that return the answer, keep a valid-input control, and record both the correction and what remains unverified.
 
 The [review/disposition](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-5-checklist-review.md) and [new evidence](../../projects/revit-readiness/docs/verification/2026-10-21-revit-adapter-review.md) distinguish the agent's verified correction from the independent follow-up still needed. Task 5 remains open; live Revit and desktop acceptance have not been demonstrated by these tests.
+
+### Independent closure
+
+The author relayed independent closure of T5-01 and Task 5 at `5e9a5dd`. The useful question is what that approval establishes: the corrected implementation and offline checks passed review. Installation and operation in the actual applications still need their own evidence. See the [closure record](../superpowers/reviews/revit-mcp-bridge/2026-10-21-task-5-closure.md).

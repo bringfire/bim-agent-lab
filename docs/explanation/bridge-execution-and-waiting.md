@@ -67,3 +67,19 @@ Cross actual endpoint origins **stop, disconnect, deadline** with **held-return 
 Saturate all eight retained permits with held callbacks, free their network connections, then prove eight connections still open, valid work returns Busy without dispatch, stop/restart cannot bypass the cap, and releasing callbacks restores service. Also run more exceptional Quiesced completions than the capacity limit to prove failed execution cannot leak successfully cleaned permits. Include a held callback on a client lifetime to challenge provider/connect/response cancellation separately. Keep earlier exception/peer-exit/strict-protocol regressions; update any test that incorrectly equates immediate invalidation with notification completion or demands future callback errors before Stop may finish.
 
 API basis: Microsoft documents [synchronous Cancel callbacks and aggregated errors](https://learn.microsoft.com/en-us/dotnet/api/system.threading.cancellationtokensource.cancel?view=net-10.0), and distinguishes immediate state transition from asynchronous notification in modern [CancelAsync](https://learn.microsoft.com/en-us/dotnet/api/system.threading.cancellationtokensource.cancelasync?view=net-10.0). The split above is original application code shared with net48, not copied framework code or a new SDK dependency.
+
+## Task 6: MCP tool lifetime and permitted waits
+
+Before implementing production handlers, extend the same model to the external host. The SDK owns MCP parsing, dispatch and client cancellation. Tool admission creates one request ID and 30-second budget; validation rejects caller-controlled paths/unknown arguments before invoking a bridge. Discovery never selects Revit. The production entry creates a lazy provider, so errors occur through the ordinary tool call.
+
+A tool reserves one of the runtime's eight retained-request slots before constructing RequestLifetime. The server assembly receives internal access to the existing runtime retention/disposal primitives rather than duplicating their ownership rules or exposing a new public API. The test assembly receives access to the real SessionCatalog's validated-descriptor seam. This changes no runtime policy or package versions.
+
+| Stage | Permitted wait | Exit / retained responsibility |
+|---|---|---|
+| MCP handler | Existing provider/IPC task under the original context | Real client returns only after its pipe I/O and private registrations unwind; no borrowed callback waits |
+| Mapping / publication | Bounded validation and JSON mapping; no await after the final activity guard | Recheck after IPC, after parsing and immediately before returning success; canceled/expired output cannot publish success |
+| Handler finally | Start retirement; do not await notification callbacks | IPC/context consumers are quiescent when SendAsync has returned or thrown; retain the slot until physical disposal completes |
+| Deferred retirement | Owned deadline/notification/registration disposal | Observe failure; release capacity only after successful disposal; report callback failures locally with request correlation and no model data |
+| SDK shutdown | Cancel handlers and release streams | No wait for held borrowed callbacks; background notification remains bounded until it ends or the process exits |
+
+Tests must challenge full stdio discovery/argument/report/error behavior, real provider selection and binding, and late cancellation/expiry at each mapping guard. Standalone direct-handler tests hold eight cancellation callbacks while asserting prompt handler completion, Busy on a ninth request even with a new tools instance, and eventual service after release. SDK/subprocess tests remain distinct from live Revit and desktop acceptance. Tests use original synthetic reports as transport oracles, never as BIM sample evidence.

@@ -1,6 +1,6 @@
 # Revit MCP bridge review sessions
 
-**Current checkpoint:** [Task 3 is independently closed at af4c67b](2026-10-21-task-3-closure.md), including the held-callback P2; prior P1 closure stands. Task 4 is [independently closed at 24a72cf](2026-10-21-task-4-closure.md). Task 5 remains open after [one P2 checklist-error finding](2026-10-21-task-5-checklist-review.md); the correction passes focused tests and awaits independent follow-up. The entries below preserve earlier review/submission history, not current pending findings.
+**Current checkpoint:** [Task 3 is independently closed at af4c67b](2026-10-21-task-3-closure.md), including the held-callback P2; prior P1 closure stands. Task 4 is [independently closed at 24a72cf](2026-10-21-task-4-closure.md). Task 5 and T5-01 are [independently closed at 5e9a5dd](2026-10-21-task-5-closure.md) for implementation/offline checks; live acceptance remains ahead. The entries below preserve earlier review/submission history, not current pending findings.
 
 **Task 2 follow-up:** [independent review and separate author dispositions](2026-10-21-task-2-review.md) record T2-01/02/03 on `eefb156`. All reproduced; corrections pass [fresh offline checks](../../../../projects/revit-readiness/docs/verification/2026-10-21-bridge-foundations-review.md). [Independent follow-up](2026-10-21-task-2-follow-up.md) closes all three at `3cefe51`. Task 3 has Windows IPC evidence and a closed [peer-exit P2](2026-10-21-task-3-review.md). A subsequent [deadline P1](2026-10-21-task-3-deadline-review.md) is corrected with [fresh verification](../../../../projects/revit-readiness/docs/verification/2026-10-21-deadline-cancellation.md); its independent follow-up remains pending. Neither focused checkpoint closes full R3.
 
@@ -62,3 +62,5 @@ Latest Task 3 review: the author relayed independent closure of the P2 at `f7950
 Task 4 is [independently closed at 24a72cf](2026-10-21-task-4-closure.md). The next [Task 5/CP1 review packet](2026-10-21-task-5-review.md) covers the compiled Revit adapter, production guard/lifecycle tests and pending live-host obligations. Task 5 independent disposition is pending.
 
 Latest Task 5 feedback/correction: [checklist error handoff](2026-10-21-task-5-checklist-review.md). Original submission and evidence remain historical; independent closure and all live acceptance remain outstanding.
+
+Latest Task 5 disposition: [independent closure](2026-10-21-task-5-closure.md). Earlier pending-review statements above are historical.

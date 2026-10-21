@@ -1,5 +1,7 @@
 # Task 5 checklist error review and correction
 
+**Later disposition:** [T5-01 and Task 5 independently closed at 5e9a5dd](2026-10-21-task-5-closure.md) for implementation/offline checks. The original record below is historical.
+
 The author relayed the following independent review of the Task 5 checkpoint at **f5510ec**. Reviewer identity was not supplied. **Task 5 remains open**; implementing-agent verification below is not independent closure. Tracking label **T5-01** is assigned here for this single P2 finding.
 
 ## Original feedback
