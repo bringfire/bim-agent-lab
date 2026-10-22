@@ -1,0 +1,12 @@
+{
+  "result": {
+    "case": "wall-defects",
+    "pass": true,
+    "findings": 2,
+    "affectedInstances": 6,
+    "examinedInstances": 16,
+    "coverageComplete": true,
+    "evaluationComplete": true
+  },
+  "completedUtc": "2026-10-22T13:41:19.481718+00:00"
+}

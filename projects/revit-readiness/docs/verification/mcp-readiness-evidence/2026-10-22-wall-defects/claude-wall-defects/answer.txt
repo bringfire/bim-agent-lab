@@ -1,0 +1,13 @@
+Source: pasted by the author from Claude Desktop Chat, 2026-10-22. Formatting as supplied.
+
+The declared scope does not pass. Coverage is complete, but two required fields are missing, and they affect 6 of the 16 instances. Nothing was edited or exported, and the model was unmodified before and after the check.
+Active model: D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-live-task7\a10630e39dae448ba55abbfe0bc7ab6b\models\BAL-info-wall-defects.rvt. This is a different file from the last run, which was BAL-info-saveas-fresh.rvt. The checklist file and its hash also changed, though the checklist ID is still BAL-TYPE-INFO-v1.
+Declared scope: The explicit checklist element UniqueIds, limited to host basic walls and ceilings on L1 - Block 43 that are New in New Construction. Each type is checked once. Links and other elements are excluded, and there is no view or selection filter or result cap.
+Examined: All 16 of 16 requested instances, across 6 types. There were no scope issues.
+Missing fields (2 findings):
+TypeFieldRevit parameterReasonAffected instances (ElementId, case)BAL INFO Wall BFire RatingFIRE_RATINGBlank value2492785 (WB-01), 2492786 (WB-02), 2492787 (WB-03)BAL INFO Wall DCode (Type Mark)ALL_MODEL_TYPE_MARKBlank value2492795 (WD-01), 2492796 (WD-02), 2492797 (WD-03)
+Wall B still has its Code (W-B) and Assembly Reference (DEMO-ASM-01). Wall D’s Fire Rating and Assembly Reference are explicitly exempted by the checklist.
+Passing types: Wall A, Wall C, Ceiling ACT and Ceiling GWB.
+Completeness flags: Evaluation Complete: true and CoverageComplete: true.
+Unexamined cases: None.
+The verdict covers only the declared 16 instances. Another 1,196 host wall and ceiling instances fall outside that scope and were not evaluated, and 6 link instances were excluded.

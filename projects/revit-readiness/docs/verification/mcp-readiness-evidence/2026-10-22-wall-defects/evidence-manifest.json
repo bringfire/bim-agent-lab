@@ -1,0 +1,162 @@
+[
+  {
+    "path": "claude-wall-defects/answer.txt",
+    "bytes": 1803,
+    "sha256": "d1d6a5c0230d76d652c06e4e5724381ba76ba68c5ad211882adbe28a28601498"
+  },
+  {
+    "path": "claude-wall-defects/attempt.json",
+    "bytes": 156,
+    "sha256": "6d5fd4445a112376990f65b8948f3fd6ae0fb9d683425372c3734074800c6839"
+  },
+  {
+    "path": "claude-wall-defects/capture.json",
+    "bytes": 689,
+    "sha256": "2ebab9c24343fdf1d40f6a1709d9c14fb97a53a56dec88b6d7c952998a94197b"
+  },
+  {
+    "path": "claude-wall-defects/check.json",
+    "bytes": 26204,
+    "sha256": "b3ec6c1c95ad765cb6fd896d8a8b8de1259ef3ea28baf4f47b0526a4d99d596b"
+  },
+  {
+    "path": "claude-wall-defects/comparison-complete.json",
+    "bytes": 269,
+    "sha256": "c4f5d19e0cf2f108f9260e7dbbb234f58166a315c818fac68fdbc475d2ab631d"
+  },
+  {
+    "path": "claude-wall-defects/context.json",
+    "bytes": 2593,
+    "sha256": "eb9ad7adf33248141d5a71b6310fb2e06ad0a84368fc5fdb9ed14c5d94b6ba02"
+  },
+  {
+    "path": "claude-wall-defects/expectation.json",
+    "bytes": 17906,
+    "sha256": "489e997a934b2fa5067e47d6d71a310e402aa018fad7d75ae864b7475eddc7b2"
+  },
+  {
+    "path": "claude-wall-defects/wire/client-to-server.jsonl",
+    "bytes": 1411,
+    "sha256": "084c1f0f73b222f2b94576117abb91b76ed50a01b15cf3741958ebdc3b6ef526"
+  },
+  {
+    "path": "claude-wall-defects/wire/server-to-client.jsonl",
+    "bytes": 77565,
+    "sha256": "476a0b90c8a0e39c4a4c3308caa7a9343a1094146c3ab06d230e4aad77761ecd"
+  },
+  {
+    "path": "codex-wall-defects-02/attempt.json",
+    "bytes": 134,
+    "sha256": "f92232ed345af5802ce0e3c28f8f2578a18b8243b0473df90640fa281cb08c2d"
+  },
+  {
+    "path": "codex-wall-defects-02/capture.json",
+    "bytes": 689,
+    "sha256": "cf998e3deb165223a8add6390bd26472bf9ca253e7e62113aafc06fdc3655e77"
+  },
+  {
+    "path": "codex-wall-defects-02/check.json",
+    "bytes": 25812,
+    "sha256": "f94a5fcc632427ae3618b79d4d77c728f1500e44c567276bf1b58185b2e0d8c3"
+  },
+  {
+    "path": "codex-wall-defects-02/comparison-complete.json",
+    "bytes": 269,
+    "sha256": "0833f000ff17cd013ed0ae23beaf796bae21982e53513cc8a284e27d766b562a"
+  },
+  {
+    "path": "codex-wall-defects-02/context.json",
+    "bytes": 2568,
+    "sha256": "5eec7ae7d9c5f186f7f60bab9368fcea2344170975009ee2a10504734a5693d2"
+  },
+  {
+    "path": "codex-wall-defects-02/expectation.json",
+    "bytes": 17906,
+    "sha256": "489e997a934b2fa5067e47d6d71a310e402aa018fad7d75ae864b7475eddc7b2"
+  },
+  {
+    "path": "codex-wall-defects-02/wire/client-to-server.jsonl",
+    "bytes": 6604,
+    "sha256": "3fe7d1d8cd35e507741179ab2bb4d10984d1d8ab8c750f394adde9b106cac506"
+  },
+  {
+    "path": "codex-wall-defects-02/wire/server-to-client.jsonl",
+    "bytes": 57808,
+    "sha256": "13f4b03e1df366b175f414a1ff07b17b6d01c11527f052bc04f58c4b84da7ec1"
+  },
+  {
+    "path": "protocol-regression.txt",
+    "bytes": 12367,
+    "sha256": "2625b497fdd5a1296163e280d168df22b293a8a1b31be151da66f7e632274e29"
+  },
+  {
+    "path": "sdk-july-wall-defects/capture.json",
+    "bytes": 660,
+    "sha256": "8ed99fef4f13bc8184abed8b5903548170efef8d4ddc6a15c9eab0eab3ad0e9d"
+  },
+  {
+    "path": "sdk-july-wall-defects/check.json",
+    "bytes": 30331,
+    "sha256": "b72054dc7f7ee16e79719fd00270bf910b21b849f7c33b0b0cd9f18d5db39ad2"
+  },
+  {
+    "path": "sdk-july-wall-defects/comparison-complete.json",
+    "bytes": 269,
+    "sha256": "9c5e0f8857f41f4cfb9ad6deed0aec3961dbb556840363c2637e7829ae697189"
+  },
+  {
+    "path": "sdk-july-wall-defects/complete.json",
+    "bytes": 20,
+    "sha256": "24a2c27869ea53475d49f85360581d1282c5e34dd768e97116e53daad1d58563"
+  },
+  {
+    "path": "sdk-july-wall-defects/context.json",
+    "bytes": 3003,
+    "sha256": "2b5f60993d99e452a06d79e082ea844f2e164623eb16a9073b0c3d9affea56fe"
+  },
+  {
+    "path": "sdk-july-wall-defects/expectation.json",
+    "bytes": 17906,
+    "sha256": "489e997a934b2fa5067e47d6d71a310e402aa018fad7d75ae864b7475eddc7b2"
+  },
+  {
+    "path": "sdk-july-wall-defects/partial.json",
+    "bytes": 133,
+    "sha256": "ddda44662d064e17b574d5595c5134b8aaf541d2661a550582c390e0c5a57e41"
+  },
+  {
+    "path": "sdk-july-wall-defects/sdk-client-result.json",
+    "bytes": 34524,
+    "sha256": "087847b2c2c5949db904590b9e12c5129602bdd7d04324e71bb6198c959e1825"
+  },
+  {
+    "path": "sdk-july-wall-defects/wire/client-to-server.jsonl",
+    "bytes": 1233,
+    "sha256": "3f7a8deb047a021aa6f1f2bf18c0126febd10c7e0f681e7d386cf5811611be5b"
+  },
+  {
+    "path": "sdk-july-wall-defects/wire/server-to-client.jsonl",
+    "bytes": 28259,
+    "sha256": "967075636a07099254f77afbafd9ff64ef4596260b0e921ee8c58ef4ddc3435a"
+  },
+  {
+    "path": "setup-attempts/first-context.json",
+    "bytes": 2434,
+    "sha256": "a1d4eeb9710918bc20280ba76069c4f9c6be1667f1f60c339a41c85fc257fea3"
+  },
+  {
+    "path": "setup-attempts/second-attempt/attempt.json",
+    "bytes": 134,
+    "sha256": "315facc7f4335f17ab5cfb6c64728db4b69cb25046d98faf6440b01b8d6a4e4f"
+  },
+  {
+    "path": "setup-attempts/second-attempt/context.json",
+    "bytes": 2422,
+    "sha256": "5aa9abddaf0faa4c57aea6894a58f4e464871498efb13c8d0d1932ffc4aa6ace"
+  },
+  {
+    "path": "setup-attempts/second-attempt/expectation.json",
+    "bytes": 17906,
+    "sha256": "489e997a934b2fa5067e47d6d71a310e402aa018fad7d75ae864b7475eddc7b2"
+  }
+]

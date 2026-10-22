@@ -1,0 +1,27 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"contractVersion\":1,\"requestId\":\"78c7ff7a103344139d5b2e614d8e0608\",\"bridgeSessionId\":\"a3163353950948eabd8cfb8a4955d860\",\"checklistSha256\":\"b58387090cdd4704086172eb4d45773f3e7e3b36f5d6480226417a82ca695011\",\"revitPid\":149972,\"revitBuild\":\"24.3.60.12\",\"documentLifetimeId\":\"9029b8f468344ca1bbec53c7dcfde6df\",\"projectUniqueId\":\"7cacd49c-ac17-4591-ad0a-cbc9bb40015a-00012b83\",\"documentPath\":\"D:\\\\bim-agent-lab\\\\projects\\\\revit-readiness\\\\samples\\\\local\\\\required-information\\\\BAL-info-wall-defects.rvt\",\"checklistId\":\"BAL-TYPE-INFO-v1\",\"checklistPath\":\"D:\\\\bim-agent-lab\\\\projects\\\\revit-readiness\\\\samples\\\\local\\\\required-information\\\\BAL-info-wall-defects.checklist.json\",\"scope\":\"Explicit checklist element UniqueIds; host basic walls and ceilings on the declared level, New in the declared phase. Types are checked once; links and other elements excluded. No view/selection filter or result cap.\",\"level\":\"L1 - Block 43\",\"phase\":\"New Construction\",\"contextToken\":\"RKPFqWh\\u002BjFrS\\u002BEIh8di6qMc\\u002BFujLqOcfALXC3ZtIlIE=\",\"expiresUtc\":\"2026-10-22T13:39:53.4532591Z\"}"
+    }
+  ],
+  "structuredContent": {
+    "contractVersion": 1,
+    "requestId": "78c7ff7a103344139d5b2e614d8e0608",
+    "bridgeSessionId": "a3163353950948eabd8cfb8a4955d860",
+    "checklistSha256": "b58387090cdd4704086172eb4d45773f3e7e3b36f5d6480226417a82ca695011",
+    "revitPid": 149972,
+    "revitBuild": "24.3.60.12",
+    "documentLifetimeId": "9029b8f468344ca1bbec53c7dcfde6df",
+    "projectUniqueId": "7cacd49c-ac17-4591-ad0a-cbc9bb40015a-00012b83",
+    "documentPath": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\required-information\\BAL-info-wall-defects.rvt",
+    "checklistId": "BAL-TYPE-INFO-v1",
+    "checklistPath": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\required-information\\BAL-info-wall-defects.checklist.json",
+    "scope": "Explicit checklist element UniqueIds; host basic walls and ceilings on the declared level, New in the declared phase. Types are checked once; links and other elements excluded. No view/selection filter or result cap.",
+    "level": "L1 - Block 43",
+    "phase": "New Construction",
+    "contextToken": "RKPFqWh+jFrS+EIh8di6qMc+FujLqOcfALXC3ZtIlIE=",
+    "expiresUtc": "2026-10-22T13:39:53.4532591Z"
+  },
+  "isError": false
+}

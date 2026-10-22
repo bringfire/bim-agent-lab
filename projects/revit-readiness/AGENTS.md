@@ -1,5 +1,7 @@
 # Revit readiness guidance
 
+Current Task 8 checkpoint: [independent desktop comparisons](docs/verification/mcp-readiness.md) verifies the wall-defect case in Codex, Claude Chat and official-SDK July. Follow the [agent procedure](../../docs/how-to/verify-readiness-through-desktop-agents.md); human operates Revit. Five-case expectations and owned NC controls exist before queries, but NC1 absence confirmation, other cases, stale-context workflow and post-close hashes remain pending. Do not reinstall or run Deployment/All with Revit open. Preserve failed setup contexts, original sources and existing Task7/R3 gaps. Runtime/dependencies/settings unchanged.
+
 Follow the root [AGENTS.md](../../AGENTS.md), then read this project's [README](README.md) and [demo brief](docs/demo-questions-and-sample-model.md). Technical procedures are in the [setup guide](../../docs/how-to/build-read-only-revit-command.md) and [readiness guide](../../docs/how-to/build-required-information-check.md). Their linked participant stories explain the human's direction; retain both layers when extending this example.
 
 ## Requirements
