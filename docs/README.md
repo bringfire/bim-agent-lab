@@ -1,5 +1,7 @@
 # Documentation map
 
+Start with the [participant starting guide](start-here.md), or give your agent the [technical handoff](how-to/agent-handoff.md). These are the current entry points; the lessons below preserve how the work developed.
+
 - [Participant learning path](tutorials/README.md): how the author engaged the agent through research, Git, setup, readiness, and Excel output.
 - [Agent research guide](how-to/research-existing-solutions.md): inspect resources, source behavior, dependencies, and provenance.
 - [Agent Git guide](how-to/work-with-git.md): preserve work, inspect research copies, and record reviewed checkpoints.

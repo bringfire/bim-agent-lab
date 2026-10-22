@@ -73,16 +73,18 @@ These support research and debugging, even though they are not all required to c
 
 The full SDK download adds useful documentation and examples; it is not a prerequisite installer for the API DLLs already supplied with Revit. RevitLookup, templates, Python, Node.js, pyRevit, Dynamo, and Rhino.Inside are not dependencies of a basic standalone C# command. A local add-in can run without an AI service or API key; the coding agent has its own authentication requirements.
 
-## Additional requirements when we add MCP
+## Additional requirements for the implemented MCP bridge
 
-MCP enables an agent to request operations from the running tool. Our proposed architecture adds an external server connected to the Revit add-in:
+MCP enables an agent to request operations from the running tool. The implemented architecture adds an external server connected to the Revit add-in. The October 22 checkpoint uses these inputs:
 
 1. An MCP-capable client, which may be the same application used for coding.
-2. One chosen server language/runtime and matching MCP SDK: for example C#/.NET, Python, or TypeScript/Node.js. Follow the [official server guide](https://modelcontextprotocol.io/docs/develop/build-server) for the selected SDK release.
+2. The selected external C# server targets `net10.0` and consumes official MCP SDK **2.2.0**. The server needs the .NET 10 runtime; the build uses this project's pinned SDK and lockfiles. Python supports repository verification/orchestration, not the production MCP server.
 3. A local communication bridge and defined request/response format. External requests must be dispatched into a valid Revit API context; [External Events](https://help.autodesk.com/cloudhelp/2024/ENU/Revit-API/files/Revit_API_Developers_Guide/Advanced_Topics/Revit_API_Revit_API_Developers_Guide_Advanced_Topics_External_Events_html.html) provides the relevant Autodesk pattern.
-4. Documented client configuration, connection checks, and pinned packages for whichever bridge we select.
+4. The documented client configuration, connection checks and pinned packages for this bridge; see the agent handoff below.
 
-The external server can use a different runtime from the add-in. We have not selected the server language or adopted a bridge. Dependencies found in a candidate repository are requirements of that candidate, not universal Revit prerequisites. See the [source inspection findings](../../../docs/research/reference-code-map.md) before choosing.
+The external server uses a different runtime from the Revit 2024 add-in, which stays on net48. [Actual desktop evidence](verification/mcp-readiness.md) records Codex desktop and Claude Desktop Chat; their negotiated older revisions coexist with retained July-2026 SDK tests under the approved compatibility policy. These are tested pins, not new claims about latest releases. Dependencies found in research candidates are not universal Revit prerequisites.
+
+For the **full repository verification workflow**, Python is required by the independent evidence checkers, settings helper and capture runner. The recorded local interpreter is Python 3.12.10; no minimum-version guarantee is established here. Run without `-O` or `PYTHONOPTIMIZE`, because evidence checks use assertions. Use 64-bit PowerShell 7 for bridge build, installation and recovery. The basic `Check-Environment.ps1` inventory does not check every added requirement. Follow the [agent handoff](../../../docs/how-to/agent-handoff.md) for the complete staged procedure and the [dependency record](../../../docs/research/mcp-sdk-dependencies.md) for provenance. No new prerequisite installation or latest-version research was performed in the onboarding documentation increment.
 
 ## Preparation order and proof that it works
 
@@ -100,4 +102,4 @@ Suggested participant prompt, not a command already executed:
 
 Initial inspection on 2026-10-20 found Revit and API DLL file version `24.3.60.12`, .NET SDKs `9.0.318` and `10.0.204`, Git `2.53.0.windows.2`, and .NET Framework 4.8 references. In the subsequent implementation step, all required inputs passed inspection, the probe compiled with zero warnings/errors, and it loaded and returned independently checked counts in Revit. No prerequisite software needed installation. The new command was installed per user. See the [verification record](verification/2026-10-20-read-only-probe.md) for scope and limits.
 
-The [first readiness check](verification/2026-10-20-required-information.md) subsequently used the same toolchain with no added NuGet packages. Its 18-test console harness also uses framework libraries only. Python was used solely for an independent comparison of saved native schedule exports and JSON evidence; it remains optional for add-in development and execution.
+The [first readiness check](verification/2026-10-20-required-information.md) subsequently used the same toolchain with no added NuGet packages. Its 18-test console harness also uses framework libraries only. Python was used solely for an independent comparison of saved native schedule exports and JSON evidence; it remains optional for the basic add-in alone, but is required for the full bridge verification workflow described above.

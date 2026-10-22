@@ -1,49 +1,51 @@
 # BIM Agent Lab
 
-Learn to build and extend BIM tools with AI coding agents—from research and Git to working plugins, automation, and MCP servers.
+Learn to build and extend BIM tools with AI coding agents—from research and Git to working plugins and MCP servers.
 
-BIM Agent Lab is a teaching repository for BIM professionals. It pairs worked examples with the prompts, research, decisions, and verification needed to understand and extend them. The first example is a Revit model-readiness tool for wall and ceiling workflows, supported by inventory and quantities.
+BIM Agent Lab is a teaching repository for BIM professionals. It pairs working examples with the prompts, research, decisions and verification needed to understand and extend them. Revit readiness is the first example; the lab can grow to other BIM applications.
 
-**Current status:** a read-only Revit 2024 command checks required wall and ceiling type information against an explicit checklist. It passed 18 core tests and independent native-schedule comparisons on three copies of Autodesk's Snowdon sample. Follow the [readiness tutorial](docs/tutorials/03-check-required-type-information.md), or begin with the [first-build tutorial](docs/tutorials/02-build-a-read-only-revit-command.md). The [Excel dependency lesson](docs/tutorials/04-add-an-excel-report-dependency.md) adds four-sheet workbook output with ClosedXML, verified in all three Revit scenarios and inspected in Excel; see the [acceptance evidence](projects/revit-readiness/docs/verification/2026-10-20-excel-output.md). The [MCP research lesson](docs/tutorials/05-research-and-choose-the-mcp-bridge.md) compares bridges and checks current protocol/SDK versions; it recommends a minimal original bridge with an external C# server, pending implementation and acceptance. The MCP host/probe now passes offline tests and its amended compatibility checkpoint in both actual desktop clients; the [compatibility lesson](docs/tutorials/07-test-desktop-compatibility-first.md) explains the evidence. Task 2 now adds tested bridge messages, framing and request lifetimes; the [bridge foundation lesson](docs/tutorials/08-build-and-test-the-bridge-foundation.md) explains this step. Live Revit connection, physical-condition checks, quantities and release packaging remain planned. Git history and the build journal preserve the implementation and research evidence.
+## Start here
 
-## Choose your starting point
+**Participants:** use the [starting guide](docs/start-here.md). It explains what you can try, how to direct your agent, and how to judge the answer. Reading the lessons requires no Revit installation.
 
-The next bridge increment has an [approved specification and external-review record](docs/superpowers/reviews/revit-mcp-bridge/README.md). The reviewer closed all three R1 findings on spec revision 2, and the author approved it. The [nine-task implementation plan](docs/superpowers/plans/2026-10-20-revit-mcp-bridge.md) reached revision 2 after [external R2 findings](docs/superpowers/reviews/revit-mcp-bridge/2026-10-20-r2-feedback.md). Its shared lifetime/ownership rules address cancellation, shutdown, partial installation recovery and selection errors; the [R2 follow-up](docs/superpowers/reviews/revit-mcp-bridge/2026-10-20-r2-follow-up.md) closes all four findings at the plan level on `cfbfe04`. The [participant story](docs/tutorials/06-direct-design-and-external-review.md) explains that process and why protocol compatibility in both Codex desktop and Claude Desktop is the first execution checkpoint. The author approved plan revision 2 and selected Native execution. The author-directed [revision 3 amendment](docs/superpowers/specs/2026-10-20-desktop-compatibility-amendment.md) now permits verified compatible desktop exchanges while retaining strict July tests. [Fresh CP0 evidence](projects/revit-readiness/docs/verification/2026-10-20-desktop-mcp-compatibility.md) passes in both desktops. [Task 2 review corrections](projects/revit-readiness/docs/verification/2026-10-21-bridge-foundations-review.md) now pass offline checks; Task 2 is [independently closed](docs/superpowers/reviews/revit-mcp-bridge/2026-10-21-task-2-follow-up.md). Task 3 now has [Windows pipe evidence](projects/revit-readiness/docs/verification/2026-10-21-cancellation-progress.md) and a [participant lesson](docs/tutorials/09-connect-the-bridge-processes.md); [Task 3 is independently closed at af4c67b](docs/superpowers/reviews/revit-mcp-bridge/2026-10-21-task-3-closure.md). Task 4 now adds a [verified queue and context store](projects/revit-readiness/docs/verification/2026-10-21-dispatch-and-context.md), with a [participant lesson](docs/tutorials/10-coordinate-requests-and-model-context.md) and independent closure at 24a72cf. Task 5 adds the compiled, offline-verified [Revit adapter](docs/how-to/build-and-verify-revit-adapter.md), independently closed at 5e9a5dd for implementation/offline checks. Task 6 now exposes [the two production MCP tools](docs/tutorials/12-expose-readiness-to-an-agent.md), with [independent Task 6 closure at b4cdb1f](docs/superpowers/reviews/revit-mcp-bridge/2026-10-21-task-6-closure.md). Installation, the live Revit connection and full acceptance remain outstanding.
+**Agents:** use the [technical handoff](docs/how-to/agent-handoff.md), root [AGENTS.md](AGENTS.md) and project guidance before changing anything. The handoff connects prerequisites, source boundaries, build/install/recovery, samples, verification and remaining work.
+
+Suggested first prompt:
+
+> Read README.md, AGENTS.md, docs/start-here.md and docs/how-to/agent-handoff.md. Explain what works and what remains unverified. Inspect my Git state and prerequisites, then guide me through one useful next step. Distinguish research, source inspection, offline tests and actual Revit results.
+
+## What works now
+
+As of October 22, 2026, the Revit 2024 example checks required wall and ceiling type information against an explicit checklist. The manual command produces saved evidence and a four-sheet Excel workbook. The MCP bridge lets **Codex desktop and Claude Desktop Chat** request a fresh model context and the same read-only calculation; those MCP calls do not edit or export.
+
+All five prepared sample cases—including deliberate defects and incomplete coverage—matched independent expectations through both desktops and a separate SDK client. Both desktops rejected an unexpired context after a model switch and recovered using a fresh context. See the [live evidence matrix](projects/revit-readiness/docs/verification/mcp-readiness.md) and [Excel evidence](projects/revit-readiness/docs/verification/2026-10-20-excel-output.md).
+
+The bridge uses official C# MCP SDK **2.2.0**, with verified compatible desktop revisions and a retained `2026-07-28` regression. This is a dated tested baseline, not a latest-version claim. Remaining host shutdown/recovery observations, a positive live run of the new capture wrapper, acceptance consolidation and independent R3 review remain open. Physical-condition checks and quantities are future extensions. See [development status](docs/reference/development-status.md).
+
+## Find what you need
 
 | I want to… | Start here |
 |---|---|
-| Learn how to engage an agent | [Participant learning path](docs/tutorials/README.md): research, Git, Revit setup, readiness, and Excel, with actual prompts, decisions, and evidence |
-| Use the plugin | [Revit readiness project](projects/revit-readiness/README.md): intended behavior and current availability |
-| Learn how we build it | [Learning path](docs/tutorials/README.md), beginning with research and directing an agent with Git |
-| Extend it with my agent | [Agent instructions](AGENTS.md), [project guidance](projects/revit-readiness/AGENTS.md), [extension workflow](docs/how-to/extend-a-project.md), and the worked [dependency implementation guide](docs/how-to/add-a-plugin-dependency.md) |
-| Review research and resources | [Research index](docs/research/README.md) with pinned repositories, license evidence, and source findings |
+| Try the example with my agent | [Participant starting guide](docs/start-here.md) |
+| Refresh how we engaged the agent | [Learning path](docs/tutorials/README.md), beginning with research and Git |
+| Reproduce or extend the implementation | [Agent handoff](docs/how-to/agent-handoff.md) and [extension workflow](docs/how-to/extend-a-project.md) |
+| Inspect the Revit project | [Project README](projects/revit-readiness/README.md), [prerequisites](projects/revit-readiness/docs/development-prerequisites.md) and [samples](projects/revit-readiness/samples/README.md) |
+| Review research and source provenance | [Research index](docs/research/README.md) and [third-party notices](THIRD_PARTY_NOTICES.md) |
+| Understand independent review | [Participant review story](docs/tutorials/06-direct-design-and-external-review.md) and [review records](docs/superpowers/reviews/revit-mcp-bridge/README.md) |
 | Revisit the seminar | [SWACCA 2026](workshops/swacca-2026/README.md) |
-
-Open your local copy in a coding agent and try:
-
-> Read README.md and AGENTS.md. Explain this project's current state and guide me through the learning path. Start with research and Git. Distinguish what has been observed, what is proposed, and what has been tested. Help me choose one useful next step.
-
-Reading the materials needs no Revit installation. Building and running the Revit example requires the [development prerequisites](projects/revit-readiness/docs/development-prerequisites.md) documented by that project. SDKs, host applications, model files, and the seven reference repositories are obtained separately.
 
 ## Repository map
 
-- `docs/` — tutorials, task guides, explanations, technical reference, research, and build history.
-- `templates/` — reusable feature, research, verification, and lesson records.
-- `projects/revit-readiness/` — the first example's source boundaries, test strategy, sample recipes, and demo brief.
-- `scripts/` — guidance for repository utilities as repeatable operations are developed.
-- `workshops/swacca-2026/` — seminar context and historical planning materials.
+- `docs/` — participant stories, agent procedures, explanations, reference, research and build history.
+- `templates/` — reusable feature, research, verification and lesson records.
+- `projects/revit-readiness/` — application source, scripts, tests, sample recipes and evidence.
+- `workshops/swacca-2026/` — seminar context and planning materials.
 - `references/` — optional local research clones, ignored by Git.
 
-Projects can target other BIM applications as the lab grows. Each owns its dependencies and host-specific instructions. Shared implementation libraries will be introduced when multiple examples demonstrate a need.
+Each application project owns its dependencies and host-specific instructions. SDKs, Autodesk API libraries, working RVT models and reference repositories are acquired separately. The sample recipe is included; Autodesk model binaries are not.
 
 ## Development and sharing
 
-See [Contributing](CONTRIBUTING.md), [development status](docs/reference/development-status.md), and the [build journal](docs/build-story/journal.md). The [agent setup guide](docs/how-to/build-read-only-revit-command.md) documents environment, build, install, and host verification commands; its [participant story](docs/tutorials/02-build-a-read-only-revit-command.md) explains how the work was directed. Read-only Git orientation commands are:
+See [Contributing](CONTRIBUTING.md) and the [build journal](docs/build-story/journal.md). Inspect the current branch, diff and history before work; record coherent verified steps in Git. The approved [specification and plan](docs/superpowers/reviews/revit-mcp-bridge/README.md) guide the continuing bridge work; historical review closure is scoped to the reviewed revision and evidence.
 
-```powershell
-git status --short --branch
-git log --oneline -5
-git show --stat HEAD
-```
-
-The repository starts locally with no remote. Hosting, an original-material license, and release packaging remain to be selected. See [licensing status](docs/reference/licensing.md) and [third-party notices](THIRD_PARTY_NOTICES.md) before distribution.
+This checkpoint is local: public hosting, an original-material license and release packaging remain to be selected. See [licensing status](docs/reference/licensing.md) before distribution. The participant materials are being prepared for sharing; this is not a claim that a published release or bundled installer is available.

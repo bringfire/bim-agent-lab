@@ -1,6 +1,6 @@
 # Extend a worked example with an agent
 
-This is the contribution process. The Excel enhancement provides a worked [participant account](../tutorials/04-add-an-excel-report-dependency.md) and [technical guide for agents](add-a-plugin-dependency.md).
+Begin with the [participant starting guide](../start-here.md) and [agent handoff](agent-handoff.md) for current capabilities and remaining verification. This is the contribution process. The Excel enhancement provides a worked [participant account](../tutorials/04-add-an-excel-report-dependency.md) and [technical guide for agents](add-a-plugin-dependency.md).
 
 1. Read the project README, AGENTS.md, and current verification evidence. Inspect the Git state.
 2. Describe the BIM question, inputs, scope, and expected output in a [feature brief](../../templates/feature-brief.md). For a readiness rule, state the source of its requirements and its valid exceptions.

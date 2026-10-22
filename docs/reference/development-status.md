@@ -1,6 +1,26 @@
 # Development status
 
-Baseline: 2026-10-21. Update this page when implementation or verification changes what participants can do.
+## Current snapshot — October 22, 2026
+
+Start with the [participant guide](../start-here.md) or [agent handoff](../how-to/agent-handoff.md). They connect the existing lessons to the current workflow; no new runtime behavior is introduced by the onboarding increment.
+
+| Area | Current state |
+|---|---|
+| Revit command and Excel | Read-only required type information and four-sheet output verified on three prepared samples; Revit 2024 build 24.3.60.12 |
+| Live MCP | All five sample cases and both desktop unexpired-context switch/recovery checks independently verified; [live matrix](../../projects/revit-readiness/docs/verification/mcp-readiness.md) |
+| Compatibility | SDK 2.2.0; actual Codex June-2025/Claude Chat November-2025 traffic plus separate July-2026 SDK evidence and strict-July regression. No new latest-version audit |
+| Repeatable runner | Implemented at 3b74f67, offline tests and actual unavailable-host control pass; fresh positive wrapper/Revit run still outstanding |
+| Current workstation | Revit closed at handoff; old process/session and desktop PID bindings must be refreshed deliberately on restart |
+| Remaining acceptance | Host in-flight shutdown/native-event/disposal observations, unresolved cancellation observations, shared recovery layers, acceptance consolidation and independent R3 |
+| Later capabilities/distribution | Physical-condition/quantity checks, public hosting, original-material license and release packaging remain open |
+
+The author wants the remaining work handled sequentially, with refinement afterward. The starting guide and agent handoff do not close Tasks 7–9. No Revit action is needed to read them.
+
+## Historical checkpoints
+
+The following records preserve what was known at each increment. Later records and the current snapshot above supersede earlier outstanding-work and process-state statements.
+
+### October 21 baseline
 
 | Area | Status |
 |---|---|
@@ -68,4 +88,4 @@ October22 independent Task8 comparisons started: [prepared wall-defect model pas
 October22 sample acceptance follow-up: [all five samples](../../projects/revit-readiness/docs/verification/mcp-readiness.md) independently match in both actual desktop apps and a separate July SDK client. Both desktop unexpired-context refusals and fresh recovery are verified. Claude Chat accurately explains incomplete coverage in NC1 and NC2; the author reports Opus5.5 / Auto. All five RVT files and checklists match after closure. Retained failed expiry/wrong-active attempts and corrected error-fixture assumptions are teaching evidence. Revit stays open at Home. Task8 wrapper/workflow consolidation, remaining Task7 gaps and fullR3 review are still open; this is not overall task closure.
 
 
-October22 first refinement increment: [the reusable capture runner](../../projects/revit-readiness/docs/verification/2026-10-22-readiness-runner.md) is implemented. Offline process/comparison tests and full regressions pass; an actual SDK unavailable-host control confirms default PowerShell paths, failure retention and no readiness read. Revit remains closed. Positive live wrapper acceptance is not claimed. At the author's request we pause between increments for refinement; broader onboarding, remaining Task7 gates and R3 remain open.
+October22 first refinement increment: [the reusable capture runner](../../projects/revit-readiness/docs/verification/2026-10-22-readiness-runner.md) is implemented. Offline process/comparison tests and full regressions pass; an actual SDK unavailable-host control confirms default PowerShell paths, failure retention and no readiness read. Revit remains closed. Positive live wrapper acceptance is not claimed. The earlier pause interpretation was subsequently corrected; broader onboarding, remaining Task7 gates and R3 remain open.
