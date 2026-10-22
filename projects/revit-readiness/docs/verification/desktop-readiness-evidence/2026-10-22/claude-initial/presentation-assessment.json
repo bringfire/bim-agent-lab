@@ -1,0 +1,12 @@
+{
+  "source": "Author-pasted answers; UI not independently observed",
+  "firstMode": "Claude Desktop Code tab; author explicitly excludes terminal Claude Code",
+  "secondMode": "Claude Desktop Chat, author confirmed",
+  "sameWireSessionForBoth": true,
+  "clientInfoIsNotUiProof": true,
+  "countsFlagsScopeAndTypeValuesAgreeWithWire": true,
+  "chatExplicitlyLimitsPassToDeclaredInstances": true,
+  "zeroFindingsIncompleteCoveragePresentation": "Not tested; NC1/NC2 remain required",
+  "selectedClaudeModel": "Not yet recorded",
+  "toolPermissionChoice": "Not yet recorded"
+}

@@ -1,0 +1,50 @@
+{
+  "pass": true,
+  "scope": "Initial desktop continuity; not independent BIM oracle, five-case A8 or shutdown acceptance",
+  "protocolVersion": "2025-11-25",
+  "clientInfo": {
+    "name": "local-agent-mode-bim-agent-lab-revit-readiness",
+    "version": "1.0.0"
+  },
+  "contextRequestId": "16a4ddbbc1664c5b82620b17f6b73b7a",
+  "reportRequestId": "57e3cddda401495fbaecf3154d07d045",
+  "bridgeSessionId": "a3163353950948eabd8cfb8a4955d860",
+  "requestedInstances": 16,
+  "examinedInstances": 16,
+  "findingCount": 0,
+  "coverageComplete": true,
+  "evaluationComplete": true,
+  "modifiedBefore": false,
+  "modifiedAfter": false,
+  "reportFieldsExcludedFromComparison": [
+    "GeneratedUtc"
+  ],
+  "exchanges": [
+    {
+      "label": "code",
+      "contextRequestId": "c9dfad000b2f44098834bdb921ef00d8",
+      "reportRequestId": "6354aded70db443896b44312bdbf909e",
+      "bridgeSessionId": "a3163353950948eabd8cfb8a4955d860",
+      "requestedInstances": 16,
+      "examinedInstances": 16,
+      "findingCount": 0,
+      "coverageComplete": true,
+      "evaluationComplete": true,
+      "modifiedBefore": false,
+      "modifiedAfter": false
+    },
+    {
+      "label": "chat",
+      "contextRequestId": "16a4ddbbc1664c5b82620b17f6b73b7a",
+      "reportRequestId": "57e3cddda401495fbaecf3154d07d045",
+      "bridgeSessionId": "a3163353950948eabd8cfb8a4955d860",
+      "requestedInstances": 16,
+      "examinedInstances": 16,
+      "findingCount": 0,
+      "coverageComplete": true,
+      "evaluationComplete": true,
+      "modifiedBefore": false,
+      "modifiedAfter": false
+    }
+  ]
+}

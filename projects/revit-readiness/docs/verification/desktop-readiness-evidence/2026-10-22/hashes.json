@@ -8,6 +8,66 @@
     "sha256": "40201acde617793c1c3d9d065fd0380a1d1ce4e8da774a8f38d6b908cee37265"
   },
   {
+    "path": "claude-initial/chat/answer.md",
+    "sha256": "c68e31a0ef9e33743f5abf8df4faa5c16b4df57adbc8a8de6dbd3051853165c1"
+  },
+  {
+    "path": "claude-initial/chat/check.json",
+    "sha256": "9dc1e7ddc050fe8f15c04f1daf6925dac0dd93304e466f1c1c8242d354f57ed1"
+  },
+  {
+    "path": "claude-initial/chat/context.json",
+    "sha256": "22df1e6cd1dd8fd9c55db0c5913382f3305d522c32bfa048f04493dd830d6a01"
+  },
+  {
+    "path": "claude-initial/checker-tests.json",
+    "sha256": "ac218c6a4b093bf200c5e4cf46a91f805f5e978b19ff661182fcde4a6176b11f"
+  },
+  {
+    "path": "claude-initial/code/answer.md",
+    "sha256": "db5ae868bf5fedfe4ae67a67c6b44a9c65f05dd925c1218d836472275cfb7d3c"
+  },
+  {
+    "path": "claude-initial/code/check.json",
+    "sha256": "a11cbfd1108294ed9a6c05eb6d8337c963fd7b421dfc600a2ce133447cf5ffe3"
+  },
+  {
+    "path": "claude-initial/code/context.json",
+    "sha256": "2f69b9f9cb6bba7379e810b9aff92dfc57b476bcaa51714376c4fd4f542a8d75"
+  },
+  {
+    "path": "claude-initial/comparison.json",
+    "sha256": "08085e54ba166bc89f48591de2eefc376bf9bb7402ae94fc12df68c11e0316f8"
+  },
+  {
+    "path": "claude-initial/discovery-only/client-to-server.jsonl",
+    "sha256": "542c262fd9c7593a73c5c6bcb43b6713dec22da7741143a56634424d1825eaeb"
+  },
+  {
+    "path": "claude-initial/discovery-only/observation.json",
+    "sha256": "c949cc1af3b8b46e0ad7f5d75770cac33f02ff6c435b1d4cb58441451c1d3476"
+  },
+  {
+    "path": "claude-initial/discovery-only/server-to-client.jsonl",
+    "sha256": "886ee57f753baec670c22eda53fccad055869d1c19da5a4d0040615a359fad5c"
+  },
+  {
+    "path": "claude-initial/presentation-assessment.json",
+    "sha256": "6a019fd5d03a663c0fe6b0c1ac05eb7091f8c875117851b12531de4d2f0a7da0"
+  },
+  {
+    "path": "claude-initial/snapshot.json",
+    "sha256": "2e8eda721c9162a0f824c0ae0e3584060b914e4ec5186c8cfd86c5e78e833c21"
+  },
+  {
+    "path": "claude-initial/wire/client-to-server.jsonl",
+    "sha256": "c21ca860528037db37647c9c0539fc9025eee1e8908880cb50341a6b95d8eb73"
+  },
+  {
+    "path": "claude-initial/wire/server-to-client.jsonl",
+    "sha256": "4b55082cffd2d7b3cdd92dcfdf7a4b80322ef35f6fd83d238ce5a2e5c54a5884"
+  },
+  {
     "path": "codex-initial/check.json",
     "sha256": "efb3689f9aab6855ade1b7ae338bfc6a9d6848033a9aeb91bdb08b219608e100"
   },

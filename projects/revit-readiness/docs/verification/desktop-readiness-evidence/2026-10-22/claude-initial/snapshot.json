@@ -1,0 +1,42 @@
+{
+  "snapshotUtc": "2026-10-22T12:49:10.495830+00:00",
+  "sourceSession": "session-7c39454decf045e7b675057312d23c99",
+  "snapshotKind": "Complete-line prefix of an active desktop session; not an EOF or shutdown test",
+  "files": [
+    {
+      "path": "wire/client-to-server.jsonl",
+      "bytes": 1120,
+      "sha256": "c21ca860528037db37647c9c0539fc9025eee1e8908880cb50341a6b95d8eb73"
+    },
+    {
+      "path": "wire/server-to-client.jsonl",
+      "bytes": 51009,
+      "sha256": "4b55082cffd2d7b3cdd92dcfdf7a4b80322ef35f6fd83d238ce5a2e5c54a5884"
+    }
+  ],
+  "clientInfo": {
+    "name": "local-agent-mode-bim-agent-lab-revit-readiness",
+    "version": "1.0.0"
+  },
+  "protocolVersion": "2025-11-25",
+  "revitPid": 149972,
+  "bridgeSessionId": "a3163353950948eabd8cfb8a4955d860",
+  "referenceReport": "../sdk-july-continuity/check.json",
+  "modeAttribution": "Author reported first answer from Claude Desktop Code tab (not terminal), then second answer from Chat side. Both pairs were received in this one server session; wire client name alone does not identify the visible UI.",
+  "exchanges": [
+    {
+      "label": "code",
+      "contextRequestId": "c9dfad000b2f44098834bdb921ef00d8",
+      "reportRequestId": "6354aded70db443896b44312bdbf909e",
+      "contextFile": "code/context.json",
+      "reportFile": "code/check.json"
+    },
+    {
+      "label": "chat",
+      "contextRequestId": "16a4ddbbc1664c5b82620b17f6b73b7a",
+      "reportRequestId": "57e3cddda401495fbaecf3154d07d045",
+      "contextFile": "chat/context.json",
+      "reportFile": "chat/check.json"
+    }
+  ]
+}

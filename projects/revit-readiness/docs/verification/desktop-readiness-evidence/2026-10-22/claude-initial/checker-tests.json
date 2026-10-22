@@ -1,0 +1,10 @@
+{
+  "command": "python projects/revit-readiness/tests/test_verify_desktop_continuity.py",
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": "......\n----------------------------------------------------------------------\nRan 6 tests in 0.734s\n\nOK\n",
+  "methodCount": 6,
+  "negativeControlCount": 33,
+  "redStage": "The actual two-pair Claude capture failed the previous exact-one-pair assertion.",
+  "scope": "Both desktop snapshots and semantic corruptions, including legitimate roots notifications and all repeated pairs; no runtime changes"
+}

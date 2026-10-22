@@ -93,6 +93,42 @@ class DesktopContinuityTests(unittest.TestCase):
             if index == 0: self.rehash()  # A complete checksum does not make a partial line acceptable.
             with self.assertRaises(AssertionError): check_desktop_continuity(self.case)
 
+    def load_claude(self):
+        self.case = self.root / 'claude'
+        shutil.copytree(EVIDENCE / 'claude-initial', self.case)
+        self.original = {p.relative_to(self.case):p.read_bytes() for p in self.case.rglob('*') if p.is_file()}
+
+    def test_claude_repeated_pairs_and_roots_notifications(self):
+        self.load_claude()
+        result = check_desktop_continuity(self.case)
+        self.assertEqual(result['protocolVersion'], '2025-11-25')
+        self.assertEqual([r['label'] for r in result['exchanges']], ['code', 'chat'])
+        self.assertTrue(all(r['examinedInstances'] == 16 and r['findingCount'] == 0 for r in result['exchanges']))
+
+    def test_claude_corruptions(self):
+        self.load_claude()
+        incoming = 'wire/client-to-server.jsonl'
+        outgoing = 'wire/server-to-client.jsonl'
+        cases = [
+            ('omit first pair', incoming, lambda x:x.__delitem__(slice(5,7))),
+            ('omit last call', incoming, lambda x:x.pop()),
+            ('omit last response', outgoing, lambda x:x.pop()),
+            ('reuse first token', incoming, lambda x:x[-1]['params']['arguments'].update(contextToken=x[6]['params']['arguments']['contextToken'])),
+            ('duplicate initialized', incoming, lambda x:x.insert(3,copy.deepcopy(x[1]))),
+            ('unknown notification', incoming, lambda x:x[3].update(method='notifications/unknown')),
+            ('roots notification has id', incoming, lambda x:x[3].update(id=99)),
+            ('swap calls', incoming, lambda x:x.__setitem__(slice(-2,None), list(reversed(x[-2:])))),
+            ('hide first exchange in manifest', 'snapshot.json', lambda x:x['exchanges'].pop(0)),
+            ('reuse first saved report', 'snapshot.json', lambda x:x['exchanges'][1].update(reportFile='code/check.json')),
+        ]
+        for name, file, change in cases:
+            with self.subTest(name=name):
+                for path, data in self.original.items(): (self.case / path).write_bytes(data)
+                self.edit(file, change, file.startswith('wire/'))
+                self.rehash()
+                with self.assertRaises((AssertionError, KeyError, ValueError)):
+                    check_desktop_continuity(self.case)
+
 
 if __name__ == '__main__':
     unittest.main()

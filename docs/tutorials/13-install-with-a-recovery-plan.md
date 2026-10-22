@@ -177,3 +177,15 @@ Suggested participant prompt:
 > I restarted the application. Verify that this application actually used our server, compare the full result with the baseline, and tell me which acceptance checks are still pending.
 
 When the author said **“claude is working right now...we'll have to wait,”** the agent left Claude and Revit alone and finished the Codex evidence. This is another useful direction to give an agent: preserve work already in progress and continue only the independent steps. The [technical record](../../projects/revit-readiness/docs/verification/2026-10-22-desktop-readiness.md#codex-desktop-initial-real-readiness-exchange-passes) distinguishes the actual Codex success, the negotiated protocol, and Claude's still-pending result.
+
+## Name the interface you actually used
+
+After restarting Claude, the author pasted its answer. When asked which interface produced it, the author clarified **“the code tab in Claude Desktop...not the terminal claude code.”** The author then ran the same question from Chat and supplied that answer too. Both were successful. The Chat answer also explained that the pass covered only the 16 declared elements, not the rest of the model.
+
+The agent initially treated names in the connection log as labels for the application's tabs. The two runs used the same connection, so that assumption was corrected. The person knew which interface they used; the logs showed the actual requests and results. Both pieces of evidence belong in the record.
+
+Suggested participant prompt:
+
+> This answer came from the Chat side of Claude Desktop. Record that interface, verify its actual tool calls, and compare its full report with the earlier result. Keep this success separate from the defect and incomplete-coverage tests we still need.
+
+The [Claude verification record](../../projects/revit-readiness/docs/verification/2026-10-22-desktop-readiness.md#claude-desktop-code-and-chat-answers-with-actual-tool-traffic) retains both answers, the correction and the pending checks. Testing through a familiar interface makes the demonstration accessible; a clear answer still needs to agree with the underlying data.
