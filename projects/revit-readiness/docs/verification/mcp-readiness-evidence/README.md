@@ -14,4 +14,10 @@ An `attempt.json` or SDK `partial.json` records the start and is intentionally r
 
 `2026-10-22-ceiling-negative/` contains independently verified Codex, Claude Chat and July SDK captures. Run the same verifier with `--case ceiling-negative` for its `codex-ceiling-negative`, `claude-ceiling-negative` and `sdk-july-ceiling-negative` directories. Claude's author-pasted answer is retained separately from its actual wire/result evidence. The wall evidence includes the author's native schedule screenshot and the unchanged RVT hash after close.
 
-The complete principal case, incomplete controls, stale-context workflow, native ceiling observation, remaining post-close hashes, outstanding Task 7 observations and R3 remain separate acceptance requirements.
+`2026-10-22-complete-and-context-switch/` retains independently verified `codex-complete`, `claude-complete-02` and `sdk-july-complete` reports. Run the ordinary verifier with `--case complete`. Its `codex-stale-ceiling-to-complete` and `claude-stale-ceiling-to-complete-02` directories pass `verify_stale(directory)`, including before-expiry refusal and complete fresh recovery. The first Claude `ContextExpired` attempt and the wrong-active-model complete attempt are retained without successful comparison markers. The original error-fixture assumption and its correction are described in the verification record.
+
+`2026-10-22-nc1/` retains native ID rejection evidence, its prior and confirmed expectations, immutable preparation/Ready receipts, and all three independently verified NC1 captures. Run the ordinary verifier with `--case nc1`. Its image establishes the displayed ID rejection, with the model binding and source/control byte equality recorded separately.
+
+`2026-10-22-nc2/` retains the three NC2 captures (`--case nc2`), the author-pasted Claude answer and final comparisons of all five RVT files and five checklists after the user closed both remaining models without saving. No runtime, configuration or dependency change was needed. Native ceiling evidence is in the earlier ceiling folder.
+
+The SDK July captures supplement both required desktops. Reusable workflow consolidation, outstanding Task 7 observations and full R3 remain separate requirements; successful sample tests do not close them.

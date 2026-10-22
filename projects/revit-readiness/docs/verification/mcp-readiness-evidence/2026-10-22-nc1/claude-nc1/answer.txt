@@ -1,0 +1,17 @@
+The declared scope does not pass. No fields are missing, but coverage is incomplete: one of the 16 requested instances could not be found, so it was never evaluated. Zero findings with incomplete coverage is not a readiness pass. Nothing was edited or exported, and the model was unmodified before and after the check.
+Active model: D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-task8\f82eea66e10b43ebaafd7fe40ea4bc87\controls\nc1\BAL-info-complete.rvt. This is a new task folder, with its own checklist at ...\controls\nc1\BAL-info-complete.checklist.json. The checklist ID is still BAL-TYPE-INFO-v1, but the hash is new.
+Declared scope: The explicit checklist element UniqueIds, limited to host basic walls and ceilings on L1 - Block 43 that are New in New Construction. Each type is checked once. Links and other elements are excluded, and there is no view or selection filter or result cap.
+Counts: 16 requested, 15 examined.
+Missing findings: 0, with no affected instances. All 6 types report Pass on the instances that were examined.
+Completeness flags:
+- Evaluation Complete: true
+- CoverageComplete: false
+Scope issues (1):
+Case Requested UniqueId Status Reason     BAL-INFO-WA-01 6e5a3689-c170-4e43-b22b-e80a27806cdb-7fffffff Unexamined Element not found
+Unexamined cases: BAL-INFO-WA-01. The evaluation's own UnexaminedElements list is empty, because the evaluation only covers elements that were found. The gap appears in ScopeIssues and in the coverage flag instead. Wall A passed on the evidence of WA-02 and WA-03 alone.
+Why it does not pass:
+- One requested instance was not examined, so the declared scope was not fully checked.
+- The type-level Pass for Wall A covers only 2 of its 3 declared instances.
+- Coverage is false even though the finding count is zero.
+Likely cause, not verified: The requested UniqueId ends in -7fffffff, which looks like a placeholder value rather than a real element ID. In earlier runs, WA-01 was element 2492780 (…0026096c). In this run, the out-of-scope host wall and ceiling count also went up by one, from 1,196 to 1,197. Together these suggest the checklist entry for WA-01 points at an element that does not exist, while the real WA-01 wall is still in the model but no longer matched. To fix it, correct the WA-01 UniqueId in the checklist, then run the check again.
+Outside the declared scope, 1,197 host wall and ceiling instances were not evaluated, and 6 link instances were excluded.

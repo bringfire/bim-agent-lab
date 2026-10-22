@@ -1,0 +1,12 @@
+{
+  "recordedUtc": "2026-10-22T14:52:29.359355+00:00",
+  "source": "Author-reported Claude Desktop Chat settings after five-case testing",
+  "interface": "Chat",
+  "aiModelLabel": "Opus 5.5",
+  "permissionMode": "Auto",
+  "authorMessages": [
+    "Opus 5.5",
+    "permissions a re \"auto\""
+  ],
+  "limits": "Human-reported UI labels, not inferred from wire clientInfo; individual earlier Allow once/Always allow prompts were not reconstructed."
+}

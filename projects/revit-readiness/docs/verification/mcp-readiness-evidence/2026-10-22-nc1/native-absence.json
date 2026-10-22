@@ -1,0 +1,17 @@
+{
+  "recordedUtc": "2026-10-22T14:37:06.152095+00:00",
+  "source": "Author-supplied Revit Select Elements by ID screenshot and confirmation; following context confirms same prepared complete path and document lifetime",
+  "elementId": "2147483647",
+  "declaredUniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-7fffffff",
+  "exactMessage": "The following Element IDs are invalid and won't be used: 2147483647;",
+  "humanStatement": "Revit couldn't find that ID. I've closed the dialog and left the complete model open.",
+  "modelPath": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-complete.rvt",
+  "modelSha256": "b4a7a1e1733f857ba9e31a1659594a01076560e31e2f11bb6192789bd64524de",
+  "controlCopySha256": "b4a7a1e1733f857ba9e31a1659594a01076560e31e2f11bb6192789bd64524de",
+  "screenshot": {
+    "path": "native-invalid-element-id.png",
+    "sha256": "b13c5b5bf9e5b3968420cf0c7badbc0c62c833377180ba5233b0303ce3f3f2ec"
+  },
+  "contextRequestId": "8cb4805830f24142af4540f1ff04839e",
+  "limits": "Screenshot shows the entered numeric ID and Revit rejection, not document path or full UniqueId. Coordinated human observation and separate context bind the model; matching source/control bytes bind the prepared NC1 copy. This is not a readiness tool result."
+}

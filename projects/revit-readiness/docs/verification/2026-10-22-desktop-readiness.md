@@ -52,3 +52,7 @@ The evidence checker first rejected this real capture because it required exactl
 This establishes the initial successful read through both required desktop applications, with the extra Code-tab run retained separately. It does **not** close A8: three principal samples, NC1/NC2, stale context after a document switch, complete client baseline and the independent BIM oracle remain required. Task 7's previously recorded host gaps and R3 are unchanged. Revit remains open on the same disposable model and bridge session.
 
 The [evidence hashes](desktop-readiness-evidence/2026-10-22/hashes.json) cover this checkpoint. Task 7's remaining host observations, both desktops' A8 five-case/error/presentation checks and R3 remain open. Do not treat server discovery alone as completion.
+
+## Subsequent five-case and baseline follow-up
+
+The later [independent sample record](mcp-readiness.md) supersedes the pending five-case/presentation statements above: all five cases, both desktop ContextChanged refusals before expiry, fresh recovery and unchanged saved files are verified. The author reports Claude Desktop Chat's AI model **Opus 5.5**, permissions **Auto**. This is UI provenance supplied by the person; it does not reconstruct individual prior permission grants or change the earlier retained initial assessment. Existing Task7 gaps, reproducible Task8 workflow consolidation and fullR3 remain open.

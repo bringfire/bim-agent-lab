@@ -1,0 +1,11 @@
+Source: author-pasted Claude Desktop Chat answer, 2026-10-22.
+
+The check was rejected and no report was produced. I called revit_check_required_type_information once with the token YUoWz3qOJ/yyrcoI74YAxEswDLaG0xtElaBAUgeGZ4o=.
+- Error code: ContextChanged
+- Message: "The document or checklist identity changed. Obtain a fresh context."
+- retryable: false
+- requestId: 0356c77a89f444a9b6cc4cf073c05a3a
+This is a different error from last time's ContextExpired. The tool detected that the model or checklist changed and refused to evaluate it under the old token, so this run isolates the switch as the cause. The tool returned no findings and no pass, which is the correct fail-closed result.
+I haven't fetched or refreshed a context, and I'm stopping here.
+
+Evidence assessment: matched actual wire request/result. Response observed by 14:24:19.114086Z, before context expiry 14:26:16.0989833Z. Fresh complete-model recovery separately verified.

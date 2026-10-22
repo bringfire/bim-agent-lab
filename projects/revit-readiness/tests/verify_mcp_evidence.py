@@ -169,7 +169,12 @@ def verify_wire(directory, outcome='ReadinessReport'):
         assert len(candidates)==1
         request=candidates[0];assert request['method']=='tools/call' and request['params']['name']==tool
         result=replies[request['id']]['result'];body=result['structuredContent']
-        assert re.fullmatch('[0-9a-f]{32}',body['requestId']) and body['contractVersion']==1
+        assert re.fullmatch('[0-9a-f]{32}',body['requestId'])
+        if result['isError'] is True:
+            assert set(body)=={'code','message','requestId','retryable'}
+            assert isinstance(body['code'],str) and isinstance(body['message'],str)
+            assert body['retryable'] is False
+        else:assert body['contractVersion']==1
         assert len(result['content'])==1 and result['content'][0]['type']=='text'
         assert canonical(json.loads(result['content'][0]['text']))==canonical(body)
         assert canonical(read(directory/filename))==canonical(result)

@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "root": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-task8\\f82eea66e10b43ebaafd7fe40ea4bc87\\controls",
+  "state": "Prepared",
+  "preparedUtc": "2026-10-22T13:26:32.833263+00:00",
+  "sourceModel": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-complete.rvt",
+  "sourceModelSha256": "b4a7a1e1733f857ba9e31a1659594a01076560e31e2f11bb6192789bd64524de",
+  "sourceChecklist": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-complete.checklist.json",
+  "sourceChecklistSha256": "6edd2e120d6eb77536afb4d620295b9a5b88bf332730e7cd85303122e50c8729",
+  "absentUniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-7fffffff",
+  "absentElementId": "2147483647",
+  "absenceConfirmed": false,
+  "originalCase": {
+    "UniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026096c",
+    "ElementId": "2492780",
+    "CaseId": "BAL-INFO-WA-01"
+  },
+  "removedRequirement": {
+    "TypeUniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026097e",
+    "Category": "Ceilings",
+    "Source": "BAL-TYPE-INFO-v1: BAL INFO Ceiling ACT",
+    "CodeRequired": true,
+    "FireRatingRequired": false,
+    "AssemblyReferenceRequired": false
+  },
+  "files": [
+    {
+      "path": "nc1/BAL-info-complete.rvt",
+      "bytes": 94347264,
+      "sha256": "b4a7a1e1733f857ba9e31a1659594a01076560e31e2f11bb6192789bd64524de"
+    },
+    {
+      "path": "nc1/BAL-info-complete.checklist.json",
+      "bytes": 4271,
+      "sha256": "ccb20b2ce130a08d21cec8f60098783d33787188dfe997e9b9607385cd10b97c"
+    },
+    {
+      "path": "nc2/BAL-info-complete.rvt",
+      "bytes": 94347264,
+      "sha256": "b4a7a1e1733f857ba9e31a1659594a01076560e31e2f11bb6192789bd64524de"
+    },
+    {
+      "path": "nc2/BAL-info-complete.checklist.json",
+      "bytes": 3995,
+      "sha256": "050dfb31b83b806af9ccfc22e10f9883d8bfce5d5d0d0fef5f9372784f7acfcd"
+    }
+  ]
+}

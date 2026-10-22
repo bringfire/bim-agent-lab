@@ -1,0 +1,12 @@
+Source: author-pasted Claude Desktop Chat answer, 2026-10-22.
+
+The check was rejected and no report was produced. I called revit_check_required_type_information once with the token PEGlSnuVUAse+AcZqLNSXmD2eKYlXeTAkKBtEBKoXGM=.
+- Error code: ContextExpired
+- Message: "The context is unknown or expired. Obtain a fresh context."
+- retryable: false
+- requestId: 313256924ca845b8b4d717ec379f08e3
+The tool refused the stale token rather than evaluating whatever model is now open, so it gave no findings and no pass. That is the right fail-closed result for a switch test.
+The error doesn't say why the token failed. It could have been invalidated by the model switch, or it could simply have passed its 14:15:43Z expiry. The token was only valid for about 5 minutes. To separate those two causes, switch models and call the check within that window.
+I haven't fetched or refreshed a context, and I'm stopping here.
+
+Evidence assessment: this is NOT accepted as document-switch proof. ContextExpired does not isolate the model switch. The retained retry supplies a timely ContextChanged result and independent fresh recovery instead.

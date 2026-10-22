@@ -1,0 +1,13 @@
+Source: author-pasted Claude Desktop Chat answer, 2026-10-22. Formatting as supplied.
+
+The declared scope passes: 0 findings, and both completeness flags are true. This new context recovered from the ContextChanged rejection. Nothing was edited or exported, and the model was unmodified before and after the check.
+- Model: D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-live-task7\a10630e39dae448ba55abbfe0bc7ab6b\models\BAL-info-complete.rvt. It has its own checklist, BAL-info-complete.checklist.json, with checklist ID BAL-TYPE-INFO-v1.
+- Declared scope: The explicit checklist element UniqueIds, limited to host basic walls and ceilings on L1 - Block 43 that are New in New Construction. Links and other elements are excluded.
+- Examined: All 16 of 16 requested instances, across 6 types. There were no scope issues.
+- Findings: 0, with no affected instances.
+- Completeness flags: Evaluation Complete: true and CoverageComplete: true.
+- Unexamined cases: None.
+All 6 types pass:
+Type Code Fire rating Assembly ref.     Wall A W-A 60 min DEMO-ASM-01   Wall B W-B 60 min DEMO-ASM-01   Wall C W-C not required not required   Wall D W-D not required not required   Ceiling ACT C-ACT not required not required   Ceiling GWB C-GWB not required not required   
+Every "not required" entry is an explicit exception written into the checklist. Compared with the ceiling-negative model, Wall B now has its fire rating, and Wall D and Ceiling ACT now have their Codes.
+The pass covers only the declared 16 instances. Another 1,196 host wall and ceiling instances fall outside that scope and were not evaluated, and 6 link instances were excluded.

@@ -1,0 +1,11 @@
+{
+  "recoveryCase": "complete",
+  "contextReceivedUtc": "2026-10-22T14:22:44.424565+00:00",
+  "switchRequestedUtc": "2026-10-22T14:22:44.424565+00:00",
+  "humanAction": "Author: complete active, 3D view open; both models remain open",
+  "directionChange": "Prepared complete-to-ceiling attempt cannot count as complete: observed source was ceiling. Reuse fresh observed ceiling context with its already-frozen expectation for reverse switch.",
+  "switchConfirmedUtc": "2026-10-22T14:23:29.037306+00:00",
+  "checkStartedUtc": "2026-10-22T14:23:29.037306+00:00",
+  "checkFinishedUtc": "2026-10-22T14:24:19.114086+00:00",
+  "finishObservation": "Error response present in actual Claude wire by this time; author pasted matching answer"
+}

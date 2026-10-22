@@ -1,0 +1,8 @@
+{
+  "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-ceiling-negative.rvt",
+  "checkedUtc": "2026-10-22T14:19:15.915641+00:00",
+  "expectedSha256": "520ee45b056d004f10189a4bf26ede3ce22ff2b06a9cbe0a25c1eb79d384a003",
+  "actualSha256": "520ee45b056d004f10189a4bf26ede3ce22ff2b06a9cbe0a25c1eb79d384a003",
+  "unchanged": true,
+  "context": "After complete model confirmed and before reopening ceiling for quick switch"
+}

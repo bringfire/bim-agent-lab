@@ -1,0 +1,5 @@
+{
+  "accepted": false,
+  "code": "ContextExpired",
+  "reason": "ContextExpired is not proof of model-switch detection; no successful transition marker"
+}

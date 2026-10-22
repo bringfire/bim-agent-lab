@@ -1,0 +1,20 @@
+{
+  "sourceSession": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-desktops-2026-10-22\\0b381ec261ec420c94bb74c3bedeae5e\\claude\\session-7c39454decf045e7b675057312d23c99",
+  "snapshotUtc": "2026-10-22T14:45:42.416255+00:00",
+  "snapshotKind": "Complete-line byte prefixes of ongoing desktop session; not EOF evidence",
+  "protocolVersion": "2025-11-25",
+  "contextRequestId": "0e3e28a5e4ee468e9452ad01de7b8d2c",
+  "reportRequestId": "d8ce532c26e24b83bb10c6e839ac4b26",
+  "files": [
+    {
+      "path": "wire/client-to-server.jsonl",
+      "bytes": 3411,
+      "sha256": "e3f9c7588cee7dda30dcc185eac8e0c3cece9c238d38cc42d9dab739a520fc89"
+    },
+    {
+      "path": "wire/server-to-client.jsonl",
+      "bytes": 210674,
+      "sha256": "11ca1f3efded55feb30aada3e6712e9f98e4f1cb9dd07b34c8cdaaf113a31109"
+    }
+  ]
+}

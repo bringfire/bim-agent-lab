@@ -1,0 +1,20 @@
+{
+  "sourceSession": "session-68734ec59c3c4c0ba78eb02c63fd10a3",
+  "snapshotUtc": "2026-10-22T14:28:00.763426+00:00",
+  "snapshotKind": "Complete-line prefix; not EOF evidence",
+  "files": [
+    {
+      "path": "wire/client-to-server.jsonl",
+      "bytes": 12716,
+      "sha256": "76f0737ab21a827f8e8184687d6c397f0641ef9546396e86a375947eeeb37021"
+    },
+    {
+      "path": "wire/server-to-client.jsonl",
+      "bytes": 113101,
+      "sha256": "3a67d246d676af75ba16d45b3dadc38f45f1246957e11d2b9c01129d9067d93c"
+    }
+  ],
+  "protocolVersion": "2025-06-18",
+  "contextRequestId": "9a2ed505d70c47fe9a2e952235268c80",
+  "reportRequestId": "8ea5e39f7113494189dfbb4b4f3250d1"
+}

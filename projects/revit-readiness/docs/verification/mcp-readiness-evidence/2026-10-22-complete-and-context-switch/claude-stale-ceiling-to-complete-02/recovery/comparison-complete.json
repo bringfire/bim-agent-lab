@@ -1,0 +1,12 @@
+{
+  "result": {
+    "case": "complete",
+    "pass": true,
+    "findings": 0,
+    "affectedInstances": 0,
+    "examinedInstances": 16,
+    "coverageComplete": true,
+    "evaluationComplete": true
+  },
+  "completedUtc": "2026-10-22T14:28:00.733474+00:00"
+}

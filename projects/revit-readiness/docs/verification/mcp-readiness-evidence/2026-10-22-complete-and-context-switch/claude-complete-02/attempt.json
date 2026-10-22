@@ -1,0 +1,5 @@
+{
+  "state": "Partial",
+  "startedUtc": "2026-10-22T14:24:59.512808+00:00",
+  "purpose": "Claude fresh complete recovery after timely ContextChanged; prior requested complete call saw ceiling active and is not accepted"
+}

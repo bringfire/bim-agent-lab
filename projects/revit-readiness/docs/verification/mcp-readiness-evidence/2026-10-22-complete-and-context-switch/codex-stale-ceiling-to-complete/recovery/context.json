@@ -1,0 +1,27 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"contractVersion\":1,\"requestId\":\"77107660e9ef499697b9de5bfcd08b48\",\"bridgeSessionId\":\"a3163353950948eabd8cfb8a4955d860\",\"checklistSha256\":\"6edd2e120d6eb77536afb4d620295b9a5b88bf332730e7cd85303122e50c8729\",\"revitPid\":149972,\"revitBuild\":\"24.3.60.12\",\"documentLifetimeId\":\"51a8cf27d5c942fa93b8079dffb3f670\",\"projectUniqueId\":\"7cacd49c-ac17-4591-ad0a-cbc9bb40015a-00012b83\",\"documentPath\":\"D:\\\\bim-agent-lab\\\\projects\\\\revit-readiness\\\\samples\\\\local\\\\mcp-live-task7\\\\a10630e39dae448ba55abbfe0bc7ab6b\\\\models\\\\BAL-info-complete.rvt\",\"checklistId\":\"BAL-TYPE-INFO-v1\",\"checklistPath\":\"D:\\\\bim-agent-lab\\\\projects\\\\revit-readiness\\\\samples\\\\local\\\\mcp-live-task7\\\\a10630e39dae448ba55abbfe0bc7ab6b\\\\models\\\\BAL-info-complete.checklist.json\",\"scope\":\"Explicit checklist element UniqueIds; host basic walls and ceilings on the declared level, New in the declared phase. Types are checked once; links and other elements excluded. No view/selection filter or result cap.\",\"level\":\"L1 - Block 43\",\"phase\":\"New Construction\",\"contextToken\":\"hwKgfGma9o51yQhVOyvqwxDEeJrY9GTFDXfcnujnuPc=\",\"expiresUtc\":\"2026-10-22T14:22:48.4176904Z\"}"
+    }
+  ],
+  "structuredContent": {
+    "contractVersion": 1,
+    "requestId": "77107660e9ef499697b9de5bfcd08b48",
+    "bridgeSessionId": "a3163353950948eabd8cfb8a4955d860",
+    "checklistSha256": "6edd2e120d6eb77536afb4d620295b9a5b88bf332730e7cd85303122e50c8729",
+    "revitPid": 149972,
+    "revitBuild": "24.3.60.12",
+    "documentLifetimeId": "51a8cf27d5c942fa93b8079dffb3f670",
+    "projectUniqueId": "7cacd49c-ac17-4591-ad0a-cbc9bb40015a-00012b83",
+    "documentPath": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-complete.rvt",
+    "checklistId": "BAL-TYPE-INFO-v1",
+    "checklistPath": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-complete.checklist.json",
+    "scope": "Explicit checklist element UniqueIds; host basic walls and ceilings on the declared level, New in the declared phase. Types are checked once; links and other elements excluded. No view/selection filter or result cap.",
+    "level": "L1 - Block 43",
+    "phase": "New Construction",
+    "contextToken": "hwKgfGma9o51yQhVOyvqwxDEeJrY9GTFDXfcnujnuPc=",
+    "expiresUtc": "2026-10-22T14:22:48.4176904Z"
+  },
+  "isError": false
+}

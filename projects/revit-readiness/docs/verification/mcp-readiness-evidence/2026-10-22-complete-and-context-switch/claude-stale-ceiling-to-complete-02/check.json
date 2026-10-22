@@ -1,0 +1,15 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"code\":\"ContextChanged\",\"message\":\"The document or checklist identity changed. Obtain a fresh context.\",\"requestId\":\"0356c77a89f444a9b6cc4cf073c05a3a\",\"retryable\":false}"
+    }
+  ],
+  "structuredContent": {
+    "code": "ContextChanged",
+    "message": "The document or checklist identity changed. Obtain a fresh context.",
+    "requestId": "0356c77a89f444a9b6cc4cf073c05a3a",
+    "retryable": false
+  },
+  "isError": true
+}

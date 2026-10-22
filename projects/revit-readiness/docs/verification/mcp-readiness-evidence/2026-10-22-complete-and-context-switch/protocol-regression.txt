@@ -1,0 +1,160 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(57,53): warning CA1416: This call site is reachable on all platforms. 'BridgeJson.FormatUtc(DateTimeOffset)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(35,22): warning CA1416: This call site is reachable on all platforms. 'RequestBudget.Admit(IBridgeClock)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(58,13): warning CA1416: This call site is reachable on all platforms. 'BridgeJson.Serialize<BridgeRequest>(BridgeRequest)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(57,74): warning CA1416: This call site is reachable on all platforms. 'RequestBudget.DeadlineUtc' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+  BimAgentLab.Mcp.Probe -> D:\bim-agent-lab\projects\revit-readiness\tests\mcp-probe\bin\Release\net10.0\BimAgentLab.Mcp.Probe.dll
+
+Build succeeded.
+
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(57,53): warning CA1416: This call site is reachable on all platforms. 'BridgeJson.FormatUtc(DateTimeOffset)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(35,22): warning CA1416: This call site is reachable on all platforms. 'RequestBudget.Admit(IBridgeClock)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(58,13): warning CA1416: This call site is reachable on all platforms. 'BridgeJson.Serialize<BridgeRequest>(BridgeRequest)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(57,74): warning CA1416: This call site is reachable on all platforms. 'RequestBudget.DeadlineUtc' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+    4 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:04.22
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+  BimAgentLab.Mcp.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\bin\Release\net10.0\BimAgentLab.Mcp.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.83
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+  BimAgentLab.Mcp.Client -> D:\bim-agent-lab\projects\revit-readiness\tests\mcp-client\bin\Release\net10.0\BimAgentLab.Mcp.Client.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.20
+EVIDENCE protocol=2025-06-18 strict=False path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-protocol-tests\sdk-dc92db0f8f1c4e0295579517c6565af5\session-3834c8f6f8ce4d6d8d22325d63cfe576
+PASS Compatible host preserves exact protocol and results: 2025-06-18
+EVIDENCE protocol=2025-11-25 strict=False path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-protocol-tests\sdk-b589e6b3ef8f465aa1fd02928478806a\session-13e982876f454006b5f7e4a806b08688
+PASS Compatible host preserves exact protocol and results: 2025-11-25
+EVIDENCE protocol=2026-07-28 strict=False path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-protocol-tests\sdk-af5a5186b2fe4b108c2566b24a6f881a\session-1f8ba3eb6cc64024a23be38da566d7b5
+PASS Compatible host preserves exact protocol and results: 2026-07-28
+EVIDENCE protocol=2026-07-28 strict=True path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-protocol-tests\sdk-04b00a550af84e6fb48ec976e045b770\session-97877795f22b49478c63d7a89ea71758
+PASS Strict July host preserves modern discovery and results
+PASS Strict July host rejects legacy initialization: 2025-06-18
+PASS Strict July host rejects legacy initialization: 2025-11-25
+PASS Trace preserves fragmented Unicode bytes and stream ownership
+PASS Memory read cancellation retains pending buffer and suppresses late evidence
+PASS Array read cancellation retains pending buffer and suppresses late evidence
+PASS Trace size bound fails visibly without silent truncation
+PASS Host releases each owned stream once
+PASS Partial trace construction releases streams and preserves existing evidence
+PASS Windows open-stdin shutdown: trace=False, idle
+PASS Windows open-stdin shutdown: trace=False, partial
+PASS Windows open-stdin shutdown: trace=False, pending
+PASS Windows open-stdin shutdown: trace=True, idle
+PASS Windows open-stdin shutdown: trace=True, partial
+PASS Windows open-stdin shutdown: trace=True, pending
+PASS Windows open-stdin shutdown after trace initialization failure
+test_actual_pair (test_mcp_case_wire.CaseWireTests.test_actual_pair) ... ok
+test_context_semantics_cannot_disagree_with_report (test_mcp_case_wire.CaseWireTests.test_context_semantics_cannot_disagree_with_report) ... ok
+test_full_binding (test_mcp_case_wire.CaseWireTests.test_full_binding) ... ok
+test_semantic_corruptions (test_mcp_case_wire.CaseWireTests.test_semantic_corruptions) ... ok
+test_invalid_pid_never_prepares_or_writes (test_mcp_probe_settings.ReadinessSettingsTests.test_invalid_pid_never_prepares_or_writes) ... ok
+test_legacy_receipt_without_name_restores_its_probe (test_mcp_probe_settings.ReadinessSettingsTests.test_legacy_receipt_without_name_restores_its_probe) ... ok
+test_readiness_foreign_entry_is_preserved (test_mcp_probe_settings.ReadinessSettingsTests.test_readiness_foreign_entry_is_preserved) ... ok
+test_readiness_recovery_preserves_probe_and_concurrent_unrelated_edits (test_mcp_probe_settings.ReadinessSettingsTests.test_readiness_recovery_preserves_probe_and_concurrent_unrelated_edits) ... ok
+test_real_cli_prepares_readiness_identity_pid_and_session_root_before_writes (test_mcp_probe_settings.ReadinessSettingsTests.test_real_cli_prepares_readiness_identity_pid_and_session_root_before_writes) ... ok
+test_apply_refuses_changed_configuration (test_mcp_probe_settings.SettingsTests.test_apply_refuses_changed_configuration) ... ok
+test_prepared_recovery_exists_before_mutation_and_restores_after_interruption (test_mcp_probe_settings.SettingsTests.test_prepared_recovery_exists_before_mutation_and_restores_after_interruption) ... ok
+test_recovery_preserves_unrelated_edits_and_rejects_foreign_owned_entry (test_mcp_probe_settings.SettingsTests.test_recovery_preserves_unrelated_edits_and_rejects_foreign_owned_entry) ... ok
+test_existing_release_is_rejected_before_capture (test_mcp_readiness_driver.ReadinessDriverTests.test_existing_release_is_rejected_before_capture) ... ok
+test_keeps_sdk_connection_until_explicit_release (test_mcp_readiness_driver.ReadinessDriverTests.test_keeps_sdk_connection_until_explicit_release) ... ok
+test_bad_transition_metadata_rejected (test_mcp_stale_evidence.StaleEvidenceTests.test_bad_transition_metadata_rejected) ... ok
+test_original_binding_must_match_expectation (test_mcp_stale_evidence.StaleEvidenceTests.test_original_binding_must_match_expectation) ... ok
+test_transition_and_independent_recovery (test_mcp_stale_evidence.StaleEvidenceTests.test_transition_and_independent_recovery) ... ok
+test_accepted_legacy_revisions_preserve_complete_exchange (test_mcp_transcript.LegacyTranscriptTests.test_accepted_legacy_revisions_preserve_complete_exchange) ... ok
+test_legacy_capture_cannot_satisfy_strict_july (test_mcp_transcript.LegacyTranscriptTests.test_legacy_capture_cannot_satisfy_strict_july) ... ok
+test_legacy_negotiation_order_correlation_and_results_cannot_be_relaxed (test_mcp_transcript.LegacyTranscriptTests.test_legacy_negotiation_order_correlation_and_results_cannot_be_relaxed) ... ok
+test_legacy_tools_list_may_omit_optional_params (test_mcp_transcript.LegacyTranscriptTests.test_legacy_tools_list_may_omit_optional_params) ... ok
+test_unverified_protocol_is_rejected (test_mcp_transcript.LegacyTranscriptTests.test_unverified_protocol_is_rejected) ... ok
+test_complete_exchange (test_mcp_transcript.TranscriptTests.test_complete_exchange) ... ok
+test_missing_false_flag_wrong_protocol_id_and_diagnostics_are_rejected (test_mcp_transcript.TranscriptTests.test_missing_false_flag_wrong_protocol_id_and_diagnostics_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 24 tests in 13.524s
+
+OK
+PASS SDK probe (desktop verification remains separate)
+{
+  "protocol": "2025-06-18",
+  "clientNames": [
+    "BimAgentLab.Mcp.Client"
+  ],
+  "checks": [
+    "failure",
+    "initialize",
+    "initialized",
+    "list",
+    "success"
+  ],
+  "pass": true
+}
+SDK_CLIENT_EVIDENCE protocol=2025-06-18 strict=False path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-sdk-client\40408dacf4404ce98c95055c3f28b55f
+PASS SDK probe (desktop verification remains separate)
+{
+  "protocol": "2025-11-25",
+  "clientNames": [
+    "BimAgentLab.Mcp.Client"
+  ],
+  "checks": [
+    "failure",
+    "initialize",
+    "initialized",
+    "list",
+    "success"
+  ],
+  "pass": true
+}
+SDK_CLIENT_EVIDENCE protocol=2025-11-25 strict=False path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-sdk-client\3ceadd3af7e645369782e2fc32753e24
+PASS SDK probe (desktop verification remains separate)
+{
+  "protocol": "2026-07-28",
+  "clientNames": [
+    "BimAgentLab.Mcp.Client"
+  ],
+  "checks": [
+    "discover",
+    "failure",
+    "list",
+    "success"
+  ],
+  "pass": true
+}
+SDK_CLIENT_EVIDENCE protocol=2026-07-28 strict=False path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-sdk-client\60125c3c98c548ef8e321afb7bcb3846
+PASS SDK probe (desktop verification remains separate)
+{
+  "protocol": "2026-07-28",
+  "clientNames": [
+    "BimAgentLab.Mcp.Client"
+  ],
+  "checks": [
+    "discover",
+    "failure",
+    "list",
+    "success"
+  ],
+  "pass": true
+}
+SDK_CLIENT_EVIDENCE protocol=2026-07-28 strict=True path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-sdk-client\58690ab3d8a144f6b65fc8e75578effc
+PASS available offline suites; desktop/Revit acceptance is separate.

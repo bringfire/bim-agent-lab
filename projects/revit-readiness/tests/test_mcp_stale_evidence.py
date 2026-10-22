@@ -26,7 +26,7 @@ class StaleEvidenceTests(unittest.TestCase):
             expectedReport=expected_report('complete',ctx['documentPath'],ctx['checklistPath']))
         self.write('expectation.json',prepared)
         old=read(self.root/'check.json')['structuredContent']
-        error=dict(contractVersion=1,requestId=old['requestId'],code='ContextChanged',message='Synthetic document-switch test')
+        error=dict(requestId=old['requestId'],code='ContextChanged',message='Synthetic document-switch test',retryable=False)
         result=dict(isError=True,structuredContent=error,content=[dict(type='text',text=json.dumps(error))])
         self.write('check.json',result)
         rows=[json.loads(x) for x in (self.root/'wire/server-to-client.jsonl').read_bytes().splitlines()]
@@ -48,7 +48,8 @@ class StaleEvidenceTests(unittest.TestCase):
         (self.root/name).write_text(json.dumps(value,indent=2),encoding='utf-8')
 
     def test_transition_and_independent_recovery(self):
-        result=verify_stale(self.root)
+        try:result=verify_stale(self.root)
+        except KeyError as error:self.fail('Domain error must not require success-envelope members: '+str(error))
         self.assertTrue(result.get('pass'))
         self.assertEqual(result.get('code'),'ContextChanged')
         self.assertEqual(result['recovery']['findings'],2)

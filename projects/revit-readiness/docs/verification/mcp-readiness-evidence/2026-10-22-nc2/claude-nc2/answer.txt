@@ -1,0 +1,18 @@
+The declared scope does not pass. No fields are missing, but neither completeness flag is true. All 16 instances were found. However, the checklist has no requirement entry for the Ceiling ACT type, so its 2 instances could not be judged against anything. Zero findings with incomplete coverage is not a readiness pass. Nothing was edited or exported, and the model was unmodified before and after the check.
+Active model: D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-task8\f82eea66e10b43ebaafd7fe40ea4bc87\controls\nc2\BAL-info-complete.rvt. It has its own checklist at ...\controls\nc2\BAL-info-complete.checklist.json. The checklist ID is still BAL-TYPE-INFO-v1, but the hash is new.
+Declared scope: The explicit checklist element UniqueIds, limited to host basic walls and ceilings on L1 - Block 43 that are New in New Construction. Each type is checked once. Links and other elements are excluded, and there is no view or selection filter or result cap.
+Counts: 16 requested, 16 examined. Every requested element was found and is in scope.
+Missing findings: 0, with no affected instances.
+Completeness flags:
+- Evaluation Complete: false
+- CoverageComplete: false
+Scope issues: None.
+Unexamined cases (2):
+Case ElementId Type Reason     BAL-INFO-CACT-01 2492802 BAL INFO Ceiling ACT No matching requirement   BAL-INFO-CACT-02 2492809 BAL INFO Ceiling ACT No matching requirement
+All three fields on Ceiling ACT came back Unexamined, with Required: null and no requirement source. The type does carry a Code value of C-ACT, but the tool did not count that as a pass, because it had no rule saying whether Code is required for that type.
+Type status:
+- Wall A, Wall B, Wall C, Wall D and Ceiling GWB: Pass
+- Ceiling ACT: Unexamined
+Why it does not pass: This is a different failure from the last run. In nc1, an element was missing from the model and showed up as a scope issue. In nc2, the element is present, but the checklist has no rule to apply to it, and that gap shows up at the evaluation level. In both cases the tool correctly refused to treat "nothing found" as "ready."
+Likely cause, not verified: The nc2 checklist appears to have dropped the BAL INFO Ceiling ACT requirement entry, or its type name or ID no longer matches. To fix it, restore that entry in the checklist, then run the check again.
+Outside the declared scope, 1,196 host wall and ceiling instances were not evaluated, and 6 link instances were excluded.

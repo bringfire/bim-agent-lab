@@ -1,0 +1,28 @@
+F
+======================================================================
+FAIL: test_transition_and_independent_recovery (__main__.StaleEvidenceTests.test_transition_and_independent_recovery)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_stale_evidence.py", line 51, in test_transition_and_independent_recovery
+    try:result=verify_stale(self.root)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_mcp_evidence.py", line 193, in verify_stale
+    context,error=verify_wire(directory,'ContextChanged');ctx=context['structuredContent']
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_mcp_evidence.py", line 172, in verify_wire
+    assert re.fullmatch('[0-9a-f]{32}',body['requestId']) and body['contractVersion']==1
+                                                              ~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'contractVersion'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_stale_evidence.py", line 52, in test_transition_and_independent_recovery
+    except KeyError as error:self.fail('Domain error must not require success-envelope members: '+str(error))
+                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: Domain error must not require success-envelope members: 'contractVersion'
+
+----------------------------------------------------------------------
+Ran 1 test in 0.129s
+
+FAILED (failures=1)

@@ -1,0 +1,47 @@
+test_verify_mcp_evidence.py
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.116s
+
+OK
+
+test_mcp_case_wire.py
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.467s
+
+OK
+
+test_prepare_mcp_controls.py
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.848s
+
+OK
+
+test_mcp_stale_evidence.py
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.362s
+
+OK
+
+test_verify_desktop_continuity.py
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.940s
+
+OK
+
+codex-wall-defects-02 {"case": "wall-defects", "pass": true, "findings": 2, "affectedInstances": 6, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}
+claude-wall-defects {"case": "wall-defects", "pass": true, "findings": 2, "affectedInstances": 6, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}
+sdk-july-wall-defects {"case": "wall-defects", "pass": true, "findings": 2, "affectedInstances": 6, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}
+codex-ceiling-negative {"case": "ceiling-negative", "pass": true, "findings": 3, "affectedInstances": 8, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}
+claude-ceiling-negative {"case": "ceiling-negative", "pass": true, "findings": 3, "affectedInstances": 8, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}
+sdk-july-ceiling-negative {"case": "ceiling-negative", "pass": true, "findings": 3, "affectedInstances": 8, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}
+codex-complete {"case": "complete", "pass": true, "findings": 0, "affectedInstances": 0, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}
+claude-complete-02 {"case": "complete", "pass": true, "findings": 0, "affectedInstances": 0, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}
+sdk-july-complete {"case": "complete", "pass": true, "findings": 0, "affectedInstances": 0, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}
+codex-stale-ceiling-to-complete {"pass": true, "code": "ContextChanged", "recovery": {"case": "complete", "pass": true, "findings": 0, "affectedInstances": 0, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}}
+claude-stale-ceiling-to-complete-02 {"pass": true, "code": "ContextChanged", "recovery": {"case": "complete", "pass": true, "findings": 0, "affectedInstances": 0, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}}
+Evidence hashes PASS 150

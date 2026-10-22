@@ -1,0 +1,27 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\"contractVersion\":1,\"requestId\":\"7070cb0fe22445cd8743d64d51b46035\",\"bridgeSessionId\":\"a3163353950948eabd8cfb8a4955d860\",\"checklistSha256\":\"3f7c58277f550a1a52b0f75cb9ad2fc818b771b172f91ae0b48ba4e4340a0cc0\",\"revitPid\":149972,\"revitBuild\":\"24.3.60.12\",\"documentLifetimeId\":\"b4835ccaa8a84f9ab82d70045cb92193\",\"projectUniqueId\":\"7cacd49c-ac17-4591-ad0a-cbc9bb40015a-00012b83\",\"documentPath\":\"D:\\\\bim-agent-lab\\\\projects\\\\revit-readiness\\\\samples\\\\local\\\\mcp-live-task7\\\\a10630e39dae448ba55abbfe0bc7ab6b\\\\models\\\\BAL-info-ceiling-negative.rvt\",\"checklistId\":\"BAL-TYPE-INFO-v1\",\"checklistPath\":\"D:\\\\bim-agent-lab\\\\projects\\\\revit-readiness\\\\samples\\\\local\\\\mcp-live-task7\\\\a10630e39dae448ba55abbfe0bc7ab6b\\\\models\\\\BAL-info-ceiling-negative.checklist.json\",\"scope\":\"Explicit checklist element UniqueIds; host basic walls and ceilings on the declared level, New in the declared phase. Types are checked once; links and other elements excluded. No view/selection filter or result cap.\",\"level\":\"L1 - Block 43\",\"phase\":\"New Construction\",\"contextToken\":\"PEGlSnuVUAse\\u002BAcZqLNSXmD2eKYlXeTAkKBtEBKoXGM=\",\"expiresUtc\":\"2026-10-22T14:15:43.2029486Z\"}"
+    }
+  ],
+  "structuredContent": {
+    "contractVersion": 1,
+    "requestId": "7070cb0fe22445cd8743d64d51b46035",
+    "bridgeSessionId": "a3163353950948eabd8cfb8a4955d860",
+    "checklistSha256": "3f7c58277f550a1a52b0f75cb9ad2fc818b771b172f91ae0b48ba4e4340a0cc0",
+    "revitPid": 149972,
+    "revitBuild": "24.3.60.12",
+    "documentLifetimeId": "b4835ccaa8a84f9ab82d70045cb92193",
+    "projectUniqueId": "7cacd49c-ac17-4591-ad0a-cbc9bb40015a-00012b83",
+    "documentPath": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-ceiling-negative.rvt",
+    "checklistId": "BAL-TYPE-INFO-v1",
+    "checklistPath": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-ceiling-negative.checklist.json",
+    "scope": "Explicit checklist element UniqueIds; host basic walls and ceilings on the declared level, New in the declared phase. Types are checked once; links and other elements excluded. No view/selection filter or result cap.",
+    "level": "L1 - Block 43",
+    "phase": "New Construction",
+    "contextToken": "PEGlSnuVUAse+AcZqLNSXmD2eKYlXeTAkKBtEBKoXGM=",
+    "expiresUtc": "2026-10-22T14:15:43.2029486Z"
+  },
+  "isError": false
+}
