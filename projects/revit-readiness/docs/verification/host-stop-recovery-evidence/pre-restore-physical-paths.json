@@ -1,0 +1,27 @@
+[
+  {
+    "Requested": "C:\\Users\\bring\\AppData\\Local\\BimAgentLab\\RevitReadiness\\InstallRecovery\\74e482b3f82e491283e66ed12eb6b8d9\\receipt.json",
+    "Physical": "\\\\?\\C:\\Users\\bring\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\BimAgentLab\\RevitReadiness\\InstallRecovery\\74e482b3f82e491283e66ed12eb6b8d9\\receipt.json",
+    "Redirected": true
+  },
+  {
+    "Requested": "C:\\Users\\bring\\AppData\\Local\\BimAgentLab\\RevitReadiness\\InstallRecovery\\74e482b3f82e491283e66ed12eb6b8d9\\backup\\0.bin",
+    "Physical": "\\\\?\\C:\\Users\\bring\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\BimAgentLab\\RevitReadiness\\InstallRecovery\\74e482b3f82e491283e66ed12eb6b8d9\\backup\\0.bin",
+    "Redirected": true
+  },
+  {
+    "Requested": "C:\\Users\\bring\\AppData\\Local\\BimAgentLab\\RevitReadiness\\InstallRecovery\\b0d82098d961433f9945d10fc9ebfa55\\receipt.json",
+    "Physical": "\\\\?\\C:\\Users\\bring\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\BimAgentLab\\RevitReadiness\\InstallRecovery\\b0d82098d961433f9945d10fc9ebfa55\\receipt.json",
+    "Redirected": true
+  },
+  {
+    "Requested": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitReadiness.dll",
+    "Physical": "\\\\?\\C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitReadiness.dll",
+    "Redirected": false
+  },
+  {
+    "Requested": "C:\\Users\\bring\\AppData\\Local\\BimAgentLab\\RevitReadiness\\McpServer\\BimAgentLab.RevitReadiness.Mcp.exe",
+    "Physical": "\\\\?\\C:\\Users\\bring\\AppData\\Local\\Packages\\OpenAI.Codex_2p2nqsd0c76g0\\LocalCache\\Local\\BimAgentLab\\RevitReadiness\\McpServer\\BimAgentLab.RevitReadiness.Mcp.exe",
+    "Redirected": true
+  }
+]

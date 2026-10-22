@@ -1,0 +1,25 @@
+{
+  "restart": {
+    "pass": true,
+    "bridgeSessionId": "440e441f0ca74e04b4435bd62db85c8b",
+    "reportMatchesBaseline": true,
+    "scope": "Fresh-session recovery; old token was already expired, not isolated restart invalidation"
+  },
+  "queuedStop": {
+    "pass": true,
+    "queuedRequests": 3,
+    "queuedExecutorEntries": 0,
+    "queuedReaderEntries": 0,
+    "networkCompletedWhileReaderHeld": true,
+    "eventDisposedOnApiThread": true,
+    "hooksRemovedOnApiThread": true,
+    "scope": "Injected Stop; not application shutdown or physical lifetime disposal"
+  },
+  "restoration": {
+    "pass": true,
+    "normalCandidate": "9a93f6d",
+    "restoredTargets": 97,
+    "unchangedSavedModelsAndSidecars": 4,
+    "scope": "Idle application shutdown and normal-build restoration; shared server remains redirected"
+  }
+}

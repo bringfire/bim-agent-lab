@@ -1,0 +1,59 @@
+.FFFFFF
+======================================================================
+FAIL: test_reject_no_completed_capture (test_verify_host_stop_recovery.RecoveryTests.test_reject_no_completed_capture)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 36, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_reject_no_new_hook (test_verify_host_stop_recovery.RecoveryTests.test_reject_no_new_hook)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 36, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_reject_no_new_quiescence (test_verify_host_stop_recovery.RecoveryTests.test_reject_no_new_quiescence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 36, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_reject_no_new_reader (test_verify_host_stop_recovery.RecoveryTests.test_reject_no_new_reader)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 36, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_reject_same_session (test_verify_host_stop_recovery.RecoveryTests.test_reject_same_session)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 36, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_reject_wrong_pid (test_verify_host_stop_recovery.RecoveryTests.test_reject_wrong_pid)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 36, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.256s
+
+FAILED (failures=6)

@@ -1,0 +1,140 @@
+.........FFFFFFFFFFFFFFF
+======================================================================
+FAIL: test_stop_reject_automatic_release (test_verify_host_stop_recovery.RecoveryTests.test_stop_reject_automatic_release)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 80, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_stop_reject_cleanup_release (test_verify_host_stop_recovery.RecoveryTests.test_stop_reject_cleanup_release)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 80, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_stop_reject_deadline_changed (test_verify_host_stop_recovery.RecoveryTests.test_stop_reject_deadline_changed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 80, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_stop_reject_descriptor_retained (test_verify_host_stop_recovery.RecoveryTests.test_stop_reject_descriptor_retained)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 80, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_stop_reject_driver_failed (test_verify_host_stop_recovery.RecoveryTests.test_stop_reject_driver_failed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 80, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_stop_reject_event_not_disposed (test_verify_host_stop_recovery.RecoveryTests.test_stop_reject_event_not_disposed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 80, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_stop_reject_hooks_never_removed (test_verify_host_stop_recovery.RecoveryTests.test_stop_reject_hooks_never_removed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 80, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_stop_reject_network_missing_while_held (test_verify_host_stop_recovery.RecoveryTests.test_stop_reject_network_missing_while_held)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 80, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_stop_reject_not_completed (test_verify_host_stop_recovery.RecoveryTests.test_stop_reject_not_completed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 80, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_stop_reject_queued_entered_executor (test_verify_host_stop_recovery.RecoveryTests.test_stop_reject_queued_entered_executor)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 80, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_stop_reject_queued_identity (test_verify_host_stop_recovery.RecoveryTests.test_stop_reject_queued_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 80, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_stop_reject_queued_read (test_verify_host_stop_recovery.RecoveryTests.test_stop_reject_queued_read)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 80, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_stop_reject_reader_not_finished (test_verify_host_stop_recovery.RecoveryTests.test_stop_reject_reader_not_finished)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 80, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_stop_reject_revit_exited (test_verify_host_stop_recovery.RecoveryTests.test_stop_reject_revit_exited)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 80, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_stop_reject_short_window (test_verify_host_stop_recovery.RecoveryTests.test_stop_reject_short_window)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 80, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+----------------------------------------------------------------------
+Ran 24 tests in 1.704s
+
+FAILED (failures=15)

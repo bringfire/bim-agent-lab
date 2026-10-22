@@ -1,0 +1,2 @@
+Response received; SDK connection retained until explicit finish release.
+PASS SDK readiness: expected=BridgeUnavailable; evidence=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-live-task7\a10630e39dae448ba55abbfe0bc7ab6b\interrupt-live-20261022T011442Z\restart-20261022T014744Z\queued-stop\queued-2\sdk

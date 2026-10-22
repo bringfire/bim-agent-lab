@@ -127,3 +127,15 @@ Suggested participant prompt:
 > Prove that the interruption reached the application, not just that the client stopped waiting. Separate cancellation, disconnect, timeout and Stop. Test waiting work and work already underway, preserve failed attempts, and show that the application can recover afterward.
 
 Actual Revit traces then showed that canceled waiting work never entered the reader, while already-started work finished without returning late success. Stop released connections and removed its event hooks while a read was still held. The agent asked the person to start the bridge again to check recovery. These results and the still-unexplained token-only cancellation observation are kept separate in the [technical record](../../projects/revit-readiness/docs/verification/2026-10-21-host-interruptions.md). A successful explicit-cancellation test does not explain away a different failed stimulus.
+
+## Question the test as well as the plugin
+
+The author replied “started.” The agent verified that the new bridge session returned the same model information, then tested Stop with three requests waiting behind an active request. This exposed a mistake in the test: it paused Revit's application thread, then waited for cleanup that needed that thread to resume.
+
+The agent inspected the actual plugin code and trace before changing anything. Network cleanup and canceled requests had progressed correctly. The final event-hook cleanup was designed to finish when Revit regained its application thread. The agent corrected the observer's waiting order, preserved the failed attempt, and asked for one more Start. The repeated capture then verified waiting work never ran and all required cleanup completed. The plugin itself did not need a patch.
+
+Suggested participant prompt:
+
+> When a test fails, check whether the plugin, the test, or the expectation is wrong. Show the evidence for your explanation before changing code. Make sure the test is not blocking the event it waits for, keep the failed attempt, and repeat the corrected test.
+
+This applies the review lesson about execution and waiting to the agent's own verification tools. A reported failure deserves investigation; it does not automatically establish a product defect. The [technical record](../../projects/revit-readiness/docs/verification/2026-10-21-host-stop-recovery.md) separates fresh recovery, the failed observer, the successful repeat and what remains unverified.

@@ -1,0 +1,17 @@
+{
+  "checkedUtc": "2026-10-22T02:03:28.935509+00:00",
+  "receipts": [
+    {
+      "transaction": "74e482b3f82e491283e66ed12eb6b8d9",
+      "receiptMatchesPinnedRecord": true,
+      "verifiedOperations": 97,
+      "createdDirectories": []
+    },
+    {
+      "transaction": "b0d82098d961433f9945d10fc9ebfa55",
+      "receiptMatchesPinnedRecord": true,
+      "verifiedOperations": 97,
+      "createdDirectories": []
+    }
+  ]
+}

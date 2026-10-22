@@ -1,0 +1,68 @@
+.........FFFFFFF...............
+======================================================================
+FAIL: test_restore_reject_descriptor_retained (test_verify_host_stop_recovery.RecoveryTests.test_restore_reject_descriptor_retained)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 104, in test
+    with self.assertRaises((AssertionError,KeyError,ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_restore_reject_intermediate_changed (test_verify_host_stop_recovery.RecoveryTests.test_restore_reject_intermediate_changed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 104, in test
+    with self.assertRaises((AssertionError,KeyError,ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_restore_reject_model_changed (test_verify_host_stop_recovery.RecoveryTests.test_restore_reject_model_changed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 104, in test
+    with self.assertRaises((AssertionError,KeyError,ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_restore_reject_normal_target_changed (test_verify_host_stop_recovery.RecoveryTests.test_restore_reject_normal_target_changed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 104, in test
+    with self.assertRaises((AssertionError,KeyError,ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_restore_reject_process_alive (test_verify_host_stop_recovery.RecoveryTests.test_restore_reject_process_alive)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 104, in test
+    with self.assertRaises((AssertionError,KeyError,ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_restore_reject_recovery_not_restored (test_verify_host_stop_recovery.RecoveryTests.test_restore_reject_recovery_not_restored)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 104, in test
+    with self.assertRaises((AssertionError,KeyError,ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_restore_reject_shutdown_never_returned (test_verify_host_stop_recovery.RecoveryTests.test_restore_reject_shutdown_never_returned)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_stop_recovery.py", line 104, in test
+    with self.assertRaises((AssertionError,KeyError,ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+----------------------------------------------------------------------
+Ran 31 tests in 2.635s
+
+FAILED (failures=7)

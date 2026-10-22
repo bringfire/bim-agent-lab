@@ -1,0 +1,22 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\u0022code\u0022:\u0022BridgeUnavailable\u0022,\u0022message\u0022:\u0022The bound bridge did not return a valid correlated response. Reconnect explicitly if it restarted.\u0022,\u0022requestId\u0022:\u002232add4e83ac24914b7b0a86e887eee97\u0022,\u0022retryable\u0022:true}"
+    }
+  ],
+  "structuredContent": {
+    "code": "BridgeUnavailable",
+    "message": "The bound bridge did not return a valid correlated response. Reconnect explicitly if it restarted.",
+    "requestId": "32add4e83ac24914b7b0a86e887eee97",
+    "retryable": true
+  },
+  "isError": true,
+  "_meta": {
+    "io.modelcontextprotocol/serverInfo": {
+      "name": "bim-agent-lab",
+      "version": "0.1.0"
+    }
+  },
+  "resultType": "complete"
+}

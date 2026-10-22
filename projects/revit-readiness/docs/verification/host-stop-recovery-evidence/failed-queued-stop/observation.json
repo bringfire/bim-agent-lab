@@ -1,0 +1,19 @@
+{
+  "startedUtc": "2026-10-22T01:50:51.862552+00:00",
+  "revitPid": 198452,
+  "queued": {
+    "queued-1": "3f7e50680bfc4c03a24d423be24578fb",
+    "queued-2": "3619e5c7bc954cd99234077d7dd66c5e",
+    "queued-3": "c60e5d983df443b9b52cbaaa3a372040"
+  },
+  "blockerRequestId": "32add4e83ac24914b7b0a86e887eee97",
+  "preparationReleaseUtc": "2026-10-22T01:50:59.308771+00:00",
+  "cleanupRelease": true,
+  "driverExitCodes": [
+    null,
+    null,
+    null,
+    null
+  ],
+  "capturedUntilUtc": "2026-10-22T01:51:07.342155+00:00"
+}

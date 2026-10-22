@@ -39,7 +39,7 @@ The trace records `StopEntered`, canceled Response, closed request connection, `
 
 External-event disposal is observed here; **physical request-lifetime disposal is not**. Do not combine those resource owners into one cleanup claim. Application shutdown, queued Stop, an in-flight native Raise at final shutdown, and every possible native Raise outcome remain separate observations. Earlier captures observed Accepted/Pending; Denied/TimedOut are not claimed.
 
-The person has been asked to invoke Start again on the same model. Restart recovery is pending until the new actual descriptor/session and fresh request are captured; do not substitute a prior restart for this one.
+The person subsequently invoked Start again. The [follow-up recovery and queued-Stop record](2026-10-21-host-stop-recovery.md) verifies a new session and matching fresh report, then separately records a failed observer and a successful corrected queued-Stop capture. The old token was expired by this restart, so the fresh result does not isolate token invalidation.
 
 ## Verification and teaching scope
 

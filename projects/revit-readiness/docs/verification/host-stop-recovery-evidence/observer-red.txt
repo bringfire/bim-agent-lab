@@ -1,0 +1,37 @@
+F.FFF
+======================================================================
+FAIL: test_consumed_arm_released (test_queued_stop_observer.OwnedArmsTests.test_consumed_arm_released)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_queued_stop_observer.py", line 28, in test_consumed_arm_released
+    self.assertTrue(observer.cleanup_arms(self.root, self.owned))
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_foreign_arm_preserved_after_claim (test_queued_stop_observer.OwnedArmsTests.test_foreign_arm_preserved_after_claim)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_queued_stop_observer.py", line 36, in test_foreign_arm_preserved_after_claim
+    self.assertTrue((self.root/'release-abc-Reader.signal').exists())
+AssertionError: False is not true
+
+======================================================================
+FAIL: test_foreign_claim_not_released (test_queued_stop_observer.OwnedArmsTests.test_foreign_claim_not_released)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_queued_stop_observer.py", line 42, in test_foreign_claim_not_released
+    self.assertFalse(self.arm.exists())
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_unconsumed_owned_arm_removed (test_queued_stop_observer.OwnedArmsTests.test_unconsumed_owned_arm_removed)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_queued_stop_observer.py", line 24, in test_unconsumed_owned_arm_removed
+    self.assertFalse(self.arm.exists())
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.017s
+
+FAILED (failures=4)
