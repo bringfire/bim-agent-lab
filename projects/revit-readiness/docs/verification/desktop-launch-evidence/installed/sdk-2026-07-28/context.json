@@ -1,0 +1,22 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\u0022code\u0022:\u0022BridgeUnavailable\u0022,\u0022message\u0022:\u0022Start a bridge in the selected Revit instance.\u0022,\u0022requestId\u0022:\u002236fb44bd2ff9433398e6a9cdd2b6f9d4\u0022,\u0022retryable\u0022:true}"
+    }
+  ],
+  "structuredContent": {
+    "code": "BridgeUnavailable",
+    "message": "Start a bridge in the selected Revit instance.",
+    "requestId": "36fb44bd2ff9433398e6a9cdd2b6f9d4",
+    "retryable": true
+  },
+  "isError": true,
+  "_meta": {
+    "io.modelcontextprotocol/serverInfo": {
+      "name": "bim-agent-lab",
+      "version": "0.1.0"
+    }
+  },
+  "resultType": "complete"
+}

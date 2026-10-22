@@ -1,0 +1,12 @@
+[
+  {
+    "Requested": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\InstallRecovery\\68dac9adc1c04f0694a12acfda4e9a6c\\receipt.json",
+    "Physical": "\\\\?\\C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\InstallRecovery\\68dac9adc1c04f0694a12acfda4e9a6c\\receipt.json",
+    "Redirected": false
+  },
+  {
+    "Requested": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\InstallRecovery\\68dac9adc1c04f0694a12acfda4e9a6c\\backup\\0.bin",
+    "Physical": "\\\\?\\C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\InstallRecovery\\68dac9adc1c04f0694a12acfda4e9a6c\\backup\\0.bin",
+    "Redirected": false
+  }
+]

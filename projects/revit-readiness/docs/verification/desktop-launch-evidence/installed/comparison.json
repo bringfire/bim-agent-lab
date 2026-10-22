@@ -1,0 +1,35 @@
+{
+  "pass": true,
+  "installedExecutableSha256": "9deca53fb5d0a35b4fb04e5cce00a0f37481751a55fdd3f7f37b668b74324a4a",
+  "startupOnlySmoke": [
+    {
+      "processId": 58780,
+      "exitCode": 0,
+      "naturalExit": true,
+      "stdoutBytes": 0,
+      "stderrBytes": 0
+    },
+    {
+      "processId": 150536,
+      "exitCode": 0,
+      "naturalExit": true,
+      "stdoutBytes": 0,
+      "stderrBytes": 0
+    }
+  ],
+  "protocolExchanges": [
+    {
+      "protocol": "2025-06-18",
+      "pass": true
+    },
+    {
+      "protocol": "2025-11-25",
+      "pass": true
+    },
+    {
+      "protocol": "2026-07-28",
+      "pass": true
+    }
+  ],
+  "scope": "Two per-session trace startups end on stdin EOF; three official-SDK catalog/BridgeUnavailable exchanges; no actual Revit or desktop acceptance"
+}

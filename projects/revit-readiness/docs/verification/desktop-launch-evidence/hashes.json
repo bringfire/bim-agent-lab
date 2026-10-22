@@ -96,6 +96,122 @@
     "sha256": "417c825a3359f99b4c42cd68f38f58430d5e6ce1fa72d661ea552ed555c2e990"
   },
   {
+    "path": "installed/comparison.json",
+    "sha256": "244cc4f1962f703b816e7d98ceec78fc013d73abfdefce6c6685ca812eb9e8da"
+  },
+  {
+    "path": "installed/launch-smoke/session-29fd91aa6b984f5f85310e7684b328cf/client-to-server.jsonl",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "installed/launch-smoke/session-29fd91aa6b984f5f85310e7684b328cf/server-to-client.jsonl",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "installed/launch-smoke/session-5575bfad10614adab5985ea553e884c2/client-to-server.jsonl",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "installed/launch-smoke/session-5575bfad10614adab5985ea553e884c2/server-to-client.jsonl",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "installed/physical-paths.json",
+    "sha256": "aeaf1bdef779003301d5b8faf643f2bc33a8439d1945f6588bfa9f1edaaa6e70"
+  },
+  {
+    "path": "installed/prepared-physical-paths.json",
+    "sha256": "ccbcc8f1eaa4ef0e3c9f67f31bb4cfdcdb59bd267523ce5554b3a8298440d3c9"
+  },
+  {
+    "path": "installed/publish.txt",
+    "sha256": "1dac47c0e0266c2cba385246f3bfa1990297468403383857b7ac3fc82d40fc59"
+  },
+  {
+    "path": "installed/receipt.json",
+    "sha256": "e1306368d8bbbf35ccf309cd1f53bf1c3b21c450abb8daeccd8ca851e9c6c813"
+  },
+  {
+    "path": "installed/sdk-2025-06-18/complete.json",
+    "sha256": "24a2c27869ea53475d49f85360581d1282c5e34dd768e97116e53daad1d58563"
+  },
+  {
+    "path": "installed/sdk-2025-06-18/context.json",
+    "sha256": "481d5a4d63face1284fe4eac8cd990290dea908618a8d4f1ba7bfbb20fc4fec5"
+  },
+  {
+    "path": "installed/sdk-2025-06-18/partial.json",
+    "sha256": "29d1cc121279c98e262dd8f4b031c570f9ccd07790a2ad49aa3a652e42ced71d"
+  },
+  {
+    "path": "installed/sdk-2025-06-18/sdk-client-result.json",
+    "sha256": "ae77893124a5e864431aa87f990edd29383c9895305edeb49c2220200118b1ad"
+  },
+  {
+    "path": "installed/sdk-2025-06-18/wire/client-to-server.jsonl",
+    "sha256": "a517f2e44a5162ff05802c3cc6cf0d2daca1ee0724bb43667c4d6255128645df"
+  },
+  {
+    "path": "installed/sdk-2025-06-18/wire/server-to-client.jsonl",
+    "sha256": "e3565d13d7370f2811f6e26c022240e9b61302cf6da9c8c16f7da912dfd55927"
+  },
+  {
+    "path": "installed/sdk-2025-11-25/complete.json",
+    "sha256": "24a2c27869ea53475d49f85360581d1282c5e34dd768e97116e53daad1d58563"
+  },
+  {
+    "path": "installed/sdk-2025-11-25/context.json",
+    "sha256": "1f35a1cdd106a320d516d6a28862ecfd4ec09aa706f8d00108328b26653b1aa6"
+  },
+  {
+    "path": "installed/sdk-2025-11-25/partial.json",
+    "sha256": "399b64d61b7562b1441e8ac18d71612b2f317115cdbc612d46144a5dbe2bc3ff"
+  },
+  {
+    "path": "installed/sdk-2025-11-25/sdk-client-result.json",
+    "sha256": "db26261faf0d3c5ec8f64fe1a77acd533c8060c2a5f36e833eb8b941484c9ab6"
+  },
+  {
+    "path": "installed/sdk-2025-11-25/wire/client-to-server.jsonl",
+    "sha256": "e1fe0e982932707e1ffd61867ea70c03346548bd58a478bab35b5b6a1174e718"
+  },
+  {
+    "path": "installed/sdk-2025-11-25/wire/server-to-client.jsonl",
+    "sha256": "3178dcfbfc117962138a487d646250a89689f9279baf3c654208fbc7d7a91e94"
+  },
+  {
+    "path": "installed/sdk-2026-07-28/complete.json",
+    "sha256": "24a2c27869ea53475d49f85360581d1282c5e34dd768e97116e53daad1d58563"
+  },
+  {
+    "path": "installed/sdk-2026-07-28/context.json",
+    "sha256": "5472cf7997f8e11170d4bb1b0962fdf40f3d0d83e9c794556a62074992978db3"
+  },
+  {
+    "path": "installed/sdk-2026-07-28/partial.json",
+    "sha256": "934efab73f2811334c8d929e1729e40da5dc1d365e412d70addaaff652de1b34"
+  },
+  {
+    "path": "installed/sdk-2026-07-28/sdk-client-result.json",
+    "sha256": "be03100b2836337fb4c6583abd1964419366bcc7b0dab3bb8a9166b0c010c648"
+  },
+  {
+    "path": "installed/sdk-2026-07-28/wire/client-to-server.jsonl",
+    "sha256": "c5c69fbc136b63fa9e139d4b70bcb29ec10ef509588cf6ea2b486f27f8a736c6"
+  },
+  {
+    "path": "installed/sdk-2026-07-28/wire/server-to-client.jsonl",
+    "sha256": "8ce6647c9ebe64c0723f403e1d11adda2f0cf6717c02ad69f0ced3bcaba0146d"
+  },
+  {
+    "path": "installed/state.json",
+    "sha256": "ee4dc5a04e658757ff194d5de880424048af6f7eb59d37b4b62cdd197a7c6cf0"
+  },
+  {
+    "path": "installed/verification.json",
+    "sha256": "84e1a92a8851a26fd20eea6710d4db88da7efaf1b432dd5e258386be445e3e89"
+  },
+  {
     "path": "protocol.txt",
     "sha256": "98fa935fb53f18fc859783eeab8d12eef7d2327bf42a7e17d05c6c132280b679"
   },
