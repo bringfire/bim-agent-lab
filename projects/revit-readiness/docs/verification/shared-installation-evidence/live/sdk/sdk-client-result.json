@@ -1,0 +1,415 @@
+{
+  "clientKind": "SDK harness, not desktop A8 acceptance",
+  "protocol": "2026-07-28",
+  "tools": [
+    "revit_check_required_type_information",
+    "revit_get_readiness_context"
+  ],
+  "expected": "ReadinessReport",
+  "context": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\u0022contractVersion\u0022:1,\u0022requestId\u0022:\u00226f78a5a688c34a92b63d615b7b805349\u0022,\u0022bridgeSessionId\u0022:\u00229d81e5ef4dd844aca731d5ed5fa6746b\u0022,\u0022checklistSha256\u0022:\u0022307951edb6aee460b7e2cb3eccc7bcf6de93845f9b9c81fd985c337dd6a4636f\u0022,\u0022revitPid\u0022:149000,\u0022revitBuild\u0022:\u002224.3.60.12\u0022,\u0022documentLifetimeId\u0022:\u00227cc3efbbdb5e471db0b39774ceffbc1b\u0022,\u0022projectUniqueId\u0022:\u00227cacd49c-ac17-4591-ad0a-cbc9bb40015a-00012b83\u0022,\u0022documentPath\u0022:\u0022D:\\\\bim-agent-lab\\\\projects\\\\revit-readiness\\\\samples\\\\local\\\\mcp-live-task7\\\\a10630e39dae448ba55abbfe0bc7ab6b\\\\models\\\\BAL-info-saveas-fresh.rvt\u0022,\u0022checklistId\u0022:\u0022BAL-TYPE-INFO-v1\u0022,\u0022checklistPath\u0022:\u0022D:\\\\bim-agent-lab\\\\projects\\\\revit-readiness\\\\samples\\\\local\\\\mcp-live-task7\\\\a10630e39dae448ba55abbfe0bc7ab6b\\\\models\\\\BAL-info-saveas-fresh.checklist.json\u0022,\u0022scope\u0022:\u0022Explicit checklist element UniqueIds; host basic walls and ceilings on the declared level, New in the declared phase. Types are checked once; links and other elements excluded. No view/selection filter or result cap.\u0022,\u0022level\u0022:\u0022L1 - Block 43\u0022,\u0022phase\u0022:\u0022New Construction\u0022,\u0022contextToken\u0022:\u0022TIMbYLOMTPKcA3ZZXGocCCJvPzCuyrpp4hsGSteHtY8=\u0022,\u0022expiresUtc\u0022:\u00222026-10-22T02:36:01.2783867Z\u0022}"
+      }
+    ],
+    "structuredContent": {
+      "contractVersion": 1,
+      "requestId": "6f78a5a688c34a92b63d615b7b805349",
+      "bridgeSessionId": "9d81e5ef4dd844aca731d5ed5fa6746b",
+      "checklistSha256": "307951edb6aee460b7e2cb3eccc7bcf6de93845f9b9c81fd985c337dd6a4636f",
+      "revitPid": 149000,
+      "revitBuild": "24.3.60.12",
+      "documentLifetimeId": "7cc3efbbdb5e471db0b39774ceffbc1b",
+      "projectUniqueId": "7cacd49c-ac17-4591-ad0a-cbc9bb40015a-00012b83",
+      "documentPath": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-saveas-fresh.rvt",
+      "checklistId": "BAL-TYPE-INFO-v1",
+      "checklistPath": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-saveas-fresh.checklist.json",
+      "scope": "Explicit checklist element UniqueIds; host basic walls and ceilings on the declared level, New in the declared phase. Types are checked once; links and other elements excluded. No view/selection filter or result cap.",
+      "level": "L1 - Block 43",
+      "phase": "New Construction",
+      "contextToken": "TIMbYLOMTPKcA3ZZXGocCCJvPzCuyrpp4hsGSteHtY8=",
+      "expiresUtc": "2026-10-22T02:36:01.2783867Z"
+    },
+    "isError": false,
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "bim-agent-lab",
+        "version": "0.1.0"
+      }
+    },
+    "resultType": "complete"
+  },
+  "check": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\u0022contractVersion\u0022:1,\u0022requestId\u0022:\u0022c144bc3f25bc42fb8f55fc4fe47a3951\u0022,\u0022bridgeSessionId\u0022:\u00229d81e5ef4dd844aca731d5ed5fa6746b\u0022,\u0022checklistSha256\u0022:\u0022307951edb6aee460b7e2cb3eccc7bcf6de93845f9b9c81fd985c337dd6a4636f\u0022,\u0022report\u0022:{\u0022GeneratedUtc\u0022:\u00222026-10-22T02:31:01.3661473Z\u0022,\u0022DocumentPath\u0022:\u0022D:\\\\bim-agent-lab\\\\projects\\\\revit-readiness\\\\samples\\\\local\\\\mcp-live-task7\\\\a10630e39dae448ba55abbfe0bc7ab6b\\\\models\\\\BAL-info-saveas-fresh.rvt\u0022,\u0022ProjectUniqueId\u0022:\u00227cacd49c-ac17-4591-ad0a-cbc9bb40015a-00012b83\u0022,\u0022RevitBuild\u0022:\u002224.3.60.12\u0022,\u0022ChecklistId\u0022:\u0022BAL-TYPE-INFO-v1\u0022,\u0022ChecklistPath\u0022:\u0022D:\\\\bim-agent-lab\\\\projects\\\\revit-readiness\\\\samples\\\\local\\\\mcp-live-task7\\\\a10630e39dae448ba55abbfe0bc7ab6b\\\\models\\\\BAL-info-saveas-fresh.checklist.json\u0022,\u0022Scope\u0022:\u0022Explicit checklist element UniqueIds; host basic walls and ceilings on the declared level, New in the declared phase. Types are checked once; links and other elements excluded. No view/selection filter or result cap.\u0022,\u0022Level\u0022:\u0022L1 - Block 43\u0022,\u0022Phase\u0022:\u0022New Construction\u0022,\u0022Units\u0022:\u0022Instance counts and text; no measured quantities.\u0022,\u0022RequestedInstances\u0022:16,\u0022ExaminedInstances\u0022:16,\u0022OtherHostWallCeilingInstances\u0022:1196,\u0022LinkInstancesExcluded\u0022:6,\u0022ScopeIssues\u0022:[],\u0022Evaluation\u0022:{\u0022Types\u0022:[{\u0022TypeUniqueId\u0022:\u00226e5a3689-c170-4e43-b22b-e80a27806cdb-0026097e\u0022,\u0022TypeName\u0022:\u0022BAL INFO Ceiling ACT\u0022,\u0022Category\u0022:\u0022Ceilings\u0022,\u0022Status\u0022:\u0022Pass\u0022,\u0022Elements\u0022:[{\u0022UniqueId\u0022:\u00226e5a3689-c170-4e43-b22b-e80a27806cdb-00260982\u0022,\u0022ElementId\u0022:\u00222492802\u0022,\u0022CaseId\u0022:\u0022BAL-INFO-CACT-01\u0022},{\u0022UniqueId\u0022:\u00226e5a3689-c170-4e43-b22b-e80a27806cdb-00260989\u0022,\u0022ElementId\u0022:\u00222492809\u0022,\u0022CaseId\u0022:\u0022BAL-INFO-CACT-02\u0022}],\u0022Fields\u0022:[{\u0022RuleId\u0022:\u0022TYPE-INFO-Code\u0022,\u0022Field\u0022:\u0022Code\u0022,\u0022Required\u0022:true,\u0022Status\u0022:\u0022Present\u0022,\u0022Reason\u0022:\u0022NonemptyText\u0022,\u0022ObservedValue\u0022:\u0022C-ACT\u0022,\u0022ParameterId\u0022:\u0022BuiltInParameter.ALL_MODEL_TYPE_MARK\u0022,\u0022RequirementSource\u0022:\u0022BAL-TYPE-INFO-v1: BAL INFO Ceiling ACT\u0022},{\u0022RuleId\u0022:\u0022TYPE-INFO-FireRating\u0022,\u0022Field\u0022:\u0022FireRating\u0022,\u0022Required\u0022:false,\u0022Status\u0022:\u0022NotRequired\u0022,\u0022Reason\u0022:\u0022ExplicitChecklistException\u0022,\u0022ObservedValue\u0022:null,\u0022ParameterId\u0022:\u0022BuiltInParameter.FIRE_RATING\u0022,\u0022RequirementSource\u0022:\u0022BAL-TYPE-INFO-v1: BAL INFO Ceiling ACT\u0022},{\u0022RuleId\u0022:\u0022TYPE-INFO-AssemblyReference\u0022,\u0022Field\u0022:\u0022AssemblyReference\u0022,\u0022Required\u0022:false,\u0022Status\u0022:\u0022NotRequired\u0022,\u0022Reason\u0022:\u0022ExplicitChecklistException\u0022,\u0022ObservedValue\u0022:null,\u0022ParameterId\u0022:\u0022SharedParameter:cd425f17-1bb4-4d3f-a088-902728147491\u0022,\u0022RequirementSource\u0022:\u0022BAL-TYPE-INFO-v1: BAL INFO Ceiling ACT\u0022}]},{\u0022TypeUniqueId\u0022:\u00226e5a3689-c170-4e43-b22b-e80a27806cdb-0026098e\u0022,\u0022TypeName\u0022:\u0022BAL INFO Ceiling GWB\u0022,\u0022Category\u0022:\u0022Ceilings\u0022,\u0022Status\u0022:\u0022Pass\u0022,\u0022Elements\u0022:[{\u0022UniqueId\u0022:\u00226e5a3689-c170-4e43-b22b-e80a27806cdb-00260992\u0022,\u0022ElementId\u0022:\u00222492818\u0022,\u0022CaseId\u0022:\u0022BAL-INFO-CGWB-01\u0022},{\u0022UniqueId\u0022:\u00226e5a3689-c170-4e43-b22b-e80a27806cdb-00260999\u0022,\u0022ElementId\u0022:\u00222492825\u0022,\u0022CaseId\u0022:\u0022BAL-INFO-CGWB-02\u0022}],\u0022Fields\u0022:[{\u0022RuleId\u0022:\u0022TYPE-INFO-Code\u0022,\u0022Field\u0022:\u0022Code\u0022,\u0022Required\u0022:true,\u0022Status\u0022:\u0022Present\u0022,\u0022Reason\u0022:\u0022NonemptyText\u0022,\u0022ObservedValue\u0022:\u0022C-GWB\u0022,\u0022ParameterId\u0022:\u0022BuiltInParameter.ALL_MODEL_TYPE_MARK\u0022,\u0022RequirementSource\u0022:\u0022BAL-TYPE-INFO-v1: BAL INFO Ceiling GWB\u0022},{\u0022RuleId\u0022:\u0022TYPE-INFO-FireRating\u0022,\u0022Field\u0022:\u0022FireRating\u0022,\u0022Required\u0022:false,\u0022Status\u0022:\u0022NotRequired\u0022,\u0022Reason\u0022:\u0022ExplicitChecklistException\u0022,\u0022ObservedValue\u0022:null,\u0022ParameterId\u0022:\u0022BuiltInParameter.FIRE_RATING\u0022,\u0022RequirementSource\u0022:\u0022BAL-TYPE-INFO-v1: BAL INFO Ceiling GWB\u0022},{\u0022RuleId\u0022:\u0022TYPE-INFO-AssemblyReference\u0022,\u0022Field\u0022:\u0022AssemblyReference\u0022,\u0022Required\u0022:false,\u0022Status\u0022:\u0022NotRequired\u0022,\u0022Reason\u0022:\u0022ExplicitChecklistException\u0022,\u0022ObservedValue\u0022:null,\u0022ParameterId\u0022:\u0022SharedParameter:cd425f17-1bb4-4d3f-a088-902728147491\u0022,\u0022RequirementSource\u0022:\u0022BAL-TYPE-INFO-v1: BAL INFO Ceiling GWB\u0022}]},{\u0022TypeUniqueId\u0022:\u00226e5a3689-c170-4e43-b22b-e80a27806cdb-0026096a\u0022,\u0022TypeName\u0022:\u0022BAL INFO Wall A\u0022,\u0022Category\u0022:\u0022Walls\u0022,\u0022Status\u0022:\u0022Pass\u0022,\u0022Elements\u0022:[{\u0022UniqueId\u0022:\u00226e5a3689-c170-4e43-b22b-e80a27806cdb-0026096c\u0022,\u0022ElementId\u0022:\u00222492780\u0022,\u0022CaseId\u0022:\u0022BAL-INFO-WA-01\u0022},{\u0022UniqueId\u0022:\u00226e5a3689-c170-4e43-b22b-e80a27806cdb-0026096d\u0022,\u0022ElementId\u0022:\u00222492781\u0022,\u0022CaseId\u0022:\u0022BAL-INFO-WA-02\u0022},{\u0022UniqueId\u0022:\u00226e5a3689-c170-4e43-b22b-e80a27806cdb-0026096e\u0022,\u0022ElementId\u0022:\u00222492782\u0022,\u0022CaseId\u0022:\u0022BAL-INFO-WA-03\u0022}],\u0022Fields\u0022:[{\u0022RuleId\u0022:\u0022TYPE-INFO-Code\u0022,\u0022Field\u0022:\u0022Code\u0022,\u0022Required\u0022:true,\u0022Status\u0022:\u0022Present\u0022,\u0022Reason\u0022:\u0022NonemptyText\u0022,\u0022ObservedValue\u0022:\u0022W-A\u0022,\u0022ParameterId\u0022:\u0022BuiltInParameter.ALL_MODEL_TYPE_MARK\u0022,\u0022RequirementSource\u0022:\u0022BAL-TYPE-INFO-v1: BAL INFO Wall A\u0022},{\u0022RuleId\u0022:\u0022TYPE-INFO-FireRating\u0022,\u0022Field\u0022:\u0022FireRating\u0022,\u0022Required\u0022:true,\u0022Status\u0022:\u0022Present\u0022,\u0022Reason\u0022:\u0022NonemptyText\u0022,\u0022ObservedValue\u0022:\u002260 min\u0022,\u0022ParameterId\u0022:\u0022BuiltInParameter.FIRE_RATING\u0022,\u0022RequirementSource\u0022:\u0022BAL-TYPE-INFO-v1: BAL INFO Wall A\u0022},{\u0022RuleId\u0022:\u0022TYPE-INFO-AssemblyReference\u0022,\u0022Field\u0022:\u0022AssemblyReference\u0022,\u0022Required\u0022:true,\u0022Status\u0022:\u0022Present\u0022,\u0022Reason\u0022:\u0022NonemptyText\u0022,\u0022ObservedValue\u0022:\u0022DEMO-ASM-01\u0022,\u0022ParameterId\u0022:\u0022SharedParameter:cd425f17-1bb4-4d3f-a088-902728147491\u0022,\u0022RequirementSource\u0022:\u0022BAL-TYPE-INFO-v1: BAL INFO Wall A\u0022}]},{\u0022TypeUniqueId\u0022:\u00226e5a3689-c170-4e43-b22b-e80a27806cdb-0026096f\u0022,\u0022TypeName\u0022:\u0022BAL INFO Wall B\u0022,\u0022Category\u0022:\u0022Walls\u0022,\u0022Status\u0022:\u0022Pass\u0022,\u0022Elements\u0022:[{\u0022UniqueId\u0022:\u00226e5a3689-c170-4e43-b22b-e80a27806cdb-00260971\u0022,\u0022ElementId\u0022:\u00222492785\u0022,\u0022CaseId\u0022:\u0022BAL-INFO-WB-01\u0022},{\u0022UniqueId\u0022:\u00226e5a3689-c170-4e43-b22b-e80a27806cdb-00260972\u0022,\u0022ElementId\u0022:\u00222492786\u0022,\u0022CaseId\u0022:\u0022BAL-INFO-WB-02\u0022},{\u0022UniqueId\u0022:\u00226e5a3689-c170-4e43-b22b-e80a27806cdb-00260973\u0022,\u0022ElementId\u0022:\u00222492787\u0022,\u0022CaseId\u0022:\u0022BAL-INFO-WB-03\u0022}],\u0022Fields\u0022:[{\u0022RuleId\u0022:\u0022TYPE-INFO-Code\u0022,\u0022Field\u0022:\u0022Code\u0022,\u0022Required\u0022:true,\u0022Status\u0022:\u0022Present\u0022,\u0022Reason\u0022:\u0022NonemptyText\u0022,\u0022ObservedValue\u0022:\u0022W-B\u0022,\u0022ParameterId\u0022:\u0022BuiltInParameter.ALL_MODEL_TYPE_MARK\u0022,\u0022RequirementSource\u0022:\u0022BAL-TYPE-INFO-v1: BAL INFO Wall B\u0022},{\u0022RuleId\u0022:\u0022TYPE-INFO-FireRating\u0022,\u0022Field\u0022:\u0022FireRating\u0022,\u0022Required\u0022:true,\u0022Status\u0022:\u0022Present\u0022,\u0022Reason\u0022:\u0022NonemptyText\u0022,\u0022ObservedValue\u0022:\u002260 min\u0022,\u0022ParameterId\u0022:\u0022BuiltInParameter.FIRE_RATING\u0022,\u0022RequirementSource\u0022:\u0022BAL-TYPE-INFO-v1: BAL INFO Wall B\u0022},{\u0022RuleId\u0022:\u0022TYPE-INFO-AssemblyReference\u0022,\u0022Field\u0022:\u0022AssemblyReference\u0022,\u0022Required\u0022:true,\u0022Status\u0022:\u0022Present\u0022,\u0022Reason\u0022:\u0022NonemptyText\u0022,\u0022ObservedValue\u0022:\u0022DEMO-ASM-01\u0022,\u0022ParameterId\u0022:\u0022SharedParameter:cd425f17-1bb4-4d3f-a088-902728147491\u0022,\u0022RequirementSource\u0022:\u0022BAL-TYPE-INFO-v1: BAL INFO Wall B\u0022}]},{\u0022TypeUniqueId\u0022:\u00226e5a3689-c170-4e43-b22b-e80a27806cdb-00260974\u0022,\u0022TypeName\u0022:\u0022BAL INFO Wall C\u0022,\u0022Category\u0022:\u0022Walls\u0022,\u0022Status\u0022:\u0022Pass\u0022,\u0022Elements\u0022:[{\u0022UniqueId\u0022:\u00226e5a3689-c170-4e43-b22b-e80a27806cdb-00260976\u0022,\u0022ElementId\u0022:\u00222492790\u0022,\u0022CaseId\u0022:\u0022BAL-INFO-WC-01\u0022},{\u0022UniqueId\u0022:\u00226e5a3689-c170-4e43-b22b-e80a27806cdb-00260977\u0022,\u0022ElementId\u0022:\u00222492791\u0022,\u0022CaseId\u0022:\u0022BAL-INFO-WC-02\u0022},{\u0022UniqueId\u0022:\u00226e5a3689-c170-4e43-b22b-e80a27806cdb-00260978\u0022,\u0022ElementId\u0022:\u00222492792\u0022,\u0022CaseId\u0022:\u0022BAL-INFO-WC-03\u0022}],\u0022Fields\u0022:[{\u0022RuleId\u0022:\u0022TYPE-INFO-Code\u0022,\u0022Field\u0022:\u0022Code\u0022,\u0022Required\u0022:true,\u0022Status\u0022:\u0022Present\u0022,\u0022Reason\u0022:\u0022NonemptyText\u0022,\u0022ObservedValue\u0022:\u0022W-C\u0022,\u0022ParameterId\u0022:\u0022BuiltInParameter.ALL_MODEL_TYPE_MARK\u0022,\u0022RequirementSource\u0022:\u0022BAL-TYPE-INFO-v1: BAL INFO Wall C\u0022},{\u0022RuleId\u0022:\u0022TYPE-INFO-FireRating\u0022,\u0022Field\u0022:\u0022FireRating\u0022,\u0022Required\u0022:false,\u0022Status\u0022:\u0022NotRequired\u0022,\u0022Reason\u0022:\u0022ExplicitChecklistException\u0022,\u0022ObservedValue\u0022:null,\u0022ParameterId\u0022:\u0022BuiltInParameter.FIRE_RATING\u0022,\u0022RequirementSource\u0022:\u0022BAL-TYPE-INFO-v1: BAL INFO Wall C\u0022},{\u0022RuleId\u0022:\u0022TYPE-INFO-AssemblyReference\u0022,\u0022Field\u0022:\u0022AssemblyReference\u0022,\u0022Required\u0022:false,\u0022Status\u0022:\u0022NotRequired\u0022,\u0022Reason\u0022:\u0022ExplicitChecklistException\u0022,\u0022ObservedValue\u0022:null,\u0022ParameterId\u0022:\u0022SharedParameter:cd425f17-1bb4-4d3f-a088-902728147491\u0022,\u0022RequirementSource\u0022:\u0022BAL-TYPE-INFO-v1: BAL INFO Wall C\u0022}]},{\u0022TypeUniqueId\u0022:\u00226e5a3689-c170-4e43-b22b-e80a27806cdb-00260979\u0022,\u0022TypeName\u0022:\u0022BAL INFO Wall D\u0022,\u0022Category\u0022:\u0022Walls\u0022,\u0022Status\u0022:\u0022Pass\u0022,\u0022Elements\u0022:[{\u0022UniqueId\u0022:\u00226e5a3689-c170-4e43-b22b-e80a27806cdb-0026097b\u0022,\u0022ElementId\u0022:\u00222492795\u0022,\u0022CaseId\u0022:\u0022BAL-INFO-WD-01\u0022},{\u0022UniqueId\u0022:\u00226e5a3689-c170-4e43-b22b-e80a27806cdb-0026097c\u0022,\u0022ElementId\u0022:\u00222492796\u0022,\u0022CaseId\u0022:\u0022BAL-INFO-WD-02\u0022},{\u0022UniqueId\u0022:\u00226e5a3689-c170-4e43-b22b-e80a27806cdb-0026097d\u0022,\u0022ElementId\u0022:\u00222492797\u0022,\u0022CaseId\u0022:\u0022BAL-INFO-WD-03\u0022}],\u0022Fields\u0022:[{\u0022RuleId\u0022:\u0022TYPE-INFO-Code\u0022,\u0022Field\u0022:\u0022Code\u0022,\u0022Required\u0022:true,\u0022Status\u0022:\u0022Present\u0022,\u0022Reason\u0022:\u0022NonemptyText\u0022,\u0022ObservedValue\u0022:\u0022W-D\u0022,\u0022ParameterId\u0022:\u0022BuiltInParameter.ALL_MODEL_TYPE_MARK\u0022,\u0022RequirementSource\u0022:\u0022BAL-TYPE-INFO-v1: BAL INFO Wall D\u0022},{\u0022RuleId\u0022:\u0022TYPE-INFO-FireRating\u0022,\u0022Field\u0022:\u0022FireRating\u0022,\u0022Required\u0022:false,\u0022Status\u0022:\u0022NotRequired\u0022,\u0022Reason\u0022:\u0022ExplicitChecklistException\u0022,\u0022ObservedValue\u0022:null,\u0022ParameterId\u0022:\u0022BuiltInParameter.FIRE_RATING\u0022,\u0022RequirementSource\u0022:\u0022BAL-TYPE-INFO-v1: BAL INFO Wall D\u0022},{\u0022RuleId\u0022:\u0022TYPE-INFO-AssemblyReference\u0022,\u0022Field\u0022:\u0022AssemblyReference\u0022,\u0022Required\u0022:false,\u0022Status\u0022:\u0022NotRequired\u0022,\u0022Reason\u0022:\u0022ExplicitChecklistException\u0022,\u0022ObservedValue\u0022:null,\u0022ParameterId\u0022:\u0022SharedParameter:cd425f17-1bb4-4d3f-a088-902728147491\u0022,\u0022RequirementSource\u0022:\u0022BAL-TYPE-INFO-v1: BAL INFO Wall D\u0022}]}],\u0022FindingCount\u0022:0,\u0022AffectedElements\u0022:[],\u0022UnexaminedElements\u0022:[],\u0022Complete\u0022:true},\u0022CoverageComplete\u0022:true,\u0022ModifiedBefore\u0022:false,\u0022ModifiedAfter\u0022:false}}"
+      }
+    ],
+    "structuredContent": {
+      "contractVersion": 1,
+      "requestId": "c144bc3f25bc42fb8f55fc4fe47a3951",
+      "bridgeSessionId": "9d81e5ef4dd844aca731d5ed5fa6746b",
+      "checklistSha256": "307951edb6aee460b7e2cb3eccc7bcf6de93845f9b9c81fd985c337dd6a4636f",
+      "report": {
+        "GeneratedUtc": "2026-10-22T02:31:01.3661473Z",
+        "DocumentPath": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-saveas-fresh.rvt",
+        "ProjectUniqueId": "7cacd49c-ac17-4591-ad0a-cbc9bb40015a-00012b83",
+        "RevitBuild": "24.3.60.12",
+        "ChecklistId": "BAL-TYPE-INFO-v1",
+        "ChecklistPath": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-saveas-fresh.checklist.json",
+        "Scope": "Explicit checklist element UniqueIds; host basic walls and ceilings on the declared level, New in the declared phase. Types are checked once; links and other elements excluded. No view/selection filter or result cap.",
+        "Level": "L1 - Block 43",
+        "Phase": "New Construction",
+        "Units": "Instance counts and text; no measured quantities.",
+        "RequestedInstances": 16,
+        "ExaminedInstances": 16,
+        "OtherHostWallCeilingInstances": 1196,
+        "LinkInstancesExcluded": 6,
+        "ScopeIssues": [],
+        "Evaluation": {
+          "Types": [
+            {
+              "TypeUniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026097e",
+              "TypeName": "BAL INFO Ceiling ACT",
+              "Category": "Ceilings",
+              "Status": "Pass",
+              "Elements": [
+                {
+                  "UniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-00260982",
+                  "ElementId": "2492802",
+                  "CaseId": "BAL-INFO-CACT-01"
+                },
+                {
+                  "UniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-00260989",
+                  "ElementId": "2492809",
+                  "CaseId": "BAL-INFO-CACT-02"
+                }
+              ],
+              "Fields": [
+                {
+                  "RuleId": "TYPE-INFO-Code",
+                  "Field": "Code",
+                  "Required": true,
+                  "Status": "Present",
+                  "Reason": "NonemptyText",
+                  "ObservedValue": "C-ACT",
+                  "ParameterId": "BuiltInParameter.ALL_MODEL_TYPE_MARK",
+                  "RequirementSource": "BAL-TYPE-INFO-v1: BAL INFO Ceiling ACT"
+                },
+                {
+                  "RuleId": "TYPE-INFO-FireRating",
+                  "Field": "FireRating",
+                  "Required": false,
+                  "Status": "NotRequired",
+                  "Reason": "ExplicitChecklistException",
+                  "ObservedValue": null,
+                  "ParameterId": "BuiltInParameter.FIRE_RATING",
+                  "RequirementSource": "BAL-TYPE-INFO-v1: BAL INFO Ceiling ACT"
+                },
+                {
+                  "RuleId": "TYPE-INFO-AssemblyReference",
+                  "Field": "AssemblyReference",
+                  "Required": false,
+                  "Status": "NotRequired",
+                  "Reason": "ExplicitChecklistException",
+                  "ObservedValue": null,
+                  "ParameterId": "SharedParameter:cd425f17-1bb4-4d3f-a088-902728147491",
+                  "RequirementSource": "BAL-TYPE-INFO-v1: BAL INFO Ceiling ACT"
+                }
+              ]
+            },
+            {
+              "TypeUniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026098e",
+              "TypeName": "BAL INFO Ceiling GWB",
+              "Category": "Ceilings",
+              "Status": "Pass",
+              "Elements": [
+                {
+                  "UniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-00260992",
+                  "ElementId": "2492818",
+                  "CaseId": "BAL-INFO-CGWB-01"
+                },
+                {
+                  "UniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-00260999",
+                  "ElementId": "2492825",
+                  "CaseId": "BAL-INFO-CGWB-02"
+                }
+              ],
+              "Fields": [
+                {
+                  "RuleId": "TYPE-INFO-Code",
+                  "Field": "Code",
+                  "Required": true,
+                  "Status": "Present",
+                  "Reason": "NonemptyText",
+                  "ObservedValue": "C-GWB",
+                  "ParameterId": "BuiltInParameter.ALL_MODEL_TYPE_MARK",
+                  "RequirementSource": "BAL-TYPE-INFO-v1: BAL INFO Ceiling GWB"
+                },
+                {
+                  "RuleId": "TYPE-INFO-FireRating",
+                  "Field": "FireRating",
+                  "Required": false,
+                  "Status": "NotRequired",
+                  "Reason": "ExplicitChecklistException",
+                  "ObservedValue": null,
+                  "ParameterId": "BuiltInParameter.FIRE_RATING",
+                  "RequirementSource": "BAL-TYPE-INFO-v1: BAL INFO Ceiling GWB"
+                },
+                {
+                  "RuleId": "TYPE-INFO-AssemblyReference",
+                  "Field": "AssemblyReference",
+                  "Required": false,
+                  "Status": "NotRequired",
+                  "Reason": "ExplicitChecklistException",
+                  "ObservedValue": null,
+                  "ParameterId": "SharedParameter:cd425f17-1bb4-4d3f-a088-902728147491",
+                  "RequirementSource": "BAL-TYPE-INFO-v1: BAL INFO Ceiling GWB"
+                }
+              ]
+            },
+            {
+              "TypeUniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026096a",
+              "TypeName": "BAL INFO Wall A",
+              "Category": "Walls",
+              "Status": "Pass",
+              "Elements": [
+                {
+                  "UniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026096c",
+                  "ElementId": "2492780",
+                  "CaseId": "BAL-INFO-WA-01"
+                },
+                {
+                  "UniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026096d",
+                  "ElementId": "2492781",
+                  "CaseId": "BAL-INFO-WA-02"
+                },
+                {
+                  "UniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026096e",
+                  "ElementId": "2492782",
+                  "CaseId": "BAL-INFO-WA-03"
+                }
+              ],
+              "Fields": [
+                {
+                  "RuleId": "TYPE-INFO-Code",
+                  "Field": "Code",
+                  "Required": true,
+                  "Status": "Present",
+                  "Reason": "NonemptyText",
+                  "ObservedValue": "W-A",
+                  "ParameterId": "BuiltInParameter.ALL_MODEL_TYPE_MARK",
+                  "RequirementSource": "BAL-TYPE-INFO-v1: BAL INFO Wall A"
+                },
+                {
+                  "RuleId": "TYPE-INFO-FireRating",
+                  "Field": "FireRating",
+                  "Required": true,
+                  "Status": "Present",
+                  "Reason": "NonemptyText",
+                  "ObservedValue": "60 min",
+                  "ParameterId": "BuiltInParameter.FIRE_RATING",
+                  "RequirementSource": "BAL-TYPE-INFO-v1: BAL INFO Wall A"
+                },
+                {
+                  "RuleId": "TYPE-INFO-AssemblyReference",
+                  "Field": "AssemblyReference",
+                  "Required": true,
+                  "Status": "Present",
+                  "Reason": "NonemptyText",
+                  "ObservedValue": "DEMO-ASM-01",
+                  "ParameterId": "SharedParameter:cd425f17-1bb4-4d3f-a088-902728147491",
+                  "RequirementSource": "BAL-TYPE-INFO-v1: BAL INFO Wall A"
+                }
+              ]
+            },
+            {
+              "TypeUniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026096f",
+              "TypeName": "BAL INFO Wall B",
+              "Category": "Walls",
+              "Status": "Pass",
+              "Elements": [
+                {
+                  "UniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-00260971",
+                  "ElementId": "2492785",
+                  "CaseId": "BAL-INFO-WB-01"
+                },
+                {
+                  "UniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-00260972",
+                  "ElementId": "2492786",
+                  "CaseId": "BAL-INFO-WB-02"
+                },
+                {
+                  "UniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-00260973",
+                  "ElementId": "2492787",
+                  "CaseId": "BAL-INFO-WB-03"
+                }
+              ],
+              "Fields": [
+                {
+                  "RuleId": "TYPE-INFO-Code",
+                  "Field": "Code",
+                  "Required": true,
+                  "Status": "Present",
+                  "Reason": "NonemptyText",
+                  "ObservedValue": "W-B",
+                  "ParameterId": "BuiltInParameter.ALL_MODEL_TYPE_MARK",
+                  "RequirementSource": "BAL-TYPE-INFO-v1: BAL INFO Wall B"
+                },
+                {
+                  "RuleId": "TYPE-INFO-FireRating",
+                  "Field": "FireRating",
+                  "Required": true,
+                  "Status": "Present",
+                  "Reason": "NonemptyText",
+                  "ObservedValue": "60 min",
+                  "ParameterId": "BuiltInParameter.FIRE_RATING",
+                  "RequirementSource": "BAL-TYPE-INFO-v1: BAL INFO Wall B"
+                },
+                {
+                  "RuleId": "TYPE-INFO-AssemblyReference",
+                  "Field": "AssemblyReference",
+                  "Required": true,
+                  "Status": "Present",
+                  "Reason": "NonemptyText",
+                  "ObservedValue": "DEMO-ASM-01",
+                  "ParameterId": "SharedParameter:cd425f17-1bb4-4d3f-a088-902728147491",
+                  "RequirementSource": "BAL-TYPE-INFO-v1: BAL INFO Wall B"
+                }
+              ]
+            },
+            {
+              "TypeUniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-00260974",
+              "TypeName": "BAL INFO Wall C",
+              "Category": "Walls",
+              "Status": "Pass",
+              "Elements": [
+                {
+                  "UniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-00260976",
+                  "ElementId": "2492790",
+                  "CaseId": "BAL-INFO-WC-01"
+                },
+                {
+                  "UniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-00260977",
+                  "ElementId": "2492791",
+                  "CaseId": "BAL-INFO-WC-02"
+                },
+                {
+                  "UniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-00260978",
+                  "ElementId": "2492792",
+                  "CaseId": "BAL-INFO-WC-03"
+                }
+              ],
+              "Fields": [
+                {
+                  "RuleId": "TYPE-INFO-Code",
+                  "Field": "Code",
+                  "Required": true,
+                  "Status": "Present",
+                  "Reason": "NonemptyText",
+                  "ObservedValue": "W-C",
+                  "ParameterId": "BuiltInParameter.ALL_MODEL_TYPE_MARK",
+                  "RequirementSource": "BAL-TYPE-INFO-v1: BAL INFO Wall C"
+                },
+                {
+                  "RuleId": "TYPE-INFO-FireRating",
+                  "Field": "FireRating",
+                  "Required": false,
+                  "Status": "NotRequired",
+                  "Reason": "ExplicitChecklistException",
+                  "ObservedValue": null,
+                  "ParameterId": "BuiltInParameter.FIRE_RATING",
+                  "RequirementSource": "BAL-TYPE-INFO-v1: BAL INFO Wall C"
+                },
+                {
+                  "RuleId": "TYPE-INFO-AssemblyReference",
+                  "Field": "AssemblyReference",
+                  "Required": false,
+                  "Status": "NotRequired",
+                  "Reason": "ExplicitChecklistException",
+                  "ObservedValue": null,
+                  "ParameterId": "SharedParameter:cd425f17-1bb4-4d3f-a088-902728147491",
+                  "RequirementSource": "BAL-TYPE-INFO-v1: BAL INFO Wall C"
+                }
+              ]
+            },
+            {
+              "TypeUniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-00260979",
+              "TypeName": "BAL INFO Wall D",
+              "Category": "Walls",
+              "Status": "Pass",
+              "Elements": [
+                {
+                  "UniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026097b",
+                  "ElementId": "2492795",
+                  "CaseId": "BAL-INFO-WD-01"
+                },
+                {
+                  "UniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026097c",
+                  "ElementId": "2492796",
+                  "CaseId": "BAL-INFO-WD-02"
+                },
+                {
+                  "UniqueId": "6e5a3689-c170-4e43-b22b-e80a27806cdb-0026097d",
+                  "ElementId": "2492797",
+                  "CaseId": "BAL-INFO-WD-03"
+                }
+              ],
+              "Fields": [
+                {
+                  "RuleId": "TYPE-INFO-Code",
+                  "Field": "Code",
+                  "Required": true,
+                  "Status": "Present",
+                  "Reason": "NonemptyText",
+                  "ObservedValue": "W-D",
+                  "ParameterId": "BuiltInParameter.ALL_MODEL_TYPE_MARK",
+                  "RequirementSource": "BAL-TYPE-INFO-v1: BAL INFO Wall D"
+                },
+                {
+                  "RuleId": "TYPE-INFO-FireRating",
+                  "Field": "FireRating",
+                  "Required": false,
+                  "Status": "NotRequired",
+                  "Reason": "ExplicitChecklistException",
+                  "ObservedValue": null,
+                  "ParameterId": "BuiltInParameter.FIRE_RATING",
+                  "RequirementSource": "BAL-TYPE-INFO-v1: BAL INFO Wall D"
+                },
+                {
+                  "RuleId": "TYPE-INFO-AssemblyReference",
+                  "Field": "AssemblyReference",
+                  "Required": false,
+                  "Status": "NotRequired",
+                  "Reason": "ExplicitChecklistException",
+                  "ObservedValue": null,
+                  "ParameterId": "SharedParameter:cd425f17-1bb4-4d3f-a088-902728147491",
+                  "RequirementSource": "BAL-TYPE-INFO-v1: BAL INFO Wall D"
+                }
+              ]
+            }
+          ],
+          "FindingCount": 0,
+          "AffectedElements": [],
+          "UnexaminedElements": [],
+          "Complete": true
+        },
+        "CoverageComplete": true,
+        "ModifiedBefore": false,
+        "ModifiedAfter": false
+      }
+    },
+    "isError": false,
+    "_meta": {
+      "io.modelcontextprotocol/serverInfo": {
+        "name": "bim-agent-lab",
+        "version": "0.1.0"
+      }
+    },
+    "resultType": "complete"
+  },
+  "pass": true,
+  "completedUtc": "2026-10-22T02:31:01.4379103Z"
+}

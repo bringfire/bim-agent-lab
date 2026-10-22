@@ -139,3 +139,17 @@ Suggested participant prompt:
 > When a test fails, check whether the plugin, the test, or the expectation is wrong. Show the evidence for your explanation before changing code. Make sure the test is not blocking the event it waits for, keep the failed attempt, and repeat the corrected test.
 
 This applies the review lesson about execution and waiting to the agent's own verification tools. A reported failure deserves investigation; it does not automatically establish a product defect. The [technical record](../../projects/revit-readiness/docs/verification/2026-10-21-host-stop-recovery.md) separates fresh recovery, the failed observer, the successful repeat and what remains unverified.
+
+## Change one thing at a time during setup
+
+The author then reported “revit is closed.” The agent verified shutdown and saved files, restored the normal plugin, and addressed the server files that had been redirected into Codex's private cache. Its initial preflight found that current build folders contained different binaries. Deploying those at the same time would have mixed a location change with a build change.
+
+The agent instead used the verified normal build, preserved its dependencies and notices, and installed it in a shared user folder with new recovery records. It also updated the installer default so a later installation would use that location. Startup checks passed for all three protocol revisions; actual use through both desktop applications remained a separate requirement.
+
+Suggested participant prompt:
+
+> Keep the tested build while correcting its installation location. Show that the binaries are unchanged, preserve recovery in the right filesystem context, and update the instructions so the next agent does not repeat the old setup. Then verify access from the applications that will actually use it.
+
+The [technical record](../../projects/revit-readiness/docs/verification/2026-10-21-shared-server-installation.md) distinguishes preserved binaries, installer changes, SDK connection checks and desktop acceptance still to come.
+
+The author's next **“ready”** confirmed the normal Revit model and bridge were running. The agent then used the relocated server to read the model and compared the entire answer with the earlier baseline: 16 examined elements, zero findings, complete coverage and no model changes. This is the next teaching distinction: a successful installation must be followed by a check from a consuming process. An SDK client provided that check here; Codex desktop and Claude Desktop still need their own demonstrations. See the [recorded follow-up](../../projects/revit-readiness/docs/verification/2026-10-21-shared-server-installation.md#normal-revit-follow-up).

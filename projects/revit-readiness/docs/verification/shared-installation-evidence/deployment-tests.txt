@@ -1,0 +1,64 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(58,13): warning CA1416: This call site is reachable on all platforms. 'BridgeJson.Serialize<BridgeRequest>(BridgeRequest)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(57,74): warning CA1416: This call site is reachable on all platforms. 'RequestBudget.DeadlineUtc' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(57,53): warning CA1416: This call site is reachable on all platforms. 'BridgeJson.FormatUtc(DateTimeOffset)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(35,22): warning CA1416: This call site is reachable on all platforms. 'RequestBudget.Admit(IBridgeClock)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+  BimAgentLab.Mcp.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\bin\Release\net10.0\BimAgentLab.Mcp.Tests.dll
+
+Build succeeded.
+
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(58,13): warning CA1416: This call site is reachable on all platforms. 'BridgeJson.Serialize<BridgeRequest>(BridgeRequest)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(57,74): warning CA1416: This call site is reachable on all platforms. 'RequestBudget.DeadlineUtc' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(57,53): warning CA1416: This call site is reachable on all platforms. 'BridgeJson.FormatUtc(DateTimeOffset)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(35,22): warning CA1416: This call site is reachable on all platforms. 'RequestBudget.Admit(IBridgeClock)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+    4 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:04.60
+PASS Deployment success, exact undo twice: none
+PASS Deployment success, exact undo twice: existing
+PASS Deployment success, exact undo twice: explicit
+PASS Deployment success, exact undo twice: normal
+PASS Deployment success, exact undo twice: fresh-parent
+PASS Deployment success, exact undo twice: legacy
+PASS Deployment preflight zero mutations: invalid-fixture
+PASS Deployment preflight zero mutations: forbidden
+PASS Deployment preflight zero mutations: modern-in-host
+PASS Deployment preflight zero mutations: unowned
+PASS Deployment preflight zero mutations: bad-inventory
+PASS Deployment preflight zero mutations: missing-notice
+PASS Deployment preflight zero mutations: invalid-legacy
+PASS Deployment throw at FirstCopy, fresh-process undo twice
+PASS Deployment exit at FirstCopy, fresh-process undo twice
+PASS Deployment throw at ObsoleteDelete, fresh-process undo twice
+PASS Deployment exit at ObsoleteDelete, fresh-process undo twice
+PASS Deployment throw at FixtureCore, fresh-process undo twice
+PASS Deployment exit at FixtureCore, fresh-process undo twice
+PASS Deployment throw at FixtureInventory, fresh-process undo twice
+PASS Deployment exit at FixtureInventory, fresh-process undo twice
+PASS Deployment throw at Manifest, fresh-process undo twice
+PASS Deployment exit at Manifest, fresh-process undo twice
+PASS Deployment throw at MainInventory, fresh-process undo twice
+PASS Deployment exit at MainInventory, fresh-process undo twice
+PASS Deployment throw at BeforeCommit, fresh-process undo twice
+PASS Deployment exit at BeforeCommit, fresh-process undo twice
+PASS Deployment throw at AfterMutation, fresh-process undo twice
+PASS Deployment exit at AfterMutation, fresh-process undo twice
+PASS Recovery interrupted, trailing journal fragment, resumes twice
+PASS Deployment recovery preflight: foreign
+PASS Deployment recovery preflight: missing-backup
+PASS Deployment recovery preflight: changed-stage
+PASS Deployment recovery preflight: pending
+PASS Deployment recovery preflight: backup-failure
+PASS Deployment recovery preflight: changed-after-preflight
+PASS Deployment recovery preflight: missing-last-backup
+PASS Deployment recovery preflight: foreign-temp
+PASS Deployment recovery preflight: prepared-directory
+PASS Deployment lease excludes another process and rejects disposed owner
+PASS Interrupted backup preparation leaves targets unchanged and permits new attempt
+Deployment tests: 41 passed; 0 failed. Evidence: D:\bim-agent-lab\projects\revit-readiness\samples/local/deployment-tests\2293ebaf5ba04e90851f7fd203ba2f56
+PASS available offline suites; desktop/Revit acceptance is separate.

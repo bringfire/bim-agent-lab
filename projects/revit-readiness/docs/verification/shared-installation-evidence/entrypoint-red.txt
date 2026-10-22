@@ -1,0 +1,6 @@
+Install-Readiness.ps1: 
+Line |
+   2 |  … /scripts/Install-Readiness.ps1' -IncludeMcpBridge -SourceRoot $reloca …
+     |                                                      ~~~~~~~~~~~
+     | A parameter cannot be found that matches parameter name 'SourceRoot'.
+

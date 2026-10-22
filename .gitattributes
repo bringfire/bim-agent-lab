@@ -38,3 +38,4 @@ projects/revit-readiness/docs/verification/host-diagnostic-startup-evidence/** -
 projects/revit-readiness/docs/verification/host-deadline-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/host-interruption-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/host-stop-recovery-evidence/** -text -whitespace
+projects/revit-readiness/docs/verification/shared-installation-evidence/** -text -whitespace

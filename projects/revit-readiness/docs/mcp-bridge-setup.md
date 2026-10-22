@@ -6,7 +6,7 @@ The [real-installation record](verification/2026-10-21-live-installation.md) now
 
 Use 64-bit PowerShell 7, the existing .NET SDK/10 runtime, Revit 2024 and its net48 API references. This increment adds no package dependency and does not change SDK 2.2.0 or the compatible/strict-July policy. The existing core, Excel helper and fixture remain separate from the external modern server.
 
-**Current deployment caveat:** the [physical-path investigation](verification/2026-10-21-host-diagnostics.md#physical-path-investigation-established-the-cause) found the server and recovery files redirected into Codex's private AppData cache. The logical paths below alone are not proof of shared installation. Inspect open files with `scripts/Get-PhysicalFilePath.ps1`, preserve existing recovery bytes, and verify access from the intended application before accepting deployment. Do not replay an old receipt from a different filesystem view. This deployment correction remains required before Task 8/A8; the diagnostic-only control-folder correction does not resolve it.
+**Current deployment status:** the [physical-path investigation](verification/2026-10-21-host-diagnostics.md#physical-path-investigation-established-the-cause) found the old server/recovery files redirected into Codex's private AppData cache. A [new installation outside AppData](verification/2026-10-21-shared-server-installation.md) now preserves the tested binaries and resolves directly in the agent's opened-file checks. Verify access from each intended desktop application before accepting deployment. Preserve old recovery bytes and never replay an old receipt from a different filesystem view. Desktop visibility remains required before A8; agent-side checks alone do not establish it.
 
 From the repository root:
 
@@ -23,8 +23,10 @@ Installed locations:
 
 - `%APPDATA%/Autodesk/Revit/Addins/2024/BimAgentLab.RequiredInformation`: net48 add-in/core/bridge assemblies, isolated Excel helper and notices.
 - The sibling `BimAgentLab.ReadinessBridge.addin`: application plus explicit Start and Stop commands, each with a permanent distinct GUID. Loading the application must not start a listener.
-- `%LOCALAPPDATA%/BimAgentLab/RevitReadiness/McpServer`: modern executable and SDK dependencies.
-- `%LOCALAPPDATA%/BimAgentLab/RevitReadiness/InstallRecovery/<transaction>`: immutable prepared receipt, staged bytes, original backup bytes, mutable state and journal. Keep this private local recovery material out of Git.
+- `%USERPROFILE%/.bim-agent-lab/RevitReadiness/McpServer`: modern executable and SDK dependencies.
+- `%USERPROFILE%/.bim-agent-lab/RevitReadiness/InstallRecovery/<transaction>`: immutable prepared receipt, staged bytes, original backup bytes, mutable state and journal. Keep this private local recovery material out of Git.
+
+The runtime/recovery default moved outside AppData after [observed filesystem redirection](verification/2026-10-21-shared-server-installation.md). Revit add-ins and session descriptors retain their existing locations. `-RuntimeRoot <absolute-directory>` explicitly selects another server/recovery parent; `-SourceRoot <absolute-project-layout>` selects a prepared package instead of current build outputs. The same preflight and recovery logic applies. Check actual opened-file paths and the consuming applications; an override is not a guarantee against redirection. Before migrating an existing installation, settle its previous recovery operations in their original filesystem context and preserve the receipts. Changing the default does not migrate or reinterpret old receipts.
 
 The installer prints the receipt path. Retain it even after success. For rollback with Revit closed:
 
