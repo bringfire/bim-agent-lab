@@ -158,5 +158,10 @@
     "path": "setup-attempts/second-attempt/expectation.json",
     "bytes": 17906,
     "sha256": "489e997a934b2fa5067e47d6d71a310e402aa018fad7d75ae864b7475eddc7b2"
+  },
+  {
+    "path": "native-walls-schedule.png",
+    "bytes": 19453,
+    "sha256": "55b8715a45eb424444a0cf66f76309cb79e8a4f8ccac8fdd2e73f6e9e4e858ff"
   }
 ]

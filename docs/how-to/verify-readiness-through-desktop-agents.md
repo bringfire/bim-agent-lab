@@ -34,6 +34,8 @@ The helper writes a Prepared ownership receipt before copying, verifies both mod
 
 The raw streams may still be open. Snapshot complete-line byte prefixes and label them as prefixes, not EOF evidence. Use actual byte reads, not potentially stale directory-entry lengths. Match the chosen calls by their structured request IDs; a session can contain earlier calls. Preserve the original bytes and record hashes.
 
+Retain human-supplied native schedule images unchanged and hash them. Record only visible observations and their limits. The wall screenshot corroborates six case rows with blank required values; it does not display the full document path, element UniqueIds, ceiling coverage or API null semantics. Tie it to the coordinated inspection and separate path/identity evidence rather than inventing information from the image.
+
 ## Verification and limits
 
 ```powershell

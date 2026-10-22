@@ -30,6 +30,8 @@ The lesson is to ask the agent to verify the actual file path and checklist, rat
 
 The wall-defect result then matched the independent expectation in Codex, Claude Chat and the separate July-protocol SDK check. Both desktops identified the two missing fields affecting six walls. Claude correctly explained that complete coverage means the requested examination finished; it does not mean the model passed. The later incomplete-coverage and stale-context cases still require their own evidence.
 
+The author then supplied Revit's native wall schedule. The person could see the three blank Wall B fire ratings and three blank Wall D codes directly. This gives participants a practical way to challenge an agent's answer: inspect the underlying application. Keep the limits clear: a wall schedule corroborates those wall values; it cannot by itself prove coverage of ceilings, the file path or the entire model.
+
 ## Suggested prompts for your own project
 
 These are teaching suggestions, not additional quotations from the author:
