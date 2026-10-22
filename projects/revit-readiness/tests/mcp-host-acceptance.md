@@ -1,5 +1,7 @@
 # Revit MCP host acceptance — in progress
 
+Latest evidence: the [five-case desktop matrix](../docs/verification/mcp-readiness.md) and [actual queued shutdown/restoration](../docs/verification/2026-10-22-shutdown-preparation.md) cover their declared scopes. Three queued request lifetimes were physically disposed before process exit; fresh wrapper checks passed before shutdown and after restoring the normal host. Do not extend this to unobserved native Raise overlap/executing-reader shutdown or to actual undo of the historical three whole-install layers. Token-only SDK cancellation remains unresolved; full R3 is pending.
+
 Task 5 supplies compiled adapter code and offline boundary tests. The [Task 7 live record](../docs/verification/2026-10-21-live-installation.md) now records real installation/recovery and initial SDK exchanges, with observed versus pending items. This checklist is the full required scope, not a completed test record. Both desktop applications' A8 workflow and independent report comparisons remain required.
 
 Use the recorded Revit 2024 build and disposable copies of the existing three samples. Record binary hashes, model and sidecar hashes, process/session IDs and actual MCP traffic. Never run fixture editing as part of a query. Keep SDK 2.2.0, compatible desktop policy and strict July regression unchanged.

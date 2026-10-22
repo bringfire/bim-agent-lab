@@ -1,0 +1,38 @@
+{
+  "verifiedUtc": "2026-10-22T16:52:19.421624+00:00",
+  "receipts": [
+    {
+      "transaction": "c75c9914405e4174a811090a4000f25e",
+      "state": {
+        "Utc": "2026-10-22T16:39:20.2618405Z",
+        "State": "Restored"
+      },
+      "beforeBytesMatch": true,
+      "receiptSha256": "70473352344b4ccd06b5bcd02954f2dac5c32b3d5a65cdec39a0670a2e8d2c1d"
+    },
+    {
+      "transaction": "3121de92cda74c6f8d1c9ac0a78967ca",
+      "state": {
+        "Utc": "2026-10-22T16:44:59.1866638Z",
+        "State": "Restored"
+      },
+      "beforeBytesMatch": true,
+      "receiptSha256": "a55a6122dc896928f46da51ee239ccebf8d231837ffb281d4e5fa76819e1065b"
+    }
+  ],
+  "savedInputs": [
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-saveas-fresh.rvt",
+      "beforeSha256": "f55856b361cf92aee57d6ea939523d8f280cd3543ee8afa62ad39d3174601f72",
+      "afterSha256": "f55856b361cf92aee57d6ea939523d8f280cd3543ee8afa62ad39d3174601f72"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-saveas-fresh.checklist.json",
+      "beforeSha256": "307951edb6aee460b7e2cb3eccc7bcf6de93845f9b9c81fd985c337dd6a4636f",
+      "afterSha256": "307951edb6aee460b7e2cb3eccc7bcf6de93845f9b9c81fd985c337dd6a4636f"
+    }
+  ],
+  "normalRevitPid": 154284,
+  "normalBridgeSessionId": "380928ed403d4fbf9731b2bbebb145e3",
+  "desktopConfigurationChanged": false
+}

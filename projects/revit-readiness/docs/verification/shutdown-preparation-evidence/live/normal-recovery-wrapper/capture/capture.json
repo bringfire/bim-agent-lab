@@ -1,0 +1,20 @@
+{
+  "sourceSession": "SDK client dedicated process",
+  "snapshotUtc": "2026-10-22T16:49:08.970101+00:00",
+  "snapshotKind": "Completed SDK process",
+  "protocolVersion": "2026-07-28",
+  "contextRequestId": "f5bf174bcf464cb287a8fc6f82339e88",
+  "reportRequestId": "7168165ac5bb4d91ade7be792e2d52bc",
+  "files": [
+    {
+      "path": "wire/client-to-server.jsonl",
+      "bytes": 1228,
+      "sha256": "b8ba313898e5c300bca5c07678da3b55ebafc8faf5c5333f6f4536c593821bb4"
+    },
+    {
+      "path": "wire/server-to-client.jsonl",
+      "bytes": 26580,
+      "sha256": "fb973d253206d40b377cf3edb9eb23866e964dc37bc5bd274c868d556498d7a0"
+    }
+  ]
+}

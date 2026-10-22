@@ -20,7 +20,7 @@ As of October 22, 2026, the Revit 2024 example checks required wall and ceiling 
 
 All five prepared sample cases—including deliberate defects and incomplete coverage—matched independent expectations through both desktops and a separate SDK client. Both desktops rejected an unexpired context after a model switch and recovered using a fresh context. See the [live evidence matrix](projects/revit-readiness/docs/verification/mcp-readiness.md) and [Excel evidence](projects/revit-readiness/docs/verification/2026-10-20-excel-output.md).
 
-The bridge uses official C# MCP SDK **2.2.0**, with verified compatible desktop revisions and a retained `2026-07-28` regression. This is a dated tested baseline, not a latest-version claim. Remaining host shutdown/recovery observations, a positive live run of the new capture wrapper, acceptance consolidation and independent R3 review remain open. Physical-condition checks and quantities are future extensions. See [development status](docs/reference/development-status.md).
+The bridge uses official C# MCP SDK **2.2.0**, with verified compatible desktop revisions and a retained `2026-07-28` regression. This is a dated tested baseline, not a latest-version claim. Positive live capture-wrapper runs and queued application-shutdown/recovery now pass. Remaining host/cancellation/recovery questions, acceptance consolidation and independent R3 review remain open. Physical-condition checks and quantities are future extensions. See [development status](docs/reference/development-status.md).
 
 ## Find what you need
 

@@ -1,0 +1,10 @@
+{
+  "verifiedUtc": "2026-10-22T16:43:01.187156+00:00",
+  "case": "complete",
+  "pass": true,
+  "findings": 0,
+  "affectedInstances": 0,
+  "examinedInstances": 16,
+  "coverageComplete": true,
+  "evaluationComplete": true
+}

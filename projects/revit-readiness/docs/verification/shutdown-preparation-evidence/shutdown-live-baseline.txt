@@ -1,0 +1,2 @@
+PASS independent case comparison: {"case": "complete", "pass": true, "findings": 0, "affectedInstances": 0, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}
+Evidence: D:\bim-agent-lab\projects\revit-readiness\samples\local\shutdown-live\caa11a7e75c6497fa33c6f35afeafa45\baseline-wrapper\capture

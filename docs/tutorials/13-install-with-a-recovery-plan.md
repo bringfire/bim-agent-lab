@@ -203,3 +203,9 @@ Suggested participant prompt:
 > Before asking me to open the application, explain exactly what this test can prove, prepare the recovery files and verify the observer. Give me the shortest reliable UI step. Keep failed attempts, and distinguish the test setup from the actual result.
 
 The [preparation record](../../projects/revit-readiness/docs/verification/2026-10-22-shutdown-preparation.md) links the technical procedure and identifies what remains unverified. Checking backup files is useful preparation; actually restoring an installation is separate evidence.
+
+The agent then installed the diagnostic host, restored the original files in a separate process, checked them, and installed the diagnostic candidate again. The author opened the sample and started the bridge. Only after a successful baseline and a ready observer did the agent ask the author to close Revit. Three waiting requests were rejected safely, their resources were released, and Revit exited normally.
+
+The agent restored the normal host and asked for one final startup/read. Revit initially had no active bridge; the author said **“ok, I started the rediness bridge”**, after which the fresh check passed. This makes another useful distinction visible to participants: opening Revit and starting its bridge are separate actions. An agent should verify connection state and explain the next click, rather than keep retrying indefinitely or assume the installation is broken.
+
+The [same record](../../projects/revit-readiness/docs/verification/2026-10-22-shutdown-preparation.md#normal-host-recovery-after-actual-shutdown) retains the unsuccessful connection attempts and successful recovery. This closes the observed queued-shutdown and normal-host-recovery sequence; it does not close every remaining acceptance question.

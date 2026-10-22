@@ -1,0 +1,83 @@
+{
+  "recordedUtc": "2026-10-22T16:41:15.293813+00:00",
+  "sourceCommit": "32c44eccc3b544eeed64aff5c9ac963d8a137105",
+  "installedTargetsVerified": 97,
+  "scope": "Actual three-target diagnostic apply/restore/repeated restore/reapply; historical three whole-install receipts audited but not undone",
+  "receipts": [
+    {
+      "transaction": "c75c9914405e4174a811090a4000f25e",
+      "state": {
+        "Utc": "2026-10-22T16:39:20.2618405Z",
+        "State": "Restored"
+      },
+      "receiptSha256": "70473352344B4CCD06B5BCD02954F2DAC5C32B3D5A65CDEC39A0670A2E8D2C1D",
+      "operations": [
+        {
+          "Target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitReadiness.dll",
+          "Before": "FF8A2D12C89AA15F44AEA6AB6943A047D9482A98C23E34FE6B44E116E876FDD4",
+          "After": "E2685520FD934A265F27672310D6823E8C6662B20ACEC1742C77C0F2DBA433AF",
+          "Tag": "Main",
+          "Temporary": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitReadiness.dll.bal-c75c9914405e4174a811090a4000f25e.tmp",
+          "Backup": "backup/0.bin",
+          "Staged": "staged/0.bin"
+        },
+        {
+          "Target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitBridge.Runtime.dll",
+          "Before": "F6E88446E696443E30622D86FD342D2D96DE46DA9B1B14F6EB3913A3A236C6BC",
+          "After": "99053203158AFF790C45D8AE092F02FF455ED592DCF05AB87C3B6B8D63BAA50F",
+          "Tag": "Main",
+          "Temporary": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitBridge.Runtime.dll.bal-c75c9914405e4174a811090a4000f25e.tmp",
+          "Backup": "backup/1.bin",
+          "Staged": "staged/1.bin"
+        },
+        {
+          "Target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\installed-files.json",
+          "Before": "1BE7E7C83505B41F279EDE8A45215ADE881A92907A8F8FFB8E2A47CB89BED063",
+          "After": "9F3C77A297EDD2AEBF85E335334DCB73B98D934CD1F40042F87417C4BA63F526",
+          "Tag": "MainInventory",
+          "Temporary": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\installed-files.json.bal-c75c9914405e4174a811090a4000f25e.tmp",
+          "Backup": "backup/2.bin",
+          "Staged": "staged/2.bin"
+        }
+      ]
+    },
+    {
+      "transaction": "3121de92cda74c6f8d1c9ac0a78967ca",
+      "state": {
+        "Utc": "2026-10-22T16:39:40.3948454Z",
+        "State": "Committed"
+      },
+      "receiptSha256": "A55A6122DC896928F46DA51EE239CCEBF8D231837FFB281D4E5FA76819E1065B",
+      "operations": [
+        {
+          "Target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitReadiness.dll",
+          "Before": "FF8A2D12C89AA15F44AEA6AB6943A047D9482A98C23E34FE6B44E116E876FDD4",
+          "After": "E2685520FD934A265F27672310D6823E8C6662B20ACEC1742C77C0F2DBA433AF",
+          "Tag": "Main",
+          "Temporary": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitReadiness.dll.bal-3121de92cda74c6f8d1c9ac0a78967ca.tmp",
+          "Backup": "backup/0.bin",
+          "Staged": "staged/0.bin"
+        },
+        {
+          "Target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitBridge.Runtime.dll",
+          "Before": "F6E88446E696443E30622D86FD342D2D96DE46DA9B1B14F6EB3913A3A236C6BC",
+          "After": "99053203158AFF790C45D8AE092F02FF455ED592DCF05AB87C3B6B8D63BAA50F",
+          "Tag": "Main",
+          "Temporary": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitBridge.Runtime.dll.bal-3121de92cda74c6f8d1c9ac0a78967ca.tmp",
+          "Backup": "backup/1.bin",
+          "Staged": "staged/1.bin"
+        },
+        {
+          "Target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\installed-files.json",
+          "Before": "1BE7E7C83505B41F279EDE8A45215ADE881A92907A8F8FFB8E2A47CB89BED063",
+          "After": "9F3C77A297EDD2AEBF85E335334DCB73B98D934CD1F40042F87417C4BA63F526",
+          "Tag": "MainInventory",
+          "Temporary": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\installed-files.json.bal-3121de92cda74c6f8d1c9ac0a78967ca.tmp",
+          "Backup": "backup/2.bin",
+          "Staged": "staged/2.bin"
+        }
+      ]
+    }
+  ],
+  "desktopServerPayloadChanged": false
+}

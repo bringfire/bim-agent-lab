@@ -1,0 +1,6 @@
+{
+  "outcome": "RejectedBeforeSdkLaunch",
+  "reason": "Initial preparation wrongly required the saved-as checklist bytes to equal the original complete sample.",
+  "observedDifference": "ProjectFileName alone changed from BAL-info-complete.rvt to BAL-info-saveas-fresh.rvt",
+  "correction": "Explicitly rebind ProjectFileName, compare entire parsed checklist, freeze actual file hashes and original authored expected report before query."
+}

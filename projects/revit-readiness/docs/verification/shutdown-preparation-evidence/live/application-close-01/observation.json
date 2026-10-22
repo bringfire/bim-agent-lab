@@ -1,0 +1,20 @@
+{
+  "startedUtc": "2026-10-22T16:43:15.284048+00:00",
+  "revitPid": 18564,
+  "queued": {
+    "queued-1": "b56d6030367940718cc774b21b7b9a16",
+    "queued-2": "c01d1ce6b95e4d5883eba0e1251c6f19",
+    "queued-3": "7a7fc8a5298d4161838e66b060450b35"
+  },
+  "captureCompleted": true,
+  "forcedTermination": false,
+  "retiredWhileProcessAlive": true,
+  "processExited": true,
+  "descriptorAbsent": true,
+  "driverExitCodes": [
+    0,
+    0,
+    0
+  ],
+  "capturedUntilUtc": "2026-10-22T16:44:08.279249+00:00"
+}

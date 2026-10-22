@@ -9,9 +9,10 @@ Start with the [participant guide](../start-here.md) or [agent handoff](../how-t
 | Revit command and Excel | Read-only required type information and four-sheet output verified on three prepared samples; Revit 2024 build 24.3.60.12 |
 | Live MCP | All five sample cases and both desktop unexpired-context switch/recovery checks independently verified; [live matrix](../../projects/revit-readiness/docs/verification/mcp-readiness.md) |
 | Compatibility | SDK 2.2.0; actual Codex June-2025/Claude Chat November-2025 traffic plus separate July-2026 SDK evidence and strict-July regression. No new latest-version audit |
-| Repeatable runner | Implemented at 3b74f67, offline tests and actual unavailable-host control pass; fresh positive wrapper/Revit run still outstanding |
-| Current workstation | Revit closed at handoff; old process/session and desktop PID bindings must be refreshed deliberately on restart |
-| Remaining acceptance | Host in-flight shutdown/native-event/disposal observations, unresolved cancellation observations, shared recovery layers, acceptance consolidation and independent R3 |
+| Repeatable runner | Implemented at 3b74f67; fresh independent live wrapper checks now pass on diagnostic and restored normal hosts |
+| Current workstation | Normal host restored; Revit left open after recovery, PID 154284. Inspect actual state; desktop PID bindings were not changed for this SDK-only session |
+| Shutdown/recovery | Actual close with three queued requests and physical disposal verified; new diagnostic layers restored. [Evidence](../../projects/revit-readiness/docs/verification/2026-10-22-shutdown-preparation.md) |
+| Remaining acceptance | Native-event/executing-reader shutdown limits, token-only SDK cancellation observation, original shared recovery layers, acceptance consolidation and independent R3 |
 | Later capabilities/distribution | Physical-condition/quantity checks, public hosting, original-material license and release packaging remain open |
 
 The author wants the remaining work handled sequentially, with refinement afterward. The starting guide and agent handoff do not close Tasks 7–9. No Revit action is needed to read them.

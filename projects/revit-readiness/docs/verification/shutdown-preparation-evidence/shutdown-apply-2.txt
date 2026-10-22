@@ -1,0 +1,3 @@
+PREPARED_RECEIPT=C:\Users\bring\.bim-agent-lab\RevitReadiness\InstallRecovery\3121de92cda74c6f8d1c9ac0a78967ca\receipt.json
+Installed; recovery receipt: C:\Users\bring\.bim-agent-lab\RevitReadiness\InstallRecovery\3121de92cda74c6f8d1c9ac0a78967ca\receipt.json
+VERIFIED_TARGETS=97 CHANGED=3 RECORD=D:\bim-agent-lab\.superpowers\sdd\2026-10-20-revit-mcp-bridge\shutdown-install-3121de92cda74c6f8d1c9ac0a78967ca.json

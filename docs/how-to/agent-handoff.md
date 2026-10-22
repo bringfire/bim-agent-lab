@@ -114,14 +114,14 @@ For stale-context evidence, open both documents before starting the five-minute 
 
 ## Resume the author's remaining work
 
-At this handoff, Revit is closed. Historical PID `149972` and its bridge session are invalid for a new run. The recorded installed normal host is source `9a93f6d`, external server `d88de67`; the runner source checkpoint is `3b74f67`. These identify different artifacts. Inspect actual installed hashes and recovery records before any new deployment. The [night checkpoint](../build-story/2026-10-21-night-checkpoint.md) records shared recovery lineage; its pause instruction was superseded by the author's subsequent resumption. Private `.superpowers` state exists only on the author's machine and is not a participant prerequisite.
+Latest follow-up: [shutdown/recovery](../../projects/revit-readiness/docs/verification/2026-10-22-shutdown-preparation.md) passed actual queued application shutdown, three physical disposals, diagnostic-layer restore/reapply/restore and fresh normal-host wrapper recovery. Revit was left open with PID `154284`, session `380928ed403d4fbf9731b2bbebb145e3`; inspect actual state before reuse. Desktop bindings were not changed for this SDK-only session. The installed normal host is again `9a93f6d`, server `d88de67`; runner source is `3b74f67`, diagnostic preparation source `32c44ec`. Both new diagnostic receipts are Restored. These identify different artifacts; inspect hashes/lineage before deployment. The [night checkpoint](../build-story/2026-10-21-night-checkpoint.md) retains earlier shared recovery history; its pause instruction was superseded. Private `.superpowers` state is not a participant prerequisite.
 
 | Next work | Completion evidence still needed |
 |---|---|
-| Positive runner observation | Fresh current-session prepared expectation and successful live wrapper comparison; prior direct SDK captures are not this proof |
-| Task 7 host lifetime gaps | Actual queued/executing application shutdown, remaining native-event handoffs and physical lifetime disposal; prior Stop/idle-shutdown checks do not substitute |
+| Positive runner observation | Passed on fresh diagnostic and restored normal hosts; retained full report/wire comparisons and original independent oracle |
+| Task 7 host lifetime gaps | Queued actual shutdown and three physical disposals now observed; concurrent reader/native Raise overlap at final shutdown remains unproven and must respect Revit's single API thread |
 | Task 7 unresolved observations | Intermittent queued-notification test explained and corrected in the [shutdown preparation](../../projects/revit-readiness/docs/verification/2026-10-22-shutdown-preparation.md); token-only SDK cancellation remains unresolved. Explicit cancellation-message success does not explain it |
-| Recovery lineage | Assess/verify outstanding shared-installation recovery layers using their recorded ownership, backups and original filesystem context; do not erase receipts to make setup appear clean |
+| Recovery lineage | New three-target diagnostic layers actually restored, including repeat restore; original three shared whole-install layers have verified bytes/reverse lineage but were not actually undone. Preserve their ownership/backups/filesystem context |
 | Acceptance and R3 | Consolidate A1–A9 against exact source/installed hashes and fresh required checks; prepare the external [R3 packet](../superpowers/reviews/revit-mcp-bridge/03-implementation-review.md) for the author, without claiming or sending external review |
 | Distribution | Owner choice of original-material license, public hosting and release package remains open; do not imply these are supplied |
 

@@ -10,7 +10,7 @@ The **MCP bridge** exposes two tools: `revit_get_readiness_context` and `revit_c
 
 Verified baseline: Revit 2024 build `24.3.60.12`, official C# MCP SDK 2.2.0 in an external .NET 10 process, and a net48 Revit add-in. Actual Codex desktop and Claude Desktop Chat passed the five sample cases and timely model-switch refusal/recovery on October 22, 2026. Their negotiated revisions were `2025-06-18` and `2025-11-25`; separate SDK testing retains `2026-07-28`. See the [live matrix](docs/verification/mcp-readiness.md), [Excel evidence](docs/verification/2026-10-20-excel-output.md) and [compatibility policy](../../docs/superpowers/specs/2026-10-20-desktop-compatibility-amendment.md).
 
-Remaining host shutdown/recovery observations, a fresh positive capture-wrapper run, acceptance consolidation and external R3 remain open. Other Revit versions are unverified. This is a working teaching example with local setup scripts; it is not a completed public release.
+Positive live capture-wrapper runs and [queued application shutdown/recovery](docs/verification/2026-10-22-shutdown-preparation.md) now pass. Remaining host/cancellation/recovery questions, acceptance consolidation and external R3 remain open. Other Revit versions are unverified. This is a working teaching example with local setup scripts; it is not a completed public release.
 
 ## The three BIM questions
 

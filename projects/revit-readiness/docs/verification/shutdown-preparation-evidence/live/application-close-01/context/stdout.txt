@@ -1,0 +1,1 @@
+PASS SDK readiness: expected=Context; evidence=D:\bim-agent-lab\projects\revit-readiness\samples\local\shutdown-live\caa11a7e75c6497fa33c6f35afeafa45\application-close-01\context\sdk

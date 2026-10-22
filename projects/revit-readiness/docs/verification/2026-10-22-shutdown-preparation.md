@@ -1,6 +1,6 @@
 # Shutdown and recovery preparation — October 22, 2026
 
-The author requested offline preparation with Revit closed before the next human UI step. This record is not a new Autodesk shutdown observation. Task 7 and R3 remain open. See the [participant story](../../../../docs/tutorials/13-install-with-a-recovery-plan.md#prepare-shutdown-tests-before-asking-the-person-to-open-revit) and [agent procedure](../../tests/host-diagnostics/README.md#actual-application-shutdown-with-queued-work).
+The author requested offline preparation with Revit closed before the next human UI step. Preparation was committed at `32c44ec`; the actual queued shutdown/disposal check below subsequently passed. Task 7 and R3 remain open. See the [participant story](../../../../docs/tutorials/13-install-with-a-recovery-plan.md#prepare-shutdown-tests-before-asking-the-person-to-open-revit) and [agent procedure](../../tests/host-diagnostics/README.md#actual-application-shutdown-with-queued-work).
 
 ## Intermittent notification test: a completed request has no live borrower
 
@@ -40,4 +40,40 @@ Whole-package preflight covers 97 operations. Only the diagnostic add-in, runtim
 
 Before requesting Revit startup, prepare the shared run directory and selector under `%USERPROFILE%/.bim-agent-lab/RevitBridge/diagnostics`, preserve previous selector bytes, and verify physical opened-file paths. The human opens the disposable saved-as sample and starts the bridge. Establish a fresh session/positive read; only after the observer writes `ready.json` ask for normal Revit closure. Never reuse the historical PID/session.
 
-Pending: actual queued shutdown/disposal, positive live wrapper, token-only SDK cancellation diagnosis, remaining native-event/reader shutdown observations where feasible, historical shared-layer undo, normal-host restoration after diagnostics, consolidated acceptance and external R3.
+At preparation time the live observations were pending. The follow-up below supplies queued shutdown/disposal, positive wrapper, actual diagnostic-layer restoration and normal-host recovery. Token-only SDK cancellation, remaining native-event/reader shutdown observations where feasible, historical shared-layer undo, consolidated acceptance and R3 remain open.
+
+## Actual installation round trip and shared startup preparation
+
+With Revit closed, the agent applied diagnostic source `32c44ec` using the full 97-target preflight and a three-target prepared receipt `c75c9914405e4174a811090a4000f25e`. A separate PowerShell process restored it; all 97 targets matched the original baseline. Repeating that restore also passed. A new receipt `3121de92cda74c6f8d1c9ac0a78967ca` reapplied the same candidate, with all 97 effective target hashes verified. The two unrelated inventories had only ordering differences and were retained after full entry/hash comparison. Active desktop servers and their binaries were preserved.
+
+[Deployment record](shutdown-preparation-evidence/deployment-roundtrip.json) retains both receipt hashes and backup/staged hashes. It records their states at that moment: first Restored, second Committed. This is actual undo of the new diagnostic layer, not of the three earlier whole-install layers. Their audit remains separate.
+
+The agent prepared shared diagnostic run `21cdbb0b351f4e47af1d0031678a51ea`, preserved the old selector bytes before replacement, and verified 99 actual opened-file paths (97 targets, selector and receipt). The human then started Revit normally with the disposable saved-as sample. Startup reached the diagnostic logger without the earlier redirected-filesystem error. Actual consuming-process startup supplements agent-side path checks.
+
+## Actual queued application shutdown and positive wrapper
+
+Revit PID **18564**, session `0fa3b39a68d944e8b0372b1f62858027`, loaded the diagnostic add-in/runtime while the external server retained `d88de67` bytes. A fresh frozen expectation came from the original native schedules/checklists and authored oracle. Initial preparation incorrectly required the saved-as checklist hash to equal the original complete model's hash; before any MCP query, comparison established that only `ProjectFileName` differs. The corrected preparation explicitly binds that filename and checks the entire remaining object. No expected answer was derived from the live report.
+
+`Invoke-ReadinessMcp.ps1` then passed its **first positive live run**: 16 examined instances, zero findings, both completeness flags true, both modified flags false, exact report/wire comparison on `2026-07-28`. The wrapper's frozen inputs and SDK capture are retained under `live/baseline-wrapper/` in the evidence folder. This is diagnostic-host wrapper proof, not a fresh desktop acceptance claim.
+
+After the observer published `ready.json`, the human closed the entire application normally. The independent shutdown checker passed:
+
+- Actual `ApplicationClosing` and `OnShutdown` occurred on API thread 1.
+- Three requests were admitted while Closing was held; none entered an executor or reader.
+- All three quiesced, returned correlated retryable `BridgeUnavailable`, and recorded physical lifetime disposal while Revit remained alive.
+- Stop disposed the ExternalEvent and removed hooks; network cleanup completed and the owned descriptor disappeared before final release.
+- Revit exited naturally; all three SDK children exited 0. No forced termination, automatic safety release, diagnostic failure or cleanup-release fallback occurred.
+
+The capture ran from 16:43:15Z to 16:44:08Z. Its before/after prefixes, raw wire, exact request IDs and independent check are under `live/application-close-01/`. A premature checker invocation found no final observation file while the observer was still finishing; only the completed capture was accepted. Physical disposal can precede the asynchronously logged Quiesced observation; the checker does not infer the opposite timestamp ordering.
+
+Observed native Raise during closing returned Accepted before shutdown began. **No in-flight Raise overlap or concurrent executing-reader shutdown is claimed.** The diagnostic holds make cleanup observable; they do not establish how much uninstrumented process-exit time is available to deferred work.
+
+After closure, the second receipt restored the normal host and the previous selector bytes. The final audit again matched all 97 original targets. The actual RVT/checklist bytes are checked separately from in-memory modified flags. Normal-host startup/read recovery is a subsequent check, not inferred from restored hashes.
+
+## Normal-host recovery after actual shutdown
+
+Revit restarted as PID **154284**. The first two SDK context attempts correctly returned retryable `BridgeUnavailable`; no descriptor existed yet. The journal showed the application/command registered, and the human then confirmed starting the readiness bridge. Preserve those attempts as setup evidence, not as successful reads or an unexplained host defect.
+
+The new session `380928ed403d4fbf9731b2bbebb145e3` published after Start. A new independent expectation was frozen against that PID/session before the recovery query; both RVT/checklist hashes still matched the pre-shutdown preparation. The normal-host wrapper passed on `2026-07-28`, examining 16/16 with zero findings, both completeness flags true and both modified flags false. This is fresh normal-host recovery, not reuse of the diagnostic session's token or report.
+
+Current installation is again the original normal host `9a93f6d` plus external server `d88de67`; both new diagnostic receipts are Restored. Source `32c44ec` includes the diagnostic observations/tests. Desktop configuration was not changed to the new PID during this SDK-only check, so the existing desktop entries still require deliberate rebinding for their next live session. Revit remains open at this checkpoint; no additional human UI action is needed for this increment. Future agents must inspect actual process state rather than reuse these PIDs.

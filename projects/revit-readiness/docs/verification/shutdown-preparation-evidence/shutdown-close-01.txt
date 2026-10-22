@@ -1,0 +1,1 @@
+CAPTURE COMPLETE; run independent application-shutdown verifier

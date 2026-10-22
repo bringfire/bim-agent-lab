@@ -1,5 +1,7 @@
 # Reusable readiness capture runner
 
+Follow-up: [shutdown/recovery verification](2026-10-22-shutdown-preparation.md) now supplies positive live wrapper runs on the diagnostic host and restored normal host, each with a new frozen independent expectation and full wire/report comparison. The closed-Revit statements below describe this original offline increment.
+
 Date: 2026-10-22. Scope: the first requested follow-up increment only. Baseline live checkpoint: `2b15e3459d4004644ae3cf6275166ff0b0563f0c`. Revit is closed. No production bridge, SDK package, installed file, desktop configuration or sample was changed.
 
 ## Implementation and ownership
