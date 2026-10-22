@@ -42,10 +42,13 @@ Retain human-supplied native schedule images unchanged and hash them. Record onl
 python projects/revit-readiness/tests/test_verify_mcp_evidence.py
 python projects/revit-readiness/tests/test_mcp_case_wire.py
 python projects/revit-readiness/tests/test_prepare_mcp_controls.py
+python projects/revit-readiness/tests/test_mcp_stale_evidence.py
 python projects/revit-readiness/tests/verify_mcp_evidence.py <capture-directory> --case wall-defects
 ```
 
 Capture directories contain frozen `expectation.json`, `capture.json` selecting context/report request IDs and wire hashes, `context.json`, `check.json`, and both `wire/*.jsonl` files. Comparison rejects unknown protocol revisions, unmatched wire results, wrong token use, a changed frozen oracle and incomplete NC1 absence confirmation. Stale-context wire checking alone is insufficient: the coordinated switch/timing and subsequent recovery must also be evidenced.
+
+For a stale capture, `verify_stale(directory)` additionally requires the original frozen expectation; `transition.json` with `contextReceivedUtc`, `switchConfirmedUtc`, `checkStartedUtc`, `checkFinishedUtc`, `humanAction` and `recoveryCase`; and a `recovery/` directory that independently passes the ordinary report verifier. Record UTC observations as they happen, not retrospectively from protocol lines. The observer's finish time must precede the original token expiry; the recovered report must follow the refusal and use a different document path, lifetime and token within the same Revit PID/bridge session. Synthetic checker tests are explicitly labelled and cannot stand in for actual desktop calls.
 
 Principal expectations are 0/0, 2/6 and 3/8 findings/affected instances. NC1 has 16 requested, 15 examined, zero findings, 1,197 excluded host instances and flags `(CoverageComplete=false, Evaluation.Complete=true)`. NC2 has 16 examined, zero findings, two exact ACT instances unexamined, 1,196 excluded host instances and both flags false. Each excludes six links. Neither incomplete case is a readiness pass.
 

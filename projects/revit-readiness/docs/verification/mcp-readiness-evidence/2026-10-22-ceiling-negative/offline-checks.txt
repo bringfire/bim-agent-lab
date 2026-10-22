@@ -1,0 +1,39 @@
+COMMAND: python projects/revit-readiness/tests/test_mcp_stale_evidence.py
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.472s
+
+OK
+EXIT: 0
+
+COMMAND: python projects/revit-readiness/tests/test_mcp_case_wire.py
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.693s
+
+OK
+EXIT: 0
+
+COMMAND: python projects/revit-readiness/tests/test_verify_mcp_evidence.py
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.121s
+
+OK
+EXIT: 0
+
+COMMAND: python projects/revit-readiness/tests/test_prepare_mcp_controls.py
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.898s
+
+OK
+EXIT: 0
+
+COMMAND: python projects/revit-readiness/tests/test_verify_desktop_continuity.py
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.957s
+
+OK
+EXIT: 0

@@ -10,7 +10,7 @@ The [earlier continuity record](2026-10-22-desktop-readiness.md) proves the clea
 |---|---|---|---|---|
 | Complete | 16 examined, 0 findings, both complete | Pending | Pending | Pending |
 | Wall defects | 2 findings, 6 affected, both complete | Verified | Verified | Verified |
-| Ceiling negative | 3 findings, 8 affected, both complete | Pending | Pending | Pending |
+| Ceiling negative | 3 findings, 8 affected, both complete | Verified | Pending | Verified |
 | NC1 absent declared identity | 15 examined, scope issue, coverage false/evaluator true | Pending | Pending | Pending |
 | NC2 absent ACT requirement | 16 examined, two unexamined ACT instances, both false | Pending | Pending | Pending |
 | Old context after document switch | ContextChanged, no report, fresh recovery | Pending | Pending | Separate SDK lifecycle evidence exists; this coordinated run pending |
@@ -32,7 +32,17 @@ The prepared copy was confirmed after the full-path Open step. The [retained evi
 
 Each full report matches the independently frozen expectation: Wall B's required FireRating is blank (2492785–2492787), and Wall D's Code is blank (2492795–2492797). All 16 declared instances were examined across six types/18 field rows, with two findings/six affected, both completeness flags true, no unexamined instances, 1,196 other host instances and six links excluded. Modified-before/after are false. The [author-pasted Claude answer](mcp-readiness-evidence/2026-10-22-wall-defects/claude-wall-defects/answer.txt) correctly says this scope does not pass despite complete coverage.
 
-Desktop records are immutable complete-line prefixes of active sessions, not EOF/shutdown tests. SDK completion and independent comparison have separate markers. The author subsequently supplied a [native BAL INFO Walls schedule screenshot](mcp-readiness-evidence/2026-10-22-wall-defects/native-walls-schedule.png). It visibly confirms blank FireRating for WB-01/02/03 and blank Code for WD-01/02/03. Wall A retains Code/FireRating/AssemblyReference, and Wall B retains Code/AssemblyReference. This independently corroborates the two wall findings across six instances. The image shows case IDs and displayed values, not the file path, element UniqueIds, null-versus-empty-string API representation or ceiling scope; those rely on the separately retained context/checklist/native-export evidence. It was supplied in response to the coordinated inspection request after the prepared-path check. The post-close RVT hash remains pending.
+Desktop records are immutable complete-line prefixes of active sessions, not EOF/shutdown tests. SDK completion and independent comparison have separate markers. The author subsequently supplied a [native BAL INFO Walls schedule screenshot](mcp-readiness-evidence/2026-10-22-wall-defects/native-walls-schedule.png). It visibly confirms blank FireRating for WB-01/02/03 and blank Code for WD-01/02/03. Wall A retains Code/FireRating/AssemblyReference, and Wall B retains Code/AssemblyReference. This independently corroborates the two wall findings across six instances. The image shows case IDs and displayed values, not the file path, element UniqueIds, null-versus-empty-string API representation or ceiling scope; those rely on the separately retained context/checklist/native-export evidence. It was supplied in response to the coordinated inspection request after the prepared-path check. The post-close RVT hash is recorded below.
+
+After the author reported the prepared ceiling model open, the closed wall model was readable and its [SHA-256 comparison](mcp-readiness-evidence/2026-10-22-wall-defects/wall-post-close-hash.json) matched the pre-call value `efd2717188956f7a070480323d85bcffe765007135915c1908a909fe04d50d17`. This supplies the previously pending saved-file check for the wall sample, alongside its false modified-state flags.
+
+## Ceiling-negative model: Codex and July SDK verified; Claude pending
+
+Codex context `11ef191542d64bceaba00b03a888cb39` confirmed the exact prepared `BAL-info-ceiling-negative.rvt` path and checklist hash before the check. Check `3b547e26f8194f5782318bc3942d52ea` independently matched all expected fields and identities on `2025-06-18`; the separate official-SDK `2026-07-28` run also passed. [Retained captures and hashes](mcp-readiness-evidence/2026-10-22-ceiling-negative/evidence-manifest.json).
+
+Both full reports contain the original wall defects plus missing ACT ceiling Code, affecting ceiling elements 2492802/2492809 (CACT-01/02). Totals are three findings, eight affected instances, all 16 examined, six types/18 field rows, both completeness flags true, no unexamined cases, 1,196 other host instances and six links excluded. Modified-before/after are false. This is a correct report of a failing declared scope, not a readiness pass. Claude Chat has been given the same neutral prompt; its actual exchange and answer remain pending. Native ceiling schedule observation and the post-close ceiling hash remain pending.
+
+The next planned switch is ceiling-negative to complete. Each desktop must acquire its own fresh old-model context, receive `ContextChanged` before that token expires after the human switch, then recover with a new context/report. Evidence folders are prepared; no live stale-context result is claimed. A synthetic transition checker now tests timing, original binding and independent recovery using retained wire fixtures; synthetic results are not desktop acceptance.
 
 ## Verification work
 

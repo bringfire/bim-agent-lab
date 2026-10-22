@@ -182,6 +182,43 @@ def verify_wire(directory, outcome='ReadinessReport'):
     else:assert check['isError'] is True and check['structuredContent']['code']=='ContextChanged' and 'report' not in check['structuredContent']
     return context,check
 
+def verify_stale(directory):
+    """Verify a timed human model switch, old-token refusal and full fresh recovery.
+
+    Recorded wall-clock observations accompany the wire; they are not inferred
+    from protocol bytes (which do not carry request arrival timestamps).
+    """
+    directory=Path(directory)
+    prepared=read(directory/'expectation.json');transition=read(directory/'transition.json')
+    context,error=verify_wire(directory,'ContextChanged');ctx=context['structuredContent']
+    assert isinstance(transition['humanAction'],str) and transition['humanAction'].strip()
+    assert PureWindowsPath(ctx['documentPath'])==PureWindowsPath(prepared['modelPath'])
+    assert PureWindowsPath(ctx['checklistPath'])==PureWindowsPath(prepared['checklistPath'])
+    assert ctx['revitPid']==prepared['revitPid'] and ctx['bridgeSessionId']==prepared['bridgeSessionId']
+    assert ctx['checklistSha256']==prepared['checklistSha256']
+    expected=expected_report(prepared['case'],prepared['modelPath'],prepared['checklistPath'])
+    assert exact(prepared['expectedReport'])==exact(expected)
+    for c,r in [('projectUniqueId','ProjectUniqueId'),('revitBuild','RevitBuild'),
+        ('checklistId','ChecklistId'),('scope','Scope'),('level','Level'),('phase','Phase')]:
+        assert ctx[c]==expected[r]
+    def utc(value):
+        at=datetime.fromisoformat(value.replace('Z','+00:00'))
+        assert at.tzinfo is not None and at.utcoffset().total_seconds()==0
+        return at
+    times=[prepared['preparedUtc']]+[transition[key] for key in
+        ('contextReceivedUtc','switchConfirmedUtc','checkStartedUtc','checkFinishedUtc')]
+    times=[utc(value) for value in times]
+    assert all(a<=b for a,b in zip(times,times[1:])), 'Transition observations are out of order'
+    assert times[-1]<utc(ctx['expiresUtc']), 'Expiry cannot stand in for document-switch protection'
+    recovered=verify(directory/'recovery',transition['recoveryCase'])
+    fresh=read(directory/'recovery/context.json')['structuredContent']
+    report=read(directory/'recovery/check.json')['structuredContent']['report']
+    assert fresh['revitPid']==ctx['revitPid'] and fresh['bridgeSessionId']==ctx['bridgeSessionId']
+    assert PureWindowsPath(fresh['documentPath'])!=PureWindowsPath(ctx['documentPath'])
+    assert fresh['documentLifetimeId']!=ctx['documentLifetimeId'] and fresh['contextToken']!=ctx['contextToken']
+    assert times[-1]<=utc(report['GeneratedUtc']), 'Recovery must follow the rejected request'
+    return {'pass':True,'code':error['structuredContent']['code'],'recovery':recovered}
+
 if __name__=='__main__':
     parser=argparse.ArgumentParser(description=__doc__)
     parser.add_argument('directory');parser.add_argument('--case',choices=CASES,required=True)

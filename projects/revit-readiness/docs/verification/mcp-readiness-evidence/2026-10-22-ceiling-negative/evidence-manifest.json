@@ -1,0 +1,97 @@
+[
+  {
+    "path": "codex-ceiling-negative/attempt.json",
+    "bytes": 132,
+    "sha256": "327aa256788c09c379cda106a48d9baa132477dbf69604733541241369d2b7d5"
+  },
+  {
+    "path": "codex-ceiling-negative/capture.json",
+    "bytes": 689,
+    "sha256": "11e170ff0e85f605289f442df2e6adf08826f3fc1bc47b4755251c23c7d967a8"
+  },
+  {
+    "path": "codex-ceiling-negative/check.json",
+    "bytes": 26424,
+    "sha256": "a65a70a9ac5a610fe9b476d41f0eeba3bd0ae106cc6301e443509bb014914687"
+  },
+  {
+    "path": "codex-ceiling-negative/comparison-complete.json",
+    "bytes": 273,
+    "sha256": "513ba6d49eb074f982d802a3623a0d6038a934a1f50049445bd5ab1ebd25a8d4"
+  },
+  {
+    "path": "codex-ceiling-negative/context.json",
+    "bytes": 2602,
+    "sha256": "2c2e9525c2d1d3a69acb66e42a33bb095489f00f66fbe8576b59a5cb8e580116"
+  },
+  {
+    "path": "codex-ceiling-negative/expectation.json",
+    "bytes": 18266,
+    "sha256": "4ec4bb2989522b70b43277344c5a5ecb8638526c7273948ad5e55f0fef09022e"
+  },
+  {
+    "path": "codex-ceiling-negative/wire/client-to-server.jsonl",
+    "bytes": 8639,
+    "sha256": "aca2f73763898934b151d1cab6ec3642e51b57092f811290926f61cc46a97cf2"
+  },
+  {
+    "path": "codex-ceiling-negative/wire/server-to-client.jsonl",
+    "bytes": 84993,
+    "sha256": "3aa9d9ed387f003645676115d0511038353a12c22cc86c20c03c3536ef97afae"
+  },
+  {
+    "path": "sdk-july-ceiling-negative/capture.json",
+    "bytes": 660,
+    "sha256": "92b11bed42d01ea8360ce247878c7e237a2d29e5066a97d6b3c1babc5d0e2ece"
+  },
+  {
+    "path": "sdk-july-ceiling-negative/check.json",
+    "bytes": 31049,
+    "sha256": "cd60265407dcff4a2ae344b6a373ff7d99d650131ceaf2657b8f27cc9f9c5366"
+  },
+  {
+    "path": "sdk-july-ceiling-negative/comparison-complete.json",
+    "bytes": 273,
+    "sha256": "82758a6366c5755e9bdb48a41356a6a3f0ac79b6146a3af9faf0dedcbcc7c482"
+  },
+  {
+    "path": "sdk-july-ceiling-negative/complete.json",
+    "bytes": 20,
+    "sha256": "24a2c27869ea53475d49f85360581d1282c5e34dd768e97116e53daad1d58563"
+  },
+  {
+    "path": "sdk-july-ceiling-negative/context.json",
+    "bytes": 3008,
+    "sha256": "1efca7bb601dfa4a48ce387e10ac90209afdefd5d64fa7f0445d96160dbc9b9f"
+  },
+  {
+    "path": "sdk-july-ceiling-negative/expectation.json",
+    "bytes": 18266,
+    "sha256": "4ec4bb2989522b70b43277344c5a5ecb8638526c7273948ad5e55f0fef09022e"
+  },
+  {
+    "path": "sdk-july-ceiling-negative/partial.json",
+    "bytes": 133,
+    "sha256": "8f37dc06659d3434701583e446d9f4d50193b643928f792961efe504ad47014d"
+  },
+  {
+    "path": "sdk-july-ceiling-negative/sdk-client-result.json",
+    "bytes": 35267,
+    "sha256": "53a1adf4219a4432f9c4f42211de6df3da227e8994a7b5e84433659f98216fb7"
+  },
+  {
+    "path": "sdk-july-ceiling-negative/wire/client-to-server.jsonl",
+    "bytes": 1228,
+    "sha256": "e6f16b9a0d68a20fe210344243d5d359a2e5a6a0c80b76f0d585283c56e61d0b"
+  },
+  {
+    "path": "sdk-july-ceiling-negative/wire/server-to-client.jsonl",
+    "bytes": 28844,
+    "sha256": "c54debabbd3e8519aba04e5d6c0e87a5f01d7799077c7497086d2dee4bd1f0d2"
+  },
+  {
+    "path": "offline-checks.txt",
+    "bytes": 972,
+    "sha256": "cb7f2873f8758fd7ba0ba92a0c493f13ee7f1f2dcb12a0adbbfa445dac59a22b"
+  }
+]

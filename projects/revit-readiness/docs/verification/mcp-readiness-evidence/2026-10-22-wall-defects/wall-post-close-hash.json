@@ -1,0 +1,8 @@
+{
+  "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-wall-defects.rvt",
+  "checkedUtc": "2026-10-22T13:52:13.665829+00:00",
+  "expectedSha256": "efd2717188956f7a070480323d85bcffe765007135915c1908a909fe04d50d17",
+  "actualSha256": "efd2717188956f7a070480323d85bcffe765007135915c1908a909fe04d50d17",
+  "unchanged": true,
+  "context": "Readable file after author reported ceiling model open; ceiling context independently confirmed prepared ceiling path"
+}

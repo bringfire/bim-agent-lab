@@ -12,4 +12,6 @@ python projects/revit-readiness/tests/verify_mcp_evidence.py projects/revit-read
 
 An `attempt.json` or SDK `partial.json` records the start and is intentionally retained after completion. Only `comparison-complete.json` indicates that the independent BIM comparison also passed; the SDK's `complete.json` alone means its exchange assertions passed. Desktop streams are captured prefixes of ongoing sessions. A prefix can contain earlier calls; `capture.json` identifies the exact pair being verified. These records do not prove EOF shutdown.
 
-The remaining principal cases, incomplete controls, stale-context workflow, post-close hash check, outstanding Task 7 observations and R3 remain separate acceptance requirements.
+`2026-10-22-ceiling-negative/` currently contains independently verified Codex and July SDK captures; Claude remains pending. Run the same verifier with `--case ceiling-negative` for its `codex-ceiling-negative` and `sdk-july-ceiling-negative` directories. The wall evidence now includes the author's native schedule screenshot and the unchanged RVT hash after close.
+
+The complete principal case, remaining Claude ceiling check, incomplete controls, stale-context workflow, remaining post-close hashes, outstanding Task 7 observations and R3 remain separate acceptance requirements.

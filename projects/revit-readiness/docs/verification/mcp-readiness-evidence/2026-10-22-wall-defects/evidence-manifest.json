@@ -163,5 +163,10 @@
     "path": "native-walls-schedule.png",
     "bytes": 19453,
     "sha256": "55b8715a45eb424444a0cf66f76309cb79e8a4f8ccac8fdd2e73f6e9e4e858ff"
+  },
+  {
+    "path": "wall-post-close-hash.json",
+    "bytes": 549,
+    "sha256": "5e5c9bd8b2c531e9d5a2256b76ceb0c02f80d76e28f2eeef1ed68154d7562a0a"
   }
 ]
