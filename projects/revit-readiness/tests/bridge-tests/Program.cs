@@ -14,6 +14,12 @@ internal static partial class Program
     static int failures, passed;
     static async Task<int> Main(string[] args)
     {
+        if (args.Length == 1 && args[0] == "--adapter-review")
+        {
+            await AdapterBoundaryTests();
+            Console.WriteLine($"Adapter review tests: {passed} passed; {failures} failed.");
+            return failures == 0 ? 0 : 1;
+        }
         if (args.Length == 1 && args[0] == "--dispatch")
         {
             await ContextTests(); await DispatchTests(); await ExecutorLifetimeTests(); await AdapterBoundaryTests(); await ChecklistSnapshotTests(); await PayloadCodecTests();

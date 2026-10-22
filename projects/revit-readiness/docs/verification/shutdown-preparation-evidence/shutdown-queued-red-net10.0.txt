@@ -1,0 +1,35 @@
+FAIL Queued retirement may precede endpoint cancellation: Exception Notification did not run after already-quiescent queued retirement
+System.Exception: Notification did not run after already-quiescent queued retirement
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 72
+   at BimAgentLab.Bridge.Tests.Program.<>c.<AdapterBoundaryTests>b__2_7() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 60
+   at BimAgentLab.Bridge.Tests.Program.Sync(Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 71
+   at BimAgentLab.Bridge.Tests.Program.<>c.<AdapterBoundaryTests>b__2_0() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 34
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 68
+FAIL Production host Stop releases real pipes while executor notification is held: Exception Notification did not run
+System.Exception: Notification did not run
+   at BimAgentLab.Bridge.Tests.Program.Check(Boolean value, String message) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 72
+   at BimAgentLab.Bridge.Tests.Program.<>c.<AdapterBoundaryTests>b__2_17() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 88
+   at BimAgentLab.Bridge.Tests.Program.Sync(Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 71
+   at BimAgentLab.Bridge.Tests.Program.<>c.<AdapterBoundaryTests>b__2_1() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 68
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 68
+PASS Event disposal failure cannot skip network cleanup and remains retryable
+PASS Production host publishes a context and revokes a canceled issuance
+PASS Production session acquisition/retirement event
+PASS Production session acquisition/retirement listener
+PASS Production session acquisition/retirement descriptor
+PASS Production session acquisition/retirement none
+PASS Event retirement never waits on an in-flight native Raise
+PASS Session stop clears contexts and returns without network completion
+FAIL Autodesk adapter source has only read-only query dependencies: DirectoryNotFoundException Could not find a part of the path 'D:\bim-agent-lab\src\revit-addin\BimAgentLab.RevitReadiness.csproj'.
+System.IO.DirectoryNotFoundException: Could not find a part of the path 'D:\bim-agent-lab\src\revit-addin\BimAgentLab.RevitReadiness.csproj'.
+Adapter review tests: 8 passed; 3 failed.
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.CreateFile(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options)
+   at Microsoft.Win32.SafeHandles.SafeFileHandle.Open(String fullPath, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.OSFileStreamStrategy..ctor(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.Strategies.FileStreamHelpers.ChooseStrategyCore(String path, FileMode mode, FileAccess access, FileShare share, FileOptions options, Int64 preallocationSize, Nullable`1 unixCreateMode)
+   at System.IO.StreamReader.ValidateArgsAndOpenPath(String path, Int32 bufferSize)
+   at System.IO.File.ReadAllText(String path, Encoding encoding)
+   at BimAgentLab.Bridge.Tests.Program.<>c.<AdapterBoundaryTests>b__2_53() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 164
+   at BimAgentLab.Bridge.Tests.Program.Sync(Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 71
+   at BimAgentLab.Bridge.Tests.Program.<>c.<AdapterBoundaryTests>b__2_6() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 161
+   at BimAgentLab.Bridge.Tests.Program.Test(String name, Func`1 test) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 68

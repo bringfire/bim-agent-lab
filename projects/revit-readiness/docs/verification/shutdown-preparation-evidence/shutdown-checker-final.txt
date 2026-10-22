@@ -1,0 +1,24 @@
+.....E
+======================================================================
+ERROR: test_application_shutdown_observer (unittest.loader._FailedTest.test_application_shutdown_observer)
+----------------------------------------------------------------------
+ImportError: Failed to import test module: test_application_shutdown_observer
+Traceback (most recent call last):
+  File "C:\Program Files\Python312\Lib\unittest\loader.py", line 396, in _find_test_path
+    module = self._get_module_from_name(name)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\unittest\loader.py", line 339, in _get_module_from_name
+    __import__(name)
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown_observer.py", line 8, in <module>
+    observer=importlib.util.module_from_spec(spec); spec.loader.exec_module(observer)
+                                                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\host-diagnostics\Observe-ApplicationShutdown.py", line 72
+    return [s.split('\t') for s in text.decode('utf-8').splitlines()[len(before.splitlines()):] if text.endswith(b'\n') else []
+                                                                                                                        ^^^^
+SyntaxError: invalid syntax
+
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.002s
+
+FAILED (errors=1)

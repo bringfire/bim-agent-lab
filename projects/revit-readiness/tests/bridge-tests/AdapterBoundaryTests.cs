@@ -22,15 +22,51 @@ internal static partial class Program
     {
         readonly PipeEndpoint endpoint;
         readonly Action<BridgeExecutionContext, DispatchTicket> admitted;
-        public ObservedHostEndpoint(PipeEndpoint endpoint, Action<BridgeExecutionContext, DispatchTicket> admitted)
-        { this.endpoint = endpoint; this.admitted = admitted; }
+        readonly Action? beforeStop;
+        public ObservedHostEndpoint(PipeEndpoint endpoint, Action<BridgeExecutionContext, DispatchTicket> admitted, Action? beforeStop = null)
+        { this.endpoint = endpoint; this.admitted = admitted; this.beforeStop = beforeStop; }
         public void Start(Func<BridgeExecutionContext, DispatchTicket> submit) => endpoint.Start(c =>
         { var ticket = submit(c); admitted(c, ticket); return ticket; });
-        public Task StopAsync() => endpoint.StopAsync();
+        public Task StopAsync() { beforeStop?.Invoke(); return endpoint.StopAsync(); }
     }
     static async Task AdapterBoundaryTests()
     {
-        await Test("Production host Stop releases real pipes while executor notification is held", () => Sync(() =>
+        await Test("Queued retirement may precede endpoint cancellation", () => Sync(() =>
+        {
+            var descriptor = ManualDescriptor(); string directory = Scratch("queued-retirement");
+            var clock = new SystemBridgeClock(); BridgeExecutionContext? context = null;
+            using var notification = new ManualResetEventSlim();
+            var admitted = new TaskCompletionSource<DispatchTicket>(TaskCreationOptions.RunContinuationsAsynchronously);
+            var endpoint = new PipeEndpoint(descriptor, new SessionCatalog(directory), clock);
+            int executed = 0, disposed = 0;
+            var host = new HostBridgeSession(descriptor.BridgeSessionId, clock,
+                () => new ApiEventLease(() => DispatchSignalResult.Accepted, () => disposed++),
+                () => new ObservedHostEndpoint(endpoint, (c, ticket) => { context = c; admitted.TrySetResult(ticket); }, () =>
+                {
+                    // Force the legal handoff after queue cancellation/quiescence and
+                    // before endpoint stopping signals the lifetime's owner token.
+                    Until(() => { try { _ = context!.Cancellation.WaitHandle; return false; }
+                        catch (ObjectDisposedException) { return true; } }).GetAwaiter().GetResult();
+                }));
+            host.StartInApiContext(); using var pipe = RawClient(descriptor);
+            CancellationTokenRegistration registration = default;
+            try
+            {
+                pipe.ConnectAsync(2000).GetAwaiter().GetResult(); using var request = LiveRequest("queued-retirement");
+                FrameCodec.WriteAsync(pipe, BridgeJson.Serialize(request.Context.Request), 65536, CancellationToken.None).GetAwaiter().GetResult();
+                var ticket = Within(admitted.Task).GetAwaiter().GetResult();
+                registration = context!.Cancellation.Register(() => notification.Set());
+                host.StopInApiContext().GetAwaiter().GetResult();
+                Check(!notification.IsSet, "Already disposed queued work unexpectedly received notification");
+                host.DrainInApiContext(c => { executed++; return QueueResponse(c); });
+                Check(ticket.Response.IsCanceled && ticket.Quiesced.IsCompleted, "Queued request not retired");
+                Equal(0, executed); Equal(1, disposed);
+                Check(host.IsRetired && !File.Exists(Path.Combine(directory, descriptor.BridgeSessionId + ".json")), "Host resources remained");
+                Console.WriteLine("QUEUED_RETIREMENT_PROOF disposedBeforeEndpointStop=true callbacks=0 executorCalls=0 responseCanceled=true");
+            }
+            finally { registration.Dispose(); host.StopInApiContext().GetAwaiter().GetResult(); }
+        }));
+        await Test("Production host Stop releases real pipes while executing borrower notification is held", () => Sync(() =>
         {
             var descriptor = ManualDescriptor(); string directory = Scratch("host-stop"); var clock = new SystemBridgeClock();
             using var notification = new ManualResetEventSlim(); using var release = new ManualResetEventSlim();
@@ -47,15 +83,32 @@ internal static partial class Program
                 pipe.ConnectAsync(2000).GetAwaiter().GetResult(); using var request = LiveRequest("host-held-notification");
                 FrameCodec.WriteAsync(pipe, BridgeJson.Serialize(request.Context.Request), 65536, CancellationToken.None).GetAwaiter().GetResult();
                 var work = Within(admitted.Task).GetAwaiter().GetResult();
-                registration = work.Context.Cancellation.Register(() => { notification.Set(); Hold(release); });
-                var stopped = host.StopInApiContext();
-                Progress(stopped, "host network retirement while callback held").GetAwaiter().GetResult();
-                Check(notification.Wait(2000), "Notification did not run");
-                Check(host.PollRetirementInApiContext(), "Host did not retire while notification held");
-                Equal(1, disposed); Check(work.Ticket.Response.IsCanceled && work.Ticket.Quiesced.IsCompleted, "Queued work not retired");
-                Check(!File.Exists(Path.Combine(directory, descriptor.BridgeSessionId + ".json")), "Descriptor remained");
-                _ = work.Context.Cancellation.WaitHandle;
-                host.StopInApiContext().GetAwaiter().GetResult();
+                int executorCalls = 0; Exception? executorAssertion = null;
+                host.DrainInApiContext(context =>
+                {
+                    try
+                    {
+                    executorCalls++;
+                    registration = context.Cancellation.Register(() => { notification.Set(); Hold(release); });
+                    var stopped = host.StopInApiContext();
+                    Progress(stopped, "host network retirement while callback held").GetAwaiter().GetResult();
+                    Check(notification.Wait(2000), "Notification did not run for live executor borrower");
+                    Check(context.IsCancellationRequested, "Executing request was not invalidated");
+                    Throws<OperationCanceledException>(context.ThrowIfInactive);
+                    Check(host.PollRetirementInApiContext(), "Host did not retire while notification held");
+                    Equal(1, disposed);
+                    Check(work.Ticket.Response.IsCanceled && !work.Ticket.Quiesced.IsCompleted, "Response/quiescence boundary lost");
+                    Check(!File.Exists(Path.Combine(directory, descriptor.BridgeSessionId + ".json")), "Descriptor remained");
+                    _ = context.Cancellation.WaitHandle;
+                    host.StopInApiContext().GetAwaiter().GetResult();
+                    return QueueResponse(context); // canceled publication cannot become success
+                    }
+                    catch (Exception error) { executorAssertion = error; throw; }
+                });
+                if (executorAssertion != null) throw executorAssertion; // queue deliberately maps executor faults
+                Equal(1, executorCalls);
+                Check(work.Ticket.Response.IsCanceled && work.Ticket.Quiesced.IsCompleted, "Executor did not quiesce");
+                _ = work.Context.Cancellation.WaitHandle; // callback still borrows the source
                 release.Set(); registration.Dispose();
                 Until(() => { try { _ = work.Context.Cancellation.WaitHandle; return false; } catch (ObjectDisposedException) { return true; } }).GetAwaiter().GetResult();
                 Console.WriteLine("HOST_STOP_PROOF networkBeforeNotificationRelease=true descriptorRemoved=true eventDisposed=true");

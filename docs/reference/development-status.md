@@ -2,7 +2,7 @@
 
 ## Current snapshot — October 22, 2026
 
-Start with the [participant guide](../start-here.md) or [agent handoff](../how-to/agent-handoff.md). They connect the existing lessons to the current workflow; no new runtime behavior is introduced by the onboarding increment.
+Start with the [participant guide](../start-here.md) or [agent handoff](../how-to/agent-handoff.md). The next increment prepares [shutdown/recovery checks](../../projects/revit-readiness/docs/verification/2026-10-22-shutdown-preparation.md): a corrected queued-notification test, physical-disposal observation and bounded diagnostic controls. Offline success does not close the remaining live checks.
 
 | Area | Current state |
 |---|---|

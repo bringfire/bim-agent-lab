@@ -1,0 +1,22 @@
+PASS RecordsIdentity
+PASS ReleasesExplicitly
+PASS PreparationCancellation
+PASS PreparationExpiry
+PASS ReaderCancellation
+PASS BoundedHold
+PASS RejectsStaleRelease
+PASS RejectsInvalidControl
+PASS SingleUse
+PASS StopWhileHeld
+PASS RootIsOutsideAppData
+PASS SharedFileResolvesToRequestedPath
+PASS ValidPreparedRun
+PASS MissingSelector
+PASS InvalidSelector
+PASS MissingPreparedDirectory
+PASS ExistingProcessDirectory
+FAIL LifecycleRelease: Expected observation was not reached
+FAIL LifecycleBounded: Missing bounded failure release
+FAIL LifecycleInvalidControls: Invalid lifecycle control accepted
+PASS PipeIdentity
+Diagnostic controls: 18 passed; 3 failed. No live Revit proof.

@@ -43,3 +43,4 @@ projects/revit-readiness/docs/verification/desktop-launch-evidence/** -text -whi
 projects/revit-readiness/docs/verification/desktop-readiness-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/mcp-readiness-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/readiness-runner-evidence/** -text -whitespace
+projects/revit-readiness/docs/verification/shutdown-preparation-evidence/** -text -whitespace

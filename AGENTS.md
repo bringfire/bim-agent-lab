@@ -2,6 +2,8 @@
 
 ## Current entry point — October 22, 2026
 
+Active follow-up: the author authorized remaining shutdown/recovery checks, preparing offline while Revit is closed. Read the [shutdown preparation](projects/revit-readiness/docs/verification/2026-10-22-shutdown-preparation.md) and [diagnostic procedure](projects/revit-readiness/tests/host-diagnostics/README.md#actual-application-shutdown-with-queued-work). The intermittent queued-notification assertion was incorrect after physical retirement; the separate token-only SDK observation remains open. Live queued shutdown/disposal must be captured before claiming it. Keep diagnostic deployment/recovery separate from the normal host and preserve desktop connections.
+
 Route participants to the [starting guide](docs/start-here.md) and agents to the [technical handoff](docs/how-to/agent-handoff.md). The handoff and [live matrix](projects/revit-readiness/docs/verification/mcp-readiness.md) supersede stale pending/open-app statements in the chronological checkpoints below. All five sample cases and both desktop model-switch/recovery tests have live evidence; overall acceptance is still open. Revit is closed at this handoff; inspect actual state before acting and never reuse a historical PID/session after restart.
 
 The author explicitly requested the participant starting guide and agent handoff next, then refinement after the remaining steps. Continue authorized work sequentially; there is no added approval pause after each increment. Documentation does not close remaining host/recovery gaps, the positive live wrapper run, or R3. Preserve installed source/hash distinctions and existing recovery records.

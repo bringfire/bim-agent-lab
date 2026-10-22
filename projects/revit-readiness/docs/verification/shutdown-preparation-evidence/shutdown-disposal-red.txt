@@ -1,0 +1,11 @@
+WHILE_HELD mode=stop-normal-before stopReturned=true networkReleased=true descriptorRemoved=true quiesced=True
+System.TimeoutException: Condition did not settle.
+   at BimAgentLab.Bridge.Tests.Program.<Until>d__55.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\PipeTransportTests.cs:line 171
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<EndpointProgressChild>d__8.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 144
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at BimAgentLab.Bridge.Tests.Program.<ProgressChild>d__4.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\CancellationProgressTests.cs:line 49

@@ -220,7 +220,11 @@ public sealed class PipeEndpoint : IHostBridgeEndpoint
             // A faulted Quiesced task also means the executor finished. Release after
             // successful physical disposal, independently of that logical outcome.
             var disposal = lifetime.DisposalCompleted;
-            if (disposal.Status == TaskStatus.RanToCompletion) retention.Dispose();
+            if (disposal.Status == TaskStatus.RanToCompletion)
+            {
+                retention.Dispose();
+                Emit(id, "LifetimeDisposed", clock.Timestamp, requestId);
+            }
             // Failed physical cleanup intentionally keeps its permit and reports failure.
         }
     }
@@ -244,8 +248,8 @@ public sealed class PipeEndpoint : IHostBridgeEndpoint
     static void Observe(Task task) => task.ContinueWith(t => { _ = t.Exception; }, CancellationToken.None, TaskContinuationOptions.OnlyOnFaulted | TaskContinuationOptions.ExecuteSynchronously, TaskScheduler.Default);
     static bool Expected(Exception error) => error is IOException || error is InvalidDataException || error is UnauthorizedAccessException ||
         error is OperationCanceledException || error is ObjectDisposedException || error is BridgeException || error is System.ComponentModel.Win32Exception || error is InvalidOperationException;
-    void Emit(long id, string stage, long timestamp)
-    { try { observe?.Invoke(new PipeEvent { ConnectionId = id, Stage = stage, Timestamp = timestamp }); } catch { /* Diagnostics cannot acquire ownership of an operation. */ } }
+    void Emit(long id, string stage, long timestamp, string requestId = "")
+    { try { observe?.Invoke(new PipeEvent { ConnectionId = id, Stage = stage, Timestamp = timestamp, RequestId = requestId }); } catch { /* Diagnostics cannot acquire ownership of an operation. */ } }
     void RecordCancellationFailure(long id, string requestId, Exception error)
         => RecordFailure(id, requestId, error, "CancellationCallbackFailed");
     void RecordFailure(long id, string requestId, Exception error, string stage)

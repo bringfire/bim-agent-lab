@@ -5,7 +5,7 @@ if ($PSVersionTable.PSVersion.Major -lt 7) { throw 'Use PowerShell 7.' }
 if (Get-Process Revit -ErrorAction SilentlyContinue) { throw 'Close Revit before preparing the diagnostic installation.' }
 $project=(Resolve-Path (Join-Path $PSScriptRoot '../..')).Path
 $installed=Join-Path $env:APPDATA 'Autodesk/Revit/Addins/2024/BimAgentLab.RequiredInformation'
-$server=Join-Path $env:LOCALAPPDATA 'BimAgentLab/RevitReadiness/McpServer'
+$server=Join-Path ([Environment]::GetFolderPath('UserProfile')) '.bim-agent-lab/RevitReadiness/McpServer'
 foreach($folder in @($installed,$server)) {
     foreach($entry in (Get-Content -LiteralPath (Join-Path $folder 'installed-files.json') -Raw | ConvertFrom-Json)) {
         $file=[IO.Path]::GetFullPath((Join-Path $folder $entry.File))
@@ -18,11 +18,11 @@ $package=Join-Path $project ('samples/local/diagnostic-packages/'+[guid]::NewGui
 if ($LASTEXITCODE -ne 0) { throw 'Diagnostic build failed.' }
 if (Test-Path -LiteralPath $package) { throw 'Use a new package directory.' }
 New-Item -ItemType Directory -Path $package | Out-Null
-# Only this add-in DLL differs. Runtime, core, exporter, server and notices are the
-# existing release payloads. The standard installer still validates the entire tree.
+# Diagnostic add-in plus the runtime's disposal observation are compiled together.
+# Core, contract, exporter, external server and notices retain installed bytes.
 $files=@{}
 foreach($name in 'BimAgentLab.RevitReadiness.dll','BimAgentLab.Readiness.Core.dll','BimAgentLab.RevitBridge.Runtime.dll','BimAgentLab.RevitBridge.Contract.dll') {
-    $files["src/revit-addin/bin/Release/net48/$name"] = if($name -eq 'BimAgentLab.RevitReadiness.dll') { Join-Path $PSScriptRoot "bin/Release/net48/$name" } else { Join-Path $installed $name }
+    $files["src/revit-addin/bin/Release/net48/$name"] = if($name -in @('BimAgentLab.RevitReadiness.dll','BimAgentLab.RevitBridge.Runtime.dll')) { Join-Path $PSScriptRoot "bin/Release/net48/$name" } else { Join-Path $installed $name }
 }
 foreach($relative in 'src/revit-addin/BimAgentLab.ReadinessBridge.addin.template','scripts/legacy-fixture-baseline.json') {
     $files[$relative]=Join-Path $project $relative
@@ -52,6 +52,7 @@ foreach($relative in $files.Keys) {
     $copied+= [ordered]@{relative=$relative;source=$files[$relative];sha256=$before}
 }
 $sources=@(Get-ChildItem -LiteralPath (Join-Path $project 'src/revit-addin') -File -Filter '*.cs') + @(Get-ChildItem -LiteralPath $PSScriptRoot -File -Filter '*.cs')
+$sources+=@(Get-ChildItem -LiteralPath (Join-Path $project 'src/bridge-runtime') -File -Filter '*.cs')
 $sourceHashes=@($sources | ForEach-Object { [ordered]@{path=$_.FullName;sha256=(Get-FileHash -LiteralPath $_.FullName -Algorithm SHA256).Hash} })
 $manifest=[ordered]@{diagnosticOnly=$true;preparedUtc=[DateTimeOffset]::UtcNow.ToString('o');sourceRoot=$package;files=$copied;sources=$sourceHashes;complete=$true}
 $manifest | ConvertTo-Json -Depth 6 | Set-Content -LiteralPath (Join-Path $package 'diagnostic-package.json') -Encoding utf8

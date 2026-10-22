@@ -1,0 +1,12 @@
+test_false_execution_or_failure (test_application_shutdown.ShutdownTraceTests.test_false_execution_or_failure) ... ok
+test_late_admission_disposal_and_crossed_identity (test_application_shutdown.ShutdownTraceTests.test_late_admission_disposal_and_crossed_identity) ... ok
+test_missing_events (test_application_shutdown.ShutdownTraceTests.test_missing_events) ... ok
+test_missing_or_bad_terminal_facts (test_application_shutdown.ShutdownTraceTests.test_missing_or_bad_terminal_facts) ... ok
+test_synthetic_positive (test_application_shutdown.ShutdownTraceTests.test_synthetic_positive) ... ok
+test_cleanup_error_does_not_skip_child_or_evidence (test_application_shutdown_observer.ShutdownOwnershipTests.test_cleanup_error_does_not_skip_child_or_evidence) ... ok
+test_only_owned_lifecycle_controls_are_cleaned_up (test_application_shutdown_observer.ShutdownOwnershipTests.test_only_owned_lifecycle_controls_are_cleaned_up) ... ok
+
+----------------------------------------------------------------------
+Ran 7 tests in 0.026s
+
+OK

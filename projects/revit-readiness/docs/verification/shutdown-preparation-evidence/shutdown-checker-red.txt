@@ -1,0 +1,434 @@
+EEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEEE
+======================================================================
+ERROR: test_false_execution_or_failure (__main__.ShutdownTraceTests.test_false_execution_or_failure) (stage='ExecutorEntered')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 48, in test_false_execution_or_failure
+    with self.subTest(stage=stage), self.assertRaises(AssertionError): check_trace(info, rows)
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_false_execution_or_failure (__main__.ShutdownTraceTests.test_false_execution_or_failure) (stage='ReaderEntered')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 48, in test_false_execution_or_failure
+    with self.subTest(stage=stage), self.assertRaises(AssertionError): check_trace(info, rows)
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_false_execution_or_failure (__main__.ShutdownTraceTests.test_false_execution_or_failure) (stage='ControlRejected')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 48, in test_false_execution_or_failure
+    with self.subTest(stage=stage), self.assertRaises(AssertionError): check_trace(info, rows)
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_false_execution_or_failure (__main__.ShutdownTraceTests.test_false_execution_or_failure) (stage='LifecycleAutomaticRelease')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 48, in test_false_execution_or_failure
+    with self.subTest(stage=stage), self.assertRaises(AssertionError): check_trace(info, rows)
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_false_execution_or_failure (__main__.ShutdownTraceTests.test_false_execution_or_failure) (stage='Pipe.LifetimeCleanupFailed')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 48, in test_false_execution_or_failure
+    with self.subTest(stage=stage), self.assertRaises(AssertionError): check_trace(info, rows)
+                                                                       ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_late_admission_disposal_and_crossed_identity (__main__.ShutdownTraceTests.test_late_admission_disposal_and_crossed_identity) (mode='admission')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 58, in test_late_admission_disposal_and_crossed_identity
+    with self.subTest(mode=mode), self.assertRaises(AssertionError): check_trace(info, rows)
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_late_admission_disposal_and_crossed_identity (__main__.ShutdownTraceTests.test_late_admission_disposal_and_crossed_identity) (mode='disposal')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 58, in test_late_admission_disposal_and_crossed_identity
+    with self.subTest(mode=mode), self.assertRaises(AssertionError): check_trace(info, rows)
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_late_admission_disposal_and_crossed_identity (__main__.ShutdownTraceTests.test_late_admission_disposal_and_crossed_identity) (mode='identity')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 58, in test_late_admission_disposal_and_crossed_identity
+    with self.subTest(mode=mode), self.assertRaises(AssertionError): check_trace(info, rows)
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_late_admission_disposal_and_crossed_identity (__main__.ShutdownTraceTests.test_late_admission_disposal_and_crossed_identity) (mode='thread')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 58, in test_late_admission_disposal_and_crossed_identity
+    with self.subTest(mode=mode), self.assertRaises(AssertionError): check_trace(info, rows)
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_late_admission_disposal_and_crossed_identity (__main__.ShutdownTraceTests.test_late_admission_disposal_and_crossed_identity) (mode='duplicate')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 58, in test_late_admission_disposal_and_crossed_identity
+    with self.subTest(mode=mode), self.assertRaises(AssertionError): check_trace(info, rows)
+                                                                     ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_events (__main__.ShutdownTraceTests.test_missing_events) (stage='ApplicationClosingEntered', request='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 43, in test_missing_events
+    with self.assertRaises(AssertionError): check_trace(info, altered)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_events (__main__.ShutdownTraceTests.test_missing_events) (stage='LifecycleHeld', request='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 43, in test_missing_events
+    with self.assertRaises(AssertionError): check_trace(info, altered)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_events (__main__.ShutdownTraceTests.test_missing_events) (stage='Submitted', request='r1')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 43, in test_missing_events
+    with self.assertRaises(AssertionError): check_trace(info, altered)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_events (__main__.ShutdownTraceTests.test_missing_events) (stage='Submitted', request='r2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 43, in test_missing_events
+    with self.assertRaises(AssertionError): check_trace(info, altered)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_events (__main__.ShutdownTraceTests.test_missing_events) (stage='Submitted', request='r3')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 43, in test_missing_events
+    with self.assertRaises(AssertionError): check_trace(info, altered)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_events (__main__.ShutdownTraceTests.test_missing_events) (stage='LifecycleReleased', request='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 43, in test_missing_events
+    with self.assertRaises(AssertionError): check_trace(info, altered)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_events (__main__.ShutdownTraceTests.test_missing_events) (stage='ApplicationClosingReturned', request='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 43, in test_missing_events
+    with self.assertRaises(AssertionError): check_trace(info, altered)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_events (__main__.ShutdownTraceTests.test_missing_events) (stage='ApplicationShutdownEntered', request='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 43, in test_missing_events
+    with self.assertRaises(AssertionError): check_trace(info, altered)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_events (__main__.ShutdownTraceTests.test_missing_events) (stage='StopEntered', request='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 43, in test_missing_events
+    with self.assertRaises(AssertionError): check_trace(info, altered)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_events (__main__.ShutdownTraceTests.test_missing_events) (stage='EventDisposed', request='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 43, in test_missing_events
+    with self.assertRaises(AssertionError): check_trace(info, altered)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_events (__main__.ShutdownTraceTests.test_missing_events) (stage='StopReturned', request='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 43, in test_missing_events
+    with self.assertRaises(AssertionError): check_trace(info, altered)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_events (__main__.ShutdownTraceTests.test_missing_events) (stage='EventsUnhooked', request='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 43, in test_missing_events
+    with self.assertRaises(AssertionError): check_trace(info, altered)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_events (__main__.ShutdownTraceTests.test_missing_events) (stage='LifecycleHeld', request='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 43, in test_missing_events
+    with self.assertRaises(AssertionError): check_trace(info, altered)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_events (__main__.ShutdownTraceTests.test_missing_events) (stage='NetworkStopped', request='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 43, in test_missing_events
+    with self.assertRaises(AssertionError): check_trace(info, altered)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_events (__main__.ShutdownTraceTests.test_missing_events) (stage='QuiescedObserved', request='r1')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 43, in test_missing_events
+    with self.assertRaises(AssertionError): check_trace(info, altered)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_events (__main__.ShutdownTraceTests.test_missing_events) (stage='Pipe.LifetimeDisposed', request='r1')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 43, in test_missing_events
+    with self.assertRaises(AssertionError): check_trace(info, altered)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_events (__main__.ShutdownTraceTests.test_missing_events) (stage='QuiescedObserved', request='r2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 43, in test_missing_events
+    with self.assertRaises(AssertionError): check_trace(info, altered)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_events (__main__.ShutdownTraceTests.test_missing_events) (stage='Pipe.LifetimeDisposed', request='r2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 43, in test_missing_events
+    with self.assertRaises(AssertionError): check_trace(info, altered)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_events (__main__.ShutdownTraceTests.test_missing_events) (stage='QuiescedObserved', request='r3')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 43, in test_missing_events
+    with self.assertRaises(AssertionError): check_trace(info, altered)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_events (__main__.ShutdownTraceTests.test_missing_events) (stage='Pipe.LifetimeDisposed', request='r3')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 43, in test_missing_events
+    with self.assertRaises(AssertionError): check_trace(info, altered)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_events (__main__.ShutdownTraceTests.test_missing_events) (stage='LifecycleReleased', request='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 43, in test_missing_events
+    with self.assertRaises(AssertionError): check_trace(info, altered)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_events (__main__.ShutdownTraceTests.test_missing_events) (stage='ApplicationShutdownReturned', request='')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 43, in test_missing_events
+    with self.assertRaises(AssertionError): check_trace(info, altered)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_or_bad_terminal_facts (__main__.ShutdownTraceTests.test_missing_or_bad_terminal_facts) (field='captureCompleted')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 35, in test_missing_or_bad_terminal_facts
+    with self.assertRaises(AssertionError): check_trace(info, rows)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_or_bad_terminal_facts (__main__.ShutdownTraceTests.test_missing_or_bad_terminal_facts) (field='cleanupRelease')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 35, in test_missing_or_bad_terminal_facts
+    with self.assertRaises(AssertionError): check_trace(info, rows)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_or_bad_terminal_facts (__main__.ShutdownTraceTests.test_missing_or_bad_terminal_facts) (field='forcedTermination')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 35, in test_missing_or_bad_terminal_facts
+    with self.assertRaises(AssertionError): check_trace(info, rows)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_or_bad_terminal_facts (__main__.ShutdownTraceTests.test_missing_or_bad_terminal_facts) (field='processExited')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 35, in test_missing_or_bad_terminal_facts
+    with self.assertRaises(AssertionError): check_trace(info, rows)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_or_bad_terminal_facts (__main__.ShutdownTraceTests.test_missing_or_bad_terminal_facts) (field='descriptorAbsent')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 35, in test_missing_or_bad_terminal_facts
+    with self.assertRaises(AssertionError): check_trace(info, rows)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_missing_or_bad_terminal_facts (__main__.ShutdownTraceTests.test_missing_or_bad_terminal_facts) (field='driverExitCodes')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 35, in test_missing_or_bad_terminal_facts
+    with self.assertRaises(AssertionError): check_trace(info, rows)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+======================================================================
+ERROR: test_synthetic_positive (__main__.ShutdownTraceTests.test_synthetic_positive)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_application_shutdown.py", line 28, in test_synthetic_positive
+    self.assertTrue(check_trace(*fixture())['pass'])
+                    ^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_application_shutdown.py", line 3, in check_trace
+    raise NotImplementedError('Shutdown trace comparison not implemented')
+NotImplementedError: Shutdown trace comparison not implemented
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.004s
+
+FAILED (errors=39)

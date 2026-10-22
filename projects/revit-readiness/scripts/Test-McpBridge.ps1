@@ -32,6 +32,8 @@ try {
         if ($LASTEXITCODE -ne 0) { throw 'Adapter handoff test build failed.' }
         & './tests/adapter-handoff-tests/bin/Release/net48/BimAgentLab.AdapterHandoff.Tests.exe'
         if ($LASTEXITCODE -ne 0) { throw 'Adapter/queue handoff tests failed.' }
+        & python -m unittest discover -s tests -p 'test_application_shutdown*.py' -v
+        if ($LASTEXITCODE -ne 0) { throw 'Shutdown observer/checker tests failed (offline only).' }
     }
     if ($Suite -in @('Pipe','All')) {
         & dotnet build 'tests/bridge-tests/BimAgentLab.Bridge.Tests.csproj' -c Release --nologo -p:RestoreLockedMode=true

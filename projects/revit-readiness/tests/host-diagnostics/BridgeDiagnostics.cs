@@ -5,6 +5,8 @@ using System.Threading;
 using System.Threading.Tasks;
 using BimAgentLab.RevitBridge.Contract;
 using BimAgentLab.RevitBridge.Runtime;
+using Autodesk.Revit.UI;
+using Autodesk.Revit.UI.Events;
 
 namespace BimAgentLab.RevitReadiness
 {
@@ -34,6 +36,12 @@ namespace BimAgentLab.RevitReadiness
             }
         }
         internal static void Record(string stage, string detail = "") => Safe(() => recorder.Record(stage, current, detail));
+        internal static void RecordPipe(PipeEvent value) => Safe(() => recorder.Record("Pipe." + value.Stage, null, value.ConnectionId.ToString(), value.RequestId));
+        internal static void HookClosing(UIControlledApplication app) => app.ApplicationClosing += OnApplicationClosing;
+        internal static void UnhookClosing(UIControlledApplication app) => app.ApplicationClosing -= OnApplicationClosing;
+        static void OnApplicationClosing(object sender, ApplicationClosingEventArgs args)
+        { Record("ApplicationClosingEntered"); HoldLifecycle("ApplicationClosing"); Record("ApplicationClosingReturned"); }
+        internal static void HoldLifecycle(string stage) => Safe(() => recorder.HoldLifecycle(stage));
         internal static void Hold(string stage) => Safe(() => recorder.Hold(stage, current, () => BridgeApplication.Current.Stop()));
         internal static BridgeResponse Execute(BridgeExecutionContext context, Func<BridgeResponse> action)
         {

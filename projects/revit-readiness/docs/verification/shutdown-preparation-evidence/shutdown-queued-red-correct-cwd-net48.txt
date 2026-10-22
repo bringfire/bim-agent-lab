@@ -1,0 +1,20 @@
+FAIL Queued retirement may precede endpoint cancellation: Exception Notification did not run after already-quiescent queued retirement
+System.Exception: Notification did not run after already-quiescent queued retirement
+   at BimAgentLab.Bridge.Tests.Program.<>c.<AdapterBoundaryTests>b__2_7()
+   at BimAgentLab.Bridge.Tests.Program.Sync(Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 71
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__61.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 68
+FAIL Production host Stop releases real pipes while executor notification is held: Exception Notification did not run
+System.Exception: Notification did not run
+   at BimAgentLab.Bridge.Tests.Program.<>c.<AdapterBoundaryTests>b__2_17() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\AdapterBoundaryTests.cs:line 90
+   at BimAgentLab.Bridge.Tests.Program.Sync(Action action) in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 71
+   at BimAgentLab.Bridge.Tests.Program.<Test>d__61.MoveNext() in D:\bim-agent-lab\projects\revit-readiness\tests\bridge-tests\Program.cs:line 68
+PASS Event disposal failure cannot skip network cleanup and remains retryable
+PASS Production host publishes a context and revokes a canceled issuance
+PASS Production session acquisition/retirement event
+PASS Production session acquisition/retirement listener
+PASS Production session acquisition/retirement descriptor
+PASS Production session acquisition/retirement none
+PASS Event retirement never waits on an in-flight native Raise
+PASS Session stop clears contexts and returns without network completion
+PASS Autodesk adapter source has only read-only query dependencies
+Adapter review tests: 9 passed; 2 failed.

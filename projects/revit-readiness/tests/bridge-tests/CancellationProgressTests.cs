@@ -106,6 +106,7 @@ internal static partial class Program
             }
             else if (origin == "disconnect") pipe.Dispose();
             await Progress(entered.Task, "notification start");
+            Check(!events.Any(e => e.Stage == "LifetimeDisposed" && e.RequestId == mode), "Disposal reported with callback held");
             Equal(deadline, context.Budget.DeadlineUtc);
             if (origin == "deadline") Equal("DeadlineExceeded", Throws<BridgeException>(context.ThrowIfInactive).Error.Code);
             else Throws<OperationCanceledException>(context.ThrowIfInactive);
@@ -136,7 +137,12 @@ internal static partial class Program
             release.Set(); quiesced.TrySetResult(true); response.TrySetCanceled(); pipe.Dispose();
             if (stop != null) { try { await Within(stop); } catch (AggregateException) when (throws) { } }
             try { await Within(endpoint.StopAsync()); } catch (AggregateException) when (throws) { }
-            if (context != null) await Until(() => IsLifetimeDisposed(context));
+            if (context != null)
+            {
+                await Until(() => IsLifetimeDisposed(context));
+                await Until(() => events.Any(e => e.Stage == "LifetimeDisposed" && e.RequestId == mode && e.ConnectionId == 1));
+                Equal(1, events.Count(e => e.Stage == "LifetimeDisposed" && e.RequestId == mode));
+            }
         }
     }
     static async Task<BridgeResponse> RawCall(BridgeSessionDescriptor descriptor, string id)

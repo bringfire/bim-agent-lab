@@ -1,0 +1,32 @@
+[
+  {
+    "Target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitReadiness.dll",
+    "Tag": "Main",
+    "Before": "FF8A2D12C89AA15F44AEA6AB6943A047D9482A98C23E34FE6B44E116E876FDD4",
+    "After": "E2685520FD934A265F27672310D6823E8C6662B20ACEC1742C77C0F2DBA433AF"
+  },
+  {
+    "Target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitBridge.Runtime.dll",
+    "Tag": "Main",
+    "Before": "F6E88446E696443E30622D86FD342D2D96DE46DA9B1B14F6EB3913A3A236C6BC",
+    "After": "99053203158AFF790C45D8AE092F02FF455ED592DCF05AB87C3B6B8D63BAA50F"
+  },
+  {
+    "Target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\installed-files.json",
+    "Tag": "MainInventory",
+    "Before": "1BE7E7C83505B41F279EDE8A45215ADE881A92907A8F8FFB8E2A47CB89BED063",
+    "After": "6E47B4941FD3E748211171172CFAC6638F473BA616CE41A765580745B478DF64"
+  },
+  {
+    "Target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.FixtureTools\\installed-files.json",
+    "Tag": "FixtureInventory",
+    "Before": "CBB7B7C9626E8CD536A314A3D30DD84692A1C8F04224956365FAE0C883455DCE",
+    "After": "CF8F013A948448AC7D41457736B8285168772DCB29D98C824C6534321EA29655"
+  },
+  {
+    "Target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\installed-files.json",
+    "Tag": "ServerInventory",
+    "Before": "FB9514473F86E7FEEB59D10F75A705EE223C494BAD2892C97C96FA76758BCFA5",
+    "After": "9B87BB6F015563212F3E780FDBF84ACEA2FD3DB7BF19A6ED81AB3300A92ACA49"
+  }
+]

@@ -1,0 +1,158 @@
+[
+  {
+    "path": "shutdown-checker-cleanup-green.txt",
+    "sha256": "bab25c226430529db58f7c305cc277eb702d1705a191dfbef6f3100470696b6f"
+  },
+  {
+    "path": "shutdown-checker-final-fixed.txt",
+    "sha256": "6e9792fb2bb9c647f8f6da93541119387a90e689e7c07ce7b2b92b5942dbbc2a"
+  },
+  {
+    "path": "shutdown-checker-final.txt",
+    "sha256": "56fa6c66a9b8b93ae176a590a14134ccc262f482349bd224a0564bb49658c2c8"
+  },
+  {
+    "path": "shutdown-checker-green.txt",
+    "sha256": "f7dc1c65d9bf1c31f1cb9a0be1fc0c0840290cbe7f978a8864c6557dbd2fbb5e"
+  },
+  {
+    "path": "shutdown-checker-red.txt",
+    "sha256": "75731cc9b6f2f5d2929138a6706bd0c53b303b2802debb2028990aee01928dde"
+  },
+  {
+    "path": "shutdown-diagnostic-build.txt",
+    "sha256": "37bd00dbcf872091132b0dd1f6753886d66e296b04709f4b313049df4b73ff1f"
+  },
+  {
+    "path": "shutdown-diagnostic-green.txt",
+    "sha256": "53ed61a2e3363259c63c2acc5b5f2c77aca6860a01ecd3fac9e141a651657e26"
+  },
+  {
+    "path": "shutdown-diagnostic-red.txt",
+    "sha256": "1b75a5d94a34e06bcbbf1a2ba4a4d018eb58abc09557123e2ad5d955a27ef820"
+  },
+  {
+    "path": "shutdown-disposal-build.txt",
+    "sha256": "7969dc3a0b428227bbeb65733560d4ec5b208734203f99474e6c31e37db9edfc"
+  },
+  {
+    "path": "shutdown-disposal-red.txt",
+    "sha256": "9bd915690e37cb31c198fca8d43478c368c0000cc2be13f7bfc610a497b7ff6f"
+  },
+  {
+    "path": "shutdown-final-dispatch.txt",
+    "sha256": "66d38b59bb69303d1ab12c053f9262a386163f3781323eb5815484eb877d515a"
+  },
+  {
+    "path": "shutdown-final-readiness.txt",
+    "sha256": "b34a8a90e1938c9dee5b5a10bda4d90ab93178f632f2f97dd67fadea1b5821aa"
+  },
+  {
+    "path": "shutdown-install-diff.json",
+    "sha256": "c561f5bd19e70dac108e5280dc2262fc1e8490e8dbc7e709aaf925505f95ad52"
+  },
+  {
+    "path": "shutdown-package.txt",
+    "sha256": "a57414e656cb1020cc9a14c58cfc102092038768f88b851570d93bb06641070d"
+  },
+  {
+    "path": "shutdown-prep-all.txt",
+    "sha256": "5cf5315323733c5c41646a082c8e22692efa93d5d4b2fea99914f6331bcb72c9"
+  },
+  {
+    "path": "shutdown-prep-build-green.txt",
+    "sha256": "d0075b538ec1f5bb98987907f4e64b1cd9334f0df7fba0b7175b25f20f23a0c2"
+  },
+  {
+    "path": "shutdown-prep-build.txt",
+    "sha256": "fb3f359616e3ed3778fa41c403c5caa8ee35a50bc5ab110f085bc929da829ad7"
+  },
+  {
+    "path": "shutdown-queued-green-net10.0.txt",
+    "sha256": "d0da6026c909ba6890e8ceb8b9d23d969ad2aa7f5f282ac2f13326040b3e45b5"
+  },
+  {
+    "path": "shutdown-queued-green-net48.txt",
+    "sha256": "d0da6026c909ba6890e8ceb8b9d23d969ad2aa7f5f282ac2f13326040b3e45b5"
+  },
+  {
+    "path": "shutdown-queued-red-correct-cwd-net10.0.txt",
+    "sha256": "3d1503e5fb6ccae1a795b873a958cef6ac9765931cc4b9b213a4475620752590"
+  },
+  {
+    "path": "shutdown-queued-red-correct-cwd-net48.txt",
+    "sha256": "168fe5aac85b492129d5fbb7d0b812a2cb4e617ae3aff334ebbe8cd9e29e424d"
+  },
+  {
+    "path": "shutdown-queued-red-net10.0.txt",
+    "sha256": "76726276fd0d396272407998efe1348ec032ca2b7f0cd99bda09f166e9f9d28f"
+  },
+  {
+    "path": "shutdown-queued-red-net48.txt",
+    "sha256": "4de8e55c5a61f1ef3e8d218f10f950fcc35e66369dc7c389872acd99e6ef2850"
+  },
+  {
+    "path": "shutdown-recovery-audit.json",
+    "sha256": "d97ba231769b48c7ad3128104510701411bef502e9f91b652256c46788f7d2f8"
+  },
+  {
+    "path": "source/projects/revit-readiness/scripts/Test-McpBridge.ps1",
+    "sha256": "cbda2b52725d8ace3d1371af9bb8a97cf959eb14fea2119d91b3ced12446a115"
+  },
+  {
+    "path": "source/projects/revit-readiness/src/bridge-runtime/PipeEndpoint.cs",
+    "sha256": "b98c9939eb2a5f81d0741365e5c63788f992f392a4c08c328174f514876d3936"
+  },
+  {
+    "path": "source/projects/revit-readiness/src/revit-addin/BridgeApplication.cs",
+    "sha256": "8f85504026ede8727432e0b79be94ca666ae195a9d194208a7870412cc18cf62"
+  },
+  {
+    "path": "source/projects/revit-readiness/tests/bridge-tests/AdapterBoundaryTests.cs",
+    "sha256": "8e250c04b1b668161f9a8a74b237b6e585d6773b4dcf15eea941329c7525d6ff"
+  },
+  {
+    "path": "source/projects/revit-readiness/tests/bridge-tests/CancellationProgressTests.cs",
+    "sha256": "ae5b19fa48f78e6efd55c156a7ad9f5299e00c0f1a0421f74ac17fb4e354a009"
+  },
+  {
+    "path": "source/projects/revit-readiness/tests/bridge-tests/Program.cs",
+    "sha256": "43f81163e8c48a1091197ef21c2c93a0c8b1a17080af11538686093785fc0964"
+  },
+  {
+    "path": "source/projects/revit-readiness/tests/diagnostic-tests/Program.cs",
+    "sha256": "549f206a485522c563fff765ed8ff1a0c53b5ffa55aa23696f7665e99da31620"
+  },
+  {
+    "path": "source/projects/revit-readiness/tests/host-diagnostics/BridgeDiagnostics.cs",
+    "sha256": "37b0d4e0a246d50c3a64481c50515e0305e92c72049244ef0dd8ff26107e912e"
+  },
+  {
+    "path": "source/projects/revit-readiness/tests/host-diagnostics/DiagnosticRecorder.cs",
+    "sha256": "d9391878ad5c64c3bb53c30979d7b58334aa7207dc05e56df8428d1077187111"
+  },
+  {
+    "path": "source/projects/revit-readiness/tests/host-diagnostics/Observe-ApplicationShutdown.py",
+    "sha256": "1a5182191fa3e05c0e7351a8bdeb46093adbd8e69a21952629475dfc89b29c76"
+  },
+  {
+    "path": "source/projects/revit-readiness/tests/host-diagnostics/Prepare-HostDiagnostics.ps1",
+    "sha256": "1c39fe84f9b80ff5aabeb296a1292e59ae836aa7f771950dfebcec8f6586a7f0"
+  },
+  {
+    "path": "source/projects/revit-readiness/tests/test_application_shutdown.py",
+    "sha256": "9dc7c714a57b528533c6fd7ba9284a4b221e50516af31cd22dc675f3778035b1"
+  },
+  {
+    "path": "source/projects/revit-readiness/tests/test_application_shutdown_observer.py",
+    "sha256": "5f5054e39939f0758569b11447fd70383455484395c8ed04d147e6dadba20550"
+  },
+  {
+    "path": "source/projects/revit-readiness/tests/verify_application_shutdown.py",
+    "sha256": "f9af0194ded8c1066053d65874c2763101c85b00ad99d7466e6cadeec22e227b"
+  },
+  {
+    "path": "source-records.json",
+    "sha256": "7bf10b5f03ce4c91144a8cdd234114fbef2191c0a523d4462da26dcb332b6e85"
+  }
+]

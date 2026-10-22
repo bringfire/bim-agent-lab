@@ -189,3 +189,17 @@ Suggested participant prompt:
 > This answer came from the Chat side of Claude Desktop. Record that interface, verify its actual tool calls, and compare its full report with the earlier result. Keep this success separate from the defect and incomplete-coverage tests we still need.
 
 The [Claude verification record](../../projects/revit-readiness/docs/verification/2026-10-22-desktop-readiness.md#claude-desktop-code-and-chat-answers-with-actual-tool-traffic) retains both answers, the correction and the pending checks. Testing through a familiar interface makes the demonstration accessible; a clear answer still needs to agree with the underlying data.
+
+## Prepare shutdown tests before asking the person to open Revit
+
+After the sample demonstrations and starting guides, the author asked: **“Let's move on to the remaining shutdown and recovery checks. Prepare what you can with Revit closed, and tell me when you need me to open it. Keep recording the process in both teaching layers.”** This gives the agent a useful division of work: investigate, test and prepare recovery on its own; reserve a short, precise application action for the person.
+
+The agent first investigated an intermittent test failure. That test expected a cancellation notification even when a waiting request had already finished and released its resources. It now tests finished waiting work separately from work still executing. The lesson is that a failed test deserves investigation too: neither changing the application to satisfy a mistaken test nor deleting the failure explains the evidence. The original failures and the corrected checks remain in the record.
+
+The next test needs the person to close Revit normally while the agent records what happens to waiting requests. The diagnostic build briefly pauses that close sequence so the agent can inspect cleanup; it releases automatically if the observer fails. A real application close is still necessary. Offline tests cannot supply that result, and a test that holds Revit's main thread cannot pretend another operation runs on that same thread simultaneously.
+
+Suggested participant prompt:
+
+> Before asking me to open the application, explain exactly what this test can prove, prepare the recovery files and verify the observer. Give me the shortest reliable UI step. Keep failed attempts, and distinguish the test setup from the actual result.
+
+The [preparation record](../../projects/revit-readiness/docs/verification/2026-10-22-shutdown-preparation.md) links the technical procedure and identifies what remains unverified. Checking backup files is useful preparation; actually restoring an installation is separate evidence.

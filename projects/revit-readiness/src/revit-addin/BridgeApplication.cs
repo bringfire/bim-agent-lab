@@ -21,6 +21,7 @@ namespace BimAgentLab.RevitReadiness
             application = app; Current = this;
 #if BIM_BRIDGE_DIAGNOSTICS
             BridgeDiagnostics.Initialize();
+            BridgeDiagnostics.HookClosing(app);
 #endif
             return Result.Succeeded;
         } // No automatic listener.
@@ -62,7 +63,7 @@ namespace BimAgentLab.RevitReadiness
                 var endpoint = new PipeEndpoint(descriptor, new SessionCatalog(), clock, observation =>
             {
 #if BIM_BRIDGE_DIAGNOSTICS
-                BridgeDiagnostics.Record("Pipe." + observation.Stage, observation.ConnectionId.ToString());
+                BridgeDiagnostics.RecordPipe(observation);
 #endif
                 if (observation.Error != null && System.Threading.Interlocked.Exchange(ref reportedNetworkFailure, 1) == 0)
                     Trace.TraceError("BIM bridge asynchronous cleanup failure: {0}", observation.Error.GetType().Name);
@@ -150,6 +151,8 @@ namespace BimAgentLab.RevitReadiness
             finally { Unhook(); Current = null; }
             // No waits on API execution, borrowed cancellation callbacks or network tasks.
 #if BIM_BRIDGE_DIAGNOSTICS
+            BridgeDiagnostics.UnhookClosing(app);
+            BridgeDiagnostics.HoldLifecycle("ShutdownAfterStop");
             BridgeDiagnostics.Record("ApplicationShutdownReturned");
 #endif
             return Result.Succeeded;

@@ -120,7 +120,7 @@ At this handoff, Revit is closed. Historical PID `149972` and its bridge session
 |---|---|
 | Positive runner observation | Fresh current-session prepared expectation and successful live wrapper comparison; prior direct SDK captures are not this proof |
 | Task 7 host lifetime gaps | Actual queued/executing application shutdown, remaining native-event handoffs and physical lifetime disposal; prior Stop/idle-shutdown checks do not substitute |
-| Task 7 unresolved observations | Resolve retained intermittent notification and token-only SDK cancellation observations; explicit SDK cancellation success does not explain them |
+| Task 7 unresolved observations | Intermittent queued-notification test explained and corrected in the [shutdown preparation](../../projects/revit-readiness/docs/verification/2026-10-22-shutdown-preparation.md); token-only SDK cancellation remains unresolved. Explicit cancellation-message success does not explain it |
 | Recovery lineage | Assess/verify outstanding shared-installation recovery layers using their recorded ownership, backups and original filesystem context; do not erase receipts to make setup appear clean |
 | Acceptance and R3 | Consolidate A1–A9 against exact source/installed hashes and fresh required checks; prepare the external [R3 packet](../superpowers/reviews/revit-mcp-bridge/03-implementation-review.md) for the author, without claiming or sending external review |
 | Distribution | Owner choice of original-material license, public hosting and release package remains open; do not imply these are supplied |

@@ -20,7 +20,8 @@ internal static partial class Program
         var tests = new Action[] { RecordsIdentity, ReleasesExplicitly, PreparationCancellation, PreparationExpiry,
             ReaderCancellation, BoundedHold, RejectsStaleRelease, RejectsInvalidControl, SingleUse, StopWhileHeld,
             RootIsOutsideAppData, SharedFileResolvesToRequestedPath, ValidPreparedRun,
-            MissingSelector, InvalidSelector, MissingPreparedDirectory, ExistingProcessDirectory };
+            MissingSelector, InvalidSelector, MissingPreparedDirectory, ExistingProcessDirectory,
+            LifecycleRelease, LifecycleBounded, LifecycleInvalidControls, PipeIdentity };
         int failed = 0;
         foreach (var test in tests)
         {
@@ -31,6 +32,47 @@ internal static partial class Program
         return failed == 0 ? 0 : 1;
     }
     static void Require(bool value, string message) { if (!value) throw new Exception(message); }
+    static void LifecycleRelease()
+    {
+        foreach (string stage in new[] { "ApplicationClosing", "ShutdownAfterStop" })
+        {
+            using var f = new Fixture();
+            File.WriteAllText(Path.Combine(f.Root, "arm-" + stage + ".txt"), "3000");
+            var task = Task.Run(() => f.Recorder.HoldLifecycle(stage));
+            try
+            {
+                Wait(() => File.Exists(Path.Combine(f.Root, "held-" + stage + ".txt")));
+                Require(!task.IsCompleted, "Lifecycle not held");
+                File.WriteAllText(Path.Combine(f.Root, "release-" + stage + ".signal"), "test");
+                Require(task.Wait(2000), "Lifecycle did not release");
+                f.Recorder.HoldLifecycle(stage);
+                Require(f.Events.Split('\n').Count(s => s.Contains("\tLifecycleHeld\t")) == 1, "Not single consumption");
+                Require(f.Events.Contains("LifecycleReleased") && !f.Events.Contains("AutomaticRelease"), "Release proof missing");
+            }
+            finally { File.WriteAllText(Path.Combine(f.Root, "release-" + stage + ".signal"), "cleanup"); task.Wait(4000); }
+        }
+    }
+    static void LifecycleBounded()
+    {
+        using var f = new Fixture(); File.WriteAllText(Path.Combine(f.Root, "arm-ApplicationClosing.txt"), "20");
+        var watch = Stopwatch.StartNew(); f.Recorder.HoldLifecycle("ApplicationClosing");
+        Require(watch.ElapsedMilliseconds < 2000 && f.Events.Contains("LifecycleAutomaticRelease"), "Missing bounded failure release");
+    }
+    static void LifecycleInvalidControls()
+    {
+        foreach (string value in new[] { "0", "45001", "abc", "10\nstop", "10" })
+        {
+            using var f = new Fixture(); File.WriteAllText(Path.Combine(f.Root, "arm-ApplicationClosing.txt"), value);
+            if (value == "10") File.WriteAllText(Path.Combine(f.Root, "release-ApplicationClosing.signal"), "stale");
+            f.Recorder.HoldLifecycle("ApplicationClosing");
+            Require(f.Events.Contains("ControlRejected") && !f.Events.Contains("LifecycleHeld"), "Invalid lifecycle control accepted");
+        }
+    }
+    static void PipeIdentity()
+    {
+        using var f = new Fixture(); f.Recorder.Record("Pipe.LifetimeDisposed", null, "42", "request-retired");
+        Require(f.Events.Contains("\tPipe.LifetimeDisposed\trequest-retired\t"), "Pipe request identity lost");
+    }
     static void Wait(Func<bool> ready) { Require(SpinWait.SpinUntil(ready, 2000), "Expected observation was not reached"); }
     static void RecordsIdentity()
     {

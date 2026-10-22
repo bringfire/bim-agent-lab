@@ -2,6 +2,8 @@
 
 Task 7 working procedure. Task 6 is independently closed at b4cdb1f; installation and live-host acceptance are being verified separately. Follow the [operation model](../../../docs/explanation/recoverable-readiness-installation.md), [approved Task 7 plan](../../../docs/superpowers/plans/2026-10-20-revit-mcp-bridge.md#task-7-explicit-deployment-rollback-and-live-lifecycle-checks), and [host checklist](../tests/mcp-host-acceptance.md).
 
+For the active shutdown increment, use the [preparation/recovery record](verification/2026-10-22-shutdown-preparation.md) and [diagnostic procedure](../tests/host-diagnostics/README.md#actual-application-shutdown-with-queued-work). A temporary diagnostic add-in/runtime must have its own verified restore receipt. Whole-package preflight remains required even when only changed host files are applied. Do not overwrite or terminate active desktop servers to install this instrumentation.
+
 The [real-installation record](verification/2026-10-21-live-installation.md) now distinguishes verified install/undo/reinstall and initial live requests from outstanding lifecycle and desktop checks. Use the actual installed executable name, `BimAgentLab.RevitReadiness.Mcp.exe`; the installer does not create a shorter `BimAgentLab.Mcp.exe` alias.
 
 Use 64-bit PowerShell 7, the existing .NET SDK/10 runtime, Revit 2024 and its net48 API references. This increment adds no package dependency and does not change SDK 2.2.0 or the compatible/strict-July policy. The existing core, Excel helper and fixture remain separate from the external modern server.

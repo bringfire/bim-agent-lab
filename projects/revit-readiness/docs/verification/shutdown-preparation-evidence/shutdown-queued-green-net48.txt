@@ -1,0 +1,14 @@
+QUEUED_RETIREMENT_PROOF disposedBeforeEndpointStop=true callbacks=0 executorCalls=0 responseCanceled=true
+PASS Queued retirement may precede endpoint cancellation
+HOST_STOP_PROOF networkBeforeNotificationRelease=true descriptorRemoved=true eventDisposed=true
+PASS Production host Stop releases real pipes while executing borrower notification is held
+PASS Event disposal failure cannot skip network cleanup and remains retryable
+PASS Production host publishes a context and revokes a canceled issuance
+PASS Production session acquisition/retirement event
+PASS Production session acquisition/retirement listener
+PASS Production session acquisition/retirement descriptor
+PASS Production session acquisition/retirement none
+PASS Event retirement never waits on an in-flight native Raise
+PASS Session stop clears contexts and returns without network completion
+PASS Autodesk adapter source has only read-only query dependencies
+Adapter review tests: 11 passed; 0 failed.
