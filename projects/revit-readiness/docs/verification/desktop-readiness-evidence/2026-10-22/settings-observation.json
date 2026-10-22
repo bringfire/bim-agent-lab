@@ -1,0 +1,43 @@
+{
+  "revitPid": 149972,
+  "clients": [
+    {
+      "client": "codex",
+      "config": "C:/Users/bring/.codex/config.toml",
+      "format": "toml",
+      "receipt": "D:\\bim-agent-lab\\.superpowers\\sdd\\2026-10-20-revit-mcp-bridge\\desktop-acceptance-0b381ec261ec420c94bb74c3bedeae5e\\codex-settings.json",
+      "entry": {
+        "command": "C:/Users/bring/.bim-agent-lab/RevitReadiness/McpServer/BimAgentLab.RevitReadiness.Mcp.exe",
+        "args": [
+          "--revit-pid",
+          "149972",
+          "--wire-evidence-root",
+          "D:/bim-agent-lab/projects/revit-readiness/samples/local/mcp-desktops-2026-10-22/0b381ec261ec420c94bb74c3bedeae5e/codex"
+        ]
+      },
+      "beforeSha256": "128d824fc4c173d94f81a6640243cc90d99e5736f76ddaa8c492ddcb01131a4f",
+      "afterSha256": "a343e2946f27401811eab3357142bd88e5ad268336cbdecbe821484da22a9ec7",
+      "state": "Applied"
+    },
+    {
+      "client": "claude",
+      "config": "C:/Users/bring/AppData/Roaming/Claude/claude_desktop_config.json",
+      "format": "json",
+      "receipt": "D:\\bim-agent-lab\\.superpowers\\sdd\\2026-10-20-revit-mcp-bridge\\desktop-acceptance-0b381ec261ec420c94bb74c3bedeae5e\\claude-settings.json",
+      "entry": {
+        "command": "C:/Users/bring/.bim-agent-lab/RevitReadiness/McpServer/BimAgentLab.RevitReadiness.Mcp.exe",
+        "args": [
+          "--revit-pid",
+          "149972",
+          "--wire-evidence-root",
+          "D:/bim-agent-lab/projects/revit-readiness/samples/local/mcp-desktops-2026-10-22/0b381ec261ec420c94bb74c3bedeae5e/claude"
+        ]
+      },
+      "beforeSha256": "b69c7ea1fcdc205590089c0ca624ae62483749325eaa8bcde1f5fc0f591e9a44",
+      "afterSha256": "6005fdfbf04504ab387e715fc6b08a5d15382a847afdb80a662894d05139b971",
+      "state": "Applied"
+    }
+  ],
+  "unrelatedSettingsPreserved": true,
+  "scope": "Configuration only; not desktop connection acceptance"
+}

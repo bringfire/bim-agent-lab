@@ -40,3 +40,4 @@ projects/revit-readiness/docs/verification/host-interruption-evidence/** -text -
 projects/revit-readiness/docs/verification/host-stop-recovery-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/shared-installation-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/desktop-launch-evidence/** -text -whitespace
+projects/revit-readiness/docs/verification/desktop-readiness-evidence/** -text -whitespace

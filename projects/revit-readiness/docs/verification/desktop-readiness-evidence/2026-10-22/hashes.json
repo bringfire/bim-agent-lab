@@ -1,0 +1,50 @@
+[
+  {
+    "path": "baseline.json",
+    "sha256": "97591239b57b291c55668d05ab1b66d1b4081923573dc6ecadef884a70801f6f"
+  },
+  {
+    "path": "before-settings-physical-paths.json",
+    "sha256": "40201acde617793c1c3d9d065fd0380a1d1ce4e8da774a8f38d6b908cee37265"
+  },
+  {
+    "path": "continuity-comparison.json",
+    "sha256": "cbe2c73d167ef8eabc895e2ea898495f734dd024c81c47d0d0f27952d979352a"
+  },
+  {
+    "path": "descriptor.json",
+    "sha256": "96159102b2f2724075c3b18fbf3cfce52861db2bda6db01dcf766030b6f01b74"
+  },
+  {
+    "path": "sdk-july-continuity/check.json",
+    "sha256": "626e2cbb649a90f857d7ba59e111dda6656bb70eaea9b97eaa70cfa78ba30968"
+  },
+  {
+    "path": "sdk-july-continuity/complete.json",
+    "sha256": "24a2c27869ea53475d49f85360581d1282c5e34dd768e97116e53daad1d58563"
+  },
+  {
+    "path": "sdk-july-continuity/context.json",
+    "sha256": "f599518e463af7dea3a38bdc052db89470fd9628a08d328df8abf33315e8dbd9"
+  },
+  {
+    "path": "sdk-july-continuity/partial.json",
+    "sha256": "5d5f28fde90eafd12de3e302c8ae1557bc9e14a1ab9a03d2a0eb5d787209f45a"
+  },
+  {
+    "path": "sdk-july-continuity/sdk-client-result.json",
+    "sha256": "5e3114fd23c95be34b7673d15c1f97aa50b99c855defe860a64a3993c87c80bf"
+  },
+  {
+    "path": "sdk-july-continuity/wire/client-to-server.jsonl",
+    "sha256": "5febcaf6c396b33d0da1e485233a695bddcbc3ab45328846e908b8c63a6b8546"
+  },
+  {
+    "path": "sdk-july-continuity/wire/server-to-client.jsonl",
+    "sha256": "c1ffb8575e360e4269129bcde17be78c5dd43695ac1231513406dc85c7d2733c"
+  },
+  {
+    "path": "settings-observation.json",
+    "sha256": "9c36fd89fb27ffbfab1e68704da812c8b38044e891c8583839e8f784745ac3b0"
+  }
+]

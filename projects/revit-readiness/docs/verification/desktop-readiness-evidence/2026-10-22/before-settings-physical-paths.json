@@ -1,0 +1,17 @@
+[
+  {
+    "Requested": "C:\\Users\\bring\\.codex\\config.toml",
+    "Physical": "\\\\?\\C:\\Users\\bring\\.codex\\config.toml",
+    "Redirected": false
+  },
+  {
+    "Requested": "C:\\Users\\bring\\AppData\\Roaming\\Claude\\claude_desktop_config.json",
+    "Physical": "\\\\?\\C:\\Users\\bring\\AppData\\Roaming\\Claude\\claude_desktop_config.json",
+    "Redirected": false
+  },
+  {
+    "Requested": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\BimAgentLab.RevitReadiness.Mcp.exe",
+    "Physical": "\\\\?\\C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\BimAgentLab.RevitReadiness.Mcp.exe",
+    "Redirected": false
+  }
+]
