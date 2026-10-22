@@ -42,6 +42,12 @@ internal static partial class Program
                 await Case($"Original context rejects late success: cancel={cancel} guard={boundary}", () => LateResult(cancel, boundary));
         await Case("Held cancellation callbacks retain bounded capacity without blocking tool return", RetainedTools);
         await Case("Production executable discovers without a Revit instance", ProductionEntry);
+        foreach (string revision in new[] { "2025-06-18", "2025-11-25", "2026-07-28" })
+            await Case("Desktop trace sessions survive simultaneous launch and reconnect: " + revision, () => DesktopEvidenceSessions(revision));
+        await Case("Fixed harness evidence still refuses reuse without altering bytes", FixedEvidenceStillRefusesReuse);
+        foreach (bool reverse in new[] { false, true })
+            await Case("Conflicting evidence modes fail before mutation: reverse=" + reverse, () => InvalidEvidenceArguments(reverse));
+        await Case("Blocked desktop trace root fails without overwriting file", BlockedEvidenceRoot);
         await Case("Deadline observed as transport cancellation retains DeadlineExceeded", DeadlineCancellation);
         await Case("Bridge domain failures preserve stable correlated errors without report", DomainErrors);
         foreach (string scenario in new[] { "late-cancel", "late-expire" })

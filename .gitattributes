@@ -39,3 +39,4 @@ projects/revit-readiness/docs/verification/host-deadline-evidence/** -text -whit
 projects/revit-readiness/docs/verification/host-interruption-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/host-stop-recovery-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/shared-installation-evidence/** -text -whitespace
+projects/revit-readiness/docs/verification/desktop-launch-evidence/** -text -whitespace

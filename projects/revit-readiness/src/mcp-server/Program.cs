@@ -10,7 +10,7 @@ internal static class Program
         if (!OperatingSystem.IsWindows()) { Console.Error.WriteLine("The Revit bridge requires Windows."); return 1; }
         try
         {
-            int? pid = null; string? evidence = null;
+            int? pid = null; string? evidence = null, evidenceRoot = null;
             var seen = new HashSet<string>(StringComparer.Ordinal);
             for (int i = 0; i < args.Length; i += 2)
             {
@@ -19,9 +19,15 @@ internal static class Program
                 {
                     case "--revit-pid" when int.TryParse(args[i + 1], NumberStyles.None, CultureInfo.InvariantCulture, out int selected) && selected > 0: pid = selected; break;
                     case "--wire-evidence" when !string.IsNullOrWhiteSpace(args[i + 1]): evidence = Path.GetFullPath(args[i + 1]); break;
-                    default: throw new ArgumentException("Usage: readiness [--revit-pid <positive-int>] [--wire-evidence <new-directory>]");
+                    case "--wire-evidence-root" when !string.IsNullOrWhiteSpace(args[i + 1]): evidenceRoot = Path.GetFullPath(args[i + 1]); break;
+                    default: throw new ArgumentException("Usage: readiness [--revit-pid <positive-int>] [--wire-evidence <new-directory> | --wire-evidence-root <session-parent>]");
                 }
             }
+            if (evidence is not null && evidenceRoot is not null)
+                throw new ArgumentException("Choose one evidence mode: fixed capture or per-process session root.");
+            // Desktops can reconnect or start several server processes. Keep each
+            // capture independent; McpHost still creates files exclusively.
+            if (evidenceRoot is not null) evidence = Path.Combine(evidenceRoot, "session-" + Guid.NewGuid().ToString("N"));
             using var stop = new CancellationTokenSource();
             ConsoleCancelEventHandler onCancel = (_, args) => { args.Cancel = true; stop.Cancel(); };
             Console.CancelKeyPress += onCancel;

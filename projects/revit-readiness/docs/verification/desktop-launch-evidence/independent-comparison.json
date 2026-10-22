@@ -1,0 +1,36 @@
+{
+  "pass": true,
+  "checks": [
+    {
+      "protocol": "2025-06-18",
+      "sessions": 3,
+      "requestIds": [
+        101,
+        102,
+        103
+      ],
+      "priorEvidenceUnchanged": true
+    },
+    {
+      "protocol": "2025-11-25",
+      "sessions": 3,
+      "requestIds": [
+        101,
+        102,
+        103
+      ],
+      "priorEvidenceUnchanged": true
+    },
+    {
+      "protocol": "2026-07-28",
+      "sessions": 3,
+      "requestIds": [
+        101,
+        102,
+        103
+      ],
+      "priorEvidenceUnchanged": true
+    }
+  ],
+  "scope": "Actual executable with deliberately absent selected PID; not live Revit or desktop acceptance"
+}

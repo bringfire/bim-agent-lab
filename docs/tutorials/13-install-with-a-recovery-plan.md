@@ -153,3 +153,11 @@ Suggested participant prompt:
 The [technical record](../../projects/revit-readiness/docs/verification/2026-10-21-shared-server-installation.md) distinguishes preserved binaries, installer changes, SDK connection checks and desktop acceptance still to come.
 
 The author's next **“ready”** confirmed the normal Revit model and bridge were running. The agent then used the relocated server to read the model and compared the entire answer with the earlier baseline: 16 examined elements, zero findings, complete coverage and no model changes. This is the next teaching distinction: a successful installation must be followed by a check from a consuming process. An SDK client provided that check here; Codex desktop and Claude Desktop still need their own demonstrations. See the [recorded follow-up](../../projects/revit-readiness/docs/verification/2026-10-21-shared-server-installation.md#normal-revit-follow-up).
+
+## Test the way the application starts the server
+
+Before desktop configuration, the agent found that the working harness used one fresh log folder per run, but a desktop may launch the same configured command more than once. Reusing that folder would stop the server from starting. The agent added tests with simultaneous launches and a reconnect, then added per-session capture folders. The existing refusal to overwrite evidence remains useful.
+
+This extends the participant's question from “Did the command work?” to **“Will it work when the actual application reconnects?”** A suggested prompt is: “Test repeated and simultaneous launches using the exact client configuration. Preserve every capture, and make removal of our settings preserve my other connections.” This is guidance, not a quotation of an earlier author prompt.
+
+When the author said they needed to close Revit and go to bed, the agent separated offline setup work from live acceptance. It verified Revit was closed, finished executable and configuration-recovery tests, and left actual desktop calls for the next session. [Technical checkpoint](../../projects/revit-readiness/docs/verification/2026-10-21-desktop-launch-preparation.md).

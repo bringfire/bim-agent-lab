@@ -1,0 +1,100 @@
+test_invalid_pid_never_prepares_or_writes (__main__.ReadinessSettingsTests.test_invalid_pid_never_prepares_or_writes) ... ok
+test_readiness_foreign_entry_is_preserved (__main__.ReadinessSettingsTests.test_readiness_foreign_entry_is_preserved) ... 
+  test_readiness_foreign_entry_is_preserved (__main__.ReadinessSettingsTests.test_readiness_foreign_entry_is_preserved) (format='json') ... FAIL
+  test_readiness_foreign_entry_is_preserved (__main__.ReadinessSettingsTests.test_readiness_foreign_entry_is_preserved) (format='toml') ... FAIL
+test_readiness_recovery_preserves_probe_and_concurrent_unrelated_edits (__main__.ReadinessSettingsTests.test_readiness_recovery_preserves_probe_and_concurrent_unrelated_edits) ... 
+  test_readiness_recovery_preserves_probe_and_concurrent_unrelated_edits (__main__.ReadinessSettingsTests.test_readiness_recovery_preserves_probe_and_concurrent_unrelated_edits) (format='json') ... FAIL
+  test_readiness_recovery_preserves_probe_and_concurrent_unrelated_edits (__main__.ReadinessSettingsTests.test_readiness_recovery_preserves_probe_and_concurrent_unrelated_edits) (format='toml') ... FAIL
+test_real_cli_prepares_readiness_identity_pid_and_session_root_before_writes (__main__.ReadinessSettingsTests.test_real_cli_prepares_readiness_identity_pid_and_session_root_before_writes) ... 
+  test_real_cli_prepares_readiness_identity_pid_and_session_root_before_writes (__main__.ReadinessSettingsTests.test_real_cli_prepares_readiness_identity_pid_and_session_root_before_writes) (format='json') ... FAIL
+  test_real_cli_prepares_readiness_identity_pid_and_session_root_before_writes (__main__.ReadinessSettingsTests.test_real_cli_prepares_readiness_identity_pid_and_session_root_before_writes) (format='toml') ... FAIL
+test_apply_refuses_changed_configuration (__main__.SettingsTests.test_apply_refuses_changed_configuration) ... ok
+test_prepared_recovery_exists_before_mutation_and_restores_after_interruption (__main__.SettingsTests.test_prepared_recovery_exists_before_mutation_and_restores_after_interruption) ... ok
+test_recovery_preserves_unrelated_edits_and_rejects_foreign_owned_entry (__main__.SettingsTests.test_recovery_preserves_unrelated_edits_and_rejects_foreign_owned_entry) ... ok
+
+======================================================================
+FAIL: test_readiness_foreign_entry_is_preserved (__main__.ReadinessSettingsTests.test_readiness_foreign_entry_is_preserved) (format='json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_probe_settings.py", line 110, in test_readiness_foreign_entry_is_preserved
+    result=self.prepare(config,fmt,receipt); self.assertEqual(result.returncode,0,result.stderr)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : usage: manage_mcp_probe_settings.py [-h] --receipt RECEIPT [--config CONFIG]
+                                    [--format {json,toml}] [--command COMMAND]
+                                    [--evidence EVIDENCE]
+                                    {prepare,apply,restore}
+manage_mcp_probe_settings.py: error: unrecognized arguments: --name bim-agent-lab-revit-readiness --revit-pid 149000
+
+
+======================================================================
+FAIL: test_readiness_foreign_entry_is_preserved (__main__.ReadinessSettingsTests.test_readiness_foreign_entry_is_preserved) (format='toml')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_probe_settings.py", line 110, in test_readiness_foreign_entry_is_preserved
+    result=self.prepare(config,fmt,receipt); self.assertEqual(result.returncode,0,result.stderr)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : usage: manage_mcp_probe_settings.py [-h] --receipt RECEIPT [--config CONFIG]
+                                    [--format {json,toml}] [--command COMMAND]
+                                    [--evidence EVIDENCE]
+                                    {prepare,apply,restore}
+manage_mcp_probe_settings.py: error: unrecognized arguments: --name bim-agent-lab-revit-readiness --revit-pid 149000
+
+
+======================================================================
+FAIL: test_readiness_recovery_preserves_probe_and_concurrent_unrelated_edits (__main__.ReadinessSettingsTests.test_readiness_recovery_preserves_probe_and_concurrent_unrelated_edits) (format='json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_probe_settings.py", line 96, in test_readiness_recovery_preserves_probe_and_concurrent_unrelated_edits
+    result=self.prepare(config,fmt,receipt); self.assertEqual(result.returncode,0,result.stderr)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : usage: manage_mcp_probe_settings.py [-h] --receipt RECEIPT [--config CONFIG]
+                                    [--format {json,toml}] [--command COMMAND]
+                                    [--evidence EVIDENCE]
+                                    {prepare,apply,restore}
+manage_mcp_probe_settings.py: error: unrecognized arguments: --name bim-agent-lab-revit-readiness --revit-pid 149000
+
+
+======================================================================
+FAIL: test_readiness_recovery_preserves_probe_and_concurrent_unrelated_edits (__main__.ReadinessSettingsTests.test_readiness_recovery_preserves_probe_and_concurrent_unrelated_edits) (format='toml')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_probe_settings.py", line 96, in test_readiness_recovery_preserves_probe_and_concurrent_unrelated_edits
+    result=self.prepare(config,fmt,receipt); self.assertEqual(result.returncode,0,result.stderr)
+                                             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: 2 != 0 : usage: manage_mcp_probe_settings.py [-h] --receipt RECEIPT [--config CONFIG]
+                                    [--format {json,toml}] [--command COMMAND]
+                                    [--evidence EVIDENCE]
+                                    {prepare,apply,restore}
+manage_mcp_probe_settings.py: error: unrecognized arguments: --name bim-agent-lab-revit-readiness --revit-pid 149000
+
+
+======================================================================
+FAIL: test_real_cli_prepares_readiness_identity_pid_and_session_root_before_writes (__main__.ReadinessSettingsTests.test_real_cli_prepares_readiness_identity_pid_and_session_root_before_writes) (format='json')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_probe_settings.py", line 74, in test_real_cli_prepares_readiness_identity_pid_and_session_root_before_writes
+    self.assertEqual(result.returncode,0,result.stderr)
+AssertionError: 2 != 0 : usage: manage_mcp_probe_settings.py [-h] --receipt RECEIPT [--config CONFIG]
+                                    [--format {json,toml}] [--command COMMAND]
+                                    [--evidence EVIDENCE]
+                                    {prepare,apply,restore}
+manage_mcp_probe_settings.py: error: unrecognized arguments: --name bim-agent-lab-revit-readiness --revit-pid 149000
+
+
+======================================================================
+FAIL: test_real_cli_prepares_readiness_identity_pid_and_session_root_before_writes (__main__.ReadinessSettingsTests.test_real_cli_prepares_readiness_identity_pid_and_session_root_before_writes) (format='toml')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_probe_settings.py", line 74, in test_real_cli_prepares_readiness_identity_pid_and_session_root_before_writes
+    self.assertEqual(result.returncode,0,result.stderr)
+AssertionError: 2 != 0 : usage: manage_mcp_probe_settings.py [-h] --receipt RECEIPT [--config CONFIG]
+                                    [--format {json,toml}] [--command COMMAND]
+                                    [--evidence EVIDENCE]
+                                    {prepare,apply,restore}
+manage_mcp_probe_settings.py: error: unrecognized arguments: --name bim-agent-lab-revit-readiness --revit-pid 149000
+
+
+----------------------------------------------------------------------
+Ran 7 tests in 1.124s
+
+FAILED (failures=6)

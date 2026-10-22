@@ -103,7 +103,7 @@ internal static partial class Program
         readonly string revision, folder;
         readonly Task<string> stderr;
         readonly List<string> sent = new(), received = new();
-        internal RawToolChild(int pid, bool tracing, string revision, string label = "review")
+        internal RawToolChild(int pid, bool tracing, string revision, string label = "review", IReadOnlyList<string>? extraArgs = null)
         {
             this.revision = revision;
             folder = Path.Combine(Evidence, label + "-" + Guid.NewGuid().ToString("N")); Directory.CreateDirectory(folder);
@@ -111,6 +111,7 @@ internal static partial class Program
                 UseShellExecute = false, CreateNoWindow = true, RedirectStandardInput = true, RedirectStandardOutput = true, RedirectStandardError = true };
             start.ArgumentList.Add("--revit-pid"); start.ArgumentList.Add(pid.ToString());
             if (tracing) { start.ArgumentList.Add("--wire-evidence"); start.ArgumentList.Add(Path.Combine(folder, "wire")); }
+            if (extraArgs is not null) foreach (string arg in extraArgs) start.ArgumentList.Add(arg);
             Process = Process.Start(start)!; stderr = Process.StandardError.ReadToEndAsync();
         }
         internal void Record(string name, string text) => File.WriteAllText(Path.Combine(folder, name), text);
