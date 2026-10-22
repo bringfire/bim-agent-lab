@@ -1,0 +1,129 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(57,53): warning CA1416: This call site is reachable on all platforms. 'BridgeJson.FormatUtc(DateTimeOffset)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(58,13): warning CA1416: This call site is reachable on all platforms. 'BridgeJson.Serialize<BridgeRequest>(BridgeRequest)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(35,22): warning CA1416: This call site is reachable on all platforms. 'RequestBudget.Admit(IBridgeClock)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(57,74): warning CA1416: This call site is reachable on all platforms. 'RequestBudget.DeadlineUtc' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+  BimAgentLab.Mcp.Probe -> D:\bim-agent-lab\projects\revit-readiness\tests\mcp-probe\bin\Release\net10.0\BimAgentLab.Mcp.Probe.dll
+
+Build succeeded.
+
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(57,53): warning CA1416: This call site is reachable on all platforms. 'BridgeJson.FormatUtc(DateTimeOffset)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(58,13): warning CA1416: This call site is reachable on all platforms. 'BridgeJson.Serialize<BridgeRequest>(BridgeRequest)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(35,22): warning CA1416: This call site is reachable on all platforms. 'RequestBudget.Admit(IBridgeClock)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(57,74): warning CA1416: This call site is reachable on all platforms. 'RequestBudget.DeadlineUtc' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+    4 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:04.13
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+  BimAgentLab.Mcp.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\bin\Release\net10.0\BimAgentLab.Mcp.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.89
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+  BimAgentLab.Mcp.Client -> D:\bim-agent-lab\projects\revit-readiness\tests\mcp-client\bin\Release\net10.0\BimAgentLab.Mcp.Client.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.20
+EVIDENCE protocol=2025-06-18 strict=False path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-protocol-tests\sdk-119f92157ab243889bbe60cfdb92c708\session-88038b2c118a4a1b850dceec39111fc9
+PASS Compatible host preserves exact protocol and results: 2025-06-18
+EVIDENCE protocol=2025-11-25 strict=False path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-protocol-tests\sdk-767ebf79053a48279e60c6029884def1\session-435878c6f24b4bc6b2761c23a4d0a3d7
+PASS Compatible host preserves exact protocol and results: 2025-11-25
+EVIDENCE protocol=2026-07-28 strict=False path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-protocol-tests\sdk-3eee5edf2c4e42ab9c9779197366e2dd\session-e85e8a40034d4b6e9f91786ddfa2e65f
+PASS Compatible host preserves exact protocol and results: 2026-07-28
+EVIDENCE protocol=2026-07-28 strict=True path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-protocol-tests\sdk-f1368bb2b88343b79ea7f592fcc84255\session-2cba582f89e54f54bcab81cc35887f15
+PASS Strict July host preserves modern discovery and results
+PASS Strict July host rejects legacy initialization: 2025-06-18
+PASS Strict July host rejects legacy initialization: 2025-11-25
+PASS Trace preserves fragmented Unicode bytes and stream ownership
+PASS Memory read cancellation retains pending buffer and suppresses late evidence
+PASS Array read cancellation retains pending buffer and suppresses late evidence
+PASS Trace size bound fails visibly without silent truncation
+PASS Host releases each owned stream once
+PASS Partial trace construction releases streams and preserves existing evidence
+PASS Windows open-stdin shutdown: trace=False, idle
+PASS Windows open-stdin shutdown: trace=False, partial
+PASS Windows open-stdin shutdown: trace=False, pending
+PASS Windows open-stdin shutdown: trace=True, idle
+PASS Windows open-stdin shutdown: trace=True, partial
+PASS Windows open-stdin shutdown: trace=True, pending
+PASS Windows open-stdin shutdown after trace initialization failure
+test_actual_pair (test_mcp_case_wire.CaseWireTests.test_actual_pair) ... ok
+test_context_semantics_cannot_disagree_with_report (test_mcp_case_wire.CaseWireTests.test_context_semantics_cannot_disagree_with_report) ... ok
+test_full_binding (test_mcp_case_wire.CaseWireTests.test_full_binding) ... ok
+test_semantic_corruptions (test_mcp_case_wire.CaseWireTests.test_semantic_corruptions) ... ok
+test_invalid_pid_never_prepares_or_writes (test_mcp_probe_settings.ReadinessSettingsTests.test_invalid_pid_never_prepares_or_writes) ... ok
+test_legacy_receipt_without_name_restores_its_probe (test_mcp_probe_settings.ReadinessSettingsTests.test_legacy_receipt_without_name_restores_its_probe) ... ok
+test_readiness_foreign_entry_is_preserved (test_mcp_probe_settings.ReadinessSettingsTests.test_readiness_foreign_entry_is_preserved) ... ok
+test_readiness_recovery_preserves_probe_and_concurrent_unrelated_edits (test_mcp_probe_settings.ReadinessSettingsTests.test_readiness_recovery_preserves_probe_and_concurrent_unrelated_edits) ... ok
+test_real_cli_prepares_readiness_identity_pid_and_session_root_before_writes (test_mcp_probe_settings.ReadinessSettingsTests.test_real_cli_prepares_readiness_identity_pid_and_session_root_before_writes) ... ok
+test_apply_refuses_changed_configuration (test_mcp_probe_settings.SettingsTests.test_apply_refuses_changed_configuration) ... ok
+test_prepared_recovery_exists_before_mutation_and_restores_after_interruption (test_mcp_probe_settings.SettingsTests.test_prepared_recovery_exists_before_mutation_and_restores_after_interruption) ... ok
+test_recovery_preserves_unrelated_edits_and_rejects_foreign_owned_entry (test_mcp_probe_settings.SettingsTests.test_recovery_preserves_unrelated_edits_and_rejects_foreign_owned_entry) ... ok
+test_existing_release_is_rejected_before_capture (test_mcp_readiness_driver.ReadinessDriverTests.test_existing_release_is_rejected_before_capture) ... ERROR
+test_keeps_sdk_connection_until_explicit_release (test_mcp_readiness_driver.ReadinessDriverTests.test_keeps_sdk_connection_until_explicit_release) ... ok
+test_all_five_cases_publish_only_after_real_comparison (test_mcp_readiness_runner.RunnerTests.test_all_five_cases_publish_only_after_real_comparison) ... ok
+test_bad_inputs_rejected_before_output_or_process (test_mcp_readiness_runner.RunnerTests.test_bad_inputs_rejected_before_output_or_process) ... ok
+test_budget_is_not_restarted_for_verification (test_mcp_readiness_runner.RunnerTests.test_budget_is_not_restarted_for_verification) ... ok
+test_cleanup_error_cannot_erase_original_failure_record (test_mcp_readiness_runner.RunnerTests.test_cleanup_error_cannot_erase_original_failure_record) ... ok
+test_existing_attempt_is_never_overwritten (test_mcp_readiness_runner.RunnerTests.test_existing_attempt_is_never_overwritten) ... ok
+test_failed_sdk_or_invalid_capture_cannot_publish_success (test_mcp_readiness_runner.RunnerTests.test_failed_sdk_or_invalid_capture_cannot_publish_success) ... ok
+test_powershell_default_paths_reach_preflight (test_mcp_readiness_runner.RunnerTests.test_powershell_default_paths_reach_preflight) ... ok
+test_powershell_preserves_existing_attempt_with_spaces (test_mcp_readiness_runner.RunnerTests.test_powershell_preserves_existing_attempt_with_spaces) ... ok
+test_timeout_stops_owned_client_and_keeps_partial_evidence (test_mcp_readiness_runner.RunnerTests.test_timeout_stops_owned_client_and_keeps_partial_evidence) ... ok
+test_wrong_context_never_releases_read (test_mcp_readiness_runner.RunnerTests.test_wrong_context_never_releases_read) ... ok
+test_bad_transition_metadata_rejected (test_mcp_stale_evidence.StaleEvidenceTests.test_bad_transition_metadata_rejected) ... ok
+test_original_binding_must_match_expectation (test_mcp_stale_evidence.StaleEvidenceTests.test_original_binding_must_match_expectation) ... ok
+test_transition_and_independent_recovery (test_mcp_stale_evidence.StaleEvidenceTests.test_transition_and_independent_recovery) ... ok
+test_accepted_legacy_revisions_preserve_complete_exchange (test_mcp_transcript.LegacyTranscriptTests.test_accepted_legacy_revisions_preserve_complete_exchange) ... ok
+test_legacy_capture_cannot_satisfy_strict_july (test_mcp_transcript.LegacyTranscriptTests.test_legacy_capture_cannot_satisfy_strict_july) ... ok
+test_legacy_negotiation_order_correlation_and_results_cannot_be_relaxed (test_mcp_transcript.LegacyTranscriptTests.test_legacy_negotiation_order_correlation_and_results_cannot_be_relaxed) ... ok
+test_legacy_tools_list_may_omit_optional_params (test_mcp_transcript.LegacyTranscriptTests.test_legacy_tools_list_may_omit_optional_params) ... ok
+test_unverified_protocol_is_rejected (test_mcp_transcript.LegacyTranscriptTests.test_unverified_protocol_is_rejected) ... ok
+test_complete_exchange (test_mcp_transcript.TranscriptTests.test_complete_exchange) ... ok
+test_missing_false_flag_wrong_protocol_id_and_diagnostics_are_rejected (test_mcp_transcript.TranscriptTests.test_missing_false_flag_wrong_protocol_id_and_diagnostics_are_rejected) ... ok
+
+======================================================================
+ERROR: test_existing_release_is_rejected_before_capture (test_mcp_readiness_driver.ReadinessDriverTests.test_existing_release_is_rejected_before_capture)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_driver.py", line 54, in test_existing_release_is_rejected_before_capture
+    result = subprocess.run([str(CLIENT), "--server", str(SERVER),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\subprocess.py", line 550, in run
+    stdout, stderr = process.communicate(input, timeout=timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\subprocess.py", line 1209, in communicate
+    stdout, stderr = self._communicate(input, endtime, timeout)
+                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Program Files\Python312\Lib\subprocess.py", line 1630, in _communicate
+    raise TimeoutExpired(self.args, orig_timeout)
+subprocess.TimeoutExpired: Command '['D:\\bim-agent-lab\\projects\\revit-readiness\\tests\\mcp-client\\bin\\Release\\net10.0\\BimAgentLab.Mcp.Client.exe', '--server', 'D:\\bim-agent-lab\\projects\\revit-readiness\\src\\mcp-server\\bin\\Release\\net10.0\\BimAgentLab.RevitReadiness.Mcp.exe', '--scenario', 'readiness', '--evidence', 'C:\\Users\\bring\\AppData\\Local\\Temp\\tmpm2e1inbi\\capture', '--finish-file', 'C:\\Users\\bring\\AppData\\Local\\Temp\\tmpm2e1inbi\\finish']' timed out after 15 seconds
+
+----------------------------------------------------------------------
+Ran 34 tests in 32.078s
+
+FAILED (errors=1)
+Exception: D:\bim-agent-lab\projects\revit-readiness\scripts\Test-McpBridge.ps1:88
+Line |
+  88 |  … DE -ne 0) { throw 'MCP independent checker/settings recovery tests fa …
+     |                ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+     | MCP independent checker/settings recovery tests failed.

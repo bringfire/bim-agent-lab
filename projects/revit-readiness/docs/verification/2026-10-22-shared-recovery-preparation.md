@@ -31,3 +31,7 @@ The installed host remains **9a93f6d** and the external server **d88de67**. Curr
 No spec requirement is weakened by deferring this test while Claude is busy. The [R3 packet](../../../../docs/superpowers/reviews/revit-mcp-bridge/03-implementation-review.md) must continue to distinguish verified preparation from actual historical-layer recovery. The existing queued-shutdown and diagnostic-layer restoration evidence remains valid for its stated scope. Native Raise overlap/final executing-reader limits and desktop Stop behavior remain separate observations.
 
 The [participant story](../../../../docs/tutorials/13-install-with-a-recovery-plan.md#continue-with-a-tested-alternative) explains the human decision; this record supplies the technical continuation procedure.
+
+## Execution follow-up
+
+The author subsequently closed Claude and disabled Codex readiness MCP. [Actual recovery and exact reinstall](2026-10-22-shared-recovery-execution.md) now pass after fresh preflight. The preparation-only observations above remain historical. All three historical receipts are Restored; the new current committed receipt is ef71fb608bba47f49a43ee75fb226bec. Preserve backups and use the current receipt for any future undo. Fresh post-reinstall Revit startup/read is pending.

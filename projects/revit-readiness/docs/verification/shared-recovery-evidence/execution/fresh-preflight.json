@@ -1,0 +1,17 @@
+{
+  "checkedUtc": "2026-10-22T18:20:10.9466978Z",
+  "wholePlanOperations": 97,
+  "packageMatchesBaseline": true,
+  "inventoryRepresentationDifferences": [
+    {
+      "before": "CBB7B7C9626E8CD536A314A3D30DD84692A1C8F04224956365FAE0C883455DCE",
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.FixtureTools\\installed-files.json",
+      "generatedAfter": "F706BAC9A3A6CFC8BD4D534E66758AA4251B6AD62D7A174DB86C331BA5E6A830",
+      "exactMapPreserved": true
+    }
+  ],
+  "physicalFilesVerified": 100,
+  "activeServers": [],
+  "actualUndoPerformed": false,
+  "installedWrites": false
+}

@@ -1,0 +1,6 @@
+test_existing_release_is_rejected_before_capture (test_mcp_readiness_driver.ReadinessDriverTests.test_existing_release_is_rejected_before_capture) ... ok
+
+----------------------------------------------------------------------
+Ran 1 test in 2.297s
+
+OK

@@ -1,0 +1,1 @@
+Installed; recovery receipt: C:\Users\bring\.bim-agent-lab\RevitReadiness\InstallRecovery\ef71fb608bba47f49a43ee75fb226bec\receipt.json

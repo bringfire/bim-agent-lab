@@ -1,0 +1,19 @@
+{
+  "checkedUtc": "2026-10-22T18:27:34.678294+00:00",
+  "historicalLayersRestored": 3,
+  "repeatUndoNoChange": 3,
+  "finalTargetsMatchBaseline": 97,
+  "sourcePackageFiles": 83,
+  "newReceipt": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\InstallRecovery\\ef71fb608bba47f49a43ee75fb226bec\\receipt.json",
+  "newRecoveryFilesVerified": 164,
+  "changedReinstallTargets": 32,
+  "hostSource": "9a93f6d",
+  "serverSource": "d88de673996520d86c3502f357880865d1037fb9",
+  "protocols": [
+    "2025-06-18",
+    "2025-11-25",
+    "2026-07-28"
+  ],
+  "liveRevitRecovery": "pending",
+  "note": "reinstall-plan.json Target/Before/After/Tag are null due to Select-Object on dictionaries. Preserve as a capture defect; authenticated immutable new receipt supplies the actual plan. This script independently verifies it against pre-captured before/after maps."
+}

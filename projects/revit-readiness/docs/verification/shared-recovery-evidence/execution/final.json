@@ -1,0 +1,549 @@
+{
+  "checkedUtc": "2026-10-22T18:21:39.898744+00:00",
+  "mode": "final",
+  "packageFiles": 83,
+  "baselineSnapshots": 97,
+  "receipts": [
+    {
+      "transaction": "68dac9adc1c04f0694a12acfda4e9a6c",
+      "receiptSha256": "E1306368D8BBBF35CCF309CD1F53BF1C3B21C450ABB8DAECCD8CA851E9C6C813",
+      "state": {
+        "Utc": "2026-10-22T18:20:29.5593677Z",
+        "State": "Restored"
+      },
+      "verifiedRecoveryFiles": 194
+    },
+    {
+      "transaction": "2ccfb37b641e4a7f93391f6788dde437",
+      "receiptSha256": "3D6E2F1B6DDD671C23689DB8744E1E7BDADF92B3DB5A50888BC23A567AAF527C",
+      "state": {
+        "State": "Restored",
+        "Utc": "2026-10-22T18:20:55.5847829Z"
+      },
+      "verifiedRecoveryFiles": 194
+    },
+    {
+      "transaction": "a88dbf5d84b94188a695e2dc73b6e954",
+      "receiptSha256": "CE06400EAA0A17B5339609AAF56ABB38A877459273CE85F784F878C039EFCBFD",
+      "state": {
+        "Utc": "2026-10-22T18:21:10.7202771Z",
+        "State": "Restored"
+      },
+      "verifiedRecoveryFiles": 164
+    }
+  ],
+  "targets": [
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitReadiness.dll",
+      "expected": "FF8A2D12C89AA15F44AEA6AB6943A047D9482A98C23E34FE6B44E116E876FDD4",
+      "actual": "FF8A2D12C89AA15F44AEA6AB6943A047D9482A98C23E34FE6B44E116E876FDD4"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.Readiness.Core.dll",
+      "expected": "506950EC2C4BD082C857E4DA5F6C6A60D752977D7391E669136D586BDABE9109",
+      "actual": "506950EC2C4BD082C857E4DA5F6C6A60D752977D7391E669136D586BDABE9109"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitBridge.Runtime.dll",
+      "expected": "F6E88446E696443E30622D86FD342D2D96DE46DA9B1B14F6EB3913A3A236C6BC",
+      "actual": "F6E88446E696443E30622D86FD342D2D96DE46DA9B1B14F6EB3913A3A236C6BC"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitBridge.Contract.dll",
+      "expected": "DFD69875A8E4D09C2030A35AE2A2264FC546A4DCBF4B0E34DB9B71EF77850A9B",
+      "actual": "DFD69875A8E4D09C2030A35AE2A2264FC546A4DCBF4B0E34DB9B71EF77850A9B"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\Excel\\BimAgentLab.Readiness.Core.dll",
+      "expected": "506950EC2C4BD082C857E4DA5F6C6A60D752977D7391E669136D586BDABE9109",
+      "actual": "506950EC2C4BD082C857E4DA5F6C6A60D752977D7391E669136D586BDABE9109"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\Excel\\BimAgentLab.Readiness.Excel.exe",
+      "expected": "56264EEAA68834900561818B60029B4676E12DCBA14F87D20EE0D3CD078E2DF3",
+      "actual": "56264EEAA68834900561818B60029B4676E12DCBA14F87D20EE0D3CD078E2DF3"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\Excel\\BimAgentLab.Readiness.Excel.exe.config",
+      "expected": "F90C89FC01B2CC922B4E22A9D493C92E518D37BA22C45A69B8790187F7B6EFCE",
+      "actual": "F90C89FC01B2CC922B4E22A9D493C92E518D37BA22C45A69B8790187F7B6EFCE"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\Excel\\ClosedXML.dll",
+      "expected": "09A44F24D983AD8392F1255DBCE493A8DC124B5DA8331687BEA07CD512158EEC",
+      "actual": "09A44F24D983AD8392F1255DBCE493A8DC124B5DA8331687BEA07CD512158EEC"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\Excel\\ClosedXML.Parser.dll",
+      "expected": "A7276A119C09A7200ADE269FFD4A4637A82C41C34A56B02D715BE84235F5EF41",
+      "actual": "A7276A119C09A7200ADE269FFD4A4637A82C41C34A56B02D715BE84235F5EF41"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\Excel\\DocumentFormat.OpenXml.dll",
+      "expected": "BB6A988DCC8DC1C73F3CAECCFEEAC63D44FAAC051DA8A8494664A4C69D174200",
+      "actual": "BB6A988DCC8DC1C73F3CAECCFEEAC63D44FAAC051DA8A8494664A4C69D174200"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\Excel\\DocumentFormat.OpenXml.Framework.dll",
+      "expected": "D22ED8044CB3F50B608CDF6D2B0B52B477524A87CEDEE3E9FED332C531E2EA79",
+      "actual": "D22ED8044CB3F50B608CDF6D2B0B52B477524A87CEDEE3E9FED332C531E2EA79"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\Excel\\ExcelNumberFormat.dll",
+      "expected": "03CCC71A42833102EF54AE9ECF39D9D62C0491C17359AA37D1D2EF0EC7397D04",
+      "actual": "03CCC71A42833102EF54AE9ECF39D9D62C0491C17359AA37D1D2EF0EC7397D04"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\Excel\\Microsoft.Bcl.HashCode.dll",
+      "expected": "76B1260CE747A317E9B514433B89A81B038411FCABDDC6F9C7DBABB0742D8B81",
+      "actual": "76B1260CE747A317E9B514433B89A81B038411FCABDDC6F9C7DBABB0742D8B81"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\Excel\\RBush.dll",
+      "expected": "1BD688A5E886D4BC0785A943A82C7F77B8E28799E0749D9B27E75E989B39466C",
+      "actual": "1BD688A5E886D4BC0785A943A82C7F77B8E28799E0749D9B27E75E989B39466C"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\Excel\\SixLabors.Fonts.dll",
+      "expected": "3D811D1C37A1F0E17F365F00603029EB53E240526537E2CD99FE4227AABF36AA",
+      "actual": "3D811D1C37A1F0E17F365F00603029EB53E240526537E2CD99FE4227AABF36AA"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\Excel\\System.Buffers.dll",
+      "expected": "ACCCCFBE45D9F08FFEED9916E37B33E98C65BE012CFFF6E7FA7B67210CE1FEFB",
+      "actual": "ACCCCFBE45D9F08FFEED9916E37B33E98C65BE012CFFF6E7FA7B67210CE1FEFB"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\Excel\\System.Memory.dll",
+      "expected": "BF3FB84664F4097F1A8A9BC71A51DCF8CF1A905D4080A4D290DA1730866E856F",
+      "actual": "BF3FB84664F4097F1A8A9BC71A51DCF8CF1A905D4080A4D290DA1730866E856F"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\Excel\\System.Numerics.Vectors.dll",
+      "expected": "1D3EF8698281E7CF7371D1554AFEF5872B39F96C26DA772210A33DA041BA1183",
+      "actual": "1D3EF8698281E7CF7371D1554AFEF5872B39F96C26DA772210A33DA041BA1183"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\Excel\\System.Runtime.CompilerServices.Unsafe.dll",
+      "expected": "92D535DD1653250DA662C3A5B92943C8030651176C81A509CD74E2B4BEC26CFF",
+      "actual": "92D535DD1653250DA662C3A5B92943C8030651176C81A509CD74E2B4BEC26CFF"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\dependency-evidence.json",
+      "expected": "56E1F77D87CFFE6CB90CC598CAFE19BDFA6ADDA5CF569217B3432C2EC4DC040C",
+      "actual": "56E1F77D87CFFE6CB90CC598CAFE19BDFA6ADDA5CF569217B3432C2EC4DC040C"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\README.md",
+      "expected": "E1C7ED848D5E12F8A032EE34AAA22F28B94A5F1D8EFACA6B324883EE3FBBDB79",
+      "actual": "E1C7ED848D5E12F8A032EE34AAA22F28B94A5F1D8EFACA6B324883EE3FBBDB79"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\Carlito\\OFL.txt",
+      "expected": "58402F82A7C332A700294988FE7554FBB0A63A8D27CCC1EE3BBC640311990A00",
+      "actual": "58402F82A7C332A700294988FE7554FBB0A63A8D27CCC1EE3BBC640311990A00"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\ClosedXML-0.105.1\\LICENSE.txt",
+      "expected": "3071658FBA9A054EDCE74E756314BA926FE3FFE5C6622F209D21A0C8F1D2A99E",
+      "actual": "3071658FBA9A054EDCE74E756314BA926FE3FFE5C6622F209D21A0C8F1D2A99E"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\ClosedXML-0.105.1\\package.nuspec",
+      "expected": "3B044E86595606B1C69C36D537BF67A19F1E8EA3F47D7B99CC167771309A0F77",
+      "actual": "3B044E86595606B1C69C36D537BF67A19F1E8EA3F47D7B99CC167771309A0F77"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\ClosedXML.Parser-2.0.0\\LICENSE.txt",
+      "expected": "7133DFD8C1167FFA77389859013AC5BF2D184639F5A291A00D33B0B7D7B84DF3",
+      "actual": "7133DFD8C1167FFA77389859013AC5BF2D184639F5A291A00D33B0B7D7B84DF3"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\ClosedXML.Parser-2.0.0\\package.nuspec",
+      "expected": "C7EA6DB9150273036DBF8FBEAD151ABFF7DF87975E2528BCA9E9B617566CA27F",
+      "actual": "C7EA6DB9150273036DBF8FBEAD151ABFF7DF87975E2528BCA9E9B617566CA27F"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\DocumentFormat.OpenXml-3.1.1\\LICENSE.txt",
+      "expected": "ED03BA352313A4BA7019D5BED4BD3218AC17F3E44442A3BB1AAFF54DCCA9A2BC",
+      "actual": "ED03BA352313A4BA7019D5BED4BD3218AC17F3E44442A3BB1AAFF54DCCA9A2BC"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\DocumentFormat.OpenXml-3.1.1\\NOTICE.txt",
+      "expected": "17F127DAF81A23E7835B735B91C7486FBC99538102942BF1BCE8D73E63A65038",
+      "actual": "17F127DAF81A23E7835B735B91C7486FBC99538102942BF1BCE8D73E63A65038"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\DocumentFormat.OpenXml-3.1.1\\package.nuspec",
+      "expected": "D6EA629022A51027DDC75C6398A25B65FC90780471DB32DFEEBCC53B4C2481FA",
+      "actual": "D6EA629022A51027DDC75C6398A25B65FC90780471DB32DFEEBCC53B4C2481FA"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\DocumentFormat.OpenXml.Framework-3.1.1\\LICENSE.txt",
+      "expected": "ED03BA352313A4BA7019D5BED4BD3218AC17F3E44442A3BB1AAFF54DCCA9A2BC",
+      "actual": "ED03BA352313A4BA7019D5BED4BD3218AC17F3E44442A3BB1AAFF54DCCA9A2BC"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\DocumentFormat.OpenXml.Framework-3.1.1\\NOTICE.txt",
+      "expected": "17F127DAF81A23E7835B735B91C7486FBC99538102942BF1BCE8D73E63A65038",
+      "actual": "17F127DAF81A23E7835B735B91C7486FBC99538102942BF1BCE8D73E63A65038"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\DocumentFormat.OpenXml.Framework-3.1.1\\package.nuspec",
+      "expected": "D3446279FB7923B5612AE01323C7C062FF534FDC4851C29855D3D5A90B5A00AB",
+      "actual": "D3446279FB7923B5612AE01323C7C062FF534FDC4851C29855D3D5A90B5A00AB"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\ExcelNumberFormat-1.1.0\\LICENSE.txt",
+      "expected": "6650B0063A39E7DCED886E53C6DAC66FCD909BEB8B9ABB868452C9B621FA2018",
+      "actual": "6650B0063A39E7DCED886E53C6DAC66FCD909BEB8B9ABB868452C9B621FA2018"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\ExcelNumberFormat-1.1.0\\package.nuspec",
+      "expected": "E5F439F21CB51CD7C6376BD06778E94B601C0B5BF6779D8FBB92113921FB2001",
+      "actual": "E5F439F21CB51CD7C6376BD06778E94B601C0B5BF6779D8FBB92113921FB2001"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\mcp\\csharp-sdk-LICENSE.txt",
+      "expected": "10A500C69133EF6E1DF944A1B0FD8578FC9C4735745BCC75F04A24038016DF49",
+      "actual": "10A500C69133EF6E1DF944A1B0FD8578FC9C4735745BCC75F04A24038016DF49"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\mcp\\csharp-sdk-THIRD-PARTY-NOTICES.txt",
+      "expected": "19C34B0B254D5CCA0F96857D935528FDED236CC15D489FC9581C778DD32F8100",
+      "actual": "19C34B0B254D5CCA0F96857D935528FDED236CC15D489FC9581C778DD32F8100"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\mcp\\dotnet-extensions-LICENSE.txt",
+      "expected": "47F0AD8BA753EAE5DE6178291CD8F38BBB42D2368B177F8E11714AD17C701275",
+      "actual": "47F0AD8BA753EAE5DE6178291CD8F38BBB42D2368B177F8E11714AD17C701275"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\mcp\\dotnet-runtime-LICENSE.txt",
+      "expected": "CFC21F5E8BD655AE997EEC916138B707B1D290B83272C02A95C9F821B8C87310",
+      "actual": "CFC21F5E8BD655AE997EEC916138B707B1D290B83272C02A95C9F821B8C87310"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\mcp\\dotnet-runtime-THIRD-PARTY-NOTICES.txt",
+      "expected": "6D15E10A101C6BFFF2AB4429ED061BF76C456FC4B23AD6B03E0D0F8377148A21",
+      "actual": "6D15E10A101C6BFFF2AB4429ED061BF76C456FC4B23AD6B03E0D0F8377148A21"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\mcp\\license-sources.json",
+      "expected": "1FF7DAC54E3196FDBFEE4AEF8F9E2AE8EC810164A2F2CC97874E3D419417A590",
+      "actual": "1FF7DAC54E3196FDBFEE4AEF8F9E2AE8EC810164A2F2CC97874E3D419417A590"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\mcp\\package-notices.json",
+      "expected": "81AA860F13C650408EA04EE403D4FCA2C3A98628E50431C2548FE702A6BFB5B5",
+      "actual": "81AA860F13C650408EA04EE403D4FCA2C3A98628E50431C2548FE702A6BFB5B5"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\mcp\\README.md",
+      "expected": "7D7D182B362AAD08AF34AED2E03A933FD1E451A7E60BBD0F3857B565D7591B94",
+      "actual": "7D7D182B362AAD08AF34AED2E03A933FD1E451A7E60BBD0F3857B565D7591B94"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\Microsoft.Bcl.HashCode-1.1.1\\LICENSE.TXT",
+      "expected": "D7A68596AB69B06F51CA278A6545148E4269A9381C26D597C13DF5D88E08CF5B",
+      "actual": "D7A68596AB69B06F51CA278A6545148E4269A9381C26D597C13DF5D88E08CF5B"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\Microsoft.Bcl.HashCode-1.1.1\\package.nuspec",
+      "expected": "02403B9BA6B8DB960D3D1BA49B069B2D38299523FFB66BAABEBC9468743D2DEB",
+      "actual": "02403B9BA6B8DB960D3D1BA49B069B2D38299523FFB66BAABEBC9468743D2DEB"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\Microsoft.Bcl.HashCode-1.1.1\\THIRD-PARTY-NOTICES.TXT",
+      "expected": "388C07F579998286E5DF706A2E68BF6E01100187CCB0FF0310E26C3383F7B2B2",
+      "actual": "388C07F579998286E5DF706A2E68BF6E01100187CCB0FF0310E26C3383F7B2B2"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\RBush.Signed-4.0.0\\LICENSE.txt",
+      "expected": "F6BFAE3FF6477FBCA0C850F115DA170516B1C633A98619EA5DCC6720DCDCB288",
+      "actual": "F6BFAE3FF6477FBCA0C850F115DA170516B1C633A98619EA5DCC6720DCDCB288"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\RBush.Signed-4.0.0\\package.nuspec",
+      "expected": "D4983DBCE60E9E35718273F5870E43860D3D2D66876D38D564A40D881C2236F4",
+      "actual": "D4983DBCE60E9E35718273F5870E43860D3D2D66876D38D564A40D881C2236F4"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\SixLabors.Fonts-1.0.0\\LICENSE.txt",
+      "expected": "F38DC2765451FD2B19D7E0F47ED655F3A1CB889B28341EA6266EFD75D8425A6F",
+      "actual": "F38DC2765451FD2B19D7E0F47ED655F3A1CB889B28341EA6266EFD75D8425A6F"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\SixLabors.Fonts-1.0.0\\package.nuspec",
+      "expected": "DBD5856E3BBF6D25087250DBAD4FE3140383DFE82610C3CCE4929FBC59C7E7A8",
+      "actual": "DBD5856E3BBF6D25087250DBAD4FE3140383DFE82610C3CCE4929FBC59C7E7A8"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\System.Buffers-4.5.1\\LICENSE.TXT",
+      "expected": "D7A68596AB69B06F51CA278A6545148E4269A9381C26D597C13DF5D88E08CF5B",
+      "actual": "D7A68596AB69B06F51CA278A6545148E4269A9381C26D597C13DF5D88E08CF5B"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\System.Buffers-4.5.1\\package.nuspec",
+      "expected": "353A5C2810BFB22DE50B87616F426D4D2C8AAC2040802C68E2CAADEDBFE66B8E",
+      "actual": "353A5C2810BFB22DE50B87616F426D4D2C8AAC2040802C68E2CAADEDBFE66B8E"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\System.Buffers-4.5.1\\THIRD-PARTY-NOTICES.TXT",
+      "expected": "7864A01E2FDEF7E8FDF81B906EFB1466F083206AFFEA7BA7E6DADEA429754765",
+      "actual": "7864A01E2FDEF7E8FDF81B906EFB1466F083206AFFEA7BA7E6DADEA429754765"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\System.Memory-4.5.5\\LICENSE.TXT",
+      "expected": "D7A68596AB69B06F51CA278A6545148E4269A9381C26D597C13DF5D88E08CF5B",
+      "actual": "D7A68596AB69B06F51CA278A6545148E4269A9381C26D597C13DF5D88E08CF5B"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\System.Memory-4.5.5\\package.nuspec",
+      "expected": "745BFA574A0FE397559DAD595FD0B73A38D7DDE40703BB8F0F1EBA82EDF99AA7",
+      "actual": "745BFA574A0FE397559DAD595FD0B73A38D7DDE40703BB8F0F1EBA82EDF99AA7"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\System.Memory-4.5.5\\THIRD-PARTY-NOTICES.TXT",
+      "expected": "7864A01E2FDEF7E8FDF81B906EFB1466F083206AFFEA7BA7E6DADEA429754765",
+      "actual": "7864A01E2FDEF7E8FDF81B906EFB1466F083206AFFEA7BA7E6DADEA429754765"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\System.Numerics.Vectors-4.5.0\\LICENSE.TXT",
+      "expected": "D7A68596AB69B06F51CA278A6545148E4269A9381C26D597C13DF5D88E08CF5B",
+      "actual": "D7A68596AB69B06F51CA278A6545148E4269A9381C26D597C13DF5D88E08CF5B"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\System.Numerics.Vectors-4.5.0\\package.nuspec",
+      "expected": "E88AA01F9C9F763F66D643FC093EB3FA885141847F61FAC13C2A9AD7A60A29E9",
+      "actual": "E88AA01F9C9F763F66D643FC093EB3FA885141847F61FAC13C2A9AD7A60A29E9"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\System.Numerics.Vectors-4.5.0\\THIRD-PARTY-NOTICES.TXT",
+      "expected": "7864A01E2FDEF7E8FDF81B906EFB1466F083206AFFEA7BA7E6DADEA429754765",
+      "actual": "7864A01E2FDEF7E8FDF81B906EFB1466F083206AFFEA7BA7E6DADEA429754765"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\System.Runtime.CompilerServices.Unsafe-4.7.0\\LICENSE.TXT",
+      "expected": "D7A68596AB69B06F51CA278A6545148E4269A9381C26D597C13DF5D88E08CF5B",
+      "actual": "D7A68596AB69B06F51CA278A6545148E4269A9381C26D597C13DF5D88E08CF5B"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\System.Runtime.CompilerServices.Unsafe-4.7.0\\package.nuspec",
+      "expected": "A0F7F287AF5956FE1041D641EC7BB1046AFA73ADC95A9D55C02FAB1E3FE7CFF3",
+      "actual": "A0F7F287AF5956FE1041D641EC7BB1046AFA73ADC95A9D55C02FAB1E3FE7CFF3"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\third-party\\System.Runtime.CompilerServices.Unsafe-4.7.0\\THIRD-PARTY-NOTICES.TXT",
+      "expected": "388C07F579998286E5DF706A2E68BF6E01100187CCB0FF0310E26C3383F7B2B2",
+      "actual": "388C07F579998286E5DF706A2E68BF6E01100187CCB0FF0310E26C3383F7B2B2"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\installed-files.json",
+      "expected": "1BE7E7C83505B41F279EDE8A45215ADE881A92907A8F8FFB8E2A47CB89BED063",
+      "actual": "1BE7E7C83505B41F279EDE8A45215ADE881A92907A8F8FFB8E2A47CB89BED063"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation.addin",
+      "expected": "DF203E3A890622C3E7ECE861109707542B5737961A707C25707711A5AB0AF686",
+      "actual": "DF203E3A890622C3E7ECE861109707542B5737961A707C25707711A5AB0AF686"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.FixtureTools\\BimAgentLab.FixtureTools.dll",
+      "expected": "F776364EB597AB8B5F14A9AD6A4117E4B909A60B65A86A689AC78C491916D99D",
+      "actual": "F776364EB597AB8B5F14A9AD6A4117E4B909A60B65A86A689AC78C491916D99D"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.FixtureTools\\BimAgentLab.Readiness.Core.dll",
+      "expected": "506950EC2C4BD082C857E4DA5F6C6A60D752977D7391E669136D586BDABE9109",
+      "actual": "506950EC2C4BD082C857E4DA5F6C6A60D752977D7391E669136D586BDABE9109"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.FixtureTools\\installed-files.json",
+      "expected": "CBB7B7C9626E8CD536A314A3D30DD84692A1C8F04224956365FAE0C883455DCE",
+      "actual": "CBB7B7C9626E8CD536A314A3D30DD84692A1C8F04224956365FAE0C883455DCE"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\BimAgentLab.RevitBridge.Contract.dll",
+      "expected": "3E8B8F52274D355AB6F6B879C96254D7AC234AEC693218E0458CEAD502456A46",
+      "actual": "3E8B8F52274D355AB6F6B879C96254D7AC234AEC693218E0458CEAD502456A46"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\BimAgentLab.RevitBridge.Contract.pdb",
+      "expected": "4BAAD785D8ED1123F7624E208654494929DD4CEFC85DA1A3A48E0CF2C9E54907",
+      "actual": "4BAAD785D8ED1123F7624E208654494929DD4CEFC85DA1A3A48E0CF2C9E54907"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\BimAgentLab.RevitBridge.Runtime.dll",
+      "expected": "6665C7D20A51E03B3811AC6688E30A412E58CDA15432D4385DA9B6D66647C27B",
+      "actual": "6665C7D20A51E03B3811AC6688E30A412E58CDA15432D4385DA9B6D66647C27B"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\BimAgentLab.RevitBridge.Runtime.pdb",
+      "expected": "D4B536CC61122585774A9CDDAF029A8A68C89B99851629253A6A1F7D50783EE4",
+      "actual": "D4B536CC61122585774A9CDDAF029A8A68C89B99851629253A6A1F7D50783EE4"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\BimAgentLab.RevitReadiness.Mcp.deps.json",
+      "expected": "05FFE297EF6126BE9B12E17CC0253DADA08C2F25B0282A12A5F60B59990CEEFD",
+      "actual": "05FFE297EF6126BE9B12E17CC0253DADA08C2F25B0282A12A5F60B59990CEEFD"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\BimAgentLab.RevitReadiness.Mcp.dll",
+      "expected": "FE29830EF6DD8BB5709350781011C6F53AE36A492E9ED150D2F601E9C2209670",
+      "actual": "FE29830EF6DD8BB5709350781011C6F53AE36A492E9ED150D2F601E9C2209670"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\BimAgentLab.RevitReadiness.Mcp.exe",
+      "expected": "9DECA53FB5D0A35B4FB04E5CCE00A0F37481751A55FDD3F7F37B668B74324A4A",
+      "actual": "9DECA53FB5D0A35B4FB04E5CCE00A0F37481751A55FDD3F7F37B668B74324A4A"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\BimAgentLab.RevitReadiness.Mcp.pdb",
+      "expected": "29AF3A37A13C7E8AFB7EE93D1A0832CC9240ADFF18673A8A2D4178553E458ADE",
+      "actual": "29AF3A37A13C7E8AFB7EE93D1A0832CC9240ADFF18673A8A2D4178553E458ADE"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\BimAgentLab.RevitReadiness.Mcp.runtimeconfig.json",
+      "expected": "C230A317A54DD960BCBEB5F347F52E18DC665A26F7EFDA2159FCED9A5AC7E097",
+      "actual": "C230A317A54DD960BCBEB5F347F52E18DC665A26F7EFDA2159FCED9A5AC7E097"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\Microsoft.Extensions.AI.Abstractions.dll",
+      "expected": "BCC8F693103EB00505179F154B1B3A996B85D067E112FACD724FD9D695F17A5E",
+      "actual": "BCC8F693103EB00505179F154B1B3A996B85D067E112FACD724FD9D695F17A5E"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\Microsoft.Extensions.Caching.Abstractions.dll",
+      "expected": "D82421A7036109556106414748A63425CA2AAFA3E6B76669D41B74D625C66E7E",
+      "actual": "D82421A7036109556106414748A63425CA2AAFA3E6B76669D41B74D625C66E7E"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\Microsoft.Extensions.Configuration.Abstractions.dll",
+      "expected": "685493E38ADB7E5D06BFCD93AA160FB8CE23AAE80DADD1FF489E8CD4CFC6CAFE",
+      "actual": "685493E38ADB7E5D06BFCD93AA160FB8CE23AAE80DADD1FF489E8CD4CFC6CAFE"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\Microsoft.Extensions.DependencyInjection.Abstractions.dll",
+      "expected": "592C33E4BC20E041D6125B79A4311293540F30332495429241C3D7C7286C8E16",
+      "actual": "592C33E4BC20E041D6125B79A4311293540F30332495429241C3D7C7286C8E16"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\Microsoft.Extensions.Diagnostics.Abstractions.dll",
+      "expected": "7A60EFF59E2360136FB2696227C643FF6E3CDE298FA010E3202151AC79BF55DE",
+      "actual": "7A60EFF59E2360136FB2696227C643FF6E3CDE298FA010E3202151AC79BF55DE"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\Microsoft.Extensions.FileProviders.Abstractions.dll",
+      "expected": "670E6CCB7984ADE31318AF5DB4FBA19903174721D8E9F1FD3D5E64403AC05D87",
+      "actual": "670E6CCB7984ADE31318AF5DB4FBA19903174721D8E9F1FD3D5E64403AC05D87"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\Microsoft.Extensions.Hosting.Abstractions.dll",
+      "expected": "55D316F9A8DA2B2E91C50C75A92C44114EB23E4B796090008CFA4524FA082866",
+      "actual": "55D316F9A8DA2B2E91C50C75A92C44114EB23E4B796090008CFA4524FA082866"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\Microsoft.Extensions.Logging.Abstractions.dll",
+      "expected": "46826FD3B68BD23028B274FF73ECC161088B53E41B4A7436E759DE4D78143A43",
+      "actual": "46826FD3B68BD23028B274FF73ECC161088B53E41B4A7436E759DE4D78143A43"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\Microsoft.Extensions.Options.dll",
+      "expected": "E6E4183C67C8B265D852E40E6B873640371C4EB19F6268D4C4734C1AEBA17DFB",
+      "actual": "E6E4183C67C8B265D852E40E6B873640371C4EB19F6268D4C4734C1AEBA17DFB"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\Microsoft.Extensions.Primitives.dll",
+      "expected": "149F0BB5FBBF39836F38F61EA24EEE49D78BC62C63BDB3C462381BDFFB1D3603",
+      "actual": "149F0BB5FBBF39836F38F61EA24EEE49D78BC62C63BDB3C462381BDFFB1D3603"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\ModelContextProtocol.Core.dll",
+      "expected": "B1752096EA9D2F38BA88E467F04AEA43FB300D9A54D881C165F62B69028EE3AB",
+      "actual": "B1752096EA9D2F38BA88E467F04AEA43FB300D9A54D881C165F62B69028EE3AB"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\ModelContextProtocol.dll",
+      "expected": "8CD6F626C8D6A0A5FF3E154789D3FCDE2B1D66A595C0EF0198E092C2C30FE93A",
+      "actual": "8CD6F626C8D6A0A5FF3E154789D3FCDE2B1D66A595C0EF0198E092C2C30FE93A"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\third-party\\README.md",
+      "expected": "7D7D182B362AAD08AF34AED2E03A933FD1E451A7E60BBD0F3857B565D7591B94",
+      "actual": "7D7D182B362AAD08AF34AED2E03A933FD1E451A7E60BBD0F3857B565D7591B94"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\third-party\\csharp-sdk-LICENSE.txt",
+      "expected": "10A500C69133EF6E1DF944A1B0FD8578FC9C4735745BCC75F04A24038016DF49",
+      "actual": "10A500C69133EF6E1DF944A1B0FD8578FC9C4735745BCC75F04A24038016DF49"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\third-party\\csharp-sdk-THIRD-PARTY-NOTICES.txt",
+      "expected": "19C34B0B254D5CCA0F96857D935528FDED236CC15D489FC9581C778DD32F8100",
+      "actual": "19C34B0B254D5CCA0F96857D935528FDED236CC15D489FC9581C778DD32F8100"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\third-party\\dotnet-runtime-LICENSE.txt",
+      "expected": "CFC21F5E8BD655AE997EEC916138B707B1D290B83272C02A95C9F821B8C87310",
+      "actual": "CFC21F5E8BD655AE997EEC916138B707B1D290B83272C02A95C9F821B8C87310"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\third-party\\dotnet-extensions-LICENSE.txt",
+      "expected": "47F0AD8BA753EAE5DE6178291CD8F38BBB42D2368B177F8E11714AD17C701275",
+      "actual": "47F0AD8BA753EAE5DE6178291CD8F38BBB42D2368B177F8E11714AD17C701275"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\third-party\\dotnet-runtime-THIRD-PARTY-NOTICES.txt",
+      "expected": "6D15E10A101C6BFFF2AB4429ED061BF76C456FC4B23AD6B03E0D0F8377148A21",
+      "actual": "6D15E10A101C6BFFF2AB4429ED061BF76C456FC4B23AD6B03E0D0F8377148A21"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\third-party\\package-notices.json",
+      "expected": "81AA860F13C650408EA04EE403D4FCA2C3A98628E50431C2548FE702A6BFB5B5",
+      "actual": "81AA860F13C650408EA04EE403D4FCA2C3A98628E50431C2548FE702A6BFB5B5"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\third-party\\license-sources.json",
+      "expected": "1FF7DAC54E3196FDBFEE4AEF8F9E2AE8EC810164A2F2CC97874E3D419417A590",
+      "actual": "1FF7DAC54E3196FDBFEE4AEF8F9E2AE8EC810164A2F2CC97874E3D419417A590"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\installed-files.json",
+      "expected": "FB9514473F86E7FEEB59D10F75A705EE223C494BAD2892C97C96FA76758BCFA5",
+      "actual": "FB9514473F86E7FEEB59D10F75A705EE223C494BAD2892C97C96FA76758BCFA5"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.ReadinessBridge.addin",
+      "expected": "00880CEA3F017818155C3B7D49FCF7D6E0BEF1FD3A5DD0EE2946750B554936EC",
+      "actual": "00880CEA3F017818155C3B7D49FCF7D6E0BEF1FD3A5DD0EE2946750B554936EC"
+    }
+  ],
+  "inventories": [
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\installed-files.json",
+      "entries": 61,
+      "sha256": "1BE7E7C83505B41F279EDE8A45215ADE881A92907A8F8FFB8E2A47CB89BED063"
+    },
+    {
+      "target": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.FixtureTools\\installed-files.json",
+      "entries": 2,
+      "sha256": "CBB7B7C9626E8CD536A314A3D30DD84692A1C8F04224956365FAE0C883455DCE"
+    },
+    {
+      "target": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\installed-files.json",
+      "entries": 29,
+      "sha256": "FB9514473F86E7FEEB59D10F75A705EE223C494BAD2892C97C96FA76758BCFA5"
+    }
+  ],
+  "createdDirectories": [
+    {
+      "path": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer",
+      "exists": true
+    },
+    {
+      "path": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\third-party",
+      "exists": true
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+PASS SDK readiness: expected=BridgeUnavailable; evidence=D:\bim-agent-lab\projects\revit-readiness\samples\local\shared-recovery\d80b639db55c4a39a69c9f15cc8feca0\execution\sdk-2026-07-28

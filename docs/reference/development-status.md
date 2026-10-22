@@ -2,7 +2,7 @@
 
 ## Current snapshot — October 22, 2026
 
-Start with the [participant guide](../start-here.md) or [agent handoff](../how-to/agent-handoff.md). Actual queued shutdown and diagnostic-layer restoration have evidence. The author approved continued explicit cancellation with the SDK limitation retained; [full shared-layer recovery is prepared](../../projects/revit-readiness/docs/verification/2026-10-22-shared-recovery-preparation.md), but actual undo/reinstall is deferred while Claude is in use. Preparation does not close the remaining live checks.
+Start with the [participant guide](../start-here.md) or [agent handoff](../how-to/agent-handoff.md). Actual queued shutdown and diagnostic-layer restoration have evidence. The author approved continued explicit cancellation with the SDK limitation retained; [all three shared layers have now been restored and the exact build reinstalled](../../projects/revit-readiness/docs/verification/2026-10-22-shared-recovery-execution.md). Fresh startup/read after this reinstall is pending; overall acceptance remains open.
 
 | Area | Current state |
 |---|---|
@@ -10,10 +10,10 @@ Start with the [participant guide](../start-here.md) or [agent handoff](../how-t
 | Live MCP | All five sample cases and both desktop unexpired-context switch/recovery checks independently verified; [live matrix](../../projects/revit-readiness/docs/verification/mcp-readiness.md) |
 | Compatibility | SDK 2.2.0; actual Codex June-2025/Claude Chat November-2025 traffic plus separate July-2026 SDK evidence and strict-July regression. No new latest-version audit |
 | Repeatable runner | Implemented at 3b74f67; fresh independent live wrapper checks now pass on diagnostic and restored normal hosts |
-| Current workstation | Latest inspection: Revit closed; five installed readiness servers active. Author needs Claude to keep working; leave both desktop apps running. [Shared-layer recovery prepared](../../projects/revit-readiness/docs/verification/2026-10-22-shared-recovery-preparation.md), with no installed/configuration changes |
+| Current workstation | Author closed Claude and disabled Codex readiness MCP. Three undo/repeat cycles and exact reinstall pass; all 97 target hashes match. Current recovery receipt ef71fb608bba47f49a43ee75fb226bec; fresh Revit startup/read requested. Agent made no desktop-setting change |
 | Shutdown/recovery | Actual close with three queued requests and physical disposal verified; new diagnostic layers restored. [Evidence](../../projects/revit-readiness/docs/verification/2026-10-22-shutdown-preparation.md) |
 | SDK cancellation | [Diagnosed SDK 2.2.0 client callback-order defect](../../projects/revit-readiness/docs/verification/2026-10-22-sdk-cancellation-diagnosis.md), reproduced across all three protocols on .NET 10.0.13. Explicit SDK notification/EOF pass; token-only propagation remains unfixed. No production/dependency change |
-| Remaining acceptance | Native-event/executing-reader shutdown limits, disposition of the diagnosed SDK limitation, original shared recovery layers, acceptance consolidation and independent R3 |
+| Remaining acceptance | Fresh post-reinstall Revit read, native-event/executing-reader shutdown limits, retained SDK limitation, acceptance consolidation and independent R3 |
 | Later capabilities/distribution | Physical-condition/quantity checks, public hosting, original-material license and release packaging remain open |
 
 The author wants the remaining work handled sequentially, with refinement afterward. The starting guide and agent handoff do not close Tasks 7–9. No Revit action is needed to read them.

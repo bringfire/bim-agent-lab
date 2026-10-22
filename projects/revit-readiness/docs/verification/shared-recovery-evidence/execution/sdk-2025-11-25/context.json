@@ -1,0 +1,17 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\u0022code\u0022:\u0022BridgeUnavailable\u0022,\u0022message\u0022:\u0022Start a bridge in the selected Revit instance.\u0022,\u0022requestId\u0022:\u0022537f72a4aa9a422aa5e0ba691ace900c\u0022,\u0022retryable\u0022:true}"
+    }
+  ],
+  "structuredContent": {
+    "code": "BridgeUnavailable",
+    "message": "Start a bridge in the selected Revit instance.",
+    "requestId": "537f72a4aa9a422aa5e0ba691ace900c",
+    "retryable": true
+  },
+  "isError": true,
+  "_meta": null,
+  "resultType": null
+}

@@ -237,3 +237,17 @@ Suggested participant prompt:
 The [decision record](../superpowers/reviews/revit-mcp-bridge/2026-10-22-cancellation-disposition.md) separates approval to continue from proof that the defect is fixed. It also distinguishes the test client's cancellation from the desktop apps' Stop buttons, whose behavior still needs direct observation before making that claim.
 
 The agent next prepared the remaining installation recovery test and verified the exact package needed to return to the working version. Revit was closed, but Claude still had the readiness server running. When the author said **“I can't stop Claude right now...but I can reset Codex,”** the agent explained that resetting one client would not release the other's server files. It left the applications running and saved the prepared work. [Preparation and resume steps](../../projects/revit-readiness/docs/verification/2026-10-22-shared-recovery-preparation.md) make the boundary explicit: checked backups are useful evidence, but the actual restore is still pending.
+
+## Prove recovery when the applications are available
+
+The author later reported **“claude closed Cdeox MCP disbaled.”** The agent checked that the processes had actually stopped, rechecked the prepared backups and tested package, and performed the recovery. The person handled the application actions; the agent handled the receipts, commands and independent comparisons.
+
+Each of the three previous installations was undone and then undone again. The repeat verified that completed recovery could be requested safely. The agent then installed the exact version used in the demonstrations and compared all 97 installed files with the saved baseline. It kept a new recovery record for that installation and preserved the older records as history.
+
+Suggested participant prompt:
+
+> Now that the applications are available, prove that recovery works. Check the saved state again, verify every restored layer, repeat the undo, and reinstall the exact tested version. Keep the original evidence and explain what still needs testing inside the application.
+
+This sequence also exposed two evidence limits. An auxiliary summary file contained empty fields, so the agent used the verified installer receipt to establish what was installed and retained the bad summary. A broader test run timed out; the unchanged individual test and full rerun passed. The failed run stayed in the record, without claiming that the intermittent failure had been explained or fixed.
+
+The agent asked for a fresh Revit startup and read after the file and server checks. File equality, a working server and successful host startup answer different questions. The [execution record](../../projects/revit-readiness/docs/verification/2026-10-22-shared-recovery-execution.md) supplies the technical evidence and current limits.

@@ -1,0 +1,29 @@
+{
+  "clientKind": "SDK harness, not desktop A8 acceptance",
+  "protocol": "2025-06-18",
+  "tools": [
+    "revit_check_required_type_information",
+    "revit_get_readiness_context"
+  ],
+  "expected": "BridgeUnavailable",
+  "context": {
+    "content": [
+      {
+        "type": "text",
+        "text": "{\u0022code\u0022:\u0022BridgeUnavailable\u0022,\u0022message\u0022:\u0022Start a bridge in the selected Revit instance.\u0022,\u0022requestId\u0022:\u00226b78c8b070554e90bfc46d5c9b30ea5d\u0022,\u0022retryable\u0022:true}"
+      }
+    ],
+    "structuredContent": {
+      "code": "BridgeUnavailable",
+      "message": "Start a bridge in the selected Revit instance.",
+      "requestId": "6b78c8b070554e90bfc46d5c9b30ea5d",
+      "retryable": true
+    },
+    "isError": true,
+    "_meta": null,
+    "resultType": null
+  },
+  "check": null,
+  "pass": true,
+  "completedUtc": "2026-10-22T18:21:50.2334045Z"
+}
