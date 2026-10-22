@@ -36,4 +36,13 @@ Check new/changed Markdown links and anchors, source/evidence manifests, staged 
 
 The external reviewer should state their own inspected inputs and checks. Use the [review template](../../templates/external-review.md); retain original findings separately from author dispositions. Several major findings can signal a shared missing reasoning model: ask the reviewer to investigate that possibility, verify it against source, and apply the supported insight across the relevant paths.
 
-Only actual returned review can establish independent R3 status. Only appropriate verification can close an implementation claim. Only the author's decision can accept a documented limitation. The current packet is **ready for review with open items**, not a completed release.
+Only actual returned review can establish independent R3 status. Only appropriate verification can close an implementation claim. Only the author's decision can accept a documented limitation. The original packet was handed over with open items. R3 has now returned; the response below records what remains, without claiming a completed release.
+
+
+## Respond to R3-01: check the last consumer
+
+Read the [original review and separate dispositions](../superpowers/reviews/revit-mcp-bridge/2026-10-22-r3-feedback.md). Do not confuse report replay with presentation acceptance. The [mandatory presentation gate](../../projects/revit-readiness/docs/verification/r3-followup-evidence/README.md#presentation-completeness-gate) requires prompt, actual public answer, case/request/candidate linkage, run-specific UI baseline and semantic assessment for each required desktop case. Its current result is NOT MET.
+
+Recover historical messages only from original public records, retaining message/call IDs, UTC, phase and a traceable source/hash. Exclude private reasoning and unrelated settings. Compare the original tool result to the retained report, then assess the answer separately. A fresh answer written today or a broad completion claim cannot stand in for the original consumer response. Keep append-only recovery artifacts separate from the original case directories/manifests.
+
+NC1 now has its original commentary answer with request linkage. NC2's inspected history supplies a summary of Claude and a general completion claim, neither sufficient to close its missing Codex interpretation. Do not reconstruct past model/permission settings from current configuration. Full A8 rerun on the selected normal candidate should record all required prompts/answers and baseline, and address O1/O5 together. Preserve the reviewer's scoped passes and known SDK defect; no new production cancellation defect was found.

@@ -1,6 +1,8 @@
 # Revit MCP bridge review sessions
 
-**Current handoff:** [R3 implementation packet](03-implementation-review.md) is prepared for the author to hand to an independent reviewer. The [A1–A9 ledger](../../../../projects/revit-readiness/docs/verification/2026-10-22-r3-acceptance.md) distinguishes passed evidence from known defects/unverified items. Current-source offline checks and retained-evidence replay pass. Installed normal builds differ from the current source. No external R3 or overall acceptance is claimed; earlier R1/R2 and Task2–6 closures retain their original scopes.
+**Returned R3:** [feedback and separate dispositions](2026-10-22-r3-feedback.md) on packet 0489c54 recommends keeping acceptance open. Technical compatibility and scoped offline/installed-candidate evidence stand. New P2 R3-01 identifies missing Codex NC1/NC2 answers; original NC1 commentary recovered, NC2/full baseline still open. This is returned independent review, not final approval; earlier preparation wording below is historical.
+
+**Current handoff:** [R3 implementation packet](03-implementation-review.md) has received the independent review linked above; use the packet/read set for follow-up. The [A1–A9 ledger](../../../../projects/revit-readiness/docs/verification/2026-10-22-r3-acceptance.md) distinguishes passed evidence from known defects/unverified items. Current-source offline checks and retained-evidence replay pass. Installed normal builds differ from the current source. No independent finding closure or overall acceptance is claimed; earlier R1/R2 and Task2–6 closures retain their original scopes.
 
 ## Historical checkpoint narrative
 
@@ -20,7 +22,7 @@ An external reviewer is a person or separately run agent who did not author this
 |---|---|---|---|---|
 | R1: spec | [Spec packet](01-spec-review.md), spec, baseline source/research/oracle, [feedback/dispositions](2026-10-20-r1-feedback.md) | Correct problem, architecture, provenance, failure behavior, independently checkable acceptance | Review report, dispositions, revised spec revision/commit, explicit author approval | All three findings externally closed; revision 2 author-approved at 0ef8cda |
 | R2: plan | [Plan review instructions](02-plan-review.md), approved spec, actual written plan | Feasible tasks, tests, order, deployment, rollback, review/evidence checkpoints | Review report, dispositions, revised plan commit, author approval and execution choice | All four findings externally closed at plan level on cfbfe04; author approved revision 2 and selected Native |
-| R3: code and evidence | [Implementation review instructions](03-implementation-review.md), exact diff and runtime evidence | Implementation meets approved contract, licensing/provenance, regression and host evidence | Review report, correction tests/evidence, remaining limits, author disposition | Packet prepared with explicit open items at implementation627e227; independent R3 and final acceptance pending |
+| R3: code and evidence | [Implementation review instructions](03-implementation-review.md), exact diff and runtime evidence | Implementation meets approved contract, licensing/provenance, regression and host evidence | Review report, correction tests/evidence, remaining limits, author disposition | R3 returned for packet0489c54: R3-01 and existing acceptance gaps remain open; no full acceptance |
 
 These are build-process sessions outside the two one-hour seminar agenda. The seminar can show selected prompts, findings, and corrections; attendees can repeat the full workflow afterward. No external message, public upload, new chat, or reviewer assignment is implied by preparing these files.
 
@@ -56,6 +58,7 @@ Use a new review context to reduce reliance on the implementer's conversation. A
 | Author plan decision, 2026-10-20 | Author | Plan revision 2 at `cfbfe043bd6c4d0627424ea3b099d0007459cb91` | Approved; Native execution, start with both desktop clients |
 | CP0 execution, 2026-10-20 | Implementing agent and author reload | Strict SDK 2.2.0/protocol 2026-07-28 probe | Offline tests pass; both desktops send older initialize handshakes, fail before discovery; Task 2 not started |
 | Compatibility execution, 2026-10-20 | Author instruction; Native implementing agent | Revision 3 compatible host plus strict July regression | Both actual desktops passed synthetic CP0; Task 2 next; full live acceptance pending |
+| External R3 returned, 2026-10-22 | Codex in separate reviewer context, supplied by author | Packet0489c54 / implementation627e227 | Keep acceptance open; one new P2 presentation-evidence gap; known SDK defect reproduced |
 | R3 packet prepared, 2026-10-22 | Implementing agent; author requested handoff | Implementation627e227 plus consolidated evidence and both teaching layers | Ready for independent review with open items; not submitted or approved |
 
 The drafting agent's pre-handoff checks are recorded in [self-review](00-authoring-self-review.md). Update this log with actual dates, identities, full reviewed revisions, findings, and dispositions as the sessions happen. Do not substitute a change of status text for evidence of review.

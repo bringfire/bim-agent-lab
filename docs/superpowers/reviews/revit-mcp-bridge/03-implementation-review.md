@@ -1,6 +1,6 @@
 # R3: Revit MCP implementation and acceptance review packet
 
-**Prepared for independent review, with open acceptance items. Not approved for final acceptance or release.** No external reviewer has been assigned or contacted by preparing this packet. The author hands over the committed tree; returned review and author dispositions remain separate.
+**Independent R3 has returned for packet 0489c54708737488b1bc7ae0e4279960bbda759c: keep full acceptance open.** Read [original feedback and separate implementer dispositions](2026-10-22-r3-feedback.md) before preparing follow-up. R3-01 concerns missing Codex presentation evidence; NC1 recovery is partial and not independent closure. Original review scope/read set below remains applicable; no final acceptance or release approval is implied.
 
 ## Exact review target
 
@@ -62,4 +62,4 @@ These are questions, not new requirements or invented findings. Support findings
 
 > Independently review this Revit MCP bridge at the supplied full packet SHA, implementation head 627e227c8054feaf91539976b32dd09228c4e93f and baseline ff8a4f359fd0a9ff9147cab366a9cb81683a98cc. Follow this packet's read set, approved spec/plan revision 3 and compatibility amendment. Inspect source and retained evidence against A1–A9, address O1–O7 and trace the five operations. This handoff has open items; it does not assert full acceptance. Distinguish checks you run from supplied captures. Return prioritized findings, locations, failure scenarios, minimal corrections, verification and limitations. State what can close and what cannot. Do not change requirements or edit the repository during review.
 
-Use the [external review form](../../../../templates/external-review.md). Record reviewer identity/type, date, exact commits, read set and checks actually performed. Preserve the original returned report, then record author accept/reject/defer dispositions separately. An independent recommendation is not author approval. No R3 findings or approval have been fabricated.
+Use the [external review form](../../../../templates/external-review.md). Record reviewer identity/type, date, exact commits, read set and checks actually performed. Preserve the original returned report, then record author accept/reject/defer dispositions separately. An independent recommendation is not author approval. The original R3 report is retained separately; no independent follow-up closure or author approval is implied by the implementer response.

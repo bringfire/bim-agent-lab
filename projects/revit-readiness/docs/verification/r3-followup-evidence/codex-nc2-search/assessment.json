@@ -1,0 +1,11 @@
+{
+  "case": "nc2",
+  "reportRequestId": "fb0ab42a093e4736b8daa3a6b92a54df",
+  "searchedUtcWindow": [
+    "2026-10-22T14:42:00Z",
+    "2026-10-22T15:00:00Z"
+  ],
+  "result": "No sufficient separate interpretation of Codex own report found in inspected public messages. Later commentary attributes its interpretation to Claude; final completion summary repeats the claim under review. Neither is substituted for the missing case answer.",
+  "presentationAcceptance": false,
+  "next": "Fresh full A8 on selected current candidate with actual prompt, answer, request linkage and UI baseline."
+}

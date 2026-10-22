@@ -1,0 +1,14 @@
+{
+  "case": "nc1",
+  "client": "Codex desktop",
+  "reportRequestId": "f4a6209aefb74b64815e1a810ce54d61",
+  "contextRequestId": "40052cb6e20441bdbadc31731709393c",
+  "toolCallId": "call_2a21bbc5401d416a8c521baf70f82c9e",
+  "toolResultUtc": "2026-10-22T14:39:27.378Z",
+  "answerUtc": "2026-10-22T14:40:18.878Z",
+  "messageId": "msg_0c5bd7b3dec5068b016ada204feac88190942eeee7de65c007",
+  "phase": "commentary",
+  "originalCapture": "../../mcp-readiness-evidence/2026-10-22-nc1/codex-nc1/capture.json",
+  "answerSha256": "eec2c516b07a2847b279bbc9feb4a36adbfcb2d4c3abfcff83536cf985aac0b7",
+  "assessment": "Original contemporaneous participant-facing commentary; explicitly rejects readiness despite zero missing values. Implementer assessment only; independent follow-up pending. Does not restore missing historical UI metadata or establish current-source A8."
+}

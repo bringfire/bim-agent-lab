@@ -30,6 +30,19 @@ The [R3 packet](../superpowers/reviews/revit-mcp-bridge/03-implementation-review
 
 > Prepare a review packet at a specific Git commit. For each requirement, show the evidence and whether it came from an automated test, the real application or a prior review. Identify differences between the tested build and current source. List known defects separately from things we have not tested. Give the independent reviewer enough context to challenge the claims without our chat history.
 
-When the review comes back, preserve the original findings, ask about any shared missing concept, and record decisions and correction tests separately. A clean review recommendation still does not replace your decision about accepting the result. Here, the packet is ready to hand over with open items; full R3 and final acceptance have not happened.
+When the review comes back, preserve the original findings, ask about any shared missing concept, and record decisions and correction tests separately. A clean review recommendation still does not replace your decision about accepting the result. At that checkpoint the packet was ready to hand over with open items. The subsequent independent feedback is recorded below; final acceptance remains open.
 
 The [technical companion](../how-to/prepare-r3-evidence.md) gives agents the exact process. The [starting guide](../start-here.md) remains the participant entry point.
+
+
+## What the independent review changed
+
+The author returned the review with **“code review:”** and the reviewer's report. The reviewer supported the technical compatibility change and the recorded computations, but found that our evidence stopped before the last step: what Codex told the participant. The saved tool results correctly said coverage was incomplete. That did not prove the application had explained why zero findings was insufficient to pass.
+
+The agent checked the finding before changing anything. It qualified the claims and recovered one original Codex message from the session history, linked to the recorded NC1 request. That message explicitly said **not a readiness pass**. For NC2, it found commentary about Claude's answer and a later general completion statement. Using that completion statement to prove itself would repeat the mistake. The agent kept the finding open rather than writing a replacement answer and calling it historical evidence.
+
+This extends the earlier lesson about handoffs: verify what the next person or application actually received and did. A compiled file is not necessarily the installed file; stopping a local wait is not necessarily canceling remote work; a correct tool result is not necessarily a correct explanation. The reviewer did not find another cancellation-code defect or recommend another rewrite.
+
+**Suggested participant prompt:** “Show me the exact answer the application gave and the tool result it came from. If the answer was not saved, say so. Keep known results, recovered evidence and tests we still need separate. Use the next verification run to capture the complete chain.”
+
+The [returned review and dispositions](../superpowers/reviews/revit-mcp-bridge/2026-10-22-r3-feedback.md) preserve the independent report, partial recovery and remaining work. A new run on the selected current build can capture Codex's missing baseline and actual answers together; that requires coordinated application testing, not another documentation claim.

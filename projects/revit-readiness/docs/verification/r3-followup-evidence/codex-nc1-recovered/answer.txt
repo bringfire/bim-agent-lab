@@ -1,0 +1,1 @@
+Codex examined 15 of 16 instances and reported the absent identity as a scope issue. It found no missing required values, but `CoverageComplete` is false, so this is **not a readiness pass**. The full result matches the independently prepared expectation.

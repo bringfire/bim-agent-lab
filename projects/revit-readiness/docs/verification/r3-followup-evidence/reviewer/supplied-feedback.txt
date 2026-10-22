@@ -1,0 +1,66 @@
+**Recommendation: keep full acceptance open.** I found one new P2 acceptance-evidence gap and independently reproduced the known SDK cancellation defect. The verified offline and installed-candidate results remain useful; they do not establish full acceptance of the current source.
+
+[Full independent review and verification details](C:/Users/bring/AppData/Local/Temp/codex-r3-independent-review-8c2c2cc4976d438b948afcddaa239601/review.md)
+
+Exact commits reviewed:
+
+| Role | Commit |
+|---|---|
+| Review packet | `0489c54708737488b1bc7ae0e4279960bbda759c` |
+| Implementation head | `627e227c8054feaf91539976b32dd09228c4e93f` |
+| Implementation baseline | `ff8a4f359fd0a9ff9147cab366a9cb81683a98cc` |
+
+The normative target was specification/plan revision 3 plus the author-directed desktop compatibility amendment. I found no objection to the amendment’s implementation: SDK compatibility remains intact, with strict July regression preserved.
+
+**New finding — R3-01, P2: Codex’s incomplete-coverage interpretations are not retained.**
+
+The [matrix claims human-facing interpretations](D:/bim-agent-lab/projects/revit-readiness/docs/verification/mcp-readiness.md:76), but the Codex NC1/NC2 directories contain tool results, wire captures and comparisons—not the corresponding participant-facing answers. Claude’s answers are retained.
+
+The Codex reports correctly preserve the false completeness flags and exact unexamined identities. However, correct tool data cannot establish that Codex explained it correctly. An application could receive those results and still incorrectly announce readiness. This is missing evidence, not evidence that Codex actually gave a wrong answer.
+
+Preserve the original Codex answers with reliable run linkage, or repeat NC1/NC2 and retain the actual prompts, answers, request identities and client/model/permission baseline. Verify that both answers explicitly reject readiness despite zero findings. Until then, qualify the presentation claim.
+
+::code-comment{title="[P2] Retain Codex’s incomplete-coverage answers" body="The retained Codex NC1/NC2 captures prove correct tool reports, but contain no participant-facing answers. Claude answers are retained. Specification §8.1 requires both the raw result and each application's response, so this statement exceeds the available presentation evidence. Preserve the original Codex answers with run linkage, or repeat the controls and retain their actual answers; independently verify that neither declares readiness from zero findings." file="D:/bim-agent-lab/projects/revit-readiness/docs/verification/mcp-readiness.md" start=76 priority=2}
+
+**A1–A9 dispositions**
+
+| Requirement | Disposition |
+|---|---|
+| **A1 — Dependencies/provenance** | Technical scope passes: exact SDK pins, runtime separation, attributed stdin adaptation and notices are supported. Distribution decisions remain open. |
+| **A2 — MCP contract** | Server contract and three-revision compatibility pass. Token-only SDK cancellation and desktop Stop are separate unresolved claims. |
+| **A3 — IPC/lifetimes** | Windows/bridge scope passes on both runtimes. Original budgets, bounded retention, cancellation and cleanup separation are supported. |
+| **A4 — Access/selection** | Prescribed Windows checks and source review pass with disclosed cross-machine, alternate-logon and two-real-host limitations. |
+| **A5 — Host lifecycle** | Qualified installed-candidate evidence passes for recorded scenarios. Final native overlap limitations and current-build live verification remain open. |
+| **A6 — BIM results** | Pass for the recorded installed candidate: all 15 report comparisons and both unexpired desktop switch/recovery comparisons. |
+| **A7 — Read-only/exports** | Supported by source, modified-state evidence, post-close hashes, manual exports and fresh regression checks. |
+| **A8 — Both desktops** | **Open:** missing Codex presentation evidence and model/permission baseline; no current-source desktop acceptance. |
+| **A9 — Reproducibility/review** | **Open:** record this review, corrections and separate author dispositions before completion. |
+
+**Explicit treatment of O1–O7**
+
+| Item | Conclusion and minimum next evidence |
+|---|---|
+| **O1 — Source/binary mismatch** | Confirmed. Live normal host `9a93f6d` and server `d88de67` differ from `627e227`. Select and hash the final candidate, then rerun affected live cases as [Task 9 requires](D:/bim-agent-lab/docs/superpowers/plans/2026-10-20-revit-mcp-bridge.md:349). Diagnostic code does not establish normal-build equivalence. |
+| **O2 — SDK cancellation** | **Still defective.** My propagation probe failed all three token-only cases; explicit controls passed. Keep the failing probe. Test actual desktop Stop before claiming its behavior. The author’s explicit-notification decision remains a valid test approach, not a fix. |
+| **O3 — Native scheduling** | Accepted/Pending and queued shutdown are demonstrated. Unavailable Denied/TimedOut outcomes may remain disclosed. Actual final-shutdown Raise overlap remains unproven; obtain a feasible observation or an explicit supported limitation/disposition. Injected Stop and diagnostic holds do not prove uninstrumented shutdown timing. |
+| **O4 — Access/instances** | Disclosed limitations are appropriate. The specification permits disclosure of unperformed cross-machine tests; the plan leaves two-real-host observations unverified when unavailable. Do not convert these into passing claims. |
+| **O5 — Desktop metadata** | Open. Capture a properly recorded Codex baseline and full A8 sequence. Historical settings cannot be reconstructed from today’s configuration. Combine this with R3-01 and current-candidate testing. |
+| **O6 — Prior failures/warnings** | Preserve them. My All run passed the intermittent driver case, but that does not diagnose it. The null plan summary remains unusable; valid receipts independently support recovery. Four CA1416 warnings reproduced. |
+| **O7 — Review/distribution** | This returns R3 feedback; it does not grant acceptance. Original-material licensing, public hosting and packaging remain separate author decisions. |
+
+**Checks I personally ran**
+
+- **All suite passed:** 41 deployment, 72 tools, 88/83 dispatch, 10 adapter handoff, 53 pipe per runtime, 33 foundation per runtime, bilateral exchanges and protocol/driver checks—including strict July.
+- **Readiness/Excel/isolation passed:** 18 core and seven Excel tests plus isolated export.
+- **Locked build passed:** Revit API/net48 build and x64 net10 publish; no installation.
+- **Cancellation propagation probe exited 1:** three token-only failures; three explicit controls and mechanism test passed. All six child servers exited naturally.
+- **Evidence replay passed:** 1,838 hashes across 21 manifests, 15 case comparisons, two switch/recovery comparisons and the retained lifecycle/diagnostic checks.
+- Independently verified **244 source identities**, **97 installed targets**, **164 recovery files**, receipt identity/state and direct physical paths.
+- License/notice hashes matched; the fresh dated NuGet query listed no vulnerable packages.
+- Diff checks passed; tracked checkout remains clean.
+
+I inspected the required documents, relevant production paths, installer/recovery code, oracle/comparators, raw reports/traffic/traces, native schedule screenshots and retained answers. Historical live execution and recovery remain **supplied evidence**. I performed no Revit/desktop interaction, installation, settings change, tracked edit or application termination.
+
+The shared remaining issue is **proof across the final handoff**: source to installed binary, cancellation intent to receiving-side invalidation, and tool data to participant-facing interpretation. The packet already recognizes the first two; R3-01 identifies the missing last-consumer evidence. The reviewed cancellation ownership model is substantially improved, and this review did not establish another production cancellation variant.
+
+The scoped Task 2–6 closures, technical compatibility amendment review, recorded installed-candidate computation and demonstrated recovery/shutdown results can stand. **Tasks 7–9 and overall acceptance remain open** until the additional evidence and author dispositions above are recorded.

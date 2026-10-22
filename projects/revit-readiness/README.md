@@ -1,6 +1,8 @@
 # Revit readiness
 
-**Acceptance status:** [R3 is prepared for independent review](../../docs/superpowers/reviews/revit-mcp-bridge/03-implementation-review.md), with [passed scopes and remaining gaps](docs/verification/2026-10-22-r3-acceptance.md). Current source differs from the normal build used in live tests; no full acceptance or release approval is claimed.
+**R3 feedback returned:** [review and dispositions](../../docs/superpowers/reviews/revit-mcp-bridge/2026-10-22-r3-feedback.md) keep acceptance open. The recorded report computations remain supported; Codex presentation evidence, baseline and current-source live verification still need completion. The current task records the review and corrections without deploying or changing application settings.
+
+**Acceptance status:** [R3 has returned with open acceptance items](../../docs/superpowers/reviews/revit-mcp-bridge/03-implementation-review.md), with [passed scopes and remaining gaps](docs/verification/2026-10-22-r3-acceptance.md). Current source differs from the normal build used in live tests; no full acceptance or release approval is claimed.
 
 The first BIM Agent Lab example helps wall and ceiling professionals check whether a declared set of model elements meets a written information checklist. Start with the [participant guide](../../docs/start-here.md); an agent reproducing or extending the example should read the [technical handoff](../../docs/how-to/agent-handoff.md) and [project guidance](AGENTS.md).
 

@@ -990,3 +990,12 @@ Implementation head is 627e227; installed host 9a93f6d/server d88de67 and diagno
 Consolidation made gaps explicit: the current normal build has not had the affected live tests; the SDK token-only cancellation defect remains; desktop Stop and some native/access/instance scenarios are unverified; Codex's exact AI model/permission baseline was not retained. The earlier driver timeout and malformed auxiliary recovery-plan capture remain visible. Independent full R3 and author disposition are pending. No production/dependency/install/settings changes occurred; existing servers were left alone.
 
 The [participant story](../tutorials/15-prepare-an-evidence-based-review.md) explains how the author asked the agent to make its claims assessable. The [technical procedure](../how-to/prepare-r3-evidence.md) supplies exact scope, replay commands, evidence ownership and review boundaries. The packet's later Git commit identifies this documentation/evidence handoff, not a newly tested live binary.
+
+
+## October 22 — Respond to independent R3 without extending the claims
+
+Actual author message: **“code review:”**, with the returned independent report for packet0489c54. The [original report and separate implementer dispositions](../superpowers/reviews/revit-mcp-bridge/2026-10-22-r3-feedback.md) preserve the recommendation to keep acceptance open. Technical compatibility, offline checks and recorded installed-candidate computations remain supported. The reviewer independently reproduced the known SDK client defect; it found no new production-code defect.
+
+R3-01 identified missing Codex participant-facing NC1/NC2 answers despite correct retained tool results. The agent verified the gap, qualified the matrix/A8 claims and recovered the original NC1 commentary through public session records with exact request linkage. It did not treat NC2's later summary of Claude or a broad completion claim as equivalent evidence. R3-01, historical Codex baseline and current-source live acceptance remain open. Original case captures/manifests are unchanged.
+
+Both teaching layers now carry the reviewer's shared concept: proof must reach the last consumer. The presentation gate requires actual prompt/answer, request/candidate linkage, baseline and semantic assessment for both applications. Fresh current-candidate A8 is the next coordinated evidence step, not an excuse to reconstruct historical metadata. This response made no production, dependency, installation, settings or application-process changes; no external follow-up or author approval is invented.

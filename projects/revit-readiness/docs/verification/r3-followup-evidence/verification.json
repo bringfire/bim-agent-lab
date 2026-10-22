@@ -1,0 +1,38 @@
+{
+  "recoveredRecordHashesVerified": 6,
+  "nc1OriginalToolOutputEqualsRetainedStructuredContent": true,
+  "nc1AnswerEqualsOriginalPublicMessage": true,
+  "nc1RequestId": "f4a6209aefb74b64815e1a810ce54d61",
+  "nc1AnswerSha256": "eec2c516b07a2847b279bbc9feb4a36adbfcb2d4c3abfcff83536cf985aac0b7",
+  "originalReportSha256": "108c309f635ba09ac1ae6ccd9b5575b721a0f3764bac1d68bab8cd41e733c576",
+  "nc1SemanticAssessment": {
+    "assessor": "Implementing agent, not independent reviewer",
+    "observations": [
+      "15 of 16 examined",
+      "absent identity described as scope issue",
+      "no missing required values",
+      "CoverageComplete false",
+      "explicitly not a readiness pass"
+    ],
+    "result": "supported historical commentary; independent follow-up pending"
+  },
+  "nc2PresentationAcceptance": false,
+  "presentationCompletenessGate": "NOT MET",
+  "historicalCodexBaseline": "not reconstructed",
+  "productionChanges": false,
+  "newLiveExecution": false,
+  "originalCaptureReplay": {
+    "pass": true,
+    "manifests": 21,
+    "hashEntriesVerified": 1838,
+    "caseAndSwitchComparisons": 17,
+    "scope": "Fresh read-only replay of the same unchanged original artifacts; no new live test."
+  },
+  "reviewerSdkCaptureReplay": {
+    "exchanges": 6,
+    "mechanismControl": true,
+    "characterizationPass": true,
+    "knownTokenPropagationFailuresRemain": 3,
+    "newSdkProcessRun": false
+  }
+}

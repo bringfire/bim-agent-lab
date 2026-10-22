@@ -1,6 +1,8 @@
 # BIM Agent Lab
 
-**Current review checkpoint:** the [R3 packet](docs/superpowers/reviews/revit-mcp-bridge/03-implementation-review.md) and [A1–A9 ledger](projects/revit-readiness/docs/verification/2026-10-22-r3-acceptance.md) identify passed evidence and open items. Independent review and final acceptance remain pending; this is not a finished public release.
+**R3 feedback returned:** [review and dispositions](docs/superpowers/reviews/revit-mcp-bridge/2026-10-22-r3-feedback.md) keep acceptance open. The recorded report computations remain supported; Codex presentation evidence, baseline and current-source live verification still need completion. The current task records the review and corrections without deploying or changing application settings.
+
+**Current review checkpoint:** the [R3 packet](docs/superpowers/reviews/revit-mcp-bridge/03-implementation-review.md) and [A1–A9 ledger](projects/revit-readiness/docs/verification/2026-10-22-r3-acceptance.md) identify passed evidence and open items. Independent follow-up and final acceptance remain pending; this is not a finished public release.
 
 Learn to build and extend BIM tools with AI coding agents—from research and Git to working plugins and MCP servers.
 

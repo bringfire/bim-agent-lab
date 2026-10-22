@@ -1,5 +1,7 @@
 # Verify readiness through both desktop agents
 
+**R3 correction:** [R3-01](../superpowers/reviews/revit-mcp-bridge/2026-10-22-r3-feedback.md) shows that correct tool reports alone cannot establish participant-facing interpretation. Apply the [presentation completeness gate](../../projects/revit-readiness/docs/verification/r3-followup-evidence/README.md#presentation-completeness-gate) to **both** desktops, including Codex in this implementing conversation. Retain its actual prompt/answer with message and request identities, not only Claude’s pasted answers. The gate is currently not met; source/build/UI-baseline gaps remain separate.
+
 Participant companion: [Test the answer, not just the connection](../tutorials/14-test-readiness-through-desktop-agents.md). Binding requirements: [plan Task 8](../superpowers/plans/2026-10-20-revit-mcp-bridge.md) and [specification](../superpowers/specs/2026-10-20-revit-mcp-bridge-design.md). Results: [live comparison record](../../projects/revit-readiness/docs/verification/mcp-readiness.md).
 
 ## Preserve the installed baseline

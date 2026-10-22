@@ -2,7 +2,7 @@
 
 **Consolidated acceptance:** the [A1–A9 ledger](2026-10-22-r3-acceptance.md) supersedes stale pending statements in chronological sections below. The five-case desktop matrix is retained evidence for the recorded installed candidate; overall acceptance remains open. [R3 packet](../../../../docs/superpowers/reviews/revit-mcp-bridge/03-implementation-review.md).
 
-Date: 2026-10-22. All five sample comparisons and both desktop context-switch/recovery tests are verified. Task 8 workflow consolidation and R3 remain open; this is not full acceptance closure.
+Date: 2026-10-22. All five **tool report/wire** comparisons and both desktop context-switch/recovery tests are verified. Returned R3 identifies missing Codex presentation evidence; A8 and full acceptance remain open. See [R3 feedback/dispositions](../../../../docs/superpowers/reviews/revit-mcp-bridge/2026-10-22-r3-feedback.md).
 
 Baseline: source checkpoint `6f0c1523f1e4d7eac03f46d6ad6573565e96b6b4`; normal Revit host `9a93f6d`, installed external server `d88de67`; Revit 2024 build 24.3.60.12, PID 149972, bridge session `a3163353950948eabd8cfb8a4955d860`. No production, dependency, installation or desktop configuration changes in this increment.
 
@@ -10,7 +10,7 @@ Required desktop baseline: Codex app 26.1016.6573.0 / wire client 0.163.0-alpha.
 
 The [earlier continuity record](2026-10-22-desktop-readiness.md) proves the clean saved-as model through Codex and Claude and distinguishes Claude's human-confirmed UI from its wire name. It does not replace the independent five-case comparisons below.
 
-| Case | Independent expected outcome | Codex | Claude Chat | SDK July |
+| Case | Independent expected outcome | Codex report/wire | Claude Chat report/wire | SDK July report/wire |
 |---|---|---|---|---|
 | Complete | 16 examined, 0 findings, both complete | Verified | Verified | Verified |
 | Wall defects | 2 findings, 6 affected, both complete | Verified | Verified | Verified |
@@ -73,7 +73,7 @@ The author used Revit's native Select by ID on the principal complete model. The
 
 [NC2 captures](mcp-readiness-evidence/2026-10-22-nc2/evidence-manifest.json) likewise match through all three clients: 16 requested/16 examined, zero findings, no ScopeIssues, exactly CACT-01/02 (2492802/2492809) unexamined. All three ACT fields are `Unexamined` / `NoMatchingRequirement`, required/source null, observed Code `C-ACT` preserved. Both completeness flags are false; 1,196 other host instances and six links excluded. [Claude's answer](mcp-readiness-evidence/2026-10-22-nc2/claude-nc2/answer.txt) correctly explains that found elements cannot be judged without a rule and does not infer missing requirements or declare a pass. Both controls have false modified-before/after flags. After the author closed both remaining model files without saving, [all five model and five checklist hashes](mcp-readiness-evidence/2026-10-22-nc2/all-samples-post-close-hashes.json) matched their pre-test values. Revit remains open with the sample documents closed.
 
-All five cases now have actual desktop reports and human-facing interpretations, plus separate July SDK evidence. Full Task 8/A8 closure still requires reproducible workflow consolidation and acceptance review; remaining Task 7 observations and R3 are separate. The planned `Invoke-ReadinessMcp.ps1` wrapper is not yet supplied; current live SDK captures use the existing official-SDK driver directly, with independently prepared expectations and separate comparisons.
+All five cases have verified actual desktop **reports**, plus separate July SDK evidence. Claude answers are retained. R3-01 established that the Codex NC1/NC2 folders did not retain the corresponding public answers, so the earlier blanket interpretation claim was unsupported. The [original NC1 commentary](r3-followup-evidence/codex-nc1-recovered/answer.txt) has now been recovered with request linkage; an adequate independent Codex NC2 interpretation remains missing. Historical Codex UI metadata and current-source desktop acceptance also remain open. See the [presentation completeness gate](r3-followup-evidence/README.md#presentation-completeness-gate). Full Task 8/A8 closure still requires that evidence and independent follow-up; remaining Task 7 observations and overall acceptance are separate. At the original sample-test checkpoint these SDK captures used the official-SDK driver directly; the wrapper was subsequently implemented and exercised, as recorded in the [runner follow-up](2026-10-22-readiness-runner.md) and [post-reinstall read](2026-10-22-shared-recovery-execution.md#fresh-revit-recovery-passes).
 
 ## Verification work
 
