@@ -46,3 +46,13 @@ This extends the earlier lesson about handoffs: verify what the next person or a
 **Suggested participant prompt:** “Show me the exact answer the application gave and the tool result it came from. If the answer was not saved, say so. Keep known results, recovered evidence and tests we still need separate. Use the next verification run to capture the complete chain.”
 
 The [returned review and dispositions](../superpowers/reviews/revit-mcp-bridge/2026-10-22-r3-feedback.md) preserve the independent report, partial recovery and remaining work. A new run on the selected current build can capture Codex's missing baseline and actual answers together; that requires coordinated application testing, not another documentation claim.
+
+## Freeze the example you are testing
+
+The next [independent follow-up](../superpowers/reviews/revit-mcp-bridge/2026-10-22-r3-follow-up.md) accepted the recovered NC1 answer and directed the agent to continue. It also made an important condition explicit: record the exact build being tested and keep it unchanged during acceptance. Otherwise, individually convincing demonstrations could describe different versions of the plugin.
+
+The person did not ask for another rewrite. They asked the agent to carry out the existing verification sequence with better evidence. The agent rebuilt the normal candidate, saved a separate package with file fingerprints, and checked the recovery material before touching the installed plugin. The person only needs to coordinate application availability and the Revit actions that require its interface. The agent handles preparation, comparisons and records.
+
+**Suggested participant prompt:** “Freeze the version we are about to test. Record which source commit produced it, which files are installed and how we can restore the previous installation. Keep it unchanged while we test both apps. Save what each app actually tells me, including incomplete results. Tell me precisely which Revit action you need next.”
+
+There are two different checkpoints: a package ready to install, and that exact package installed and ready to test. Preparing the first does not establish the second. Similarly, diagnostic controls can show that cleanup happens in the intended order, but they do not establish the normal application's shutdown time. The [current-candidate record](../../projects/revit-readiness/docs/verification/2026-10-22-r3-current-candidate.md) keeps these distinctions visible as the work proceeds.

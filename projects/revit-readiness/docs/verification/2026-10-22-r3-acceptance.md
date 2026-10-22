@@ -1,5 +1,7 @@
 # R3 acceptance evidence ledger — October 22, 2026
 
+**Latest follow-up:** historical NC1 presentation is [independently closed](../../../../docs/superpowers/reviews/revit-mcp-bridge/2026-10-22-r3-follow-up.md). NC2, the missing Codex baseline and current-build acceptance remain open. The [new normal candidate](2026-10-22-r3-current-candidate.md) is being prepared for the full documented sequence; preparation is not installation or live acceptance. Earlier rows below retain their reviewed scope.
+
 **Presentation evidence correction:** a correct tool report does not establish a correct participant-facing answer. [R3-01](../../../../docs/superpowers/reviews/revit-mcp-bridge/2026-10-22-r3-feedback.md#r3-01--p2-incomplete-coverage-answers-were-not-retained) remains open. The [presentation gate](r3-followup-evidence/README.md#presentation-completeness-gate) is NOT MET even though report replay passes. No original case capture or old evidence manifest was changed.
 
 **Independent R3 returned: keep full acceptance open.** See [original feedback and separate implementer dispositions](../../../../docs/superpowers/reviews/revit-mcp-bridge/2026-10-22-r3-feedback.md), including new P2 R3-01. This ledger consolidates evidence rather than changing the approved requirements. The [R3 packet](../../../../docs/superpowers/reviews/revit-mcp-bridge/03-implementation-review.md) supplies the exact review scope and questions. The review supports scoped technical and installed-candidate results; it does not close A8/A9, Tasks 7–9 or author acceptance.

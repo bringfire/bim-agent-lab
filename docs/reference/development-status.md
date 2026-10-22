@@ -2,6 +2,8 @@
 
 The current review handoff is the [R3 packet](../superpowers/reviews/revit-mcp-bridge/03-implementation-review.md). Fresh full offline/build checks and retained-evidence replay pass; independent R3 has now returned and [requires further acceptance evidence](../superpowers/reviews/revit-mcp-bridge/2026-10-22-r3-feedback.md).
 
+The [follow-up on 9c27d50](../superpowers/reviews/revit-mcp-bridge/2026-10-22-r3-follow-up.md) independently closes historical NC1 presentation. The [normal candidate built from that commit](../../projects/revit-readiness/docs/verification/2026-10-22-r3-current-candidate.md) is frozen for coordinated installation and full desktop verification. NC2, Codex baseline and current-build acceptance remain open; freezing a package does not establish installed or live acceptance.
+
 ## Current snapshot — October 22, 2026
 
 Start with the [participant guide](../start-here.md) or [agent handoff](../how-to/agent-handoff.md). Actual queued shutdown and diagnostic-layer restoration have evidence. The author approved continued explicit cancellation with the SDK limitation retained; [all three shared layers have now been restored and the exact build reinstalled](../../projects/revit-readiness/docs/verification/2026-10-22-shared-recovery-execution.md). Fresh startup/read after this reinstall now passes; overall acceptance remains open.

@@ -1,0 +1,12 @@
+{
+  "completedUtc": "2026-10-22T20:28:58.7266959Z",
+  "allExitCode": 0,
+  "readinessExitCode": 0,
+  "frozenServerProtocols": [
+    "2025-06-18",
+    "2025-11-25",
+    "2026-07-28"
+  ],
+  "expected": "BridgeUnavailable",
+  "liveAcceptance": false
+}

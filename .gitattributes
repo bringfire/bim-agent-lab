@@ -48,3 +48,4 @@ projects/revit-readiness/docs/verification/sdk-cancellation-evidence/** -text -w
 projects/revit-readiness/docs/verification/shared-recovery-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/r3-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/r3-followup-evidence/** -text -whitespace
+projects/revit-readiness/docs/verification/r3-current-candidate-evidence/** -text -whitespace

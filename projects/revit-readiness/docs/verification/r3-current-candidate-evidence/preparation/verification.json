@@ -1,0 +1,22 @@
+{
+  "checkedUtc": "2026-10-22T20:30:18.323921+00:00",
+  "buildCommit": "9c27d50b5ce2f7763093abf2cbb2db0916ce05d6",
+  "frozenPackageFilesUnchanged": 84,
+  "sourceInputsUnchanged": 131,
+  "additionalBuildInputs": 1,
+  "priorInstalledTargetsUnchanged": 97,
+  "priorRecoveryBytesVerified": 164,
+  "originalFollowUpEvidenceUnchanged": 53,
+  "allOfflineSuites": true,
+  "readinessExcelIsolation": true,
+  "frozenServerDiscoveryAndBridgeUnavailable": [
+    "2025-06-18",
+    "2025-11-25",
+    "2026-07-28"
+  ],
+  "strictJulyAndLegacyRejection": "Passed in All suite; separate from frozen server compatible calls",
+  "ca1416Warnings": 4,
+  "newInstallation": false,
+  "newLiveAcceptance": false,
+  "fullAcceptance": "Open"
+}

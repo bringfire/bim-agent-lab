@@ -1,0 +1,14 @@
+{
+  "buildCommit": "9c27d50b5ce2f7763093abf2cbb2db0916ce05d6",
+  "sourceTree": "aea2b3665d4c3ca72845e84c98dc2500b51bce08",
+  "normalBuild": true,
+  "diagnosticCandidate": false,
+  "frozenUtc": "2026-10-22T20:19:33.327877+00:00",
+  "packageFiles": 84,
+  "packageManifestSha256": "6870CFC1A8FC0B38AFED9BDD7C7A911F706843A381975B1BF70F7EC713E37AB8",
+  "sourceInputs": 131,
+  "sourceManifestSha256": "522C88A0968BA2405E3CF5B19F9E7AA9FE9B749AC8BD8908A32200A82D4421D0",
+  "priorTargets": 97,
+  "priorRecoveryFiles": 164,
+  "installedCandidate": false
+}

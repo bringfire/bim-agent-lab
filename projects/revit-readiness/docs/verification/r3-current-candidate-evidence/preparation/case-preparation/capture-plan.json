@@ -1,0 +1,99 @@
+{
+  "buildCommit": "9c27d50b5ce2f7763093abf2cbb2db0916ce05d6",
+  "installedCandidateFrozen": false,
+  "candidatePolicy": "Do not replace/rebuild installed acceptance binaries during this sequence. Any candidate change starts a new sequence.",
+  "baselineRequired": [
+    "application version",
+    "actual AI model label",
+    "UI surface",
+    "permission mode",
+    "full relevant launch settings",
+    "negotiated protocol",
+    "installed hashes",
+    "receipt",
+    "fresh Revit PID/session"
+  ],
+  "perCaseRequired": [
+    "actual user prompt",
+    "actual public answer and message identity/time",
+    "tool request ID",
+    "unchanged wire and tool result",
+    "independent comparison",
+    "separate presentation assessment",
+    "modified flags and post-close file hashes"
+  ],
+  "desktops": [
+    {
+      "application": "Codex desktop",
+      "discovery": "Pending",
+      "baseline": "Pending",
+      "cases": [
+        {
+          "case": "complete",
+          "data": "Pending",
+          "presentation": "Pending"
+        },
+        {
+          "case": "wall-defects",
+          "data": "Pending",
+          "presentation": "Pending"
+        },
+        {
+          "case": "ceiling-negative",
+          "data": "Pending",
+          "presentation": "Pending"
+        },
+        {
+          "case": "nc1",
+          "data": "Pending",
+          "presentation": "Pending"
+        },
+        {
+          "case": "nc2",
+          "data": "Pending",
+          "presentation": "Pending"
+        }
+      ],
+      "unexpiredStaleRejection": "Pending",
+      "freshContextRecovery": "Pending"
+    },
+    {
+      "application": "Claude Desktop Chat",
+      "discovery": "Pending",
+      "baseline": "Pending",
+      "cases": [
+        {
+          "case": "complete",
+          "data": "Pending",
+          "presentation": "Pending"
+        },
+        {
+          "case": "wall-defects",
+          "data": "Pending",
+          "presentation": "Pending"
+        },
+        {
+          "case": "ceiling-negative",
+          "data": "Pending",
+          "presentation": "Pending"
+        },
+        {
+          "case": "nc1",
+          "data": "Pending",
+          "presentation": "Pending"
+        },
+        {
+          "case": "nc2",
+          "data": "Pending",
+          "presentation": "Pending"
+        }
+      ],
+      "unexpiredStaleRejection": "Pending",
+      "freshContextRecovery": "Pending"
+    }
+  ],
+  "supplementalJulySdk": "Pending live; offline frozen binary control separate",
+  "nativeHostChecks": "Pending normal candidate; diagnostic evidence remains separately labelled",
+  "desktopStop": "Unverified; explicit SDK controls are not a substitute",
+  "finalAcceptance": "Open"
+}

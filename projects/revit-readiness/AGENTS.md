@@ -1,6 +1,6 @@
 # Revit readiness guidance
 
-**Latest R3 disposition:** the [independent review](../../docs/superpowers/reviews/revit-mcp-bridge/2026-10-22-r3-feedback.md) has returned for packet0489c54. Scoped technical/installed-candidate passes stand; full acceptance stays open. R3-01 identifies missing Codex participant-facing answers. NC1 original commentary has been recovered with linkage; NC2 and proper UI baseline/current-source desktop verification remain open. Retain prompt, answer, request identity and baseline through the last consumer. Do not infer presentation from tool JSON or close the finding from a partial recovery. No new production defect or cancellation rewrite was requested.
+**Latest R3 disposition:** the [independent follow-up on 9c27d50](../../docs/superpowers/reviews/revit-mcp-bridge/2026-10-22-r3-follow-up.md) closes historical NC1 presentation. NC2, Codex baseline and current-build acceptance remain open. Continue the [frozen normal candidate sequence](docs/verification/2026-10-22-r3-current-candidate.md): actual build commit, immutable package, recoverable installation, installed hashes, then both desktop sequences with actual answers. Do not infer presentation from tool JSON. Keep diagnostic ordering separate from normal shutdown timing; desktop Stop and unavailable native observations require their own evidence/disposition. No new production defect or cancellation rewrite was requested.
 
 ## Current entry point — October 22, 2026
 
