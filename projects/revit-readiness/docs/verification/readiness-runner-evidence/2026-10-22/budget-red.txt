@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_budget_is_not_restarted_for_verification (__main__.RunnerTests.test_budget_is_not_restarted_for_verification)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 162, in test_budget_is_not_restarted_for_verification
+    self.assertFalse(ok, 'An expired original budget must prevent success publication.')
+AssertionError: True is not false : An expired original budget must prevent success publication.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.758s
+
+FAILED (failures=1)

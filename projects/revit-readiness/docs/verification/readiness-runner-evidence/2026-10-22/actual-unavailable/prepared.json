@@ -1,0 +1,101 @@
+{
+  "runId": "d87dd2978df24c41b25a57fe70cd0bd7",
+  "startedUtc": "2026-10-22T15:19:37.586346+00:00",
+  "budgetSeconds": 15.0,
+  "case": "complete",
+  "protocolVersion": "2026-07-28",
+  "revitPid": 149972,
+  "bridgeSessionId": "a3163353950948eabd8cfb8a4955d860",
+  "command": [
+    "D:\\bim-agent-lab\\projects\\revit-readiness\\tests\\mcp-client\\bin\\Release\\net10.0\\BimAgentLab.Mcp.Client.exe",
+    "--scenario",
+    "readiness",
+    "--server",
+    "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\BimAgentLab.RevitReadiness.Mcp.exe",
+    "--revit-pid",
+    "149972",
+    "--expected",
+    "ReadinessReport",
+    "--protocol",
+    "2026-07-28",
+    "--evidence",
+    "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-runner-offline\\868678053bcb4f3e83a67c3eefd6a06a\\capture",
+    "--pause-file",
+    "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-runner-offline\\868678053bcb4f3e83a67c3eefd6a06a\\release-context"
+  ],
+  "files": [
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-complete.rvt",
+      "sha256": "b4a7a1e1733f857ba9e31a1659594a01076560e31e2f11bb6192789bd64524de"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\models\\BAL-info-complete.checklist.json",
+      "sha256": "6edd2e120d6eb77536afb4d620295b9a5b88bf332730e7cd85303122e50c8729"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\docs\\verification\\required-information-evidence\\BAL-info-complete.checklist.json",
+      "sha256": "6edd2e120d6eb77536afb4d620295b9a5b88bf332730e7cd85303122e50c8729"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\docs\\verification\\required-information-evidence\\BAL-info-wall-defects.checklist.json",
+      "sha256": "b58387090cdd4704086172eb4d45773f3e7e3b36f5d6480226417a82ca695011"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\docs\\verification\\required-information-evidence\\BAL-info-ceiling-negative.checklist.json",
+      "sha256": "3f7c58277f550a1a52b0f75cb9ad2fc818b771b172f91ae0b48ba4e4340a0cc0"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\expected-results\\required-information.md",
+      "sha256": "179e979f6bfa20b83e80847760d8517339e3789efdac0866e4f2d65ca3043acc"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\tests\\fixture-tools\\PrepareInformationFixture.cs",
+      "sha256": "a60535c51a2c85bab41c386ef69c7cb663944b32c8526c6e6e762322555fef9b"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\docs\\verification\\required-information-evidence\\BAL-info-ceiling-negative-ceilings.tsv",
+      "sha256": "3c6c187d132e0e52b6e0cfcaacae44ab22228c86d608d70a7b0b8a658c3432bf"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\docs\\verification\\required-information-evidence\\BAL-info-ceiling-negative-walls.tsv",
+      "sha256": "1a564d3d43c55f46e67336bacb9506ad93707c36408c14587d66f37b573ba70b"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\docs\\verification\\required-information-evidence\\BAL-info-complete-ceilings.tsv",
+      "sha256": "63eacd1e02f24e4ab23148dba72398b5c73d8a357f15232e32f90ba9fb1ed6a2"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\docs\\verification\\required-information-evidence\\BAL-info-complete-walls.tsv",
+      "sha256": "ca220f9d5596a12c1bb1cda764b3fc8a9485b798de994c36edd54a38ae9e76bc"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\docs\\verification\\required-information-evidence\\BAL-info-wall-defects-ceilings.tsv",
+      "sha256": "63eacd1e02f24e4ab23148dba72398b5c73d8a357f15232e32f90ba9fb1ed6a2"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\docs\\verification\\required-information-evidence\\BAL-info-wall-defects-walls.tsv",
+      "sha256": "1a564d3d43c55f46e67336bacb9506ad93707c36408c14587d66f37b573ba70b"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\docs\\verification\\mcp-readiness-evidence\\2026-10-22-complete-and-context-switch\\sdk-july-complete\\expectation.json",
+      "sha256": "a86a8b0ba90703bdd62fbec6f983192b0fe17616c7053c7547df31c852693575"
+    },
+    {
+      "path": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\BimAgentLab.RevitReadiness.Mcp.exe",
+      "sha256": "9deca53fb5d0a35b4fb04e5cce00a0f37481751a55fdd3f7f37b668b74324a4a"
+    },
+    {
+      "path": "C:\\Users\\bring\\.bim-agent-lab\\RevitReadiness\\McpServer\\BimAgentLab.RevitReadiness.Mcp.dll",
+      "sha256": "fe29830ef6dd8bb5709350781011c6f53ae36a492e9ed150d2f601e9c2209670"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\tests\\mcp-client\\bin\\Release\\net10.0\\BimAgentLab.Mcp.Client.exe",
+      "sha256": "4fcd654ab527abcfcf9a5b5d00f05bb1899e00a89cae9f9c43b0a8b84cdd52ac"
+    },
+    {
+      "path": "D:\\bim-agent-lab\\projects\\revit-readiness\\tests\\mcp-client\\bin\\Release\\net10.0\\BimAgentLab.Mcp.Client.dll",
+      "sha256": "5d8c909950d167a98b02020a40b66b5c497e78ac416bc0feacb877e0c40ea0b8"
+    }
+  ],
+  "kind": "SDK capture; not an actual desktop acceptance run"
+}

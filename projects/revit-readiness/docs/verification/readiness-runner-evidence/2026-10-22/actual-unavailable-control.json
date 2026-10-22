@@ -1,0 +1,33 @@
+{
+  "kind": "Actual PowerShell/official SDK with Revit closed; expected unavailable-host control",
+  "evidence": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-runner-offline\\868678053bcb4f3e83a67c3eefd6a06a",
+  "exitCode": 1,
+  "command": [
+    "powershell",
+    "-NoProfile",
+    "-File",
+    "D:\\bim-agent-lab\\projects\\revit-readiness\\scripts\\Invoke-ReadinessMcp.ps1",
+    "-Case",
+    "complete",
+    "-ExpectationPath",
+    "D:\\bim-agent-lab\\projects\\revit-readiness\\docs\\verification\\mcp-readiness-evidence\\2026-10-22-complete-and-context-switch\\sdk-july-complete\\expectation.json",
+    "-EvidenceDirectory",
+    "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-runner-offline\\868678053bcb4f3e83a67c3eefd6a06a",
+    "-RevitPid",
+    "149972",
+    "-TimeoutSeconds",
+    "15"
+  ],
+  "stdout": "",
+  "stderr": "FAIL readiness capture: SDK stopped before context validation (exit 1); inspect retained logs.\nNo successful comparison was published. Preserve any attempt directory; retry with a new directory.\nReadiness capture did not pass. Inspect the retained attempt/logs; use a new directory for retry.\nAt D:\\bim-agent-lab\\projects\\revit-readiness\\scripts\\Invoke-ReadinessMcp.ps1:24 char:5\n+     throw 'Readiness capture did not pass. Inspect the retained attem ...\n+     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\n    + CategoryInfo          : OperationStopped: (Readiness captu...tory for retry.:String) [], RuntimeException\n    + FullyQualifiedErrorId : Readiness capture did not pass. Inspect the retained attempt/logs; use a new directory f \n   or retry.\n \n",
+  "controlPassed": true,
+  "error": {
+    "code": "BridgeUnavailable",
+    "message": "Start a bridge in the selected Revit instance.",
+    "requestId": "b60bf75b20ed4204bb2a64a4b855ed8c",
+    "retryable": true
+  },
+  "readReleased": false,
+  "reportProduced": false,
+  "successPublished": false
+}

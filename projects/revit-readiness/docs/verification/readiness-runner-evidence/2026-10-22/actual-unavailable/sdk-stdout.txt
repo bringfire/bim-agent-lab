@@ -1,0 +1,1 @@
+FAIL SDK readiness: expected=ReadinessReport; evidence=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-runner-offline\868678053bcb4f3e83a67c3eefd6a06a\capture

@@ -1,0 +1,23 @@
+{
+  "kind": "Offline actual SDK control attempt; outcome not yet accepted",
+  "evidence": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-runner-offline\\ee50746e3c2446dba914a1f171a2603b",
+  "exitCode": 1,
+  "command": [
+    "powershell",
+    "-NoProfile",
+    "-File",
+    "D:\\bim-agent-lab\\projects\\revit-readiness\\scripts\\Invoke-ReadinessMcp.ps1",
+    "-Case",
+    "complete",
+    "-ExpectationPath",
+    "D:\\bim-agent-lab\\projects\\revit-readiness\\docs\\verification\\mcp-readiness-evidence\\2026-10-22-complete-and-context-switch\\sdk-july-complete\\expectation.json",
+    "-EvidenceDirectory",
+    "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-runner-offline\\ee50746e3c2446dba914a1f171a2603b",
+    "-RevitPid",
+    "149972",
+    "-TimeoutSeconds",
+    "15"
+  ],
+  "stdout": "",
+  "stderr": "Join-Path : Cannot bind argument to parameter 'Path' because it is an empty string.\nAt D:\\bim-agent-lab\\projects\\revit-readiness\\scripts\\Invoke-ReadinessMcp.ps1:8 char:38\n+     [string]$ClientPath = (Join-Path $PSScriptRoot '../tests/mcp-clie ...\n+                                      ~~~~~~~~~~~~~\n    + CategoryInfo          : InvalidData: (:) [Join-Path], ParentContainsErrorRecordException\n    + FullyQualifiedErrorId : ParameterArgumentValidationErrorEmptyStringNotAllowed,Microsoft.PowerShell.Commands.Join \n   PathCommand\n \n"
+}

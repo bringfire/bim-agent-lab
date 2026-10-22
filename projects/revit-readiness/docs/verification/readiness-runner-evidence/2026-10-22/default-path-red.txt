@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_powershell_default_paths_reach_preflight (__main__.RunnerTests.test_powershell_default_paths_reach_preflight)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 185, in test_powershell_default_paths_reach_preflight
+    self.assertIn('NEW evidence directory', result.stderr,
+AssertionError: 'NEW evidence directory' not found in "Join-Path : Cannot bind argument to parameter 'Path' because it is an empty string.\nAt D:\\bim-agent-lab\\projects\\revit-readiness\\scripts\\Invoke-ReadinessMcp.ps1:8 char:38\n+     [string]$ClientPath = (Join-Path $PSScriptRoot '../tests/mcp-clie ...\n+                                      ~~~~~~~~~~~~~\n    + CategoryInfo          : InvalidData: (:) [Join-Path], ParentContainsErrorRecordException\n    + FullyQualifiedErrorId : ParameterArgumentValidationErrorEmptyStringNotAllowed,Microsoft.PowerShell.Commands.Join \n   PathCommand\n \n" : Default paths must resolve in the script body before Python preflight.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.243s
+
+FAILED (failures=1)

@@ -58,6 +58,12 @@ The author closed both remaining models without saving, and the agent verified t
 
 ## Suggested prompts for your own project
 
+Before moving on to the remaining reliability checks and review, the author said, “ok, let's take these one at a time, then we can refine things.” The agent limited the next increment to a reusable test runner and its teaching notes. The purpose was to make the process repeatable without reopening the whole design or asking the person to repeat all the manual sample steps.
+
+The runner preserves the expected answer before asking the SDK client to read. It checks that the active model really is the prepared sample, keeps unsuccessful attempts, and marks success only when the independent comparison finishes. “Success” here means the tool behaved as expected: correctly reporting a defect or incomplete coverage is a successful test, even though the model does not pass readiness.
+
+The agent used subprocess fixtures for offline tests and clearly separated them from live Revit proof. Trying the actual command with Revit closed also exposed a PowerShell default-path mistake that explicit-path tests had missed. A new test reproduced it before the correction. This illustrates a useful participant request: “Test the command exactly as you expect me to run it, and tell me what still requires the real application.” The wrapper is one step toward a repeatable handoff; broader onboarding and remaining host acceptance are later increments.
+
 These are teaching suggestions, not additional quotations from the author:
 
 - “Prepare the expected answers independently before calling the tool. Show where each expectation comes from.”

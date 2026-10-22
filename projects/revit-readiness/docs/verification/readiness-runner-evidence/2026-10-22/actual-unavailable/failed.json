@@ -1,0 +1,8 @@
+{
+  "failedUtc": "2026-10-22T15:19:43.070351+00:00",
+  "stage": "SDK context acquisition",
+  "errorType": "RuntimeError",
+  "message": "SDK stopped before context validation (exit 1); inspect retained logs.",
+  "cleanupError": null,
+  "sdkExitCode": 1
+}

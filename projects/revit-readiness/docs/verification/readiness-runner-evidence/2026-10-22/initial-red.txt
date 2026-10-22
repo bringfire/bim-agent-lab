@@ -1,0 +1,291 @@
+FFFFFFFFFFFFFFFFFFFFFFFFFF
+======================================================================
+FAIL: test_all_five_cases_publish_only_after_real_comparison (__main__.RunnerTests.test_all_five_cases_publish_only_after_real_comparison) (case='complete')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 77, in test_all_five_cases_publish_only_after_real_comparison
+    ok, result = self.invoke()
+                 ^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_all_five_cases_publish_only_after_real_comparison (__main__.RunnerTests.test_all_five_cases_publish_only_after_real_comparison) (case='wall-defects')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 77, in test_all_five_cases_publish_only_after_real_comparison
+    ok, result = self.invoke()
+                 ^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_all_five_cases_publish_only_after_real_comparison (__main__.RunnerTests.test_all_five_cases_publish_only_after_real_comparison) (case='ceiling-negative')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 77, in test_all_five_cases_publish_only_after_real_comparison
+    ok, result = self.invoke()
+                 ^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_all_five_cases_publish_only_after_real_comparison (__main__.RunnerTests.test_all_five_cases_publish_only_after_real_comparison) (case='nc1')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 77, in test_all_five_cases_publish_only_after_real_comparison
+    ok, result = self.invoke()
+                 ^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_all_five_cases_publish_only_after_real_comparison (__main__.RunnerTests.test_all_five_cases_publish_only_after_real_comparison) (case='nc2')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 77, in test_all_five_cases_publish_only_after_real_comparison
+    ok, result = self.invoke()
+                 ^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_bad_inputs_rejected_before_output_or_process (__main__.RunnerTests.test_bad_inputs_rejected_before_output_or_process) (kind='model')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 101, in test_bad_inputs_rejected_before_output_or_process
+    ok, _ = self.invoke()
+            ^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_bad_inputs_rejected_before_output_or_process (__main__.RunnerTests.test_bad_inputs_rejected_before_output_or_process) (kind='checklist')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 101, in test_bad_inputs_rejected_before_output_or_process
+    ok, _ = self.invoke()
+            ^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_bad_inputs_rejected_before_output_or_process (__main__.RunnerTests.test_bad_inputs_rejected_before_output_or_process) (kind='pid')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 101, in test_bad_inputs_rejected_before_output_or_process
+    ok, _ = self.invoke()
+            ^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_bad_inputs_rejected_before_output_or_process (__main__.RunnerTests.test_bad_inputs_rejected_before_output_or_process) (kind='oracle')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 101, in test_bad_inputs_rejected_before_output_or_process
+    ok, _ = self.invoke()
+            ^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_bad_inputs_rejected_before_output_or_process (__main__.RunnerTests.test_bad_inputs_rejected_before_output_or_process) (kind='unconfirmed-nc1')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 101, in test_bad_inputs_rejected_before_output_or_process
+    ok, _ = self.invoke()
+            ^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_bad_inputs_rejected_before_output_or_process (__main__.RunnerTests.test_bad_inputs_rejected_before_output_or_process) (kind='proof')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 101, in test_bad_inputs_rejected_before_output_or_process
+    ok, _ = self.invoke()
+            ^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_bad_inputs_rejected_before_output_or_process (__main__.RunnerTests.test_bad_inputs_rejected_before_output_or_process) (kind='future')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 101, in test_bad_inputs_rejected_before_output_or_process
+    ok, _ = self.invoke()
+            ^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_existing_attempt_is_never_overwritten (__main__.RunnerTests.test_existing_attempt_is_never_overwritten)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 108, in test_existing_attempt_is_never_overwritten
+    ok, _ = self.invoke()
+            ^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_failed_sdk_or_invalid_capture_cannot_publish_success (__main__.RunnerTests.test_failed_sdk_or_invalid_capture_cannot_publish_success) (mode='exit')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 130, in test_failed_sdk_or_invalid_capture_cannot_publish_success
+    ok, _ = self.invoke(mode)
+            ^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_failed_sdk_or_invalid_capture_cannot_publish_success (__main__.RunnerTests.test_failed_sdk_or_invalid_capture_cannot_publish_success) (mode='corrupt-report')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 130, in test_failed_sdk_or_invalid_capture_cannot_publish_success
+    ok, _ = self.invoke(mode)
+            ^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_failed_sdk_or_invalid_capture_cannot_publish_success (__main__.RunnerTests.test_failed_sdk_or_invalid_capture_cannot_publish_success) (mode='missing-wire')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 130, in test_failed_sdk_or_invalid_capture_cannot_publish_success
+    ok, _ = self.invoke(mode)
+            ^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_failed_sdk_or_invalid_capture_cannot_publish_success (__main__.RunnerTests.test_failed_sdk_or_invalid_capture_cannot_publish_success) (mode='missing-completion')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 130, in test_failed_sdk_or_invalid_capture_cannot_publish_success
+    ok, _ = self.invoke(mode)
+            ^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_failed_sdk_or_invalid_capture_cannot_publish_success (__main__.RunnerTests.test_failed_sdk_or_invalid_capture_cannot_publish_success) (mode='false-completion')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 130, in test_failed_sdk_or_invalid_capture_cannot_publish_success
+    ok, _ = self.invoke(mode)
+            ^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_failed_sdk_or_invalid_capture_cannot_publish_success (__main__.RunnerTests.test_failed_sdk_or_invalid_capture_cannot_publish_success) (mode='change-after-read')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 130, in test_failed_sdk_or_invalid_capture_cannot_publish_success
+    ok, _ = self.invoke(mode)
+            ^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_failed_sdk_or_invalid_capture_cannot_publish_success (__main__.RunnerTests.test_failed_sdk_or_invalid_capture_cannot_publish_success) (mode='stale-report')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 130, in test_failed_sdk_or_invalid_capture_cannot_publish_success
+    ok, _ = self.invoke(mode)
+            ^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_timeout_stops_owned_client_and_keeps_partial_evidence (__main__.RunnerTests.test_timeout_stops_owned_client_and_keeps_partial_evidence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 138, in test_timeout_stops_owned_client_and_keeps_partial_evidence
+    ok, _ = self.invoke('hold', timeout=0.5)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_wrong_context_never_releases_read (__main__.RunnerTests.test_wrong_context_never_releases_read) (mode='wrong-model')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 117, in test_wrong_context_never_releases_read
+    ok, _ = self.invoke(mode)
+            ^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_wrong_context_never_releases_read (__main__.RunnerTests.test_wrong_context_never_releases_read) (mode='wrong-session')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 117, in test_wrong_context_never_releases_read
+    ok, _ = self.invoke(mode)
+            ^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_wrong_context_never_releases_read (__main__.RunnerTests.test_wrong_context_never_releases_read) (mode='wrong-hash')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 117, in test_wrong_context_never_releases_read
+    ok, _ = self.invoke(mode)
+            ^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_wrong_context_never_releases_read (__main__.RunnerTests.test_wrong_context_never_releases_read) (mode='context-error')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 117, in test_wrong_context_never_releases_read
+    ok, _ = self.invoke(mode)
+            ^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+======================================================================
+FAIL: test_wrong_context_never_releases_read (__main__.RunnerTests.test_wrong_context_never_releases_read) (mode='change-before-read')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 117, in test_wrong_context_never_releases_read
+    ok, _ = self.invoke(mode)
+            ^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 56, in invoke
+    self.fail('The SDK capture runner is not implemented.')
+AssertionError: The SDK capture runner is not implemented.
+
+----------------------------------------------------------------------
+Ran 6 tests in 0.071s
+
+FAILED (failures=26)

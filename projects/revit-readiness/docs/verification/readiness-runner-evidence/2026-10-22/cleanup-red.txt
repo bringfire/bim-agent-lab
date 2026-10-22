@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_cleanup_error_cannot_erase_original_failure_record (__main__.RunnerTests.test_cleanup_error_cannot_erase_original_failure_record)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_mcp_readiness_runner.py", line 172, in test_cleanup_error_cannot_erase_original_failure_record
+    self.assertTrue((self.output / 'failed.json').exists(), 'Failure evidence must not depend on successful cleanup.')
+AssertionError: False is not true : Failure evidence must not depend on successful cleanup.
+
+----------------------------------------------------------------------
+Ran 1 test in 0.111s
+
+FAILED (failures=1)

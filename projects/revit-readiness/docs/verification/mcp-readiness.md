@@ -84,3 +84,8 @@ Live `ContextChanged` results exposed a second verification assumption: the synt
 Participant story: [how the author directed the tests](../../../../docs/tutorials/14-test-readiness-through-desktop-agents.md). Agent procedure: [exact workflow and limits](../../../../docs/how-to/verify-readiness-through-desktop-agents.md). Remaining Task 7 shutdown/disposal observations, unresolved prior observations and full R3 review remain open.
 
 The final [consolidated replay](mcp-readiness-evidence/2026-10-22-nc2/five-cases-verification.txt) passes all 15 independent report comparisons (five cases across three clients), both desktop transition/recovery checks and all five focused Python checker suites. Exact retained manifest inventories and file hashes were checked. The [fresh Protocol log](mcp-readiness-evidence/2026-10-22-complete-and-context-switch/protocol-regression.txt) retains compatible three-revision exchanges and strict July/legacy-rejection checks. No Deployment/All run occurred while Revit was open.
+
+
+## Subsequent runner increment
+
+The planned `Invoke-ReadinessMcp.ps1` wrapper is now [implemented and verified offline](2026-10-22-readiness-runner.md), superseding the earlier missing-wrapper note. The actual unavailable-host control passes with Revit closed; no new successful live wrapper run is claimed. Previous sample and desktop evidence is unchanged. The author requested one increment at a time, so broader workflow refinement, remaining Task7 observations and R3 have not been started in this increment.

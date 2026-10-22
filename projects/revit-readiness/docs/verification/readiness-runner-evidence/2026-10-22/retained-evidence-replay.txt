@@ -1,0 +1,60 @@
+test_verify_mcp_evidence.py
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.122s
+
+OK
+
+test_mcp_case_wire.py
+....
+----------------------------------------------------------------------
+Ran 4 tests in 0.435s
+
+OK
+
+test_prepare_mcp_controls.py
+.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.840s
+
+OK
+
+test_mcp_stale_evidence.py
+...
+----------------------------------------------------------------------
+Ran 3 tests in 0.315s
+
+OK
+
+test_verify_desktop_continuity.py
+......
+----------------------------------------------------------------------
+Ran 6 tests in 0.775s
+
+OK
+
+test_mcp_readiness_runner.py
+..........
+----------------------------------------------------------------------
+Ran 10 tests in 4.201s
+
+OK
+
+2026-10-22-ceiling-negative\claude-ceiling-negative {"case": "ceiling-negative", "pass": true, "findings": 3, "affectedInstances": 8, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}
+2026-10-22-ceiling-negative\codex-ceiling-negative {"case": "ceiling-negative", "pass": true, "findings": 3, "affectedInstances": 8, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}
+2026-10-22-ceiling-negative\sdk-july-ceiling-negative {"case": "ceiling-negative", "pass": true, "findings": 3, "affectedInstances": 8, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}
+2026-10-22-complete-and-context-switch\claude-complete-02 {"case": "complete", "pass": true, "findings": 0, "affectedInstances": 0, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}
+2026-10-22-complete-and-context-switch\claude-stale-ceiling-to-complete-02 {"pass": true, "code": "ContextChanged", "recovery": {"case": "complete", "pass": true, "findings": 0, "affectedInstances": 0, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}}
+2026-10-22-complete-and-context-switch\codex-complete {"case": "complete", "pass": true, "findings": 0, "affectedInstances": 0, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}
+2026-10-22-complete-and-context-switch\codex-stale-ceiling-to-complete {"pass": true, "code": "ContextChanged", "recovery": {"case": "complete", "pass": true, "findings": 0, "affectedInstances": 0, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}}
+2026-10-22-complete-and-context-switch\sdk-july-complete {"case": "complete", "pass": true, "findings": 0, "affectedInstances": 0, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}
+2026-10-22-nc1\claude-nc1 {"case": "nc1", "pass": true, "findings": 0, "affectedInstances": 0, "examinedInstances": 15, "coverageComplete": false, "evaluationComplete": true}
+2026-10-22-nc1\codex-nc1 {"case": "nc1", "pass": true, "findings": 0, "affectedInstances": 0, "examinedInstances": 15, "coverageComplete": false, "evaluationComplete": true}
+2026-10-22-nc1\sdk-july-nc1 {"case": "nc1", "pass": true, "findings": 0, "affectedInstances": 0, "examinedInstances": 15, "coverageComplete": false, "evaluationComplete": true}
+2026-10-22-nc2\claude-nc2 {"case": "nc2", "pass": true, "findings": 0, "affectedInstances": 0, "examinedInstances": 16, "coverageComplete": false, "evaluationComplete": false}
+2026-10-22-nc2\codex-nc2 {"case": "nc2", "pass": true, "findings": 0, "affectedInstances": 0, "examinedInstances": 16, "coverageComplete": false, "evaluationComplete": false}
+2026-10-22-nc2\sdk-july-nc2 {"case": "nc2", "pass": true, "findings": 0, "affectedInstances": 0, "examinedInstances": 16, "coverageComplete": false, "evaluationComplete": false}
+2026-10-22-wall-defects\claude-wall-defects {"case": "wall-defects", "pass": true, "findings": 2, "affectedInstances": 6, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}
+2026-10-22-wall-defects\codex-wall-defects-02 {"case": "wall-defects", "pass": true, "findings": 2, "affectedInstances": 6, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}
+2026-10-22-wall-defects\sdk-july-wall-defects {"case": "wall-defects", "pass": true, "findings": 2, "affectedInstances": 6, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}
+PASS retained live comparisons and 214 evidence hashes; no new live run inferred.
