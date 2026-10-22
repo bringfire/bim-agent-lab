@@ -1,0 +1,60 @@
+  Determining projects to restore...
+  Restored D:\bim-agent-lab\projects\revit-readiness\src\readiness-core\BimAgentLab.Readiness.Core.csproj (in 58 ms).
+  1 of 2 projects are up-to-date for restore.
+  BimAgentLab.Readiness.Core -> D:\bim-agent-lab\projects\revit-readiness\src\readiness-core\bin\Release\net48\BimAgentLab.Readiness.Core.dll
+  BimAgentLab.Readiness.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\core\bin\Release\net48\BimAgentLab.Readiness.Tests.exe
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.83
+PASS blank required rating affects every instance of its type
+PASS whitespace is missing required code
+PASS explicit non-rated control passes with blank rating and assembly
+PASS two missing fields do not double count affected instances
+PASS missing ceiling code affects two ceilings
+PASS missing parameter differs from blank value
+PASS unsupported storage cannot pass
+PASS unknown type requirements remain unexamined
+PASS category mismatch cannot borrow a different rule
+PASS missing requirement flags fail validation
+PASS duplicate rule identity fails validation
+PASS duplicate element identity fails validation
+PASS complete values preserve raw evidence and source
+PASS six complete types cover 16 instances with no findings
+PASS six types with two wall gaps affect six walls
+PASS ceiling negative control adds one finding and two affected ceilings
+PASS unsupported type preserves other findings and marks coverage incomplete
+PASS one instance cannot belong to two observed types
+18/18 passed; 0 failed.
+  Determining projects to restore...
+  Restored D:\bim-agent-lab\projects\revit-readiness\src\readiness-core\BimAgentLab.Readiness.Core.csproj (in 49 ms).
+  2 of 3 projects are up-to-date for restore.
+  BimAgentLab.Readiness.Core -> D:\bim-agent-lab\projects\revit-readiness\src\readiness-core\bin\Release\net48\BimAgentLab.Readiness.Core.dll
+  BimAgentLab.Readiness.Excel -> D:\bim-agent-lab\projects\revit-readiness\src\excel-report\bin\Release\net48\BimAgentLab.Readiness.Excel.exe
+  BimAgentLab.Readiness.Excel.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\excel\bin\Release\net48\BimAgentLab.Readiness.Excel.Tests.exe
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.97
+PASS BAL-info-complete
+PASS BAL-info-wall-defects
+PASS BAL-info-ceiling-negative
+PASS Incomplete coverage stays visible even with zero findings
+PASS Text resembling formulas and long identifiers remains literal
+PASS Locked destination preserves existing workbook and cleans temporary file
+PASS Multiple missing fields do not duplicate affected elements
+7 passed; 0 failed
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.Excel.HostLoad -> D:\bim-agent-lab\projects\revit-readiness\tests\host-load\bin\Release\net48\BimAgentLab.Excel.HostLoad.exe
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:00.63
+PASS process-isolated export from a host with no spreadsheet references or binding redirects

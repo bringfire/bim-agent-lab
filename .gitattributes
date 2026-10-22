@@ -46,3 +46,4 @@ projects/revit-readiness/docs/verification/readiness-runner-evidence/** -text -w
 projects/revit-readiness/docs/verification/shutdown-preparation-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/sdk-cancellation-evidence/** -text -whitespace
 projects/revit-readiness/docs/verification/shared-recovery-evidence/** -text -whitespace
+projects/revit-readiness/docs/verification/r3-evidence/** -text -whitespace

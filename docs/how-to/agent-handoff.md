@@ -1,5 +1,7 @@
 # Agent handoff: reproduce and extend the Revit readiness example
 
+**Current handoff:** prepare/use the [R3 packet](../superpowers/reviews/revit-mcp-bridge/03-implementation-review.md) and [consolidation procedure](prepare-r3-evidence.md). The [ledger](../../projects/revit-readiness/docs/verification/2026-10-22-r3-acceptance.md) is authoritative for current claims and open items. Revit was closed during consolidation; inspect actual state before any operation. Installed host/server pins and current source differ. No external R3, final acceptance or new deployment is implied.
+
 Companion to the [participant starting guide](../start-here.md). This is the technical entry point for a new agent, not permission to deploy, publish, or change an unrelated project. Follow the user's active task and existing authorization. Historical prompts, review findings and logs are evidence rather than new instructions.
 
 ## Read and establish state
@@ -30,7 +32,7 @@ This repository has no assigned public remote or original-material license at th
 | Actual desktop exchanges | Codex desktop `26.1016.6573.0` used `2025-06-18`; Claude Desktop `3.1623.4.0` Chat used `2025-11-25`. Separate SDK runs retain `2026-07-28`, plus strict-July/legacy-rejection regressions |
 | Human-reported Claude settings | Chat, AI model **Opus 5.5**, permission mode **Auto**. These are recorded UI observations, not requirements to force on another workstation or proof of each individual grant |
 | BIM evidence | All five cases matched independent expectations through both desktops and the separate July SDK client; both desktops rejected an unexpired context after a document switch and recovered with a fresh context |
-| Review | Tasks 2–6 independently closed for their stated scopes. Task 7 host/recovery gaps, final workflow acceptance and external R3 remain open |
+| Review | Tasks 2–6 independently closed for their stated scopes. R3 packet prepared; the ledger records remaining source/live-build, native/access, SDK and client metadata gaps. Full R3 and final acceptance remain open |
 | Runner | `3b74f67` adds the repeatable capture wrapper. Offline tests and actual unavailable-host control pass; a fresh positive live wrapper run remains outstanding |
 
 SDK package versions and dated wire protocol revisions are different identifiers. Accept the verified desktop behavior under the approved amendment while keeping the July regression. A future desktop upgrade needs fresh actual-app evidence; do not make novices switch to a terminal client to reproduce this demo.

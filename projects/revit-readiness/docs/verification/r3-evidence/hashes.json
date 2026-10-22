@@ -1,0 +1,57 @@
+[
+  {
+    "path": "advisories.json",
+    "bytes": 290,
+    "sha256": "7564233cdea3f5079eebebc0d1645ab6306a08c6844c09bafd4636f34647932f"
+  },
+  {
+    "path": "all.txt",
+    "bytes": 80940,
+    "sha256": "3ae42b7661c817ca13f77e7683caa7eafe970580c6ba5f9f5c83905e35c26aa6"
+  },
+  {
+    "path": "build.txt",
+    "bytes": 2991,
+    "sha256": "49a70d1983a675c3752925a9097b87ae377c38747fa2a9fb3cd68e74843561cb"
+  },
+  {
+    "path": "installed-source-delta.txt",
+    "bytes": 14563,
+    "sha256": "5844c35e48778be3bf4baa2ea39285ef33d88a2f41b98dbb28f91ab59b3c4cc4"
+  },
+  {
+    "path": "package-graph.json",
+    "bytes": 2169,
+    "sha256": "fd19e4e80d477ba7482637daf2626dec3e88da13fdf7942b04cdf201e9b1765d"
+  },
+  {
+    "path": "provenance-check.json",
+    "bytes": 419,
+    "sha256": "58b3d6e9398fac82e58a7074fed53713f888b9879cc7818abd3a5efec03ed50b"
+  },
+  {
+    "path": "readiness.txt",
+    "bytes": 3091,
+    "sha256": "24c9baa883165c968cba93e920f4264a23ef06211d7bc575a67d8bad320458b9"
+  },
+  {
+    "path": "README.md",
+    "bytes": 4797,
+    "sha256": "e2ad6f8a77e0eb3c56e0a7d7608f3fdc4767bf5eeea7bb795bad924c37cd7e2b"
+  },
+  {
+    "path": "replay.json",
+    "bytes": 17913,
+    "sha256": "d047ebaa83722180864e3baddc03af51e3f7439fa476def356a75341039ebd75"
+  },
+  {
+    "path": "replay.py",
+    "bytes": 4845,
+    "sha256": "8614adc0154579b633397f41f5ceb3200124a1af83a392c440de6b10bd8bd3fa"
+  },
+  {
+    "path": "source-inventory.json",
+    "bytes": 59934,
+    "sha256": "80a569ecdad2f5922c1ce1541d3dc31607ce01f408117a9af02d72a295d63d26"
+  }
+]

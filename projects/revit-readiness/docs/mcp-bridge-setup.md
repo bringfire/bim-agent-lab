@@ -1,5 +1,7 @@
 # Build, install and recover the local Revit bridge
 
+**Current evidence/status:** use the [R3 ledger](verification/2026-10-22-r3-acceptance.md). Shared recovery and fresh post-reinstall read have passed; native limits, SDK defect, current-source/live-build distinction and independent acceptance remain open. The chronological setup checkpoints below are not current process-state instructions.
+
 Task 7 working procedure. Task 6 is independently closed at b4cdb1f; installation and live-host acceptance are being verified separately. Follow the [operation model](../../../docs/explanation/recoverable-readiness-installation.md), [approved Task 7 plan](../../../docs/superpowers/plans/2026-10-20-revit-mcp-bridge.md#task-7-explicit-deployment-rollback-and-live-lifecycle-checks), and [host checklist](../tests/mcp-host-acceptance.md).
 
 For the active shutdown increment, use the [preparation/recovery record](verification/2026-10-22-shutdown-preparation.md) and [diagnostic procedure](../tests/host-diagnostics/README.md#actual-application-shutdown-with-queued-work). A temporary diagnostic add-in/runtime must have its own verified restore receipt. Whole-package preflight remains required even when only changed host files are applied. Do not overwrite or terminate active desktop servers to install this instrumentation.

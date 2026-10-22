@@ -1,0 +1,79 @@
+{
+  "sourceCommit": "627e227c8054feaf91539976b32dd09228c4e93f",
+  "packages": [
+    {
+      "framework": "net10.0",
+      "package": "ModelContextProtocol",
+      "version": "2.2.0",
+      "type": "Direct"
+    },
+    {
+      "framework": "net10.0",
+      "package": "Microsoft.Extensions.AI.Abstractions",
+      "version": "10.8.3",
+      "type": "Transitive"
+    },
+    {
+      "framework": "net10.0",
+      "package": "Microsoft.Extensions.Caching.Abstractions",
+      "version": "10.0.10",
+      "type": "Transitive"
+    },
+    {
+      "framework": "net10.0",
+      "package": "Microsoft.Extensions.Configuration.Abstractions",
+      "version": "10.0.10",
+      "type": "Transitive"
+    },
+    {
+      "framework": "net10.0",
+      "package": "Microsoft.Extensions.DependencyInjection.Abstractions",
+      "version": "10.0.10",
+      "type": "Transitive"
+    },
+    {
+      "framework": "net10.0",
+      "package": "Microsoft.Extensions.Diagnostics.Abstractions",
+      "version": "10.0.10",
+      "type": "Transitive"
+    },
+    {
+      "framework": "net10.0",
+      "package": "Microsoft.Extensions.FileProviders.Abstractions",
+      "version": "10.0.10",
+      "type": "Transitive"
+    },
+    {
+      "framework": "net10.0",
+      "package": "Microsoft.Extensions.Hosting.Abstractions",
+      "version": "10.0.10",
+      "type": "Transitive"
+    },
+    {
+      "framework": "net10.0",
+      "package": "Microsoft.Extensions.Logging.Abstractions",
+      "version": "10.0.10",
+      "type": "Transitive"
+    },
+    {
+      "framework": "net10.0",
+      "package": "Microsoft.Extensions.Options",
+      "version": "10.0.10",
+      "type": "Transitive"
+    },
+    {
+      "framework": "net10.0",
+      "package": "Microsoft.Extensions.Primitives",
+      "version": "10.0.10",
+      "type": "Transitive"
+    },
+    {
+      "framework": "net10.0",
+      "package": "ModelContextProtocol.Core",
+      "version": "2.2.0",
+      "type": "Transitive"
+    }
+  ],
+  "count": 12,
+  "advisoryResult": "CLI exit 0; no vulnerable packages listed on 2026-10-22. Dated observation, not a guarantee."
+}

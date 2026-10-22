@@ -1,0 +1,1227 @@
+{
+  "sourceCommit": "627e227c8054feaf91539976b32dd09228c4e93f",
+  "baselineCommit": "ff8a4f359fd0a9ff9147cab366a9cb81683a98cc",
+  "hashScope": "Working-tree bytes at clean implementation head before documentation-only consolidation; Git blob IDs preserve repository identity independently of checkout line endings.",
+  "files": [
+    {
+      "path": "projects/revit-readiness/scripts/Build-McpBridge.ps1",
+      "gitBlob": "5bc6442c151ee73d27497c1e28cde699d2275767",
+      "sha256": "371db037ea90fc30af8579bbd8cc92438b54adaee50d5c8bd583e037bea64bdb"
+    },
+    {
+      "path": "projects/revit-readiness/scripts/Build-Probe.ps1",
+      "gitBlob": "146e8bb47641cfa9d269da76b3c2b87c89a337ca",
+      "sha256": "b887f2835eabb68296ab6e4e22dd05b7e61269848225b5d31c0ead123b693f4f"
+    },
+    {
+      "path": "projects/revit-readiness/scripts/Build-Readiness.ps1",
+      "gitBlob": "6fdf70f199049ab3aca0297dcf5154b710abd66a",
+      "sha256": "9efdc28e2e53dc34f245a39dec51128c44ebbea7828866e178f3ba835c7e8ea4"
+    },
+    {
+      "path": "projects/revit-readiness/scripts/Check-Environment.ps1",
+      "gitBlob": "36a879fe215c61215956e79887bd3d057f14355d",
+      "sha256": "59eb261aaaba14688f6ce0c575eca815da988f84900cc5618608337da111b9aa"
+    },
+    {
+      "path": "projects/revit-readiness/scripts/Collect-ExcelDependencyEvidence.py",
+      "gitBlob": "8d9acf52396efa58a26ad03b9745b5b95b5d50c6",
+      "sha256": "0bc522a80865e6a1ba48940a83d3bb13b22ee3a875284514def45761295c3abf"
+    },
+    {
+      "path": "projects/revit-readiness/scripts/Get-PhysicalFilePath.ps1",
+      "gitBlob": "9fef784c0d6a3a5c3485f512a935f661a751191a",
+      "sha256": "84cb8f12da5506149a401506cf27943ab8d27fe0364bfd57fa9c45ddf94d4da3"
+    },
+    {
+      "path": "projects/revit-readiness/scripts/Install-Probe.ps1",
+      "gitBlob": "b29abf024b34db0964ac91d2d1960176ea517614",
+      "sha256": "7f5f714434ea5c44ef68c07274ca64730f51bd492d076cec25374633f1e2ca5a"
+    },
+    {
+      "path": "projects/revit-readiness/scripts/Install-Readiness.ps1",
+      "gitBlob": "cfc5c89a37d61d4b08547771269581b40d5b59ad",
+      "sha256": "009d15b32213709882738e01f4c98b1e9bdc6be632502ce1423783be026af24a"
+    },
+    {
+      "path": "projects/revit-readiness/scripts/Invoke-ReadinessMcp.ps1",
+      "gitBlob": "2ca144c717a59a7f86a6df882f7ed4488c73b03d",
+      "sha256": "72f53044b747eba48f92457f366efc9433e5e687829757eae119fdd9216a14b7"
+    },
+    {
+      "path": "projects/revit-readiness/scripts/McpDeployment.psm1",
+      "gitBlob": "15c2fde0d59b1514c8a0b27ac0a35a241db75649",
+      "sha256": "e924c6e4af8c9fda0c2187236b79f373015855195fc2e7367743e03f65b632d2"
+    },
+    {
+      "path": "projects/revit-readiness/scripts/Prepare-McpControls.ps1",
+      "gitBlob": "8f39a8bd4ec46eb5c9dc35f116d5e2971c6f8799",
+      "sha256": "af1878ac8c71625a0fe51b8e9bd3624cbc9200bc7708b81413163a638c666397"
+    },
+    {
+      "path": "projects/revit-readiness/scripts/Prepare-SampleCopy.ps1",
+      "gitBlob": "0806af1f76b407d3f4da80ee8462f7c3e21d2395",
+      "sha256": "747a7d5fb98736b8be776cfad69d4ca12bf8a10decf693490fa7216ad13a95ea"
+    },
+    {
+      "path": "projects/revit-readiness/scripts/README.md",
+      "gitBlob": "cfe503328e482b6ef7be9c88ef6ceb00f83087e6",
+      "sha256": "0f0b2e0132d1b3d349c9a0bc4f356e983b90bc84298daddd79538ad8dccdd221"
+    },
+    {
+      "path": "projects/revit-readiness/scripts/Test-McpBridge.ps1",
+      "gitBlob": "3d87c3f2f0f501d89288ad3268560b5546e4642c",
+      "sha256": "cbda2b52725d8ace3d1371af9bb8a97cf959eb14fea2119d91b3ced12446a115"
+    },
+    {
+      "path": "projects/revit-readiness/scripts/Test-Readiness.ps1",
+      "gitBlob": "6c1c0b530d0a9be6918d500b8f71dc87140f0376",
+      "sha256": "af41e7646de31215a1d1db9963fb6f078e6291b51ebed8d047322a7d38cdba7c"
+    },
+    {
+      "path": "projects/revit-readiness/scripts/Undo-McpBridgeInstall.ps1",
+      "gitBlob": "34fa6ed2ed795f166bc35d78ec45dd6cf0191d37",
+      "sha256": "5be6c23c3b0b7858f1e597671e4a0292e97edb32397c00d36a00b15021cb7b7c"
+    },
+    {
+      "path": "projects/revit-readiness/scripts/invoke_readiness_mcp.py",
+      "gitBlob": "fc2e867f70e68f8d9fa4decb1473fc1e374e6684",
+      "sha256": "08b02d7eb64750b040bb94a7347bb59b987c0126114e7e3bebe66285e1bdf480"
+    },
+    {
+      "path": "projects/revit-readiness/scripts/legacy-fixture-baseline.json",
+      "gitBlob": "2ea798cf1c90f0b47f56cfdcd737ac788d8c27a3",
+      "sha256": "917a078ebe7c7fd15e65d1cc0d4c53ea830f3d34e45e8dab618ea9acc60ab2cd"
+    },
+    {
+      "path": "projects/revit-readiness/scripts/manage_mcp_probe_settings.py",
+      "gitBlob": "ed891054891312e2c1ebc580b8a4af3f942fa4e5",
+      "sha256": "b1c0edbe86a898c6c96f49fde2d54e515a737bc3be57b466284ffb2de715bdb2"
+    },
+    {
+      "path": "projects/revit-readiness/scripts/prepare_mcp_controls.py",
+      "gitBlob": "3f4f45a30cbc3abf4b79918014a39de450b8e554",
+      "sha256": "0b49492d51d9012a1f2c08c424d62b9ffc950be4f8a9c2930ed3682d61ae12c2"
+    },
+    {
+      "path": "projects/revit-readiness/src/README.md",
+      "gitBlob": "48a82189d2391f51f874d77b99a1ecbccc9a0609",
+      "sha256": "aa3a59cd33afc9887965b43067be24009516572bd54896eda95770a63316121f"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-contract/BimAgentLab.RevitBridge.Contract.csproj",
+      "gitBlob": "ac5f3c3a019ae2511b0bf17f0ab7fa82a92fd81d",
+      "sha256": "c2a5868fb540c1dfb6d86d15b5b91167e578d71402739a5c99f89bdb3ee1b4bc"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-contract/BridgeException.cs",
+      "gitBlob": "284cba4559d2d42785d7a10a57c90cc52e83eb9e",
+      "sha256": "67464f5bb23458bdd7f7314b8ca90938dd6b9ee7cd645699d45fcbd24871f8fd"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-contract/BridgeLimits.cs",
+      "gitBlob": "95933c2d4eea4dfe9be36de0e148d2d1ed07250f",
+      "sha256": "1b5992355fdd5f754b1c96ab688bcb9625ee461ed24a43f452d30c12aeb6b4c9"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-contract/BridgeMessages.cs",
+      "gitBlob": "4cb93cd334edb91eebdb1ee364bccc9241092387",
+      "sha256": "6934514a2dbea51d455c87b8422dc518f744911e8be9a12f08c1531ea677702f"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-contract/BridgeSessionDescriptor.cs",
+      "gitBlob": "43f7e2dcf8ab27dfd9e4261dfad44007043c0b2f",
+      "sha256": "3c5e322586c6ae7a0712a7a9fc6a3dc6bd4bf6388db9f5e36d97b6aef138a01c"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-contract/ContextBinding.cs",
+      "gitBlob": "cb01ca5c86259757106672bc8c7ba4fb818fdab6",
+      "sha256": "3ac8f4701ce08bd69c96fed3c525a34fc360959da7e4d8c421d04a8e5a79c1c3"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-contract/packages.lock.json",
+      "gitBlob": "d8cd7bfef7791b3eed83a32ee68f402f223221b0",
+      "sha256": "fcd19b94792da063b53e4a6034741c9bd64dfb65c88204d79b79efb8eab8d860"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/ApiEventLease.cs",
+      "gitBlob": "08c317b5e9f3e68a279858fa85ad19dcb3d531c4",
+      "sha256": "e7d8ebcd04274791aa7a797891f47eebe06196fb98d1afa277bd322c517e2f0d"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/BimAgentLab.RevitBridge.Runtime.csproj",
+      "gitBlob": "76115d284c7c4a06eb7aad49311822f2b33048a0",
+      "sha256": "48e43662d24bf15534517293474ee6b2093605a408474955243eb227c42ea0a4"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/BridgeClientProvider.cs",
+      "gitBlob": "827dad7c359bbdc3db12a8e82870861e3cff7e2b",
+      "sha256": "2d6665d2b1799b96e24d1e0cfd2ab736ef8d8b53260de7f16065a1aa059636cd"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/BridgeExecutionContext.cs",
+      "gitBlob": "6d505c1b076f3350f45a988b065beb224e2445b8",
+      "sha256": "848743611a8e38f8d782349fe373df62e200e34ee3291a5cda6b52b326f2fcf1"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/BridgeIdentity.cs",
+      "gitBlob": "d792fe4d371dc39fe78481a83a7712961e666409",
+      "sha256": "58895e67b89cbbb41b1bf8454b6649f8756441c78d7c1934f0777ad24c3a74eb"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/BridgeJson.cs",
+      "gitBlob": "ba37844d6b005cb92e66d593ea14d6185df30501",
+      "sha256": "25fc5583b147738ccf57fad260aeaf2c58b97595693bb0c2625426333529c0a7"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/ChecklistSnapshot.cs",
+      "gitBlob": "cad4c8e562afa179b264719a18bca763f768a95f",
+      "sha256": "325f6985cd4de3bc7eb9121745353bad659e3a82b7414599d2277f9296e25e99"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/ContextStore.cs",
+      "gitBlob": "1491ac1a635f56ab4db145fa2fb1152fead6aa2e",
+      "sha256": "299a334242f86f9a381b47f15790366ec52323f33d27653daee137ec21bbc871"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/DispatchQueue.cs",
+      "gitBlob": "840def46b24035250e3eb6fe0cf06127d93082fd",
+      "sha256": "6b45f1177bb1e5a26084a3e538b7b56c79ff47ec14b589ebdffce4acff8e7a15"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/DispatchTicket.cs",
+      "gitBlob": "46613e8179e896f7102936d1051d5744207c04e2",
+      "sha256": "92854875a2831166460475590eedab0fd613d082302111479e29278d77a67f04"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/FrameCodec.cs",
+      "gitBlob": "b62e231576515c91084370e9aa74bd130639f5c5",
+      "sha256": "2d279f5674deb6321db857588e86922582804c102884c4fa8f78528a923602c3"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/HostBridgeSession.cs",
+      "gitBlob": "9a6dacfc49c8d883407636280f9354664bf8af87",
+      "sha256": "0d3c6be1b6b054e7c8f184357f3f2ce2333d075efd455f2bb545617dad245d1d"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/LocalPipeFactory.cs",
+      "gitBlob": "bb768f531426f587765eef7a3f0e53c71d8d93f4",
+      "sha256": "04fd9d24aa7ae250a74740291f4ab9c268948eb50b1f311d3f431605f52e61a1"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/NativeWindows.cs",
+      "gitBlob": "1846b31676a6a62319e88bcd758b2639a1e4c645",
+      "sha256": "5bb20664a9fef25fa44eb0f0eeebe4844858ca8a7afac210cb553ba871d3fad2"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/PipeBridgeClient.cs",
+      "gitBlob": "09860b60f396e6b96c9b9a1d333fecae133602de",
+      "sha256": "8af152c785b70a144c92c86abced767b45dfebc9e232437af76c169b362db98b"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/PipeEndpoint.cs",
+      "gitBlob": "3f79c0c46732ffe8cbd3ca372146c55337189aed",
+      "sha256": "b98c9939eb2a5f81d0741365e5c63788f992f392a4c08c328174f514876d3936"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/ReadinessExecutionFlow.cs",
+      "gitBlob": "b7bfbe4f4418932865d4ffccfacb999f537dd329",
+      "sha256": "a1f2801b2095621c98be7fb1c6bb3708f981c782032544a46bfdca28693b9f73"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/RequestBudget.cs",
+      "gitBlob": "7ea20b6814be32b02c55b5768604fafd11dd6a5b",
+      "sha256": "8d4554a6a28b8d4c0630b451d88f5ba7d3f9138a12b7585d3c784ad8952d3209"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/RequestLifetime.cs",
+      "gitBlob": "0bc2d1be14dadee8991b065921e6a2b22abfa5fd",
+      "sha256": "5ea07f47796bc07999fc1b5421fecf3717d7e6f10d7a90ccacba244fa9b9e0bd"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/RetainedRequestSlot.cs",
+      "gitBlob": "673efa53608573a084e479a8250fc29d1674d998",
+      "sha256": "5378558f8cbab70829b4241cbed9f24cc42fd420eea71d07000f7c9256ce3bfe"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/SessionCatalog.cs",
+      "gitBlob": "43a6c0d75c4961847236afc19cd64b722f48cae1",
+      "sha256": "af8cd73939035a01f7f72505ebbc132dffe99bb35f828b0cb9849049203680a9"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/SystemBridgeClock.cs",
+      "gitBlob": "b11d6555141eeebd7a508babefc3c3617daee7f4",
+      "sha256": "7feb6c425d234565eeea6ea4f08a3f346ee40851a351badd888680383fb22525"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/WindowsPlatform.cs",
+      "gitBlob": "d03b407343d95ee726aff33bc346e68eac40b502",
+      "sha256": "f12c4169ccc65d9518fd821c2ca3b9ecff02fe5cd33e7d230ad6c8dd2cc033d9"
+    },
+    {
+      "path": "projects/revit-readiness/src/bridge-runtime/packages.lock.json",
+      "gitBlob": "b2d4c0d70ca277fdb0df9aacad2e68406b7ca334",
+      "sha256": "1143b75f7fe22080d34a68df4d0bc02adb9e97f052d12347334b594f1de1ffe0"
+    },
+    {
+      "path": "projects/revit-readiness/src/excel-report/BimAgentLab.Readiness.Excel.csproj",
+      "gitBlob": "cca2f38f6658e32ac330b523f10bcc93529c5b91",
+      "sha256": "cb87beb455672ee81c6c691957ba8ae0163bbda1940fd1b7dd043f7eb4ac2df7"
+    },
+    {
+      "path": "projects/revit-readiness/src/excel-report/InformationWorkbook.cs",
+      "gitBlob": "9c58de001a1c5fcb6df972899d290b076457bccb",
+      "sha256": "2c54493c0237c732f83be0c7bfe6da2734b64efeb6401b947ffbbb7d5da1928e"
+    },
+    {
+      "path": "projects/revit-readiness/src/excel-report/Program.cs",
+      "gitBlob": "55f00863dd10b8fecba362054036683479915b21",
+      "sha256": "25a702fd7bcd1e82692385e14fba633deacce50576ea73beab0258d62481aa5f"
+    },
+    {
+      "path": "projects/revit-readiness/src/excel-report/README.md",
+      "gitBlob": "c97219916dfe6a085d48146a41114443aefa8f5d",
+      "sha256": "6ed8cece260f8be2ea85b4b69b36c6a0d3316a7ea354d9cba91146f5c795ba50"
+    },
+    {
+      "path": "projects/revit-readiness/src/excel-report/packages.lock.json",
+      "gitBlob": "3b94d1690c007201126c4f0454e193693661cd00",
+      "sha256": "be75a9009f068f101e693079a985aec1c78b162c1e5ff64506ace228dd1bedbc"
+    },
+    {
+      "path": "projects/revit-readiness/src/mcp-server/BimAgentLab.RevitReadiness.Mcp.csproj",
+      "gitBlob": "4ee782f6a9e10e747c23f7b68c805f015ae4afeb",
+      "sha256": "d0dcb6e02a4f1562f5191aeb42c12da973f646973d3d927b70e4d6ec48cf778b"
+    },
+    {
+      "path": "projects/revit-readiness/src/mcp-server/CancellableInputStream.cs",
+      "gitBlob": "a0dfff700a3add8f4811df6bb378bbe4c24ee8d0",
+      "sha256": "2f9f61a043ca376b95ad807628db2020615529345852e10dd375c2e6703fd9a6"
+    },
+    {
+      "path": "projects/revit-readiness/src/mcp-server/McpHost.cs",
+      "gitBlob": "a987ff881c25a9dc2adefc07fb94c647d8dd13fb",
+      "sha256": "ac8aef052ecec04af1fc460e9e78c119e5376861f120755eb92ab33ddf03402e"
+    },
+    {
+      "path": "projects/revit-readiness/src/mcp-server/Program.cs",
+      "gitBlob": "cd36c02aa365c6b40c0ff61fb67da02ee7d9d884",
+      "sha256": "7d17f49d33a65312b6b7b785473c3096e700b06f55318ed7602edffbd5da6f45"
+    },
+    {
+      "path": "projects/revit-readiness/src/mcp-server/README.md",
+      "gitBlob": "18faedef722bf763c049e59b2905f2c28194384e",
+      "sha256": "0c8a7661667b242edf4c210a3dd64fa2e51fb291aaff4fe810748bcda9f001ca"
+    },
+    {
+      "path": "projects/revit-readiness/src/mcp-server/ReadinessArgumentBoundary.cs",
+      "gitBlob": "9fbd6fc251437ef4d6878bdfc7ebdf3616fd14ec",
+      "sha256": "c377b0230ab8ab3127021e867d6bf541038ecf431d6bd8c347d49bc45b08c1f6"
+    },
+    {
+      "path": "projects/revit-readiness/src/mcp-server/ReadinessTools.cs",
+      "gitBlob": "782f4b94b8bf6535c4aa26fee25e3941b44f8120",
+      "sha256": "71cee81df535f7262b17ab1b32c8a6b0247b6f2877fb4e5da0eaaed039e43db4"
+    },
+    {
+      "path": "projects/revit-readiness/src/mcp-server/TraceStream.cs",
+      "gitBlob": "a1a3d7d22976f8967fc0ec349ecc9574f99c0d3b",
+      "sha256": "59f794408d3c63a5b7cee95535228c0544486983614d9f89d00a36fddef84f89"
+    },
+    {
+      "path": "projects/revit-readiness/src/mcp-server/WrappedStream.cs",
+      "gitBlob": "3904818bd79ea7b62bb45e8b0cb2d478d190ab25",
+      "sha256": "0a26298952ce94ced8fc46ae4a10ab3ea8e40a0dd93b7cc64542dad5d75d7729"
+    },
+    {
+      "path": "projects/revit-readiness/src/mcp-server/packages.lock.json",
+      "gitBlob": "fb2f67392bb89bd724c503e4f0dd77eda8de86dc",
+      "sha256": "d245047605da76d2e5e0bae9cf423e9c9e89e28e6abc85c6d67abe1e5580a8b1"
+    },
+    {
+      "path": "projects/revit-readiness/src/readiness-core/BimAgentLab.Readiness.Core.csproj",
+      "gitBlob": "5cb58cd6bf60f6803f0a35f9525e9553ba942104",
+      "sha256": "04fa67edb8937a8e6559f78494b873748b8404ec301b01ddcd39b4838812d5d1"
+    },
+    {
+      "path": "projects/revit-readiness/src/readiness-core/Checklist.cs",
+      "gitBlob": "115b2b5bd0745942bc27c8190e2a39599084e6f1",
+      "sha256": "03e01c70eb7f16b206ee05e06554025813a47d19f7dea1611af336c0de7a2bea"
+    },
+    {
+      "path": "projects/revit-readiness/src/readiness-core/InformationReport.cs",
+      "gitBlob": "d1adb345ccf1823f32b216f57d2078cb6f19c3c3",
+      "sha256": "b8ad9a54ff71dae4b0451cee3516a98f8604aeaf095541a9bf531c4451d8612f"
+    },
+    {
+      "path": "projects/revit-readiness/src/readiness-core/README.md",
+      "gitBlob": "0655847003976a07ac97c80d4ffd328cdbdb6c1b",
+      "sha256": "a3a4eb8732ef6e6083ff562a89eac1892bd64b4f15f42391114fdaea140d730f"
+    },
+    {
+      "path": "projects/revit-readiness/src/readiness-core/TypeInformation.cs",
+      "gitBlob": "31b9935f1c4227decc6f7d625e949766527bd270",
+      "sha256": "0d17c4f29a99a9e994c56fca0f2133fb18946601e3c9933db39f8a412eb03065"
+    },
+    {
+      "path": "projects/revit-readiness/src/readiness-core/packages.lock.json",
+      "gitBlob": "190bb7bac1b7f6dee67700343943783c4ec92296",
+      "sha256": "0847264c0ea72dd0f06913bc6b13614086bfe9b35423c1e05f477c51c27e52a9"
+    },
+    {
+      "path": "projects/revit-readiness/src/revit-addin/BimAgentLab.ReadOnlyProbe.addin.template",
+      "gitBlob": "e874e98bfbb7d70f45d1e5526d8631c28a9b144f",
+      "sha256": "b6cef402efd4cac2c5686dc52a9c4c02ddc8e2bf30e128d6d8806d17db007682"
+    },
+    {
+      "path": "projects/revit-readiness/src/revit-addin/BimAgentLab.ReadinessBridge.addin.template",
+      "gitBlob": "59cc36058babdbc7fc1b855089b371ecfb5dd77e",
+      "sha256": "e50d2a23b3da18c3b2e6954be2c280cdcc6b3749a90447a5eebf5dae6fd793a1"
+    },
+    {
+      "path": "projects/revit-readiness/src/revit-addin/BimAgentLab.RevitProbe.csproj",
+      "gitBlob": "2e6841f366afeb784d1a07097fa3a99ecd4a4277",
+      "sha256": "277a18d9df0171679db0265f50ce83b54664a3fd8402b70746d06fc55dba75ef"
+    },
+    {
+      "path": "projects/revit-readiness/src/revit-addin/BimAgentLab.RevitReadiness.csproj",
+      "gitBlob": "37791f33320662c81e9d90ab5a98819207f7d4bd",
+      "sha256": "9a53a99af7f46875f0f93ab791b2d28477a6d6d21e05781d3030e8c8649ee79f"
+    },
+    {
+      "path": "projects/revit-readiness/src/revit-addin/BridgeApplication.cs",
+      "gitBlob": "d8ec6ccecf9488ab7fb5f184d58469785d96e08d",
+      "sha256": "8f85504026ede8727432e0b79be94ca666ae195a9d194208a7870412cc18cf62"
+    },
+    {
+      "path": "projects/revit-readiness/src/revit-addin/BridgeCommands.cs",
+      "gitBlob": "9801ed53d93026ebe0c5850c54e3ab72fd73ee15",
+      "sha256": "728db8a63fe41808304e8a932e3ee0ef87eae36b40985fd231d8f1a5f64226ee"
+    },
+    {
+      "path": "projects/revit-readiness/src/revit-addin/ExcelReportProcess.cs",
+      "gitBlob": "11ebcd0b5bdf61f5384c8f9442c9868b01f57cd6",
+      "sha256": "658f33563e92864f5b652bdb0b2563e03596b8260a8d7677d275e12dea3a199c"
+    },
+    {
+      "path": "projects/revit-readiness/src/revit-addin/README.md",
+      "gitBlob": "62e75380a6406164f7fb8676ec5833a60d385ed8",
+      "sha256": "5c81123111ee1bf2766a50409185925d4f055dda2a87d27e25add7431684bf94"
+    },
+    {
+      "path": "projects/revit-readiness/src/revit-addin/ReadOnlyProbeCommand.cs",
+      "gitBlob": "8dbd054e4bab4c5dc9257a501572755f51c19d7b",
+      "sha256": "ad568748c3eb809f710eb59335e2e54fbc7ca41d975973c45f2ef89f39133a19"
+    },
+    {
+      "path": "projects/revit-readiness/src/revit-addin/ReadinessExternalEventHandler.cs",
+      "gitBlob": "66ee2212a9806b6f4e56ec0d8bf701d7f468068a",
+      "sha256": "307e29a43abaa876d6d72e54e002aecdc7569a4c934a95818f5445bb040ad7f5"
+    },
+    {
+      "path": "projects/revit-readiness/src/revit-addin/ReadinessPayloadCodec.cs",
+      "gitBlob": "4a4a1f3e453a6889f9c98033ffa2da513e04f6ea",
+      "sha256": "d541db753fc433a866c7944c494300eaa5556e70f60785fe398eb451819d07b9"
+    },
+    {
+      "path": "projects/revit-readiness/src/revit-addin/RequiredInformationCommand.cs",
+      "gitBlob": "6c20edb21605527d676fa7ab5c0056248fb26e77",
+      "sha256": "5043879f555fce24b5e125498743bbde717371f7db4a59c7611f6aeabf58f006"
+    },
+    {
+      "path": "projects/revit-readiness/src/revit-addin/RequiredInformationReader.cs",
+      "gitBlob": "391c48c4a7f814b3f0f5c929323effba3a2fb488",
+      "sha256": "4242a407b76217524ea3d3219a94953516850704a0c5dc62979f3c17a01a0dae"
+    },
+    {
+      "path": "projects/revit-readiness/src/revit-addin/RevitContextCatalog.cs",
+      "gitBlob": "c3650c6461a7cf7779938b4428dff56ab2a777aa",
+      "sha256": "d91841a9ebcaeb856be9a735fad04d523bdde68331acae57b1d1d5eff393d918"
+    },
+    {
+      "path": "projects/revit-readiness/src/revit-addin/RevitReadinessExecutor.cs",
+      "gitBlob": "545c581df8153d08f3b42c8bd552addc05b4e241",
+      "sha256": "bd0ca276d068130aef8e924930f48e3b81df6722ffd0f8b8e3cbe4d4f3eba3f5"
+    },
+    {
+      "path": "projects/revit-readiness/src/revit-addin/packages.lock.json",
+      "gitBlob": "51c461162a711cfc4b5231be2702e44bc932c300",
+      "sha256": "56599ca9f76495e6c0a23141e02ebfd9f01c921260a7fa63a8e0a604fef9e171"
+    },
+    {
+      "path": "projects/revit-readiness/tests/Observe-LivePipeStop.ps1",
+      "gitBlob": "cd93b0652071b5ffc40b6e18906e1d6369699544",
+      "sha256": "e7e5169385df735fdfaac63438009836a18746720e67661a5b76e9a32e51d662"
+    },
+    {
+      "path": "projects/revit-readiness/tests/README.md",
+      "gitBlob": "9a2d0f6ea3448e8895c383f27d3a34c78c693458",
+      "sha256": "30b7b0662b4450d2d281e5e85f6e7c521b05d44abae36f6ad16f6b7930994832"
+    },
+    {
+      "path": "projects/revit-readiness/tests/adapter-handoff-tests/AutodeskBoundaryDoubles.cs",
+      "gitBlob": "9fb0e49e57e98b626236b1c06131b1abc0c239a5",
+      "sha256": "3810600ec822942fed219ad3721c8a454e923cad8fa177f22b72479f59652def"
+    },
+    {
+      "path": "projects/revit-readiness/tests/adapter-handoff-tests/BimAgentLab.AdapterHandoff.Tests.csproj",
+      "gitBlob": "661495a4669adf94d4cded1c6b68f9dc78021c44",
+      "sha256": "e78e93c14035215de0bd58886db597dce56a48c6ac7ff1cc90c3dd40dcb8e824"
+    },
+    {
+      "path": "projects/revit-readiness/tests/adapter-handoff-tests/Program.cs",
+      "gitBlob": "bb9af795230584795dfc1f2f1348484080cddaaf",
+      "sha256": "1a16e247cbc1c2d56674139d9ce32c58358d354b3f4e4ce3da689dfcbfe76d09"
+    },
+    {
+      "path": "projects/revit-readiness/tests/adapter-handoff-tests/README.md",
+      "gitBlob": "3e0df2484dd45a10f53704ac2b9eba33c407feb5",
+      "sha256": "f928eed4e302b0bf55c15af36d37c0a8c3d07f748e06a87a777458f90282ac0f"
+    },
+    {
+      "path": "projects/revit-readiness/tests/adapter-handoff-tests/packages.lock.json",
+      "gitBlob": "5d8d2199554e62c33952d090fbfe3e8750c3e846",
+      "sha256": "e4458e1d4a2d92c7158d11487aee78023c1d698f4122d644b4a00b3a64dda773"
+    },
+    {
+      "path": "projects/revit-readiness/tests/bridge-tests/AdapterBoundaryTests.cs",
+      "gitBlob": "fc8151ec7e95bbcef9b1e6e00a896802a4e94690",
+      "sha256": "8e250c04b1b668161f9a8a74b237b6e585d6773b4dcf15eea941329c7525d6ff"
+    },
+    {
+      "path": "projects/revit-readiness/tests/bridge-tests/BimAgentLab.Bridge.Tests.csproj",
+      "gitBlob": "f4d7a05f20ea978bb1806a93138858d5644ee87c",
+      "sha256": "e8ca4af655ffd8467789527efc961cef344eb59b4f31eae63643c2b4427ae8fc"
+    },
+    {
+      "path": "projects/revit-readiness/tests/bridge-tests/CancellationProgressTests.cs",
+      "gitBlob": "9894bea7ffec7ca8f420668212fdd1024553b7c1",
+      "sha256": "ae5b19fa48f78e6efd55c156a7ad9f5299e00c0f1a0421f74ac17fb4e354a009"
+    },
+    {
+      "path": "projects/revit-readiness/tests/bridge-tests/ChecklistSnapshotTests.cs",
+      "gitBlob": "5415bb9aefa60127a01a66e5bde832579352fb2c",
+      "sha256": "65b80468731bb837872cd9a268431e8dc6b7d776015051a76bf859ddb0f22056"
+    },
+    {
+      "path": "projects/revit-readiness/tests/bridge-tests/ContextTests.cs",
+      "gitBlob": "b82d06c0104b9ffdd82a2b3620b94f9fcce2e117",
+      "sha256": "8525547899291769c5f8335a44ffaf8d165108dd1d66f89ee7676898db69c14d"
+    },
+    {
+      "path": "projects/revit-readiness/tests/bridge-tests/DeadlineProcessTests.cs",
+      "gitBlob": "13542e0cbb2c9f2f5125c8ae970aa185b3682bed",
+      "sha256": "6629ef1cbefad81d2cc6ef183ff57e60d6669de61710b473dec02c198e72f75e"
+    },
+    {
+      "path": "projects/revit-readiness/tests/bridge-tests/DispatchTests.cs",
+      "gitBlob": "1082963b4029c49818470ad33b40eda22ae11268",
+      "sha256": "92ea4e4e2e418527aaf5be93107f06e7c72ab86770ce1386ff94587a85ac3dba"
+    },
+    {
+      "path": "projects/revit-readiness/tests/bridge-tests/ExecutorLifetimeTests.cs",
+      "gitBlob": "b887b7ddb8e9cb3b9c97460dd3db354565baeec7",
+      "sha256": "547e25765a7f0ea115c2078782213c9b140fd81638b642c194e14f55f5037cdf"
+    },
+    {
+      "path": "projects/revit-readiness/tests/bridge-tests/FramingTests.cs",
+      "gitBlob": "0c09213a417bced3fb94fa6b6c407b28127fee9a",
+      "sha256": "d492781a388f36d1b39b4028fa2aef64e79aa817d6c34731c798820cd1abcb4f"
+    },
+    {
+      "path": "projects/revit-readiness/tests/bridge-tests/JsonTests.cs",
+      "gitBlob": "84fc4bb412d00c42309f27b88cc6da18619527c9",
+      "sha256": "adc85c8187d689f227800e8af828b4be1238bfd348d9e32e0a9e6c0af0e693a9"
+    },
+    {
+      "path": "projects/revit-readiness/tests/bridge-tests/LifetimeTests.cs",
+      "gitBlob": "275d8dc79a1f0a425d5b368f6df1719ccad2e067",
+      "sha256": "7d188b52d177e0c9144eb68de6cc851fe8ca3074cafc5a0a6ab67fbf3216b215"
+    },
+    {
+      "path": "projects/revit-readiness/tests/bridge-tests/PayloadCodecTests.cs",
+      "gitBlob": "fa971b930c3ebb6767d41c5ae201137dabf2e8de",
+      "sha256": "d6923d263a9e992da1a5a4773b6d6fb9bdbe0a71a89a5e30210f43d67db61a9c"
+    },
+    {
+      "path": "projects/revit-readiness/tests/bridge-tests/PipeFailureTests.cs",
+      "gitBlob": "816ceb1885b28a7707d77fd2deb3bdbdeb9184ea",
+      "sha256": "10ed61ff56b868cb60c29a230f897bc2446b6c707c824a02f7e2333ad1f7d438"
+    },
+    {
+      "path": "projects/revit-readiness/tests/bridge-tests/PipeHost.cs",
+      "gitBlob": "3c8c079c415f1edbb40b9bb1c908cbd8434967b1",
+      "sha256": "e78222c5de236cbe453d5d2b246414e19c0139a2f98ee2ece685718b60eae306"
+    },
+    {
+      "path": "projects/revit-readiness/tests/bridge-tests/PipeReviewTests.cs",
+      "gitBlob": "1e1541651b3249b10440a626af63e3a06b4547ec",
+      "sha256": "7979220fca84e8930c531adbd7199f1d2fe790421ac81b8d53dab56ab9eb224a"
+    },
+    {
+      "path": "projects/revit-readiness/tests/bridge-tests/PipeTests.cs",
+      "gitBlob": "2727df338d9dff712deed3569b391986023b8b80",
+      "sha256": "7bca335e259de573424f33bb747cd8ff15eedf96d9292c0c91f28e231a66831d"
+    },
+    {
+      "path": "projects/revit-readiness/tests/bridge-tests/PipeTransportTests.cs",
+      "gitBlob": "ee4a61f44c3234dc79c65a10fa76b9f8a9285c08",
+      "sha256": "a3a782e9485ace1ca2038906485cdb0373c0106b91303f369dafa69263d7cbc2"
+    },
+    {
+      "path": "projects/revit-readiness/tests/bridge-tests/Program.cs",
+      "gitBlob": "8a98e082e7530b263ee7dc43046ea150e9e8b537",
+      "sha256": "43f81163e8c48a1091197ef21c2c93a0c8b1a17080af11538686093785fc0964"
+    },
+    {
+      "path": "projects/revit-readiness/tests/bridge-tests/WindowsPlatform.cs",
+      "gitBlob": "82830963f795c59fcfad72f966d81abe7ae07baa",
+      "sha256": "ad9972e0c74a00ca70937834156ae2e92de2637505ae5149fbc976a9874a467a"
+    },
+    {
+      "path": "projects/revit-readiness/tests/bridge-tests/packages.lock.json",
+      "gitBlob": "268b66f41e8a1da7155c97658c690b0d93037b49",
+      "sha256": "e0e626724b43c7b2624045e32ea834895efda400fd26e1b924e902b30740106e"
+    },
+    {
+      "path": "projects/revit-readiness/tests/core/BimAgentLab.Readiness.Tests.csproj",
+      "gitBlob": "8ae98f93c06260f4e366c344ddc0ab94e5f19e21",
+      "sha256": "fed4d83cb11b7997d34eca81e72fea6959fef05b4bacc7b7169aac10474a4b0e"
+    },
+    {
+      "path": "projects/revit-readiness/tests/core/Program.cs",
+      "gitBlob": "32f7c4e1229e4077b521aae31a301e8a582104bc",
+      "sha256": "9ea78c13f36408cfd80c65ca02690a92cc82307064b75893440be0d345d98e50"
+    },
+    {
+      "path": "projects/revit-readiness/tests/deployment-fault-host.ps1",
+      "gitBlob": "d76178a59d02951bf16d67cc7add7b9c33f19c04",
+      "sha256": "9f14a55bcd4b2b7fa8296161a730223379f106cc14796915db83359faa882cf3"
+    },
+    {
+      "path": "projects/revit-readiness/tests/diagnostic-tests/BimAgentLab.Diagnostics.Tests.csproj",
+      "gitBlob": "89104914c6045376bf34f2a28a0dc08454cad6a6",
+      "sha256": "26253c5cf74c89587708b318a327d22fa118e0d3c3fc0ca2d4b6becf71e7e47d"
+    },
+    {
+      "path": "projects/revit-readiness/tests/diagnostic-tests/Program.cs",
+      "gitBlob": "df317730759b96d6987568777372ede8a9b778b1",
+      "sha256": "549f206a485522c563fff765ed8ff1a0c53b5ffa55aa23696f7665e99da31620"
+    },
+    {
+      "path": "projects/revit-readiness/tests/diagnostic-tests/StartupTests.cs",
+      "gitBlob": "e2280b4be384ba6d413919adfb32340831f03830",
+      "sha256": "ee2dd217799616c69eb56456e4f51dfd40523983b94cd4edb736d38a95a58b25"
+    },
+    {
+      "path": "projects/revit-readiness/tests/diagnostic-tests/packages.lock.json",
+      "gitBlob": "c9ce16495b8c6ae9b94473ec98697071224887e9",
+      "sha256": "3a07e45b668a98fd2a1fd85241fb209dd9ba8c45dd94085fb655b498e34ade70"
+    },
+    {
+      "path": "projects/revit-readiness/tests/excel/BimAgentLab.Readiness.Excel.Tests.csproj",
+      "gitBlob": "788d429bca0747c5310d6e04330b850cdb9454bd",
+      "sha256": "d1dd6d890d1364b1bf970fdd42c9800e74289d73d8de98a85b04d523b593094c"
+    },
+    {
+      "path": "projects/revit-readiness/tests/excel/Program.cs",
+      "gitBlob": "6e3bc19273466e51c134c1c6f454290685911035",
+      "sha256": "05f50b22f5283ab7aa401091dc9bc1a239f997fa77d11c0d6a7ed2fba0f08ac2"
+    },
+    {
+      "path": "projects/revit-readiness/tests/excel/packages.lock.json",
+      "gitBlob": "4443f723e20f05e9d0f41897a544db44066e057f",
+      "sha256": "dde39eb771c85f5add322d9c784d06cc05f83ae2d3c25289e2a55d725e6d0399"
+    },
+    {
+      "path": "projects/revit-readiness/tests/fixture-tools/BimAgentLab.FixtureTools.csproj",
+      "gitBlob": "72d98b4dacad842367d925622c7d9d44dd72fc66",
+      "sha256": "ec2353f2ea017f062c2dd9a4b1d8a5ce47cf1860d96b464c53311ba72ca953e0"
+    },
+    {
+      "path": "projects/revit-readiness/tests/fixture-tools/PrepareInformationFixture.cs",
+      "gitBlob": "785cd551227134c9a1ddc9f7af8a91ecb54e18b9",
+      "sha256": "a60535c51a2c85bab41c386ef69c7cb663944b32c8526c6e6e762322555fef9b"
+    },
+    {
+      "path": "projects/revit-readiness/tests/host-diagnostics/BimAgentLab.RevitReadiness.Diagnostics.csproj",
+      "gitBlob": "6ee29a6c5fb571ec9659d201b9447c596f2bafeb",
+      "sha256": "43174e834e6ef55a37f7bb08dab6a8bd3057f63cf425827123f7dcdc4c0c46d5"
+    },
+    {
+      "path": "projects/revit-readiness/tests/host-diagnostics/BridgeDiagnostics.cs",
+      "gitBlob": "1920167958c50777c26ad6f6b6e29068109a1cfc",
+      "sha256": "37b0d4e0a246d50c3a64481c50515e0305e92c72049244ef0dd8ff26107e912e"
+    },
+    {
+      "path": "projects/revit-readiness/tests/host-diagnostics/DiagnosticRecorder.cs",
+      "gitBlob": "442571fb4ad32cad263e81e5dcddfd1505fd1506",
+      "sha256": "d9391878ad5c64c3bb53c30979d7b58334aa7207dc05e56df8428d1077187111"
+    },
+    {
+      "path": "projects/revit-readiness/tests/host-diagnostics/DiagnosticRunDirectory.cs",
+      "gitBlob": "d864a7f788af102ad8c52a5d5c44e23cb61d3592",
+      "sha256": "1bd755ba32e9c2287c4f236f61979777b85aa97a27b4b50734e2fe678e8bfdf1"
+    },
+    {
+      "path": "projects/revit-readiness/tests/host-diagnostics/Observe-ApplicationShutdown.py",
+      "gitBlob": "65bbfc5ce12a872598e42a681f7d6a2c0f3e05fe",
+      "sha256": "1a5182191fa3e05c0e7351a8bdeb46093adbd8e69a21952629475dfc89b29c76"
+    },
+    {
+      "path": "projects/revit-readiness/tests/host-diagnostics/Observe-LiveDeadline.py",
+      "gitBlob": "89977d7ea3730db407b36cdc98435ede2df5767f",
+      "sha256": "268f5d0fa4b15da863f5519c9a7a7553b9af4b48845eabbb3eafc13a4f07ac4d"
+    },
+    {
+      "path": "projects/revit-readiness/tests/host-diagnostics/Observe-QueuedInterruptions.py",
+      "gitBlob": "3ba077ce52a3f3dc833acfe27253afd43d9f29b7",
+      "sha256": "c21e3c9936b657e8155d5dbc7f203d8310a13c2e83eac87f0e03e1097156eedc"
+    },
+    {
+      "path": "projects/revit-readiness/tests/host-diagnostics/Observe-QueuedStop.py",
+      "gitBlob": "278d6da8c6f1db603fa16cf34121775f1ae9c230",
+      "sha256": "0e5e702f263f7aa8da57cae3e0b43ab4de0e1c83845e047c7001bba50d2b7aff"
+    },
+    {
+      "path": "projects/revit-readiness/tests/host-diagnostics/Prepare-HostDiagnostics.ps1",
+      "gitBlob": "e2014a7d2e0432f4fd838282b1ad16eb7ae13e91",
+      "sha256": "1c39fe84f9b80ff5aabeb296a1292e59ae836aa7f771950dfebcec8f6586a7f0"
+    },
+    {
+      "path": "projects/revit-readiness/tests/host-diagnostics/README.md",
+      "gitBlob": "9088464d3d0022b0d7474c454d8509f46bea21ea",
+      "sha256": "f000b5b77fcb8014acb9eebe3742465200480b39ef1cfb32399cba468f66148f"
+    },
+    {
+      "path": "projects/revit-readiness/tests/host-diagnostics/Test-HostDiagnostics.ps1",
+      "gitBlob": "c2a8d6438dd89cee69a5f5ae321134edf2ba6960",
+      "sha256": "56c5e02aaaf1f7e679a6e5e72b51cf0ef9317ff222b11912678f648b45aaec7c"
+    },
+    {
+      "path": "projects/revit-readiness/tests/host-diagnostics/packages.lock.json",
+      "gitBlob": "51c461162a711cfc4b5231be2702e44bc932c300",
+      "sha256": "56599ca9f76495e6c0a23141e02ebfd9f01c921260a7fa63a8e0a604fef9e171"
+    },
+    {
+      "path": "projects/revit-readiness/tests/host-load/BimAgentLab.Excel.HostLoad.csproj",
+      "gitBlob": "76c2e70c831d01eb63c20e1ad77bd939647a8704",
+      "sha256": "d7aee008e02c9a6b2f66a9cb5bba252ee1e6a0a41bb030bb15a8983df4e85e77"
+    },
+    {
+      "path": "projects/revit-readiness/tests/host-load/Program.cs",
+      "gitBlob": "a9bb01cd38a1c40a991a0018df09f37f77991d34",
+      "sha256": "1044d50309ff2e2d3f22e5bc7515c0d55bb9f749b6af1c7e54af366ebe9e5a10"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-client/BimAgentLab.Mcp.Client.csproj",
+      "gitBlob": "6236016485a9d3c657e32889b7ff04da7fef1529",
+      "sha256": "654f72e2fbed28a065e8cbd599d62e16acbe1c26385e0c41999040e570762d9a"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-client/InterruptionScenario.cs",
+      "gitBlob": "3ed1b071107bf1e32a66c35f81dacd1c623867cc",
+      "sha256": "282d9cb52f0f27e2bbdf472031dc3a8e4fdd6afa2e9f7122e843bd2b93fa99fd"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-client/Program.cs",
+      "gitBlob": "d2496a01136012ed21bf782a89a8a4fd3be7c83f",
+      "sha256": "66fd4aaad3020c4690d012566af49023cf96b56c34c01b8490156f8fe79fe8ac"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-client/ReadinessScenario.cs",
+      "gitBlob": "ee513dab2f065712493ed3f2ab7574632132958d",
+      "sha256": "9a73a25d514acfb43edbdd87657274ef7842c312a146828da5d91d6f95197e08"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-client/packages.lock.json",
+      "gitBlob": "be5a5af2e1f0cef3e3df890fed6aa7e504bee92f",
+      "sha256": "7e158b3ebafbe0d26cc07c53ca72f6d1aabd6912b6a3b7fa16cf19cd4969c514"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-host-acceptance.md",
+      "gitBlob": "26575e5e48c0dab219c8349371954b18a8fa52c7",
+      "sha256": "2c8f933217b2fcbcfbf934bf3cbbc5829fd9cdebe51dfee669b23016bcd8bc4a"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-probe/BimAgentLab.Mcp.Probe.csproj",
+      "gitBlob": "6236016485a9d3c657e32889b7ff04da7fef1529",
+      "sha256": "654f72e2fbed28a065e8cbd599d62e16acbe1c26385e0c41999040e570762d9a"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-probe/Program.cs",
+      "gitBlob": "e17064819c4e0fd861c62dd6131b6b7fefdfbeac",
+      "sha256": "132e0e9217234b475a59e98a3c787e465172506801b5623ed86903d704b012da"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-probe/packages.lock.json",
+      "gitBlob": "be5a5af2e1f0cef3e3df890fed6aa7e504bee92f",
+      "sha256": "7e158b3ebafbe0d26cc07c53ca72f6d1aabd6912b6a3b7fa16cf19cd4969c514"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-sdk-diagnostic/BimAgentLab.Mcp.SdkDiagnostic.csproj",
+      "gitBlob": "38152eabeaf7b6e43fafeb7abf758f21975799af",
+      "sha256": "f02a030aa18fa7606c190fc3cfe1f64edf378e063cd036c60e9e332d4f4334dd"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-sdk-diagnostic/Program.cs",
+      "gitBlob": "b41444ea658e00eda75ee756e827f6e1e9236d58",
+      "sha256": "42715639f5b0f663fb3b1398b8d23e54b694bdad0488d00c188cc107465f9c71"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-sdk-diagnostic/README.md",
+      "gitBlob": "0b2710c5a959f8441807a9ed26226f25e3eb8854",
+      "sha256": "1dee5a286d791a96117c7250f228bdbcbcacfda803894bc697643165d56a4e66"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-sdk-diagnostic/packages.lock.json",
+      "gitBlob": "0bed6ab99aefbad65bd8f7d77cfd771faada2b43",
+      "sha256": "b7346b3f1dde5e43b7c3acd3628b59206903a5496124fa7beef1cb027858e26f"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-tests/ArgumentBoundaryTests.cs",
+      "gitBlob": "8c759c0afe86089268fc3d2b1649b5e7f383917f",
+      "sha256": "1cb75cae8c5fdf5ae515af279296e6a0da4a7f2d7d8114c9bbf2ef49b3e5f27b"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-tests/BimAgentLab.Mcp.Tests.csproj",
+      "gitBlob": "6236016485a9d3c657e32889b7ff04da7fef1529",
+      "sha256": "654f72e2fbed28a065e8cbd599d62e16acbe1c26385e0c41999040e570762d9a"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-tests/DeploymentTests.cs",
+      "gitBlob": "8440f3056185bf63a63bf01c493bb4c2b7bd1d81",
+      "sha256": "47f271a8e31784a123cde2beecaeff89a92b0b9a50209dc90386230a4f36a90e"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-tests/DesktopEvidenceTests.cs",
+      "gitBlob": "95674554334c22357f55ad32e1e35ddb4df7981a",
+      "sha256": "ec3ea349ed56503cdf794ac5f978bf6d1147c7a186816d073035a46c6af9aecd"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-tests/InterruptDriverTests.cs",
+      "gitBlob": "0cc9bee408c8d76bbfd9aa8a4d3e48bd75693b36",
+      "sha256": "aff7e9833383e0585530ebece714fe960dcc446a82cb6ab148324d2a8639e1c9"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-tests/ProtocolTests.cs",
+      "gitBlob": "f3c82d9cdcbe185b28ac8a0e45c1cc0b60e3ca2e",
+      "sha256": "f8cdab65b52ef180bdde29d56fa7d56222f7deaefaa770d859f1fa25bec0cac5"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-tests/SdkCancellationDiagnosis.cs",
+      "gitBlob": "92ef6e2755c62855fa8ebe4f248eb3423796033c",
+      "sha256": "627f146885b1a82a19241202f98d571e8e8d748f393694d2407d3a01729765ed"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-tests/StdinShutdownTests.cs",
+      "gitBlob": "76808f29cc234b426a33e4ca4b3f5c07ddd7dd4a",
+      "sha256": "a3ebc38f94ee83096ea8b045ec2305c55ea5fe33bcb36f1b0177c498f0619d61"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-tests/StreamTests.cs",
+      "gitBlob": "51e137b5701ec9620c821fae361a83407cd317e0",
+      "sha256": "f66e9aeb2a76c625e013d335c0b27e2c268c05e5f55d984228aa85ad52d4ca4e"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-tests/ToolReviewTests.cs",
+      "gitBlob": "36525f554ff6fb37e5606cba6e590ee29f78f82a",
+      "sha256": "54406be34255e73b8d8960787e20eef845f8efd91ac7e598a02c91335cb8b64c"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-tests/ToolTests.cs",
+      "gitBlob": "46a47b4444bccc33fba949dbe1e70c01d6dbd0a0",
+      "sha256": "3bf9ca66bf8ee8354815233136dd6b9338c2461597e9109bd71a9dc3efa823f4"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-tests/packages.lock.json",
+      "gitBlob": "be5a5af2e1f0cef3e3df890fed6aa7e504bee92f",
+      "sha256": "7e158b3ebafbe0d26cc07c53ca72f6d1aabd6912b6a3b7fa16cf19cd4969c514"
+    },
+    {
+      "path": "projects/revit-readiness/tests/read-only-probe.md",
+      "gitBlob": "4d8812ebd82425a2789ec5b231b9ed76a8fb71c0",
+      "sha256": "1899f52aa5851baddeeba52d1c702c438bd40cb6392c92181aeade4d70290536"
+    },
+    {
+      "path": "projects/revit-readiness/tests/required-information.md",
+      "gitBlob": "97127fcff560c4b5b61d653b19a0adfb0509bf2e",
+      "sha256": "dbb54d34d3cd62fcfc7a8347aef4479bbddc9ad2cc211d384b3fbe505c78d241"
+    },
+    {
+      "path": "projects/revit-readiness/tests/runner_fixture_client.py",
+      "gitBlob": "0506ba84876bc03648681e914132432f534793c2",
+      "sha256": "998b7bffac4a4a6bd834ae6eff326c7f3c765609a1521d830abafaa112db731a"
+    },
+    {
+      "path": "projects/revit-readiness/tests/test_application_shutdown.py",
+      "gitBlob": "bc3c9c0c452c43695f9745fb4b32f7c7ba344aff",
+      "sha256": "9dc7c714a57b528533c6fd7ba9284a4b221e50516af31cd22dc675f3778035b1"
+    },
+    {
+      "path": "projects/revit-readiness/tests/test_application_shutdown_observer.py",
+      "gitBlob": "a8e0b4ad455b134c2794ea589672c0cd034d97a9",
+      "sha256": "5f5054e39939f0758569b11447fd70383455484395c8ed04d147e6dadba20550"
+    },
+    {
+      "path": "projects/revit-readiness/tests/test_host_observer_ownership.py",
+      "gitBlob": "1d3a77f705e2f16baa39d8d725cc37b257a9d276",
+      "sha256": "936e9a86cb2761282f6d11f148aa0b7acf60f249982b60a2c724fe5f62fa3792"
+    },
+    {
+      "path": "projects/revit-readiness/tests/test_mcp_case_wire.py",
+      "gitBlob": "50f49babb2eb0fe424d456fb1aa2f9651f800522",
+      "sha256": "24947616e6498296be6ad5ea6a99a0203acc8d8741aa361192b7949098fc2ee5"
+    },
+    {
+      "path": "projects/revit-readiness/tests/test_mcp_probe_settings.py",
+      "gitBlob": "12b26356211be058d1ec4504d645a0c1b752774a",
+      "sha256": "15264bdeb5f30c53cfb526ef3b0da7d41de7cd6ee7cfaa051113d0e469f1d5b2"
+    },
+    {
+      "path": "projects/revit-readiness/tests/test_mcp_readiness_driver.py",
+      "gitBlob": "c0f7f7e547b85e51f2173c8737397da34ecb5332",
+      "sha256": "1541e1bfb4d59947d7c12fafa18167f52bb8cf8f27a14a92d68ba310e800d5ca"
+    },
+    {
+      "path": "projects/revit-readiness/tests/test_mcp_readiness_runner.py",
+      "gitBlob": "8097fc771217c53292705a0e1444b0520c796a9f",
+      "sha256": "db4df70d0c4b5ea4cb483fc225daea65eff484910e0a9a8f3d887019f1c68b0c"
+    },
+    {
+      "path": "projects/revit-readiness/tests/test_mcp_stale_evidence.py",
+      "gitBlob": "834f4e5cfefa67ccf4bf629082526d5690bfa59f",
+      "sha256": "87ae32d36b11dbec18b77de10e7ca8e87bae231c1775519a8918a514bca322b6"
+    },
+    {
+      "path": "projects/revit-readiness/tests/test_mcp_transcript.py",
+      "gitBlob": "e1d5601a1f720b436e43c66fa8540866d81092ef",
+      "sha256": "93025c9320b32ea86e95e56402dc7a796b35f521e6063fefbf257d62810f8504"
+    },
+    {
+      "path": "projects/revit-readiness/tests/test_prepare_mcp_controls.py",
+      "gitBlob": "31516cc430eaa0db36166ba289d27496a7d4584c",
+      "sha256": "60fd7f90f4c2bfd401d0eb3542200130a89ee09e6f2a5db5d8e17d98d3c878d9"
+    },
+    {
+      "path": "projects/revit-readiness/tests/test_queued_stop_observer.py",
+      "gitBlob": "8eff7e8488f14eab55fd39dd4c800b54027c0ceb",
+      "sha256": "8fea67958aea55246bef1a5976d4d32ae832cb6bc534b6e64aacfe2bbde1fea9"
+    },
+    {
+      "path": "projects/revit-readiness/tests/test_sdk_cancellation_evidence.py",
+      "gitBlob": "3897815d654426760198c09f56b1e32db59638d6",
+      "sha256": "a78aa91e12d76ab9ab5d581de5a005daaa90206f39de9959832d7a5213875278"
+    },
+    {
+      "path": "projects/revit-readiness/tests/test_verify_desktop_continuity.py",
+      "gitBlob": "8e5e88335360a6b7715c3002574810d0293da54c",
+      "sha256": "f7102a691697757e2869286406f738be9acaff6f0f80b4aba847e863e2b78137"
+    },
+    {
+      "path": "projects/revit-readiness/tests/test_verify_host_deadline_capture.py",
+      "gitBlob": "375b1dbee2dd49f6680c3d9b588aebb6ff981e0d",
+      "sha256": "7570d0904e3d33dc1d53f4184f79df7da8a7bebc75ed218cf799faec9e6181c6"
+    },
+    {
+      "path": "projects/revit-readiness/tests/test_verify_host_interruption_capture.py",
+      "gitBlob": "8f778d5be327034fc47b59254de130848ab6d1dc",
+      "sha256": "514bf930bb0b6375269b46fdf32217ffc51af48a75ad49bb59434f8a6c3d6365"
+    },
+    {
+      "path": "projects/revit-readiness/tests/test_verify_host_stop_recovery.py",
+      "gitBlob": "13c72606ffd15682b2646e9f33ad53d5b94db34e",
+      "sha256": "fbb93c24b1986ad97098d3330d7f9efdf2b434d0e40a2aeebe5f7da094bb36f4"
+    },
+    {
+      "path": "projects/revit-readiness/tests/test_verify_live_lifecycle_capture.py",
+      "gitBlob": "7ce192e3ce6881bc087e89824697655689f71759",
+      "sha256": "f55a0195f02efc0bd687491511fc30e7d0df3512bea1ef10f5c86a7d6b61cce0"
+    },
+    {
+      "path": "projects/revit-readiness/tests/test_verify_mcp_evidence.py",
+      "gitBlob": "3d200619d4182d760dc3b17943c0921a37fd2b0d",
+      "sha256": "c5c51fca5a50d8c930498873d495a10bb9d9a5463982d1deec5e2bee11c3d456"
+    },
+    {
+      "path": "projects/revit-readiness/tests/verify_application_shutdown.py",
+      "gitBlob": "fbc78cfc3723602a5e3f0075c6c9c3aa32cc2442",
+      "sha256": "f9af0194ded8c1066053d65874c2763101c85b00ad99d7466e6cadeec22e227b"
+    },
+    {
+      "path": "projects/revit-readiness/tests/verify_bridge_exchange.py",
+      "gitBlob": "298a8f699dc73eef07baf3e6a7083213cc2b5674",
+      "sha256": "f62a0daa71d3e348da32eba885fb397d55ac08ba7a388f1fcad80b77ee0f926a"
+    },
+    {
+      "path": "projects/revit-readiness/tests/verify_cancellation_progress.py",
+      "gitBlob": "d43b436ecc566b053b8f484913c2404045616121",
+      "sha256": "940d0e83c14532761512aa99099f2ca76d06d34610508bfc9b8d65173983cef5"
+    },
+    {
+      "path": "projects/revit-readiness/tests/verify_desktop_continuity.py",
+      "gitBlob": "c2c2378a4e872529890a8628f189a45e30281f18",
+      "sha256": "247c68c8d3b03398bcdf7c4e54b8e9a68b6398c961a1975616267926e6a4fee6"
+    },
+    {
+      "path": "projects/revit-readiness/tests/verify_excel_evidence.py",
+      "gitBlob": "2f5fc6d8fe0b6cc2b214b516d060f15d71e3ea36",
+      "sha256": "414b99ba17e2c3fef19449b7dec66ecb9dfea5f8f45abcf9817466b9b1088fc5"
+    },
+    {
+      "path": "projects/revit-readiness/tests/verify_host_deadline_capture.py",
+      "gitBlob": "c34dce4564d7b796699ec7be8075135b980503fd",
+      "sha256": "178bb672f766b26012aceb6ff306dd1fc21bd5542019cbaf8d5e82bc7d814eab"
+    },
+    {
+      "path": "projects/revit-readiness/tests/verify_host_interruption_capture.py",
+      "gitBlob": "d9ed9f87d1a5d29731ffe75fe65c91c6456170fe",
+      "sha256": "7039b9307fb70a112166989f0ac59b802d8fd986ac44a34d5e5f72dd80f1f195"
+    },
+    {
+      "path": "projects/revit-readiness/tests/verify_host_stop_recovery.py",
+      "gitBlob": "1388955f3309a5146f3292ac2044d5b1a60312df",
+      "sha256": "b0dad9e62e388c55d54c72e62bfd73ed88c5833b754197186aa57e597df961ff"
+    },
+    {
+      "path": "projects/revit-readiness/tests/verify_information_evidence.py",
+      "gitBlob": "e82512860384186423af4d7ea964501e454aaae7",
+      "sha256": "aa2babe40ede25f0b98951b9f4d9f0aa1de5745067dc0909143018afb9d6b06e"
+    },
+    {
+      "path": "projects/revit-readiness/tests/verify_live_lifecycle_capture.py",
+      "gitBlob": "93df81e8fde24a7b085dcc80976690503efeaaa3",
+      "sha256": "18be4b519ec3467f28db4e0cee22da0affd9ea24af2ae2267439726dca944397"
+    },
+    {
+      "path": "projects/revit-readiness/tests/verify_mcp_evidence.py",
+      "gitBlob": "f5439dfa6c9494a26a2d539f06157ad8f8544aa4",
+      "sha256": "7864b76c8ea76ccf08bbe4c7501ce4b37e11ebd8968b76f5756bda4666e95906"
+    },
+    {
+      "path": "projects/revit-readiness/tests/verify_mcp_transcript.py",
+      "gitBlob": "655471508e8e8caee496c3789f29a5b94f7655ed",
+      "sha256": "993204e80730280e327198e361cb54e24ee7a1b339c0ba65dfbdba892704c4a3"
+    },
+    {
+      "path": "projects/revit-readiness/tests/verify_pipe_evidence.py",
+      "gitBlob": "10c31cade453b6e501812f6b63dc872ae2dae2a5",
+      "sha256": "21288663d3b523138b3f97a719e23e76ca5c7353b08053dab0dfdd1a8b25ad3c"
+    },
+    {
+      "path": "projects/revit-readiness/tests/verify_sdk_cancellation_diagnosis.py",
+      "gitBlob": "2ecdf8605adac70ff42d1d52188f9ed607d4c9b5",
+      "sha256": "84322db3f82a116bd33307853a963b39afb2475ec96b2246a974cece91c003f9"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/Carlito/OFL.txt",
+      "gitBlob": "8d6b170e4d9a5580a34471dc4ac3e8fc5fbbd712",
+      "sha256": "58402f82a7c332a700294988fe7554fbb0a63a8d27ccc1ee3bbc640311990a00"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/ClosedXML-0.105.1/LICENSE.txt",
+      "gitBlob": "f054603e7633dcd22d57382517af1eef1211473f",
+      "sha256": "3071658fba9a054edce74e756314ba926fe3ffe5c6622f209d21a0c8f1d2a99e"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/ClosedXML-0.105.1/package.nuspec",
+      "gitBlob": "cceb2d376fd0e6e21f36678d4e15f82de99ca9df",
+      "sha256": "3b044e86595606b1c69c36d537bf67a19f1e8ea3f47d7b99cc167771309a0f77"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/ClosedXML.Parser-2.0.0/LICENSE.txt",
+      "gitBlob": "6145d0837e2a37d81095ac1f087bbb7da22f1b97",
+      "sha256": "7133dfd8c1167ffa77389859013ac5bf2d184639f5a291a00d33b0b7d7b84df3"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/ClosedXML.Parser-2.0.0/package.nuspec",
+      "gitBlob": "6764327e22aa2ad6f464b9566b4c424b00c3951c",
+      "sha256": "c7ea6db9150273036dbf8fbead151abff7df87975e2528bca9e9b617566ca27f"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/DocumentFormat.OpenXml-3.1.1/LICENSE.txt",
+      "gitBlob": "12bd8f3f79693e49ff70d4ce182ff8d2e7baa390",
+      "sha256": "ed03ba352313a4ba7019d5bed4bd3218ac17f3e44442a3bb1aaff54dcca9a2bc"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/DocumentFormat.OpenXml-3.1.1/NOTICE.txt",
+      "gitBlob": "6f2ed3ab64f890c375b0ef03a918e649f0484164",
+      "sha256": "17f127daf81a23e7835b735b91c7486fbc99538102942bf1bce8d73e63a65038"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/DocumentFormat.OpenXml-3.1.1/package.nuspec",
+      "gitBlob": "df6a64bc68640743e46f93ba357fed9753b1c341",
+      "sha256": "d6ea629022a51027ddc75c6398a25b65fc90780471db32dfeebcc53b4c2481fa"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/DocumentFormat.OpenXml.Framework-3.1.1/LICENSE.txt",
+      "gitBlob": "12bd8f3f79693e49ff70d4ce182ff8d2e7baa390",
+      "sha256": "ed03ba352313a4ba7019d5bed4bd3218ac17f3e44442a3bb1aaff54dcca9a2bc"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/DocumentFormat.OpenXml.Framework-3.1.1/NOTICE.txt",
+      "gitBlob": "6f2ed3ab64f890c375b0ef03a918e649f0484164",
+      "sha256": "17f127daf81a23e7835b735b91c7486fbc99538102942bf1bce8d73e63a65038"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/DocumentFormat.OpenXml.Framework-3.1.1/package.nuspec",
+      "gitBlob": "7e4994511428e17e433b8bee9252bbc1a5ca7412",
+      "sha256": "d3446279fb7923b5612ae01323c7c062ff534fdc4851c29855d3d5a90b5a00ab"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/ExcelNumberFormat-1.1.0/LICENSE.txt",
+      "gitBlob": "957a067be97100bd312dc6ae74d2922e3569d955",
+      "sha256": "6650b0063a39e7dced886e53c6dac66fcd909beb8b9abb868452c9b621fa2018"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/ExcelNumberFormat-1.1.0/package.nuspec",
+      "gitBlob": "3ab0f628ba1d941f9776021b5ca6aa3dd1072c5d",
+      "sha256": "e5f439f21cb51cd7c6376bd06778e94b601c0b5bf6779d8fbb92113921fb2001"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/Microsoft.Bcl.HashCode-1.1.1/LICENSE.TXT",
+      "gitBlob": "fa3121dfaf73735faa1de75487de977993c40d0b",
+      "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/Microsoft.Bcl.HashCode-1.1.1/THIRD-PARTY-NOTICES.TXT",
+      "gitBlob": "3a236152f1e145c0a92015701d190f80b1aeb3ed",
+      "sha256": "388c07f579998286e5df706a2e68bf6e01100187ccb0ff0310e26c3383f7b2b2"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/Microsoft.Bcl.HashCode-1.1.1/package.nuspec",
+      "gitBlob": "c556414433aef641331f7d1b81144c593524b7b2",
+      "sha256": "02403b9ba6b8db960d3d1ba49b069b2d38299523ffb66baabebc9468743d2deb"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/RBush.Signed-4.0.0/LICENSE.txt",
+      "gitBlob": "e8d9dd21cd943acbbd87e26434a2bf31c2afcee9",
+      "sha256": "f6bfae3ff6477fbca0c850f115da170516b1c633a98619ea5dcc6720dcdcb288"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/RBush.Signed-4.0.0/package.nuspec",
+      "gitBlob": "aff3cc0f0c2bd39173786e581e47be240a1e6235",
+      "sha256": "d4983dbce60e9e35718273f5870e43860d3d2d66876d38d564a40d881c2236f4"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/README.md",
+      "gitBlob": "45df8651a5e638ea3d380e95d49dec18cef2fce3",
+      "sha256": "e1c7ed848d5e12f8a032ee34aaa22f28b94a5f1d8efaca6b324883ee3fbbdb79"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/SixLabors.Fonts-1.0.0/LICENSE.txt",
+      "gitBlob": "8d5852d37414b28cad15d8e7411a5fc211882ba6",
+      "sha256": "f38dc2765451fd2b19d7e0f47ed655f3a1cb889b28341ea6266efd75d8425a6f"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/SixLabors.Fonts-1.0.0/package.nuspec",
+      "gitBlob": "7877b64f8f6d7c059183a4f43e043a7f9ad97231",
+      "sha256": "dbd5856e3bbf6d25087250dbad4fe3140383dfe82610c3cce4929fbc59c7e7a8"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/System.Buffers-4.5.1/LICENSE.TXT",
+      "gitBlob": "fa3121dfaf73735faa1de75487de977993c40d0b",
+      "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/System.Buffers-4.5.1/THIRD-PARTY-NOTICES.TXT",
+      "gitBlob": "207a2a734ad126b870401d2e8226ac9fee024423",
+      "sha256": "7864a01e2fdef7e8fdf81b906efb1466f083206affea7ba7e6dadea429754765"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/System.Buffers-4.5.1/package.nuspec",
+      "gitBlob": "1662d7fd32fcfb4bd7a9a56721c3dd7d267f34f6",
+      "sha256": "353a5c2810bfb22de50b87616f426d4d2c8aac2040802c68e2caadedbfe66b8e"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/System.Memory-4.5.5/LICENSE.TXT",
+      "gitBlob": "fa3121dfaf73735faa1de75487de977993c40d0b",
+      "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/System.Memory-4.5.5/THIRD-PARTY-NOTICES.TXT",
+      "gitBlob": "207a2a734ad126b870401d2e8226ac9fee024423",
+      "sha256": "7864a01e2fdef7e8fdf81b906efb1466f083206affea7ba7e6dadea429754765"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/System.Memory-4.5.5/package.nuspec",
+      "gitBlob": "71f93e4cfc07e46019abcfa7112a27a26ffd2a13",
+      "sha256": "745bfa574a0fe397559dad595fd0b73a38d7dde40703bb8f0f1eba82edf99aa7"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/System.Numerics.Vectors-4.5.0/LICENSE.TXT",
+      "gitBlob": "fa3121dfaf73735faa1de75487de977993c40d0b",
+      "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/System.Numerics.Vectors-4.5.0/THIRD-PARTY-NOTICES.TXT",
+      "gitBlob": "207a2a734ad126b870401d2e8226ac9fee024423",
+      "sha256": "7864a01e2fdef7e8fdf81b906efb1466f083206affea7ba7e6dadea429754765"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/System.Numerics.Vectors-4.5.0/package.nuspec",
+      "gitBlob": "1fdca33a7351c3eef9ad792fc6f044ee330c8279",
+      "sha256": "e88aa01f9c9f763f66d643fc093eb3fa885141847f61fac13c2a9ad7a60a29e9"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/System.Runtime.CompilerServices.Unsafe-4.7.0/LICENSE.TXT",
+      "gitBlob": "fa3121dfaf73735faa1de75487de977993c40d0b",
+      "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/System.Runtime.CompilerServices.Unsafe-4.7.0/THIRD-PARTY-NOTICES.TXT",
+      "gitBlob": "3a236152f1e145c0a92015701d190f80b1aeb3ed",
+      "sha256": "388c07f579998286e5df706a2e68bf6e01100187ccb0ff0310e26c3383f7b2b2"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/System.Runtime.CompilerServices.Unsafe-4.7.0/package.nuspec",
+      "gitBlob": "92c1b6ddeea84904793098b0137354fe72d49c90",
+      "sha256": "a0f7f287af5956fe1041d641ec7bb1046afa73adc95a9d55c02fab1e3fe7cff3"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/dependency-evidence.json",
+      "gitBlob": "bad077c6fe42d31cdac66fcc459432c8e79c86e2",
+      "sha256": "56e1f77d87cffe6cb90cc598cafe19bdfa6adda5cf569217b3432c2ec4dc040c"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/mcp/README.md",
+      "gitBlob": "26b30be3f090628055e8bb5781bd50e003bd33b0",
+      "sha256": "7d7d182b362aad08af34aed2e03a933fd1e451a7e60bbd0f3857b565d7591b94"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/mcp/csharp-sdk-LICENSE.txt",
+      "gitBlob": "1bec486aae9e860dd506e68e02237ed429f88daf",
+      "sha256": "10a500c69133ef6e1df944a1b0fd8578fc9c4735745bcc75f04a24038016df49"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/mcp/csharp-sdk-THIRD-PARTY-NOTICES.txt",
+      "gitBlob": "c05d426dc3e8f2dfffd377e756f8ea932a04cf80",
+      "sha256": "19c34b0b254d5cca0f96857d935528fded236cc15d489fc9581c778dd32f8100"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/mcp/dotnet-extensions-LICENSE.txt",
+      "gitBlob": "793ac5e0f2032449e529d1d11a44d95630321efb",
+      "sha256": "47f0ad8ba753eae5de6178291cd8f38bbb42d2368b177f8e11714ad17c701275"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/mcp/dotnet-runtime-LICENSE.txt",
+      "gitBlob": "984713a49622a96da110443c15477613bc12656b",
+      "sha256": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/mcp/dotnet-runtime-THIRD-PARTY-NOTICES.txt",
+      "gitBlob": "0822dfb49f477c43b9b5bf1aac20b454a6943f27",
+      "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/mcp/license-sources.json",
+      "gitBlob": "2d6e98cf7e2bc6870466f0d707f1af560c80be0c",
+      "sha256": "1ff7dac54e3196fdbfee4aef8f9e2ae8ec810164a2f2cc97874e3d419417a590"
+    },
+    {
+      "path": "projects/revit-readiness/third-party/mcp/package-notices.json",
+      "gitBlob": "27fd46422ca78f63969b1bb0e824d0e0c236a6f7",
+      "sha256": "81aa860f13c650408ea04ee403d4fca2c3a98628e50431c2548fe702a6bfb5b5"
+    }
+  ]
+}

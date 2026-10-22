@@ -1,6 +1,8 @@
 # Ask for a design, a plan, and independent review
 
-This participant story explains how the author directed a reviewable design process and then challenged the reasoning behind several review findings. Its [agent guide](../how-to/run-spec-plan-and-implementation-reviews.md) gives the technical procedure. Spec revision 2 is reviewed and approved. External R2 found three major gaps and one minor inconsistency in the first plan; [plan revision 2](../superpowers/plans/2026-10-20-revit-mcp-bridge.md) now has all four findings externally closed at the plan level on `cfbfe04`. Author plan approval and execution-method selection remain pending. The bridge remains unimplemented.
+**Reading this history:** the story below preserves the spec/plan review sequence. The author later approved Native execution and the bridge was implemented. Continue with [preparing the R3 evidence review](15-prepare-an-evidence-based-review.md) for the current participant lesson and [acceptance ledger](../../projects/revit-readiness/docs/verification/2026-10-22-r3-acceptance.md) for what passed and what remains open.
+
+This participant story explains how the author directed a reviewable design process and then challenged the reasoning behind several review findings. Its [agent guide](../how-to/run-spec-plan-and-implementation-reviews.md) gives the technical procedure. Spec revision 2 is reviewed and approved. External R2 found three major gaps and one minor inconsistency in the first plan; [plan revision 2](../superpowers/plans/2026-10-20-revit-mcp-bridge.md) now has all four findings externally closed at the plan level on `cfbfe04`. At that planning checkpoint, author approval and execution-method selection were still pending and the bridge was unimplemented.
 
 ## Begin with the work already done
 

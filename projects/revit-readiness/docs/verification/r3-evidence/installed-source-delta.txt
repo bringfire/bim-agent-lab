@@ -1,0 +1,239 @@
+Normal host source delta
+git diff 9a93f6d 627e227c8054feaf91539976b32dd09228c4e93f -- projects/revit-readiness/src/revit-addin projects/revit-readiness/src/bridge-runtime projects/revit-readiness/src/bridge-contract projects/revit-readiness/src/readiness-core
+diff --git a/projects/revit-readiness/src/bridge-runtime/PipeEndpoint.cs b/projects/revit-readiness/src/bridge-runtime/PipeEndpoint.cs
+index 722cf17..3f79c0c 100644
+--- a/projects/revit-readiness/src/bridge-runtime/PipeEndpoint.cs
++++ b/projects/revit-readiness/src/bridge-runtime/PipeEndpoint.cs
+@@ -220,7 +220,11 @@ public sealed class PipeEndpoint : IHostBridgeEndpoint
+             // A faulted Quiesced task also means the executor finished. Release after
+             // successful physical disposal, independently of that logical outcome.
+             var disposal = lifetime.DisposalCompleted;
+-            if (disposal.Status == TaskStatus.RanToCompletion) retention.Dispose();
++            if (disposal.Status == TaskStatus.RanToCompletion)
++            {
++                retention.Dispose();
++                Emit(id, "LifetimeDisposed", clock.Timestamp, requestId);
++            }
+             // Failed physical cleanup intentionally keeps its permit and reports failure.
+         }
+     }
+@@ -244,8 +248,8 @@ public sealed class PipeEndpoint : IHostBridgeEndpoint
+     static void Observe(Task task) => task.ContinueWith(t => { _ = t.Exception; }, CancellationToken.None, TaskContinuationOptions.OnlyOnFaulted | TaskContinuationOptions.ExecuteSynchronously, TaskScheduler.Default);
+     static bool Expected(Exception error) => error is IOException || error is InvalidDataException || error is UnauthorizedAccessException ||
+         error is OperationCanceledException || error is ObjectDisposedException || error is BridgeException || error is System.ComponentModel.Win32Exception || error is InvalidOperationException;
+-    void Emit(long id, string stage, long timestamp)
+-    { try { observe?.Invoke(new PipeEvent { ConnectionId = id, Stage = stage, Timestamp = timestamp }); } catch { /* Diagnostics cannot acquire ownership of an operation. */ } }
++    void Emit(long id, string stage, long timestamp, string requestId = "")
++    { try { observe?.Invoke(new PipeEvent { ConnectionId = id, Stage = stage, Timestamp = timestamp, RequestId = requestId }); } catch { /* Diagnostics cannot acquire ownership of an operation. */ } }
+     void RecordCancellationFailure(long id, string requestId, Exception error)
+         => RecordFailure(id, requestId, error, "CancellationCallbackFailed");
+     void RecordFailure(long id, string requestId, Exception error, string stage)
+diff --git a/projects/revit-readiness/src/revit-addin/BridgeApplication.cs b/projects/revit-readiness/src/revit-addin/BridgeApplication.cs
+index eed6f67..d8ec6cc 100644
+--- a/projects/revit-readiness/src/revit-addin/BridgeApplication.cs
++++ b/projects/revit-readiness/src/revit-addin/BridgeApplication.cs
+@@ -17,7 +17,14 @@ namespace BimAgentLab.RevitReadiness
+         bool hooked;
+         bool reportedLifecycleFailure;
+         public Result OnStartup(UIControlledApplication app)
+-        { application = app; Current = this; return Result.Succeeded; } // No automatic listener.
++        {
++            application = app; Current = this;
++#if BIM_BRIDGE_DIAGNOSTICS
++            BridgeDiagnostics.Initialize();
++            BridgeDiagnostics.HookClosing(app);
++#endif
++            return Result.Succeeded;
++        } // No automatic listener.
+ 
+         internal void Start()
+         {
+@@ -37,12 +44,36 @@ namespace BimAgentLab.RevitReadiness
+             {
+                 var handler = new ReadinessExternalEventHandler(ui => next.DrainInApiContext(c => executor.Execute(ui, c)));
+                 var externalEvent = ExternalEvent.Create(handler);
+-                return new ApiEventLease(() => Map(externalEvent.Raise()), externalEvent.Dispose);
+-            }, () => new PipeEndpoint(descriptor, new SessionCatalog(), clock, observation =>
++                return new ApiEventLease(() => {
++#if BIM_BRIDGE_DIAGNOSTICS
++                    BridgeDiagnostics.Record("NativeRaiseBegin");
++#endif
++                    var result = externalEvent.Raise();
++#if BIM_BRIDGE_DIAGNOSTICS
++                    BridgeDiagnostics.Record("NativeRaiseEnd", result.ToString());
++#endif
++                    return Map(result);
++                }, () => {
++                    externalEvent.Dispose();
++#if BIM_BRIDGE_DIAGNOSTICS
++                    BridgeDiagnostics.Record("EventDisposed");
++#endif
++                });
++            }, () => {
++                var endpoint = new PipeEndpoint(descriptor, new SessionCatalog(), clock, observation =>
+             {
++#if BIM_BRIDGE_DIAGNOSTICS
++                BridgeDiagnostics.RecordPipe(observation);
++#endif
+                 if (observation.Error != null && System.Threading.Interlocked.Exchange(ref reportedNetworkFailure, 1) == 0)
+                     Trace.TraceError("BIM bridge asynchronous cleanup failure: {0}", observation.Error.GetType().Name);
+-            }));
++            });
++#if BIM_BRIDGE_DIAGNOSTICS
++                return BridgeDiagnostics.Endpoint(endpoint);
++#else
++                return endpoint;
++#endif
++            });
+             executor = new RevitReadinessExecutor(descriptor, next, nextCatalog);
+             // Retain ownership before acquisition, including failed starts.
+             session = next; catalog = nextCatalog; reportedLifecycleFailure = false;
+@@ -57,10 +88,16 @@ namespace BimAgentLab.RevitReadiness
+ 
+         internal void Stop()
+         {
++#if BIM_BRIDGE_DIAGNOSTICS
++            BridgeDiagnostics.Record("StopEntered");
++#endif
+             if (session == null) { Unhook(); return; }
+             try { Observe(session.StopInApiContext()); }
+             finally { catalog.Clear(); }
+             if (session.PollRetirementInApiContext()) Unhook();
++#if BIM_BRIDGE_DIAGNOSTICS
++            BridgeDiagnostics.Record("StopReturned");
++#endif
+         }
+         void OnIdling(object sender, IdlingEventArgs args)
+         {
+@@ -84,7 +121,11 @@ namespace BimAgentLab.RevitReadiness
+             try
+             {
+                 application.ControlledApplication.DocumentClosed += OnDocumentClosed;
+-                try { application.ControlledApplication.DocumentSavedAs += OnDocumentSavedAs; hooked = true; }
++                try { application.ControlledApplication.DocumentSavedAs += OnDocumentSavedAs; hooked = true;
++#if BIM_BRIDGE_DIAGNOSTICS
++                    BridgeDiagnostics.Record("EventsHooked");
++#endif
++                }
+                 catch { application.ControlledApplication.DocumentClosed -= OnDocumentClosed; throw; }
+             }
+             catch { application.Idling -= OnIdling; throw; }
+@@ -96,13 +137,24 @@ namespace BimAgentLab.RevitReadiness
+             application.ControlledApplication.DocumentClosed -= OnDocumentClosed;
+             application.ControlledApplication.DocumentSavedAs -= OnDocumentSavedAs;
+             hooked = false;
++#if BIM_BRIDGE_DIAGNOSTICS
++            BridgeDiagnostics.Record("EventsUnhooked");
++#endif
+         }
+         public Result OnShutdown(UIControlledApplication app)
+         {
++#if BIM_BRIDGE_DIAGNOSTICS
++            BridgeDiagnostics.Record("ApplicationShutdownEntered");
++#endif
+             try { Stop(); }
+             catch (Exception error) { Trace.TraceError("BIM bridge shutdown: {0}", error.GetType().Name); }
+             finally { Unhook(); Current = null; }
+             // No waits on API execution, borrowed cancellation callbacks or network tasks.
++#if BIM_BRIDGE_DIAGNOSTICS
++            BridgeDiagnostics.UnhookClosing(app);
++            BridgeDiagnostics.HoldLifecycle("ShutdownAfterStop");
++            BridgeDiagnostics.Record("ApplicationShutdownReturned");
++#endif
+             return Result.Succeeded;
+         }
+         static void Observe(Task task)
+diff --git a/projects/revit-readiness/src/revit-addin/RequiredInformationReader.cs b/projects/revit-readiness/src/revit-addin/RequiredInformationReader.cs
+index 5f75d58..391c48c 100644
+--- a/projects/revit-readiness/src/revit-addin/RequiredInformationReader.cs
++++ b/projects/revit-readiness/src/revit-addin/RequiredInformationReader.cs
+@@ -13,6 +13,9 @@ namespace BimAgentLab.RevitReadiness
+         internal static readonly Guid AssemblyGuid = new Guid("cd425f17-1bb4-4d3f-a088-902728147491");
+         internal static InformationReport Read(Document document, Checklist checklist, string checklistPath)
+         {
++#if BIM_BRIDGE_DIAGNOSTICS
++            BridgeDiagnostics.Record("ReaderEntered");
++#endif
+             checklist.Validate();
+             if (document.ProjectInformation.UniqueId != checklist.ProjectUniqueId ||
+                 !string.Equals(Path.GetFileName(document.PathName), checklist.ProjectFileName, StringComparison.OrdinalIgnoreCase))
+@@ -29,6 +32,9 @@ namespace BimAgentLab.RevitReadiness
+                 RequestedInstances = checklist.Cases.Count, ModifiedBefore = document.IsModified
+             };
+             var types = new Dictionary<string, TypeObservation>(StringComparer.Ordinal);
++#if BIM_BRIDGE_DIAGNOSTICS
++            BridgeDiagnostics.Hold("Reader"); // Actual reader has already accessed Autodesk data above.
++#endif
+             foreach (var expected in checklist.Cases)
+             {
+                 var element = document.GetElement(expected.UniqueId);
+diff --git a/projects/revit-readiness/src/revit-addin/RevitReadinessExecutor.cs b/projects/revit-readiness/src/revit-addin/RevitReadinessExecutor.cs
+index 3945294..545c581 100644
+--- a/projects/revit-readiness/src/revit-addin/RevitReadinessExecutor.cs
++++ b/projects/revit-readiness/src/revit-addin/RevitReadinessExecutor.cs
+@@ -15,6 +15,12 @@ namespace BimAgentLab.RevitReadiness
+         { this.descriptor = descriptor; this.session = session; this.catalog = catalog; }
+         internal BridgeResponse Execute(UIApplication application, BridgeExecutionContext context)
+         {
++#if BIM_BRIDGE_DIAGNOSTICS
++            return BridgeDiagnostics.Execute(context, () => ExecuteCore(application, context));
++        }
++        BridgeResponse ExecuteCore(UIApplication application, BridgeExecutionContext context)
++        {
++#endif
+             if (context.Request.Operation == BridgeLimits.GetContext)
+                 return ReadinessExecutionFlow.Run(context, () => catalog.Capture(application), prepared => prepared,
+                     prepared => ReadinessExecutionFlow.IssueContext(context, session.Contexts, prepared.Binding, session.ResponseFor(context), lease =>
+@@ -33,9 +39,21 @@ namespace BimAgentLab.RevitReadiness
+                 {
+                     snapshot = catalog.Capture(application);
+                     session.Contexts.Validate(context.Request.ContextToken, snapshot.Binding);
++#if BIM_BRIDGE_DIAGNOSTICS
++                    BridgeDiagnostics.Hold("Preparation");
++#endif
+                     return snapshot;
+                 },
++#if BIM_BRIDGE_DIAGNOSTICS
++                prepared => {
++                    try { return RequiredInformationReader.Read(prepared.Document, prepared.Checklist, prepared.Binding.ChecklistPath); }
++                    finally {
++                        BridgeDiagnostics.Record("ReaderExited");
++                    }
++                },
++#else
+                 prepared => RequiredInformationReader.Read(prepared.Document, prepared.Checklist, prepared.Binding.ChecklistPath),
++#endif
+                 report => Response(context, snapshot.Binding.ChecklistSha256, ReadinessPayloadCodec.SerializeReport(report)));
+         }
+         BridgeResponse Response(BridgeExecutionContext context, string hash, string result) => new BridgeResponse
+
+External server source delta
+git diff d88de67 627e227c8054feaf91539976b32dd09228c4e93f -- projects/revit-readiness/src/mcp-server projects/revit-readiness/src/bridge-runtime projects/revit-readiness/src/bridge-contract
+diff --git a/projects/revit-readiness/src/bridge-runtime/PipeEndpoint.cs b/projects/revit-readiness/src/bridge-runtime/PipeEndpoint.cs
+index 722cf17..3f79c0c 100644
+--- a/projects/revit-readiness/src/bridge-runtime/PipeEndpoint.cs
++++ b/projects/revit-readiness/src/bridge-runtime/PipeEndpoint.cs
+@@ -220,7 +220,11 @@ public sealed class PipeEndpoint : IHostBridgeEndpoint
+             // A faulted Quiesced task also means the executor finished. Release after
+             // successful physical disposal, independently of that logical outcome.
+             var disposal = lifetime.DisposalCompleted;
+-            if (disposal.Status == TaskStatus.RanToCompletion) retention.Dispose();
++            if (disposal.Status == TaskStatus.RanToCompletion)
++            {
++                retention.Dispose();
++                Emit(id, "LifetimeDisposed", clock.Timestamp, requestId);
++            }
+             // Failed physical cleanup intentionally keeps its permit and reports failure.
+         }
+     }
+@@ -244,8 +248,8 @@ public sealed class PipeEndpoint : IHostBridgeEndpoint
+     static void Observe(Task task) => task.ContinueWith(t => { _ = t.Exception; }, CancellationToken.None, TaskContinuationOptions.OnlyOnFaulted | TaskContinuationOptions.ExecuteSynchronously, TaskScheduler.Default);
+     static bool Expected(Exception error) => error is IOException || error is InvalidDataException || error is UnauthorizedAccessException ||
+         error is OperationCanceledException || error is ObjectDisposedException || error is BridgeException || error is System.ComponentModel.Win32Exception || error is InvalidOperationException;
+-    void Emit(long id, string stage, long timestamp)
+-    { try { observe?.Invoke(new PipeEvent { ConnectionId = id, Stage = stage, Timestamp = timestamp }); } catch { /* Diagnostics cannot acquire ownership of an operation. */ } }
++    void Emit(long id, string stage, long timestamp, string requestId = "")
++    { try { observe?.Invoke(new PipeEvent { ConnectionId = id, Stage = stage, Timestamp = timestamp, RequestId = requestId }); } catch { /* Diagnostics cannot acquire ownership of an operation. */ } }
+     void RecordCancellationFailure(long id, string requestId, Exception error)
+         => RecordFailure(id, requestId, error, "CancellationCallbackFailed");
+     void RecordFailure(long id, string requestId, Exception error, string stage)

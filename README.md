@@ -1,5 +1,7 @@
 # BIM Agent Lab
 
+**Current review checkpoint:** the [R3 packet](docs/superpowers/reviews/revit-mcp-bridge/03-implementation-review.md) and [A1–A9 ledger](projects/revit-readiness/docs/verification/2026-10-22-r3-acceptance.md) identify passed evidence and open items. Independent review and final acceptance remain pending; this is not a finished public release.
+
 Learn to build and extend BIM tools with AI coding agents—from research and Git to working plugins and MCP servers.
 
 BIM Agent Lab is a teaching repository for BIM professionals. It pairs working examples with the prompts, research, decisions and verification needed to understand and extend them. Revit readiness is the first example; the lab can grow to other BIM applications.

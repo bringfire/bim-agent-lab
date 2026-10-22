@@ -1,0 +1,16 @@
+{
+  "sourceCommit": "627e227c8054feaf91539976b32dd09228c4e93f",
+  "sourceFilesUnchanged": 244,
+  "noticeAndLicenseHashChecks": [
+    {
+      "manifest": "license-sources.json",
+      "verified": 2
+    },
+    {
+      "manifest": "package-notices.json",
+      "verified": 9
+    }
+  ],
+  "scope": "Source-byte and retained license/notice consistency; code provenance review remains a separate judgment.",
+  "pass": true
+}

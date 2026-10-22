@@ -1,0 +1,439 @@
+{
+  "scope": "Retained evidence replay, not new host execution",
+  "manifests": [
+    {
+      "manifest": "projects/revit-readiness/docs/verification/desktop-launch-evidence/hashes.json",
+      "verified": 56
+    },
+    {
+      "manifest": "projects/revit-readiness/docs/verification/desktop-readiness-evidence/2026-10-22/hashes.json",
+      "verified": 34
+    },
+    {
+      "manifest": "projects/revit-readiness/docs/verification/shared-installation-evidence/hashes.json",
+      "verified": 43
+    },
+    {
+      "manifest": "projects/revit-readiness/docs/verification/shutdown-preparation-evidence/hashes.json",
+      "verified": 153
+    },
+    {
+      "manifest": "projects/revit-readiness/docs/verification/shared-recovery-evidence/preparation/hashes.json",
+      "verified": 6
+    },
+    {
+      "manifest": "projects/revit-readiness/docs/verification/shared-recovery-evidence/execution/hashes.json",
+      "verified": 66
+    },
+    {
+      "manifest": "projects/revit-readiness/docs/verification/shared-recovery-evidence/live/hashes.json",
+      "verified": 27
+    },
+    {
+      "manifest": "projects/revit-readiness/docs/verification/host-deadline-evidence/hashes.json",
+      "verified": 58
+    },
+    {
+      "manifest": "projects/revit-readiness/docs/verification/host-diagnostic-evidence/hashes.json",
+      "verified": 19
+    },
+    {
+      "manifest": "projects/revit-readiness/docs/verification/host-diagnostic-startup-evidence/hashes.json",
+      "verified": 27
+    },
+    {
+      "manifest": "projects/revit-readiness/docs/verification/host-interruption-evidence/hashes.json",
+      "verified": 416
+    },
+    {
+      "manifest": "projects/revit-readiness/docs/verification/host-stop-recovery-evidence/hashes.json",
+      "verified": 147
+    },
+    {
+      "manifest": "projects/revit-readiness/docs/verification/live-installation-evidence/hashes.json",
+      "verified": 337
+    },
+    {
+      "manifest": "projects/revit-readiness/docs/verification/mcp-client-compatibility-evidence/compatible-desktops/manifest.json",
+      "verified": 52
+    },
+    {
+      "manifest": "projects/revit-readiness/docs/verification/sdk-cancellation-evidence/hashes.json",
+      "verified": 162
+    },
+    {
+      "manifest": "projects/revit-readiness/docs/verification/readiness-runner-evidence/2026-10-22/manifest.json",
+      "verified": 21
+    },
+    {
+      "manifest": "projects/revit-readiness/docs/verification/mcp-readiness-evidence/2026-10-22-ceiling-negative/evidence-manifest.json",
+      "verified": 29
+    },
+    {
+      "manifest": "projects/revit-readiness/docs/verification/mcp-readiness-evidence/2026-10-22-complete-and-context-switch/evidence-manifest.json",
+      "verified": 86
+    },
+    {
+      "manifest": "projects/revit-readiness/docs/verification/mcp-readiness-evidence/2026-10-22-nc1/evidence-manifest.json",
+      "verified": 35
+    },
+    {
+      "manifest": "projects/revit-readiness/docs/verification/mcp-readiness-evidence/2026-10-22-nc2/evidence-manifest.json",
+      "verified": 30
+    },
+    {
+      "manifest": "projects/revit-readiness/docs/verification/mcp-readiness-evidence/2026-10-22-wall-defects/evidence-manifest.json",
+      "verified": 34
+    }
+  ],
+  "hashEntriesVerified": 1838,
+  "comparisons": [
+    {
+      "directory": "mcp-readiness-evidence/2026-10-22-ceiling-negative/claude-ceiling-negative",
+      "result": {
+        "case": "ceiling-negative",
+        "pass": true,
+        "findings": 3,
+        "affectedInstances": 8,
+        "examinedInstances": 16,
+        "coverageComplete": true,
+        "evaluationComplete": true
+      }
+    },
+    {
+      "directory": "mcp-readiness-evidence/2026-10-22-ceiling-negative/codex-ceiling-negative",
+      "result": {
+        "case": "ceiling-negative",
+        "pass": true,
+        "findings": 3,
+        "affectedInstances": 8,
+        "examinedInstances": 16,
+        "coverageComplete": true,
+        "evaluationComplete": true
+      }
+    },
+    {
+      "directory": "mcp-readiness-evidence/2026-10-22-ceiling-negative/sdk-july-ceiling-negative",
+      "result": {
+        "case": "ceiling-negative",
+        "pass": true,
+        "findings": 3,
+        "affectedInstances": 8,
+        "examinedInstances": 16,
+        "coverageComplete": true,
+        "evaluationComplete": true
+      }
+    },
+    {
+      "directory": "mcp-readiness-evidence/2026-10-22-complete-and-context-switch/claude-complete-02",
+      "result": {
+        "case": "complete",
+        "pass": true,
+        "findings": 0,
+        "affectedInstances": 0,
+        "examinedInstances": 16,
+        "coverageComplete": true,
+        "evaluationComplete": true
+      }
+    },
+    {
+      "directory": "mcp-readiness-evidence/2026-10-22-complete-and-context-switch/claude-stale-ceiling-to-complete-02",
+      "result": {
+        "pass": true,
+        "code": "ContextChanged",
+        "recovery": {
+          "case": "complete",
+          "pass": true,
+          "findings": 0,
+          "affectedInstances": 0,
+          "examinedInstances": 16,
+          "coverageComplete": true,
+          "evaluationComplete": true
+        }
+      }
+    },
+    {
+      "directory": "mcp-readiness-evidence/2026-10-22-complete-and-context-switch/codex-complete",
+      "result": {
+        "case": "complete",
+        "pass": true,
+        "findings": 0,
+        "affectedInstances": 0,
+        "examinedInstances": 16,
+        "coverageComplete": true,
+        "evaluationComplete": true
+      }
+    },
+    {
+      "directory": "mcp-readiness-evidence/2026-10-22-complete-and-context-switch/codex-stale-ceiling-to-complete",
+      "result": {
+        "pass": true,
+        "code": "ContextChanged",
+        "recovery": {
+          "case": "complete",
+          "pass": true,
+          "findings": 0,
+          "affectedInstances": 0,
+          "examinedInstances": 16,
+          "coverageComplete": true,
+          "evaluationComplete": true
+        }
+      }
+    },
+    {
+      "directory": "mcp-readiness-evidence/2026-10-22-complete-and-context-switch/sdk-july-complete",
+      "result": {
+        "case": "complete",
+        "pass": true,
+        "findings": 0,
+        "affectedInstances": 0,
+        "examinedInstances": 16,
+        "coverageComplete": true,
+        "evaluationComplete": true
+      }
+    },
+    {
+      "directory": "mcp-readiness-evidence/2026-10-22-nc1/claude-nc1",
+      "result": {
+        "case": "nc1",
+        "pass": true,
+        "findings": 0,
+        "affectedInstances": 0,
+        "examinedInstances": 15,
+        "coverageComplete": false,
+        "evaluationComplete": true
+      }
+    },
+    {
+      "directory": "mcp-readiness-evidence/2026-10-22-nc1/codex-nc1",
+      "result": {
+        "case": "nc1",
+        "pass": true,
+        "findings": 0,
+        "affectedInstances": 0,
+        "examinedInstances": 15,
+        "coverageComplete": false,
+        "evaluationComplete": true
+      }
+    },
+    {
+      "directory": "mcp-readiness-evidence/2026-10-22-nc1/sdk-july-nc1",
+      "result": {
+        "case": "nc1",
+        "pass": true,
+        "findings": 0,
+        "affectedInstances": 0,
+        "examinedInstances": 15,
+        "coverageComplete": false,
+        "evaluationComplete": true
+      }
+    },
+    {
+      "directory": "mcp-readiness-evidence/2026-10-22-nc2/claude-nc2",
+      "result": {
+        "case": "nc2",
+        "pass": true,
+        "findings": 0,
+        "affectedInstances": 0,
+        "examinedInstances": 16,
+        "coverageComplete": false,
+        "evaluationComplete": false
+      }
+    },
+    {
+      "directory": "mcp-readiness-evidence/2026-10-22-nc2/codex-nc2",
+      "result": {
+        "case": "nc2",
+        "pass": true,
+        "findings": 0,
+        "affectedInstances": 0,
+        "examinedInstances": 16,
+        "coverageComplete": false,
+        "evaluationComplete": false
+      }
+    },
+    {
+      "directory": "mcp-readiness-evidence/2026-10-22-nc2/sdk-july-nc2",
+      "result": {
+        "case": "nc2",
+        "pass": true,
+        "findings": 0,
+        "affectedInstances": 0,
+        "examinedInstances": 16,
+        "coverageComplete": false,
+        "evaluationComplete": false
+      }
+    },
+    {
+      "directory": "mcp-readiness-evidence/2026-10-22-wall-defects/claude-wall-defects",
+      "result": {
+        "case": "wall-defects",
+        "pass": true,
+        "findings": 2,
+        "affectedInstances": 6,
+        "examinedInstances": 16,
+        "coverageComplete": true,
+        "evaluationComplete": true
+      }
+    },
+    {
+      "directory": "mcp-readiness-evidence/2026-10-22-wall-defects/codex-wall-defects-02",
+      "result": {
+        "case": "wall-defects",
+        "pass": true,
+        "findings": 2,
+        "affectedInstances": 6,
+        "examinedInstances": 16,
+        "coverageComplete": true,
+        "evaluationComplete": true
+      }
+    },
+    {
+      "directory": "mcp-readiness-evidence/2026-10-22-wall-defects/sdk-july-wall-defects",
+      "result": {
+        "case": "wall-defects",
+        "pass": true,
+        "findings": 2,
+        "affectedInstances": 6,
+        "examinedInstances": 16,
+        "coverageComplete": true,
+        "evaluationComplete": true
+      }
+    }
+  ],
+  "postReinstallWrapper": {
+    "case": "complete",
+    "pass": true,
+    "findings": 0,
+    "affectedInstances": 0,
+    "examinedInstances": 16,
+    "coverageComplete": true,
+    "evaluationComplete": true
+  },
+  "desktopContinuity": [
+    {
+      "directory": "desktop-readiness-evidence/2026-10-22/claude-initial",
+      "result": {
+        "pass": true,
+        "scope": "Initial desktop continuity; not independent BIM oracle, five-case A8 or shutdown acceptance",
+        "protocolVersion": "2025-11-25",
+        "clientInfo": {
+          "name": "local-agent-mode-bim-agent-lab-revit-readiness",
+          "version": "1.0.0"
+        },
+        "contextRequestId": "16a4ddbbc1664c5b82620b17f6b73b7a",
+        "reportRequestId": "57e3cddda401495fbaecf3154d07d045",
+        "bridgeSessionId": "a3163353950948eabd8cfb8a4955d860",
+        "requestedInstances": 16,
+        "examinedInstances": 16,
+        "findingCount": 0,
+        "coverageComplete": true,
+        "evaluationComplete": true,
+        "modifiedBefore": false,
+        "modifiedAfter": false,
+        "reportFieldsExcludedFromComparison": [
+          "GeneratedUtc"
+        ],
+        "exchanges": [
+          {
+            "label": "code",
+            "contextRequestId": "c9dfad000b2f44098834bdb921ef00d8",
+            "reportRequestId": "6354aded70db443896b44312bdbf909e",
+            "bridgeSessionId": "a3163353950948eabd8cfb8a4955d860",
+            "requestedInstances": 16,
+            "examinedInstances": 16,
+            "findingCount": 0,
+            "coverageComplete": true,
+            "evaluationComplete": true,
+            "modifiedBefore": false,
+            "modifiedAfter": false
+          },
+          {
+            "label": "chat",
+            "contextRequestId": "16a4ddbbc1664c5b82620b17f6b73b7a",
+            "reportRequestId": "57e3cddda401495fbaecf3154d07d045",
+            "bridgeSessionId": "a3163353950948eabd8cfb8a4955d860",
+            "requestedInstances": 16,
+            "examinedInstances": 16,
+            "findingCount": 0,
+            "coverageComplete": true,
+            "evaluationComplete": true,
+            "modifiedBefore": false,
+            "modifiedAfter": false
+          }
+        ]
+      }
+    },
+    {
+      "directory": "desktop-readiness-evidence/2026-10-22/codex-initial",
+      "result": {
+        "pass": true,
+        "scope": "Initial desktop continuity; not independent BIM oracle, five-case A8 or shutdown acceptance",
+        "protocolVersion": "2025-06-18",
+        "clientInfo": {
+          "name": "codex-mcp-client",
+          "title": "Codex",
+          "version": "0.163.0-alpha.11.1"
+        },
+        "contextRequestId": "312449bac55a46fba291101010c80149",
+        "reportRequestId": "2c9d5c963ed74bcb866c3a431988573e",
+        "bridgeSessionId": "a3163353950948eabd8cfb8a4955d860",
+        "requestedInstances": 16,
+        "examinedInstances": 16,
+        "findingCount": 0,
+        "coverageComplete": true,
+        "evaluationComplete": true,
+        "modifiedBefore": false,
+        "modifiedAfter": false,
+        "reportFieldsExcludedFromComparison": [
+          "GeneratedUtc"
+        ]
+      }
+    }
+  ],
+  "checkers": [
+    {
+      "script": "verify_live_lifecycle_capture.py",
+      "directory": "live-installation-evidence",
+      "exitCode": 0,
+      "stdout": "PASS 38 SDK lifecycle captures, restoration snapshots and session/document transitions; not full host/A8 acceptance\n",
+      "stderr": ""
+    },
+    {
+      "script": "verify_host_deadline_capture.py",
+      "directory": "host-deadline-evidence",
+      "exitCode": 0,
+      "stdout": "{\n  \"pass\": true,\n  \"cases\": [\n    {\n      \"stage\": \"Preparation\",\n      \"requestId\": \"6d363bfac85b4cee9b0b041a23a2acdd\",\n      \"readerEntries\": 0,\n      \"heldSeconds\": 29.980983,\n      \"connectedObservationMilliseconds\": 3003,\n      \"pass\": true\n    },\n    {\n      \"stage\": \"Reader\",\n      \"requestId\": \"0ba8332ed3e2451d9b63a7f68ff81467\",\n      \"readerEntries\": 1,\n      \"heldSeconds\": 29.975349,\n      \"connectedObservationMilliseconds\": 3004,\n      \"pass\": true\n    }\n  ],\n  \"scope\": \"Actual diagnostic host/SDK deadline controls; desktop A8 and physical disposal not proven\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "verify_host_interruption_capture.py",
+      "directory": "host-interruption-evidence",
+      "exitCode": 0,
+      "stdout": "{\n  \"pass\": true,\n  \"cases\": [\n    {\n      \"origin\": \"cancel\",\n      \"stage\": \"Preparation\",\n      \"requestId\": \"3c98e0fe6f54482a93bae88ffa0e3e0f\",\n      \"readerEntries\": 0,\n      \"interruptionMilliseconds\": 5,\n      \"pass\": true\n    },\n    {\n      \"origin\": \"cancel\",\n      \"stage\": \"Reader\",\n      \"requestId\": \"53c07af263514657bb0f6a2a5a81bb4c\",\n      \"readerEntries\": 1,\n      \"interruptionMilliseconds\": 5,\n      \"pass\": true\n    },\n    {\n      \"origin\": \"eof\",\n      \"stage\": \"Preparation\",\n      \"requestId\": \"4b346e755c6a49caa9d3c7227f0a99a3\",\n      \"readerEntries\": 0,\n      \"interruptionMilliseconds\": 11,\n      \"pass\": true\n    },\n    {\n      \"origin\": \"eof\",\n      \"stage\": \"Reader\",\n      \"requestId\": \"fa94549aa89d4a4fadcd3c9a91660bbc\",\n      \"readerEntries\": 1,\n      \"interruptionMilliseconds\": 12,\n      \"pass\": true\n    }\n  ],\n  \"queued\": [\n    {\n      \"origin\": \"cancel\",\n      \"requestId\": \"abb2697326af4b8a9547908196dbda80\",\n      \"executorEntries\": 0,\n      \"readerEntries\": 0,\n      \"quiescedWhileBlockerHeld\": true\n    },\n    {\n      \"origin\": \"eof\",\n      \"requestId\": \"b01d8d9ecd47433499b0b5b302a311a3\",\n      \"executorEntries\": 0,\n      \"readerEntries\": 0,\n      \"quiescedWhileBlockerHeld\": true\n    },\n    {\n      \"origin\": \"deadline\",\n      \"requestId\": \"7166ae0f7a90408fa3a4524b2aa03cad\",\n      \"executorEntries\": 0,\n      \"readerEntries\": 0,\n      \"quiescedWhileBlockerHeld\": true\n    }\n  ],\n  \"executingStop\": {\n    \"pass\": true,\n    \"requestId\": \"69faa3b4b3b24e1f90f5b1a316aec948\",\n    \"networkStoppedWhileReaderHeld\": true,\n    \"eventDisposedOnApiThread\": true,\n    \"hooksRemoved\": true,\n    \"descriptorRemoved\": true,\n    \"revitStillAlive\": true\n  },\n  \"scope\": \"Diagnostic host interruption/Stop; not application shutdown, SDK token propagation, physical disposal or desktop A8\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "verify_host_stop_recovery.py",
+      "directory": "host-stop-recovery-evidence",
+      "exitCode": 0,
+      "stdout": "{\n  \"restart\": {\n    \"pass\": true,\n    \"bridgeSessionId\": \"440e441f0ca74e04b4435bd62db85c8b\",\n    \"reportMatchesBaseline\": true,\n    \"scope\": \"Fresh-session recovery; old token was already expired, not isolated restart invalidation\"\n  },\n  \"queuedStop\": {\n    \"pass\": true,\n    \"queuedRequests\": 3,\n    \"queuedExecutorEntries\": 0,\n    \"queuedReaderEntries\": 0,\n    \"networkCompletedWhileReaderHeld\": true,\n    \"eventDisposedOnApiThread\": true,\n    \"hooksRemovedOnApiThread\": true,\n    \"scope\": \"Injected Stop; not application shutdown or physical lifetime disposal\"\n  },\n  \"restoration\": {\n    \"pass\": true,\n    \"normalCandidate\": \"9a93f6d\",\n    \"restoredTargets\": 97,\n    \"unchangedSavedModelsAndSidecars\": 4,\n    \"scope\": \"Idle application shutdown and normal-build restoration; shared server remains redirected\"\n  }\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "verify_application_shutdown.py",
+      "directory": "shutdown-preparation-evidence/live/application-close-01",
+      "exitCode": 0,
+      "stdout": "{\n  \"pass\": true,\n  \"queuedRequests\": 3,\n  \"physicalLifetimeDisposals\": 3,\n  \"scope\": \"Actual shutdown with queued work under diagnostic lifecycle holds; not concurrent reader execution or native Raise overlap proof\"\n}\n",
+      "stderr": ""
+    },
+    {
+      "script": "verify_sdk_cancellation_diagnosis.py",
+      "directory": "sdk-cancellation-evidence/characterized-final",
+      "exitCode": 0,
+      "stdout": "PASS 6 SDK characterization exchanges and mechanism control; known token failure remains\n",
+      "stderr": ""
+    }
+  ],
+  "pass": true
+}

@@ -1,5 +1,7 @@
 # Independent live readiness comparisons
 
+**Consolidated acceptance:** the [A1–A9 ledger](2026-10-22-r3-acceptance.md) supersedes stale pending statements in chronological sections below. The five-case desktop matrix is retained evidence for the recorded installed candidate; overall acceptance remains open. [R3 packet](../../../../docs/superpowers/reviews/revit-mcp-bridge/03-implementation-review.md).
+
 Date: 2026-10-22. All five sample comparisons and both desktop context-switch/recovery tests are verified. Task 8 workflow consolidation and R3 remain open; this is not full acceptance closure.
 
 Baseline: source checkpoint `6f0c1523f1e4d7eac03f46d6ad6573565e96b6b4`; normal Revit host `9a93f6d`, installed external server `d88de67`; Revit 2024 build 24.3.60.12, PID 149972, bridge session `a3163353950948eabd8cfb8a4955d860`. No production, dependency, installation or desktop configuration changes in this increment.
