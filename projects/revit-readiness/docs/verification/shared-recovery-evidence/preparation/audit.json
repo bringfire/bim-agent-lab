@@ -1,0 +1,37 @@
+{
+  "checkedUtc": "2026-10-22T17:29:19.306839+00:00",
+  "actualUndoPerformed": false,
+  "installedTargetsVerified": 97,
+  "packageFilesVerified": 83,
+  "reverseLineageCompatible": true,
+  "serverSource": "d88de673996520d86c3502f357880865d1037fb9",
+  "hostSource": "9a93f6d",
+  "receipts": [
+    {
+      "transaction": "68dac9adc1c04f0694a12acfda4e9a6c",
+      "state": "Committed",
+      "operations": 97,
+      "changed": 9,
+      "receiptSha256": "E1306368D8BBBF35CCF309CD1F53BF1C3B21C450ABB8DAECCD8CA851E9C6C813",
+      "backupAndStagedVerified": true
+    },
+    {
+      "transaction": "2ccfb37b641e4a7f93391f6788dde437",
+      "state": "Committed",
+      "operations": 97,
+      "changed": 3,
+      "receiptSha256": "3D6E2F1B6DDD671C23689DB8744E1E7BDADF92B3DB5A50888BC23A567AAF527C",
+      "backupAndStagedVerified": true
+    },
+    {
+      "transaction": "a88dbf5d84b94188a695e2dc73b6e954",
+      "state": "Committed",
+      "operations": 97,
+      "changed": 31,
+      "receiptSha256": "CE06400EAA0A17B5339609AAF56ABB38A877459273CE85F784F878C039EFCBFD",
+      "backupAndStagedVerified": true
+    }
+  ],
+  "runRoot": "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\shared-recovery\\d80b639db55c4a39a69c9f15cc8feca0",
+  "scope": "Read-only preparation; original rollback and reinstallation not performed; Claude remains active."
+}

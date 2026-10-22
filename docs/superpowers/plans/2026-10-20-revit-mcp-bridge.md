@@ -4,6 +4,8 @@
 
 **Goal:** Expose the existing read-only readiness check through two MCP tools, prove it in Revit and both required desktop applications, and record how the author directed the work.
 
+Execution decision, October 22: the author directed continuation using [verified explicit SDK cancellation](../reviews/revit-mcp-bridge/2026-10-22-cancellation-disposition.md). Keep SDK2.2.0 and the original token-only failure probe; no fork/patch, protocol change or A3 waiver. Carry the limitation into R3 and test future upgrades against remote invalidation. Actual desktop Stop behavior remains unverified. Normative spec/plan acceptance requirements are unchanged.
+
 **Architecture:** An external net10.0 executable consumes the official C# MCP SDK and communicates with an original net48 Revit adapter through bounded local named pipes. Plain contracts and API-independent connection/queue code are shared; only an ExternalEvent handler accesses Revit and calls the existing reader/evaluator. The manual command and isolated Excel exporter retain their behavior.
 
 **Tech Stack:** Revit 2024 `24.3.60.12`, .NET SDK `10.0.204`, .NET Framework 4.8, external .NET 10, `ModelContextProtocol` exact NuGet constraint `[2.2.0]`, protocol `2026-07-28` plus SDK-provided desktop compatibility under the [amendment](../specs/2026-10-20-desktop-compatibility-amendment.md), PowerShell and existing Python verification workflow.

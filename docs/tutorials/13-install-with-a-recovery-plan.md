@@ -223,3 +223,17 @@ Suggested participant prompt:
 The agent recorded a diagnosed dependency limitation and retained a failing propagation test. It also kept a separate test that recognizes the known failure; that test passing does not mean cancellation was repaired. The newer SDK source still contained the same ordering, so merely upgrading was not a demonstrated solution. The installed plugin and desktop settings stayed as they were.
 
 Participants do not need to understand callback internals to direct this work. They need to ask for evidence on both sides of the connection and challenge a conclusion based only on the client saying “canceled.” The [technical diagnosis and reproduction steps](../../projects/revit-readiness/docs/verification/2026-10-22-sdk-cancellation-diagnosis.md) explain the mechanism, controls and remaining limits for agents.
+
+## Continue with a tested alternative
+
+The author asked whether the SDK defect had to be fixed before continuing, or whether explicit cancellation was sufficient. The agent recommended continuing the read-only project with the verified explicit-message approach, retaining the failure test and carrying the limitation into independent review. The author replied **“follow your recommendations.”**
+
+This is a decision participants will encounter with dependencies: fixing the library themselves adds maintenance work, while ignoring its failure leaves an unsupported assumption. Here the person could choose a supported mechanism that had been demonstrated at the receiving application. The failure stayed visible, and future upgrades would have to pass the test that currently exposes it.
+
+Suggested participant prompt:
+
+> Continue using the verified alternative. Record exactly what it covers and what it does not, keep the original failure test, and make sure the independent reviewer sees the limitation. Tell me what evidence would let us remove the workaround later.
+
+The [decision record](../superpowers/reviews/revit-mcp-bridge/2026-10-22-cancellation-disposition.md) separates approval to continue from proof that the defect is fixed. It also distinguishes the test client's cancellation from the desktop apps' Stop buttons, whose behavior still needs direct observation before making that claim.
+
+The agent next prepared the remaining installation recovery test and verified the exact package needed to return to the working version. Revit was closed, but Claude still had the readiness server running. When the author said **“I can't stop Claude right now...but I can reset Codex,”** the agent explained that resetting one client would not release the other's server files. It left the applications running and saved the prepared work. [Preparation and resume steps](../../projects/revit-readiness/docs/verification/2026-10-22-shared-recovery-preparation.md) make the boundary explicit: checked backups are useful evidence, but the actual restore is still pending.

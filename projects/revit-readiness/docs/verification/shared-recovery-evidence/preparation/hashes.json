@@ -1,0 +1,8 @@
+{
+  "audit.json": "cc862715ed5c466b424f5a9e0447e91f91a8677fa5b1bb4d8617897cc41dc5c6",
+  "baseline-hashes.json": "ce6d5d75d4101dd54da5e0e4cf836a38f1ffafe03b2242ba5467923b9dd461c7",
+  "package-manifest.json": "7225eb907bd554ae1f1ddd6f190c905a624251ec7566cf5c5d741bbfc5a4eaa6",
+  "physical-paths.json": "9dfda7b97b73505242650e0a6ffa1f3e2c939cb3de655bd8540061cfa08520d4",
+  "preflight.json": "ff04d65af1a375501f7736d30544a2c44fb34040c8d263e44711578999b6589b",
+  "preparation-script.ps1": "d698681fcb1ef59910213236ccefe92f5116163ee2bb00ca1cc6411cd773cd71"
+}
