@@ -32,9 +32,11 @@ The wall-defect result then matched the independent expectation in Codex, Claude
 
 The author then supplied Revit's native wall schedule. The person could see the three blank Wall B fire ratings and three blank Wall D codes directly. This gives participants a practical way to challenge an agent's answer: inspect the underlying application. Keep the limits clear: a wall schedule corroborates those wall values; it cannot by itself prove coverage of ceilings, the file path or the entire model.
 
-After the author opened the ceiling-defect sample, Codex and the separate July-protocol check found the additional missing ceiling code: three findings affecting eight instances. The agent requested the same neutral prompt in Claude, without supplying expected results in that prompt. Claude's ceiling result remains pending in the linked record. The closed wall file's hash matched its original value, giving a separate check that the saved model had not changed.
+After the author opened the ceiling-defect sample, Codex and the separate July-protocol check found the additional missing ceiling code: three findings affecting eight instances. The agent requested the same neutral prompt in Claude, without supplying expected results in that prompt. The author pasted Claude's answer, and the agent independently compared the actual tool exchange as well: all three results matched. Claude explicitly said the declared scope did not pass despite complete coverage. The closed wall file's hash matched its original value, giving a separate check that the saved model had not changed.
 
 For the upcoming old-context test, the person will switch models after each agent has acquired a context. The evidence must show the refusal happens before the context expires. Otherwise a timeout could produce a reassuring refusal without testing whether the bridge noticed the model switch. A fresh-context recovery must then prove the tool still works.
+
+The author also supplied the native ceiling schedule, visibly confirming two blank ACT codes alongside the two populated GWB controls. The agent then supplied a narrowly scoped prompt asking Claude to acquire a fresh context and stop. Separating acquisition from checking lets the person deliberately change the model between the two operations, without asking the agent to edit anything.
 
 ## Suggested prompts for your own project
 

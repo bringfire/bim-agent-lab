@@ -36,6 +36,8 @@ The raw streams may still be open. Snapshot complete-line byte prefixes and labe
 
 Retain human-supplied native schedule images unchanged and hash them. Record only visible observations and their limits. The wall screenshot corroborates six case rows with blank required values; it does not display the full document path, element UniqueIds, ceiling coverage or API null semantics. Tie it to the coordinated inspection and separate path/identity evidence rather than inventing information from the image.
 
+Keep the human-facing answer separate from the structured tool result. Both must be assessed: wire/report equality proves data arrived intact; the pasted response establishes whether the agent interpreted completeness, missing values and exclusions correctly. The wall and ceiling Chat answers now have both forms of evidence. Do not count a plausible pasted answer as proof of a new tool call without its matching recorded exchange.
+
 ## Verification and limits
 
 ```powershell

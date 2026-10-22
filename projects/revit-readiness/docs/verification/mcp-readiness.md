@@ -10,7 +10,7 @@ The [earlier continuity record](2026-10-22-desktop-readiness.md) proves the clea
 |---|---|---|---|---|
 | Complete | 16 examined, 0 findings, both complete | Pending | Pending | Pending |
 | Wall defects | 2 findings, 6 affected, both complete | Verified | Verified | Verified |
-| Ceiling negative | 3 findings, 8 affected, both complete | Verified | Pending | Verified |
+| Ceiling negative | 3 findings, 8 affected, both complete | Verified | Verified | Verified |
 | NC1 absent declared identity | 15 examined, scope issue, coverage false/evaluator true | Pending | Pending | Pending |
 | NC2 absent ACT requirement | 16 examined, two unexamined ACT instances, both false | Pending | Pending | Pending |
 | Old context after document switch | ContextChanged, no report, fresh recovery | Pending | Pending | Separate SDK lifecycle evidence exists; this coordinated run pending |
@@ -36,11 +36,15 @@ Desktop records are immutable complete-line prefixes of active sessions, not EOF
 
 After the author reported the prepared ceiling model open, the closed wall model was readable and its [SHA-256 comparison](mcp-readiness-evidence/2026-10-22-wall-defects/wall-post-close-hash.json) matched the pre-call value `efd2717188956f7a070480323d85bcffe765007135915c1908a909fe04d50d17`. This supplies the previously pending saved-file check for the wall sample, alongside its false modified-state flags.
 
-## Ceiling-negative model: Codex and July SDK verified; Claude pending
+## Ceiling-negative model verified through both desktops and July SDK
 
 Codex context `11ef191542d64bceaba00b03a888cb39` confirmed the exact prepared `BAL-info-ceiling-negative.rvt` path and checklist hash before the check. Check `3b547e26f8194f5782318bc3942d52ea` independently matched all expected fields and identities on `2025-06-18`; the separate official-SDK `2026-07-28` run also passed. [Retained captures and hashes](mcp-readiness-evidence/2026-10-22-ceiling-negative/evidence-manifest.json).
 
-Both full reports contain the original wall defects plus missing ACT ceiling Code, affecting ceiling elements 2492802/2492809 (CACT-01/02). Totals are three findings, eight affected instances, all 16 examined, six types/18 field rows, both completeness flags true, no unexamined cases, 1,196 other host instances and six links excluded. Modified-before/after are false. This is a correct report of a failing declared scope, not a readiness pass. Claude Chat has been given the same neutral prompt; its actual exchange and answer remain pending. Native ceiling schedule observation and the post-close ceiling hash remain pending.
+All three full reports contain the original wall defects plus missing ACT ceiling Code, affecting ceiling elements 2492802/2492809 (CACT-01/02). Totals are three findings, eight affected instances, all 16 examined, six types/18 field rows, both completeness flags true, no unexamined cases, 1,196 other host instances and six links excluded. Modified-before/after are false. This is a correct report of a failing declared scope, not a readiness pass.
+
+Claude Chat's context `30786f8b02d848048d4449ae049adc70` and check `50d1d1b958d94f12a878fe490e2a45cc` passed the independent full comparison and wire correlation on `2025-11-25`. The [author-pasted answer](mcp-readiness-evidence/2026-10-22-ceiling-negative/claude-ceiling-negative/answer.md) correctly reports all three missing fields/eight exact affected ElementIds, distinguishes complete coverage from a pass, and limits its verdict to the 16 declared instances. The same neutral prompt was used for both principal defect cases.
+
+The author then supplied the [native BAL INFO Ceilings schedule](mcp-readiness-evidence/2026-10-22-ceiling-negative/native-ceilings-schedule.png): CACT-01 and CACT-02 have blank Code cells; CGWB-01 and CGWB-02 show `C-GWB`. Preserve the original PNG bytes. Type names are clipped in this image; case IDs and code values are visible. As with the wall image, document path/full identities and whole-scope completeness come from separate evidence. The post-close ceiling hash remains pending.
 
 The next planned switch is ceiling-negative to complete. Each desktop must acquire its own fresh old-model context, receive `ContextChanged` before that token expires after the human switch, then recover with a new context/report. Evidence folders are prepared; no live stale-context result is claimed. A synthetic transition checker now tests timing, original binding and independent recovery using retained wire fixtures; synthetic results are not desktop acceptance.
 

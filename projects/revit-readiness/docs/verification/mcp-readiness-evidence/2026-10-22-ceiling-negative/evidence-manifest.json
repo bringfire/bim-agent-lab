@@ -93,5 +93,55 @@
     "path": "offline-checks.txt",
     "bytes": 972,
     "sha256": "cb7f2873f8758fd7ba0ba92a0c493f13ee7f1f2dcb12a0adbbfa445dac59a22b"
+  },
+  {
+    "path": "claude-ceiling-negative/answer.md",
+    "bytes": 2180,
+    "sha256": "318da5ebf7d02bb9f9c305d694a182eeb4940be6b1e8f8c1d646e58d93f82ea7"
+  },
+  {
+    "path": "claude-ceiling-negative/attempt.json",
+    "bytes": 133,
+    "sha256": "9910b559a5648332f30c8c33169704141115fd575e60d2051ed90469edd1527b"
+  },
+  {
+    "path": "claude-ceiling-negative/capture.json",
+    "bytes": 690,
+    "sha256": "15395715240f4df35d6d34dcfbb2410ee26744cd0f567a3a06e3fb2d76950e3a"
+  },
+  {
+    "path": "claude-ceiling-negative/check.json",
+    "bytes": 26826,
+    "sha256": "6e1f80326ef82184d114ac34c6a91d2f636163afb3947bd23433c44c239ef290"
+  },
+  {
+    "path": "claude-ceiling-negative/comparison-complete.json",
+    "bytes": 273,
+    "sha256": "8af49a3a220dbe8222ba899af170892340f5d577006398e56ef9a4a8d7a5e39f"
+  },
+  {
+    "path": "claude-ceiling-negative/context.json",
+    "bytes": 2609,
+    "sha256": "58d8eba2a0b7a8f880ebbe25bd5f228d332e7576c82be241c5d4f3e39b7eeb8d"
+  },
+  {
+    "path": "claude-ceiling-negative/expectation.json",
+    "bytes": 18266,
+    "sha256": "4ec4bb2989522b70b43277344c5a5ecb8638526c7273948ad5e55f0fef09022e"
+  },
+  {
+    "path": "claude-ceiling-negative/wire/client-to-server.jsonl",
+    "bytes": 1764,
+    "sha256": "ec01acf0458bd0c747b3dff1db3e4829f9ce7a09cada8003db9525986c5e5ebb"
+  },
+  {
+    "path": "claude-ceiling-negative/wire/server-to-client.jsonl",
+    "bytes": 104717,
+    "sha256": "a3a3c52604729c25b30445a32355ab457f4ac08d2af8edda5f332a635129ca13"
+  },
+  {
+    "path": "native-ceilings-schedule.png",
+    "bytes": 7442,
+    "sha256": "4dcb19208f5dc9fa0f726113f9ad9a3dd924bfe88a7dbec169dae93ac1de144f"
   }
 ]
