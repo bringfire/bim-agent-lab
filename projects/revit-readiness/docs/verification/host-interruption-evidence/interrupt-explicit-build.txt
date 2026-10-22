@@ -1,0 +1,16 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-client\InterruptionScenario.cs(60,20): error CS0103: The name 'McpJsonUtilities' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-client\BimAgentLab.Mcp.Client.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-client\InterruptionScenario.cs(73,116): error CS0103: The name 'McpJsonUtilities' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-client\BimAgentLab.Mcp.Client.csproj]
+
+Build FAILED.
+
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-client\InterruptionScenario.cs(60,20): error CS0103: The name 'McpJsonUtilities' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-client\BimAgentLab.Mcp.Client.csproj]
+D:\bim-agent-lab\projects\revit-readiness\tests\mcp-client\InterruptionScenario.cs(73,116): error CS0103: The name 'McpJsonUtilities' does not exist in the current context [D:\bim-agent-lab\projects\revit-readiness\tests\mcp-client\BimAgentLab.Mcp.Client.csproj]
+    0 Warning(s)
+    2 Error(s)
+
+Time Elapsed 00:00:01.22

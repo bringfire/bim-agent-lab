@@ -1,0 +1,9 @@
+{
+  "mode": "cancel",
+  "interruptedUtc": "2026-10-22T01:11:06.2553984Z",
+  "observedUtc": "2026-10-22T01:11:06.2573817Z",
+  "elapsedMilliseconds": 1,
+  "exceptionType": "System.Threading.Tasks.TaskCanceledException",
+  "serverExited": false,
+  "exitCode": null
+}

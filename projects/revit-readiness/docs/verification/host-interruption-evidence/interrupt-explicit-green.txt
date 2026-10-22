@@ -1,0 +1,7 @@
+PASS SDK interruption driver: cancel 2025-06-18
+PASS SDK interruption driver: eof 2025-06-18
+PASS SDK interruption driver: cancel 2025-11-25
+PASS SDK interruption driver: eof 2025-11-25
+PASS SDK interruption driver: cancel 2026-07-28
+PASS SDK interruption driver: eof 2026-07-28
+Interruption driver: 6 passed; 0 failed.

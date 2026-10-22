@@ -1,0 +1,21 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(57,74): warning CA1416: This call site is reachable on all platforms. 'RequestBudget.DeadlineUtc' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(35,22): warning CA1416: This call site is reachable on all platforms. 'RequestBudget.Admit(IBridgeClock)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(58,13): warning CA1416: This call site is reachable on all platforms. 'BridgeJson.Serialize<BridgeRequest>(BridgeRequest)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(57,53): warning CA1416: This call site is reachable on all platforms. 'BridgeJson.FormatUtc(DateTimeOffset)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+  BimAgentLab.Mcp.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\bin\Release\net10.0\BimAgentLab.Mcp.Tests.dll
+
+Build succeeded.
+
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(57,74): warning CA1416: This call site is reachable on all platforms. 'RequestBudget.DeadlineUtc' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(35,22): warning CA1416: This call site is reachable on all platforms. 'RequestBudget.Admit(IBridgeClock)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(58,13): warning CA1416: This call site is reachable on all platforms. 'BridgeJson.Serialize<BridgeRequest>(BridgeRequest)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\ReadinessArgumentBoundary.cs(57,53): warning CA1416: This call site is reachable on all platforms. 'BridgeJson.FormatUtc(DateTimeOffset)' is only supported on: 'windows'. (https://learn.microsoft.com/dotnet/fundamentals/code-analysis/quality-rules/ca1416) [D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\BimAgentLab.RevitReadiness.Mcp.csproj]
+    4 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:04.07

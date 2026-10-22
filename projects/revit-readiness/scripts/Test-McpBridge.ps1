@@ -11,6 +11,8 @@ try {
         if ($LASTEXITCODE -ne 0) { throw 'Deployment behavioral tests failed.' }
     }
     if ($Suite -in @('Tools','All')) {
+        & dotnet build 'tests/mcp-client/BimAgentLab.Mcp.Client.csproj' -c Release --nologo -p:RestoreLockedMode=true
+        if ($LASTEXITCODE -ne 0) { throw 'SDK interruption driver build failed.' }
         & dotnet build 'tests/mcp-tests/BimAgentLab.Mcp.Tests.csproj' -c Release --nologo -p:RestoreLockedMode=true
         if ($LASTEXITCODE -ne 0) { throw 'MCP tools test build failed.' }
         & './tests/mcp-tests/bin/Release/net10.0/BimAgentLab.Mcp.Tests.exe' --tools './samples/local/mcp-tools-tests'

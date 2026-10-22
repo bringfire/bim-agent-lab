@@ -1,0 +1,149 @@
+.FFFFFFFFFFFFFFFF
+======================================================================
+FAIL: test_reject_automatic_release (test_verify_host_interruption_capture.InterruptionEvidenceTests.test_reject_automatic_release)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_interruption_capture.py", line 65, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_reject_cancel_server_exited (test_verify_host_interruption_capture.InterruptionEvidenceTests.test_reject_cancel_server_exited)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_interruption_capture.py", line 65, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_reject_eof_server_alive (test_verify_host_interruption_capture.InterruptionEvidenceTests.test_reject_eof_server_alive)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_interruption_capture.py", line 65, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_reject_expired_instead (test_verify_host_interruption_capture.InterruptionEvidenceTests.test_reject_expired_instead)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_interruption_capture.py", line 65, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_reject_forced_termination (test_verify_host_interruption_capture.InterruptionEvidenceTests.test_reject_forced_termination)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_interruption_capture.py", line 65, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_reject_incomplete_capture (test_verify_host_interruption_capture.InterruptionEvidenceTests.test_reject_incomplete_capture)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_interruption_capture.py", line 65, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_reject_missing_cancel (test_verify_host_interruption_capture.InterruptionEvidenceTests.test_reject_missing_cancel)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_interruption_capture.py", line 65, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_reject_missing_quiescence (test_verify_host_interruption_capture.InterruptionEvidenceTests.test_reject_missing_quiescence)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_interruption_capture.py", line 65, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_reject_missing_reader_exit (test_verify_host_interruption_capture.InterruptionEvidenceTests.test_reject_missing_reader_exit)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_interruption_capture.py", line 65, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_reject_reader_after_canceled_preparation (test_verify_host_interruption_capture.InterruptionEvidenceTests.test_reject_reader_after_canceled_preparation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_interruption_capture.py", line 65, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_reject_short_observation (test_verify_host_interruption_capture.InterruptionEvidenceTests.test_reject_short_observation)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_interruption_capture.py", line 65, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_reject_unexpected_late_response (test_verify_host_interruption_capture.InterruptionEvidenceTests.test_reject_unexpected_late_response)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_interruption_capture.py", line 65, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_reject_wrong_cancel_identity (test_verify_host_interruption_capture.InterruptionEvidenceTests.test_reject_wrong_cancel_identity)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_interruption_capture.py", line 65, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_reject_wrong_host (test_verify_host_interruption_capture.InterruptionEvidenceTests.test_reject_wrong_host)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_interruption_capture.py", line 65, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_reject_wrong_origin (test_verify_host_interruption_capture.InterruptionEvidenceTests.test_reject_wrong_origin)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_interruption_capture.py", line 65, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+======================================================================
+FAIL: test_reject_wrong_request (test_verify_host_interruption_capture.InterruptionEvidenceTests.test_reject_wrong_request)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_interruption_capture.py", line 65, in test
+    with self.assertRaises((AssertionError, KeyError, ValueError)):
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: (<class 'AssertionError'>, <class 'KeyError'>, <class 'ValueError'>) not raised
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.804s
+
+FAILED (failures=16)

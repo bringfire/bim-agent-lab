@@ -1,0 +1,70 @@
+{
+  "pass": true,
+  "cases": [
+    {
+      "origin": "cancel",
+      "stage": "Preparation",
+      "requestId": "3c98e0fe6f54482a93bae88ffa0e3e0f",
+      "readerEntries": 0,
+      "interruptionMilliseconds": 5,
+      "pass": true
+    },
+    {
+      "origin": "cancel",
+      "stage": "Reader",
+      "requestId": "53c07af263514657bb0f6a2a5a81bb4c",
+      "readerEntries": 1,
+      "interruptionMilliseconds": 5,
+      "pass": true
+    },
+    {
+      "origin": "eof",
+      "stage": "Preparation",
+      "requestId": "4b346e755c6a49caa9d3c7227f0a99a3",
+      "readerEntries": 0,
+      "interruptionMilliseconds": 11,
+      "pass": true
+    },
+    {
+      "origin": "eof",
+      "stage": "Reader",
+      "requestId": "fa94549aa89d4a4fadcd3c9a91660bbc",
+      "readerEntries": 1,
+      "interruptionMilliseconds": 12,
+      "pass": true
+    }
+  ],
+  "queued": [
+    {
+      "origin": "cancel",
+      "requestId": "abb2697326af4b8a9547908196dbda80",
+      "executorEntries": 0,
+      "readerEntries": 0,
+      "quiescedWhileBlockerHeld": true
+    },
+    {
+      "origin": "eof",
+      "requestId": "b01d8d9ecd47433499b0b5b302a311a3",
+      "executorEntries": 0,
+      "readerEntries": 0,
+      "quiescedWhileBlockerHeld": true
+    },
+    {
+      "origin": "deadline",
+      "requestId": "7166ae0f7a90408fa3a4524b2aa03cad",
+      "executorEntries": 0,
+      "readerEntries": 0,
+      "quiescedWhileBlockerHeld": true
+    }
+  ],
+  "executingStop": {
+    "pass": true,
+    "requestId": "69faa3b4b3b24e1f90f5b1a316aec948",
+    "networkStoppedWhileReaderHeld": true,
+    "eventDisposedOnApiThread": true,
+    "hooksRemoved": true,
+    "descriptorRemoved": true,
+    "revitStillAlive": true
+  },
+  "scope": "Diagnostic host interruption/Stop; not application shutdown, SDK token propagation, physical disposal or desktop A8"
+}

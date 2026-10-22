@@ -1,0 +1,32 @@
+{
+  "startedUtc": "2026-10-22T01:21:44.576792+00:00",
+  "revitPid": 198452,
+  "requests": {
+    "cancel": {
+      "requestId": "abb2697326af4b8a9547908196dbda80",
+      "admittedUtc": "2026-10-22T01:21:51.076097+00:00",
+      "interruptWrittenUtc": "2026-10-22T01:21:51.076097+00:00"
+    },
+    "eof": {
+      "requestId": "b01d8d9ecd47433499b0b5b302a311a3",
+      "admittedUtc": "2026-10-22T01:21:51.550355+00:00",
+      "interruptWrittenUtc": "2026-10-22T01:21:51.550355+00:00"
+    },
+    "deadline": {
+      "requestId": "7166ae0f7a90408fa3a4524b2aa03cad",
+      "admittedUtc": "2026-10-22T01:21:52.079742+00:00"
+    }
+  },
+  "scope": "Queued interruption diagnostic; not desktop A8 or physical disposal",
+  "blockerRequestId": "9ad121b42ea6444d8fcb8c5659d0b4b5",
+  "releaseWrittenUtc": "2026-10-22T01:22:21.968931+00:00",
+  "finishWrittenUtc": "2026-10-22T01:22:22.010681+00:00",
+  "captureCompleted": true,
+  "capturedUntilUtc": "2026-10-22T01:22:30.172378+00:00",
+  "driverExitCodes": [
+    0,
+    0,
+    0,
+    0
+  ]
+}

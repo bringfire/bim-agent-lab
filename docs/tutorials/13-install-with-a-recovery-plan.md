@@ -117,3 +117,13 @@ Suggested participant prompt:
 > Show what happened inside the application after the client timed out. Check both work that has not started and work already underway. Keep the client connected while you release the test pause, then prove that a fresh request still works. Tell me which other interruption cases remain untested.
 
 The agent also deliberately damaged copies of the evidence to check that its comparison would reject them. Its first comparison assumed extra fields existed in the error result; the unmodified successful capture exposed that mistake. The agent corrected the comparison and kept the failed attempt. Participants should expect verification code to need verification too.
+
+## Check that the interruption reached Revit
+
+The author next said “please proceed.” The agent tested cancellation, a disconnected client, waiting requests, and Stop during a read. Before using the new test driver with Revit, it checked the driver against a disposable endpoint. That caught a misleading result: the client reported cancellation, but no cancellation message had reached the server. The agent kept that failed attempt, changed the test to send an explicit cancellation message through the official SDK, and verified the receiving side before proceeding.
+
+Suggested participant prompt:
+
+> Prove that the interruption reached the application, not just that the client stopped waiting. Separate cancellation, disconnect, timeout and Stop. Test waiting work and work already underway, preserve failed attempts, and show that the application can recover afterward.
+
+Actual Revit traces then showed that canceled waiting work never entered the reader, while already-started work finished without returning late success. Stop released connections and removed its event hooks while a read was still held. The agent asked the person to start the bridge again to check recovery. These results and the still-unexplained token-only cancellation observation are kept separate in the [technical record](../../projects/revit-readiness/docs/verification/2026-10-21-host-interruptions.md). A successful explicit-cancellation test does not explain away a different failed stimulus.

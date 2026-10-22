@@ -5,6 +5,7 @@ string? server = null, evidence = null;
 string protocol = "2026-07-28";
 string scenario = "probe", expected = "ReadinessReport";
 string? contextToken = null, pauseFile = null, finishFile = null;
+string? interruptMode = null, interruptFile = null;
 int? revitPid = null;
 List<string> serverArgs = [];
 for (int i = 0; i < args.Length; i += 2)
@@ -14,7 +15,9 @@ for (int i = 0; i < args.Length; i += 2)
     {
         case "--server": server = Path.GetFullPath(args[i + 1]); break;
         case "--server-arg": serverArgs.Add(args[i + 1]); break;
-        case "--scenario" when args[i + 1] is "probe" or "readiness": scenario = args[i + 1]; break;
+        case "--scenario" when args[i + 1] is "probe" or "readiness" or "interrupt": scenario = args[i + 1]; break;
+        case "--interrupt-mode" when args[i + 1] is "cancel" or "eof": interruptMode = args[i + 1]; break;
+        case "--interrupt-file": interruptFile = Path.GetFullPath(args[i + 1]); break;
         case "--expected": expected = args[i + 1]; break;
         case "--context-token": contextToken = args[i + 1]; break;
         case "--pause-file": pauseFile = Path.GetFullPath(args[i + 1]); break;
@@ -26,6 +29,9 @@ for (int i = 0; i < args.Length; i += 2)
     }
 }
 if (server is null || evidence is null) throw new ArgumentException("--server and --evidence are required.");
+if (scenario == "interrupt") return await InterruptionScenario.Run(server, serverArgs, evidence, protocol, revitPid,
+    contextToken, interruptMode, interruptFile, finishFile);
+if (interruptMode is not null || interruptFile is not null) throw new ArgumentException("Interruption options require the interrupt scenario.");
 if (scenario == "readiness") return await ReadinessScenario.Run(server,serverArgs,evidence,protocol,expected,revitPid,contextToken,pauseFile,finishFile);
 if (finishFile is not null) throw new ArgumentException("--finish-file requires --scenario readiness.");
 Directory.CreateDirectory(evidence);

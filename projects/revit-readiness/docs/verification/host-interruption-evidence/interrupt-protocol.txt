@@ -1,0 +1,139 @@
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+  BimAgentLab.Mcp.Probe -> D:\bim-agent-lab\projects\revit-readiness\tests\mcp-probe\bin\Release\net10.0\BimAgentLab.Mcp.Probe.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.15
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+  BimAgentLab.Mcp.Tests -> D:\bim-agent-lab\projects\revit-readiness\tests\mcp-tests\bin\Release\net10.0\BimAgentLab.Mcp.Tests.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.01
+  Determining projects to restore...
+  All projects are up-to-date for restore.
+  BimAgentLab.RevitBridge.Contract -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-contract\bin\Release\net10.0\BimAgentLab.RevitBridge.Contract.dll
+  BimAgentLab.RevitBridge.Runtime -> D:\bim-agent-lab\projects\revit-readiness\src\bridge-runtime\bin\Release\net10.0\BimAgentLab.RevitBridge.Runtime.dll
+  BimAgentLab.RevitReadiness.Mcp -> D:\bim-agent-lab\projects\revit-readiness\src\mcp-server\bin\Release\net10.0\BimAgentLab.RevitReadiness.Mcp.dll
+  BimAgentLab.Mcp.Client -> D:\bim-agent-lab\projects\revit-readiness\tests\mcp-client\bin\Release\net10.0\BimAgentLab.Mcp.Client.dll
+
+Build succeeded.
+    0 Warning(s)
+    0 Error(s)
+
+Time Elapsed 00:00:01.01
+EVIDENCE protocol=2025-06-18 strict=False path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-protocol-tests\sdk-66d0ba85f9374c9a8bedcc3cdfe4e077\session-ac2b643368474750b7707d1cb6d80d97
+PASS Compatible host preserves exact protocol and results: 2025-06-18
+EVIDENCE protocol=2025-11-25 strict=False path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-protocol-tests\sdk-bb4df8aec6fe412f876fe03f4b6bf9b2\session-41890532e49b42d68c98b79859cba2b8
+PASS Compatible host preserves exact protocol and results: 2025-11-25
+EVIDENCE protocol=2026-07-28 strict=False path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-protocol-tests\sdk-bc0bf4d7e3a34fb896cee3c5edc88b35\session-b0c9374ad11e45f9971b813a7abeec18
+PASS Compatible host preserves exact protocol and results: 2026-07-28
+EVIDENCE protocol=2026-07-28 strict=True path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-protocol-tests\sdk-d5c5533e27c94496ba0d7cac2c2a4041\session-f235728a14e94f74b4b6c9e9446dbe44
+PASS Strict July host preserves modern discovery and results
+PASS Strict July host rejects legacy initialization: 2025-06-18
+PASS Strict July host rejects legacy initialization: 2025-11-25
+PASS Trace preserves fragmented Unicode bytes and stream ownership
+PASS Memory read cancellation retains pending buffer and suppresses late evidence
+PASS Array read cancellation retains pending buffer and suppresses late evidence
+PASS Trace size bound fails visibly without silent truncation
+PASS Host releases each owned stream once
+PASS Partial trace construction releases streams and preserves existing evidence
+PASS Windows open-stdin shutdown: trace=False, idle
+PASS Windows open-stdin shutdown: trace=False, partial
+PASS Windows open-stdin shutdown: trace=False, pending
+PASS Windows open-stdin shutdown: trace=True, idle
+PASS Windows open-stdin shutdown: trace=True, partial
+PASS Windows open-stdin shutdown: trace=True, pending
+PASS Windows open-stdin shutdown after trace initialization failure
+test_apply_refuses_changed_configuration (test_mcp_probe_settings.SettingsTests.test_apply_refuses_changed_configuration) ... ok
+test_prepared_recovery_exists_before_mutation_and_restores_after_interruption (test_mcp_probe_settings.SettingsTests.test_prepared_recovery_exists_before_mutation_and_restores_after_interruption) ... ok
+test_recovery_preserves_unrelated_edits_and_rejects_foreign_owned_entry (test_mcp_probe_settings.SettingsTests.test_recovery_preserves_unrelated_edits_and_rejects_foreign_owned_entry) ... ok
+test_existing_release_is_rejected_before_capture (test_mcp_readiness_driver.ReadinessDriverTests.test_existing_release_is_rejected_before_capture) ... ok
+test_keeps_sdk_connection_until_explicit_release (test_mcp_readiness_driver.ReadinessDriverTests.test_keeps_sdk_connection_until_explicit_release) ... ok
+test_accepted_legacy_revisions_preserve_complete_exchange (test_mcp_transcript.LegacyTranscriptTests.test_accepted_legacy_revisions_preserve_complete_exchange) ... ok
+test_legacy_capture_cannot_satisfy_strict_july (test_mcp_transcript.LegacyTranscriptTests.test_legacy_capture_cannot_satisfy_strict_july) ... ok
+test_legacy_negotiation_order_correlation_and_results_cannot_be_relaxed (test_mcp_transcript.LegacyTranscriptTests.test_legacy_negotiation_order_correlation_and_results_cannot_be_relaxed) ... ok
+test_legacy_tools_list_may_omit_optional_params (test_mcp_transcript.LegacyTranscriptTests.test_legacy_tools_list_may_omit_optional_params) ... ok
+test_unverified_protocol_is_rejected (test_mcp_transcript.LegacyTranscriptTests.test_unverified_protocol_is_rejected) ... ok
+test_complete_exchange (test_mcp_transcript.TranscriptTests.test_complete_exchange) ... ok
+test_missing_false_flag_wrong_protocol_id_and_diagnostics_are_rejected (test_mcp_transcript.TranscriptTests.test_missing_false_flag_wrong_protocol_id_and_diagnostics_are_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 11.898s
+
+OK
+PASS SDK probe (desktop verification remains separate)
+{
+  "protocol": "2025-06-18",
+  "clientNames": [
+    "BimAgentLab.Mcp.Client"
+  ],
+  "checks": [
+    "failure",
+    "initialize",
+    "initialized",
+    "list",
+    "success"
+  ],
+  "pass": true
+}
+SDK_CLIENT_EVIDENCE protocol=2025-06-18 strict=False path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-sdk-client\aa219ff2197f4fdf8c96b1118e3e7959
+PASS SDK probe (desktop verification remains separate)
+{
+  "protocol": "2025-11-25",
+  "clientNames": [
+    "BimAgentLab.Mcp.Client"
+  ],
+  "checks": [
+    "failure",
+    "initialize",
+    "initialized",
+    "list",
+    "success"
+  ],
+  "pass": true
+}
+SDK_CLIENT_EVIDENCE protocol=2025-11-25 strict=False path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-sdk-client\33342ca03d1c4bafba1cef380f317077
+PASS SDK probe (desktop verification remains separate)
+{
+  "protocol": "2026-07-28",
+  "clientNames": [
+    "BimAgentLab.Mcp.Client"
+  ],
+  "checks": [
+    "discover",
+    "failure",
+    "list",
+    "success"
+  ],
+  "pass": true
+}
+SDK_CLIENT_EVIDENCE protocol=2026-07-28 strict=False path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-sdk-client\8303a8039c8c4f669c62b51af8ba7399
+PASS SDK probe (desktop verification remains separate)
+{
+  "protocol": "2026-07-28",
+  "clientNames": [
+    "BimAgentLab.Mcp.Client"
+  ],
+  "checks": [
+    "discover",
+    "failure",
+    "list",
+    "success"
+  ],
+  "pass": true
+}
+SDK_CLIENT_EVIDENCE protocol=2026-07-28 strict=True path=D:\bim-agent-lab\projects\revit-readiness\samples\local\mcp-sdk-client\3d0c6c16c4a143a3b299e22294ad04f8
+PASS available offline suites; desktop/Revit acceptance is separate.

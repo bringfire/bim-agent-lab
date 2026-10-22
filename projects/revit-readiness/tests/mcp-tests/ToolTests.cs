@@ -68,6 +68,9 @@ internal static partial class Program
         await Case("Prepared arguments preserve input identity and the single admission budget", () => ArgumentHandoff(false));
         await Case("Expiry between argument preparation and typed dispatch cannot restart budget", () => ArgumentHandoff(true));
         await Case("Downstream conversion/execution failure is not caught as an argument error", ArgumentContinuationFailure);
+        foreach (string revision in new[] { "2025-06-18", "2025-11-25", "2026-07-28" })
+            foreach (string mode in new[] { "cancel", "eof" })
+                await Case($"SDK interruption driver: {mode} {revision}", () => InterruptDriver(mode, revision));
         Console.WriteLine($"Tools tests: {cases - failures} passed; {failures} failed.");
         return failures == 0 ? 0 : 1;
     }

@@ -1,0 +1,13 @@
+F
+======================================================================
+FAIL: test_competing_arm_is_preserved_when_exclusive_create_fails (test_host_observer_ownership.ObserverOwnershipTests.test_competing_arm_is_preserved_when_exclusive_create_fails)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_host_observer_ownership.py", line 30, in test_competing_arm_is_preserved_when_exclusive_create_fails
+    self.assertTrue(arm.exists(),'Cleanup removed a control it did not own')
+AssertionError: False is not true : Cleanup removed a control it did not own
+
+----------------------------------------------------------------------
+Ran 1 test in 0.009s
+
+FAILED (failures=1)

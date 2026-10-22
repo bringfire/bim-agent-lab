@@ -1,0 +1,7 @@
+{
+  "protocol": "2026-07-28",
+  "names": [
+    "revit_check_required_type_information",
+    "revit_get_readiness_context"
+  ]
+}

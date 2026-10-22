@@ -1,0 +1,22 @@
+{
+  "content": [
+    {
+      "type": "text",
+      "text": "{\u0022code\u0022:\u0022DeadlineExceeded\u0022,\u0022message\u0022:\u0022The original request deadline expired. No report was returned.\u0022,\u0022requestId\u0022:\u00227166ae0f7a90408fa3a4524b2aa03cad\u0022,\u0022retryable\u0022:false}"
+    }
+  ],
+  "structuredContent": {
+    "code": "DeadlineExceeded",
+    "message": "The original request deadline expired. No report was returned.",
+    "requestId": "7166ae0f7a90408fa3a4524b2aa03cad",
+    "retryable": false
+  },
+  "isError": true,
+  "_meta": {
+    "io.modelcontextprotocol/serverInfo": {
+      "name": "bim-agent-lab",
+      "version": "0.1.0"
+    }
+  },
+  "resultType": "complete"
+}

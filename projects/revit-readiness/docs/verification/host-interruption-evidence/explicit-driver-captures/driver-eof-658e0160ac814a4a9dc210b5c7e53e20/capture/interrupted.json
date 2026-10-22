@@ -1,0 +1,9 @@
+{
+  "mode": "eof",
+  "interruptedUtc": "2026-10-22T01:13:46.0274429Z",
+  "observedUtc": "2026-10-22T01:13:46.0388238Z",
+  "elapsedMilliseconds": 11,
+  "exceptionType": "System.IO.IOException",
+  "serverExited": true,
+  "exitCode": 0
+}

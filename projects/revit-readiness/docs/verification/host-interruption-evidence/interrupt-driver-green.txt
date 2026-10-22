@@ -1,0 +1,7 @@
+FAIL SDK interruption driver: cancel 2025-06-18: Exception Must cancel before deadline
+PASS SDK interruption driver: eof 2025-06-18
+FAIL SDK interruption driver: cancel 2025-11-25: Exception Must cancel before deadline
+PASS SDK interruption driver: eof 2025-11-25
+FAIL SDK interruption driver: cancel 2026-07-28: Exception Must cancel before deadline
+PASS SDK interruption driver: eof 2026-07-28
+Interruption driver: 3 passed; 3 failed.

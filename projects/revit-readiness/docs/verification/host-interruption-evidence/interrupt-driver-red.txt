@@ -1,0 +1,25 @@
+FAIL SDK interruption driver: cancel 2025-06-18: Exception Driver did not admit a real pipe request: Unhandled exception. System.ArgumentException: Expected --server, --server-arg, --scenario probe, --evidence, --protocol (accepted revision).
+   at Program.<Main>$(String[] args) in D:\bim-agent-lab\projects\revit-readiness\tests\mcp-client\Program.cs:line 25
+   at Program.<Main>(String[] args)
+
+FAIL SDK interruption driver: eof 2025-06-18: Exception Driver did not admit a real pipe request: Unhandled exception. System.ArgumentException: Expected --server, --server-arg, --scenario probe, --evidence, --protocol (accepted revision).
+   at Program.<Main>$(String[] args) in D:\bim-agent-lab\projects\revit-readiness\tests\mcp-client\Program.cs:line 25
+   at Program.<Main>(String[] args)
+
+FAIL SDK interruption driver: cancel 2025-11-25: Exception Driver did not admit a real pipe request: Unhandled exception. System.ArgumentException: Expected --server, --server-arg, --scenario probe, --evidence, --protocol (accepted revision).
+   at Program.<Main>$(String[] args) in D:\bim-agent-lab\projects\revit-readiness\tests\mcp-client\Program.cs:line 25
+   at Program.<Main>(String[] args)
+
+FAIL SDK interruption driver: eof 2025-11-25: Exception Driver did not admit a real pipe request: Unhandled exception. System.ArgumentException: Expected --server, --server-arg, --scenario probe, --evidence, --protocol (accepted revision).
+   at Program.<Main>$(String[] args) in D:\bim-agent-lab\projects\revit-readiness\tests\mcp-client\Program.cs:line 25
+   at Program.<Main>(String[] args)
+
+FAIL SDK interruption driver: cancel 2026-07-28: Exception Driver did not admit a real pipe request: Unhandled exception. System.ArgumentException: Expected --server, --server-arg, --scenario probe, --evidence, --protocol (accepted revision).
+   at Program.<Main>$(String[] args) in D:\bim-agent-lab\projects\revit-readiness\tests\mcp-client\Program.cs:line 25
+   at Program.<Main>(String[] args)
+
+FAIL SDK interruption driver: eof 2026-07-28: Exception Driver did not admit a real pipe request: Unhandled exception. System.ArgumentException: Expected --server, --server-arg, --scenario probe, --evidence, --protocol (accepted revision).
+   at Program.<Main>$(String[] args) in D:\bim-agent-lab\projects\revit-readiness\tests\mcp-client\Program.cs:line 25
+   at Program.<Main>(String[] args)
+
+Interruption driver: 0 passed; 6 failed.
