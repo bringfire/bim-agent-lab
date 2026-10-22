@@ -1,0 +1,10 @@
+{
+  "command": "python projects/revit-readiness/tests/test_verify_desktop_continuity.py",
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": "....\n----------------------------------------------------------------------\nRan 4 tests in 0.393s\n\nOK\n",
+  "methodCount": 4,
+  "negativeControlCount": 23,
+  "redStage": "Unimplemented checker raised NotImplementedError; positive case and corruption checks did not pass.",
+  "scope": "Evidence checker only; no installed runtime change or new Revit execution"
+}

@@ -1,0 +1,28 @@
+{
+  "snapshotUtc": "2026-10-22T12:29:34.751392+00:00",
+  "sourceSession": "session-68734ec59c3c4c0ba78eb02c63fd10a3",
+  "snapshotKind": "Complete-line prefix of an active desktop session; not an EOF or shutdown test",
+  "files": [
+    {
+      "path": "wire/client-to-server.jsonl",
+      "bytes": 2605,
+      "sha256": "2d3f8649cbe0cbda8d5f2d8608598640bb3a60c4f35456c1ca4ad99fe23a05a5"
+    },
+    {
+      "path": "wire/server-to-client.jsonl",
+      "bytes": 26110,
+      "sha256": "c01d3a791c1d3e8cc42d5b894f439f8fdd7d02bd1594a7b944eb24f260cf296e"
+    }
+  ],
+  "clientInfo": {
+    "name": "codex-mcp-client",
+    "title": "Codex",
+    "version": "0.163.0-alpha.11.1"
+  },
+  "protocolVersion": "2025-06-18",
+  "contextRequestId": "312449bac55a46fba291101010c80149",
+  "reportRequestId": "2c9d5c963ed74bcb866c3a431988573e",
+  "revitPid": 149972,
+  "bridgeSessionId": "a3163353950948eabd8cfb8a4955d860",
+  "referenceReport": "../sdk-july-continuity/check.json"
+}

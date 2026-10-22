@@ -108,3 +108,20 @@ The [desktop-launch preparation](verification/2026-10-21-desktop-launch-preparat
 The existing `scripts/manage_mcp_probe_settings.py` accepts `--name bim-agent-lab-revit-readiness --revit-pid <verified-current-pid>` during `prepare`. Its other inputs remain `--config`, `--format json|toml`, `--command <absolute-installed-executable>`, `--evidence <absolute-per-client-parent>` and `--receipt <new-private-path>`. The resulting arguments include `--wire-evidence-root` automatically. Keep receipts private: they contain complete original settings. Inspect the prepared entry and physical config path before `apply --receipt <path>`. No settings mutation happens during prepare.
 
 Choose a fresh evidence parent per application/test run and acquire the PID from the actual Revit process. Re-read app versions and installed executable hashes. Do not pin tomorrow's connection to yesterday's PID. After applying, the user reloads the desktop MCP connections; actual wire traffic must establish which app, version and protocol used the tools. For removal, `restore --receipt <path>` removes only that receipt's unchanged owned entry and preserves unrelated edits. A changed owned entry is a conflict to inspect, not permission to restore a whole old config file. Earlier probe receipts without a name remain supported. Full A8 still requires both real desktops, three principal samples, NC1/NC2 and a structured failure.
+
+## Retain the actual initial desktop exchange
+
+The [October 22 Codex record](verification/2026-10-22-desktop-readiness.md#codex-desktop-initial-real-readiness-exchange-passes) is the first production-tool desktop continuity check. Invoke context, then the check with the exact returned token through the desktop's own tool connection. Find the matching request IDs in **one** process capture; do not combine a discovery-only session with a different process's responses. Read file bytes, not only directory-entry lengths: a live response file here had a stale zero-length listing but yielded its complete contents when opened.
+
+Copy the two raw streams unchanged into a new immutable evidence directory only when each has complete JSONL lines. Record the source session, snapshot timestamp, byte lengths/hashes, client/version, negotiated revision and request IDs. Retain actual tool returns as `context.json` and `check.json`. A snapshot of an active process is not a completed shutdown capture. The live parent may continue receiving traffic.
+
+For the narrow initial exchange (initialize, initialized notification, catalog, one context and one report), run from the repository root:
+
+```powershell
+python projects/revit-readiness/tests/verify_desktop_continuity.py projects/revit-readiness/docs/verification/desktop-readiness-evidence/2026-10-22/codex-initial
+python projects/revit-readiness/tests/test_verify_desktop_continuity.py
+```
+
+This checker proves request correlation, unchanged accepted legacy negotiation, text/structured/saved-result agreement, context/report binding and whole-report continuity with the current-session SDK capture except generation time. It requires an immutable snapshot manifest and is deliberately narrower than a general desktop session parser. Do not trim away failed attempts to fit it; retain those separately and report the failed attempt. Its four test methods include 23 negative controls. It is **not** `verify_mcp_evidence.py`, the planned Task 8 independent oracle, and must not replace native-schedule/checklist comparisons, NC1/NC2 presentation checks or the stale-token-after-document-switch control.
+
+Current Codex result: app 26.1016.6573.0, wire client 0.163.0-alpha.11.1, protocol 2025-06-18, installed server d88de67/host9a93f6d. SDK 2.2.0 and strict July testing remain unchanged. The author asked to wait while Claude is working; leave both apps and Revit running. Actual Claude readiness, both five-case/error workflows and the remaining Task 7/R3 items remain open.

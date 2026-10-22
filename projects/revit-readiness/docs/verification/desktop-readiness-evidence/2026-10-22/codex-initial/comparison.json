@@ -1,0 +1,23 @@
+{
+  "pass": true,
+  "scope": "Initial desktop continuity; not independent BIM oracle, five-case A8 or shutdown acceptance",
+  "protocolVersion": "2025-06-18",
+  "clientInfo": {
+    "name": "codex-mcp-client",
+    "title": "Codex",
+    "version": "0.163.0-alpha.11.1"
+  },
+  "contextRequestId": "312449bac55a46fba291101010c80149",
+  "reportRequestId": "2c9d5c963ed74bcb866c3a431988573e",
+  "bridgeSessionId": "a3163353950948eabd8cfb8a4955d860",
+  "requestedInstances": 16,
+  "examinedInstances": 16,
+  "findingCount": 0,
+  "coverageComplete": true,
+  "evaluationComplete": true,
+  "modifiedBefore": false,
+  "modifiedAfter": false,
+  "reportFieldsExcludedFromComparison": [
+    "GeneratedUtc"
+  ]
+}

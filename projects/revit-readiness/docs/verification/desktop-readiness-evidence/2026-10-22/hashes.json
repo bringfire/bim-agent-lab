@@ -8,6 +8,34 @@
     "sha256": "40201acde617793c1c3d9d065fd0380a1d1ce4e8da774a8f38d6b908cee37265"
   },
   {
+    "path": "codex-initial/check.json",
+    "sha256": "efb3689f9aab6855ade1b7ae338bfc6a9d6848033a9aeb91bdb08b219608e100"
+  },
+  {
+    "path": "codex-initial/checker-tests.json",
+    "sha256": "735fb638a30853c8286e84cbede0c027674a4a3f272918b2ca183420dcb03d8c"
+  },
+  {
+    "path": "codex-initial/comparison.json",
+    "sha256": "a5fe15e4b77ed5634b5a00754fc31a1440cbd789cf03fb12d0a0aa470378ca27"
+  },
+  {
+    "path": "codex-initial/context.json",
+    "sha256": "715f84835ab688a80f24ddece84f4fe7d9d0368b573080ae3cb18864015c5973"
+  },
+  {
+    "path": "codex-initial/snapshot.json",
+    "sha256": "68ff748589fe9bbf37dc32aee21ea488a62898f958888d59ebbe2376777301bd"
+  },
+  {
+    "path": "codex-initial/wire/client-to-server.jsonl",
+    "sha256": "2d3f8649cbe0cbda8d5f2d8608598640bb3a60c4f35456c1ca4ad99fe23a05a5"
+  },
+  {
+    "path": "codex-initial/wire/server-to-client.jsonl",
+    "sha256": "c01d3a791c1d3e8cc42d5b894f439f8fdd7d02bd1594a7b944eb24f260cf296e"
+  },
+  {
     "path": "continuity-comparison.json",
     "sha256": "cbe2c73d167ef8eabc895e2ea898495f734dd024c81c47d0d0f27952d979352a"
   },
