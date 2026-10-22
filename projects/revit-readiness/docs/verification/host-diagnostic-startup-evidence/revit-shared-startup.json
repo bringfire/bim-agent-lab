@@ -1,0 +1,35 @@
+{
+  "Scope": "Actual Revit diagnostic initialization; not model-read or desktop A8 acceptance",
+  "CapturedUtc": "2026-10-22T00:53:20.4301740+00:00",
+  "UserReport": "ready...no errors during loading.",
+  "ProcessId": 198452,
+  "ProcessStartedUtc": "2026-10-22T00:48:53.4940340Z",
+  "MainWindowTitle": "Autodesk Revit 2024.3 - [BAL-info-saveas-fresh.rvt - Sheet: G000 - Cover]",
+  "Run": "2c6e4b8b63b84e019deae35cd7532731",
+  "InstalledSourceCommit": "7b09879",
+  "InstalledAssembly": "C:/Users/bring/AppData/Roaming/Autodesk/Revit/Addins/2024/BimAgentLab.RequiredInformation/BimAgentLab.RevitReadiness.dll",
+  "InstalledAssemblySha256": "432c5337625124a0ebdebba9d5dc98526379506e73a7f16d5b806e237101b057",
+  "TracePath": "C:/Users/bring/.bim-agent-lab/RevitBridge/diagnostics/2c6e4b8b63b84e019deae35cd7532731/198452/events.tsv",
+  "JournalPath": "C:/Users/bring/AppData/Local/Autodesk/Revit/Autodesk Revit 2024/Journals/journal.0013.txt",
+  "JournalCapture": "Matching application lines only; running journal not a final shutdown artifact",
+  "PhysicalPaths": [
+    {
+      "Requested": "C:\\Users\\bring\\.bim-agent-lab\\RevitBridge\\diagnostics\\2c6e4b8b63b84e019deae35cd7532731\\198452\\events.tsv",
+      "Physical": "\\\\?\\C:\\Users\\bring\\.bim-agent-lab\\RevitBridge\\diagnostics\\2c6e4b8b63b84e019deae35cd7532731\\198452\\events.tsv",
+      "Redirected": false
+    },
+    {
+      "Requested": "C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitReadiness.dll",
+      "Physical": "\\\\?\\C:\\Users\\bring\\AppData\\Roaming\\Autodesk\\Revit\\Addins\\2024\\BimAgentLab.RequiredInformation\\BimAgentLab.RevitReadiness.dll",
+      "Redirected": false
+    },
+    {
+      "Requested": "C:\\Users\\bring\\.bim-agent-lab\\RevitBridge\\diagnostics\\run.txt",
+      "Physical": "\\\\?\\C:\\Users\\bring\\.bim-agent-lab\\RevitBridge\\diagnostics\\run.txt",
+      "Redirected": false
+    }
+  ],
+  "ActiveArmCount": 0,
+  "DiagnosticErrorCount": 0,
+  "Result": "Actual Revit startup and physical shared-file trace verified"
+}

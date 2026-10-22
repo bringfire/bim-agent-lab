@@ -1,0 +1,1 @@
+' 0:< API_SUCCESS { Starting External Application: BIM Agent Lab readiness bridge, Class: BimAgentLab.RevitReadiness.BridgeApplication, Vendor : BIAL(BIM Agent Lab), Assembly: C:\Users\bring\AppData\Roaming\Autodesk\Revit\Addins\2024\BimAgentLab.RequiredInformation\BimAgentLab.RevitReadiness.dll,  Assembly Version: 0.3.0.0 } 

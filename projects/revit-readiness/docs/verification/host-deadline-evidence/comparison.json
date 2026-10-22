@@ -1,0 +1,22 @@
+{
+  "pass": true,
+  "cases": [
+    {
+      "stage": "Preparation",
+      "requestId": "6d363bfac85b4cee9b0b041a23a2acdd",
+      "readerEntries": 0,
+      "heldSeconds": 29.980983,
+      "connectedObservationMilliseconds": 3003,
+      "pass": true
+    },
+    {
+      "stage": "Reader",
+      "requestId": "0ba8332ed3e2451d9b63a7f68ff81467",
+      "readerEntries": 1,
+      "heldSeconds": 29.975349,
+      "connectedObservationMilliseconds": 3004,
+      "pass": true
+    }
+  ],
+  "scope": "Actual diagnostic host/SDK deadline controls; desktop A8 and physical disposal not proven"
+}

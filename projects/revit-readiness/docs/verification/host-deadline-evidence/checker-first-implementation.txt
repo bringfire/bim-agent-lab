@@ -1,0 +1,20 @@
+........E........
+======================================================================
+ERROR: test_original_two_cases_and_followup (test_verify_host_deadline_capture.DeadlineEvidenceTests.test_original_two_cases_and_followup)
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\test_verify_host_deadline_capture.py", line 38, in test_original_two_cases_and_followup
+    self.assertTrue(check_run(self.root)['pass'])
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_host_deadline_capture.py", line 91, in check_run
+    results = [check_case(directory / name, stage) for name, stage in
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "D:\bim-agent-lab\projects\revit-readiness\tests\verify_host_deadline_capture.py", line 31, in check_case
+    assert context['bridgeSessionId'] == error['bridgeSessionId']
+                                         ~~~~~^^^^^^^^^^^^^^^^^^^
+KeyError: 'bridgeSessionId'
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.515s
+
+FAILED (errors=1)

@@ -1,0 +1,31 @@
+{
+  "stage": "Reader",
+  "revitPid": 198452,
+  "traceDirectory": "C:\\Users\\bring\\.bim-agent-lab\\RevitBridge\\diagnostics\\2c6e4b8b63b84e019deae35cd7532731\\198452",
+  "startedUtc": "2026-10-22T00:55:50.648272+00:00",
+  "command": [
+    "D:/bim-agent-lab/projects/revit-readiness/tests/mcp-client/bin/Release/net10.0/BimAgentLab.Mcp.Client.exe",
+    "--server",
+    "C:/Users/bring/AppData/Local/BimAgentLab/RevitReadiness/McpServer/BimAgentLab.RevitReadiness.Mcp.exe",
+    "--scenario",
+    "readiness",
+    "--revit-pid",
+    "198452",
+    "--expected",
+    "DeadlineExceeded",
+    "--evidence",
+    "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\diagnostic-live-20261022T0054Z\\reader-deadline\\sdk",
+    "--finish-file",
+    "D:\\bim-agent-lab\\projects\\revit-readiness\\samples\\local\\mcp-live-task7\\a10630e39dae448ba55abbfe0bc7ab6b\\diagnostic-live-20261022T0054Z\\reader-deadline\\finish.signal"
+  ],
+  "scope": "Diagnostic Revit/SDK capture; not desktop A8 or physical-disposal proof",
+  "requestId": "0ba8332ed3e2451d9b63a7f68ff81467",
+  "originalDeadlineUtc": "2026-10-22T00:56:21.1128110Z",
+  "inactiveObservedBeforeRelease": true,
+  "responseReceivedBeforeRelease": true,
+  "releaseWrittenUtc": "2026-10-22T00:56:21.137834+00:00",
+  "finishWrittenUtc": "2026-10-22T00:56:21.163771+00:00",
+  "captureCompleted": true,
+  "capturedUntilUtc": "2026-10-22T00:56:29.364810+00:00",
+  "clientExitCode": 0
+}

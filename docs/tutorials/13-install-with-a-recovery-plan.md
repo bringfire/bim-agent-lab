@@ -103,3 +103,17 @@ Suggested follow-up prompt:
 > Check whether both applications are accessing the same physical files, not just displaying the same path. Apply that finding to the other shared files, preserve recovery information, and prove the correction in the application that failed.
 
 The agent added tests that reproduced this difference, moved the diagnostic controls to a shared user folder, and found that the installed MCP server needed a separate visibility correction too. The [technical investigation](../../projects/revit-readiness/docs/verification/2026-10-21-host-diagnostics.md#physical-path-investigation-established-the-cause) records both the correction and the remaining deployment work. Passing file hashes, another child process, and a successful build were useful checks, but none established that Revit or the other desktop application could see the same files.
+
+The author then reported, “ready...no errors during loading.” The agent checked Revit's own startup journal and the trace Revit created in the corrected location. These observations verified the startup correction in Revit. The next instruction was simply to open the disposable model and start its bridge. The author handled those UI steps; the agent handled controlled requests and evidence. This kept the person's effort small while testing the boundary that had actually failed. The [startup result](../../projects/revit-readiness/docs/verification/2026-10-21-host-diagnostics.md#corrected-startup-verified-in-revit) remains separate from the later interruption tests and desktop acceptance.
+
+## Ask what happened after the timeout
+
+After the author confirmed the model was open and the bridge started, the agent paused two requests in controlled places. One was waiting just before reading the model; the other had already begun reading. Both timed out. The agent then released them and examined what happened inside Revit and what the connected client received.
+
+The first request never began its model read. The second finished its already-started read but did not return a late success. A fresh check afterward still returned the expected model data. These results answer different questions from “did the client display a timeout?” The [technical record](../../projects/revit-readiness/docs/verification/2026-10-21-host-diagnostics.md#first-live-diagnostic-deadline-controls) keeps the evidence and remaining tests explicit.
+
+Suggested participant prompt:
+
+> Show what happened inside the application after the client timed out. Check both work that has not started and work already underway. Keep the client connected while you release the test pause, then prove that a fresh request still works. Tell me which other interruption cases remain untested.
+
+The agent also deliberately damaged copies of the evidence to check that its comparison would reject them. Its first comparison assumed extra fields existed in the error result; the unmodified successful capture exposed that mistake. The agent corrected the comparison and kept the failed attempt. Participants should expect verification code to need verification too.
