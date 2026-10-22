@@ -1,0 +1,5 @@
+{
+  "mode": "require-propagation",
+  "expectedExitCode": 1,
+  "exitCode": 1
+}

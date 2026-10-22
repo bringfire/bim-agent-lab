@@ -1,0 +1,7 @@
+FAIL SDK cancellation 2025-06-18 token: Exception Expected remote propagation=True; actual remote=False, guard=False, wire notifications=0
+PASS SDK cancellation 2025-06-18 explicit
+FAIL SDK cancellation 2025-11-25 token: Exception Expected remote propagation=True; actual remote=False, guard=False, wire notifications=0
+PASS SDK cancellation 2025-11-25 explicit
+FAIL SDK cancellation 2026-07-28 token: Exception Expected remote propagation=True; actual remote=False, guard=False, wire notifications=0
+PASS SDK cancellation 2026-07-28 explicit
+PASS Cancellation callback order mechanism

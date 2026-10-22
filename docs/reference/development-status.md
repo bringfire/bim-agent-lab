@@ -12,7 +12,8 @@ Start with the [participant guide](../start-here.md) or [agent handoff](../how-t
 | Repeatable runner | Implemented at 3b74f67; fresh independent live wrapper checks now pass on diagnostic and restored normal hosts |
 | Current workstation | Normal host restored; Revit left open after recovery, PID 154284. Inspect actual state; desktop PID bindings were not changed for this SDK-only session |
 | Shutdown/recovery | Actual close with three queued requests and physical disposal verified; new diagnostic layers restored. [Evidence](../../projects/revit-readiness/docs/verification/2026-10-22-shutdown-preparation.md) |
-| Remaining acceptance | Native-event/executing-reader shutdown limits, token-only SDK cancellation observation, original shared recovery layers, acceptance consolidation and independent R3 |
+| SDK cancellation | [Diagnosed SDK 2.2.0 client callback-order defect](../../projects/revit-readiness/docs/verification/2026-10-22-sdk-cancellation-diagnosis.md), reproduced across all three protocols on .NET 10.0.13. Explicit SDK notification/EOF pass; token-only propagation remains unfixed. No production/dependency change |
+| Remaining acceptance | Native-event/executing-reader shutdown limits, disposition of the diagnosed SDK limitation, original shared recovery layers, acceptance consolidation and independent R3 |
 | Later capabilities/distribution | Physical-condition/quantity checks, public hosting, original-material license and release packaging remain open |
 
 The author wants the remaining work handled sequentially, with refinement afterward. The starting guide and agent handoff do not close Tasks 7–9. No Revit action is needed to read them.

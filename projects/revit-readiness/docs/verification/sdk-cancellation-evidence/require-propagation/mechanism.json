@@ -1,0 +1,19 @@
+[
+  {
+    "cancelWaitSeparately": true,
+    "events": [
+      "cancel-enter",
+      "wait-unwound",
+      "cancel-return"
+    ]
+  },
+  {
+    "cancelWaitSeparately": false,
+    "events": [
+      "cancel-enter",
+      "send-callback",
+      "cancel-return",
+      "wait-unwound"
+    ]
+  }
+]

@@ -209,3 +209,17 @@ The agent then installed the diagnostic host, restored the original files in a s
 The agent restored the normal host and asked for one final startup/read. Revit initially had no active bridge; the author said **“ok, I started the rediness bridge”**, after which the fresh check passed. This makes another useful distinction visible to participants: opening Revit and starting its bridge are separate actions. An agent should verify connection state and explain the next click, rather than keep retrying indefinitely or assume the installation is broken.
 
 The [same record](../../projects/revit-readiness/docs/verification/2026-10-22-shutdown-preparation.md#normal-host-recovery-after-actual-shutdown) retains the unsuccessful connection attempts and successful recovery. This closes the observed queued-shutdown and normal-host-recovery sequence; it does not close every remaining acceptance question.
+
+## Diagnose the dependency before changing the plugin
+
+The author next said **“yes proceed to diagnose”** when the agent proposed investigating the unexplained cancellation result. The useful direction was to establish why it happened before choosing a fix. The agent could do this outside Revit, without asking the person to operate another dialog.
+
+The test exposed two different events: the agent's client stopped waiting, but the application never received an instruction to stop. The agent reproduced that difference on all three supported protocol revisions, then inspected the exact SDK source. An ordering problem in the C# SDK could remove the callback responsible for sending cancellation before that callback ran. Sending an explicit cancellation message through the same SDK reached the application and worked.
+
+Suggested participant prompt:
+
+> Find out where the expected behavior stops. Show what the caller observed, what was actually sent, and what the application did. Reproduce the problem away from the live model, inspect the pinned dependency, and compare a working control. Keep “explained” separate from “fixed,” and check whether a newer version actually addresses it before proposing an upgrade.
+
+The agent recorded a diagnosed dependency limitation and retained a failing propagation test. It also kept a separate test that recognizes the known failure; that test passing does not mean cancellation was repaired. The newer SDK source still contained the same ordering, so merely upgrading was not a demonstrated solution. The installed plugin and desktop settings stayed as they were.
+
+Participants do not need to understand callback internals to direct this work. They need to ask for evidence on both sides of the connection and challenge a conclusion based only on the client saying “canceled.” The [technical diagnosis and reproduction steps](../../projects/revit-readiness/docs/verification/2026-10-22-sdk-cancellation-diagnosis.md) explain the mechanism, controls and remaining limits for agents.

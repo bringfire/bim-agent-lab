@@ -1,0 +1,6 @@
+{"method":"initialize","params":{"protocolVersion":"2025-11-25","capabilities":{},"clientInfo":{"name":"BimAgentLab.Mcp.Tests","version":"1.0.0.0"}},"id":1,"jsonrpc":"2.0"}
+{"method":"notifications/initialized","params":{},"jsonrpc":"2.0"}
+{"method":"tools/call","params":{"name":"revit_get_readiness_context","arguments":{}},"id":2,"jsonrpc":"2.0"}
+{"method":"tools/call","params":{"name":"revit_check_required_type_information","arguments":{"contextToken":"opaque-token"}},"id":3,"jsonrpc":"2.0"}
+{"method":"notifications/cancelled","params":{"requestId":3},"jsonrpc":"2.0"}
+{"method":"tools/list","params":{},"id":4,"jsonrpc":"2.0"}

@@ -11,6 +11,7 @@ internal static partial class Program
 
     static async Task<int> Main(string[] args)
     {
+        if (args[0] == "--sdk-cancel-diagnosis") return await SdkCancellationDiagnosis(args);
         if (args[0] == "--interrupt-driver") return await InterruptDriverTests(args);
         if (args[0] == "--deployment") return await DeploymentTests(args);
         if (args[0] == "--tools-child") return await ToolsChild(args);

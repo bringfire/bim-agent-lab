@@ -1,0 +1,21 @@
+[
+  {
+    "cancelWaitSeparately": true,
+    "events": [
+      "cancel-enter",
+      "wait-unwound",
+      "registration-disposed",
+      "cancel-return"
+    ]
+  },
+  {
+    "cancelWaitSeparately": false,
+    "events": [
+      "cancel-enter",
+      "send-callback",
+      "cancel-return",
+      "wait-unwound",
+      "registration-disposed"
+    ]
+  }
+]

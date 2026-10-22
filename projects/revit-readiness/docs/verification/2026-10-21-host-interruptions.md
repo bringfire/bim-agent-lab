@@ -1,5 +1,7 @@
 # Live cancellation, disconnect, queued work and executing Stop
 
+Follow-up: the [October 22 SDK diagnosis](2026-10-22-sdk-cancellation-diagnosis.md) explains the token-only failure recorded below. Historical captures and observations remain unchanged; explained does not mean fixed.
+
 Local date: October 21, 2026 (capture timestamps are October 22 UTC). Task 7 remains open. These are implementing-agent observations and separate trace/wire comparisons, not external review or desktop A8 acceptance.
 
 The author said “please proceed” after the next steps were explained. Revit PID **198452**, build **24.3.60.12**, retained the corrected diagnostic assembly from source **7b09879**, SHA-256 **432c5337625124a0ebdebba9d5dc98526379506e73a7f16d5b806e237101b057**. Bridge session **366f623ba0754e7a9cb2d1dd2d90d7ce** was active on the same disposable saved model. All **97 installed targets** still match the prepared diagnostic receipt. This is byte comparison in the original filesystem view, not closure of the shared-server visibility gap. The [provenance record](host-interruption-evidence/provenance.json) retains source hashes and installed-target comparisons.

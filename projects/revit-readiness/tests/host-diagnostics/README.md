@@ -2,7 +2,7 @@
 
 ## Actual application shutdown with queued work
 
-Current [preparation/evidence](../../docs/verification/2026-10-22-shutdown-preparation.md) adds a real-close observer. Do not substitute an injected `OnShutdown` call for Autodesk lifecycle evidence. Keep normal Stop, actual close, token-only SDK cancellation and physical disposal as separate claims.
+Current [preparation/evidence](../../docs/verification/2026-10-22-shutdown-preparation.md) adds a real-close observer. Do not substitute an injected `OnShutdown` call for Autodesk lifecycle evidence. Keep normal Stop, actual close, token-only SDK cancellation and physical disposal as separate claims. The [subsequent SDK diagnosis](../../docs/verification/2026-10-22-sdk-cancellation-diagnosis.md) explains the token-only failure and supplies an opt-in propagation probe; it does not fix it. Retain explicit notifications as the controlled stimulus and do not infer desktop Stop behavior.
 
 1. With Revit closed, run `Test-McpBridge.ps1 -Suite All`, `Test-Readiness.ps1`, and `Test-HostDiagnostics.ps1`. Dispatch includes the synthetic shutdown-checker and observer-ownership tests. These do not run Revit.
 2. Use `Prepare-HostDiagnostics.ps1`. It verifies installed inventories, compiles the diagnostic add-in/runtime, and preserves installed core/contract/exporter/server/notices. Preflight the whole package, retain recovery before mutation, and verify all targets. If deploying only changed host files, first prove every omitted target is unchanged; inventory reordering requires full entry/hash equality. Preserve running desktop servers.

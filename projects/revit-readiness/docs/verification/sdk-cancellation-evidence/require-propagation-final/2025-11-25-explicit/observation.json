@@ -1,0 +1,23 @@
+{
+  "protocol": "2025-11-25",
+  "mode": "explicit",
+  "stimulusUtc": "2026-10-22T17:15:43.5936264Z",
+  "observedUtc": "2026-10-22T17:15:44.3619719Z",
+  "rpcRequestId": "3",
+  "localCanceled": true,
+  "notificationsBeforeRescue": 1,
+  "remoteCanceledBeforeRescue": true,
+  "guardRejectedBeforeRescue": true,
+  "connected": true,
+  "held": true,
+  "remainingMilliseconds": 29125.5865,
+  "originalDeadline": "2026-10-22T17:16:13.4875591Z",
+  "finalDeadline": "2026-10-22T17:16:13.4875591Z",
+  "rescueSent": false,
+  "rescued": true,
+  "rescueGuardRejected": true,
+  "finalNotifications": 1,
+  "followupTools": 2,
+  "sdkAssembly": "ModelContextProtocol.Core, Version=2.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51",
+  "runtime": ".NET 10.0.13"
+}

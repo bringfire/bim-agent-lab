@@ -1,0 +1,135 @@
+{
+  "capturedUtc": "2026-10-22T17:16:52.870130+00:00",
+  "baseCommit": "35a71048d4a09d512b915c9c53a0440164082658",
+  "scope": "diagnostic harness and source inspection; no production fix, installation, desktop UI or Revit API execution",
+  "sdkPackage": "2.2.0",
+  "runtime": ".NET 10.0.13",
+  "sourceRecords": [
+    {
+      "path": "projects/revit-readiness/tests/mcp-tests/SdkCancellationDiagnosis.cs",
+      "sha256": "627f146885b1a82a19241202f98d571e8e8d748f393694d2407d3a01729765ed",
+      "snapshot": "sources/projects/revit-readiness/tests/mcp-tests/SdkCancellationDiagnosis.cs",
+      "gitBlob": "92ef6e2755c62855fa8ebe4f248eb3423796033c"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-tests/ProtocolTests.cs",
+      "sha256": "f8cdab65b52ef180bdde29d56fa7d56222f7deaefaa770d859f1fa25bec0cac5",
+      "snapshot": "sources/projects/revit-readiness/tests/mcp-tests/ProtocolTests.cs",
+      "gitBlob": "f3c82d9cdcbe185b28ac8a0e45c1cc0b60e3ca2e"
+    },
+    {
+      "path": "projects/revit-readiness/tests/verify_sdk_cancellation_diagnosis.py",
+      "sha256": "84322db3f82a116bd33307853a963b39afb2475ec96b2246a974cece91c003f9",
+      "snapshot": "sources/projects/revit-readiness/tests/verify_sdk_cancellation_diagnosis.py",
+      "gitBlob": "2ecdf8605adac70ff42d1d52188f9ed607d4c9b5"
+    },
+    {
+      "path": "projects/revit-readiness/tests/test_sdk_cancellation_evidence.py",
+      "sha256": "a78aa91e12d76ab9ab5d581de5a005daaa90206f39de9959832d7a5213875278",
+      "snapshot": "sources/projects/revit-readiness/tests/test_sdk_cancellation_evidence.py",
+      "gitBlob": "3897815d654426760198c09f56b1e32db59638d6"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-tests/packages.lock.json",
+      "sha256": "7e158b3ebafbe0d26cc07c53ca72f6d1aabd6912b6a3b7fa16cf19cd4969c514",
+      "snapshot": "sources/projects/revit-readiness/tests/mcp-tests/packages.lock.json",
+      "gitBlob": "be5a5af2e1f0cef3e3df890fed6aa7e504bee92f"
+    },
+    {
+      "path": "projects/revit-readiness/tests/mcp-client/InterruptionScenario.cs",
+      "sha256": "282d9cb52f0f27e2bbdf472031dc3a8e4fdd6afa2e9f7122e843bd2b93fa99fd",
+      "snapshot": "sources/projects/revit-readiness/tests/mcp-client/InterruptionScenario.cs",
+      "gitBlob": "3ed1b071107bf1e32a66c35f81dacd1c623867cc"
+    },
+    {
+      "path": "projects/revit-readiness/src/mcp-server/Program.cs",
+      "sha256": "7d17f49d33a65312b6b7b785473c3096e700b06f55318ed7602edffbd5da6f45",
+      "snapshot": "sources/projects/revit-readiness/src/mcp-server/Program.cs",
+      "gitBlob": "cd36c02aa365c6b40c0ff61fb67da02ee7d9d884"
+    },
+    {
+      "path": "projects/revit-readiness/src/mcp-server/McpHost.cs",
+      "sha256": "ac8aef052ecec04af1fc460e9e78c119e5376861f120755eb92ab33ddf03402e",
+      "snapshot": "sources/projects/revit-readiness/src/mcp-server/McpHost.cs",
+      "gitBlob": "a987ff881c25a9dc2adefc07fb94c647d8dd13fb"
+    }
+  ],
+  "upstreamSources": [
+    {
+      "revision": "2bd715b302c55210b03dc581bf25ee6e87a77789",
+      "url": "https://raw.githubusercontent.com/modelcontextprotocol/csharp-sdk/2bd715b302c55210b03dc581bf25ee6e87a77789/src/ModelContextProtocol.Core/McpSessionHandler.cs",
+      "sha256": "11d9aa7868a8bd2afd28c0ece049d9410d03bab49dd2a7c8d61ac8c5c5b6107d",
+      "kind": "source inspection only; no package execution"
+    },
+    {
+      "revision": "9a327829ef066c44a0d737c58bf3c7617d7c701c",
+      "url": "https://raw.githubusercontent.com/modelcontextprotocol/csharp-sdk/9a327829ef066c44a0d737c58bf3c7617d7c701c/src/ModelContextProtocol.Core/McpSessionHandler.cs",
+      "sha256": "11d9aa7868a8bd2afd28c0ece049d9410d03bab49dd2a7c8d61ac8c5c5b6107d",
+      "kind": "source inspection only; no package execution"
+    },
+    {
+      "revision": "v10.0.13",
+      "url": "https://raw.githubusercontent.com/dotnet/runtime/v10.0.13/src/libraries/System.Private.CoreLib/src/System/Threading/Tasks/Task.cs",
+      "sha256": "5b0d6892267269233dcf5c6191f357b0ba6c4257d1e757ca4d2fe93272b29d9b",
+      "license": "MIT"
+    },
+    {
+      "revision": "v10.0.13",
+      "url": "https://raw.githubusercontent.com/dotnet/runtime/v10.0.13/src/libraries/System.Private.CoreLib/src/System/Threading/CancellationTokenSource.cs",
+      "sha256": "4a00a64db628014b35fa85e5ef490265c47f3c3284175ba8f0b6405bdaee7d30",
+      "license": "MIT"
+    },
+    {
+      "revision": "v10.0.13",
+      "url": "https://raw.githubusercontent.com/dotnet/runtime/v10.0.13/src/libraries/System.Private.CoreLib/src/System/Threading/CancellationTokenRegistration.cs",
+      "sha256": "2acd2f509646eab07cdab33350bdc4d9100b2200872f3e651db539f0e0df776d",
+      "license": "MIT"
+    },
+    {
+      "revision": "6fa3825973949a9c4f0cd8af344e15a8db09dc35",
+      "url": "https://github.com/modelcontextprotocol/csharp-sdk/blob/6fa3825973949a9c4f0cd8af344e15a8db09dc35/src/ModelContextProtocol.Core/McpSessionHandler.cs",
+      "sha256": "8cd9beddc095c337e26013509e6a9f260e85de18c18eaa9f5042936a196cdc07",
+      "license": "Apache-2.0"
+    },
+    {
+      "revision": "6fa3825973949a9c4f0cd8af344e15a8db09dc35",
+      "url": "https://github.com/modelcontextprotocol/csharp-sdk/blob/6fa3825973949a9c4f0cd8af344e15a8db09dc35/tests/ModelContextProtocol.Tests/Protocol/CancellationTests.cs",
+      "sha256": "98d88bdbc82c103ea67984370b014d1fd23f338954d6363e776f6eff4e5ac934",
+      "license": "Apache-2.0"
+    },
+    {
+      "revision": "6fa3825973949a9c4f0cd8af344e15a8db09dc35",
+      "url": "https://github.com/modelcontextprotocol/csharp-sdk/blob/6fa3825973949a9c4f0cd8af344e15a8db09dc35/LICENSE",
+      "sha256": "10a500c69133ef6e1df944a1b0fd8578fc9c4735745bcc75f04a24038016df49",
+      "license": "Apache-2.0"
+    }
+  ],
+  "finalCaptureBinaries": [
+    {
+      "file": "BimAgentLab.Mcp.Tests.dll",
+      "sha256": "5317b8ad0c8363d111da7c24c08b3534eddb1e088410ff3bc1c2ed88dcd05401"
+    },
+    {
+      "file": "BimAgentLab.RevitReadiness.Mcp.dll",
+      "sha256": "75658e779dd0f7952bed8271e79c35562de993f8112168341d3f06928f67cbe1"
+    },
+    {
+      "file": "ModelContextProtocol.Core.dll",
+      "sha256": "b1752096ea9d2f38ba88e467f04aea43fb300d9a54d881c165f62b69028ee3ab"
+    }
+  ],
+  "limitations": [
+    "Characterization is expected-failure preservation, not propagation acceptance",
+    "2.3.0 was inspected as source only",
+    "Desktop stop actions were not tested"
+  ],
+  "currentCaptures": [
+    "require-propagation-final",
+    "characterized-final"
+  ],
+  "earlierCaptures": [
+    "require-propagation",
+    "characterized"
+  ],
+  "sourceHashBoundary": "sha256 describes captured worktree bytes retained in sources/; gitBlob identifies normalized repository content."
+}

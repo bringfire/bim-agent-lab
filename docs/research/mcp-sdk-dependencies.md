@@ -4,6 +4,8 @@ Observed 2026-10-20 (America/New_York). The approved plan selects official **Mod
 
 ## Current versions and the selection
 
+October 22 cancellation follow-up: the [diagnosis](../../projects/revit-readiness/docs/verification/2026-10-22-sdk-cancellation-diagnosis.md) reproduces a C# SDK 2.2.0 client cancellation-order defect on .NET 10.0.13 across all three protocol revisions. Exact-source inspection of upstream main `2bd715b` and tag v2.3.0 `9a32782` still finds the same registration/WaitAsync pattern. This is not a runtime test of 2.3.0 or a new latest-package audit; no upgrade or license/dependency change was made. Retain the failing propagation test and distinguish it from successful explicit SDK cancellation.
+
 The [NuGet registry](https://api.nuget.org/v3-flatcontainer/modelcontextprotocol/index.json) listed **2.3.0** as latest stable when refreshed at `2026-10-21T01:29:12Z`; the [2.2.0 package page](https://www.nuget.org/packages/ModelContextProtocol/2.2.0) also indicated a newer version. GitHub's releases/latest lookup still resolved to [v2.2.0](https://github.com/modelcontextprotocol/csharp-sdk/releases/tag/v2.2.0). Retain the dated discrepancy and identify which source establishes package availability. Do not call 2.2.0 the latest release.
 
 The author-approved pin remains 2.2.0. Upgrading is a separate dependency decision. The required [protocol revision 2026-07-28](https://modelcontextprotocol.io/specification/2026-07-28) is distinct from either package version. The [desktop experiment](../../projects/revit-readiness/docs/verification/mcp-client-compatibility.md) shows why neither a new protocol publication nor SDK support establishes desktop compatibility.
