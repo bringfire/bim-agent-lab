@@ -1,0 +1,31 @@
+{
+  "newRevitPid": 178492,
+  "bridgeSessionId": "705886aad28f45cf9b22df62da642aae",
+  "onlyChange": "owned readiness args[1] from 149972 to 178492",
+  "codexRemainsDisabled": true,
+  "claudeNotLaunched": true,
+  "unrelatedParsedSettingsPreserved": true,
+  "fullByteChangesLimitedToUniqueQuotedPid": true,
+  "clients": [
+    {
+      "client": "codex",
+      "config": "C:\\Users\\bring\\.codex\\config.toml",
+      "beforeSha256": "68bc0de8411cf70eac3151cc9f0ebc8610492286ff6c52dc704d8ea5df254422",
+      "afterSha256": "21bba46bf5ad8c8817cc1444b0bf681c47d7b39f1d89982938a47635a173b522",
+      "oldPid": 149972,
+      "newPid": 178492,
+      "receipt": "D:\\bim-agent-lab\\.superpowers\\sdd\\2026-10-20-revit-mcp-bridge\\shared-recovery-desktop-rebind\\codex.json",
+      "state": "Applied"
+    },
+    {
+      "client": "claude",
+      "config": "C:\\Users\\bring\\AppData\\Roaming\\Claude\\claude_desktop_config.json",
+      "beforeSha256": "934d15c22f690f14f5f17268def53b6700b4b17182badb85d3a70ff60289ef5e",
+      "afterSha256": "4847b8d7fd6c1b74579d3f21544565ce727cb7251249b7ba9f3ba8cfb1edf6ca",
+      "oldPid": 149972,
+      "newPid": 178492,
+      "receipt": "D:\\bim-agent-lab\\.superpowers\\sdd\\2026-10-20-revit-mcp-bridge\\shared-recovery-desktop-rebind\\claude.json",
+      "state": "Applied"
+    }
+  ]
+}

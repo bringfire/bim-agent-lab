@@ -1,0 +1,110 @@
+[
+  {
+    "path": "descriptor.json",
+    "sha256": "6313ffcdf2d7d172153ca9f185165f26f94b1450180e04ec6ad792d3b7ebe6d9"
+  },
+  {
+    "path": "desktop-binding-refresh.json",
+    "sha256": "db43598df59d95a9cd24ed8b7e4c368757767ad8f93cfa95605ce4cf92dc9eb1"
+  },
+  {
+    "path": "desktop-physical-paths.json",
+    "sha256": "299506cfc76fd05de82a50a591c4d2fa30f501c3feb6a5991af5d9bbfd545dbe"
+  },
+  {
+    "path": "expectation.json",
+    "sha256": "3da31420affb26ce99f0ad74e36e9338fd2021068629f9cbb927fc4e13e2971a"
+  },
+  {
+    "path": "installed-after.json",
+    "sha256": "1c6f8de3ac638da323731bf02360d1ed30459d1dbcf960833fb935adb1446bf6"
+  },
+  {
+    "path": "prepare_shared_recovery_live.py",
+    "sha256": "3f63be1775b8c70f8ede3cbe4bb3ba81e7d13230c4e50060e774dee06b27ca98"
+  },
+  {
+    "path": "rebind_desktops_after_recovery.py",
+    "sha256": "3c24ce177dfb0606d08f81c4fe51a5bd9529c14d87481961a0feb046452ab630"
+  },
+  {
+    "path": "retain_shared_recovery_live.py",
+    "sha256": "9ca5167b6656220372d7291a876dc0475e47966cf8b07ab16a4033474ef47c9a"
+  },
+  {
+    "path": "verification.json",
+    "sha256": "5479f79c47e2d7dca379d4aa18f79afd3e83c946d5f7ce214155c57975191a6d"
+  },
+  {
+    "path": "wrapper/capture/capture.json",
+    "sha256": "f9e375f857535de0a8048bebdb0649b691be94b8cbffdfdf018c7acd914761b9"
+  },
+  {
+    "path": "wrapper/capture/check.json",
+    "sha256": "8bc214029761376a099a26970d44905eea94bd769188f16ee604a5a48351e1c1"
+  },
+  {
+    "path": "wrapper/capture/comparison-complete.json",
+    "sha256": "6db7a5117b8ca38d2b9d115b7c7928f9d025f63c7851289d702717ee1b6c70da"
+  },
+  {
+    "path": "wrapper/capture/complete.json",
+    "sha256": "24a2c27869ea53475d49f85360581d1282c5e34dd768e97116e53daad1d58563"
+  },
+  {
+    "path": "wrapper/capture/context-ready.json",
+    "sha256": "cf46504768b47e2eaf1ec6a8522611f3fc7aa0da96ffbda8012fa6555f36d09e"
+  },
+  {
+    "path": "wrapper/capture/context.json",
+    "sha256": "71883f30243d55c189af69b8b68d493fa6bc278a43101354420e6bbb1c39d0c0"
+  },
+  {
+    "path": "wrapper/capture/expectation.json",
+    "sha256": "3da31420affb26ce99f0ad74e36e9338fd2021068629f9cbb927fc4e13e2971a"
+  },
+  {
+    "path": "wrapper/capture/partial.json",
+    "sha256": "dd5c1f006cbc3bfb0bcf03f3273e43a1a939745e89cfc0eea5172b00e3d67f03"
+  },
+  {
+    "path": "wrapper/capture/sdk-client-result.json",
+    "sha256": "339b39b6eb6ae45d8834f52155d0246679fcd4a0cf6d028fc3165eb7de6adb06"
+  },
+  {
+    "path": "wrapper/capture/wire/client-to-server.jsonl",
+    "sha256": "273409bc0233fb03307a00d5efb3fdef512dc60538a44d27dbc4e7293078897e"
+  },
+  {
+    "path": "wrapper/capture/wire/server-to-client.jsonl",
+    "sha256": "0a000bd4a66af5c3168fb33da1f78b6f6f6821b71c679791e39c2d1a0b2a95d1"
+  },
+  {
+    "path": "wrapper/context-validated.json",
+    "sha256": "0cbe97709bb2b00885e2e453cbb38134ad30275dbdf49a1685c8fbc769773300"
+  },
+  {
+    "path": "wrapper/expectation.json",
+    "sha256": "3da31420affb26ce99f0ad74e36e9338fd2021068629f9cbb927fc4e13e2971a"
+  },
+  {
+    "path": "wrapper/prepared.json",
+    "sha256": "e29110065d56241fa92eadf9d5bbe93b28f5ccee9ab95ee79fab8d51db022570"
+  },
+  {
+    "path": "wrapper/release-context",
+    "sha256": "67217c3a8c1058d135ce507b5eca822dcd7d4c5898f6fe0511d9de1f817112fd"
+  },
+  {
+    "path": "wrapper/sdk-stderr.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": "wrapper/sdk-stdout.txt",
+    "sha256": "815e77d5355f389b483899dabdfd87ef3574641f86da80c4923c2c90fa696e9d"
+  },
+  {
+    "path": "wrapper.txt",
+    "sha256": "475d05a7c86c725a5bc2f4ba449cb970ae8ed39e4d058601f4c56bbc9447c923"
+  }
+]

@@ -35,3 +35,5 @@ The [participant story](../../../../docs/tutorials/13-install-with-a-recovery-pl
 ## Execution follow-up
 
 The author subsequently closed Claude and disabled Codex readiness MCP. [Actual recovery and exact reinstall](2026-10-22-shared-recovery-execution.md) now pass after fresh preflight. The preparation-only observations above remain historical. All three historical receipts are Restored; the new current committed receipt is ef71fb608bba47f49a43ee75fb226bec. Preserve backups and use the current receipt for any future undo. Fresh post-reinstall Revit startup/read is pending.
+
+The [fresh Revit follow-up](2026-10-22-shared-recovery-execution.md#fresh-revit-recovery-passes) subsequently passed after the author reopened the specified model and started the bridge. The pending-live statement above describes the earlier file-recovery checkpoint.

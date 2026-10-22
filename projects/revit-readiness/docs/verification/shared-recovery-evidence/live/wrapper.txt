@@ -1,0 +1,2 @@
+PASS independent case comparison: {"case": "complete", "pass": true, "findings": 0, "affectedInstances": 0, "examinedInstances": 16, "coverageComplete": true, "evaluationComplete": true}
+Evidence: D:\bim-agent-lab\projects\revit-readiness\samples\local\shared-recovery\d80b639db55c4a39a69c9f15cc8feca0\live-recovery\wrapper\capture

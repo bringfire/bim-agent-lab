@@ -251,3 +251,7 @@ Suggested participant prompt:
 This sequence also exposed two evidence limits. An auxiliary summary file contained empty fields, so the agent used the verified installer receipt to establish what was installed and retained the bad summary. A broader test run timed out; the unchanged individual test and full rerun passed. The failed run stayed in the record, without claiming that the intermittent failure had been explained or fixed.
 
 The agent asked for a fresh Revit startup and read after the file and server checks. File equality, a working server and successful host startup answer different questions. The [execution record](../../projects/revit-readiness/docs/verification/2026-10-22-shared-recovery-execution.md) supplies the technical evidence and current limits.
+
+The author then replied **“ready”** after reopening Revit and starting the bridge. The fresh read matched the independent answer: all 16 declared instances examined, zero missing fields, complete coverage, and no model changes. This supplied the application-level proof that the recovered files still worked.
+
+The agent also found that both desktop configurations referred to the previous Revit process. It backed up the settings and changed only that process binding, leaving Codex disabled as the person had chosen. Participants should ask an agent to restore a usable connection while preserving unrelated settings, and to distinguish a prepared connection from one actually exercised in the desktop app.

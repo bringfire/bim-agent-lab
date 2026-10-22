@@ -1,0 +1,2 @@
+Context acquired; waiting for explicit test-preparation release file.
+PASS SDK readiness: expected=ReadinessReport; evidence=D:\bim-agent-lab\projects\revit-readiness\samples\local\shared-recovery\d80b639db55c4a39a69c9f15cc8feca0\live-recovery\wrapper\capture
