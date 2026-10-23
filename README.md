@@ -10,6 +10,8 @@ BIM Agent Lab is a teaching repository for BIM professionals. It pairs working e
 
 ## Start here
 
+**Seminar packet:** [eight-page participant PDF](output/pdf/swacca-2026-participant-handout.pdf) and [editable source / print instructions](workshops/swacca-2026/handout/README.md). US Letter, black-and-white friendly; preparation draft dated October 23, 2026.
+
 **Participants:** use the [starting guide](docs/start-here.md). It explains what you can try, how to direct your agent, and how to judge the answer. Reading the lessons requires no Revit installation.
 
 **Agents:** use the [technical handoff](docs/how-to/agent-handoff.md), root [AGENTS.md](AGENTS.md) and project guidance before changing anything. The handoff connects prerequisites, source boundaries, build/install/recovery, samples, verification and remaining work.
@@ -52,4 +54,4 @@ Each application project owns its dependencies and host-specific instructions. S
 
 See [Contributing](CONTRIBUTING.md) and the [build journal](docs/build-story/journal.md). Inspect the current branch, diff and history before work; record coherent verified steps in Git. The approved [specification and plan](docs/superpowers/reviews/revit-mcp-bridge/README.md) guide the continuing bridge work; historical review closure is scoped to the reviewed revision and evidence.
 
-This checkpoint is local: public hosting, an original-material license and release packaging remain to be selected. See [licensing status](docs/reference/licensing.md) before distribution. The participant materials are being prepared for sharing; this is not a claim that a published release or bundled installer is available.
+The hosted repository is [bringfire/bim-agent-lab](https://github.com/bringfire/bim-agent-lab), created private on October 23, 2026. Public access, an original-material license and release packaging remain pending. See [hosting and publication status](docs/reference/repository-sharing.md) and [licensing status](docs/reference/licensing.md) before distribution. A private source checkpoint is not a published plugin release.

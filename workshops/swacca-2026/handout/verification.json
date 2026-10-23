@@ -1,0 +1,137 @@
+{
+  "date": "2026-10-23",
+  "source_baseline": "b8ff62ebed07f59d81c061cd9611b4af546e65d0",
+  "pdf": "output/pdf/swacca-2026-participant-handout.pdf",
+  "sha256": "a5c8eb187aa0ef73f8a5b4f7a262491061ebc35b548d3c8dd888e3dcae194fc4",
+  "source_sha256": {
+    "content.json": "cdc7e179b30a6e4ab202d0f57526cc7927ec1401ba75d04c76b97141acb02982",
+    "build_handout.py": "38c68d51a9515302749ed9c775c7674a4ee45d91b47dcb4b4d49bf4e1ffa25f8"
+  },
+  "python": "3.12.14",
+  "packages": {
+    "reportlab": "4.4.9",
+    "pypdf": "6.10.0",
+    "pdfplumber": "0.11.9"
+  },
+  "pages": [
+    {
+      "page": 1,
+      "size_points": [
+        612,
+        792
+      ],
+      "body_bottom_points_from_top": 649.86,
+      "used_fonts": [
+        "AAAAAA+SegoeUI",
+        "AAAAAA+SegoeUI-Bold"
+      ],
+      "text_bounds_pass": true
+    },
+    {
+      "page": 2,
+      "size_points": [
+        612,
+        792
+      ],
+      "body_bottom_points_from_top": 635.86,
+      "used_fonts": [
+        "AAAAAA+SegoeUI",
+        "AAAAAA+SegoeUI-Bold"
+      ],
+      "text_bounds_pass": true
+    },
+    {
+      "page": 3,
+      "size_points": [
+        612,
+        792
+      ],
+      "body_bottom_points_from_top": 666.91,
+      "used_fonts": [
+        "AAAAAA+SegoeUI",
+        "AAAAAA+SegoeUI-Bold"
+      ],
+      "text_bounds_pass": true
+    },
+    {
+      "page": 4,
+      "size_points": [
+        612,
+        792
+      ],
+      "body_bottom_points_from_top": 649.01,
+      "used_fonts": [
+        "AAAAAA+Consolas",
+        "AAAAAA+SegoeUI",
+        "AAAAAA+SegoeUI-Bold"
+      ],
+      "text_bounds_pass": true
+    },
+    {
+      "page": 5,
+      "size_points": [
+        612,
+        792
+      ],
+      "body_bottom_points_from_top": 705.31,
+      "used_fonts": [
+        "AAAAAA+SegoeUI",
+        "AAAAAA+SegoeUI-Bold"
+      ],
+      "text_bounds_pass": true
+    },
+    {
+      "page": 6,
+      "size_points": [
+        612,
+        792
+      ],
+      "body_bottom_points_from_top": 717.81,
+      "used_fonts": [
+        "AAAAAA+SegoeUI",
+        "AAAAAA+SegoeUI-Bold"
+      ],
+      "text_bounds_pass": true
+    },
+    {
+      "page": 7,
+      "size_points": [
+        612,
+        792
+      ],
+      "body_bottom_points_from_top": 634.96,
+      "used_fonts": [
+        "AAAAAA+SegoeUI",
+        "AAAAAA+SegoeUI-Bold"
+      ],
+      "text_bounds_pass": true
+    },
+    {
+      "page": 8,
+      "size_points": [
+        612,
+        792
+      ],
+      "body_bottom_points_from_top": 694.19,
+      "used_fonts": [
+        "AAAAAA+SegoeUI",
+        "AAAAAA+SegoeUI-Bold"
+      ],
+      "text_bounds_pass": true
+    }
+  ],
+  "uri_annotations": [
+    "https://github.com/bringfire/bim-agent-lab",
+    "https://help.autodesk.com/cloudhelp/2024/ENU/RevitDynamo/files/RevitDynamo_Whats_New_in_Dynamo_for_Revit_html.html",
+    "https://github.com/DynamoDS/Dynamo/wiki/Customizing-Dynamo's-Python-3-installation",
+    "https://github.com/pyrevitlabs/pyRevit"
+  ],
+  "visual_review": "All eight final 1200-pixel renders inspected; no clipping, overlap or missing glyphs observed.",
+  "not_performed": [
+    "Physical printer test",
+    "Physical QR scan",
+    "Dynamo or pyRevit runtime rehearsal",
+    "Public unauthenticated repository access",
+    "New Revit/MCP acceptance"
+  ]
+}

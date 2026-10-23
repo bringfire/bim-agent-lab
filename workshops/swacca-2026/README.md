@@ -6,6 +6,8 @@ The recorded event dates are October 29–30, 2026, in Pleasanton, California. T
 
 ## Current teaching direction
 
+**October 23 participant packet:** [eight-page Letter PDF](../../output/pdf/swacca-2026-participant-handout.pdf), [editable content and agent rebuild guide](handout/README.md), and [participant account of preparing it](../../docs/tutorials/16-prepare-the-participant-packet.md). It preserves the two one-hour structure and fits the quick Dynamo/pyRevit introductions into the existing first-working-step block. pyRevit is an optional separate install, not an added attendee requirement. These demos await rehearsal. The private [GitHub repository](https://github.com/bringfire/bim-agent-lab) provides the stable QR/link destination; public release and licensing remain pending. Historical development notes below are snapshots; use the root README and acceptance ledger for current status.
+
 **Working agenda:** [Option B — the story of the build, revision B](agenda.html).
 It sets out two 60-minute sessions: first, the BIM question, Git, research,
 requirements, and the first working step; second, the complete plugin/MCP flow,

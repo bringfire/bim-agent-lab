@@ -22,7 +22,7 @@ git diff
 git remote -v
 ```
 
-This repository has no assigned public remote or original-material license at the recorded checkpoint. Use the actual seminar-provided source; do not invent a clone URL. Follow the [clone procedure](clone-research-repositories.md) for optional precedents in ignored `references/`. Refresh version-sensitive research from official sources before a dependency decision; preserve inspected commits, licenses and reasons for chosen pins. This handoff records the tested choices, not a new latest-version audit.
+The canonical remote is [bringfire/bim-agent-lab](https://github.com/bringfire/bim-agent-lab), created private on October 23, 2026. Public access and an original-material license remain pending; see [hosting status](../reference/repository-sharing.md). The [handout agent guide](../../workshops/swacca-2026/handout/README.md) covers the current packet work, which does not change the frozen Revit candidate. Follow the [clone procedure](clone-research-repositories.md) for optional precedents in ignored `references/`. Refresh version-sensitive research from official sources before a dependency decision; preserve inspected commits, licenses and reasons for chosen pins. This handoff records the tested choices, not a new latest-version audit.
 
 ## Verified baseline and limits — October 22, 2026
 

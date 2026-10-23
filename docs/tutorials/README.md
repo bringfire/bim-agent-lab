@@ -27,3 +27,5 @@ Research, Git, setup, readiness, Excel, the MCP bridge comparison, and specifica
 | 19. Package and extend | Use the repo with an agent after the seminar | [Participant starting guide](../start-here.md), [agent handoff](../how-to/agent-handoff.md) and [extension workflow](../how-to/extend-a-project.md); release packaging remains planned |
 
 Ask your agent to explain one step, identify what the person decided and what was delegated, and show the relevant evidence. Then choose a small next task with an observable answer. Historical results describe the recorded configuration; a new implementation or workstation needs its own verification.
+
+For the seminar handout, see [how we prepared the participant packet](16-prepare-the-participant-packet.md) and the [agent rebuild/print guide](../../workshops/swacca-2026/handout/README.md). The eight-page PDF summarizes the learning path; the repository preserves its technical detail.

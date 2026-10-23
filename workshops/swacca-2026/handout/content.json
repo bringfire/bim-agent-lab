@@ -1,0 +1,599 @@
+{
+  "title": "Build useful BIM tools with an AI agent",
+  "edition": "Participant draft | October 23, 2026",
+  "repo_url": "https://github.com/bringfire/bim-agent-lab",
+  "pages": [
+    {
+      "label": "01 / THE SEMINAR",
+      "title": "Bring the BIM judgment.",
+      "subtitle": "SWACCA BIM Summit 2026 | Two one-hour sessions",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "You do not need to become a software developer to direct useful work. You do need to explain the problem, define what a trustworthy answer looks like, and ask the agent to show its evidence."
+        },
+        {
+          "type": "callout",
+          "title": "The example we will follow",
+          "text": "Can we tell whether required wall and ceiling type information is present? We turn a written checklist into a read-only Revit check, add an Excel report, and connect the same calculation to desktop AI tools."
+        },
+        {
+          "type": "table",
+          "widths": [
+            0.17,
+            0.83
+          ],
+          "headers": [
+            "Minutes",
+            "Session 1: from BIM question to researched plan"
+          ],
+          "rows": [
+            [
+              "00-10",
+              "Frame the work and preview the example."
+            ],
+            [
+              "10-18",
+              "Direct the agent with Git: inspect, branch, diff, commit."
+            ],
+            [
+              "18-33",
+              "Research existing work, resources, dependencies and licenses."
+            ],
+            [
+              "33-43",
+              "Define rules, scope and independently checkable sample cases."
+            ],
+            [
+              "43-55",
+              "Show the first working step, including quick scripting routes."
+            ],
+            [
+              "55-60",
+              "Questions."
+            ]
+          ]
+        },
+        {
+          "type": "table",
+          "widths": [
+            0.17,
+            0.83
+          ],
+          "headers": [
+            "Minutes",
+            "Session 2: from working example to your next tool"
+          ],
+          "rows": [
+            [
+              "00-05",
+              "Reconnect the BIM question to the declared scope."
+            ],
+            [
+              "05-23",
+              "Show how we built the plugin and its MCP connection."
+            ],
+            [
+              "23-35",
+              "Verify, debug and learn from independent review."
+            ],
+            [
+              "35-50",
+              "Use bim-agent-lab afterward with your own agent."
+            ],
+            [
+              "50-60",
+              "Choose an office use case, then questions."
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "This is a guided account of a build, with selected demonstrations. The repository holds the detailed procedures for later. Inventory supports the readiness answer; measured quantities and physical-condition checks are future extensions."
+        },
+        {
+          "type": "lines",
+          "title": "One repetitive BIM question I would like to answer:",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "label": "02 / DIRECT THE AGENT",
+      "title": "Start with a useful question.",
+      "subtitle": "Your responsibility is the purpose, scope and standard of evidence.",
+      "blocks": [
+        {
+          "type": "table",
+          "widths": [
+            0.25,
+            0.75
+          ],
+          "headers": [
+            "Include",
+            "For our example"
+          ],
+          "rows": [
+            [
+              "Purpose",
+              "Find missing type information before a defined handoff."
+            ],
+            [
+              "Scope",
+              "The declared host walls and ceilings, level and phase; say whether links count."
+            ],
+            [
+              "Rules",
+              "Which fields are required for which types, and which exceptions are explicit."
+            ],
+            [
+              "Boundaries",
+              "Read a disposable sample. Do not change model values."
+            ],
+            [
+              "Output",
+              "Findings, affected instances, coverage and a clear scoped verdict."
+            ],
+            [
+              "Proof",
+              "Known passing, failing and incomplete cases; compare with Revit schedules."
+            ]
+          ]
+        },
+        {
+          "type": "prompt",
+          "title": "Suggested prompt: frame the task before building",
+          "text": "I want to check [information] before [handoff or decision]. Read the project context first. Help me define the scope, rules, exceptions and expected output. Research existing approaches and required resources. Propose a small first step and explain how we can verify it independently. Identify what you need me to decide before writing code."
+        },
+        {
+          "type": "h2",
+          "text": "Make the division of work explicit"
+        },
+        {
+          "type": "p",
+          "text": "You supply professional intent, choose acceptable behavior and judge whether the answer is useful. The agent researches, inspects source, proposes a plan, writes code, runs checks and records evidence. Ask it to distinguish what it observed from what it assumes."
+        },
+        {
+          "type": "p",
+          "text": "For desktop demonstrations, the person handles Revit menus and permission prompts. Ask for one action at a time, with an exact file path. Opening a similarly named model or switching to another view is not proof that the intended document is active."
+        },
+        {
+          "type": "callout",
+          "title": "A useful follow-up",
+          "text": "Show me the source or test that supports that claim. What remains unverified? What small check would resolve it?"
+        },
+        {
+          "type": "lines",
+          "title": "My intended scope and one result I can check without trusting the agent:",
+          "count": 3
+        }
+      ]
+    },
+    {
+      "label": "03 / RESEARCH AND GIT",
+      "title": "Ask it to look first.",
+      "subtitle": "Collect the resources and inspect the actual implementation.",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "An API is the interface a program exposes. An SDK supplies development tools and libraries. A dependency is another package our code needs. A repository holds files and their tracked history. These are resources the agent should identify before it starts building."
+        },
+        {
+          "type": "prompt",
+          "title": "Suggested prompt: research and collect",
+          "text": "Find relevant official APIs, SDKs, libraries and existing GitHub projects. Check current versions, compatibility and licenses. Clone promising repositories into an ignored research folder and inspect the code behind the feature. Record source links and exact revisions. Distinguish a dependency we consume, code we adapt and a precedent we only learn from."
+        },
+        {
+          "type": "p",
+          "text": "In our research, source inspection exposed a default query limit of 100 elements. That matters: a partial inventory cannot silently represent a whole model. A project description alone did not answer that question."
+        },
+        {
+          "type": "table",
+          "widths": [
+            0.22,
+            0.78
+          ],
+          "headers": [
+            "Git term",
+            "What you are asking the agent to do"
+          ],
+          "rows": [
+            [
+              "Clone",
+              "Make a local copy so it can inspect an existing repository."
+            ],
+            [
+              "Branch",
+              "Name a line of work while preserving existing changes."
+            ],
+            [
+              "Diff",
+              "Show exactly what changed and explain its effect."
+            ],
+            [
+              "Commit",
+              "Record a selected, checked checkpoint in local history."
+            ],
+            [
+              "Remote / push",
+              "Identify the hosted destination; transfer commits to it."
+            ],
+            [
+              "Commit ID",
+              "Identify the exact version that was inspected or tested."
+            ]
+          ]
+        },
+        {
+          "type": "prompt",
+          "title": "Suggested prompt: make the work reviewable",
+          "text": "Inspect the current repository, branch and changes. Preserve existing work. Use an appropriate branch, show the diff and relevant checks, then commit a coherent step. Keep credentials, research clones and working model files out of Git. Confirm the destination and visibility before sharing."
+        },
+        {
+          "type": "callout",
+          "title": "Ask for versions at every boundary",
+          "text": "Revit version, SDK package version, MCP protocol revision and desktop app version are different facts. Ask what works together now, then pin and test that combination. A newer SDK does not prove that every client supports its newest protocol."
+        }
+      ]
+    },
+    {
+      "label": "04 / THE QUICK SCRIPTING ROUTES",
+      "title": "Try one small read first.",
+      "subtitle": "The agent writes the script; you run it in the correct Revit environment.",
+      "blocks": [
+        {
+          "type": "h2",
+          "text": "Dynamo: a script inside a graph"
+        },
+        {
+          "type": "p",
+          "text": "Dynamo for Revit is included with Revit 2024. For this beginner example, its CPython3 engine supplies its own Python runtime; a separate Python installation is not needed. Ask the agent to confirm your installed Revit, Dynamo and engine versions first. [1, 2]"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Open a disposable sample project. In Revit, choose Manage > Visual Programming > Dynamo; create a new graph.",
+            "Set run mode to Manual. Search for a Python Script node, place it, select CPython3 and open its editor.",
+            "Replace the editor contents with the two lines below. Accept the edit, connect OUT to a Watch node and click Run. Save the graph for reuse."
+          ]
+        },
+        {
+          "type": "code",
+          "text": "import sys\nOUT = [\"Dynamo is working\", sys.version]"
+        },
+        {
+          "type": "p",
+          "text": "This first check only reports the Python version. Next, ask the agent for a read-only wall/ceiling inventory with a clearly stated scope, and compare its count with a native Revit schedule."
+        },
+        {
+          "type": "h2",
+          "text": "pyRevit: a script behind a ribbon button"
+        },
+        {
+          "type": "p",
+          "text": "pyRevit is a separate, optional Revit add-in. It can run Python scripts packaged as ribbon tools. The presenter has installed it; it is not an added participant prerequisite for following the seminar. [3]"
+        },
+        {
+          "type": "steps",
+          "items": [
+            "Ask the agent to inspect the installed pyRevit version and Python engine, then create a small extension containing a read-only script.py command.",
+            "Have the agent give the exact extension-folder registration and reload steps for that version. Run the new ribbon button on the same sample and verify the output."
+          ]
+        },
+        {
+          "type": "prompt",
+          "title": "Suggested prompt for either route",
+          "text": "For my installed [Dynamo or pyRevit] environment, create a read-only inventory of host basic walls and ceilings by type. State the scope and exclusions. Give me the exact run steps and an independent count check. Do not edit or save the model, and explain any extra dependency before adding it."
+        },
+        {
+          "type": "p",
+          "text": "Dynamo and pyRevit have different host objects and may use different Python engines. Ask for code adapted to the selected route; do not assume the same script can be pasted into both. These short demos precede the compiled-plugin build."
+        }
+      ]
+    },
+    {
+      "label": "05 / READ THE RESULT",
+      "title": "Zero findings is not enough.",
+      "subtitle": "A readiness verdict needs both the rules and complete coverage.",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Our teaching scope contains 16 declared instances across six types: 12 walls and four ceilings. Every type requires Code (Type Mark). Walls A and B also require Fire Rating and Assembly Reference. Other exemptions are written into the checklist; the tool does not infer them from blank values."
+        },
+        {
+          "type": "table",
+          "widths": [
+            0.26,
+            0.14,
+            0.14,
+            0.23,
+            0.23
+          ],
+          "headers": [
+            "Prepared case",
+            "Missing findings",
+            "Affected instances",
+            "Coverage complete",
+            "Evaluation complete"
+          ],
+          "rows": [
+            [
+              "Complete",
+              "0",
+              "0",
+              "True",
+              "True"
+            ],
+            [
+              "Wall defects",
+              "2",
+              "6",
+              "True",
+              "True"
+            ],
+            [
+              "Ceiling negative",
+              "3",
+              "8",
+              "True",
+              "True"
+            ],
+            [
+              "NC1: missing element",
+              "0",
+              "0*",
+              "False",
+              "True"
+            ],
+            [
+              "NC2: missing rule",
+              "0",
+              "0*",
+              "False",
+              "False"
+            ]
+          ]
+        },
+        {
+          "type": "p",
+          "text": "*Affected instances counts missing-value findings only. NC1 examines 15 of 16: one declared identity is absent. NC2 finds all 16, but two Ceiling ACT instances cannot be evaluated because their type has no matching requirement. Neither case is a readiness pass."
+        },
+        {
+          "type": "prompt",
+          "title": "Suggested prompt: ask for an assessable answer",
+          "text": "Get a fresh readiness context and check required wall and ceiling type information. Report the full model path, scope, requested and examined counts, findings and affected instances, both completeness flags, scope issues and unexamined cases. Explain whether the declared scope passes. Do not edit or export anything."
+        },
+        {
+          "type": "h2",
+          "text": "Check the answer against something independent"
+        },
+        {
+          "type": "p",
+          "text": "Use native Revit schedules and a prepared answer sheet. Confirm the intended model is active. A missing field on one type may affect several placed instances. An instance count is not an area, length or material quantity."
+        },
+        {
+          "type": "callout",
+          "title": "Keep the claim inside its scope",
+          "text": "The tool checks whether required information is present. It does not validate a fire-rated assembly, certify compliance or establish whole-project readiness. Other host elements and links are excluded from this teaching scope."
+        },
+        {
+          "type": "p",
+          "text": "A context token binds a request to the observed document and checklist. After a model switch, a stale token should be rejected. Acquire a fresh context to recover; an expired-token test alone does not prove model-switch detection."
+        }
+      ]
+    },
+    {
+      "label": "06 / HOW THE EXAMPLE GREW",
+      "title": "Build in checkable steps.",
+      "subtitle": "Keep the calculation separate from the way people ask for it.",
+      "blocks": [
+        {
+          "type": "table",
+          "widths": [
+            0.29,
+            0.71
+          ],
+          "headers": [
+            "Step",
+            "How we engaged the agent"
+          ],
+          "rows": [
+            [
+              "Prove the setup",
+              "Check prerequisites; build a minimal read-only Revit command."
+            ],
+            [
+              "Add one useful rule",
+              "Define required type information and deliberately controlled sample results."
+            ],
+            [
+              "Add Excel output",
+              "Review a library and its dependencies; compare the workbook with known results."
+            ],
+            [
+              "Connect an agent",
+              "Compare existing bridges with a small custom bridge; test actual desktop compatibility early."
+            ],
+            [
+              "Prepare recovery",
+              "Record installed files and backups before changes; test restoration."
+            ],
+            [
+              "Retain the lesson",
+              "Record participant decisions and the agent's reproducible procedure."
+            ]
+          ]
+        },
+        {
+          "type": "h2",
+          "text": "Our first dependency: ClosedXML"
+        },
+        {
+          "type": "p",
+          "text": "The author asked for an Excel-readable result. We chose ClosedXML and inspected its resolved dependencies and licenses. The workbook contains Summary, Findings, Affected elements, and Rules and coverage. A passing build did not predict the first Revit loading failure; host testing led to a separate exporter process."
+        },
+        {
+          "type": "prompt",
+          "title": "Suggested prompt: add a dependency responsibly",
+          "text": "Add [output] using a suitable library. Research its current compatible version, license and transitive dependencies. Explain what will be installed. Verify the output against our independent sample results in the actual application, then record the process in both teaching layers."
+        },
+        {
+          "type": "h2",
+          "text": "What MCP adds"
+        },
+        {
+          "type": "flow",
+          "items": [
+            "Desktop AI app",
+            "MCP server",
+            "Revit add-in"
+          ]
+        },
+        {
+          "type": "p",
+          "text": "MCP (Model Context Protocol) lets an AI application discover and call tools. Our server exposes a fresh-context tool and a readiness-check tool. The add-in reads Revit through its supported API context; the shared evaluator applies the written rules."
+        },
+        {
+          "type": "callout",
+          "title": "Two ways to use the same readiness calculation",
+          "text": "The manual Revit command saves JSON/text evidence and the Excel workbook. The MCP tools return structured results to the agent; those calls do not edit the model or export files."
+        },
+        {
+          "type": "p",
+          "text": "The bridge consumes official C# MCP SDK 2.2.0. The TypeScript SDK 1.26.0 was a learning precedent, not copied implementation code. This is a recorded build baseline, not a claim about today's latest versions."
+        }
+      ]
+    },
+    {
+      "label": "07 / INDEPENDENT REVIEW",
+      "title": "Ask what connects the findings.",
+      "subtitle": "A reviewer can improve the reasoning as well as identify defects.",
+      "blocks": [
+        {
+          "type": "p",
+          "text": "Before the larger bridge build, we asked the agent for a written specification and implementation plan. A separate reviewer inspected each. Reviewer closure and the author's approval were distinct steps. Implementation review followed with source, tests and evidence tied to exact commits."
+        },
+        {
+          "type": "callout",
+          "title": "Two or three major findings are a signal",
+          "text": "Ask whether the defects share an underlying missing concept or framework. The count is a cue to investigate, not proof. Give the explanation back to the coding agent so it can address the broader problem rather than patch only the named examples."
+        },
+        {
+          "type": "prompt",
+          "title": "Suggested prompt to the independent reviewer",
+          "text": "Do these findings share a missing concept or reasoning framework? Explain the connection with evidence, identify other places it may apply, and state the tests that would demonstrate the broader guarantee. Distinguish a confirmed pattern from a hypothesis."
+        },
+        {
+          "type": "h2",
+          "text": "What that revealed in our build"
+        },
+        {
+          "type": "p",
+          "text": "Repeated cancellation findings exposed a gap between keeping resources safe and allowing shutdown to finish. The coder had reasoned about who owned objects, but not fully about which work waited for other work. Tests then interrupted real operations at their handoffs, including callbacks that failed or stayed running."
+        },
+        {
+          "type": "prompt",
+          "title": "Suggested prompt back to the coding agent",
+          "text": "Assess the reviewer's diagnosis against the source before patching. State the guarantee that must hold across the whole operation, including interruption and failure. Apply the supported insight to every affected handoff, derive tests from it, preserve the original reproductions, and explain why the correction covers more than those examples."
+        },
+        {
+          "type": "h2",
+          "text": "Ask what each kind of evidence proves"
+        },
+        {
+          "type": "p",
+          "text": "A build proves compilation. Offline tests exercise specified behavior. A live Revit run tests the host integration. A desktop answer tests what the participant actually sees. Freeze the candidate and record its identity; evidence from an older installed build does not automatically prove the current source."
+        },
+        {
+          "type": "lines",
+          "title": "A question I will ask before accepting an agent's work:",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "label": "08 / AFTER THE SEMINAR",
+      "title": "Continue with bim-agent-lab.",
+      "subtitle": "Use the repository as both a refresher and context for your agent.",
+      "blocks": [
+        {
+          "type": "repo",
+          "text": "github.com/bringfire/bim-agent-lab",
+          "caption": "Scan or type the address. Private during preparation; participant access will be announced at the seminar."
+        },
+        {
+          "type": "table",
+          "widths": [
+            0.38,
+            0.62
+          ],
+          "headers": [
+            "Start with",
+            "Use it for"
+          ],
+          "rows": [
+            [
+              "README.md",
+              "Current status and navigation."
+            ],
+            [
+              "docs/start-here.md",
+              "Your first steps as a participant."
+            ],
+            [
+              "docs/tutorials/README.md",
+              "How we engaged the agent at each stage."
+            ],
+            [
+              "AGENTS.md",
+              "Rules and boundaries for agents working here."
+            ],
+            [
+              "docs/how-to/agent-handoff.md",
+              "Technical setup, verification and remaining work."
+            ]
+          ]
+        },
+        {
+          "type": "prompt",
+          "title": "Suggested first prompt in your own checkout",
+          "text": "Clone https://github.com/bringfire/bim-agent-lab into a new folder. Read README.md, AGENTS.md, docs/start-here.md and docs/how-to/agent-handoff.md. Explain what works and what remains unverified. Inspect my prerequisites and guide me through one useful step. Tell me which Revit actions I must take. Explain proposed installations or settings changes before making them."
+        },
+        {
+          "type": "p",
+          "text": "Reading the lessons requires no Revit installation. Running the example requires the documented Revit environment and separately acquired resources. Autodesk sample model binaries and API libraries are not bundled. Check the current setup and acceptance status before installing; this packet is not a release certification."
+        },
+        {
+          "type": "lines",
+          "title": "My next small BIM question, and how I will verify the answer:",
+          "count": 1
+        },
+        {
+          "type": "h2",
+          "text": "Official resources for the quick demos"
+        },
+        {
+          "type": "references",
+          "items": [
+            {
+              "label": "[1] Autodesk: Dynamo for Revit 2.19.3 (Revit 2024)",
+              "url": "https://help.autodesk.com/cloudhelp/2024/ENU/RevitDynamo/files/RevitDynamo_Whats_New_in_Dynamo_for_Revit_html.html"
+            },
+            {
+              "label": "[2] Dynamo: Python 3 installation and embedded runtime",
+              "url": "https://github.com/DynamoDS/Dynamo/wiki/Customizing-Dynamo's-Python-3-installation"
+            },
+            {
+              "label": "[3] pyRevit: project, installation and extension structure",
+              "url": "https://github.com/pyrevitlabs/pyRevit"
+            }
+          ]
+        },
+        {
+          "type": "small",
+          "text": "The digital PDF links these sources. Full URLs, preparation notes and the editable packet live in workshops/swacca-2026/handout/. Research checked October 23, 2026. Reusable prompts here are suggestions, not a reconstructed transcript."
+        }
+      ]
+    }
+  ]
+}

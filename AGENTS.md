@@ -1,5 +1,7 @@
 # Working in BIM Agent Lab
 
+**October 23 active task:** participant handout preparation and private repository hosting. The [eight-page packet and agent rebuild guide](workshops/swacca-2026/handout/README.md) record sources, print checks and remaining rehearsal/access decisions. Canonical remote is `https://github.com/bringfire/bim-agent-lab`, private; see [sharing status](docs/reference/repository-sharing.md). Public visibility and original-material licensing remain pending. Follow the user's current priority; do not resume candidate installation or change running apps merely because an older checkpoint below describes the acceptance sequence. The frozen candidate and open R3 items remain unchanged.
+
 **Latest R3 disposition:** the [independent follow-up on 9c27d50](docs/superpowers/reviews/revit-mcp-bridge/2026-10-22-r3-follow-up.md) closes historical NC1 presentation. NC2, Codex baseline and current-build acceptance remain open. Continue the [frozen normal candidate sequence](projects/revit-readiness/docs/verification/2026-10-22-r3-current-candidate.md): actual build commit, immutable package, recoverable installation, installed hashes, then both desktop sequences with actual answers. Do not infer presentation from tool JSON. Keep diagnostic ordering separate from normal shutdown timing; desktop Stop and unavailable native observations require their own evidence/disposition. No new production defect or cancellation rewrite was requested.
 
 ## Current entry point — October 22, 2026

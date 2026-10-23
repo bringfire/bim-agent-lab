@@ -1,6 +1,7 @@
 # Source-inspection copies and downloaded resources
 /references/
 /downloads/
+/tmp/pdfs/
 
 # Local agent/session configuration and credentials
 /.remember/
