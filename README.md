@@ -10,7 +10,7 @@ BIM Agent Lab is a teaching repository for BIM professionals. It pairs working e
 
 ## Start here
 
-**Seminar packet:** [eight-page participant PDF](output/pdf/swacca-2026-participant-handout.pdf) and [editable source / print instructions](workshops/swacca-2026/handout/README.md). US Letter, black-and-white friendly; preparation draft dated October 23, 2026.
+**Seminar packet:** [eight-page participant PDF](output/pdf/swacca-2026-participant-handout-oct29-30.pdf) and [editable source / print instructions](workshops/swacca-2026/handout/README.md). US Letter, black-and-white friendly; seminar dates October 29-30, 2026. The editable Word companion is linked in the print instructions.
 
 **Participants:** use the [starting guide](docs/start-here.md). It explains what you can try, how to direct your agent, and how to judge the answer. Reading the lessons requires no Revit installation.
 

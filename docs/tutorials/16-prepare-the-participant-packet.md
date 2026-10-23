@@ -25,3 +25,10 @@ The agent generated a PDF from editable content, rendered all eight pages and in
 > Prepare a handout for [audience], using [page count, paper size and printing constraints]. Focus on what participants need to decide and ask the agent. Link the technical procedures instead of compressing them onto every page. Keep examples and verification claims faithful to the evidence. Retain editable source, render every page and check the final layout. Identify what must be settled before distribution.
 
 The [technical guide](../../workshops/swacca-2026/handout/README.md) links the sources, generation commands and remaining preparation steps. The [hosting record](../reference/repository-sharing.md) separates private upload checks from future public release.
+
+
+## Hand over an editable version for branding
+
+The author approved the packet, confirmed the October 29-30 event dates and asked to remove the Draft footer before sending it to the organizer's marketing team. The agent kept the approved content and created a matching Word companion with editable text, tables and page sections. A rendered Word inspection caught inherited styles that did not match the PDF, which were corrected before delivery. Both formats carry the seminar dates. No message or file was sent to the organizers by the agent.
+
+The useful direction was to specify the next person's job: adding logos and visuals requires an editable document, not pictures of finished pages. The [agent guide](../../workshops/swacca-2026/handout/README.md#native-word-verification-on-october-23) records the mapping, native rendering fallback and checks. Removing Draft does not certify the plugin or make the repository public.

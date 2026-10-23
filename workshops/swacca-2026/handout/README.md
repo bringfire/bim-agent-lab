@@ -1,6 +1,6 @@
 # Participant packet: source, printing and agent handoff
 
-[Print PDF](../../../output/pdf/swacca-2026-participant-handout.pdf) | [Participant story](../../../docs/tutorials/16-prepare-the-participant-packet.md) | [Source content](content.json) | [Generator](build_handout.py)
+[Editable Word file](../../../output/docx/swacca-2026-participant-handout-oct29-30.docx) | [Print PDF](../../../output/pdf/swacca-2026-participant-handout-oct29-30.pdf) | [Participant story](../../../docs/tutorials/16-prepare-the-participant-packet.md) | [Source content](content.json) | [Generator](build_handout.py)
 
 ## Author's requirements
 
@@ -10,20 +10,23 @@ US Letter, black-and-white friendly, about eight pages. Participants are beginne
 
 Eight portrait Letter pages (612 x 792 points), with grayscale styling, embedded text fonts, live PDF resource links, a repository QR code, reusable prompts and note lines. Body text is 10.5 points; table text 9.4 points. Print at actual size on US Letter. Duplex uses the long edge and produces four sheets; single-sided produces eight. This is ordinary page order, not booklet imposition.
 
-The footer deliberately says **Participant draft**. Page 8 accurately says the GitHub destination is private during preparation. Before the print run, confirm the access/release decision, update that sentence and edition if appropriate, and regenerate/review. Do not promise a publicly downloadable plugin or a closed acceptance gate. Full R3 remains open.
+The author approved the packet and requested removal of the Draft footer for the organizer's marketing team. Both current files now say **SWACCA BIM Summit | October 29-30, 2026**. The DOCX preserves editable paragraphs, tables, prompts, headers, footers and hyperlinks; the QR code is an image. Logos/visuals can be added normally in Word. Page sections preserve the eight-page organization; added artwork can cause repagination, so export and review after branding. No edit protection, macros or linked external images are present.
+
+Page 8 still accurately says the GitHub destination is private during preparation. Before participant distribution, confirm access and update that sentence if appropriate. Removing the footer label does not change public access, the original-material licensing decision or open R3 acceptance. The older undated PDF remains the historical preparation copy; send the current files with the `oct29-30` suffix.
 
 ## Rebuild
 
-`content.json` is the editorial source of truth. Page grouping is explicit. `build_handout.py` handles layout only. Work from the repository root with Python 3 and `reportlab` plus `pypdf` available:
+`content.json` is the editorial source of truth. Page grouping is explicit. `build_handout.py` handles PDF layout. `build_word_handout.py` maps the same content to editable Word structures using python-docx, Pillow and ReportLab. The approved PDF controls the design; its boxes and headings are intentionally retained. Work from the repository root with Python 3 and `reportlab` plus `pypdf` available:
 
 ```powershell
 python workshops/swacca-2026/handout/build_handout.py
-pdftoppm -scale-to 1200 -png output/pdf/swacca-2026-participant-handout.pdf tmp/pdfs/handout
+python workshops/swacca-2026/handout/build_word_handout.py
+pdftoppm -scale-to 1200 -png output/pdf/swacca-2026-participant-handout-oct29-30.pdf tmp/pdfs/handout
 ```
 
 Create `tmp/pdfs` before rendering. It is ignored; the final PDF is intentionally tracked. The generator uses locally installed Segoe UI/Consolas on Windows or DejaVu Sans/Mono on Linux. It does not vendor fonts. Font substitutions can change pagination: every rebuild needs the page-count check and visual review. The tool requires exactly eight Letter pages with the expected page titles and fails otherwise. There is no Revit/API/MCP dependency in document generation.
 
-For this preparation, Codex's `load_workspace_dependencies` located bundled Python, ReportLab, pypdf, pdfplumber and Poppler. No package was installed. The generator's dependency versions and final PDF hash are in [verification.json](verification.json). Use the runtime discovery tool again on another machine; do not copy the author's user-specific paths into a participant's setup.
+For this preparation, Codex's `load_workspace_dependencies` located bundled Python, ReportLab, pypdf, pdfplumber and Poppler. No package was installed. The original PDF checks are retained in [verification.json](verification.json); current PDF/Word checks and hashes are in [verification-word-handoff.json](verification-word-handoff.json). Use the runtime discovery tool again on another machine; do not copy the author's user-specific paths into a participant's setup.
 
 Review all eight rendered PNGs, then use `pdfplumber` to check text boundaries and `pypdf` to check page size, links and fonts. Rendered layout is authoritative for clipping/overlap. Also compare the five-case table to the canonical independent expectations, confirm both session totals remain 60 minutes, and verify the actual remote visibility before publication. No new product tests are required for these documentation changes.
 
@@ -50,3 +53,15 @@ The two-line Dynamo snippet is only a runtime smoke check. No newly authored inv
 ## Verification and boundaries
 
 All eight final page images were visually inspected. Page size/count, text bounds, expected page titles, link destinations and embedded fonts were checked. A first layout overflow was corrected before delivery. No production code, installed dependency, application settings, candidate binaries or acceptance evidence was changed. QR generation uses the exact real repository URL; physical paper scanning and printer output remain untested. Hosting is separate from public access and plugin release; see [sharing status](../../../docs/reference/repository-sharing.md).
+
+
+## Native Word verification on October 23
+
+The document skill's `render_docx.py` was attempted first and failed because LibreOffice `soffice.exe` was unavailable. This Windows runtime has no bundled LibreOffice. No package was installed. As a fallback, [Render-WordHandout.ps1](Render-WordHandout.ps1) opened the generated document read-only in an owned hidden Microsoft Word 16.0 instance, repaginated and exported an internal PDF, then closed that owned instance. Bundled Poppler rendered all pages to PNG for review.
+
+```powershell
+./workshops/swacca-2026/handout/Render-WordHandout.ps1
+pdftoppm -scale-to 1200 -png tmp/pdfs/word-handout/word-render.pdf tmp/pdfs/word-handout/page
+```
+
+The first native render exposed inherited Title/Subtitle formatting and merged adjacent note-line borders. The generator removes the inherited blue rule, italic/letter-spacing defaults and supplies between-paragraph note rules. Every final Word-rendered page and updated PDF page is visually checked. The DOCX remains editable; it is not eight rasterized pages. Minor line wrapping differences between Word and the PDF are expected. Marketing changes should be made to a copy of the DOCX; rebuilding from JSON overwrites that generated file, so reconcile approved editorial changes into the source deliberately.

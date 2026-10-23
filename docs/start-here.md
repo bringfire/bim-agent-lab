@@ -17,7 +17,7 @@ As of October 22, 2026, both desktop applications passed the five prepared sampl
 
 ## 1. Give your agent the repository
 
-Use [bringfire/bim-agent-lab](https://github.com/bringfire/bim-agent-lab), or the folder supplied with the seminar. The repository was created private on October 23, 2026; participant access has not yet been announced. Ask your agent to clone it into a new local working folder once access is available, or open your existing copy. Preserve existing work and inspect the branch before making changes. The [printed packet](../output/pdf/swacca-2026-participant-handout.pdf) provides a short refresher.
+Use [bringfire/bim-agent-lab](https://github.com/bringfire/bim-agent-lab), or the folder supplied with the seminar. The repository was created private on October 23, 2026; participant access has not yet been announced. Ask your agent to clone it into a new local working folder once access is available, or open your existing copy. Preserve existing work and inspect the branch before making changes. The [printed packet](../output/pdf/swacca-2026-participant-handout-oct29-30.pdf) provides a short refresher.
 
 **Suggested starting prompt** — written for participants, not a quotation from the original build:
 

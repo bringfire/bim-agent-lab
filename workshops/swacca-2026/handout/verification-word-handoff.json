@@ -1,0 +1,116 @@
+{
+  "date": "2026-10-23",
+  "source_base_commit": "57fce3bf6abe52da6fbdb0577bec9926d7f1661a",
+  "requested_change": "Remove Draft, show October 29-30, add an editable Word version matching the approved PDF.",
+  "outputs": {
+    "docx": {
+      "path": "output/docx/swacca-2026-participant-handout-oct29-30.docx",
+      "sha256": "beda301c35b66e8d67b17bf0ba1871ad211fca0ab6345c6f13288f24be997d80",
+      "bytes": 58943
+    },
+    "pdf": {
+      "path": "output/pdf/swacca-2026-participant-handout-oct29-30.pdf",
+      "sha256": "02e8b9e8a09305d70c02a9993a7c3918a69d2bbe9f80e7dfe55a2d0fabaea945",
+      "bytes": 86273
+    }
+  },
+  "source_sha256": {
+    "content.json": "a07364075ab8a123519bd0ba82eeb71382793d091210beac8d3aacfc6afdcdfd",
+    "build_handout.py": "2ac4a23af1b7fb640a3e63f1567064a327837e997afbce6463992a7f49b96f36",
+    "build_word_handout.py": "d3ceac626498027b4bb1e6534aed694dcd085334b0832ea56dd2f0ddac5295c5",
+    "Render-WordHandout.ps1": "2a77692d330aebbc343f6ba478c6cc94e5cca57f1c49f0d6b3b52a5eaf7e4989"
+  },
+  "renderer": {
+    "preferred": "render_docx.py attempted; failed because soffice.exe unavailable",
+    "actual": "Native Microsoft Word 16.0 build 16.0.20430, owned hidden instance, read-only open and PDF export; bundled Poppler to PNG",
+    "new_software_installed": false
+  },
+  "packages": {
+    "python-docx": "1.2.0",
+    "Pillow": "12.3.0",
+    "reportlab": "4.4.9",
+    "pypdf": "6.10.0",
+    "pdfplumber": "0.11.9"
+  },
+  "pages": [
+    {
+      "page": 1,
+      "content_matches_pdf": true,
+      "letter_size": true,
+      "footer_date_correct": true,
+      "draft_absent": true
+    },
+    {
+      "page": 2,
+      "content_matches_pdf": true,
+      "letter_size": true,
+      "footer_date_correct": true,
+      "draft_absent": true
+    },
+    {
+      "page": 3,
+      "content_matches_pdf": true,
+      "letter_size": true,
+      "footer_date_correct": true,
+      "draft_absent": true
+    },
+    {
+      "page": 4,
+      "content_matches_pdf": true,
+      "letter_size": true,
+      "footer_date_correct": true,
+      "draft_absent": true
+    },
+    {
+      "page": 5,
+      "content_matches_pdf": true,
+      "letter_size": true,
+      "footer_date_correct": true,
+      "draft_absent": true
+    },
+    {
+      "page": 6,
+      "content_matches_pdf": true,
+      "letter_size": true,
+      "footer_date_correct": true,
+      "draft_absent": true
+    },
+    {
+      "page": 7,
+      "content_matches_pdf": true,
+      "letter_size": true,
+      "footer_date_correct": true,
+      "draft_absent": true
+    },
+    {
+      "page": 8,
+      "content_matches_pdf": true,
+      "letter_size": true,
+      "footer_date_correct": true,
+      "draft_absent": true
+    }
+  ],
+  "visible_text_bounds": "pass; trailing whitespace excluded",
+  "editable_structure": {
+    "sections": 8,
+    "only_image": "repository QR",
+    "title_rule_removed": true,
+    "hyperlinks": [
+      "https://github.com/bringfire/bim-agent-lab",
+      "https://help.autodesk.com/cloudhelp/2024/ENU/RevitDynamo/files/RevitDynamo_Whats_New_in_Dynamo_for_Revit_html.html",
+      "https://github.com/DynamoDS/Dynamo/wiki/Customizing-Dynamo's-Python-3-installation",
+      "https://github.com/pyrevitlabs/pyRevit"
+    ],
+    "macros": false,
+    "edit_protection": false,
+    "external_linked_images": false
+  },
+  "visual_review": "All eight final native Word page renders and eight updated PDF pages inspected. No overflow, clipping, missing text or split tables. Typography and section layout closely follow the reference; minor line wrapping/border-rendering differences remain.",
+  "not_performed": [
+    "Physical printer or QR phone test",
+    "Other Word versions or recipient font environments",
+    "Organizer branding or transmission",
+    "Public repository release",
+    "Any Revit/MCP acceptance"
+  ]
+}

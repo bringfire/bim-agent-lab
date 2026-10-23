@@ -171,5 +171,5 @@ def build(output):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--output', type=Path, default=ROOT / 'output/pdf/swacca-2026-participant-handout.pdf')
+    parser.add_argument('--output', type=Path, default=ROOT / 'output/pdf/swacca-2026-participant-handout-oct29-30.pdf')
     build(parser.parse_args().output)
