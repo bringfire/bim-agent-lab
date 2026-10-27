@@ -24,6 +24,8 @@ The approved PDF and Word packet had already gone to the organizers. Their repos
 
 After publication, the agent tested access without an account. Download worked, but the first checkout failed in a deeply nested Windows folder. A fresh clone with Git's long-path option succeeded, and the README now includes that option. This is why asking the agent to test the participant's actual starting step matters. The public repository, README and MIT license were verified without signing in.
 
+The author then sent a screenshot showing that GitHub's landing page displayed an old internal placeholder. The earlier checks had verified the root README's contents and public access, but not which README GitHub selected for the page. GitHub prioritizes a README in `.github/` over the repository root. The agent reproduced the mismatch using both the selected-README API and the rendered public page, then renamed the internal note. The lesson is to ask the agent to verify the page participants actually encounter, as well as the underlying files. A correct file is not enough when the publishing system selects a different one.
+
 ## How to judge the result
 
 Ask for the reviewed commit, the findings and their dispositions, and proof that someone who is not signed in can read and clone the repository. Check that the license covers our original work while upstream notices remain intact.

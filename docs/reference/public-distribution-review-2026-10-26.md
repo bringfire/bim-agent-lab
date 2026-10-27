@@ -36,3 +36,9 @@ The approved October 29–30 Word/PDF handouts are preserved byte-for-byte becau
 This bounded review does not guarantee the absence of every sensitive statement or unknown vulnerability. It does not close historical Codex NC2 presentation, Codex baseline, current-build acceptance, desktop Stop or uninstrumented timing gaps. No application build or live test was needed for these publication-only changes.
 
 Participant story: [review before publication](../tutorials/17-review-before-publication.md). Agent procedure: [review and publish](../how-to/review-and-publish-a-repository.md).
+
+## Landing-page correction after author feedback
+
+The author's screenshot showed the internal `Repository hosting and automation` placeholder on GitHub. At `b93a8bc`, anonymous selected-README API inspection returned `.github/README.md`, and the public page's rendered README heading matched that placeholder. The earlier publication checks established public access and correct root-file contents; they did not establish correct landing-page presentation.
+
+GitHub prioritizes `.github/README.md` above the root file. Renaming it to `.github/hosting-and-automation.md` preserves the internal note while removing that conflict. Both teaching layers now require checking the selected README and rendered public article. This correction changes documentation presentation only; the original publication receipt remains accurate within its stated raw-file/clone scope. Post-push results are retained in the [landing-page verification](public-distribution/landing-page-2026-10-26.json).

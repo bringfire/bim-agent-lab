@@ -1,0 +1,15 @@
+{
+  "date_local": "2026-10-26",
+  "timezone": "America/New_York",
+  "before": {
+    "observed_utc": "2026-10-27T01:36:30.703921+00:00",
+    "commit": "b93a8bc52a3d4b6062c665562d8244173ae6dcd1",
+    "selected_readme": ".github/README.md",
+    "rendered_heading": "Repository hosting and automation",
+    "participant_landing_pass": false
+  },
+  "correction": "Rename .github/README.md to .github/hosting-and-automation.md; retain root participant README.",
+  "after": {
+    "status": "Pending push and anonymous rendered-page verification."
+  }
+}
