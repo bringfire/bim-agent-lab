@@ -8,7 +8,7 @@ Describe the BIM problem, intended audience, scope, and expected result using th
 
 Use a branch for a new feature after checking for existing work. Make coherent commits with messages that explain the change. Review `git diff` and `git diff --cached`; record checks and limitations. A successful source inspection is not a successful build or Revit test.
 
-For documentation-only changes, check relative links, command accuracy, and consistency with current status. No plugin test suite exists at this baseline. Once implementation begins, add meaningful tests and exact commands beside the affected project.
+For documentation-only changes, check relative links, command accuracy, and consistency with current status. For implementation changes, use the relevant project test guidance; the [Revit test strategy](projects/revit-readiness/tests/README.md) distinguishes offline suites from licensed-host checks. Add meaningful tests where the change requires them and record exact commands beside the affected project.
 
 ## Teaching changes
 
@@ -18,4 +18,4 @@ Use [verification records](templates/verification-record.md) to distinguish test
 
 ## Distribution
 
-The repository is currently local. A remote destination, original-material license, and release process must be established before publishing. Preserve required third-party notices and record the provenance of adapted files. Keep model files and Autodesk SDK/API binaries outside Git unless their distribution has been deliberately addressed.
+Original code and teaching material use the [MIT License](LICENSE). The [GitHub repository](https://github.com/bringfire/bim-agent-lab) is private as of October 26, 2026; public-distribution review, public access and release packaging remain pending. See [sharing status](docs/reference/repository-sharing.md). Preserve required third-party notices and record the provenance of adapted files. Keep model files and Autodesk SDK/API binaries outside Git unless their distribution has been deliberately addressed.

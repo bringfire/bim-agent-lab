@@ -1,57 +1,97 @@
 # BIM Agent Lab
 
-**R3 feedback returned:** [review and dispositions](docs/superpowers/reviews/revit-mcp-bridge/2026-10-22-r3-feedback.md) keep acceptance open. The recorded report computations remain supported; Codex presentation evidence, baseline and current-source live verification still need completion. The current task records the review and corrections without deploying or changing application settings.
+**Learn to build useful BIM tools with AI coding agents.**
 
-**Current review checkpoint:** the [R3 packet](docs/superpowers/reviews/revit-mcp-bridge/03-implementation-review.md) and [A1–A9 ledger](projects/revit-readiness/docs/verification/2026-10-22-r3-acceptance.md) identify passed evidence and open items. Independent follow-up and final acceptance remain pending; this is not a finished public release.
+BIM Agent Lab is a teaching repository for BIM professionals. It pairs working examples with the prompts, research, decisions, source code and verification that explain how we built them. Use it to revisit the seminar, guide your agent, or extend an example for your office.
 
-Learn to build and extend BIM tools with AI coding agents—from research and Git to working plugins and MCP servers.
-
-BIM Agent Lab is a teaching repository for BIM professionals. It pairs working examples with the prompts, research, decisions and verification needed to understand and extend them. Revit readiness is the first example; the lab can grow to other BIM applications.
+Revit model readiness is the first project. The lab can grow to other BIM applications and workflows.
 
 ## Start here
 
-**Seminar packet:** [eight-page participant PDF](output/pdf/swacca-2026-participant-handout-oct29-30.pdf) and [editable source / print instructions](workshops/swacca-2026/handout/README.md). US Letter, black-and-white friendly; seminar dates October 29-30, 2026. The editable Word companion is linked in the print instructions.
-
-**Participants:** use the [starting guide](docs/start-here.md). It explains what you can try, how to direct your agent, and how to judge the answer. Reading the lessons requires no Revit installation.
-
-**Agents:** use the [technical handoff](docs/how-to/agent-handoff.md), root [AGENTS.md](AGENTS.md) and project guidance before changing anything. The handoff connects prerequisites, source boundaries, build/install/recovery, samples, verification and remaining work.
-
-Suggested first prompt:
-
-> Read README.md, AGENTS.md, docs/start-here.md and docs/how-to/agent-handoff.md. Explain what works and what remains unverified. Inspect my Git state and prerequisites, then guide me through one useful next step. Distinguish research, source inspection, offline tests and actual Revit results.
-
-## What works now
-
-As of October 22, 2026, the Revit 2024 example checks required wall and ceiling type information against an explicit checklist. The manual command produces saved evidence and a four-sheet Excel workbook. The MCP bridge lets **Codex desktop and Claude Desktop Chat** request a fresh model context and the same read-only calculation; those MCP calls do not edit or export.
-
-All five prepared sample cases—including deliberate defects and incomplete coverage—matched independent expectations through both desktops and a separate SDK client. Both desktops rejected an unexpired context after a model switch and recovered using a fresh context. See the [live evidence matrix](projects/revit-readiness/docs/verification/mcp-readiness.md) and [Excel evidence](projects/revit-readiness/docs/verification/2026-10-20-excel-output.md).
-
-The bridge uses official C# MCP SDK **2.2.0**, with verified compatible desktop revisions and a retained `2026-07-28` regression. This is a dated tested baseline, not a latest-version claim. Positive live capture-wrapper runs and queued application-shutdown/recovery now pass. Remaining host/cancellation/recovery questions, acceptance consolidation and independent R3 review remain open. Physical-condition checks and quantities are future extensions. See [development status](docs/reference/development-status.md).
-
-## Find what you need
-
-| I want to… | Start here |
+| You want to… | Start with… |
 |---|---|
-| Try the example with my agent | [Participant starting guide](docs/start-here.md) |
-| Refresh how we engaged the agent | [Learning path](docs/tutorials/README.md), beginning with research and Git |
-| Reproduce or extend the implementation | [Agent handoff](docs/how-to/agent-handoff.md) and [extension workflow](docs/how-to/extend-a-project.md) |
-| Inspect the Revit project | [Project README](projects/revit-readiness/README.md), [prerequisites](projects/revit-readiness/docs/development-prerequisites.md) and [samples](projects/revit-readiness/samples/README.md) |
-| Review research and source provenance | [Research index](docs/research/README.md) and [third-party notices](THIRD_PARTY_NOTICES.md) |
-| Understand independent review | [Participant review story](docs/tutorials/06-direct-design-and-external-review.md) and [review records](docs/superpowers/reviews/revit-mcp-bridge/README.md) |
-| Revisit the seminar | [SWACCA 2026](workshops/swacca-2026/README.md) |
+| Learn how to engage an agent | [Participant starting guide](docs/start-here.md) and [learning path](docs/tutorials/README.md) |
+| Give your agent technical context | [Agent handoff](docs/how-to/agent-handoff.md), [AGENTS.md](AGENTS.md) and the relevant project guidance |
+| Build or try the Revit example | [Revit project](projects/revit-readiness/README.md), [prerequisites](projects/revit-readiness/docs/development-prerequisites.md) and [sample preparation](projects/revit-readiness/samples/README.md) |
+| Revisit the SWACCA seminar | [Participant PDF](output/pdf/swacca-2026-participant-handout-oct29-30.pdf), [editable Word handout](output/docx/swacca-2026-participant-handout-oct29-30.docx) and [two-session agenda](workshops/swacca-2026/agenda.html) |
+
+Reading the lessons requires no Revit installation. Running the example requires the documented Windows/Revit environment. Cloning the repository installs nothing; build and installation are separate steps.
+
+The repository is [bringfire/bim-agent-lab](https://github.com/bringfire/bim-agent-lab). **As of October 26, 2026, it is private; cloning requires access.** Public access and downloadable release packaging remain pending. See [sharing status](docs/reference/repository-sharing.md).
+
+Once you have access, clone it into a folder of your choice:
+
+```powershell
+git clone https://github.com/bringfire/bim-agent-lab.git
+cd bim-agent-lab
+```
+
+Open that folder in your coding agent and begin with this suggested prompt:
+
+> Read README.md, AGENTS.md, docs/start-here.md and docs/how-to/agent-handoff.md. Explain what the example does, what has been verified and what remains open. Inspect my Git state and development prerequisites without changing them. Then guide me through one useful next step. Distinguish research, source inspection, offline tests and results observed inside Revit.
+
+## The first example: Revit model readiness
+
+The example checks required **wall and ceiling type information** against an explicit checklist: Code (Type Mark), Fire Rating and Assembly Reference, with recorded exceptions. It reports missing information, affected instances, scope exclusions and incomplete coverage. It does not certify that a fire rating or assembly is correct.
+
+There are two ways to use the same calculation:
+
+- **Run a command in Revit.** Save JSON/text evidence and an Excel workbook with four worksheets: Summary, Findings, Affected elements, and Rules and coverage. The Excel exporter uses ClosedXML.
+- **Ask an agent through MCP.** Codex desktop or Claude Desktop Chat requests a fresh model context, then checks that context. The tools are `revit_get_readiness_context` and `revit_check_required_type_information`. These calls read the model; they do not edit or export it.
+
+The prepared samples demonstrate a complete case, wall defects, an additional ceiling defect, a missing declared element and a missing type requirement. **Zero findings is a readiness pass only when the declared scope was completely evaluated.**
+
+Inventory explains what was examined and affected. Physical-condition checks and broader quantity workflows remain future extensions.
+
+## What you will learn
+
+1. **Define the BIM question.** Specify purpose, scope, rules, boundaries, output and independent evidence.
+2. **Research before building.** Inspect official APIs, SDKs, libraries, existing repositories, exact versions and licenses. Clone useful precedents and inspect their code.
+3. **Direct the agent's Git work.** Inspect the checkout, choose an appropriate branch, review diffs and record coherent checkpoints.
+4. **Build one small useful step.** Establish a read-only command before adding reporting or an agent bridge.
+5. **Verify independently.** Use native Revit schedules and deliberately prepared cases, including failures and incomplete coverage.
+6. **Use independent review.** Hand over a specification, plan and evidence. When several findings recur, ask whether they reveal a shared missing concept.
+7. **Leave a usable handoff.** Preserve the participant story and the technical instructions an agent needs to continue.
+
+The [participant lessons](docs/tutorials/README.md) focus on **how we engaged the agent**. Their linked technical guides explain implementation, dependencies, commands, tests and recovery. Suggested teaching prompts are labeled separately from actual development history.
+
+## Compatibility and verification
+
+**This is a teaching project under development. Full implementation acceptance remains open.**
+
+| Area | Recorded baseline and limits |
+|---|---|
+| Revit | Live evidence is from **Revit 2024 build 24.3.60.12**. Current add-ins target .NET Framework 4.8. Revit 2026 and 2027 are not supported or verified by the current package. |
+| MCP server | Separate .NET 10 process using official C# MCP SDK **2.2.0**. The SDK version and MCP protocol revision are separate identifiers. |
+| Desktop clients | Historical live runs cover Codex desktop and Claude Desktop Chat, using protocols `2025-06-18` and `2025-11-25`. A separate SDK regression retains `2026-07-28`. |
+| Results | Retained evidence supports the five sample computations and stale-context rejection/recovery. The manual command and Excel output have their own verification records. |
+| Open acceptance | Historical Codex NC2 answer evidence, Codex configuration baseline and acceptance on the frozen current candidate remain open. Desktop Stop and normal-host timing have separate limits. The known SDK token-only cancellation issue remains documented; explicit cancellation controls do not prove desktop Stop behavior. |
+
+These are dated observations. Historical live results do not establish acceptance of a later build. See [development status](docs/reference/development-status.md), the [live matrix](projects/revit-readiness/docs/verification/mcp-readiness.md), [Excel evidence](projects/revit-readiness/docs/verification/2026-10-20-excel-output.md) and the [R3 acceptance ledger](projects/revit-readiness/docs/verification/2026-10-22-r3-acceptance.md).
 
 ## Repository map
 
-- `docs/` — participant stories, agent procedures, explanations, reference, research and build history.
-- `templates/` — reusable feature, research, verification and lesson records.
-- `projects/revit-readiness/` — application source, scripts, tests, sample recipes and evidence.
-- `workshops/swacca-2026/` — seminar context and planning materials.
-- `references/` — optional local research clones, ignored by Git.
+| Folder | Contents |
+|---|---|
+| `docs/tutorials/` | Participant stories and suggested prompts |
+| `docs/how-to/` | Technical procedures for agents and developers |
+| `docs/research/` | Source research, dependency decisions and provenance |
+| `docs/reference/` | Prerequisites, status, licensing and sharing |
+| `docs/build-story/` | Journal of actual prompts, decisions and results |
+| `docs/superpowers/` | Specifications, plans and independent reviews |
+| `projects/revit-readiness/` | Revit/MCP source, scripts, tests, sample recipes and evidence |
+| `templates/` | Reusable briefs, research, lesson and verification records |
+| `workshops/swacca-2026/` | October 29–30 seminar materials, agenda and handout sources |
+| `output/` | Participant PDF and Word artifacts |
 
-Each application project owns its dependencies and host-specific instructions. SDKs, Autodesk API libraries, working RVT models and reference repositories are acquired separately. The sample recipe is included; Autodesk model binaries are not.
+Each project owns its dependencies and host-specific instructions. Autodesk SDK/API binaries and working RVT models are acquired separately; source links and preparation recipes are included. Optional research clones belong in the Git-ignored `references/` folder.
 
-## Development and sharing
+## Extend the lab
 
-See [Contributing](CONTRIBUTING.md) and the [build journal](docs/build-story/journal.md). Inspect the current branch, diff and history before work; record coherent verified steps in Git. The approved [specification and plan](docs/superpowers/reviews/revit-mcp-bridge/README.md) guide the continuing bridge work; historical review closure is scoped to the reviewed revision and evidence.
+Start with [Contributing](CONTRIBUTING.md) and the [extension workflow](docs/how-to/extend-a-project.md). Keep changes small enough to inspect and verify. Record what changed, why it helps a BIM professional, how it was checked and what remains uncertain. Preserve third-party provenance and both teaching layers.
 
-The hosted repository is [bringfire/bim-agent-lab](https://github.com/bringfire/bim-agent-lab), created private on October 23, 2026. Public access, an original-material license and release packaging remain pending. See [hosting and publication status](docs/reference/repository-sharing.md) and [licensing status](docs/reference/licensing.md) before distribution. A private source checkpoint is not a published plugin release.
+## License
+
+Original BIM Agent Lab code and teaching materials are licensed under the **[MIT License](LICENSE)**. Retain the copyright and license notice when reusing or distributing them.
+
+Third-party code, dependencies, quoted research and assets retain their own terms. See [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) and the [licensing guide](docs/reference/licensing.md). The lab's MIT license does not grant rights to Autodesk products, API binaries or sample models acquired separately.

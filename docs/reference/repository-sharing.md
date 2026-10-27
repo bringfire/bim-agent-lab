@@ -16,7 +16,7 @@ The tracked history intentionally contains source, teaching materials, third-par
 
 ## Before public dissemination
 
-- Choose and add the license for original code and teaching material. Do not infer a grant from visibility; preserve third-party terms and notices. [Current licensing status](licensing.md).
+- **Completed October 26:** the owner selected MIT for original code and teaching material; the root [LICENSE](../../LICENSE) and participant-facing [README](../../README.md) now record it. Preserve third-party terms and notices. [Licensing guide](licensing.md).
 - Review the complete published history and archived proposal/evidence for personal, organizational and redistribution concerns. The private-upload pattern scan does not substitute for this review.
 - Keep live-build acceptance gaps and dependency limitations explicit. Decide whether to publish a teaching preview or a verified release, and label it accordingly.
 - Enable public visibility only on the author's direction, then verify unauthenticated access and the clone URL. Update the packet's access caption/edition and render all pages again before printing.

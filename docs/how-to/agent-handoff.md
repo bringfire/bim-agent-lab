@@ -22,7 +22,7 @@ git diff
 git remote -v
 ```
 
-The canonical remote is [bringfire/bim-agent-lab](https://github.com/bringfire/bim-agent-lab), created private on October 23, 2026. Public access and an original-material license remain pending; see [hosting status](../reference/repository-sharing.md). The [handout agent guide](../../workshops/swacca-2026/handout/README.md) covers the current packet work, which does not change the frozen Revit candidate. Follow the [clone procedure](clone-research-repositories.md) for optional precedents in ignored `references/`. Refresh version-sensitive research from official sources before a dependency decision; preserve inspected commits, licenses and reasons for chosen pins. This handoff records the tested choices, not a new latest-version audit.
+The canonical remote is [bringfire/bim-agent-lab](https://github.com/bringfire/bim-agent-lab), created private on October 23, 2026. Original material uses the root MIT LICENSE, selected October 26; public access and distribution review remain pending; see [hosting status](../reference/repository-sharing.md). The [handout agent guide](../../workshops/swacca-2026/handout/README.md) covers the current packet work, which does not change the frozen Revit candidate. Follow the [clone procedure](clone-research-repositories.md) for optional precedents in ignored `references/`. Refresh version-sensitive research from official sources before a dependency decision; preserve inspected commits, licenses and reasons for chosen pins. This handoff records the tested choices, not a new latest-version audit.
 
 ## Verified baseline and limits — October 22, 2026
 
@@ -127,7 +127,7 @@ Latest follow-up: [shutdown/recovery](../../projects/revit-readiness/docs/verifi
 | Task 7 cancellation limitation | Intermittent queued-notification test explained and corrected in the [shutdown preparation](../../projects/revit-readiness/docs/verification/2026-10-22-shutdown-preparation.md). [Token-only SDK cancellation is now diagnosed](../../projects/revit-readiness/docs/verification/2026-10-22-sdk-cancellation-diagnosis.md): a cancelable wait can remove the SDK notification callback before it runs. Not fixed; retain the failing propagation probe and successful explicit/EOF controls. Desktop Stop behavior is unverified |
 | Recovery lineage | New three-target diagnostic layers actually restored, including repeat restore; original three shared whole-install layers now actually restored and repeated, followed by exact reinstall. New receipt ef71fb608bba47f49a43ee75fb226bec is Committed; prior three are Restored. Preserve every backup/filesystem context; fresh post-reinstall Revit read passed16/0/bothcomplete/no edits |
 | Acceptance and R3 | Consolidate A1–A9 against exact source/installed hashes and fresh required checks; prepare the external [R3 packet](../superpowers/reviews/revit-mcp-bridge/03-implementation-review.md) for the author, without claiming or sending external review |
-| Distribution | Owner choice of original-material license, public hosting and release package remains open; do not imply these are supplied |
+| Distribution | MIT selected and LICENSE added October 26; public access, distribution review and release packaging remain open |
 
 Complete the authorized work sequentially; the author wants refinement after the remaining steps, not an extra approval pause after every increment. Prepare offline work before requesting the next short Revit session. Do not mark Tasks 7–9 or overall acceptance complete from these onboarding documents.
 

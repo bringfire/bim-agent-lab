@@ -14,7 +14,7 @@ The agent found that the local Git repository had no remote. Asked what address 
 
 > we should create a remote repo that we can make public and disseminate.
 
-The agent created [bringfire/bim-agent-lab](https://github.com/bringfire/bim-agent-lab) privately, inspected tracked history before uploading, and used that address for the printed link and QR code. A hosted copy, public access and a finished plugin release are separate decisions. Original-material licensing and a public-distribution review remain pending; the packet states its current access status.
+The agent created [bringfire/bim-agent-lab](https://github.com/bringfire/bim-agent-lab) privately, inspected tracked history before uploading, and used that address for the printed link and QR code. A hosted copy, public access and a finished plugin release are separate decisions. At that checkpoint, original-material licensing and a public-distribution review remained pending. The author subsequently selected MIT, as recorded below; the packet's preparation-time access statement remains unchanged.
 
 ## Ask for evidence about the artifact itself
 
@@ -32,3 +32,13 @@ The [technical guide](../../workshops/swacca-2026/handout/README.md) links the s
 The author approved the packet, confirmed the October 29-30 event dates and asked to remove the Draft footer before sending it to the organizer's marketing team. The agent kept the approved content and created a matching Word companion with editable text, tables and page sections. A rendered Word inspection caught inherited styles that did not match the PDF, which were corrected before delivery. Both formats carry the seminar dates. No message or file was sent to the organizers by the agent.
 
 The useful direction was to specify the next person's job: adding logos and visuals requires an editable document, not pictures of finished pages. The [agent guide](../../workshops/swacca-2026/handout/README.md#native-word-verification-on-october-23) records the mapping, native rendering fallback and checks. Removing Draft does not certify the plugin or make the repository public.
+
+## Choose the license and make the README useful
+
+After reporting that the organizers liked the delivered packet, the author asked whether the repository was public. The agent checked GitHub and confirmed it was still private. The author's next direction was:
+
+> License is MIT, and let's create a Readme
+
+The agent added the standard MIT license for original code and teaching materials and revised the existing root README around the participant's first visit: what the lab teaches, what the Revit example does, how to get the source, a suggested first agent prompt, and links to both teaching layers. It preserved the current compatibility and acceptance limits instead of presenting the project as a finished release. The author chose the license; the agent organized the documentation and synchronized current status references.
+
+The transferable practice is to state reuse terms and the next reader's job explicitly. A license tells people what permission they receive; a README helps them decide where to start. Neither action changes repository visibility or proves the plugin works on another Revit version. The [agent licensing procedure](../reference/licensing.md#agent-procedure-for-keeping-the-grant-accurate) explains how to preserve that distinction and third-party notices. The printed handouts were left unchanged.
