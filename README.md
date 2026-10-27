@@ -17,12 +17,12 @@ Revit model readiness is the first project. The lab can grow to other BIM applic
 
 Reading the lessons requires no Revit installation. Running the example requires the documented Windows/Revit environment. Cloning the repository installs nothing; build and installation are separate steps.
 
-The repository is [bringfire/bim-agent-lab](https://github.com/bringfire/bim-agent-lab). **As of October 26, 2026, it is private; cloning requires access.** Public access and downloadable release packaging remain pending. See [sharing status](docs/reference/repository-sharing.md).
+The repository is **public** at [bringfire/bim-agent-lab](https://github.com/bringfire/bim-agent-lab). No account or invitation is needed to read or clone it. This is a teaching-source preview; downloadable release packaging and full implementation acceptance remain pending. See [sharing status](docs/reference/repository-sharing.md) and the [publication review](docs/reference/public-distribution-review-2026-10-26.md).
 
-Once you have access, clone it into a folder of your choice:
+Clone it into a folder of your choice. The long-path option avoids Windows checkout failures in deeply nested folders:
 
 ```powershell
-git clone https://github.com/bringfire/bim-agent-lab.git
+git clone -c core.longpaths=true https://github.com/bringfire/bim-agent-lab.git
 cd bim-agent-lab
 ```
 
@@ -68,6 +68,8 @@ The [participant lessons](docs/tutorials/README.md) focus on **how we engaged th
 | Open acceptance | Historical Codex NC2 answer evidence, Codex configuration baseline and acceptance on the frozen current candidate remain open. Desktop Stop and normal-host timing have separate limits. The known SDK token-only cancellation issue remains documented; explicit cancellation controls do not prove desktop Stop behavior. |
 
 These are dated observations. Historical live results do not establish acceptance of a later build. See [development status](docs/reference/development-status.md), the [live matrix](projects/revit-readiness/docs/verification/mcp-readiness.md), [Excel evidence](projects/revit-readiness/docs/verification/2026-10-20-excel-output.md) and the [R3 acceptance ledger](projects/revit-readiness/docs/verification/2026-10-22-r3-acceptance.md).
+
+The author has scheduled Revit 2026 work for October 27. Support will be added to this table after building and verifying that version.
 
 ## Repository map
 

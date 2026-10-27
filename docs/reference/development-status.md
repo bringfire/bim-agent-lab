@@ -1,5 +1,7 @@
 # Development status
 
+**October 26 publication update:** [public source access and anonymous clone are verified](public-distribution-review-2026-10-26.md). MIT applies to original material. This is a teaching-source preview; full R3 and packaged release remain open. The author plans Revit 2026 work for October 27; the current verified host baseline remains Revit 2024.
+
 The current review handoff is the [R3 packet](../superpowers/reviews/revit-mcp-bridge/03-implementation-review.md). Fresh full offline/build checks and retained-evidence replay pass; independent R3 has now returned and [requires further acceptance evidence](../superpowers/reviews/revit-mcp-bridge/2026-10-22-r3-feedback.md).
 
 The [follow-up on 9c27d50](../superpowers/reviews/revit-mcp-bridge/2026-10-22-r3-follow-up.md) independently closes historical NC1 presentation. The [normal candidate built from that commit](../../projects/revit-readiness/docs/verification/2026-10-22-r3-current-candidate.md) is frozen for coordinated installation and full desktop verification. NC2, Codex baseline and current-build acceptance remain open; freezing a package does not establish installed or live acceptance.
@@ -18,7 +20,7 @@ Start with the [participant guide](../start-here.md) or [agent handoff](../how-t
 | Shutdown/recovery | Actual close with three queued requests and physical disposal verified; new diagnostic layers restored. [Evidence](../../projects/revit-readiness/docs/verification/2026-10-22-shutdown-preparation.md) |
 | SDK cancellation | [Diagnosed SDK 2.2.0 client callback-order defect](../../projects/revit-readiness/docs/verification/2026-10-22-sdk-cancellation-diagnosis.md), reproduced across all three protocols on .NET 10.0.13. Explicit SDK notification/EOF pass; token-only propagation remains unfixed. No production/dependency change |
 | Remaining acceptance | [R3 packet prepared](../superpowers/reviews/revit-mcp-bridge/03-implementation-review.md) with [A1–A9/open-item ledger](../../projects/revit-readiness/docs/verification/2026-10-22-r3-acceptance.md). Current-source/live-binary gap, SDK defect/desktop Stop, native/access limits and Codex metadata gap remain; R3 returned with new P2 R3-01 (Codex presentation evidence); follow-up closure and author acceptance pending |
-| Later capabilities/distribution | MIT license selected October 26; physical-condition/quantity checks, public access, distribution review and release packaging remain open |
+| Later capabilities/distribution | MIT and public source access verified October 26 after distribution review; physical-condition/quantity checks and release packaging remain open |
 
 The author wants the remaining work handled sequentially, with refinement afterward. The starting guide and agent handoff do not close Tasks 7–9. No Revit action is needed to read them.
 

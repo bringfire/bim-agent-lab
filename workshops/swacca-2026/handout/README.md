@@ -12,7 +12,7 @@ Eight portrait Letter pages (612 x 792 points), with grayscale styling, embedded
 
 The author approved the packet and requested removal of the Draft footer for the organizer's marketing team. Both current files now say **SWACCA BIM Summit | October 29-30, 2026**. The DOCX preserves editable paragraphs, tables, prompts, headers, footers and hyperlinks; the QR code is an image. Logos/visuals can be added normally in Word. Page sections preserve the eight-page organization; added artwork can cause repagination, so export and review after branding. No edit protection, macros or linked external images are present.
 
-Page 8 still accurately says the GitHub destination is private during preparation. Before participant distribution, confirm access and update that sentence if appropriate. Removing the footer label does not change public access, the original-material licensing decision or open R3 acceptance. The older undated PDF remains the historical preparation copy; send the current files with the `oct29-30` suffix.
+**Access update, October 26:** the repository is now [public](https://github.com/bringfire/bim-agent-lab), with anonymous reading/cloning verified. Page 8's private-during-preparation caption describes the supplied edition's earlier state; its printed URL and QR destination now work publicly. The author already sent these approved files to the organizers, so this publication preserves them byte-for-byte. For a later revised print edition, update `content.json`, regenerate and recheck all pages. Public access does not close R3 acceptance. The older undated PDF remains the historical preparation copy; the supplied files have the `oct29-30` suffix.
 
 ## Rebuild
 

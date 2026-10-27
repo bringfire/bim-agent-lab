@@ -1,0 +1,36 @@
+{
+  "observed_utc": "2026-10-27T01:28:09.139582+00:00",
+  "repository": "https://github.com/bringfire/bim-agent-lab",
+  "private": false,
+  "default_branch": "main",
+  "license": "MIT",
+  "published_commit": "77397bbe952566f769f7735912da3bb496338bd6",
+  "http_auth": "No Authorization header or cookies; standard urllib requests",
+  "anonymous_https_clone": true,
+  "clean_full_checkout": true,
+  "clone_head": "77397bbe952566f769f7735912da3bb496338bd6",
+  "clone_config": "Global/system config, credential helpers and prompting disabled; no GitHub token environment. core.longpaths=true stored in new checkout.",
+  "files": [
+    {
+      "path": "README.md",
+      "git_sha256": "381f7bd8940c05740edce057cd7345d27f2817932061600b0a95b8799a8e751b",
+      "anonymous_raw_and_clone_git_bytes_match": true,
+      "checkout_text_matches": true,
+      "checkout_sha256": "381f7bd8940c05740edce057cd7345d27f2817932061600b0a95b8799a8e751b"
+    },
+    {
+      "path": "LICENSE",
+      "git_sha256": "8ad1d9d00ff1b51d7f81b61fb93aaede4507b28789fbbaf7abf0657ac9fbaed0",
+      "anonymous_raw_and_clone_git_bytes_match": true,
+      "checkout_text_matches": true,
+      "checkout_sha256": "f605edd729de3a462449781618448940471d8bf0683e016841f14248461abf0c"
+    }
+  ],
+  "first_attempt": {
+    "download_succeeded": true,
+    "checkout_succeeded": false,
+    "error": "Filename too long in deep audit folder with default Windows Git configuration.",
+    "disposition": "Fresh clone with core.longpaths=true succeeded; participant clone instructions updated. Failed checkout retained in ignored scratch."
+  },
+  "verification_correction": "Compare Git object bytes for exact identity; the LICENSE working-copy checkout can use native CRLF. Initial working-copy byte assertion was too strict; normalized license text matches and Git status is clean."
+}

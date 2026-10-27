@@ -25,7 +25,11 @@ No history rewrite, credential rotation or deletion was justified by the finding
 
 ## Publication status and limits
 
-Review preparation is complete; the publication operation and anonymous verification are the next steps in this record. The repository will be shared as a **teaching-source preview**, with no packaged plugin release or new runtime acceptance claim.
+The repository was made **public on October 26, 2026 (Eastern)** at reviewed commit `77397bbe952566f769f7735912da3bb496338bd6`. Both remote branches were pushed without force or history rewriting. GitHub reports public visibility and MIT. The [anonymous verification record](public-distribution/publication-2026-10-26.json) records the actual result at 01:28 UTC October 27: unauthenticated API/raw-file access, a full HTTPS clone, matching Git objects and a clean checkout. Subsequent documentation records these results without changing implementation binaries or acceptance status.
+
+The first anonymous download succeeded but its checkout failed because deeply nested Windows paths exceeded the default limit. A fresh clone using `git clone -c core.longpaths=true ...` completed; README now supplies that option. The first comparison also incorrectly required the LICENSE working-copy bytes to equal Git's LF bytes despite native CRLF checkout. Comparing Git objects and normalized working-copy text established identity; both verification corrections are retained. Neither failure was an access denial.
+
+The post-review history scan covered 80 commits and returned the exact same 652 fingerprints; no new finding was introduced. The reusable inventory helper reproduced the original 3,341-blob result without extraction errors and rejected an unignored output directory. Changed/new Markdown link checks and diff whitespace checks passed. The repository is shared as a **teaching-source preview**, with no packaged plugin release or new runtime acceptance claim.
 
 The approved October 29–30 Word/PDF handouts are preserved byte-for-byte because they were already supplied to organizers. Their repository URL and QR destination remain the publication destination; the online guide clarifies the preparation-time access caption. No new print-layout or organizer-branding claim is made.
 
