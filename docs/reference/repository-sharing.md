@@ -16,6 +16,8 @@ The tracked history intentionally contains source, teaching materials, third-par
 
 ## Before public dissemination
 
+**October 26 update:** the author explicitly authorized review and public publication once ready. The [complete distribution review](public-distribution-review-2026-10-26.md) found no unresolved publication blocker for a teaching-source preview; changing visibility and checking anonymous access are the next steps. The checklist below preserves the earlier preparation requirements. Full Revit/MCP acceptance remains separate.
+
 - **Completed October 26:** the owner selected MIT for original code and teaching material; the root [LICENSE](../../LICENSE) and participant-facing [README](../../README.md) now record it. Preserve third-party terms and notices. [Licensing guide](licensing.md).
 - Review the complete published history and archived proposal/evidence for personal, organizational and redistribution concerns. The private-upload pattern scan does not substitute for this review.
 - Keep live-build acceptance gaps and dependency limitations explicit. Decide whether to publish a teaching preview or a verified release, and label it accordingly.

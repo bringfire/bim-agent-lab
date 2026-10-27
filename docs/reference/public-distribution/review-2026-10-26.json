@@ -1,0 +1,371 @@
+{
+  "source_commit": "9a4ac9243b4570f1eab808036c3a0c90e9a3ba8a",
+  "refs": [
+    "HEAD",
+    "origin/main",
+    "origin/feat/revit-mcp-bridge"
+  ],
+  "commit_count": 79,
+  "unique_blobs": 3341,
+  "blob_bytes": 40894199,
+  "extracted_text_bytes": 48888538,
+  "current_files": 3294,
+  "historical_paths": 3294,
+  "extensions": {
+    "": 40,
+    ".md": 929,
+    ".json": 1133,
+    ".docx": 1,
+    ".pdf": 3,
+    ".config": 1,
+    ".jpg": 19,
+    ".txt": 437,
+    ".jsonl": 358,
+    ".cs": 162,
+    ".tsv": 47,
+    ".signal": 16,
+    ".ps1": 42,
+    ".py": 72,
+    ".log": 18,
+    ".xlsx": 1,
+    ".gz": 12,
+    ".png": 3,
+    ".sha256": 4,
+    ".psm1": 1,
+    ".csproj": 24,
+    ".template": 2,
+    ".nuspec": 12,
+    ".html": 4
+  },
+  "binary_unhandled": [
+    {
+      "oid": "a9b9883196842fd25216c6b60122fe8fc319a373",
+      "path": "projects/revit-readiness/docs/verification/desktop-launch-evidence/2025-06-18/session-existing/server-to-client.jsonl",
+      "bytes": 5,
+      "magic": "00ff0d0a2a"
+    }
+  ],
+  "extraction_errors": [],
+  "restricted_paths": [],
+  "review_date": "2026-10-26",
+  "scope": "Reachable history at the source commit plus documentation-only publication follow-up; no claim about ignored/unpublished files.",
+  "gitleaks": {
+    "version": "8.30.1",
+    "release_archive_sha256": "d29144deff3a68aa93ced33dddf84b7fdc26070add4aa0f4513094c8332afc4e",
+    "default_config_sha256": "e163e53b9e7e8a8511e77271e2b323ed057759542a6d988258afe3a1fa329caf",
+    "history_matches": 652,
+    "history_dispositions": {
+      "expired_local_context_tokens": 650,
+      "file_hashes": 2
+    },
+    "decoded_matches": 518,
+    "decoded_dispositions": {
+      "expired_local_context_tokens": 512,
+      "file_hashes": 6
+    },
+    "overlapping_scans": true,
+    "raw_reports": "Retained locally in ignored references; not published."
+  },
+  "manual_review": {
+    "images": 22,
+    "pdfs": 3,
+    "docx": 1,
+    "xlsx": 1,
+    "gzip_logs": 12,
+    "office_macros_or_embedded_objects": 0,
+    "docx_custom_xml": "Empty bibliography schema from document template",
+    "office_external_relationships": "Four intended public hyperlinks in DOCX; none in tracked XLSX",
+    "email_addresses": 13,
+    "email_disposition": "Upstream attribution/manifests; no participant contact list",
+    "commit_identity": "bringfire <bringfire@users.noreply.github.com>",
+    "diagnostic_fragment": "The five-byte unhandled fragment above was examined directly: 00 ff 0d 0a 2a."
+  },
+  "notice_checks": [
+    {
+      "file": "projects/revit-readiness/third-party/ClosedXML-0.105.1/LICENSE.txt",
+      "sha256": "3071658fba9a054edce74e756314ba926fe3ffe5c6622f209d21a0c8f1d2a99e",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/ClosedXML.Parser-2.0.0/LICENSE.txt",
+      "sha256": "7133dfd8c1167ffa77389859013ac5bf2d184639f5a291a00d33b0b7d7b84df3",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/DocumentFormat.OpenXml-3.1.1/LICENSE.txt",
+      "sha256": "ed03ba352313a4ba7019d5bed4bd3218ac17f3e44442a3bb1aaff54dcca9a2bc",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/DocumentFormat.OpenXml-3.1.1/NOTICE.txt",
+      "sha256": "17f127daf81a23e7835b735b91c7486fbc99538102942bf1bce8d73e63a65038",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/DocumentFormat.OpenXml.Framework-3.1.1/LICENSE.txt",
+      "sha256": "ed03ba352313a4ba7019d5bed4bd3218ac17f3e44442a3bb1aaff54dcca9a2bc",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/DocumentFormat.OpenXml.Framework-3.1.1/NOTICE.txt",
+      "sha256": "17f127daf81a23e7835b735b91c7486fbc99538102942bf1bce8d73e63a65038",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/ExcelNumberFormat-1.1.0/LICENSE.txt",
+      "sha256": "6650b0063a39e7dced886e53c6dac66fcd909beb8b9abb868452c9b621fa2018",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/Microsoft.Bcl.HashCode-1.1.1/LICENSE.TXT",
+      "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/Microsoft.Bcl.HashCode-1.1.1/THIRD-PARTY-NOTICES.TXT",
+      "sha256": "388c07f579998286e5df706a2e68bf6e01100187ccb0ff0310e26c3383f7b2b2",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/RBush.Signed-4.0.0/LICENSE.txt",
+      "sha256": "f6bfae3ff6477fbca0c850f115da170516b1c633a98619ea5dcc6720dcdcb288",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/SixLabors.Fonts-1.0.0/LICENSE.txt",
+      "sha256": "f38dc2765451fd2b19d7e0f47ed655f3a1cb889b28341ea6266efd75d8425a6f",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/System.Buffers-4.5.1/LICENSE.TXT",
+      "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/System.Buffers-4.5.1/THIRD-PARTY-NOTICES.TXT",
+      "sha256": "7864a01e2fdef7e8fdf81b906efb1466f083206affea7ba7e6dadea429754765",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/System.Memory-4.5.5/LICENSE.TXT",
+      "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/System.Memory-4.5.5/THIRD-PARTY-NOTICES.TXT",
+      "sha256": "7864a01e2fdef7e8fdf81b906efb1466f083206affea7ba7e6dadea429754765",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/System.Numerics.Vectors-4.5.0/LICENSE.TXT",
+      "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/System.Numerics.Vectors-4.5.0/THIRD-PARTY-NOTICES.TXT",
+      "sha256": "7864a01e2fdef7e8fdf81b906efb1466f083206affea7ba7e6dadea429754765",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/System.Runtime.CompilerServices.Unsafe-4.7.0/LICENSE.TXT",
+      "sha256": "d7a68596ab69b06f51ca278a6545148e4269a9381c26d597c13df5d88e08cf5b",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/System.Runtime.CompilerServices.Unsafe-4.7.0/THIRD-PARTY-NOTICES.TXT",
+      "sha256": "388c07f579998286e5df706a2e68bf6e01100187ccb0ff0310e26c3383f7b2b2",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/mcp/dotnet-runtime-LICENSE.txt",
+      "sha256": "cfc21f5e8bd655ae997eec916138b707b1d290b83272c02a95c9f821b8c87310",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/mcp/dotnet-extensions-LICENSE.txt",
+      "sha256": "47f0ad8ba753eae5de6178291cd8f38bbb42d2368b177f8e11714ad17c701275",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/mcp/dotnet-runtime-THIRD-PARTY-NOTICES.txt",
+      "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/mcp/dotnet-runtime-THIRD-PARTY-NOTICES.txt",
+      "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/mcp/dotnet-runtime-THIRD-PARTY-NOTICES.txt",
+      "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/mcp/dotnet-runtime-THIRD-PARTY-NOTICES.txt",
+      "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/mcp/dotnet-runtime-THIRD-PARTY-NOTICES.txt",
+      "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/mcp/dotnet-runtime-THIRD-PARTY-NOTICES.txt",
+      "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/mcp/dotnet-runtime-THIRD-PARTY-NOTICES.txt",
+      "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/mcp/dotnet-runtime-THIRD-PARTY-NOTICES.txt",
+      "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/mcp/dotnet-runtime-THIRD-PARTY-NOTICES.txt",
+      "sha256": "6d15e10a101c6bfff2ab4429ed061bf76c456fc4b23ad6b03e0d0f8377148a21",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/Carlito/OFL.txt",
+      "sha256": "58402f82a7c332a700294988fe7554fbb0a63a8d27ccc1ee3bbc640311990a00",
+      "pass": true
+    },
+    {
+      "file": "projects/revit-readiness/third-party/mcp/csharp-sdk-LICENSE.txt",
+      "source": "https://raw.githubusercontent.com/modelcontextprotocol/csharp-sdk/6fa3825973949a9c4f0cd8af344e15a8db09dc35/LICENSE",
+      "sha256": "10a500c69133ef6e1df944a1b0fd8578fc9c4735745bcc75f04a24038016df49",
+      "pass": true,
+      "upstream_sha256": "7c6a686d2b34b86ad8c726e0ac4d76903b525f251d73e617f8db3879fa8f11fc",
+      "git_blob_sha256": "10a500c69133ef6e1df944a1b0fd8578fc9c4735745bcc75f04a24038016df49",
+      "comparison": "Retained bytes use CRLF; full text equals pinned upstream after newline normalization.",
+      "byte_identical_to_upstream": false
+    },
+    {
+      "file": "projects/revit-readiness/third-party/mcp/csharp-sdk-THIRD-PARTY-NOTICES.txt",
+      "source": "https://raw.githubusercontent.com/modelcontextprotocol/csharp-sdk/6fa3825973949a9c4f0cd8af344e15a8db09dc35/THIRD-PARTY-NOTICES.txt",
+      "sha256": "19c34b0b254d5cca0f96857d935528fded236cc15d489fc9581c778dd32f8100",
+      "pass": true,
+      "upstream_sha256": "b9c35f6ab075077d5c2b644fdc58eb5696b8b70f539947f9e1e57331599fc5ce",
+      "git_blob_sha256": "19c34b0b254d5cca0f96857d935528fded236cc15d489fc9581c778dd32f8100",
+      "comparison": "Retained bytes use CRLF; full text equals pinned upstream after newline normalization.",
+      "byte_identical_to_upstream": false
+    }
+  ],
+  "embedded_research_checks": [
+    {
+      "source": "https://raw.githubusercontent.com/mcp-servers-for-revit/mcp-servers-for-revit/86cf7057785f2423fc0d0892c9a5d9c93deb1aa3/LICENSE",
+      "declared_sha256": "a35e3103fdd7fb5ed33f4e640a831f1ae8a6f5f1200cca5c7ee6455739db64e8",
+      "embedded_text_sha256": "a35e3103fdd7fb5ed33f4e640a831f1ae8a6f5f1200cca5c7ee6455739db64e8",
+      "pass": true
+    },
+    {
+      "source": "https://raw.githubusercontent.com/mcp-servers-for-revit/mcp-servers-for-revit/86cf7057785f2423fc0d0892c9a5d9c93deb1aa3/server/package.json",
+      "declared_sha256": "2ff2e265c13489c86dc0427d9e2381478dcb2fdec8a222a77fb5045dda307060",
+      "embedded_text_sha256": "2ff2e265c13489c86dc0427d9e2381478dcb2fdec8a222a77fb5045dda307060",
+      "pass": true
+    },
+    {
+      "source": "https://raw.githubusercontent.com/mcp-servers-for-revit/mcp-servers-for-revit/86cf7057785f2423fc0d0892c9a5d9c93deb1aa3/plugin/RevitMCPPlugin.csproj",
+      "declared_sha256": "48665ee2e6de84160a2a33e8bebcb72a84df5e9f19bac8c51f1072d7de9b3fc9",
+      "embedded_text_sha256": "b17f0e6ba17b319315354c82177bd45e19db9191ef9d4e9306bcec0543f760e4",
+      "pass": true,
+      "upstream_sha256": "48665ee2e6de84160a2a33e8bebcb72a84df5e9f19bac8c51f1072d7de9b3fc9",
+      "comparison": "Declared digest equals upstream bytes; embedded text omits the UTF-8 BOM. Text otherwise identical."
+    },
+    {
+      "source": "https://raw.githubusercontent.com/mcp-servers-for-revit/mcp-servers-for-revit/86cf7057785f2423fc0d0892c9a5d9c93deb1aa3/global.json",
+      "declared_sha256": "9384d5f057ed52752aa3dc5407e75b2265495154fb3a6597afe70b79f8776f93",
+      "embedded_text_sha256": "9384d5f057ed52752aa3dc5407e75b2265495154fb3a6597afe70b79f8776f93",
+      "pass": true
+    },
+    {
+      "source": "https://raw.githubusercontent.com/Nice3point/RevitTemplates/d703757a01e2cde2eb5392cd59666e6b0e578cf6/LICENSE.md",
+      "declared_sha256": "7329b2979a69b23a70314ce3d5d3f0b045a9efcdb868f18de9380e4397963163",
+      "embedded_text_sha256": "7329b2979a69b23a70314ce3d5d3f0b045a9efcdb868f18de9380e4397963163",
+      "pass": true
+    },
+    {
+      "source": "https://raw.githubusercontent.com/Nice3point/RevitTemplates/d703757a01e2cde2eb5392cd59666e6b0e578cf6/source/Nice3point.Revit.Templates/Nice3point.Revit.AddIn.Application/Nice3point.Revit.AddIn.1.csproj",
+      "declared_sha256": "9ab63944e4e1000ef2af9c69a8c2243bff3c9e46221c1699900d4e5e46a9aab3",
+      "embedded_text_sha256": "9ab63944e4e1000ef2af9c69a8c2243bff3c9e46221c1699900d4e5e46a9aab3",
+      "pass": true
+    },
+    {
+      "source": "https://raw.githubusercontent.com/Nice3point/RevitTemplates/d703757a01e2cde2eb5392cd59666e6b0e578cf6/global.json",
+      "declared_sha256": "34213fdbcbe25dc9ba593f53ba323334baf182bb999cd64bb095338ee610637a",
+      "embedded_text_sha256": "34213fdbcbe25dc9ba593f53ba323334baf182bb999cd64bb095338ee610637a",
+      "pass": true
+    },
+    {
+      "source": "https://raw.githubusercontent.com/lookup-foundation/RevitLookup/766aa41a3821b64befc0b81e3c6b164725b26e87/LICENSE.md",
+      "declared_sha256": "d86940d8aaacec162675b9a1585d90d1fb4f920a1891f62de536647ecdec67b0",
+      "embedded_text_sha256": "d86940d8aaacec162675b9a1585d90d1fb4f920a1891f62de536647ecdec67b0",
+      "pass": true
+    },
+    {
+      "source": "https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/2af9e3089ac66b35c1550c500aae86a82efb1e17/LICENSE",
+      "declared_sha256": "5e13dbbc1d120fc2a03cecde7c91424ae2d7de11b63d58ded2f4431e261ee50d",
+      "embedded_text_sha256": "5e13dbbc1d120fc2a03cecde7c91424ae2d7de11b63d58ded2f4431e261ee50d",
+      "pass": true
+    },
+    {
+      "source": "https://raw.githubusercontent.com/modelcontextprotocol/python-sdk/2af9e3089ac66b35c1550c500aae86a82efb1e17/pyproject.toml",
+      "declared_sha256": "84ff93013491d4a24dd1abf379281b61b740907e119e8eb43e21fca1071d99d0",
+      "embedded_text_sha256": "84ff93013491d4a24dd1abf379281b61b740907e119e8eb43e21fca1071d99d0",
+      "pass": true
+    },
+    {
+      "source": "https://raw.githubusercontent.com/modelcontextprotocol/csharp-sdk/3d8af7f98a49f55e0ac70e4fcd42df76fe1d1410/LICENSE",
+      "declared_sha256": "7c6a686d2b34b86ad8c726e0ac4d76903b525f251d73e617f8db3879fa8f11fc",
+      "embedded_text_sha256": "7c6a686d2b34b86ad8c726e0ac4d76903b525f251d73e617f8db3879fa8f11fc",
+      "pass": true
+    },
+    {
+      "source": "https://raw.githubusercontent.com/pyrevitlabs/pyRevit/fc524b132f13d2d7cb4d085976efd9a1431d469b/LICENSE.txt",
+      "declared_sha256": "d62f065830aa3739cc031156b9690805c7b2e811b4a178c8b4acd8725d561c94",
+      "embedded_text_sha256": "d62f065830aa3739cc031156b9690805c7b2e811b4a178c8b4acd8725d561c94",
+      "pass": true
+    },
+    {
+      "source": "https://raw.githubusercontent.com/tillbaum/revit-mcp-python/9cc3f195b0e79f511e4ed8bce729402dd659644e/LICENSE",
+      "declared_sha256": "fba7be8ed247134eaa722033e0f3a65c79cdd1b7e77bf2645cccb1a363527fe3",
+      "embedded_text_sha256": "fba7be8ed247134eaa722033e0f3a65c79cdd1b7e77bf2645cccb1a363527fe3",
+      "pass": true
+    },
+    {
+      "source": "https://raw.githubusercontent.com/tillbaum/revit-mcp-python/9cc3f195b0e79f511e4ed8bce729402dd659644e/pyproject.toml",
+      "declared_sha256": "2045f5b6078e8eb3364d07b1cf89a46a944efd16072a1f465403ffba21a6d0f8",
+      "embedded_text_sha256": "2045f5b6078e8eb3364d07b1cf89a46a944efd16072a1f465403ffba21a6d0f8",
+      "pass": true
+    }
+  ],
+  "github_before_publication": {
+    "private": true,
+    "default_branch": "main",
+    "branch_heads": [
+      "main",
+      "feat/revit-mcp-bridge"
+    ],
+    "tags": 0,
+    "pull_refs": 0,
+    "issues_or_prs": 0,
+    "action_runs": 0,
+    "action_artifacts": 0,
+    "releases": 0,
+    "pages": false,
+    "discussions": false,
+    "wiki": "Authenticated SSH lookup returned repository not found; no wiki content observed."
+  },
+  "limitations": [
+    "Pattern scanners do not certify absence of every secret or sensitive statement.",
+    "Original teaching screenshots/logs retain author handles, local paths, model identities and expired read contexts.",
+    "No independent security certification, dependency upgrade, live Revit run or R3 closure is claimed.",
+    "Revit 2026 was scheduled by the author for October 27, not implemented or supported by this review."
+  ]
+}

@@ -15,6 +15,6 @@ The Excel exporter adopts [ClosedXML and its resolved dependencies](../research/
 1. Keep the standard MIT grant in the root LICENSE and link it from README.md. Preserve the owner's recorded choice; do not infer a different license from a dependency or public visibility.
 2. Inventory copied/adapted source, packages and assets before distribution. Update THIRD_PARTY_NOTICES.md and the project-specific retained notices without relicensing upstream material.
 3. Update current status documents when a licensing decision changes. Preserve dated journal/review records as history rather than rewriting what was true at the time.
-4. Verify local documentation links, the license text and the final Git diff. Publication still requires the separate history/distribution review and the owner's direction described in the sharing record.
+4. Verify local documentation links, the license text and the final Git diff. Follow the [publication procedure](../how-to/review-and-publish-a-repository.md) and the owner's actual direction. The [October 26 review](public-distribution-review-2026-10-26.md) records the history/distribution checks for this publication; later changes require review of their own.
 
 The [participant account](../tutorials/16-prepare-the-participant-packet.md#choose-the-license-and-make-the-readme-useful) explains how the owner directed this decision.

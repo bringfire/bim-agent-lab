@@ -34,7 +34,7 @@ Seminar takeaway for the review segment: **two or three major findings are a cue
 ## Planning archive
 
 - [Raw planning notes](planning-notes.md) retain earlier proposals and author input.
-- [Organizer brief](archive/organizer-brief.html) and [proposal PDF](archive/SWACCA-Workshop-Proposal.pdf) are historical drafts, not the final agenda or current product specification.
+- [Organizer brief](archive/organizer-brief.html) and [proposal PDF](archive/SWACCA-Workshop-Proposal.pdf) are historical drafts, not the final agenda or current product specification. Read the [archive notice](archive/README.md): their broad Revit-version and capability claims were plans, not verified support.
 - [Original project context](archive/source-project-context.md) preserves the authoring conventions from which this repository grew.
 
 The working session timings are now in the agenda. Final slides, detailed demonstration scripts, rehearsal evidence, and a tagged seminar release are still to be produced. HTML may be used as the initial presentation format before slides.

@@ -29,3 +29,5 @@ Research, Git, setup, readiness, Excel, the MCP bridge comparison, and specifica
 Ask your agent to explain one step, identify what the person decided and what was delegated, and show the relevant evidence. Then choose a small next task with an observable answer. Historical results describe the recorded configuration; a new implementation or workstation needs its own verification.
 
 For the seminar handout, see [how we prepared the participant packet](16-prepare-the-participant-packet.md) and the [agent rebuild/print guide](../../workshops/swacca-2026/handout/README.md). The eight-page PDF summarizes the learning path; the repository preserves its technical detail.
+
+Before sharing your own repository, see [how we directed the public-distribution review](17-review-before-publication.md), the linked [agent publication procedure](../how-to/review-and-publish-a-repository.md) and the [actual review evidence](../reference/public-distribution-review-2026-10-26.md). Public access, licensing and completed product acceptance are separate decisions.
