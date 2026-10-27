@@ -1,6 +1,6 @@
 # Revit 2026.5 compatibility: first working host
 
-Status: proposed design for author approval. This does not authorize a release or establish support. Read the [workstation intake](../../../projects/revit-readiness/docs/verification/2026-10-27-summit-workstation-intake.md) for actual observations.
+Status: implementation authorized October 27 by the author: get the plugins working in Revit 2026.5 on this laptop, keep Revit 2024 working, and update participant setup instructions as verification proceeds. This does not authorize a release or establish support. Read the [workstation intake](../../../projects/revit-readiness/docs/verification/2026-10-27-summit-workstation-intake.md) for actual observations.
 
 ## Purpose and scope
 
