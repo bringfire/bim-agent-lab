@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFrameworks>net48;net10.0</TargetFrameworks>
+    <LangVersion>latest</LangVersion><TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+    <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
+  </PropertyGroup>
+  <ItemGroup>
+    <ProjectReference Include="../../src/readiness-core/BimAgentLab.Readiness.Core.csproj" />
+    <ProjectReference Include="../../src/bridge-runtime/BimAgentLab.RevitBridge.Runtime.csproj" />
+    <Compile Include="../../src/revit-addin/ReadinessPayloadCodec.cs" Link="Production/ReadinessPayloadCodec.cs" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+    <Reference Include="System.Web.Extensions" /><Reference Include="System.Runtime.Serialization" />
+  </ItemGroup>
+</Project>

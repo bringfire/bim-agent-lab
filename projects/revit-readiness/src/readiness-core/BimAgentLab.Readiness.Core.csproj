@@ -1,9 +1,9 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFrameworks>net48;net10.0</TargetFrameworks>
     <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <Version>0.2.0</Version>
   </PropertyGroup>
-  <ItemGroup><Reference Include="System.Web.Extensions" /></ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'"><Reference Include="System.Web.Extensions" /></ItemGroup>
 </Project>

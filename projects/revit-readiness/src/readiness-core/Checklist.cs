@@ -3,7 +3,12 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
+#if NET48
 using System.Web.Script.Serialization;
+#else
+using System.Text.Json;
+using System.Text.Encodings.Web;
+#endif
 
 namespace BimAgentLab.Readiness.Core
 {
@@ -31,14 +36,30 @@ namespace BimAgentLab.Readiness.Core
     }
     public static class JsonFile
     {
+#if !NET48
+        // These files are JSON data, never embedded in HTML. Preserve literal Unicode
+        // and retain the legacy case-insensitive property binding for manual inputs.
+        private static readonly JsonSerializerOptions Options = new JsonSerializerOptions {
+            PropertyNameCaseInsensitive = true, IncludeFields = true, MaxDepth = 64,
+            Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping
+        };
+#endif
         public static T Read<T>(string path)
         {
             if (new FileInfo(path).Length > 4 * 1024 * 1024) throw new ArgumentException("JSON input exceeds the 4 MiB limit.");
+#if NET48
             return new JavaScriptSerializer { MaxJsonLength = 4 * 1024 * 1024 }.Deserialize<T>(File.ReadAllText(path));
+#else
+            return JsonSerializer.Deserialize<T>(File.ReadAllText(path), Options);
+#endif
         }
         public static void Write(string path, object value)
         {
+#if NET48
             File.WriteAllText(path, new JavaScriptSerializer { MaxJsonLength = int.MaxValue }.Serialize(value), new UTF8Encoding(false));
+#else
+            File.WriteAllText(path, JsonSerializer.Serialize(value, value == null ? typeof(object) : value.GetType(), Options), new UTF8Encoding(false));
+#endif
         }
     }
 }
