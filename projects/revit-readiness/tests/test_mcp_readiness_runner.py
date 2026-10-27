@@ -154,7 +154,7 @@ class RunnerTests(unittest.TestCase):
         self.assertTrue((self.output / 'capture/partial.json').exists())
         self.assertFalse((self.output / 'capture/comparison-complete.json').exists())
         pid = int((self.output / 'capture/fixture-pid').read_text())
-        result = subprocess.run(['powershell', '-NoProfile', '-Command',
+        result = subprocess.run(['pwsh', '-NoProfile', '-Command',
             f'if (Get-Process -Id {pid} -ErrorAction SilentlyContinue) {{ exit 1 }}'], capture_output=True)
         self.assertEqual(result.returncode, 0, 'The runner must retire its owned SDK child before returning.')
 
@@ -178,7 +178,7 @@ class RunnerTests(unittest.TestCase):
         self.prepare(); self.output.mkdir(); sentinel = self.output / 'prior.txt'; sentinel.write_bytes(b'preserve')
         script = PROJECT / 'scripts/Invoke-ReadinessMcp.ps1'
         self.assertTrue(script.exists())
-        result = subprocess.run(['powershell', '-NoProfile', '-File', str(script), '-Case', 'complete',
+        result = subprocess.run(['pwsh', '-NoProfile', '-File', str(script), '-Case', 'complete',
             '-ExpectationPath', str(self.expectation), '-EvidenceDirectory', str(self.output),
             '-RevitPid', '149972', '-ServerPath', str(self.server), '-ClientPath', sys.executable],
             capture_output=True, text=True)
@@ -189,7 +189,7 @@ class RunnerTests(unittest.TestCase):
 
     def test_powershell_default_paths_reach_preflight(self):
         self.prepare(); self.output.mkdir()
-        result = subprocess.run(['powershell', '-NoProfile', '-File',
+        result = subprocess.run(['pwsh', '-NoProfile', '-File',
             str(PROJECT / 'scripts/Invoke-ReadinessMcp.ps1'), '-Case', 'complete',
             '-ExpectationPath', str(self.expectation), '-EvidenceDirectory', str(self.output),
             '-RevitPid', '149972'], capture_output=True, text=True)

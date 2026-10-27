@@ -1,0 +1,62 @@
+# Before you build or extend BIM Agent Lab
+
+Use this list **before** planning a hands-on build. It describes the current source checkout as of October 27, 2026. The verified host baseline is Revit 2024; Revit 2026.5 compatibility is being prepared and must pass host testing before its participant requirements are finalized. Reading the lessons or watching the seminar does not require installing this build chain.
+
+## Revit's target versus this repository's compiler choice
+
+The compiler SDK version and the framework a plugin targets are different settings. **Revit 2024 does not itself require Microsoft .NET SDK 10.** This repository requires it because the external MCP server targets `net10.0`, shared libraries include a modern target, and `global.json` pins SDK 10.0.204.
+
+| Intended Revit host | Plugin target/runtime family | What the developer needs |
+|---|---|---|
+| Revit 2024 | .NET Framework 4.8 (`net48`) | A compiler capable of targeting net48, the 4.8 development references and matching Revit API DLLs. SDK 9 can compile a suitable standalone add-in; SDK 10 can too |
+| Revit 2026 before 2026.5 | .NET 8 (`net8.0-windows` for the Autodesk migration pattern) | A capable SDK with .NET 8 targeting assets and matching Revit API DLLs; SDK 8 or a newer compatible SDK can build suitable projects |
+| Revit 2026.5 and later | .NET 10 | SDK 10 or a later compatible toolchain with the required targeting assets, and matching Revit API DLLs. SDK 9 cannot build a net10.0 project |
+
+Sources: Autodesk's [2024 development requirements](https://help.autodesk.com/cloudhelp/2024/ENU/Revit-API/files/Revit_API_Developers_Guide/Introduction/Getting_Started/Welcome_to_the_Revit_Platform_API/Revit_API_Revit_API_Developers_Guide_Introduction_Getting_Started_Welcome_to_the_Revit_Platform_API_Development_Requirements_html.html), original [modern Revit migration guide](https://help.autodesk.com/cloudhelp/2026/ENU/Revit-API/files/Revit_API_Developers_Guide/Introduction/Getting_Started/Using_the_Autodesk_Revit_API/Revit_API_Revit_API_Developers_Guide_Introduction_Getting_Started_Using_the_Autodesk_Revit_API_NET8_Update_html.html), subsequent [2026.5 .NET 10 transition](https://www.autodesk.com/support/technical/article/caas/sfdcarticles/sfdcarticles/Revit--Requirements-for-products-affected-by-the-Microsoft--NET-10-transition.html), and Microsoft's [SDK/framework selection guidance](https://learn.microsoft.com/en-us/dotnet/core/versions/selection). These are platform/build distinctions, not a claim that this lab's current source supports every row.
+
+On October 27, the unchanged Revit 2024 read-only probe was copied outside this project's SDK pin and compiled with the laptop's SDK **9.0.319**, installed 4.8 development references and 2024 API DLLs: **zero warnings, zero errors**. That was compilation proof only, not a fresh Revit host run or a full-repository SDK 9 pass. The full repository had separately built with SDK 10.0.204. The project pin was not changed.
+
+For someone following **this lab** for both 2024 and the proposed 2026.5 extension, use SDK **10.0.204 once**, plus the **4.8 Developer Pack** for the legacy targets. There is no need to install SDK 9 just for the 2024 example. The older .NET 8/Revit 2026 route is a separate target requiring its own verification; installing SDK 10 alone does not port the plugin source.
+
+## Choose the activity
+
+| Activity | Preparation |
+|---|---|
+| Watch the demonstration or read the lessons | Access to the seminar/materials; no compiler SDK required |
+| Build or extend the source with an agent | Complete the checklist below and have the agent verify it before the session |
+| Run a prebuilt plugin | Follow that package's version-specific runtime/install instructions. A compiler SDK is generally unnecessary, but this repository does not yet offer an accepted downloadable plugin release |
+
+## Source-build installation checklist
+
+| Obtain or confirm | Current requirement | Official source / check |
+|---|---|---|
+| Windows and full Revit | Windows x64 and the full intended Revit installation, with working sign-in/entitlement. Current host evidence is Revit 2024 build 24.3.60.12 | [Detailed prerequisites](../../projects/revit-readiness/docs/development-prerequisites.md); other builds need verification |
+| **Microsoft .NET SDK** | **Windows x64 SDK 10.0.204**. An installed runtime or SDK 9 is insufficient for this checkout | [Exact SDK installer](https://dotnet.microsoft.com/en-us/download/dotnet/thank-you/sdk-10.0.204-windows-x64-installer). Check SDK resolution inside `projects/revit-readiness`, not only at the repository root |
+| .NET Framework 4.8 development references | Needed for the current Revit 2024 host/core/exporter projects; confirm existing references or install the Developer Pack | [4.8 Developer Pack](https://dotnet.microsoft.com/en-us/download/dotnet-framework/net48). The current projects use installed targeting references; adding a reference-assembly package would be a project change |
+| PowerShell 7, x64 | Use `pwsh`; laptop verification used 7.6.9 | [Install PowerShell on Windows](https://learn.microsoft.com/en-us/powershell/scripting/install/installing-powershell-on-windows). Windows PowerShell 5.1 is not the supported full verification/install host |
+| Git for Windows | Available to the agent | [Git for Windows](https://git-scm.com/install/windows). Public HTTPS cloning does not require a GitHub account or an SSH key |
+| Python for full verification | A working Python 3.12 interpreter; recorded runs used 3.12.10 and 3.12.14. Have the agent verify the actual executable and checker imports | [Python Windows downloads](https://www.python.org/downloads/windows/). This is separate from Dynamo's Python engine. Do not assume another participant has the presenter's app-bundled interpreter |
+| Local coding/desktop agent | Installed, authenticated and able to edit local files and run the build; verify the intended MCP-capable desktop client for agent-tool use | [Starting guide](../start-here.md) and [technical handoff](../how-to/agent-handoff.md) |
+| Source, packages and sample | Local checkout, locked NuGet restore and a disposable copy of the documented Autodesk sample with the intended checklist | [Sample preparation](../../projects/revit-readiness/samples/README.md). Do this while connectivity is available; cloning source does not fetch every build dependency or working model |
+
+The SDK pin lives in [global.json](../../projects/revit-readiness/global.json): `10.0.204` with `latestPatch`. A later compatible patch in the same `10.0.2xx` feature band can be selected. Installing an arbitrary newer feature band, such as `10.0.4xx`, does not satisfy this policy. The exact installer link avoids that ambiguity. See Microsoft's [SDK selection rules](https://learn.microsoft.com/en-us/dotnet/core/tools/global-json).
+
+## Why Revit is not the whole build setup
+
+The **runtime** executes .NET programs. The **Microsoft .NET SDK** supplies the compiler, MSBuild and development commands. Revit supplies the runtime it needs and its API DLLs; their presence does not establish that the separate compiler SDK is installed. Visual Studio may supply a suitable SDK, but verify its version. Microsoft's [Windows installation guide](https://learn.microsoft.com/en-us/dotnet/core/install/windows) explains SDK versus runtime installation.
+
+The **Revit SDK** is another resource: Autodesk examples, documentation and development materials. It is not the Microsoft .NET SDK. The API DLLs used by this lab are available in the installed Revit folder.
+
+On the summit laptop, .NET 10 runtimes and SDK 9 were already installed. The **full lab source** still needed SDK 10.0.204 for its net10.0 server and SDK pin. A fresh Windows installation does not supply that repository-specific compiler setup; Revit's runtime installation does not supply it either. This requirement already existed in the project pin; the laptop inspection exposed a missing input rather than adding a new package dependency. See the [actual travel setup](../../projects/revit-readiness/docs/verification/2026-10-27-travel-toolchain.md). The inspection does not identify which earlier installer supplied SDK 9.
+
+## Verify before the hands-on session
+
+Give your agent this **suggested prompt**:
+
+> Read the participant install checklist and project prerequisites. Inspect my exact Revit build, selected .NET SDK inside the project, Framework 4.8 targeting references, PowerShell 7, Git, Python and agent access. Report missing inputs before installing anything. After approved setup, run the environment check, locked restore and source build. Prepare a disposable sample and prove the read-only command in the intended Revit build. Explain separately what is installed, what compiles and what has actually run in Revit. Check client sign-in/connectivity before a live agent demonstration.
+
+The current `Check-Environment.ps1` checks the 2024 build baseline; it does not inventory all Python/MCP/client requirements or establish 2026 support. A successful inventory is followed by compilation and actual host proof.
+
+NuGet restores this lab's pinned C# libraries automatically; participants do not manually install the MCP SDK or ClosedXML. RevitLookup and pyRevit remain optional unless the selected exercise explicitly needs them. A separate Python installation for repository verification is different from running the beginner Dynamo Python example.
+
+Before distributing a final 2026 setup notice, verify the intended Revit point release and candidate, freeze the exact exercise, and repeat the checklist on a fresh participant setup. The delivered PDF/Word handouts have not been regenerated by this documentation correction.

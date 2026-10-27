@@ -4,6 +4,8 @@ BIM Agent Lab teaches you to direct an AI coding agent to build useful BIM tools
 
 You can read the lessons without installing Revit. To try the working example, use an agent that can work with files on your Windows computer and follow the setup path below. You do not need to memorize terminal commands; ask the agent to perform the technical steps and explain the evidence.
 
+**Preparing for a hands-on session:** read the [installation checklist](reference/participant-install-checklist.md) in advance. The source build requires **Microsoft .NET SDK 10.0.204, Windows x64**, even when Revit and a .NET runtime are already installed. The list also names PowerShell 7, Git, framework references and Python for the full verification workflow. Watching the seminar requires none of this build setup.
+
 ## What you can try today
 
 The first example checks **required wall and ceiling type information** in Revit 2024 against a written checklist. It reports missing values, the elements they affect, what was examined, and what could not be checked.

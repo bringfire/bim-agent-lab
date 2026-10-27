@@ -6,6 +6,14 @@ The [prerequisites](../../projects/revit-readiness/docs/development-prerequisite
 
 ## Ask what a new user actually needs
 
+The October 27 move to the summit machine repeated this lesson. The author asked to finish the repository, including Revit 2026 compatibility. Inspection found a missing compiler SDK and a specific installed release, **2026.5**, whose runtime files declare .NET 10. Earlier verification on another machine did not prove this setup. The [dated intake](../../projects/revit-readiness/docs/verification/2026-10-27-summit-workstation-intake.md) records what was found and what remains untested; the [agent follow-through](../how-to/build-read-only-revit-command.md#october-27-workstation-intake) identifies the source and installation boundaries. The next practical proof is a small command in the intended Revit build, followed by the full readiness workflow.
+
+The author then emphasized that this laptop would travel and must carry the build chain and dependencies. The agent supplied the missing SDK, selected local tools through a launcher, cached packages and tested restores with remote feeds removed. That test found a stale diagnostic lockfile before departure. The [travel record](../../projects/revit-readiness/docs/verification/2026-10-27-travel-toolchain.md) distinguishes local build readiness from live Revit proof, account/connectivity checks and a rehearsed demonstration. Having a sample source on disk also differs from having the five prepared cases and a reset set.
+
+The author then identified the participant-facing consequence: people need the installation list before attempting the exercise. They had expected the needed SDK to come with Revit. The agent explained runtime versus compiler SDK and made the existing exact SDK requirement visible in an [advance checklist](../reference/participant-install-checklist.md), linked from the entry points. This turns a presenter-machine surprise into a pre-session check without claiming that the unverified 2026 workflow is ready.
+
+The author's follow-up caught another distinction: Revit 2024 itself does not require SDK 10 merely because this lab does. A separate compilation of the unchanged 2024 probe with SDK 9 succeeded; the lab's external .NET 10 MCP server and project pin explain its newer SDK requirement. The [version matrix](../reference/participant-install-checklist.md#revits-target-versus-this-repositorys-compiler-choice) also separates earlier Revit 2026 from 2026.5. Ask an agent to distinguish the host's framework, the compiler it selects and the dependencies of the complete workflow.
+
 The author's actual starting question was:
 
 > first things..What are the minimal requirements for developing a plugin for Revit?  This includes all software, libraries or other dependencies that will allow a new user to build a plugin with their agent.

@@ -1,5 +1,11 @@
 # Development status
 
+**October 27 new-workstation intake:** Revit 2024 `24.3.60.12` and Revit 2026.5 `26.5.10.38` are installed here. The 2026.5 runtime files declare .NET 10. Source/build/install scripts still target the Revit 2024/net48 host; SDK 9.0.319 does not satisfy the project pin. The unchanged environment check failed at that prerequisite. No fresh build or 2026 host pass is claimed. See the [intake and proposed summit order](../../projects/revit-readiness/docs/verification/2026-10-27-summit-workstation-intake.md). Prior workstation processes and installed receipts are historical context.
+
+**Travel setup follow-through:** [local tools and dependencies](../../projects/revit-readiness/docs/verification/2026-10-27-travel-toolchain.md) now include the pinned SDK, standalone PowerShell and verified existing Python. The environment check passes; all 19 projects passed locked cache-only restores, and the existing 2024 probe/readiness/server builds and readiness/Excel regressions passed. One stale diagnostic lock graph was repaired without changing external package pins. Revit 2026.5 implementation and host acceptance remain ahead.
+
+Final travel-toolchain check: all 19 projects also passed **no-restore builds**. Deployment/Tools/Dispatch/Pipe/Framing passed; Protocol passed on targeted follow-up after correcting the runner tests to select documented PowerShell 7. Its 34 Python methods and four independent SDK captures passed. The original All invocation's two Windows PowerShell 5.1 policy failures remain recorded; no execution policy was weakened. Actual Revit/client/demo acceptance is separate.
+
 **October 26 publication update:** [public source access and anonymous clone are verified](public-distribution-review-2026-10-26.md). MIT applies to original material. This is a teaching-source preview; full R3 and packaged release remain open. The author plans Revit 2026 work for October 27; the current verified host baseline remains Revit 2024.
 
 The current review handoff is the [R3 packet](../superpowers/reviews/revit-mcp-bridge/03-implementation-review.md). Fresh full offline/build checks and retained-evidence replay pass; independent R3 has now returned and [requires further acceptance evidence](../superpowers/reviews/revit-mcp-bridge/2026-10-22-r3-feedback.md).

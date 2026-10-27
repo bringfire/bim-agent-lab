@@ -6,6 +6,8 @@ The recorded event dates are October 29–30, 2026, in Pleasanton, California. T
 
 ## Current teaching direction
 
+**Advance setup guidance, October 27:** the [participant installation checklist](../../docs/reference/participant-install-checklist.md) now makes the pinned Microsoft .NET SDK and full build/verification prerequisites explicit before a hands-on exercise. Watching the two seminar sessions does not require a compiler installation. The final 2026-specific exercise/setup notice must follow actual 2026.5 host verification. The already-delivered PDF/Word handouts have not been regenerated or resent by this correction.
+
 **October 23 participant packet:** [eight-page Letter PDF](../../output/pdf/swacca-2026-participant-handout-oct29-30.pdf), [editable content and agent rebuild guide](handout/README.md), and [participant account of preparing it](../../docs/tutorials/16-prepare-the-participant-packet.md). It preserves the two one-hour structure and fits the quick Dynamo/pyRevit introductions into the existing first-working-step block. pyRevit is an optional separate install, not an added attendee requirement. These demos await rehearsal. The [GitHub repository](https://github.com/bringfire/bim-agent-lab) is public as of October 26 and provides the stable QR/link destination. Original material uses MIT; [distribution review and anonymous clone](../../docs/reference/public-distribution-review-2026-10-26.md) are verified. Release packaging and full implementation acceptance remain pending. Historical development notes below are snapshots; use the root README and acceptance ledger for current status.
 
 **Working agenda:** [Option B — the story of the build, revision B](agenda.html).

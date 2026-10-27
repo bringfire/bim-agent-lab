@@ -8,6 +8,8 @@ Revit model readiness is the first project. The lab can grow to other BIM applic
 
 ## Start here
 
+**Before a hands-on build:** use the [participant installation checklist](docs/reference/participant-install-checklist.md). The current source requires **Microsoft .NET SDK 10.0.204 (Windows x64)**, plus the other listed tools. Revit's installed .NET runtime does not supply that compiler SDK. The checklist distinguishes watching, building/extending and running a future prebuilt package.
+
 | You want to… | Start with… |
 |---|---|
 | Learn how to engage an agent | [Participant starting guide](docs/start-here.md) and [learning path](docs/tutorials/README.md) |

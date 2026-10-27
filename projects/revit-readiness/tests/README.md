@@ -33,4 +33,6 @@ The basic SDK-client `readiness` scenario supports live lifecycle capture and ex
 
 ## Task 8 capture runner
 
+The runner tests invoke `pwsh` (PowerShell 7), matching the documented verification prerequisites. The October 27 laptop run exposed that hard-coded Windows PowerShell 5.1 calls can be blocked by that engine's script policy even when the supported PowerShell 7 workflow works. Tests do not change execution policy; see the [travel setup record](../docs/verification/2026-10-27-travel-toolchain.md).
+
 `python tests/test_mcp_readiness_runner.py` runs ten methods against real file/process orchestration and the independent report comparator with a labelled SDK-output subprocess fixture. Protocol/All includes this module. Run `scripts/Invoke-ReadinessMcp.ps1` for a fresh SDK capture only after preparing independent expectation bytes and the intended current Revit session. The runner guards context before permitting a read and preserves failed attempts. [Procedure](../../../docs/how-to/verify-readiness-through-desktop-agents.md#run-one-prepared-case-through-the-sdk), [offline/actual-unavailable evidence and limits](../docs/verification/2026-10-22-readiness-runner.md).
