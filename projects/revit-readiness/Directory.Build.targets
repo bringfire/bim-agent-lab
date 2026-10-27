@@ -1,0 +1,23 @@
+<Project>
+  <ItemGroup Condition="'$(IsRevitHostProject)' == 'true' And '$(RevitYear)' == '2026'">
+    <FrameworkReference Include="Microsoft.WindowsDesktop.App" />
+  </ItemGroup>
+  <Target Name="VerifyRevitHostBinding" BeforeTargets="ResolveReferences" Condition="'$(IsRevitHostProject)' == 'true'">
+    <Error Condition="'$(RevitYear)' != '2024' And '$(RevitYear)' != '2026'" Text="Supported RevitYear values: 2024 and 2026 (2026.5+ only)." />
+    <Error Condition="!Exists('$(RevitInstallDir)/RevitAPI.dll') Or !Exists('$(RevitInstallDir)/RevitAPIUI.dll')" Text="Matching Revit API DLLs are missing from RevitInstallDir." />
+    <GetAssemblyIdentity AssemblyFiles="$(RevitInstallDir)/RevitAPI.dll">
+      <Output TaskParameter="Assemblies" ItemName="SelectedRevitApi" />
+    </GetAssemblyIdentity>
+    <PropertyGroup>
+      <ExpectedRevitApiMajor Condition="'$(RevitYear)' == '2024'">24.</ExpectedRevitApiMajor>
+      <ExpectedRevitApiMajor Condition="'$(RevitYear)' == '2026'">26.</ExpectedRevitApiMajor>
+      <SelectedRevitApiVersion>%(SelectedRevitApi.Version)</SelectedRevitApiVersion>
+    </PropertyGroup>
+    <Error Condition="!$(SelectedRevitApiVersion.StartsWith('$(ExpectedRevitApiMajor)'))" Text="Revit API year does not match RevitYear=$(RevitYear)." />
+    <Error Condition="'$(RevitYear)' == '2026' And !Exists('$(RevitInstallDir)/RevitAPI.runtimeconfig.json')" Text="Revit 2026.5+ .NET 10 runtime configuration is required." />
+    <PropertyGroup Condition="'$(RevitYear)' == '2026' And Exists('$(RevitInstallDir)/RevitAPI.runtimeconfig.json')">
+      <SelectedRevitRuntime>$([System.IO.File]::ReadAllText('$(RevitInstallDir)/RevitAPI.runtimeconfig.json'))</SelectedRevitRuntime>
+    </PropertyGroup>
+    <Error Condition="'$(RevitYear)' == '2026' And !$(SelectedRevitRuntime.Contains('net10.0'))" Text="This modern target requires Revit 2026.5+ on .NET 10; earlier 2026 is not supported by this build." />
+  </Target>
+</Project>

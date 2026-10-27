@@ -1,0 +1,16 @@
+<Project>
+  <PropertyGroup Condition="'$(MSBuildProjectName)' == 'BimAgentLab.RevitProbe' Or '$(MSBuildProjectName)' == 'BimAgentLab.RevitReadiness' Or '$(MSBuildProjectName)' == 'BimAgentLab.FixtureTools'">
+    <IsRevitHostProject>true</IsRevitHostProject>
+    <RevitYear Condition="'$(RevitYear)' == ''">2024</RevitYear>
+    <RevitTargetFramework Condition="'$(RevitYear)' == '2024'">net48</RevitTargetFramework>
+    <RevitTargetFramework Condition="'$(RevitYear)' == '2026'">net10.0-windows</RevitTargetFramework>
+    <RevitInstallDir Condition="'$(RevitInstallDir)' == ''">$(ProgramW6432)\Autodesk\Revit $(RevitYear)</RevitInstallDir>
+    <DefaultItemExcludes>$(DefaultItemExcludes);bin/**;obj/**</DefaultItemExcludes>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(IsRevitHostProject)' == 'true' And '$(RevitYear)' == '2026'">
+    <BaseOutputPath>bin/Revit2026/</BaseOutputPath>
+    <BaseIntermediateOutputPath>obj/Revit2026/$(MSBuildProjectName)/</BaseIntermediateOutputPath>
+    <NuGetLockFilePath>$(MSBuildProjectDirectory)/packages.$(MSBuildProjectName).Revit2026.lock.json</NuGetLockFilePath>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+  </PropertyGroup>
+</Project>

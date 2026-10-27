@@ -1,6 +1,6 @@
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
+    <TargetFramework>$(RevitTargetFramework)</TargetFramework>
     <PlatformTarget>x64</PlatformTarget>
     <AssemblyName>BimAgentLab.RevitProbe</AssemblyName>
     <RootNamespace>BimAgentLab.RevitProbe</RootNamespace>
@@ -10,7 +10,6 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <!-- This probe uses the installed 4.8 targeting pack, with no NuGet packages. -->
     <AutomaticallyUseReferenceAssemblyPackages>false</AutomaticallyUseReferenceAssemblyPackages>
-    <RevitInstallDir Condition="'$(RevitInstallDir)' == ''">$(ProgramW6432)\Autodesk\Revit 2024</RevitInstallDir>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="ReadOnlyProbeCommand.cs" />
@@ -25,6 +24,6 @@
   </ItemGroup>
   <Target Name="CheckRevitReferences" BeforeTargets="ResolveReferences">
     <Error Condition="!Exists('$(RevitInstallDir)\RevitAPI.dll') Or !Exists('$(RevitInstallDir)\RevitAPIUI.dll')"
-           Text="Revit 2024 API libraries were not found. Set RevitInstallDir to your Revit 2024 installation folder." />
+           Text="Matching Revit API libraries were not found. Set RevitInstallDir for the selected RevitYear." />
   </Target>
 </Project>

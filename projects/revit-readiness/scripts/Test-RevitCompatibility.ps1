@@ -4,6 +4,8 @@ $ErrorActionPreference='Stop'
 if(-not $IsWindows){throw 'Compatibility tests require Windows (net48 and Windows bridge runtime).'}
 Push-Location (Split-Path $PSScriptRoot -Parent)
 try {
+    python -m unittest discover -s tests -p test_revit_targets.py -v
+    if($LASTEXITCODE -ne 0){throw 'Revit year/host binding checks failed.'}
     dotnet build tests/compatibility-tests/BimAgentLab.RevitCompatibility.Tests.csproj -c Release --nologo
     if($LASTEXITCODE -ne 0){throw 'Compatibility harness build failed.'}
     $evidence=Join-Path (Get-Location) ('samples/local/compatibility-tests/'+[guid]::NewGuid().ToString('N'))

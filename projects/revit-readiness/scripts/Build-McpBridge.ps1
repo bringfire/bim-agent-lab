@@ -1,8 +1,8 @@
 [CmdletBinding()]
-param([switch]$IncludeFixtureTools,[string]$RevitInstallDir="$env:ProgramW6432\Autodesk\Revit 2024")
+param([switch]$IncludeFixtureTools,[string]$RevitInstallDir,[ValidateSet('2024','2026')][string]$RevitYear='2024')
 $ErrorActionPreference='Stop'
 if(-not [Environment]::Is64BitProcess -or -not $IsWindows){throw 'Use 64-bit PowerShell 7 on Windows.'}
-& (Join-Path $PSScriptRoot 'Build-Readiness.ps1') -IncludeFixtureTools:$IncludeFixtureTools -RevitInstallDir $RevitInstallDir
+& (Join-Path $PSScriptRoot 'Build-Readiness.ps1') -IncludeFixtureTools:$IncludeFixtureTools -RevitInstallDir $RevitInstallDir -RevitYear $RevitYear
 if($LASTEXITCODE -ne 0){throw 'Readiness build failed.'}
 $project=Split-Path $PSScriptRoot -Parent
 $publish=Join-Path $project 'samples/local/mcp-publish'
