@@ -2,6 +2,8 @@
 
 Use this list **before** planning a hands-on build. It describes the current source checkout as of October 27, 2026. The verified host baseline is Revit 2024; Revit 2026.5 compatibility is being prepared and must pass host testing before its participant requirements are finalized. Reading the lessons or watching the seminar does not require installing this build chain.
 
+**Verification update:** both 2024 and 2026.5 probe/readiness/fixture builds now pass, with year-specific installation/undo checks. Live 2026.5 proof is pending. The [current verification record](../../projects/revit-readiness/docs/verification/2026-10-27-revit-2026-5.md) provides the actual scope and commands. Select `-RevitYear 2024` or `-RevitYear 2026`; the latter means **2026.5+ on .NET 10**, not earlier 2026 releases. The existing SDK 10.0.204 plus Framework 4.8 development references remain the build prerequisites; no additional SDK was introduced by the port.
+
 ## Revit's target versus this repository's compiler choice
 
 The compiler SDK version and the framework a plugin targets are different settings. **Revit 2024 does not itself require Microsoft .NET SDK 10.** This repository requires it because the external MCP server targets `net10.0`, shared libraries include a modern target, and `global.json` pins SDK 10.0.204.

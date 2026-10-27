@@ -1,6 +1,7 @@
 #requires -Version 7.0
 Set-StrictMode -Version Latest
 $ErrorActionPreference='Stop'
+. (Join-Path $PSScriptRoot 'RevitTarget.ps1')
 $script:Utf8=[Text.UTF8Encoding]::new($false)
 $script:TestBoundary=$null
 class McpDeploymentLease : System.IDisposable {
@@ -153,10 +154,16 @@ function New-CommandXml($Assembly,$Id,$Class,$Text,$Availability='') {
     $a=[Security.SecurityElement]::Escape($Assembly)
     $script:Utf8.GetBytes("<?xml version=`"1.0`" encoding=`"utf-8`"?><RevitAddIns><AddIn Type=`"Command`"><Assembly>$a</Assembly><AddInId>$Id</AddInId><FullClassName>$Class</FullClassName><Text>$Text</Text><VendorId>BIAL</VendorId><VendorDescription>BIM Agent Lab</VendorDescription>$Availability<AllowLoadIntoExistingSession>false</AllowLoadIntoExistingSession></AddIn></RevitAddIns>")
 }
+function Assert-DestinationYear($Root,$Year) {
+    $leaf=Split-Path $Root -Leaf
+    if($leaf -match '^\d{4}$' -and $leaf -ne $Year){throw 'Revit destination year differs from the selected payload year.'}
+}
 function New-McpDeploymentPlan {
-    param($Lease,[string]$SourceRoot,[string]$RevitAddinsRoot,[string]$ServerRoot,[switch]$IncludeMcpBridge,[switch]$IncludeFixtureTools,[string]$FixtureSourceCopy)
+    param($Lease,[string]$SourceRoot,[string]$RevitAddinsRoot,[string]$ServerRoot,[switch]$IncludeMcpBridge,[switch]$IncludeFixtureTools,[string]$FixtureSourceCopy,[ValidateSet('2024','2026')][string]$RevitYear='2024')
     Assert-Lease $Lease;Assert-RevitClosed
     $source=Get-Canonical $SourceRoot;$addins=Get-Canonical $RevitAddinsRoot;$server=Get-Canonical $ServerRoot
+    Assert-DestinationYear $addins $RevitYear
+    $target=Get-RevitTarget -RevitYear $RevitYear
     $recovery=Get-Canonical (Join-Path (Split-Path $server) 'InstallRecovery')
     $roots=@($source,$addins,$server,$recovery)
     foreach($r in $roots) {Assert-PlainPath $r;foreach($other in $roots){if($r -ne $other -and (Test-InRoot $r $other)){throw 'Source, installation and recovery roots must be disjoint.'}}}
@@ -170,7 +177,12 @@ function New-McpDeploymentPlan {
     $owned=Assert-Manifest $mainManifest @($mainId) @($mainClass) $mainDll
     if([IO.File]::Exists((Join-Path $main 'installed-files.json')) -and -not $owned) {throw 'Main inventory lacks recognized manifest.'}
     $payload=[ordered]@{}
-    foreach($name in 'BimAgentLab.RevitReadiness.dll','BimAgentLab.Readiness.Core.dll','BimAgentLab.RevitBridge.Runtime.dll','BimAgentLab.RevitBridge.Contract.dll') {Add-Payload $payload $name (Join-Path $source "src/revit-addin/bin/Release/net48/$name")}
+    foreach($name in 'BimAgentLab.RevitReadiness.dll','BimAgentLab.Readiness.Core.dll','BimAgentLab.RevitBridge.Runtime.dll','BimAgentLab.RevitBridge.Contract.dll') {
+        $file=Join-Path $source "src/revit-addin/$($target.OutputRelative)/$name"
+        if($RevitYear -eq '2026'){Assert-RevitAssembly -LiteralPath $file -RevitYear $RevitYear -RequireRevitApi:($name -eq 'BimAgentLab.RevitReadiness.dll')}
+        Add-Payload $payload $name $file
+    }
+    if($RevitYear -eq '2026'){Add-Payload $payload 'BimAgentLab.RevitReadiness.deps.json' (Join-Path $source "src/revit-addin/$($target.OutputRelative)/BimAgentLab.RevitReadiness.deps.json")}
     $excel=Join-Path $source 'src/excel-report/bin/Release/net48'
     foreach($required in 'BimAgentLab.Readiness.Excel.exe','BimAgentLab.Readiness.Excel.exe.config','ClosedXML.dll') {if(-not [IO.File]::Exists((Join-Path $excel $required))) {throw "Missing Excel dependency: $required"}}
     foreach($file in Get-ChildItem -LiteralPath $excel -File) {
@@ -203,7 +215,10 @@ function New-McpDeploymentPlan {
         if($IncludeFixtureTools) {
             $model=Get-Canonical $FixtureSourceCopy;Assert-PlainPath $model
             if(-not [IO.File]::Exists($model)){throw 'Fixture source copy is missing.'}
-            $f['BimAgentLab.FixtureTools.dll']=[IO.File]::ReadAllBytes((Join-Path $source 'tests/fixture-tools/bin/Release/net48/BimAgentLab.FixtureTools.dll'))
+            $fixtureDll=Join-Path $source "tests/fixture-tools/$($target.OutputRelative)/BimAgentLab.FixtureTools.dll"
+            if($RevitYear -eq '2026'){Assert-RevitAssembly -LiteralPath $fixtureDll -RevitYear $RevitYear -RequireRevitApi}
+            $f['BimAgentLab.FixtureTools.dll']=[IO.File]::ReadAllBytes($fixtureDll)
+            if($RevitYear -eq '2026'){Add-Payload $f 'BimAgentLab.FixtureTools.deps.json' (Join-Path $source "tests/fixture-tools/$($target.OutputRelative)/BimAgentLab.FixtureTools.deps.json")}
             $f['fixture-settings.json']=Get-JsonBytes @{SourceCopy=$model}
             # Existing legacy settings were not inventoried: their recognized manifest owns this one known path.
             if([IO.File]::Exists((Join-Path $fixture 'fixture-settings.json')) -and -not $prior.ContainsKey('fixture-settings.json')) {
@@ -260,6 +275,41 @@ function New-McpDeploymentPlan {
     $plan.CreatedDirectories=@($dirs.Keys | Sort-Object Length)
     $plan
 }
+function New-RevitProbeDeploymentPlan {
+    param($Lease,[string]$SourceRoot,[string]$RevitAddinsRoot,[string]$RecoveryRoot,[ValidateSet('2024','2026')][string]$RevitYear='2024')
+    Assert-Lease $Lease;Assert-RevitClosed
+    $source=Get-Canonical $SourceRoot;$addins=Get-Canonical $RevitAddinsRoot;$recovery=Get-Canonical $RecoveryRoot
+    Assert-DestinationYear $addins $RevitYear
+    $roots=@($source,$addins,$recovery)
+    foreach($r in $roots){Assert-PlainPath $r;foreach($other in $roots){if($r -ne $other -and (Test-InRoot $r $other)){throw 'Source, probe and recovery roots must be disjoint.'}}}
+    if(@($roots|Select-Object -Unique).Count -ne 3){throw 'Probe roots must be distinct.'}
+    Assert-NoPending $recovery
+    $target=Get-RevitTarget -RevitYear $RevitYear
+    $folder=Join-Path $addins 'BimAgentLab.ReadOnlyProbe';$dll=Join-Path $folder 'BimAgentLab.RevitProbe.dll'
+    $manifest=Join-Path $addins 'BimAgentLab.ReadOnlyProbe.addin'
+    $owned=Assert-Manifest $manifest @('8B3FA065-26DF-4076-A194-43C1457C81AF') @('BimAgentLab.RevitProbe.ReadOnlyProbeCommand') $dll
+    if([IO.File]::Exists((Join-Path $folder 'installed-files.json')) -and -not $owned){throw 'Probe inventory lacks recognized manifest.'}
+    $built=Join-Path $source "src/revit-addin/$($target.OutputRelative)/BimAgentLab.RevitProbe.dll"
+    Assert-RevitAssembly -LiteralPath $built -RevitYear $RevitYear -RequireRevitApi
+    $plan=[ordered]@{Version=1;Transaction=[guid]::NewGuid().ToString('N');Roots=@($addins);RecoveryRoot=$recovery;Operations=[Collections.Generic.List[object]]::new();CreatedDirectories=@()}
+    $payload=[ordered]@{};Add-Payload $payload 'BimAgentLab.RevitProbe.dll' $built
+    if($RevitYear -eq '2026'){Add-Payload $payload 'BimAgentLab.RevitProbe.deps.json' (Join-Path $source "src/revit-addin/$($target.OutputRelative)/BimAgentLab.RevitProbe.deps.json")}
+    Add-FolderPlan $plan $folder $payload 'Main'
+    $xml=[IO.File]::ReadAllText((Join-Path $source 'src/revit-addin/BimAgentLab.ReadOnlyProbe.addin.template')).Replace('__ASSEMBLY_PATH__',[Security.SecurityElement]::Escape($dll))
+    try {
+        [xml]$check=$xml;$entries=@($check.RevitAddIns.AddIn)
+        if($entries.Count -ne 1 -or $entries[0].Type -ne 'Command' -or $entries[0].AddInId -ne '8B3FA065-26DF-4076-A194-43C1457C81AF' -or $entries[0].FullClassName -ne 'BimAgentLab.RevitProbe.ReadOnlyProbeCommand' -or $entries[0].Assembly -ne $dll -or $entries[0].VendorId -ne 'BIAL'){throw 'Unexpected probe template.'}
+    } catch {throw 'Probe template identity mismatch.'}
+    Add-Operation $plan $manifest $script:Utf8.GetBytes($xml) 'Manifest' $owned
+    $dirs=@{}
+    foreach($op in $plan.Operations){
+        if(Test-Path -LiteralPath $op.Temporary){throw 'Planned temporary file already exists.'}
+        $p=Split-Path $op.Target
+        while($p -and -not [IO.Directory]::Exists($p)){Assert-PlainPath $p;if(-not (Test-InRoot $recovery $p)){$dirs[$p]=$true};$p=Split-Path $p}
+    }
+    $plan.CreatedDirectories=@($dirs.Keys|Sort-Object Length)
+    $plan
+}
 function Save-McpDeploymentRecovery {
     param($Lease,$Plan,[string]$RecoveryRoot)
     Assert-Lease $Lease;Assert-RevitClosed
@@ -295,9 +345,9 @@ function Read-Receipt($Path) {
     if((Get-BytesHash $bytes) -ne [IO.File]::ReadAllText((Join-Path $folder 'receipt.sha256'))){throw 'RecoveryRequired: receipt checksum mismatch.'}
     $r=$script:Utf8.GetString($bytes)|ConvertFrom-Json -AsHashtable
     if($r.Version -ne 1 -or $r.Transaction -notmatch '^[a-f0-9]{32}$' -or $folder -ne (Join-Path (Get-Canonical $r.RecoveryRoot) $r.Transaction) -or (Split-Path $path -Leaf) -ne 'receipt.json'){throw 'Invalid prepared receipt identity.'}
-    if($r.Roots.Count -ne 2){throw 'Invalid roots.'}
+    if($r.Roots.Count -notin @(1,2)){throw 'Invalid roots.'}
     foreach($root in $r.Roots){if((Get-Canonical $root) -ne $root){throw 'Noncanonical root.'};Assert-PlainPath $root;if($root -eq $r.RecoveryRoot -or (Test-InRoot $root $r.RecoveryRoot) -or (Test-InRoot $r.RecoveryRoot $root)){throw 'Recovery overlaps installed files.'}}
-    if($r.Roots[0] -eq $r.Roots[1] -or (Test-InRoot $r.Roots[0] $r.Roots[1]) -or (Test-InRoot $r.Roots[1] $r.Roots[0])){throw 'Installation roots overlap.'}
+    if($r.Roots.Count -eq 2 -and ($r.Roots[0] -eq $r.Roots[1] -or (Test-InRoot $r.Roots[0] $r.Roots[1]) -or (Test-InRoot $r.Roots[1] $r.Roots[0]))){throw 'Installation roots overlap.'}
     $seen=@{}
     foreach($op in $r.Operations) {
         $target=Get-Canonical $op.Target
@@ -417,4 +467,4 @@ function Invoke-McpDeploymentPlan {
         throw $failure
     }
 }
-Export-ModuleMember -Function Enter-McpDeploymentLock,New-McpDeploymentPlan,Save-McpDeploymentRecovery,Invoke-McpDeploymentPlan,Restore-McpDeployment
+Export-ModuleMember -Function Enter-McpDeploymentLock,New-McpDeploymentPlan,New-RevitProbeDeploymentPlan,Save-McpDeploymentRecovery,Invoke-McpDeploymentPlan,Restore-McpDeployment

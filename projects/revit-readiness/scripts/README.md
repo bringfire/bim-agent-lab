@@ -1,5 +1,9 @@
 # Revit build and fixture scripts
 
+**2026.5 build selection:** environment, build and installation scripts now accept `-RevitYear 2024` (default) or `-RevitYear 2026` (installed .NET 10/2026.5+ only). The [dated verification record](../docs/verification/2026-10-27-revit-2026-5.md) distinguishes successful builds/disposable recovery tests from pending live host proof. Modern outputs/intermediates/lockfiles are isolated; keep the documented SDK and legacy exporter references installed.
+
+`Test-RevitCompatibility.ps1` runs year/API guards and dual-runtime semantic JSON checks. With Revit closed, `-IncludeDeployment` additionally tests modern payload/undo and preservation of a 2024 tree using disposable roots. Probe installation now also prepares a durable receipt consumed by `Undo-McpBridgeInstall.ps1`. An old probe installation with no inventory is preserved and rejected for upgrade rather than silently adopted; coordinate a backed-up migration if encountered.
+
 Run these PowerShell scripts from a local Windows checkout. They require Git, the SDK selected in `../global.json`, installed .NET Framework 4.8 targeting references, and Revit 2024. See the [agent setup guide](../../../docs/how-to/build-read-only-revit-command.md) and [agent readiness guide](../../../docs/how-to/build-required-information-check.md).
 
 | Script | Operation |
