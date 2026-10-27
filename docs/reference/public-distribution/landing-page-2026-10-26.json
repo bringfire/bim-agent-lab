@@ -10,6 +10,25 @@
   },
   "correction": "Rename .github/README.md to .github/hosting-and-automation.md; retain root participant README.",
   "after": {
-    "status": "Pending push and anonymous rendered-page verification."
+    "status": "Passed",
+    "observed_utc": "2026-10-27T01:37:51.966864+00:00",
+    "commit": "0031319bc8f6d947009f30b5c40b6f948be7bc36",
+    "access": "Unauthenticated urllib requests; no authorization headers or cookies.",
+    "selected_readme": "README.md",
+    "readme_git_blob_sha": "5cc5901a5d026d44fff022417ace7f9e9224eefc",
+    "selected_content_matches_root_git_object": true,
+    "rendered_url": "https://github.com/bringfire/bim-agent-lab",
+    "rendered_heading": "BIM Agent Lab",
+    "participant_tagline_present": true,
+    "public_access_statement_present": true,
+    "placeholder_absent_from_readme_article": true,
+    "rendered_links_checked": [
+      "docs/start-here.md",
+      "docs/how-to/agent-handoff.md",
+      "output/pdf/swacca-2026-participant-handout-oct29-30.pdf",
+      "output/docx/swacca-2026-participant-handout-oct29-30.docx"
+    ],
+    "rendered_html_sha256": "90173b14ead83b5184a178915a2711c343be3db4dfee5ddeeae64b395ff7f673",
+    "participant_landing_pass": true
   }
 }
