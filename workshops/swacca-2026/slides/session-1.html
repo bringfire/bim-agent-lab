@@ -113,17 +113,47 @@
 <section class="slide" data-title="The example we will follow" data-page="1">
   <h2>The example we will follow</h2>
   <div class="body">
-    <p class="big">Can we tell whether required wall and ceiling type information is present?</p>
-    <div class="flow push">
-      <div>Written checklist<span>Which fields each type requires</span></div><i>→</i>
-      <div>Read-only Revit check<span>Findings and coverage</span></div><i>→</i>
-      <div>Excel report<span>Four worksheets</span></div><i>→</i>
-      <div>Desktop AI tools<span>Through MCP</span></div>
-    </div>
+    <p class="big" style="font-size: 48px; max-width: none; text-wrap: balance">Can we tell whether required wall and ceiling type information is present?</p>
+    <svg class="dg push" viewBox="0 0 1136 280" role="img" aria-label="A written checklist and the Revit model feed one read-only check, which produces findings and coverage. The same check is used two ways: an Excel report from a manual Revit command, and a desktop AI app asking through MCP.">
+      <g data-step="1">
+        <rect class="box" x="0" y="10" width="270" height="100" rx="8"/>
+        <text class="t-title" x="18" y="44">Written checklist</text>
+        <text class="t-small" x="18" y="70">which fields each type requires,</text>
+        <text class="t-small" x="18" y="92">and which are not required</text>
+        <rect class="box" x="0" y="170" width="270" height="100" rx="8"/>
+        <text class="t-title" x="18" y="204">Revit model</text>
+        <text class="t-small" x="18" y="230">a disposable sample copy,</text>
+        <text class="t-small" x="18" y="252">16 declared instances</text>
+      </g>
+      <g data-step="2">
+        <path class="arr draw" pathLength="1" d="M272 60 C340 60 340 125 416 125"/>
+        <path class="arr draw" pathLength="1" d="M272 220 C340 220 340 155 416 155"/>
+        <g class="fade" style="--d:.5s">
+          <rect class="box-hi" x="420" y="85" width="290" height="110" rx="8"/>
+          <text class="t-title" x="438" y="120">Read-only check</text>
+          <text class="t-small" x="438" y="146">findings, affected instances</text>
+          <text class="t-small" x="438" y="168">and coverage</text>
+        </g>
+      </g>
+      <g data-step="3">
+        <path class="arr draw" pathLength="1" d="M712 125 C780 125 780 60 846 60"/>
+        <path class="arr draw" pathLength="1" d="M712 155 C780 155 780 220 846 220"/>
+        <g class="fade" style="--d:.5s">
+          <rect class="box" x="850" y="10" width="286" height="100" rx="8"/>
+          <text class="t-title" x="868" y="44">Excel report</text>
+          <text class="t-small" x="868" y="70">a manual command in Revit,</text>
+          <text class="t-small" x="868" y="92">four worksheets</text>
+          <rect class="box" x="850" y="170" width="286" height="100" rx="8"/>
+          <text class="t-title" x="868" y="204">Desktop AI app</text>
+          <text class="t-small" x="868" y="230">asks through MCP:</text>
+          <text class="t-small" x="868" y="252">Codex desktop, Claude Desktop</text>
+        </g>
+      </g>
+    </svg>
   </div>
   <aside class="notes">
-    <p>Model readiness leads the example. It is a contractor's question before a handoff: is the type information we rely on actually there?</p>
-    <p>One calculation, several ways to reach it: a Revit command, an Excel report, and an AI desktop app asking the model directly.</p>
+    <p>Three clicks: the inputs, the read-only check, then the two ways to use it. Model readiness leads the example. It is a contractor's question before a handoff: is the type information we rely on actually there?</p>
+    <p>The Excel report and the desktop AI app are separate routes to the same calculation, not a chain. Session 2 shows both.</p>
   </aside>
 </section>
 
