@@ -421,16 +421,44 @@
   <h2>Consume, adapt, or learn from</h2>
   <p class="sub">Ask the agent to say which, for every resource it brings in.</p>
   <div class="body">
-    <div class="cols three">
-      <div class="card" data-tone="git"><span class="label">Consume</span><h3>A dependency</h3>ClosedXML for the Excel report. The official C# MCP SDK 2.2.0 for the agent connection.</div>
-      <div class="card" data-tone="practice"><span class="label">Adapt</span><h3>Code with attribution</h3>One small input-cancellation helper from the C# SDK's source, with attribution and its license kept.</div>
-      <div class="card" data-tone="research"><span class="label">Learn from</span><h3>A precedent</h3>The TypeScript MCP SDK 1.26.0 and existing Revit bridges. Studied; no code copied or installed.</div>
-    </div>
+    <svg class="dg" viewBox="0 0 1136 330" role="img" aria-label="Three sources feed our project in different ways. Consumed: the ClosedXML and C# MCP SDK 2.2.0 packages ship inside the tool. Adapted: one small cancellation helper copied from the C# SDK source, with attribution and license kept. Learned from: the TypeScript SDK 1.26.0 and existing Revit bridges, ideas only, with no code copied or installed.">
+      <rect class="box" x="0" y="10" width="300" height="80" rx="8"/>
+      <text class="t-title" x="18" y="44">Published packages</text><text class="t-small" x="18" y="68">from NuGet</text>
+      <rect class="box" x="0" y="125" width="300" height="80" rx="8"/>
+      <text class="t-title" x="18" y="159">Another project's source</text><text class="t-small" x="18" y="183">the C# MCP SDK repository</text>
+      <rect class="box" x="0" y="240" width="300" height="80" rx="8"/>
+      <text class="t-title" x="18" y="274">Precedents</text><text class="t-small" x="18" y="298">TypeScript SDK 1.26.0, Revit bridges</text>
+      <rect class="box-hi" x="560" y="0" width="576" height="330" rx="10"/>
+      <text class="t-title" x="580" y="34">Our project</text>
+      <text class="t-small" x="580" y="314">plus our own original code: host, tools, evaluator</text>
+      <g data-step="1">
+        <path class="arr ok draw" pathLength="1" d="M302 50 C430 50 430 88 574 88"/>
+        <text class="t-mono t-ok" x="322" y="40">consume</text>
+        <g class="fade" style="--d:.5s">
+          <rect class="box-ok" x="580" y="64" width="210" height="48" rx="6"/><text class="t-mono" x="598" y="94">ClosedXML</text>
+          <rect class="box-ok" x="806" y="64" width="250" height="48" rx="6"/><text class="t-mono" x="824" y="94">C# MCP SDK 2.2.0</text>
+          <text class="t-small" x="580" y="138">ships with your tool, and brings its own dependencies</text>
+        </g>
+      </g>
+      <g data-step="2">
+        <path class="arr prac draw" pathLength="1" d="M302 165 C430 165 430 190 574 190"/>
+        <text class="t-mono t-warn" x="322" y="155">adapt</text>
+        <g class="fade" style="--d:.5s">
+          <rect class="box-warn" x="580" y="166" width="300" height="48" rx="6"/><text class="t-mono" x="598" y="196">small cancellation helper</text>
+          <text class="t-small t-warn" x="898" y="196">attribution + license kept</text>
+        </g>
+      </g>
+      <g data-step="3">
+        <path class="dash-arr" d="M302 280 L554 280"/>
+        <text class="t-mono" x="322" y="270">learn from</text>
+        <text class="t-small" x="580" y="285">ideas only: no code copied or installed</text>
+      </g>
+    </svg>
     <p class="small muted push">License labels are evidence to review, not a blanket conclusion that everything may be redistributed.</p>
   </div>
   <aside class="notes">
-    <p>These three categories carry different obligations. A dependency ships with your tool and brings its own dependencies. Adapted code needs attribution and license terms kept. A precedent costs nothing to ship but still needs to be checked.</p>
-    <p>The repository's THIRD_PARTY_NOTICES file records what we consume and adapt.</p>
+    <p>Three clicks, one relationship each. A dependency ships with your tool and brings its own dependencies. Adapted code needs attribution and its license terms kept. A precedent costs nothing to ship but still has to be checked.</p>
+    <p>The repository's THIRD_PARTY_NOTICES file records what we consume and adapt. Everything else in the project is original lab code.</p>
   </aside>
 </section>
 
