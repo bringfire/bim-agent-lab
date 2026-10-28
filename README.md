@@ -63,7 +63,7 @@ The [participant lessons](docs/tutorials/README.md) focus on **how we engaged th
 
 | Area | Recorded baseline and limits |
 |---|---|
-| Revit | The 2024/net48 route is retained. On October 27 the local candidate passed principal command/Excel and SDK-MCP checks in **Revit 2026.5.1, API build 26.5.10.38**, using separate net10.0-windows host outputs. Earlier 2026/.NET 8 and 2027 remain unverified. See the [current laptop record](projects/revit-readiness/docs/verification/2026-10-27-revit-2026-5.md) for scope and remaining desktop/2024 checks. |
+| Revit | The 2024/net48 route is retained. On October 27 the local candidate passed principal command/Excel and SDK-MCP checks in **Revit 2026.5.1, API build 26.5.10.38**, using separate net10.0-windows host outputs. Earlier 2026/.NET 8 and 2027 remain unverified. See the [current laptop record](projects/revit-readiness/docs/verification/2026-10-27-revit-2026-5.md) for the fresh 2024 pass, scope and remaining desktop checks. |
 | MCP server | Separate .NET 10 process using official C# MCP SDK **2.2.0**. The SDK version and MCP protocol revision are separate identifiers. |
 | Desktop clients | Historical live runs cover Codex desktop and Claude Desktop Chat, using protocols `2025-06-18` and `2025-11-25`. A separate SDK regression retains `2026-07-28`. |
 | Results | Retained evidence supports the five sample computations and stale-context rejection/recovery. The manual command and Excel output have their own verification records. |
