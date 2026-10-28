@@ -161,23 +161,27 @@
   <h2>What the finished check reports</h2>
   <div class="body">
     <div class="cols">
-      <div class="center">
-        <figure class="shot" style="height: 480px">
-          <img src="../../../projects/revit-readiness/docs/verification/excel-evidence/revit-wall-defects.jpg" alt="Revit dialog: 2 missing required type values, 6 affected instances, examined 16 of 16 declared cases, document modified False before and after.">
-          <figcaption>Revit 2024 command · prepared wall-defects sample · repository evidence</figcaption>
-        </figure>
-      </div>
+      <figure class="shot">
+        <div class="anno">
+          <img src="../../../projects/revit-readiness/docs/verification/excel-evidence/revit-wall-defects.jpg" alt="Revit dialog: 2 missing required type values, 6 affected instances, examined 16 of 16 declared cases, 1196 host instances and 6 links outside scope, document modified False before and after." style="height: 455px">
+          <span class="hl" data-tone="bad" data-step="1" style="left: 1.4%; top: 8.1%; width: 37.1%; height: 4.4%"></span>
+          <span class="hl" data-tone="practice" data-step="2" style="left: 1.4%; top: 14.6%; width: 31.3%; height: 3.5%"></span>
+          <span class="hl" data-tone="research" data-step="3" style="left: 1.4%; top: 17.9%; width: 71.1%; height: 9.1%"></span>
+          <span class="hl" data-tone="git" data-step="4" style="left: 1.4%; top: 28.9%; width: 42.4%; height: 3.5%"></span>
+        </div>
+        <figcaption>Revit 2024 · wall-defects sample · repository evidence</figcaption>
+      </figure>
       <div>
-        <div class="callout"><strong>2 missing required type values</strong>Wall B has no Fire Rating; Wall D has no Code.</div>
-        <div class="callout"><strong>6 affected instances</strong>A missing type value affects every placed instance.</div>
-        <div class="callout"><strong>16 of 16 declared cases examined</strong>Coverage is complete for this checklist scope.</div>
-        <div class="callout"><strong>Modified: False before / False after</strong>Read-only, on a disposable sample copy.</div>
+        <div class="callout rise" data-tone="bad" data-step="1"><strong>2 missing required type values</strong>Wall B has no Fire Rating; Wall D has no Code.</div>
+        <div class="callout rise" data-tone="practice" data-step="2"><strong>6 affected instances</strong>A missing type value affects every placed instance.</div>
+        <div class="callout rise" data-tone="research" data-step="3"><strong>16 of 16 declared cases examined</strong>It also says what it left out: 1,196 other host instances and 6 links.</div>
+        <div class="callout rise" data-tone="git" data-step="4"><strong>Modified: False before / False after</strong>Read-only, on a disposable sample copy.</div>
       </div>
     </div>
   </div>
   <aside class="notes">
-    <p>This is the real result dialog from the Revit 2024 command on one of our prepared sample copies. Point out the parts that make it assessable: the count, the scope, coverage, and the read-only evidence.</p>
-    <p>Note the line about 1,196 host instances outside scope: the tool says what it did not examine.</p>
+    <p>Four clicks. Each one outlines a line in the real Revit 2024 dialog and brings in its callout, so the room sees the number in the evidence rather than taking the slide's word for it.</p>
+    <p>Dwell on the third: the tool states what it did not examine. That is the design response to the 100-element limit coming up on slide 15.</p>
   </aside>
 </section>
 
