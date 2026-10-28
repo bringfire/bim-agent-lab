@@ -300,3 +300,19 @@ body.presenter > .stage { display: none; }
   .draw, .on .draw { animation: none; stroke-dashoffset: 0; }
   .on .fade { animation: none; opacity: 1; }
 }
+
+/* Two-session timeline: block widths follow minutes, colours follow the agenda tones */
+.tl { display: grid; gap: 8px; }
+.tl-head { display: flex; gap: 16px; align-items: baseline; }
+.tl-head b { font: 600 23px/1.2 var(--body); }
+.tl-head span { font-size: 19px; color: var(--muted); }
+.tl-bar { display: flex; gap: 3px; height: 86px; }
+.tl-bar > div { flex: var(--m); min-width: 0; padding: 8px 9px; font-size: 17px; line-height: 1.2; overflow: hidden;
+  background: color-mix(in srgb, var(--tone) 24%, var(--sheet)); border-top: 5px solid var(--tone); }
+.tl-bar b { display: block; margin-bottom: 4px; font: 500 13px/1 var(--mono); color: var(--muted); }
+.tl-bar b::after { content: " min"; }
+.tl-gap { justify-self: start; padding: 4px 16px; border-left: 3px dashed var(--rule); font-size: 18px; color: var(--muted); }
+.tl-gap b { font: 500 16px var(--mono); color: var(--ink); margin-right: 8px; }
+.tl-after { display: flex; align-items: baseline; gap: 12px; font-size: 19px; color: var(--muted); }
+.tl-after span { font: 30px/1 var(--mono); color: var(--git); }
+.tl-after b { font-size: 22px; color: var(--ink); }
