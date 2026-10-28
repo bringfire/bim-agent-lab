@@ -94,7 +94,8 @@ strong { font-weight: 600; }
   padding: 18px 20px; display: flex; flex-direction: column; gap: 8px; font-size: 21px; line-height: 1.35; }
 .card h3 { font-size: 30px; }
 .card .label { color: var(--tone, var(--muted)); }
-.card.dim { opacity: .55; }
+.card.planned { background: transparent; border: 2px dashed var(--muted); border-top: 4px dashed var(--muted); }
+.card.planned .label { color: var(--muted); }
 .card.ok { --tone: var(--ok); }
 .card.warn { --tone: var(--warn); }
 
