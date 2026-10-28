@@ -8,7 +8,7 @@ You can read the lessons without installing Revit. To try the working example, u
 
 ## What you can try today
 
-The first example checks **required wall and ceiling type information** in Revit 2024 against a written checklist. It reports missing values, the elements they affect, what was examined, and what could not be checked.
+The first example checks **required wall and ceiling type information** against a written checklist. The 2024 route is retained; the [October 27 laptop candidate](../projects/revit-readiness/docs/verification/2026-10-27-revit-2026-5.md) also passed the three principal command/Excel and SDK-MCP cases on Revit 2026.5.1. It reports missing values, the elements they affect, what was examined, and what could not be checked.
 
 There are two ways to use it:
 
