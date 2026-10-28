@@ -515,18 +515,27 @@
   <h2>Start with a useful question.</h2>
   <p class="sub">Your responsibility is the purpose, scope and standard of evidence.</p>
   <div class="body">
-    <table class="t-small">
-      <tr><th style="width: 18%">Include</th><th>For our example</th></tr>
-      <tr><td>Purpose</td><td>Find missing type information before a defined handoff.</td></tr>
-      <tr><td>Scope</td><td>The declared host walls and ceilings, level and phase; say whether links count.</td></tr>
-      <tr><td>Rules</td><td>Which fields are required for which types, and which exceptions are explicit.</td></tr>
-      <tr><td>Boundaries</td><td>Read a disposable sample. Do not change model values.</td></tr>
-      <tr><td>Output</td><td>Findings, affected instances, coverage and a clear scoped verdict.</td></tr>
-      <tr><td>Proof</td><td>Known passing, failing and incomplete cases; compare with Revit schedules.</td></tr>
-    </table>
+    <div class="cols">
+      <div class="rise" data-step="1">
+        <h3 class="half">The task</h3>
+        <table class="t-roomy">
+          <tr><td style="width: 30%">Purpose</td><td>Find missing type information before a defined handoff.</td></tr>
+          <tr><td>Scope</td><td>The declared host walls and ceilings, level and phase; say whether links count.</td></tr>
+          <tr><td>Rules</td><td>Which fields are required for which types, and which exceptions are explicit.</td></tr>
+        </table>
+      </div>
+      <div class="rise" data-step="2" data-tone="practice">
+        <h3 class="half">How you'll judge it</h3>
+        <table class="t-roomy">
+          <tr><td style="width: 30%">Boundaries</td><td>Read a disposable sample. Do not change model values.</td></tr>
+          <tr><td>Output</td><td>Findings, affected instances, coverage and a clear scoped verdict.</td></tr>
+          <tr><td>Proof</td><td>Known passing, failing and incomplete cases; compare with Revit schedules.</td></tr>
+        </table>
+      </div>
+    </div>
   </div>
   <aside class="notes">
-    <p>Handout page 2. Each row is a decision the professional makes, not the agent. Scope matters most: which level, which phase, whether links count.</p>
+    <p>Two clicks: what you are asking for, then how you will judge it. Half of a good brief is how you will check the answer. Handout page 2. Each row is a decision the professional makes, not the agent. Scope matters most: which level, which phase, whether links count.</p>
   </aside>
 </section>
 
@@ -537,13 +546,13 @@
       <figcaption>Actual prompt · the author</figcaption>
       <blockquote>“Ok, let's build the first readiness check for missing required wall and ceiling type information. Use a copy of a Revit sample project, verify the results independently, and record the process in bim-agent-lab.”</blockquote>
     </figure>
-    <figure class="prompt compact">
+    <figure class="prompt compact rise" data-step="1">
       <figcaption>Suggested follow-up for your own rule</figcaption>
       <blockquote>What makes this field required, where does that requirement come from, and which cases are valid exceptions? Show the proposed scope and expected answers before implementing the check.</blockquote>
     </figure>
   </div>
   <aside class="notes">
-    <p>A short prompt works because earlier context already set the rules: research first, read-only, sample copies, record everything. In a fresh conversation, point the agent at the repository instructions so that context comes back.</p>
+    <p>One click brings in the follow-up. A short prompt works because earlier context already set the rules: research first, read-only, sample copies, record everything. In a fresh conversation, point the agent at the repository instructions so that context comes back.</p>
   </aside>
 </section>
 
