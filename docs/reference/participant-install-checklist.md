@@ -2,7 +2,7 @@
 
 Use this list **before** planning a hands-on build. It describes the current source checkout as of October 27, 2026. The verified host baseline is Revit 2024; Revit 2026.5 compatibility is being prepared and must pass host testing before its participant requirements are finalized. Reading the lessons or watching the seminar does not require installing this build chain.
 
-**Verification update:** both 2024 and 2026.5 probe/readiness/fixture builds now pass, with year-specific installation/undo checks. Live 2026.5 proof is pending. The [current verification record](../../projects/revit-readiness/docs/verification/2026-10-27-revit-2026-5.md) provides the actual scope and commands. Select `-RevitYear 2024` or `-RevitYear 2026`; the latter means **2026.5+ on .NET 10**, not earlier 2026 releases. The existing SDK 10.0.204 plus Framework 4.8 development references remain the build prerequisites; no additional SDK was introduced by the port.
+**Verification update:** both 2024 and 2026.5 probe/readiness/fixture builds now pass, with year-specific installation/undo checks. The corrected 2026 candidate is installed on the laptop, with receipt hashes verified and the 2024 add-in folder preserved. Live 2026.5 command proof is pending. The [current verification record](../../projects/revit-readiness/docs/verification/2026-10-27-revit-2026-5.md) provides the actual scope and commands. Select `-RevitYear 2024` or `-RevitYear 2026`; the latter means **2026.5+ on .NET 10**, not earlier 2026 releases. The existing SDK 10.0.204 plus Framework 4.8 development references remain the build prerequisites; no additional SDK was introduced by the port.
 
 ## Revit's target versus this repository's compiler choice
 
@@ -57,7 +57,7 @@ Give your agent this **suggested prompt**:
 
 > Read the participant install checklist and project prerequisites. Inspect my exact Revit build, selected .NET SDK inside the project, Framework 4.8 targeting references, PowerShell 7, Git, Python and agent access. Report missing inputs before installing anything. After approved setup, run the environment check, locked restore and source build. Prepare a disposable sample and prove the read-only command in the intended Revit build. Explain separately what is installed, what compiles and what has actually run in Revit. Check client sign-in/connectivity before a live agent demonstration.
 
-The current `Check-Environment.ps1` checks the 2024 build baseline; it does not inventory all Python/MCP/client requirements or establish 2026 support. A successful inventory is followed by compilation and actual host proof.
+Run `Check-Environment.ps1 -RevitYear 2024` or `-RevitYear 2026` in `projects/revit-readiness/scripts`; omitting the year still selects 2024. The modern check requires the installed 2026 API/runtime to match the .NET 10 route. This script does not inventory all Python/MCP/client requirements. A successful inventory is followed by compilation and actual host proof.
 
 NuGet restores this lab's pinned C# libraries automatically; participants do not manually install the MCP SDK or ClosedXML. RevitLookup and pyRevit remain optional unless the selected exercise explicitly needs them. A separate Python installation for repository verification is different from running the beginner Dynamo Python example.
 

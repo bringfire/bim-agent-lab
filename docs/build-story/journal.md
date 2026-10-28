@@ -1,5 +1,13 @@
 # BIM Agent Lab build journal
 
+## 2026-10-27 - Port the plugins while preserving the earlier host
+
+Actual author instruction: “Ok, let's get the plugins working in Revit 2026.5 on this laptop. Keep Revit 2024 working too, and update the participant setup instructions as we verify things.” This authorized the targeted compatibility design. The agent kept the default 2024/net48 route, added separate 2026/.NET 10 host outputs and adapted JSON serialization without changing the MCP package pins or the separate net48 Excel helper.
+
+Both host builds passed without warnings/errors. Thirteen JSON cases per runtime agreed under an independent comparison; five host-selection checks, eight deployment/recovery cases and the existing 41-case deployment suite passed. A fresh whole-branch review found one repeated-install dependency-manifest collision. It was reproduced, corrected and covered before installation. These checks establish build and installer behavior, rather than a working Revit command.
+
+The corrected frozen candidate `fdad802` was installed with Revit closed. Prepared receipts and all 105 installed-operation hashes were verified; the empty 2024 add-in directory remained unchanged. Revit's startup journal identifies the laptop host as 2026.5.1. Startup then reached an unsigned-publisher trust prompt, which was handed to the author under the computer-use security rule. Live command, Excel and MCP proof remain pending. The [verification record](../../projects/revit-readiness/docs/verification/2026-10-27-revit-2026-5.md) records that boundary; the participant checklist has the exact tool downloads and year-selection commands. Delivered handouts and historical R3 acceptance remain separate.
+
 ## 2026-10-27 - Separate Revit's framework from the lab's SDK requirement
 
 The author asked whether SDK 9 is sufficient for Revit 2024, why a fresh Windows laptop needed SDK 10 and what download information participants need for 2024/2026 plugin extension. The agent verified the distinction rather than treating the lab's compiler pin as a universal Revit requirement. An unchanged 2024/net48 probe compiled with system SDK 9.0.319, zero warnings/errors, outside the project pin. The [travel evidence](../../projects/revit-readiness/docs/verification/2026-10-27-travel-toolchain.md#follow-up-sdk-9-and-the-2024-host) records the separate scope and first-use SDK side effect.

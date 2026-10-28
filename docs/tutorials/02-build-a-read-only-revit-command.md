@@ -68,3 +68,9 @@ A **suggested prompt for your own setup** is:
 > Read the repo instructions and inspect my workstation against the target Revit prerequisites. Identify missing inputs and obtain what is needed within this task. Build a minimal read-only command and verify it in Revit against a small example with an independently known answer. Show what passed and what remains untested. Record the participant story, technical procedure, and reviewed Git checkpoint.
 
 For practice, ask your agent to explain the existing environment report and name the next independent case that would strengthen the probe's evidence. Have it separate inspection from installation and build success from host success. Use the [technical guide](../how-to/build-read-only-revit-command.md) when executing the work.
+
+## Keep an existing Revit version working during a port
+
+On October 27, the author asked for working plugins in Revit 2026.5 on the summit laptop while retaining Revit 2024. A useful constraint was explicit: keep the known route available while proving the new one. The agent selected separate build outputs and installation folders, kept the 2024 default, tested equivalent report data on both runtimes, and prepared recovery before installing the modern candidate.
+
+A successful build was only the first result. Revit then asked the author whether to load the unsigned local add-in. That trust decision belongs to the person using the laptop. Actual command execution, Excel output and agent calls still need observation after startup; preserving an installation folder does not establish that a plugin has run. Follow the [current verification record](../../projects/revit-readiness/docs/verification/2026-10-27-revit-2026-5.md) for the latest observed scope.
