@@ -83,6 +83,7 @@ strong { font-weight: 600; }
 .cols.wide-left { grid-template-columns: 1.4fr 1fr; }
 .cols.wide-right { grid-template-columns: 1fr 1.4fr; }
 .cols.three { grid-template-columns: repeat(3, 1fr); gap: 24px; }
+.cols.tall .card { min-height: 290px; }
 .cols.four { grid-template-columns: repeat(4, 1fr); gap: 18px; }
 .cols > div { display: flex; flex-direction: column; gap: 16px; min-width: 0; }
 .center { align-items: center; }
@@ -149,7 +150,7 @@ pre { margin: 0; padding: 16px 20px; background: var(--sheet); border: 1px solid
 .ladder .card:nth-child(2) { min-height: 310px; }
 .ladder .card:nth-child(3) { min-height: 350px; }
 .ladder .card:nth-child(4) { min-height: 390px; }
-.ladder .today { margin-top: auto; padding-top: 10px; border-top: 1px solid var(--rule); font-size: 17px; color: var(--muted); }
+.card .today { margin-top: auto; padding-top: 10px; border-top: 1px solid var(--rule); font-size: 17px; color: var(--muted); }
 .gitlog { font: 19px/1.6 var(--mono); background: var(--sheet); border: 1px solid var(--rule); padding: 14px 20px; }
 .gitlog div { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .gitlog b { color: var(--actual); font-weight: 500; }
