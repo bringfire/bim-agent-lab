@@ -340,3 +340,7 @@ body.presenter > .stage { display: none; }
 .half { font-size: 30px; padding-bottom: 6px; border-bottom: 3px solid var(--tone, var(--accent)); }
 .t-roomy { font-size: 22px; }
 .t-roomy td { padding: 14px 12px; }
+.dg .lane-you { fill: color-mix(in srgb, var(--practice) 9%, transparent); }
+.dg .lane-agent { fill: color-mix(in srgb, var(--research) 9%, transparent); }
+.dg .node-you { fill: var(--sheet); stroke: var(--practice); stroke-width: 2; }
+.dg .node-agent { fill: var(--sheet); stroke: var(--research); stroke-width: 2; }

@@ -582,14 +582,36 @@
 <section class="slide" data-title="Make the division of work explicit" data-page="2">
   <h2>Make the division of work explicit</h2>
   <div class="body">
-    <div class="cols">
-      <div class="card" data-tone="practice"><span class="label">You</span>Supply professional intent, choose acceptable behavior and judge whether the answer is useful. In live demos, you operate Revit menus and permission prompts.</div>
-      <div class="card" data-tone="research"><span class="label">The agent</span>Researches, inspects source, proposes a plan, writes code, runs checks and records evidence. Ask it to separate what it observed from what it assumes.</div>
-    </div>
-    <div class="callout"><strong>A useful follow-up</strong>“Show me the source or test that supports that claim. What remains unverified? What small check would resolve it?”</div>
-    <p class="small muted">Ask for one Revit action at a time, with an exact file path. A similarly named model is not proof that the intended document is active.</p>
+    <svg class="dg" viewBox="0 0 1136 282" role="img" aria-label="Two lanes, You and The agent. The work passes back and forth: you set the purpose and scope; the agent researches and proposes a plan; you choose what is acceptable; the agent writes code and runs checks; you do the Revit steps it asks for; the agent records the evidence; you judge the answer.">
+      <rect class="lane-you" x="0" y="0" width="1136" height="130" rx="8"/>
+      <rect class="lane-agent" x="0" y="152" width="1136" height="130" rx="8"/>
+      <text class="t-title" x="18" y="58">You</text><text class="t-small" x="18" y="82">purpose and</text><text class="t-small" x="18" y="102">judgment</text>
+      <text class="t-title" x="18" y="210">The agent</text><text class="t-small" x="18" y="234">research, code</text><text class="t-small" x="18" y="254">and evidence</text>
+      <rect class="node-you" x="150" y="25" width="130" height="80" rx="8"/><text x="215" y="60" text-anchor="middle">Set purpose</text><text x="215" y="84" text-anchor="middle">and scope</text>
+      <g data-step="1">
+        <path class="arr draw" pathLength="1" d="M245 107 L325 173"/>
+        <g class="fade" style="--d:.4s"><rect class="node-agent" x="290" y="177" width="130" height="80" rx="8"/><text x="355" y="212" text-anchor="middle">Research,</text><text x="355" y="236" text-anchor="middle">propose a plan</text></g>
+        <path class="arr draw" pathLength="1" d="M385 175 L465 109" style="--d:.7s"/>
+        <g class="fade" style="--d:1.1s"><rect class="node-you" x="430" y="25" width="130" height="80" rx="8"/><text x="495" y="60" text-anchor="middle">Choose what's</text><text x="495" y="84" text-anchor="middle">acceptable</text></g>
+      </g>
+      <g data-step="2">
+        <path class="arr draw" pathLength="1" d="M525 107 L605 173"/>
+        <g class="fade" style="--d:.4s"><rect class="node-agent" x="570" y="177" width="130" height="80" rx="8"/><text x="635" y="212" text-anchor="middle">Write code,</text><text x="635" y="236" text-anchor="middle">run checks</text></g>
+        <path class="arr draw" pathLength="1" d="M665 175 L745 109" style="--d:.7s"/>
+        <g class="fade" style="--d:1.1s"><rect class="node-you" x="710" y="25" width="130" height="80" rx="8"/><text x="775" y="60" text-anchor="middle">Do the Revit</text><text x="775" y="84" text-anchor="middle">steps asked for</text></g>
+      </g>
+      <g data-step="3">
+        <path class="arr draw" pathLength="1" d="M805 107 L885 173"/>
+        <g class="fade" style="--d:.4s"><rect class="node-agent" x="850" y="177" width="130" height="80" rx="8"/><text x="915" y="212" text-anchor="middle">Record the</text><text x="915" y="236" text-anchor="middle">evidence</text></g>
+        <path class="arr draw" pathLength="1" d="M945 175 L1025 109" style="--d:.7s"/>
+        <g class="fade" style="--d:1.1s"><rect class="node-you" x="990" y="25" width="130" height="80" rx="8"/><text x="1055" y="60" text-anchor="middle">Judge the</text><text x="1055" y="84" text-anchor="middle">answer</text></g>
+      </g>
+    </svg>
+    <div class="callout"><strong>Ask this at any handoff</strong>“Show me the source or test that supports that claim. What remains unverified? What small check would resolve it?”</div>
+    <p class="small muted">Ask for one Revit action at a time, with an exact file path: a similarly named model isn't proof.</p>
   </div>
   <aside class="notes">
+    <p>Three clicks. The work passes back and forth rather than splitting down the middle. You supply professional intent, choose acceptable behaviour and judge whether the answer is useful; the agent researches, plans, codes, checks and records evidence, and should separate what it observed from what it assumes.</p>
     <p>Handout page 2. During our desktop tests, opening the wrong folder's copy of a model happened twice. Revit's journal confirmed it. Exact paths fixed it.</p>
   </aside>
 </section>
