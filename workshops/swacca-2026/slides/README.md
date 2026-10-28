@@ -12,8 +12,8 @@ Open a deck in Chrome, Edge or Safari from a checkout of the repository. The dec
 
 | Key | Action |
 |---|---|
-| → Space PageDown Enter | Next slide (a presentation clicker works) |
-| ← PageUp Backspace | Previous slide |
+| → Space PageDown Enter | Next build, then next slide (a presentation clicker works) |
+| ← PageUp Backspace | Back one build or slide |
 | Home / End | First / last slide |
 | 12 Enter | Go to slide 12 |
 | N | Speaker notes along the bottom, for single-screen rehearsal |
@@ -25,7 +25,7 @@ Open a deck in Chrome, Edge or Safari from a checkout of the repository. The dec
 
 For two screens, press **S**, move the presenter window to the laptop screen and put the deck fullscreen on the projector. Either window can drive the slides; the audience window stays in charge. The presenter timer compares elapsed time with the current slide's agenda block, using the session start in each deck's `data-start` attribute (8:30 and 11:00).
 
-A slide's URL ends with its number (`session-1.html#15`), so a reload stays on the same slide.
+A slide's URL ends with its number and build (`session-1.html#15.2`), so a reload stays where you were.
 
 ## Print or save as PDF
 
@@ -34,6 +34,8 @@ Print from Chrome, choose **Save as PDF**, and turn on background graphics. Each
 ## Structure and sources
 
 Each deck groups slides into `<div class="block">` elements carrying the agenda block's label, start and end minutes, and colour. The script adds the kicker (`Research existing work · 18–33 min`), the footer with the handout page, and slide numbers. Speaker notes are `<aside class="notes">` inside each slide. To revise, edit the HTML directly; there is no build step.
+
+Eight slides carry diagrams in inline SVG or HTML: Git clone/branch/commit/push, the 100-element limit, the 16-instance sample, versions at every boundary, the MCP round trip, the protocol handshake, coverage for the five cases, and the review loop. Inside a slide, `data-step="n"` appears on the nth click and `data-hide="n"` disappears from it, so a diagram builds with the clicker before the deck moves on; the presenter view shows the next build. [diagrams.js](diagrams.js) draws the repeated dots and instance squares. Printing shows every diagram finished, and animation is off for anyone whose system asks for reduced motion.
 
 Slide timings follow the [Option B agenda](../agenda.html), which remains the timing source. Wording follows the [handout content](../handout/content.json); footers cite the matching handout page. Additional material comes from:
 
@@ -44,6 +46,7 @@ Slide timings follow the [Option B agenda](../agenda.html), which remains the ti
 | Revit, Excel and schedule screenshots | [Required-information](../../../projects/revit-readiness/docs/verification/2026-10-20-required-information.md), [Excel](../../../projects/revit-readiness/docs/verification/2026-10-20-excel-output.md), [read-only probe](../../../projects/revit-readiness/docs/verification/2026-10-20-read-only-probe.md) and [live MCP](../../../projects/revit-readiness/docs/verification/mcp-readiness.md) evidence |
 | Claude Desktop answer quotations | [Wall-defects answer](../../../projects/revit-readiness/docs/verification/mcp-readiness-evidence/2026-10-22-wall-defects/claude-wall-defects/answer.txt), pasted by the author |
 | Git checkpoints | The repository's own history (`git log --reverse`) |
+| Diagram facts | Sample rules and the five cases from handout page 5 and the live MCP evidence; the three plan-review findings from the [review story](../../../docs/tutorials/06-direct-design-and-external-review.md); protocol revisions from the [compatibility story](../../../docs/tutorials/07-test-desktop-compatibility-first.md). The dot field and the Git branch and diff are labelled illustrations |
 | Recovery counts, verified/not-verified slide | [Development status](../../../docs/reference/development-status.md), [live installation](../../../projects/revit-readiness/docs/verification/2026-10-21-live-installation.md) |
 
 Prompts are labelled **Actual prompt** (quoted from the build) or **Suggested prompt** (reusable wording). Keep that distinction when editing. The QR code was cropped from page 8 of the delivered handout PDF and decodes to `https://github.com/bringfire/bim-agent-lab`.
@@ -56,5 +59,7 @@ The slides state the current limits: Revit 2024 build 24.3.60.12 is the verified
 - Selected slides, the notes overlay, the light theme and the standalone presenter view were inspected visually.
 - Headless Chrome confirmed presenter/audience sync in both directions with a real popup window, and printed both decks to PDF: 29 and 28 pages at 960 x 540 points.
 - The QR image was decoded with macOS Core Image.
+
+After the diagrams were added the same day: with every build shown, neither deck has content past the footer or right margin. Headless Chrome confirmed build-level sync (two presenter clicks on the Git slide put the audience at `#10.2`; stepping back into a built slide lands on its last build), and printed pages show finished diagrams.
 
 Not yet done: a rehearsal against the agenda timings, a test on the venue projector and clicker, and a check of the offline font fallback on the presenting machine.

@@ -1,5 +1,6 @@
 // Small slide engine shared by the SWACCA 2026 decks. No dependencies; works from file://.
 // Slides live in agenda blocks: <div class="block" data-label data-start data-end data-tone>.
+// Inside a slide, data-step="n" appears on the nth click and data-hide="n" disappears from it.
 // Keys: arrows/Page/Space navigate, N notes, S presenter window, L light theme, F fullscreen, ? help.
 (() => {
   const body = document.body;
@@ -45,15 +46,27 @@
     slide.append(foot);
   });
 
+  // Builds: a position is [slide, step]; step 0 shows everything without data-step.
+  const maxStep = slides.map((s) => Math.max(0, ...[...s.querySelectorAll('[data-step]')].map((el) => Number(el.dataset.step) || 0)));
+  const applyStep = (slide, step) => {
+    slide.dataset.at = step;
+    slide.querySelectorAll('[data-step]').forEach((el) => el.classList.toggle('on', Number(el.dataset.step) <= step));
+    slide.querySelectorAll('[data-hide]').forEach((el) => el.classList.toggle('off', Number(el.dataset.hide) <= step));
+  };
+  const clamp = (i) => Math.min(Math.max(i, 0), total - 1);
+  const place = (i, s) => { const c = clamp(i); return [c, Math.min(Math.max(s || 0, 0), maxStep[c])]; };
+  const nextPos = (i, s) => (s < maxStep[i] ? [i, s + 1] : i < total - 1 ? [i + 1, 0] : [i, s]);
+  const prevPos = (i, s) => (s > 0 ? [i, s - 1] : i > 0 ? [i - 1, maxStep[i - 1]] : [i, s]);
+  const fromHash = () => {
+    const [a, b] = location.hash.slice(1).split('.');
+    const n = parseInt(a, 10);
+    return Number.isFinite(n) ? place(n - 1, parseInt(b, 10)) : [0, 0];
+  };
+  const hashFor = (i, s) => `#${i + 1}${s ? `.${s}` : ''}`;
   const notesOf = (i) => {
     const notes = slides[i] && slides[i].querySelector('.notes');
     return notes ? notes.innerHTML : '<p>No notes for this slide.</p>';
   };
-  const indexFromHash = () => {
-    const n = parseInt(location.hash.slice(1), 10);
-    return Number.isFinite(n) ? Math.min(Math.max(n - 1, 0), total - 1) : 0;
-  };
-  const clamp = (i) => Math.min(Math.max(i, 0), total - 1);
 
   if (store.get('bal-deck-theme') === 'light' || params.has('light')) body.classList.add('light');
   const toggleTheme = () => {
@@ -64,7 +77,7 @@
   const help = document.createElement('div');
   help.className = 'help';
   help.innerHTML = [
-    ['→ Space', 'next slide'], ['←', 'previous slide'], ['Home End', 'first / last'],
+    ['→ Space', 'next build or slide'], ['←', 'back'], ['Home End', 'first / last'],
     ['12 Enter', 'go to slide 12'], ['N', 'speaker notes'], ['S', 'presenter window'],
     ['L', 'light / dark'], ['F', 'fullscreen'], ['?', 'this help'],
   ].map(([k, v]) => `<div><kbd>${k}</kbd> ${v}</div>`).join('');
@@ -72,17 +85,18 @@
 
   // Shared key handling; `go` differs between the audience and presenter windows.
   let typed = '';
-  const bindKeys = (go, current, extra) => {
+  const bindKeys = (go, pos, extra) => {
     document.addEventListener('keydown', (e) => {
       if (e.metaKey || e.ctrlKey || e.altKey) return;
       const k = e.key;
+      const [i, s] = pos();
       if (/^[0-9]$/.test(k)) { typed += k; return; }
-      if (k === 'Enter' && typed) { go(parseInt(typed, 10) - 1); typed = ''; e.preventDefault(); return; }
+      if (k === 'Enter' && typed) { go(parseInt(typed, 10) - 1, 0); typed = ''; e.preventDefault(); return; }
       typed = '';
-      if (['ArrowRight', 'ArrowDown', 'PageDown', ' ', 'Enter'].includes(k)) go(current() + 1);
-      else if (['ArrowLeft', 'ArrowUp', 'PageUp', 'Backspace'].includes(k)) go(current() - 1);
-      else if (k === 'Home') go(0);
-      else if (k === 'End') go(total - 1);
+      if (['ArrowRight', 'ArrowDown', 'PageDown', ' ', 'Enter'].includes(k)) go(...nextPos(i, s));
+      else if (['ArrowLeft', 'ArrowUp', 'PageUp', 'Backspace'].includes(k)) go(...prevPos(i, s));
+      else if (k === 'Home') go(0, 0);
+      else if (k === 'End') go(total - 1, maxStep[total - 1]);
       else if (k === 'l' || k === 'L') toggleTheme();
       else if (k === '?' || k === 'h' || k === 'H') body.classList.toggle('show-help');
       else if (k === 'f' || k === 'F') {
@@ -98,31 +112,34 @@
 
   function audience() {
     let cur = 0;
+    let step = 0;
     const panel = document.createElement('div');
     panel.className = 'notes-panel';
     body.append(panel);
 
     const fit = () => stage.style.setProperty('--scale', Math.min(innerWidth / 1280, innerHeight / 720));
-    const show = (i) => {
-      cur = clamp(i);
-      slides.forEach((s, j) => { s.hidden = j !== cur; });
-      history.replaceState(null, '', `${location.pathname}${location.search}#${cur + 1}`);
-      panel.innerHTML = `<h4>Notes · ${cur + 1} / ${total} · ${slides[cur].dataset.title}</h4>${notesOf(cur)}`;
+    const show = (i, s) => {
+      const changed = clamp(i) !== cur;
+      [cur, step] = place(i, s);
+      slides.forEach((sl, j) => { sl.hidden = j !== cur; sl.classList.toggle('active', j === cur); });
+      applyStep(slides[cur], step);
+      history.replaceState(null, '', `${location.pathname}${location.search}${hashFor(cur, step)}`);
+      if (changed || !panel.innerHTML) panel.innerHTML = `<h4>Notes · ${cur + 1} / ${total} · ${slides[cur].dataset.title}</h4>${notesOf(cur)}`;
     };
 
     // The presenter window asks where we are and requests moves; this window stays authoritative.
     window.addEventListener('message', (e) => {
       const d = e.data;
       if (!d || d.ns !== NS || d.deck !== deck) return;
-      if (d.type === 'go') show(d.i);
-      if (e.source) e.source.postMessage({ ns: NS, deck, type: 'at', i: cur }, '*');
+      if (d.type === 'go') show(d.i, d.s);
+      if (e.source) e.source.postMessage({ ns: NS, deck, type: 'at', i: cur, s: step }, '*');
     });
     const openPresenter = () => {
-      const url = `${location.href.split(/[?#]/)[0]}?presenter#${cur + 1}`;
+      const url = `${location.href.split(/[?#]/)[0]}?presenter${hashFor(cur, step)}`;
       window.open(url, `bal-presenter-${deck}`, 'width=1280,height=800');
     };
 
-    bindKeys(show, () => cur, (k) => {
+    bindKeys(show, () => [cur, step], (k) => {
       if (k === 'n' || k === 'N') { body.classList.toggle('show-notes'); return true; }
       if (k === 's' || k === 'S') { openPresenter(); return true; }
       return false;
@@ -132,13 +149,17 @@
     stage.addEventListener('touchend', (e) => {
       if (touchX === null) return;
       const dx = e.changedTouches[0].clientX - touchX;
-      if (Math.abs(dx) > 50) show(cur + (dx < 0 ? 1 : -1));
+      if (Math.abs(dx) > 50) show(...(dx < 0 ? nextPos(cur, step) : prevPos(cur, step)));
       touchX = null;
     });
-    window.addEventListener('hashchange', () => { if (indexFromHash() !== cur) show(indexFromHash()); });
+    window.addEventListener('hashchange', () => {
+      const [i, s] = fromHash();
+      if (i !== cur || s !== step) show(i, s);
+    });
     window.addEventListener('resize', fit);
     fit();
-    show(indexFromHash());
+    cur = -1;
+    show(...fromHash());
   }
 
   function presenter() {
@@ -156,7 +177,7 @@
           <div><span class="label">Elapsed · T starts</span><strong class="pv-elapsed">--:--</strong></div>
         </div>
         <div class="pv-block"></div>
-        <h4>Next</h4>
+        <h4 class="pv-next-label">Next</h4>
         <div class="pv-frame pv-next"><div class="stage"></div></div>
         <div class="pv-tools"><button data-act="prev">◀ Prev</button><button data-act="next">Next ▶</button><button data-act="timer">Timer</button></div>
         <div class="pv-list"></div>
@@ -170,18 +191,18 @@
       const b = document.createElement('button');
       b.innerHTML = `<b>${i + 1}</b>`;
       b.append(s.dataset.title);
-      b.addEventListener('click', () => request(i));
+      b.addEventListener('click', () => request(i, 0));
       list.append(b);
     });
 
-    let cur = indexFromHash();
+    let [cur, step] = fromHash();
     let lastLocal = 0;
     const linked = () => window.opener && !window.opener.closed;
     const fit = () => frames.forEach((f) => f.firstElementChild.style.setProperty('--scale', f.clientWidth / 1280));
-    const place = (frame, i) => {
+    const put = (frame, i, s) => {
       const target = frame.firstElementChild;
       target.replaceChildren();
-      if (i >= total) {
+      if (i === null) {
         const end = document.createElement('section');
         end.className = 'slide';
         end.innerHTML = '<h2 class="muted">End of deck</h2>';
@@ -190,26 +211,33 @@
       }
       const copy = slides[i].cloneNode(true);
       copy.hidden = false;
+      copy.classList.add('active');
+      applyStep(copy, s);
       target.append(copy);
     };
-    const render = (i) => {
-      cur = clamp(i);
-      place(frames[0], cur);
-      place(frames[1], cur + 1);
-      $('.pv-notes').innerHTML = `<h4>Notes · ${cur + 1} / ${total}</h4>${notesOf(cur)}`;
+    const render = (i, s) => {
+      [cur, step] = place(i, s);
+      const [ni, ns] = nextPos(cur, step);
+      const atEnd = ni === cur && ns === step;
+      put(frames[0], cur, step);
+      put(frames[1], atEnd ? null : ni, ns);
+      $('.pv-next-label').textContent = atEnd ? 'Next' : ni === cur ? `Next click · build ${ns} of ${maxStep[cur]}` : 'Next slide';
+      const builds = maxStep[cur] ? ` · build ${step} of ${maxStep[cur]}` : '';
+      $('.pv-notes').innerHTML = `<h4>Notes · ${cur + 1} / ${total}${builds}</h4>${notesOf(cur)}`;
       [...list.children].forEach((b, j) => b.classList.toggle('on', j === cur));
       list.children[cur].scrollIntoView({ block: 'nearest' });
-      history.replaceState(null, '', `${location.pathname}${location.search}#${cur + 1}`);
+      history.replaceState(null, '', `${location.pathname}${location.search}${hashFor(cur, step)}`);
       tick();
     };
-    const request = (i) => {
-      if (linked()) window.opener.postMessage({ ns: NS, deck, type: 'go', i: clamp(i) }, '*');
-      else { lastLocal = Date.now(); render(i); }
+    const request = (i, s) => {
+      const [ti, ts] = place(i, s);
+      if (linked()) window.opener.postMessage({ ns: NS, deck, type: 'go', i: ti, s: ts }, '*');
+      else { lastLocal = Date.now(); render(ti, ts); }
     };
     window.addEventListener('message', (e) => {
       const d = e.data;
       if (!d || d.ns !== NS || d.deck !== deck || d.type !== 'at') return;
-      if (d.i !== cur && Date.now() - lastLocal > 500) render(d.i);
+      if ((d.i !== cur || (d.s || 0) !== step) && Date.now() - lastLocal > 500) render(d.i, d.s || 0);
     });
     setInterval(() => { if (linked()) window.opener.postMessage({ ns: NS, deck, type: 'where' }, '*'); }, 300);
 
@@ -251,16 +279,16 @@
 
     view.addEventListener('click', (e) => {
       const act = e.target.closest('button') && e.target.closest('button').dataset.act;
-      if (act === 'prev') request(cur - 1);
-      if (act === 'next') request(cur + 1);
+      if (act === 'prev') request(...prevPos(cur, step));
+      if (act === 'next') request(...nextPos(cur, step));
       if (act === 'timer') toggleTimer();
     });
-    bindKeys(request, () => cur, (k) => {
+    bindKeys(request, () => [cur, step], (k) => {
       if (k === 't' || k === 'T') { toggleTimer(); return true; }
       return false;
     });
     window.addEventListener('resize', fit);
     fit();
-    render(cur);
+    render(cur, step);
   }
 })();

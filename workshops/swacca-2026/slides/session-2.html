@@ -9,6 +9,13 @@
 <link rel="stylesheet" href="deck.css">
 </head>
 <body data-deck="swacca-2026-session-2" data-session="Session 2" data-start="11:00">
+<svg class="defs" aria-hidden="true" focusable="false"><defs>
+  <marker id="ah-acc" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse"><path class="ah-acc" d="M0 0 L10 5 L0 10 z"/></marker>
+  <marker id="ah-mut" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse"><path class="ah-mut" d="M0 0 L10 5 L0 10 z"/></marker>
+  <marker id="ah-ok" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse"><path class="ah-ok" d="M0 0 L10 5 L0 10 z"/></marker>
+  <marker id="ah-bad" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse"><path class="ah-bad" d="M0 0 L10 5 L0 10 z"/></marker>
+  <marker id="ah-prac" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="4.5" markerHeight="4.5" orient="auto-start-reverse"><path class="ah-prac" d="M0 0 L10 5 L0 10 z"/></marker>
+</defs></svg>
 <main class="stage">
 
 <!-- 00–05 Reconnect -->
@@ -127,21 +134,41 @@
 
 <section class="slide" data-title="What MCP adds" data-page="6">
   <h2>What MCP adds</h2>
+  <p class="sub">MCP (Model Context Protocol) lets an AI application discover and call tools.</p>
   <div class="body">
-    <p class="lead wide">MCP (Model Context Protocol) lets an AI application discover and call tools.</p>
-    <div class="flow">
-      <div>Desktop AI app<span>Codex desktop or Claude Desktop</span></div><i>→</i>
-      <div>MCP server<span>Built on the official C# MCP SDK 2.2.0</span></div><i>→</i>
-      <div>Revit add-in<span>Reads through Revit's supported API context</span></div>
-    </div>
-    <div class="cols">
-      <div class="card" data-tone="research"><span class="label">Tool 1</span><code>revit_get_readiness_context</code>Get a fresh context for the open model and checklist.</div>
-      <div class="card" data-tone="research"><span class="label">Tool 2</span><code>revit_check_required_type_information</code>Run the readiness check for that context.</div>
-    </div>
+    <svg class="dg" viewBox="0 0 1136 344" role="img" aria-label="Sequence diagram. The desktop AI app calls revit_get_readiness_context through the MCP server and the Revit add-in, which identifies the open model and checklist and returns a context token. The app then calls revit_check_required_type_information with that token; the add-in reads type parameters without editing and returns findings, counts and completeness flags.">
+      <rect class="box" x="20" y="0" width="200" height="56" rx="6"/><text class="t-title" x="120" y="25" text-anchor="middle">Desktop AI app</text><text class="t-small" x="120" y="46" text-anchor="middle">Codex · Claude Desktop</text>
+      <rect class="box" x="340" y="0" width="200" height="56" rx="6"/><text class="t-title" x="440" y="25" text-anchor="middle">MCP server</text><text class="t-small" x="440" y="46" text-anchor="middle">C# MCP SDK 2.2.0</text>
+      <rect class="box" x="660" y="0" width="200" height="56" rx="6"/><text class="t-title" x="760" y="25" text-anchor="middle">Revit add-in</text><text class="t-small" x="760" y="46" text-anchor="middle">Revit API, read-only</text>
+      <rect class="box" x="960" y="0" width="170" height="56" rx="6"/><text class="t-title" x="1045" y="25" text-anchor="middle">Revit model</text><text class="t-small" x="1045" y="46" text-anchor="middle">the open document</text>
+      <line class="life" x1="120" y1="56" x2="120" y2="340"/><line class="life" x1="440" y1="56" x2="440" y2="340"/><line class="life" x1="760" y1="56" x2="760" y2="340"/><line class="life" x1="1045" y1="56" x2="1045" y2="340"/>
+      <g data-step="1">
+        <text class="t-mono-sm t-acc" x="130" y="84">revit_get_readiness_context</text>
+        <path class="arr draw" pathLength="1" d="M122 92 L434 92"/>
+        <text class="t-small fade" x="450" y="114" style="--d:.5s">prepare a context</text>
+        <path class="arr draw" pathLength="1" d="M442 122 L754 122" style="--d:.5s"/>
+        <text class="t-small fade" x="770" y="144" style="--d:1s">which model? which checklist?</text>
+        <path class="arr draw" pathLength="1" d="M762 152 L1039 152" style="--d:1s"/>
+        <text class="t-small fade" x="440" y="176" text-anchor="middle" style="--d:1.5s">context token, bound to this model and checklist</text>
+        <path class="arr mut draw" pathLength="1" d="M758 184 L126 184" style="--d:1.5s"/>
+      </g>
+      <g data-step="2">
+        <text class="t-mono-sm t-acc" x="130" y="222">revit_check_required_type_information</text>
+        <path class="arr draw" pathLength="1" d="M122 230 L434 230"/>
+        <text class="t-small" x="130" y="250">with the context token</text>
+        <text class="t-small fade" x="450" y="252" style="--d:.5s">check</text>
+        <path class="arr draw" pathLength="1" d="M442 260 L754 260" style="--d:.5s"/>
+        <text class="t-small fade" x="770" y="282" style="--d:1s">read type parameters, no edits</text>
+        <path class="arr draw" pathLength="1" d="M762 290 L1039 290" style="--d:1s"/>
+        <text class="t-small fade" x="440" y="314" text-anchor="middle" style="--d:1.5s">findings, counts, completeness flags</text>
+        <path class="arr mut draw" pathLength="1" d="M758 322 L126 322" style="--d:1.5s"/>
+      </g>
+    </svg>
     <p class="small muted">The shared evaluator applies the written rules. These calls read the model; they do not edit it or export files.</p>
   </div>
   <aside class="notes">
-    <p>Two tools only, both read-only. The add-in does the Revit reading; the same evaluator used by the manual command applies the checklist.</p>
+    <p>Two clicks, two tool calls. First the app asks for a fresh context: the add-in notes which model is open and which checklist applies, and returns a token. Then the app asks for the check with that token.</p>
+    <p>Two tools only, both read-only. The same evaluator used by the manual Revit command applies the checklist. If the model changes between the calls, the old token is rejected; that comes up again under verification.</p>
   </aside>
 </section>
 
@@ -168,16 +195,33 @@
   <h2>Test the least certain assumption first</h2>
   <div class="body">
     <div class="cols wide-left">
-      <div>
-        <p class="small">Before connecting Revit, a tiny test server checked that both seminar apps could talk to it at all.</p>
-        <table class="t-small">
-          <tr><th>Client</th><th>Observed</th></tr>
-          <tr><td>Official SDK test client</td><td class="yes">Passed on 2026-07-28</td></tr>
-          <tr><td>Codex desktop</td><td class="no">Sent 2025-06-18; rejected</td></tr>
-          <tr><td>Claude Desktop</td><td class="no">Sent 2025-11-25; rejected</td></tr>
-        </table>
-        <p class="small">The author then chose desktop compatibility, kept a 2026-07-28 regression test, and both desktops passed.</p>
-      </div>
+      <svg class="dg" viewBox="0 0 640 400" role="img" aria-label="Three clients connect to a test MCP server. At first the server accepts only protocol 2026-07-28: the official SDK test client connects, Codex desktop and Claude Desktop are rejected. After the author's decision, the server accepts all three and keeps a 2026-07-28 regression test.">
+        <text class="t-small" x="0" y="18">Before connecting Revit: can the seminar apps reach a tiny test server?</text>
+        <rect class="box" x="0" y="50" width="210" height="64" rx="6"/><text x="16" y="88">Official SDK test client</text>
+        <rect class="box" x="0" y="170" width="210" height="64" rx="6"/><text x="16" y="208">Codex desktop</text>
+        <rect class="box" x="0" y="290" width="210" height="64" rx="6"/><text x="16" y="328">Claude Desktop</text>
+        <rect class="box-hi" x="430" y="120" width="210" height="160" rx="8"/>
+        <text class="t-title" x="446" y="150">Test MCP server</text>
+        <text class="t-mono" x="446" y="180" data-hide="2">accepts 2026-07-28</text>
+        <text class="t-mono" x="446" y="200" data-hide="2">only</text>
+        <g data-step="2"><text class="t-mono t-ok" x="446" y="180">accepts all three</text><text class="t-small" x="446" y="204">2026-07-28 test kept</text></g>
+        <g data-step="1">
+          <path class="arr draw" pathLength="1" d="M212 82 C320 82 330 168 426 168"/>
+          <text class="t-mono t-acc" x="226" y="72">2026-07-28</text>
+          <path class="arr draw" pathLength="1" d="M212 202 L426 202" style="--d:.3s"/>
+          <text class="t-mono t-acc" x="226" y="192">2025-06-18</text>
+          <path class="arr draw" pathLength="1" d="M212 322 C320 322 330 236 426 236" style="--d:.6s"/>
+          <text class="t-mono t-acc" x="226" y="346">2025-11-25</text>
+          <g class="fade" style="--d:.9s"><circle class="bg" cx="398" cy="168" r="13"/><text class="t-mark t-ok" x="398" y="175" text-anchor="middle">✓</text></g>
+          <g class="fade" style="--d:1s" data-hide="2"><circle class="bg" cx="398" cy="202" r="13"/><text class="t-mark t-bad" x="398" y="209" text-anchor="middle">✗</text></g>
+          <g class="fade" style="--d:1.1s" data-hide="2"><circle class="bg" cx="398" cy="236" r="13"/><text class="t-mark t-bad" x="398" y="243" text-anchor="middle">✗</text></g>
+        </g>
+        <g data-step="2">
+          <circle class="bg" cx="398" cy="202" r="13"/><text class="t-mark t-ok" x="398" y="209" text-anchor="middle">✓</text>
+          <circle class="bg" cx="398" cy="236" r="13"/><text class="t-mark t-ok" x="398" y="243" text-anchor="middle">✓</text>
+          <text class="t-small" x="0" y="392">The author's decision: accept the desktop versions, keep the newer test.</text>
+        </g>
+      </svg>
       <div>
         <figure class="prompt actual compact">
           <figcaption>Actual reaction · the author</figcaption>
@@ -188,8 +232,8 @@
     </div>
   </div>
   <aside class="notes">
-    <p>The SDK test passing did not make it a desktop pass. The agent kept the wire evidence, so this was a specific compatibility issue rather than a vague "MCP did not work".</p>
-    <p>The author then asked whether newer app versions or settings helped, and what would be given up by accepting the older protocol, before changing the requirement. The failed checkpoint is commit 9ea3151; the passing one is 9b4eb51.</p>
+    <p>Two clicks: the first attempt, then the decision. The SDK test passing did not make it a desktop pass. The agent kept the wire evidence, so this was a specific compatibility issue rather than a vague "MCP did not work".</p>
+    <p>The author then asked whether newer app versions or settings helped, and what would be given up by accepting the older protocols, before changing the requirement. The failed checkpoint is commit 9ea3151; the passing one is 9b4eb51.</p>
   </aside>
 </section>
 
@@ -252,19 +296,19 @@
   <h2>Zero findings is not enough.</h2>
   <p class="sub">A readiness verdict needs both the rules and complete coverage.</p>
   <div class="body">
-    <table>
-      <tr><th>Prepared case</th><th class="num">Missing findings</th><th class="num">Affected instances</th><th>Coverage complete</th><th>Evaluation complete</th></tr>
-      <tr><td>Complete</td><td class="num">0</td><td class="num">0</td><td class="yes">True</td><td class="yes">True</td></tr>
-      <tr><td>Wall defects</td><td class="num">2</td><td class="num">6</td><td class="yes">True</td><td class="yes">True</td></tr>
-      <tr><td>Ceiling negative</td><td class="num">3</td><td class="num">8</td><td class="yes">True</td><td class="yes">True</td></tr>
-      <tr class="now"><td>NC1: missing element</td><td class="num">0</td><td class="num">0*</td><td class="no">False</td><td class="yes">True</td></tr>
-      <tr class="now"><td>NC2: missing rule</td><td class="num">0</td><td class="num">0*</td><td class="no">False</td><td class="no">False</td></tr>
-    </table>
-    <p class="small">NC1 examines 15 of 16: one declared element is absent. NC2 finds all 16, but two ceilings have no matching requirement. <strong>Neither is a readiness pass.</strong></p>
-    <p class="tiny">*Affected instances counts missing-value findings only.</p>
+    <div class="cov">
+      <div class="cov-row"><span></span><div class="cells head" data-heads=""></div><span class="label">Walls A–D · Ceilings ACT, GWB</span></div>
+      <div class="cov-row"><span class="cname">Complete</span><div class="cells" data-cells="pppppppppppppppp"></div><span class="verdict v-ok"><b>Pass</b> <span class="flags">coverage ✓ · evaluation ✓</span><br>0 findings</span></div>
+      <div class="cov-row rise" data-step="1"><span class="cname">Wall defects</span><div class="cells" data-cells="pppmmmpppmmmpppp"></div><span class="verdict v-bad"><b>Doesn't pass</b> <span class="flags">✓ · ✓</span><br>2 findings, 6 instances</span></div>
+      <div class="cov-row rise" data-step="2"><span class="cname">Ceiling negative</span><div class="cells" data-cells="pppmmmpppmmmmmpp"></div><span class="verdict v-bad"><b>Doesn't pass</b> <span class="flags">✓ · ✓</span><br>3 findings, 8 instances</span></div>
+      <div class="cov-row rise" data-step="3"><span class="cname">NC1: missing element</span><div class="cells" data-cells="xppppppppppppppp"></div><span class="verdict v-warn"><b>Not a pass</b> <span class="flags">coverage ✗ · evaluation ✓</span><br>0 findings, but 15 of 16 examined</span></div>
+      <div class="cov-row rise" data-step="4"><span class="cname">NC2: missing rule</span><div class="cells" data-cells="ppppppppppppnnpp"></div><span class="verdict v-warn"><b>Not a pass</b> <span class="flags">coverage ✗ · evaluation ✗</span><br>0 findings, but 2 have no rule</span></div>
+    </div>
+    <div class="legend push"><span><i class="cell p"></i> passes</span><span><i class="cell m"></i> missing required value</span><span><i class="cell x"></i> declared element not found</span><span><i class="cell n"></i> no matching requirement</span></div>
   </div>
   <aside class="notes">
-    <p>Handout page 5. The two negative controls exist to catch a tool, or an agent, that reports "zero findings, all good". Both desktop apps and the SDK client returned these same reports in live tests.</p>
+    <p>Four clicks, one case each. Handout page 5 has the same results as a table. Pause on NC1 and NC2: both report zero findings, and neither is a pass.</p>
+    <p>NC1 examines 15 of 16: one declared Wall A element is absent. NC2 finds all 16, but the two ACT ceilings have no matching requirement, so they can't be judged. Both desktop apps and the SDK client returned these same reports in live tests.</p>
   </aside>
 </section>
 
@@ -322,15 +366,46 @@
 <section class="slide" data-title="Two or three major findings are a signal" data-page="7">
   <h2>Ask what connects the findings</h2>
   <div class="body">
-    <div class="callout" data-tone="practice"><strong>Two or three major findings are a signal.</strong>Ask whether the defects share an underlying missing concept. The count is a cue to investigate, not proof.</div>
-    <figure class="prompt">
-      <figcaption>Suggested prompt to the independent reviewer · handout page 7</figcaption>
-      <blockquote>Do these findings share a missing concept or reasoning framework? Explain the connection with evidence, identify other places it may apply, and state the tests that would demonstrate the broader guarantee. Distinguish a confirmed pattern from a hypothesis.</blockquote>
-    </figure>
-    <p class="small muted">Then give the explanation back to the coding agent so it fixes the broader problem, not just the named examples.</p>
+    <div class="cols">
+      <svg class="dg" viewBox="0 0 560 380" role="img" aria-label="Review cycle. The coding agent hands work to an independent reviewer, who reports several major findings. Asking what connects them leads the reviewer to explain a shared concept, which the coding agent applies everywhere with tests before the reviewer checks the revision.">
+        <rect class="box" x="0" y="44" width="220" height="70" rx="8"/><text class="t-title" x="16" y="74">Coding agent</text><text class="t-small" x="16" y="98">writes spec, plan, code</text>
+        <rect class="box" x="340" y="44" width="220" height="70" rx="8"/><text class="t-title" x="356" y="74">Reviewer</text><text class="t-small" x="356" y="98">independent; inspects the work</text>
+        <g data-step="1">
+          <path class="arr draw" pathLength="1" d="M222 79 L336 79"/>
+          <path class="arr bad draw" pathLength="1" d="M450 116 L450 164" style="--d:.5s"/>
+          <g class="fade" style="--d:.8s"><rect class="box-bad" x="340" y="170" width="220" height="28" rx="4"/><text class="t-mono" x="352" y="189">lost cancellation</text></g>
+          <g class="fade" style="--d:.95s"><rect class="box-bad" x="340" y="204" width="220" height="28" rx="4"/><text class="t-mono" x="352" y="223">hang while stopping</text></g>
+          <g class="fade" style="--d:1.1s"><rect class="box-bad" x="340" y="238" width="220" height="28" rx="4"/><text class="t-mono" x="352" y="257">install without backups</text></g>
+        </g>
+        <g data-step="2">
+          <path class="arr prac draw" pathLength="1" d="M450 268 C450 304 430 341 394 341"/>
+          <rect class="box-warn" x="170" y="310" width="220" height="62" rx="8"/><text class="t-title" x="280" y="347" text-anchor="middle">What connects them?</text>
+        </g>
+        <g data-step="3">
+          <path class="arr prac draw" pathLength="1" d="M168 341 C110 341 110 300 110 274"/>
+          <rect class="box-warn" x="0" y="170" width="220" height="100" rx="8"/>
+          <text class="t-title" x="16" y="198">Shared concept</text>
+          <text class="t-small" x="16" y="224">what stays safe when</text>
+          <text class="t-small" x="16" y="246">work stops halfway</text>
+        </g>
+        <g data-step="4">
+          <path class="arr ok draw" pathLength="1" d="M110 168 L110 118"/>
+          <text class="t-small" x="124" y="148">apply it everywhere, with tests</text>
+          <text class="t-small t-ok" x="280" y="26" text-anchor="middle">then the reviewer checks the revision</text>
+        </g>
+      </svg>
+      <div>
+        <div class="callout" data-tone="practice"><strong>Two or three major findings are a signal.</strong>Ask whether they share a missing concept. The count is a cue to investigate, not proof.</div>
+        <figure class="prompt compact">
+          <figcaption>Suggested prompt to the reviewer · handout page 7</figcaption>
+          <blockquote>Do these findings share a missing concept or reasoning framework? Explain the connection with evidence, identify other places it may apply, and state the tests that would demonstrate the broader guarantee. Distinguish a confirmed pattern from a hypothesis.</blockquote>
+        </figure>
+      </div>
+    </div>
   </div>
   <aside class="notes">
-    <p>This is the seminar's review takeaway. You don't need to diagnose the technical issue yourself. Ask the reviewer to look across the findings, then hand that explanation to the coder along with the original findings.</p>
+    <p>Four clicks. The three findings are the real major gaps from the plan review (R2): cancellation could be lost before a Revit read, stopping the server could leave it waiting, and an interrupted install might lack backups.</p>
+    <p>You don't need to diagnose the technical issue yourself. Ask the reviewer to look across the findings, then hand that explanation to the coder along with the original findings. The next slide has the actual wording.</p>
   </aside>
 </section>
 
@@ -555,6 +630,7 @@
 </div>
 
 </main>
+<script src="diagrams.js"></script>
 <script src="deck.js"></script>
 </body>
 </html>

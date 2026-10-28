@@ -208,3 +208,94 @@ body.presenter > .stage { display: none; }
   .slide, .slide[hidden] { position: relative; display: flex; width: 1280px; height: 720px; break-after: page; }
   .notes-panel, .help, .pv { display: none !important; }
 }
+
+/* Builds: data-step appears on the nth click; data-hide disappears from the nth click */
+[data-step], [data-hide] { transition: opacity .45s ease, transform .45s ease; }
+[data-step]:not(.on), [data-hide].off { opacity: 0; }
+.rise[data-step]:not(.on) { transform: translateY(12px); }
+.draw { stroke-dasharray: 1; stroke-dashoffset: 1; }
+.on .draw, .draw.on { animation: draw .7s ease forwards; animation-delay: var(--d, 0s); }
+.on .fade { opacity: 0; animation: fade .45s ease forwards; animation-delay: var(--d, 0s); }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes fade { to { opacity: 1; } }
+
+/* SVG diagrams: user units match canvas pixels where possible */
+.dg { display: block; width: 100%; height: auto; overflow: visible; }
+.dg text { fill: var(--ink); font-family: var(--body); font-size: 18px; }
+.dg .t-lbl { font-family: var(--mono); font-size: 12px; letter-spacing: .07em; text-transform: uppercase; fill: var(--muted); }
+.dg .t-mono { font-family: var(--mono); font-size: 14px; }
+.dg .t-mono-sm { font-family: var(--mono); font-size: 13px; }
+.dg .t-small { font-size: 15px; fill: var(--muted); }
+.dg .t-title { font-size: 20px; font-weight: 600; }
+.dg .t-mark { font-size: 20px; font-weight: 700; }
+.dg .t-ok { fill: var(--ok); } .dg .t-bad { fill: var(--bad); } .dg .t-acc { fill: var(--accent); } .dg .t-warn { fill: var(--warn); }
+.dg .box { fill: var(--sheet); stroke: var(--rule); stroke-width: 1.5; }
+.dg .box-hi { fill: var(--sheet); stroke: var(--accent); stroke-width: 2; }
+.dg .box-warn { fill: var(--sheet); stroke: var(--practice); stroke-width: 2.5; }
+.dg .box-bad { fill: var(--sheet); stroke: var(--bad); stroke-width: 2; }
+.dg .bg { fill: var(--paper); }
+.dg .ln { fill: none; stroke: var(--muted); stroke-width: 3; }
+.dg .ln-git { fill: none; stroke: var(--git); stroke-width: 3.5; }
+.dg .ln-bad { fill: none; stroke: var(--bad); stroke-width: 2.5; }
+.dg .life { stroke: var(--rule); stroke-width: 1.5; stroke-dasharray: 4 6; }
+.dg .arr { fill: none; stroke: var(--accent); stroke-width: 2.5; marker-end: url(#ah-acc); }
+.dg .arr.mut { stroke: var(--muted); marker-end: url(#ah-mut); }
+.dg .arr.ok { stroke: var(--ok); marker-end: url(#ah-ok); }
+.dg .arr.bad { stroke: var(--bad); marker-end: url(#ah-bad); }
+.dg .arr.prac { stroke: var(--practice); marker-end: url(#ah-prac); }
+.dg .commit { fill: var(--paper); stroke: var(--git); stroke-width: 4; }
+.dg .commit-m { fill: var(--paper); stroke: var(--muted); stroke-width: 4; }
+.dg .ring-bad { fill: none; stroke: var(--bad); stroke-width: 3; }
+.dots-base { fill: var(--rule); }
+.dots-lit { fill: var(--accent); }
+.dots-miss { fill: var(--warn); opacity: .55; }
+.ah-acc { fill: var(--accent); } .ah-mut { fill: var(--muted); } .ah-ok { fill: var(--ok); } .ah-bad { fill: var(--bad); } .ah-prac { fill: var(--practice); }
+.defs { position: absolute; width: 0; height: 0; }
+
+/* Git terms beside the diagram */
+.term { border-left: 4px solid var(--git); padding: 4px 14px; font-size: 19px; line-height: 1.35; }
+.term b { display: block; font-size: 22px; }
+
+/* The 16 declared instances, grouped by type */
+.cells { --cell: 26px; --cgap: 4px; display: flex; gap: 12px; }
+.cells .g { display: flex; gap: var(--cgap); }
+.cells.head .g { font: 500 12px/1 var(--mono); letter-spacing: .05em; color: var(--muted); justify-content: center; }
+.cell { width: var(--cell); height: var(--cell); border-radius: 3px; }
+.cell.i { background: var(--frame); opacity: .8; }
+.cell.p { background: color-mix(in srgb, var(--ok) 75%, transparent); }
+.cell.m { background: var(--bad); }
+.cell.x { background: transparent; outline: 2px dashed var(--bad); outline-offset: -2px; }
+.cell.n { background: var(--muted); opacity: .45; }
+.types { display: grid; grid-template-columns: repeat(6, 1fr); gap: 14px; }
+.type { background: var(--sheet); border: 1px solid var(--rule); border-top: 5px solid var(--tone); padding: 12px 14px; display: grid; gap: 10px; align-content: start; }
+.type .tname { font: 600 22px/1.1 var(--body); }
+.type .cells .g { gap: 6px; }
+.req { display: grid; gap: 5px; }
+.req b, .chip { font: 500 13px/1.3 var(--mono); padding: 4px 7px; border: 1.5px solid var(--accent); color: var(--ink);
+  background: color-mix(in srgb, var(--accent) 16%, transparent); }
+.req b.ex, .chip.ex { border-style: dashed; border-color: var(--muted); color: var(--muted); background: none; }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 26px; align-items: center; font-size: 17px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 8px; }
+.legend .cell { --cell: 18px; display: inline-block; }
+.cases { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.cases b { font: 500 16px/1.3 var(--mono); padding: 6px 12px; background: var(--sheet); border: 1px solid var(--rule); }
+.cov { display: grid; gap: 10px; }
+.cov-row { display: grid; grid-template-columns: 210px 520px 1fr; column-gap: 24px; align-items: center; }
+.cov-row .cname { font-weight: 600; font-size: 21px; }
+.cov-row .verdict { font-size: 17px; line-height: 1.3; }
+.cov-row .verdict b { font-weight: 600; }
+.cov-row .verdict .flags { font: 13px var(--mono); color: var(--muted); }
+.v-ok b { color: var(--ok); } .v-bad b { color: var(--bad); } .v-warn b { color: var(--warn); }
+
+/* Show finished diagrams in print and for people who prefer less motion */
+@media print {
+  [data-step], [data-hide] { opacity: 1 !important; transform: none !important; }
+  [data-hide] { display: none !important; }
+  .draw { stroke-dashoffset: 0 !important; animation: none !important; }
+  .fade { opacity: 1 !important; animation: none !important; }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-step], [data-hide] { transition: none; transform: none !important; }
+  .draw, .on .draw { animation: none; stroke-dashoffset: 0; }
+  .on .fade { animation: none; opacity: 1; }
+}
