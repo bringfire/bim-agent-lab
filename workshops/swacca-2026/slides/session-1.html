@@ -188,20 +188,17 @@
 <section class="slide" data-title="The same answer from a desktop AI app">
   <h2>The same answer from a desktop AI app</h2>
   <div class="body">
-    <figure class="prompt answer large">
-      <figcaption>Agent answer · Claude Desktop Chat through our MCP server · Oct 22, 2026 · pasted by the author</figcaption>
-      <blockquote>“The declared scope does not pass. Coverage is complete, but two required fields are missing, and they affect 6 of the 16 instances. Nothing was edited or exported, and the model was unmodified before and after the check.”</blockquote>
-    </figure>
-    <div class="flow small push">
-      <div>Desktop AI app<span>Codex desktop or Claude Desktop</span></div><i>→</i>
-      <div>MCP server<span>Exposes two read-only tools</span></div><i>→</i>
-      <div>Revit add-in<span>Reads the open model</span></div>
+    <div class="chat">
+      <div class="chat-bar"><span class="dots"><i></i><i></i><i></i></span>Claude Desktop · Chat · wall-defects sample · Oct 22, 2026</div>
+      <div class="msg user rise" data-step="1"><span class="who">You · described, exact wording not saved</span>A neutral question about readiness, with no hint of the expected answer.</div>
+      <div class="tools rise" data-step="2"><span class="label">Tool calls</span><span class="tool">revit_get_readiness_context <b>✓</b></span><span class="tool">revit_check_required_type_information <b>✓</b></span></div>
+      <div class="msg bot rise" data-step="3"><span class="who">Claude</span>“The declared scope does not pass. Coverage is complete, but two required fields are missing, and they affect 6 of the 16 instances. Nothing was edited or exported, and the model was unmodified before and after the check.”</div>
     </div>
-    <p class="small muted">Session 2 shows how this connection was built and tested.</p>
+    <p class="small muted push">Answer pasted by the author; tool calls from the recorded traffic. Session 2 shows how this connection was built and tested.</p>
   </div>
   <aside class="notes">
-    <p>The same wall-defects sample, asked through a desktop AI app. The answer distinguishes complete coverage from a pass. That distinction is what we designed for.</p>
-    <p>This is what a desktop agent looks like to the person using it: ask the model a question, never see code. The rest of today explains what had to be true for that answer to be trustworthy.</p>
+    <p>Three clicks: the question, the tool calls, the answer. The exact prompt wasn't saved; the records say it was neutral and gave no expected answer. Not hinting at the answer is itself a habit worth teaching.</p>
+    <p>This is what a desktop agent looks like to the person using it: ask the model a question, never see code. The answer separates complete coverage from a pass, which is what we designed for. The rest of today explains what had to be true for that answer to be trustworthy.</p>
   </aside>
 </section>
 
