@@ -1,0 +1,629 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Session 1 · From BIM question to a researched plan · SWACCA 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body data-deck="swacca-2026-session-1" data-session="Session 1" data-start="08:30">
+<main class="stage">
+
+<!-- 00–05 Frame -->
+<div class="block" data-label="Frame the work" data-start="0" data-end="5" data-tone="frame">
+
+<section class="slide title" data-title="Title" data-page="1">
+  <span class="label">SWACCA BIM Summit 2026 · Education Session 1</span>
+  <h1>Build useful BIM tools with an AI agent</h1>
+  <p class="sub">Session 1 · From BIM question to a researched plan</p>
+  <div class="titlemeta">
+    <div><span class="label">Now</span><strong>Thu 10/29 · 8:30–9:30</strong></div>
+    <div><span class="label">Session 2</span><strong>11:00–12:00</strong></div>
+    <div><span class="label">Continue with</span><strong>github.com/bringfire/bim-agent-lab</strong></div>
+  </div>
+  <aside class="notes">
+    <p>Welcome. Two one-hour sessions today, with the Summit Challenge kickoff in between. Everyone should have the eight-page handout; slide footers show the matching page.</p>
+    <p>The repository is public. It holds the lessons, source code and evidence behind everything shown here.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Where are you starting?">
+  <h2>Where are you starting?</h2>
+  <p class="sub">A show of hands sets the pace. The same example appears at every level.</p>
+  <div class="body">
+    <div class="ladder">
+      <div class="card" data-tone="frame"><span class="label">L0 · Ask</span><h3>Spectator</h3>Ask the model questions in an AI chat app. Never see code.</div>
+      <div class="card" data-tone="practice"><span class="label">L1 · Script</span><h3>Scripter</h3>Have an AI write, explain and fix quick Dynamo or pyRevit scripts.</div>
+      <div class="card" data-tone="research"><span class="label">L2 · Build</span><h3>Agent-assisted builder</h3>Use Claude Code or Codex in a repository to build a C# add-in.</div>
+      <div class="card" data-tone="build"><span class="label">L3 · Systems</span><h3>Systems builder</h3>Build MCP tools, use independent review, write tests.</div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Ask: Who has used ChatGPT, Claude or Copilot for work? Written or edited a Dynamo graph? Used pyRevit? Written Revit API or C# code? Used a coding agent such as Claude Code or Codex?</p>
+    <p>Pitch to the room: don't go advanced too fast, and don't leave anyone out. L0 people are mostly watching. The readiness example shows up at each level.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Bring the BIM judgment" data-page="1">
+  <h2>Bring the BIM judgment.</h2>
+  <div class="body">
+    <p class="lead">You do not need to become a software developer to direct useful work. You do need to:</p>
+    <div class="cols three">
+      <div class="card"><span class="label">1</span><h3>Explain the problem</h3>Purpose, scope and the decision the answer supports.</div>
+      <div class="card"><span class="label">2</span><h3>Define a trustworthy answer</h3>Known cases and a result you can check without trusting the agent.</div>
+      <div class="card"><span class="label">3</span><h3>Ask for evidence</h3>What was observed, what was assumed, and what remains untested.</div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>This is the thesis of both hours (handout page 1). The agent handles a lot of mechanical work. The BIM professional owns the meaning: what counts as useful, which requirements apply, and whether the result supports the work.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Two hours, one example" data-page="1">
+  <h2>Two hours, one example, a resource for afterward</h2>
+  <div class="body">
+    <div class="cols">
+      <div>
+        <span class="label">Session 1 · 8:30 · from BIM question to researched plan</span>
+        <table class="t-small">
+          <tr><td>00–10</td><td>Frame the work and preview the example</td></tr>
+          <tr><td>10–18</td><td>Direct the agent with Git</td></tr>
+          <tr><td>18–33</td><td>Research existing work and resources</td></tr>
+          <tr><td>33–43</td><td>Define rules, scope and checkable cases</td></tr>
+          <tr><td>43–55</td><td>The first working step, plus quick scripting routes</td></tr>
+          <tr><td>55–60</td><td>Questions</td></tr>
+        </table>
+      </div>
+      <div>
+        <span class="label">Session 2 · 11:00 · from working example to your next tool</span>
+        <table class="t-small">
+          <tr><td>00–05</td><td>Reconnect to the declared scope</td></tr>
+          <tr><td>05–23</td><td>How we built the plugin and its MCP connection</td></tr>
+          <tr><td>23–35</td><td>Verify, debug and learn from independent review</td></tr>
+          <tr><td>35–50</td><td>Use bim-agent-lab with your own agent</td></tr>
+          <tr><td>50–60</td><td>Your office use case, then questions</td></tr>
+        </table>
+      </div>
+    </div>
+    <p class="small muted push">This is a guided account of a real build, with selected demonstrations. The repository holds the detailed procedures for later.</p>
+  </div>
+  <aside class="notes">
+    <p>Set expectations: we are not live-coding a plugin. We built it before the summit and recorded how. Today you follow the story and the decisions; afterward the repository is your reference.</p>
+  </aside>
+</section>
+</div>
+
+<!-- 05–10 Preview -->
+<div class="block" data-label="Preview the example" data-start="5" data-end="10" data-tone="practice">
+
+<section class="slide" data-title="The example we will follow" data-page="1">
+  <h2>The example we will follow</h2>
+  <div class="body">
+    <p class="big">Can we tell whether required wall and ceiling type information is present?</p>
+    <div class="flow push">
+      <div>Written checklist<span>Which fields each type requires</span></div><i>→</i>
+      <div>Read-only Revit check<span>Findings and coverage</span></div><i>→</i>
+      <div>Excel report<span>Four worksheets</span></div><i>→</i>
+      <div>Desktop AI tools<span>Through MCP</span></div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Model readiness leads the example. It is a contractor's question before a handoff: is the type information we rely on actually there?</p>
+    <p>One calculation, several ways to reach it: a Revit command, an Excel report, and an AI desktop app asking the model directly.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="What the finished check reports">
+  <h2>What the finished check reports</h2>
+  <div class="body">
+    <div class="cols">
+      <div class="center">
+        <figure class="shot" style="height: 480px">
+          <img src="../../../projects/revit-readiness/docs/verification/excel-evidence/revit-wall-defects.jpg" alt="Revit dialog: 2 missing required type values, 6 affected instances, examined 16 of 16 declared cases, document modified False before and after.">
+          <figcaption>Revit 2024 command · prepared wall-defects sample · repository evidence</figcaption>
+        </figure>
+      </div>
+      <div>
+        <div class="callout"><strong>2 missing required type values</strong>Wall B has no Fire Rating; Wall D has no Code.</div>
+        <div class="callout"><strong>6 affected instances</strong>A missing type value affects every placed instance.</div>
+        <div class="callout"><strong>16 of 16 declared cases examined</strong>Coverage is complete for this checklist scope.</div>
+        <div class="callout"><strong>Modified: False before / False after</strong>Read-only, on a disposable sample copy.</div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>This is the real result dialog from the Revit 2024 command on one of our prepared sample copies. Point out the parts that make it assessable: the count, the scope, coverage, and the read-only evidence.</p>
+    <p>Note the line about 1,196 host instances outside scope: the tool says what it did not examine.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="The same answer from a desktop AI app">
+  <h2>The same answer from a desktop AI app</h2>
+  <div class="body">
+    <figure class="prompt answer large">
+      <figcaption>Agent answer · Claude Desktop Chat through our MCP server · Oct 22, 2026 · pasted by the author</figcaption>
+      <blockquote>“The declared scope does not pass. Coverage is complete, but two required fields are missing, and they affect 6 of the 16 instances. Nothing was edited or exported, and the model was unmodified before and after the check.”</blockquote>
+    </figure>
+    <div class="flow small push">
+      <div>Desktop AI app<span>Codex desktop or Claude Desktop</span></div><i>→</i>
+      <div>MCP server<span>Exposes two read-only tools</span></div><i>→</i>
+      <div>Revit add-in<span>Reads the open model</span></div>
+    </div>
+    <p class="small muted">Session 2 shows how this connection was built and tested.</p>
+  </div>
+  <aside class="notes">
+    <p>The same wall-defects sample, asked through a desktop AI app. The answer distinguishes complete coverage from a pass. That distinction is what we designed for.</p>
+    <p>This is the L0 experience: ask the model a question, never see code. The rest of today explains what had to be true for that answer to be trustworthy.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Three questions; one built so far">
+  <h2>Three readiness questions; one built so far</h2>
+  <div class="body">
+    <div class="cols three">
+      <div class="card ok"><span class="label">Built · verified on Revit 2024</span><h3>Do we have the information we need?</h3>Required type information for declared walls and ceilings.</div>
+      <div class="card dim"><span class="label">Planned extension</span><h3>Which modeling conditions need review?</h3>Wall tops, ceiling heights and similar physical conditions.</div>
+      <div class="card dim"><span class="label">Planned extension</span><h3>Which quantities can we use?</h3>Quantities separated by readiness findings.</div>
+    </div>
+    <p class="small muted push">Inventory supports today's readiness answer. Measured quantities and physical-condition checks are future extensions.</p>
+  </div>
+  <aside class="notes">
+    <p>Be honest about scope. The first question is built and verified on Revit 2024 build 24.3.60.12. The other two were planned demonstrations; they remain future work in the repository.</p>
+    <p>An instance count is not an area, length or material quantity.</p>
+  </aside>
+</section>
+</div>
+
+<!-- 10–18 Git -->
+<div class="block" data-label="Direct the agent with Git" data-start="10" data-end="18" data-tone="git">
+
+<section class="slide" data-title="Git belongs at the start">
+  <h2>Git belongs at the start</h2>
+  <div class="body">
+    <figure class="prompt actual">
+      <figcaption>Actual prompt · the author, while planning this seminar</figcaption>
+      <blockquote>“One thing that participants need to know pretty much from the start is what it means to direct an agent in regards to working with git. I am going to ask you to clone the repos that you found, so that you can inspect the code for the researched resources.”</blockquote>
+    </figure>
+    <div class="cols">
+      <div class="callout"><strong>You decide when and why</strong>Clone to inspect real source. Branch before a change. Review the diff. Commit a checked step. Publish deliberately.</div>
+      <div class="callout"><strong>The agent handles the commands</strong>You don't need to memorize Git syntax. You need to know what to ask for and what to check.</div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>This is a real prompt from the build, labeled "actual". Prompts labeled "suggested" are reusable wording we wrote afterward.</p>
+    <p>The point: knowing that you should ask for cloning and checkpoints, and why. The agent does the mechanics.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Git terms" data-page="3">
+  <h2>What you are asking the agent to do</h2>
+  <div class="body">
+    <table>
+      <tr><th style="width: 24%">Git term</th><th>What you are asking for</th></tr>
+      <tr><td>Clone</td><td>Make a local copy so it can inspect an existing repository.</td></tr>
+      <tr><td>Branch</td><td>Name a line of work while preserving existing changes.</td></tr>
+      <tr><td>Diff</td><td>Show exactly what changed and explain its effect.</td></tr>
+      <tr><td>Commit</td><td>Record a selected, checked checkpoint in local history.</td></tr>
+      <tr><td>Remote / push</td><td>Identify the hosted destination; transfer commits to it.</td></tr>
+      <tr><td>Commit ID</td><td>Identify the exact version that was inspected or tested.</td></tr>
+    </table>
+  </div>
+  <aside class="notes">
+    <p>Handout page 3. Stress the difference between a commit (local checkpoint) and a push (publishing). Publishing should be a separate, deliberate instruction.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Every step is a checkpoint">
+  <h2>Every step is a checkpoint you can point to</h2>
+  <p class="sub">Real commits from the first day of this build, October 20, 2026</p>
+  <div class="body">
+    <div class="gitlog">
+      <div><b>3ca7a87</b> <span class="hl">chore: establish BIM Agent Lab teaching baseline</span></div>
+      <div><b>88ac2df</b> <span class="hl">docs: define minimum Revit development prerequisites</span></div>
+      <div><b>f025fce</b> <span class="hl">Add and verify the first read-only Revit 2024 command</span></div>
+      <div><b>c7c2ad9</b> <span class="hl">Add and verify required wall and ceiling type information check</span></div>
+      <div><b>4d40788</b> <span class="hl">Add ClosedXML readiness reports and dependency teaching lesson</span></div>
+      <div><b>7d3ae71</b> <span class="hl">Research current MCP versions and compare Revit bridge strategies</span></div>
+      <div class="dim">···</div>
+      <div><b>9ea3151</b> <span class="hl">feat: add MCP probe and record failed desktop compatibility checkpoint</span></div>
+    </div>
+    <div class="cols">
+      <div class="callout"><strong>A commit ID names an exact version</strong>"Tested at f025fce" is a claim someone else can check.</div>
+      <div class="callout"><strong>Useful failures are checkpoints too</strong>9ea3151 records a compatibility test that failed. Session 2 explains why that mattered.</div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Selected from the public history (git log in your own clone). Each commit pairs source with the lesson and the verification evidence.</p>
+    <p>Don't read every line. Point at f025fce (first working command) and 9ea3151 (a failure we kept on purpose).</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Make the work reviewable" data-page="3">
+  <h2>Make the work reviewable</h2>
+  <div class="body">
+    <figure class="prompt">
+      <figcaption>Suggested prompt · handout page 3</figcaption>
+      <blockquote>Inspect the current repository, branch and changes. Preserve existing work. Use an appropriate branch, show the diff and relevant checks, then commit a coherent step. Keep credentials, research clones and working model files out of Git. Confirm the destination and visibility before sharing.</blockquote>
+    </figure>
+    <div class="callout push"><strong>A local commit is not a push</strong>Saving a checkpoint and publishing it are separate decisions. Say which one you want.</div>
+  </div>
+  <aside class="notes">
+    <p>Reusable wording, not a transcript. Note what it keeps out of Git: credentials, research clones and working Revit models. Our repository ignores .rvt files and the research clone folder.</p>
+  </aside>
+</section>
+</div>
+
+<!-- 18–33 Research -->
+<div class="block" data-label="Research existing work" data-start="18" data-end="33" data-tone="research">
+
+<section class="slide" data-title="Ask it to look first" data-page="3">
+  <h2>Ask it to look first.</h2>
+  <div class="body">
+    <figure class="prompt actual">
+      <figcaption>Actual prompt · the author</figcaption>
+      <blockquote>“The first thing I want to impress on people is that research for work that has already been done by others and collecting the required resources are necessary.”</blockquote>
+    </figure>
+    <div class="cols four">
+      <div class="card"><span class="label">API</span>The interface a program exposes, such as the Revit API.</div>
+      <div class="card"><span class="label">SDK</span>Development tools and libraries for building against it.</div>
+      <div class="card"><span class="label">Dependency</span>Another package our code needs to build or run.</div>
+      <div class="card"><span class="label">Repository</span>Files plus their tracked history; a precedent or a starting point.</div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>The author went on: SDKs, APIs, required libraries, dependencies, and GitHub repositories that might serve as precedents, "or as starting points if they have the proper license structure."</p>
+    <p>Participants don't need every package name in advance. They need to ask what role each resource plays.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Research and collect" data-page="3">
+  <h2>Research and collect</h2>
+  <div class="body">
+    <figure class="prompt">
+      <figcaption>Suggested prompt · handout page 3</figcaption>
+      <blockquote>Find relevant official APIs, SDKs, libraries and existing GitHub projects. Check current versions, compatibility and licenses. Clone promising repositories into an ignored research folder and inspect the code behind the feature. Record source links and exact revisions. Distinguish a dependency we consume, code we adapt and a precedent we only learn from.</blockquote>
+    </figure>
+    <p class="small muted">Our agent investigated official Revit resources, local software and samples, and seven source repositories, cloned at recorded commits.</p>
+  </div>
+  <aside class="notes">
+    <p>The agent recorded exact versions, relevant code, dependencies and license evidence. The research did not commit us to installing every tool or copying a particular bridge.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Findings that changed the plan" data-page="3">
+  <h2>Reading the source changed the plan</h2>
+  <div class="body">
+    <table>
+      <tr><th style="width: 50%">Research finding</th><th>What it meant for our work</th></tr>
+      <tr class="now"><td>An existing query looked only at the current view and defaulted to a 100-element limit</td><td>A readiness report must say what it examined and whether anything was omitted</td></tr>
+      <tr><td>Revit API libraries and sample projects were already installed</td><td>Resource gathering could start with what was on the workstation</td></tr>
+      <tr><td>Candidate tools brought different packages, runtimes and license terms</td><td>A promising repository still needed compatibility and reuse assessment</td></tr>
+      <tr><td>Some repositories had source components that were not downloaded</td><td>Getting the main repository did not prove it was ready to build</td></tr>
+    </table>
+    <p class="callout push"><span><strong>A partial inventory cannot silently represent a whole model.</strong> A project description alone did not reveal that limit; inspecting the code did.</span></p>
+  </div>
+  <aside class="notes">
+    <p>This is why we ask the agent to clone and read code, not just summarize a README. The 100-element default would have produced confident but incomplete answers.</p>
+    <p>That finding shaped the whole design: our results report requested versus examined counts and two completeness flags.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Consume, adapt, or learn from">
+  <h2>Consume, adapt, or learn from</h2>
+  <p class="sub">Ask the agent to say which, for every resource it brings in.</p>
+  <div class="body">
+    <div class="cols three">
+      <div class="card" data-tone="git"><span class="label">Consume</span><h3>A dependency</h3>ClosedXML for the Excel report. The official C# MCP SDK 2.2.0 for the agent connection.</div>
+      <div class="card" data-tone="practice"><span class="label">Adapt</span><h3>Code with attribution</h3>One small input-cancellation helper from the C# SDK's source, with attribution and its license kept.</div>
+      <div class="card" data-tone="research"><span class="label">Learn from</span><h3>A precedent</h3>The TypeScript MCP SDK 1.26.0 and existing Revit bridges. Studied; no code copied or installed.</div>
+    </div>
+    <p class="small muted push">License labels are evidence to review, not a blanket conclusion that everything may be redistributed.</p>
+  </div>
+  <aside class="notes">
+    <p>These three categories carry different obligations. A dependency ships with your tool and brings its own dependencies. Adapted code needs attribution and license terms kept. A precedent costs nothing to ship but still needs to be checked.</p>
+    <p>The repository's THIRD_PARTY_NOTICES file records what we consume and adapt.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Ask for versions at every boundary" data-page="3">
+  <h2>Ask for versions at every boundary</h2>
+  <div class="body">
+    <table>
+      <tr><th style="width: 30%">Boundary</th><th>Recorded in our build</th></tr>
+      <tr><td>Revit</td><td>Revit 2024, build 24.3.60.12</td></tr>
+      <tr><td>SDK package</td><td>Official C# MCP SDK 2.2.0 (2.3.0 was newer at the time; the reviewed pin was kept)</td></tr>
+      <tr><td>MCP protocol</td><td>SDK test client: 2026-07-28 · Codex desktop: 2025-06-18 · Claude Desktop: 2025-11-25</td></tr>
+      <tr><td>Desktop app</td><td>Each app's own version, recorded with every test</td></tr>
+    </table>
+    <div class="callout push"><strong>A newer SDK does not prove every client supports its newest protocol.</strong>Ask what works together now, then pin and test that combination.</div>
+  </div>
+  <aside class="notes">
+    <p>Handout page 3 callout. These are four different facts. "Check the latest" means gather current evidence and explain the selection. It does not mean silently upgrading a reviewed implementation.</p>
+    <p>The protocol row is the setup for Session 2's compatibility story: both desktop apps sent older protocol versions than the SDK test.</p>
+  </aside>
+</section>
+</div>
+
+<!-- 33–43 Define -->
+<div class="block" data-label="Define the requirements" data-start="33" data-end="43" data-tone="frame">
+
+<section class="slide" data-title="Start with a useful question" data-page="2">
+  <h2>Start with a useful question.</h2>
+  <p class="sub">Your responsibility is the purpose, scope and standard of evidence.</p>
+  <div class="body">
+    <table class="t-small">
+      <tr><th style="width: 18%">Include</th><th>For our example</th></tr>
+      <tr><td>Purpose</td><td>Find missing type information before a defined handoff.</td></tr>
+      <tr><td>Scope</td><td>The declared host walls and ceilings, level and phase; say whether links count.</td></tr>
+      <tr><td>Rules</td><td>Which fields are required for which types, and which exceptions are explicit.</td></tr>
+      <tr><td>Boundaries</td><td>Read a disposable sample. Do not change model values.</td></tr>
+      <tr><td>Output</td><td>Findings, affected instances, coverage and a clear scoped verdict.</td></tr>
+      <tr><td>Proof</td><td>Known passing, failing and incomplete cases; compare with Revit schedules.</td></tr>
+    </table>
+  </div>
+  <aside class="notes">
+    <p>Handout page 2. Each row is a decision the professional makes, not the agent. Scope matters most: which level, which phase, whether links count.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Our prompt for the first rule">
+  <h2>Our prompt for the first rule</h2>
+  <div class="body">
+    <figure class="prompt actual">
+      <figcaption>Actual prompt · the author</figcaption>
+      <blockquote>“Ok, let's build the first readiness check for missing required wall and ceiling type information. Use a copy of a Revit sample project, verify the results independently, and record the process in bim-agent-lab.”</blockquote>
+    </figure>
+    <figure class="prompt compact">
+      <figcaption>Suggested follow-up for your own rule</figcaption>
+      <blockquote>What makes this field required, where does that requirement come from, and which cases are valid exceptions? Show the proposed scope and expected answers before implementing the check.</blockquote>
+    </figure>
+  </div>
+  <aside class="notes">
+    <p>A short prompt works because earlier context already set the rules: research first, read-only, sample copies, record everything. In a fresh conversation, point the agent at the repository instructions so that context comes back.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="A controlled sample, answers written first" data-page="5">
+  <h2>A controlled sample with answers written first</h2>
+  <div class="body">
+    <div class="cols wide-left">
+      <div>
+        <p>Copies of Autodesk's Snowdon Towers sample, with <strong>16 declared instances</strong> across six types: 12 walls and 4 ceilings.</p>
+        <ul class="small">
+          <li>Every type requires <strong>Code</strong> (Type Mark).</li>
+          <li>Walls A and B also require <strong>Fire Rating</strong> and <strong>Assembly Reference</strong>.</li>
+          <li>Other exemptions are written into the checklist. The tool does not infer them from blank values.</li>
+        </ul>
+      </div>
+      <div>
+        <span class="label">Five prepared cases</span>
+        <table class="t-small">
+          <tr><td>Complete</td></tr>
+          <tr><td>Wall defects</td></tr>
+          <tr><td>Ceiling negative</td></tr>
+          <tr><td>NC1: missing element</td></tr>
+          <tr><td>NC2: missing rule</td></tr>
+        </table>
+      </div>
+    </div>
+    <div class="callout push"><strong>Expected answers came first.</strong>Each case's result was written down before the tool ran, so the tool could be checked against it. Results are in Session 2.</div>
+  </div>
+  <aside class="notes">
+    <p>Deliberate passing, failing and incomplete cases are what make the tool checkable. NC1 and NC2 are negative controls: cases designed so that "zero findings" must not be read as a pass.</p>
+    <p>Sample model binaries are not in the repository. The repository has recipes for preparing them from the Revit sample.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Make the division of work explicit" data-page="2">
+  <h2>Make the division of work explicit</h2>
+  <div class="body">
+    <div class="cols">
+      <div class="card" data-tone="practice"><span class="label">You</span>Supply professional intent, choose acceptable behavior and judge whether the answer is useful. In live demos, you operate Revit menus and permission prompts.</div>
+      <div class="card" data-tone="research"><span class="label">The agent</span>Researches, inspects source, proposes a plan, writes code, runs checks and records evidence. Ask it to separate what it observed from what it assumes.</div>
+    </div>
+    <div class="callout"><strong>A useful follow-up</strong>“Show me the source or test that supports that claim. What remains unverified? What small check would resolve it?”</div>
+    <p class="small muted">Ask for one Revit action at a time, with an exact file path. A similarly named model is not proof that the intended document is active.</p>
+  </div>
+  <aside class="notes">
+    <p>Handout page 2. During our desktop tests, opening the wrong folder's copy of a model happened twice. Revit's journal confirmed it. Exact paths fixed it.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Frame the task before building" data-page="2">
+  <h2>Frame the task before building</h2>
+  <div class="body">
+    <figure class="prompt">
+      <figcaption>Suggested prompt · handout page 2</figcaption>
+      <blockquote>I want to check [information] before [handoff or decision]. Read the project context first. Help me define the scope, rules, exceptions and expected output. Research existing approaches and required resources. Propose a small first step and explain how we can verify it independently. Identify what you need me to decide before writing code.</blockquote>
+    </figure>
+    <div class="write push"><span class="label">Write on page 2</span>My intended scope, and one result I can check without trusting the agent.</div>
+  </div>
+  <aside class="notes">
+    <p>Give the room about 30 seconds to fill in the page 2 lines if the pace allows. Otherwise point to it for Session 2's exercise.</p>
+  </aside>
+</section>
+</div>
+
+<!-- 43–55 First build -->
+<div class="block" data-label="The first working step" data-start="43" data-end="55" data-tone="build">
+
+<section class="slide" data-title="Build in checkable steps" data-page="6">
+  <h2>Build in checkable steps</h2>
+  <div class="body">
+    <table>
+      <tr><th style="width: 30%">Step</th><th>How we engaged the agent</th></tr>
+      <tr class="now"><td>Prove the setup</td><td>Check prerequisites; build a minimal read-only Revit command.</td></tr>
+      <tr class="now"><td>Add one useful rule</td><td>Define required type information and controlled sample results.</td></tr>
+      <tr class="later"><td>Add Excel output</td><td>Review a library and its dependencies; compare with known results.</td></tr>
+      <tr class="later"><td>Connect an agent</td><td>Compare bridges; test actual desktop compatibility early.</td></tr>
+      <tr class="later"><td>Prepare recovery</td><td>Record installed files and backups before changes; test restoration.</td></tr>
+      <tr class="later"><td>Retain the lesson</td><td>Record participant decisions and the agent's reproducible procedure.</td></tr>
+    </table>
+    <p class="small muted">Highlighted now; the rest in Session 2.</p>
+  </div>
+  <aside class="notes">
+    <p>Handout page 6. Keep the calculation separate from the way people ask for it. Each row ended with evidence and a Git checkpoint before the next began.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Start with the smallest proof">
+  <h2>Start with the smallest proof</h2>
+  <div class="body">
+    <figure class="prompt actual compact">
+      <figcaption>Actual prompt · the author's starting question</figcaption>
+      <blockquote>“first things..What are the minimal requirements for developing a plugin for Revit? This includes all software, libraries or other dependencies that will allow a new user to build a plugin with their agent.”</blockquote>
+    </figure>
+    <figure class="prompt actual">
+      <figcaption>Actual prompt · the next instruction</figcaption>
+      <blockquote>“Ok, let's check this machine against the prerequisites, install anything missing, and build a minimal read-only Revit command to prove the setup works. Record the steps and lessons in the teaching repo.”</blockquote>
+    </figure>
+    <p class="small muted">The author didn't specify compiler flags, project files or installer scripts. The agent chose those.</p>
+  </div>
+  <aside class="notes">
+    <p>A bounded outcome: inspect the real machine, fill genuine gaps, make one small read-only command work, and leave a record someone else can follow.</p>
+    <p>Inspection found every required input already present. No prerequisite software needed installing on this machine. Your machine may differ, which is why the prompt asks for an inspection first.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Prove the setup with a known answer">
+  <h2>Prove the setup with a known answer</h2>
+  <div class="body">
+    <div class="cols wide-right">
+      <div class="center">
+        <figure class="shot">
+          <img src="../../../projects/revit-readiness/docs/verification/assets/probe-four-walls-first.jpg" alt="Read-only probe dialog: Wall instances 4, Ceiling instances 0, document modified False before and after, Revit 2024 build 24.3.60.12." style="width: 440px">
+          <figcaption>Read-only probe · Revit 2024 · commit f025fce</figcaption>
+        </figure>
+      </div>
+      <div>
+        <table class="t-small">
+          <tr><th>Case</th><th>Expected</th><th>Result</th></tr>
+          <tr><td>Empty project</td><td>0 walls, 0 ceilings</td><td class="yes">Matched</td></tr>
+          <tr><td>Four-wall model</td><td>4 walls, 0 ceilings</td><td class="yes">Matched twice</td></tr>
+          <tr><td>Read-only</td><td>No change</td><td class="yes">Modified flag false; file hashes matched</td></tr>
+        </table>
+        <div class="callout"><strong>What this proves, and what it doesn't</strong>The development setup works and a narrow count is right. Not readiness, quantities, MCP, or other Revit versions.</div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>The agent defined the expected answers before writing the command. Revit's own Properties palette showed Walls (4).</p>
+    <p>One check initially failed because Revit held the file open while the agent tried to hash it. That was recorded and resolved. It was not mistaken for the plugin changing the model.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Write the project memory first">
+  <h2>Write the project memory first</h2>
+  <div class="body">
+    <div class="cols">
+      <div>
+        <span class="label">AGENTS.md in this repository (excerpt)</span>
+        <pre style="font-size: 17px">## Where work belongs
+- Transferable lessons: docs/tutorials/
+  and docs/how-to/.
+- Application-specific implementation,
+  tests, and samples: projects/&lt;project&gt;/.
+- Event-specific planning and
+  presentations: workshops/&lt;event&gt;/.
+
+## How to work
+1. Inspect the repository, current branch,
+   and existing changes before editing.
+   Preserve unrelated work.</pre>
+      </div>
+      <div>
+        <p>Agents start each session without memory. AGENTS.md (or CLAUDE.md) gives every session the same rules:</p>
+        <ul class="small">
+          <li>Purpose, audience and scope</li>
+          <li>Where each kind of work belongs</li>
+          <li>How to work: research, verify, commit</li>
+          <li>Commands and boundaries: what not to touch</li>
+        </ul>
+        <p class="small muted">Here, CLAUDE.md simply points to AGENTS.md, so Claude Code and Codex read the same instructions.</p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Long-term memory is part of the Monday-morning workflow: write it before the first build, and update it as decisions are made.</p>
+    <p>Our AGENTS.md also carries current status and safety boundaries, such as "no installer while Revit is open". It grew with the project.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Quick route 1: Dynamo" data-page="4">
+  <h2>Quick route: Dynamo</h2>
+  <p class="sub">The agent writes the script; you run it in the correct Revit environment.</p>
+  <div class="body">
+    <div class="cols">
+      <div>
+        <ol class="small">
+          <li>Open a disposable sample project. <strong>Manage › Visual Programming › Dynamo</strong>; create a new graph.</li>
+          <li>Set run mode to <strong>Manual</strong>. Place a <strong>Python Script</strong> node, select <strong>CPython3</strong> and open its editor.</li>
+          <li>Paste the two lines. Connect OUT to a <strong>Watch</strong> node and click <strong>Run</strong>.</li>
+        </ol>
+      </div>
+      <div>
+        <pre>import sys
+OUT = ["Dynamo is working", sys.version]</pre>
+        <p class="small">Dynamo is included with Revit 2024, and its CPython3 engine has its own Python runtime. Next, ask for a read-only wall/ceiling inventory and compare its count with a native schedule.</p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Handout page 4. This only reports the Python version: a smoke check that the environment runs. It is not a rehearsed inventory script.</p>
+    <p>Ask the agent to confirm your installed Revit, Dynamo and engine versions first.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Quick route 2: pyRevit" data-page="4">
+  <h2>Quick route: pyRevit</h2>
+  <p class="sub">A separate, optional add-in that runs Python scripts as ribbon buttons.</p>
+  <div class="body">
+    <ol class="small">
+      <li>Ask the agent to inspect the installed pyRevit version and Python engine, then create a small extension with a read-only script.py command.</li>
+      <li>Have it give the exact registration and reload steps for that version. Run the button on the same sample and verify the output.</li>
+    </ol>
+    <figure class="prompt compact">
+      <figcaption>Suggested prompt for either route · handout page 4</figcaption>
+      <blockquote>For my installed [Dynamo or pyRevit] environment, create a read-only inventory of host basic walls and ceilings by type. State the scope and exclusions. Give me the exact run steps and an independent count check. Do not edit or save the model, and explain any extra dependency before adding it.</blockquote>
+    </figure>
+    <p class="small muted">Dynamo and pyRevit use different host objects and may use different Python engines. Don't assume one script works in both.</p>
+  </div>
+  <aside class="notes">
+    <p>pyRevit is not a prerequisite for following the seminar. These quick routes come before the compiled-plugin build: try one small read first.</p>
+  </aside>
+</section>
+</div>
+
+<!-- 55–60 Questions -->
+<div class="block" data-label="Questions" data-start="55" data-end="60" data-tone="frame">
+
+<section class="slide" data-title="Before you implement your own idea" data-page="1">
+  <h2>Before you implement your own idea, ask the agent to…</h2>
+  <div class="body">
+    <div class="cols">
+      <ol class="small">
+        <li>Read the project context and help define purpose, scope and proof.</li>
+        <li>Research existing work; clone it and inspect the actual code.</li>
+        <li>Record versions, licenses and what it will consume, adapt or only learn from.</li>
+      </ol>
+      <ol class="small" start="4">
+        <li>Write expected answers for known passing, failing and incomplete cases.</li>
+        <li>Build the smallest read-only step and prove it against those answers.</li>
+        <li>Show the diff and commit the checked step.</li>
+      </ol>
+    </div>
+    <div class="write"><span class="label">Write on page 1</span>One repetitive BIM question I would like to answer.</div>
+    <p class="lead wide push">Questions? <span class="muted">Session 2 at 11:00: the build, the evidence, and your next tool.</span></p>
+  </div>
+  <aside class="notes">
+    <p>Ask people to bring their page 1 question to Session 2. It feeds the last exercise and may help their Challenge team.</p>
+  </aside>
+</section>
+</div>
+
+</main>
+<script src="deck.js"></script>
+</body>
+</html>

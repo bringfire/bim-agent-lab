@@ -1,0 +1,559 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Session 2 · From working plugin to your next tool · SWACCA 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="deck.css">
+</head>
+<body data-deck="swacca-2026-session-2" data-session="Session 2" data-start="11:00">
+<main class="stage">
+
+<!-- 00–05 Reconnect -->
+<div class="block" data-label="Reconnect" data-start="0" data-end="5" data-tone="frame">
+
+<section class="slide title" data-title="Title">
+  <span class="label">SWACCA BIM Summit 2026 · Education Session 2</span>
+  <h1>Build useful BIM tools with an AI agent</h1>
+  <p class="sub">Session 2 · From working plugin to your next tool</p>
+  <div class="titlemeta">
+    <div><span class="label">Now</span><strong>Thu 10/29 · 11:00–12:00</strong></div>
+    <div><span class="label">Handout</span><strong>Pages 5–8</strong></div>
+    <div><span class="label">Continue with</span><strong>github.com/bringfire/bim-agent-lab</strong></div>
+  </div>
+  <aside class="notes">
+    <p>Welcome back. If the Challenge kickoff ran as scheduled, teams have formed since Session 1. This hour follows the plugin through MCP and verification, then hands over the repository so you can continue with your own agent.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Where we left off" data-page="5">
+  <h2>Where we left off</h2>
+  <div class="body">
+    <p class="big" style="font-size: 46px; max-width: 28ch">Can we tell whether required wall and ceiling type information is present?</p>
+    <div class="cols four">
+      <div class="card"><span class="label">Scope</span>16 declared instances, six types: 12 walls and 4 ceilings on one level and phase.</div>
+      <div class="card"><span class="label">Rules</span>Code for every type. Fire Rating and Assembly Reference for Walls A and B.</div>
+      <div class="card"><span class="label">Proof</span>Five prepared cases with answers written before the tool ran.</div>
+      <div class="card"><span class="label">So far</span>Research, Git checkpoints and a proven read-only command.</div>
+    </div>
+    <div class="write push"><span class="label">Keep your page 1 question handy</span>We'll use it in the last ten minutes.</div>
+  </div>
+  <aside class="notes">
+    <p>A quick recap for anyone who missed Session 1. The declared scope: host basic walls and ceilings on L1 - Block 43, phase New Construction. Links and other elements are excluded.</p>
+  </aside>
+</section>
+</div>
+
+<!-- 05–23 Build + MCP -->
+<div class="block" data-label="How we built it" data-start="5" data-end="23" data-tone="build">
+
+<section class="slide" data-title="Build in checkable steps" data-page="6">
+  <h2>Build in checkable steps</h2>
+  <div class="body">
+    <table>
+      <tr><th style="width: 30%">Step</th><th>How we engaged the agent</th></tr>
+      <tr class="later"><td>Prove the setup</td><td>Check prerequisites; build a minimal read-only Revit command.</td></tr>
+      <tr class="later"><td>Add one useful rule</td><td>Define required type information and controlled sample results.</td></tr>
+      <tr class="now"><td>Add Excel output</td><td>Review a library and its dependencies; compare with known results.</td></tr>
+      <tr class="now"><td>Connect an agent</td><td>Compare bridges; test actual desktop compatibility early.</td></tr>
+      <tr class="now"><td>Prepare recovery</td><td>Record installed files and backups before changes; test restoration.</td></tr>
+      <tr class="now"><td>Retain the lesson</td><td>Record participant decisions and the agent's reproducible procedure.</td></tr>
+    </table>
+    <p class="small muted">Keep the calculation separate from the way people ask for it.</p>
+  </div>
+  <aside class="notes">
+    <p>Handout page 6. Session 1 covered the first two rows. Now: the first dependency, the agent connection, and recovery.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Our first dependency: ClosedXML" data-page="6">
+  <h2>Our first dependency: ClosedXML</h2>
+  <div class="body">
+    <figure class="prompt actual compact">
+      <figcaption>Actual prompt · the author</figcaption>
+      <blockquote>“Ok, let's add the Excel output using ClosedXML with those four worksheets. Review the dependencies and licenses, verify the output against our sample results, and record the process in bim-agent-lab.”</blockquote>
+    </figure>
+    <figure class="shot">
+      <div class="crop" style="height: 280px"><img src="../../../projects/revit-readiness/docs/verification/excel-evidence/excel-findings.jpg" alt="Excel Findings sheet: Ceiling ACT Code missing (2 instances), Wall B FireRating missing (3), Wall D Code missing (3)." style="width: 2432px; height: auto; margin-top: -328px"></div>
+      <figcaption>Findings sheet, one of four: Summary · Findings · Affected elements · Rules and coverage · ceiling-negative sample</figcaption>
+    </figure>
+  </div>
+  <aside class="notes">
+    <p>It began with a question: "What additional libraries or add-ons would we need to produce an excel sheet readable output?" Then this bounded instruction.</p>
+    <p>The author chose the purpose, the output and the evidence standard. The agent inspected source, selected exact package versions, wrote the exporter and tests, and documented the result.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="A passing build did not predict the first Revit run" data-page="6">
+  <h2>A passing build did not predict the first Revit run</h2>
+  <div class="body">
+    <div class="cols wide-left">
+      <figure class="shot" style="height: 470px">
+        <img src="../../../projects/revit-readiness/docs/verification/excel-evidence/initial-host-failure.jpg" alt="Revit dialog: EXCEL EXPORT FAILED, a ClosedXML method does not have an implementation. JSON/text were saved.">
+        <figcaption>First export inside Revit · repository evidence</figcaption>
+      </figure>
+      <div>
+        <div class="callout"><strong>Automated tests passed</strong>The first export inside Revit failed.</div>
+        <div class="callout"><strong>The agent investigated</strong>It changed how the exporter runs: a small separate program now writes the workbook alongside Revit.</div>
+        <div class="callout"><strong>The lesson</strong>Require verification in the real application. That made the failure visible.</div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>The author did not have to diagnose library loading inside Revit. Requiring a real Revit run made the failure visible and gave the agent a reason to continue until the whole workflow worked.</p>
+    <p>Notice the dialog still reports the readiness result, and saved JSON/text. The failure was contained and stated plainly.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Add a dependency responsibly" data-page="6">
+  <h2>Add a dependency responsibly</h2>
+  <div class="body">
+    <figure class="prompt">
+      <figcaption>Suggested prompt · handout page 6</figcaption>
+      <blockquote>Add [output] using a suitable library. Research its current compatible version, license and transitive dependencies. Explain what will be installed. Verify the output against our independent sample results in the actual application, then record the process in both teaching layers.</blockquote>
+    </figure>
+    <figure class="prompt compact">
+      <figcaption>Suggested follow-up when the evidence is incomplete</figcaption>
+      <blockquote>Which checks have actually passed, and which still need the real application? Investigate the failure, preserve the working outputs and models, and show evidence that the fix works in Revit.</blockquote>
+    </figure>
+  </div>
+  <aside class="notes">
+    <p>"Both teaching layers" is this repository's convention: a participant story about how the person engaged the agent, and a technical guide another agent can follow.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="What MCP adds" data-page="6">
+  <h2>What MCP adds</h2>
+  <div class="body">
+    <p class="lead wide">MCP (Model Context Protocol) lets an AI application discover and call tools.</p>
+    <div class="flow">
+      <div>Desktop AI app<span>Codex desktop or Claude Desktop</span></div><i>→</i>
+      <div>MCP server<span>Built on the official C# MCP SDK 2.2.0</span></div><i>→</i>
+      <div>Revit add-in<span>Reads through Revit's supported API context</span></div>
+    </div>
+    <div class="cols">
+      <div class="card" data-tone="research"><span class="label">Tool 1</span><code>revit_get_readiness_context</code>Get a fresh context for the open model and checklist.</div>
+      <div class="card" data-tone="research"><span class="label">Tool 2</span><code>revit_check_required_type_information</code>Run the readiness check for that context.</div>
+    </div>
+    <p class="small muted">The shared evaluator applies the written rules. These calls read the model; they do not edit it or export files.</p>
+  </div>
+  <aside class="notes">
+    <p>Two tools only, both read-only. The add-in does the Revit reading; the same evaluator used by the manual command applies the checklist.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Choosing the bridge">
+  <h2>Choosing the bridge: say what you reuse</h2>
+  <div class="body">
+    <figure class="prompt actual">
+      <figcaption>Actual prompt · the author</figcaption>
+      <blockquote>“Ok, let's build the minimal custom bridge with C# MCP SDK 2.2.0 and protocol 2026-07-28. … one important thing to emphasize is whether you are using any code from the SDK 1.26.0, whether you're just using it as a learning precedent, or whether you're going handroll your own from scratch.”</blockquote>
+    </figure>
+    <div class="cols three">
+      <div class="card" data-tone="git"><span class="label">Consumed</span>Official C# MCP SDK 2.2.0 for MCP parsing and dispatch.</div>
+      <div class="card" data-tone="practice"><span class="label">Adapted</span>One small cancellation helper, with attribution and licenses kept.</div>
+      <div class="card" data-tone="research"><span class="label">Learned from</span>TypeScript SDK 1.26.0: research precedent only.</div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Before this, the agent compared the existing Revit bridge with a minimal custom bridge around our readiness check, and checked the latest MCP versions.</p>
+    <p>The author also asked for a written spec and implementation plan with external reviews before building. That comes up again under verification.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Test the least certain assumption first">
+  <h2>Test the least certain assumption first</h2>
+  <div class="body">
+    <div class="cols wide-left">
+      <div>
+        <p class="small">Before connecting Revit, a tiny test server checked that both seminar apps could talk to it at all.</p>
+        <table class="t-small">
+          <tr><th>Client</th><th>Observed</th></tr>
+          <tr><td>Official SDK test client</td><td class="yes">Passed on 2026-07-28</td></tr>
+          <tr><td>Codex desktop</td><td class="no">Sent 2025-06-18; rejected</td></tr>
+          <tr><td>Claude Desktop</td><td class="no">Sent 2025-11-25; rejected</td></tr>
+        </table>
+        <p class="small">The author then chose desktop compatibility, kept a 2026-07-28 regression test, and both desktops passed.</p>
+      </div>
+      <div>
+        <figure class="prompt actual compact">
+          <figcaption>Actual reaction · the author</figcaption>
+          <blockquote>“wait sorry...neither desktop apps support the new MCP protocol?”</blockquote>
+        </figure>
+        <div class="callout"><strong>A useful failure</strong>Found before the Revit connection was built. Changing a requirement stayed a visible author decision.</div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>The SDK test passing did not make it a desktop pass. The agent kept the wire evidence, so this was a specific compatibility issue rather than a vague "MCP did not work".</p>
+    <p>The author then asked whether newer app versions or settings helped, and what would be given up by accepting the older protocol, before changing the requirement. The failed checkpoint is commit 9ea3151; the passing one is 9b4eb51.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Prepare recovery before the first write" data-page="6">
+  <h2>Prepare recovery before the first write</h2>
+  <div class="body">
+    <div class="cols">
+      <div>
+        <p>Installing the bridge replaces files on a working machine. Before any change, the installer records an inventory and verified backups.</p>
+        <div class="callout"><strong>Tested for real</strong>Undo, run twice on the real installation, restored all 59 original files exactly. Reinstalling then matched all 97 planned targets.</div>
+      </div>
+      <figure class="prompt compact">
+        <figcaption>Suggested prompt · based on the approved review direction</figcaption>
+        <blockquote>Before touching the working installation, show what is already saved if the installer stops after its first write. Test interruptions between the important steps, then recover in a new process twice. Compare the original bytes and inventories, preserve unrelated files, and show what happens if someone edits a file before recovery.</blockquote>
+      </figure>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>A list of the files you intend to install cannot restore the files you already overwrote. Backups have to exist and be verified before the first replacement.</p>
+    <p>The repository tells this as the "install with a recovery plan" lesson. It is the most technical lesson; participants only need the principle.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Two ways to use the same calculation" data-page="6">
+  <h2>Two ways to use the same calculation</h2>
+  <div class="body">
+    <div class="cols">
+      <div class="card" data-tone="build"><span class="label">Run a command in Revit</span><h3>Manual</h3>Saves JSON and text evidence plus the four-sheet Excel workbook.</div>
+      <div class="card" data-tone="research"><span class="label">Ask an agent through MCP</span><h3>Conversational</h3>Returns structured results to the agent. Reads only: no edits and no exported files.</div>
+    </div>
+    <div class="callout push"><strong>One evaluator, one set of written rules.</strong>Both routes give the same findings for the same model and checklist, so either can be checked against the other.</div>
+  </div>
+  <aside class="notes">
+    <p>Handout page 6 callout. This separation is what "keep the calculation separate from the way people ask for it" means in practice.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Ask for an assessable answer" data-page="5">
+  <h2>Ask for an assessable answer</h2>
+  <div class="body">
+    <figure class="prompt compact">
+      <figcaption>Suggested prompt · handout page 5</figcaption>
+      <blockquote>Get a fresh readiness context and check required wall and ceiling type information. Report the full model path, scope, requested and examined counts, findings and affected instances, both completeness flags, scope issues and unexamined cases. Explain whether the declared scope passes. Do not edit or export anything.</blockquote>
+    </figure>
+    <figure class="prompt answer compact">
+      <figcaption>Agent answer, closing lines · Claude Desktop Chat · wall-defects sample · Oct 22, 2026</figcaption>
+      <blockquote>“The verdict covers only the declared 16 instances. Another 1,196 host wall and ceiling instances fall outside that scope and were not evaluated, and 6 link instances were excluded.”</blockquote>
+    </figure>
+  </div>
+  <aside class="notes">
+    <p>The answer we showed in Session 1 opened with "The declared scope does not pass." It closes by stating the limit of its own claim. That is what an assessable answer looks like.</p>
+  </aside>
+</section>
+</div>
+
+<!-- 23–35 Verify -->
+<div class="block" data-label="Verify, debug and review" data-start="23" data-end="35" data-tone="research">
+
+<section class="slide" data-title="Zero findings is not enough" data-page="5">
+  <h2>Zero findings is not enough.</h2>
+  <p class="sub">A readiness verdict needs both the rules and complete coverage.</p>
+  <div class="body">
+    <table>
+      <tr><th>Prepared case</th><th class="num">Missing findings</th><th class="num">Affected instances</th><th>Coverage complete</th><th>Evaluation complete</th></tr>
+      <tr><td>Complete</td><td class="num">0</td><td class="num">0</td><td class="yes">True</td><td class="yes">True</td></tr>
+      <tr><td>Wall defects</td><td class="num">2</td><td class="num">6</td><td class="yes">True</td><td class="yes">True</td></tr>
+      <tr><td>Ceiling negative</td><td class="num">3</td><td class="num">8</td><td class="yes">True</td><td class="yes">True</td></tr>
+      <tr class="now"><td>NC1: missing element</td><td class="num">0</td><td class="num">0*</td><td class="no">False</td><td class="yes">True</td></tr>
+      <tr class="now"><td>NC2: missing rule</td><td class="num">0</td><td class="num">0*</td><td class="no">False</td><td class="no">False</td></tr>
+    </table>
+    <p class="small">NC1 examines 15 of 16: one declared element is absent. NC2 finds all 16, but two ceilings have no matching requirement. <strong>Neither is a readiness pass.</strong></p>
+    <p class="tiny">*Affected instances counts missing-value findings only.</p>
+  </div>
+  <aside class="notes">
+    <p>Handout page 5. The two negative controls exist to catch a tool, or an agent, that reports "zero findings, all good". Both desktop apps and the SDK client returned these same reports in live tests.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Check against something independent" data-page="5">
+  <h2>Check the answer against something independent</h2>
+  <div class="body">
+    <div class="cols">
+      <figure class="shot" style="height: 420px">
+        <img src="../../../projects/revit-readiness/docs/verification/mcp-readiness-evidence/2026-10-22-wall-defects/native-walls-schedule.png" alt="Native Revit schedule BAL INFO Walls: WB rows have blank FireRating; WD rows have blank Code." style="width: 100%; image-rendering: auto">
+        <figcaption>Native Revit schedule · wall-defects sample · supplied by the author, Oct 22</figcaption>
+      </figure>
+      <div>
+        <div class="callout"><strong>The schedule agrees</strong>Wall B rows: Fire Rating blank. Wall D rows: Code blank. Two findings, six instances.</div>
+        <div class="callout"><strong>Confirm the intended model is active</strong>A similarly named copy is not the same document.</div>
+        <div class="callout"><strong>Counts are not quantities</strong>An instance count is not an area, length or material quantity.</div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Native Revit schedules and a prepared answer sheet are independent of both the plugin and the agent. A missing field on one type can affect several placed instances, which is why there are 2 findings but 6 affected instances.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Keep the claim inside its scope" data-page="5">
+  <h2>Keep the claim inside its scope</h2>
+  <div class="body">
+    <div class="callout"><strong>What the tool checks</strong>Whether required information is present. It does not validate a fire-rated assembly, certify compliance or establish whole-project readiness. Other host elements and links are outside this teaching scope.</div>
+    <div class="callout" data-tone="practice"><strong>Stale answers are rejected</strong>A context token binds each request to the observed document and checklist. After a model switch, the old token is rejected; get a fresh context to recover.</div>
+    <p class="small muted">An expired-token test alone does not prove model-switch detection. Switching models and recovering with a fresh context were tested live in both desktop apps.</p>
+  </div>
+  <aside class="notes">
+    <p>Handout page 5. Two ideas: the claim's boundary, and freshness. The context token prevents an agent from reporting results about a model that is no longer the one open.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Ask for a spec, a plan and a reviewer" data-page="7">
+  <h2>Ask for a spec, a plan and an independent reviewer</h2>
+  <div class="body">
+    <figure class="prompt actual">
+      <figcaption>Actual prompt · the author, before the bridge build</figcaption>
+      <blockquote>“I also want you to write a spec and implementation plan, with review sessions that we hand to an external reviewer, so that we can teach that skill…”</blockquote>
+    </figure>
+    <div class="flow small">
+      <div>Spec<span>Reviewed, revised</span></div><i>→</i>
+      <div>Author approval<span>A separate step</span></div><i>→</i>
+      <div>Plan<span>Reviewed, revised</span></div><i>→</i>
+      <div>Implementation review<span>Source, tests, evidence at exact commits</span></div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Handout page 7. Reviewer closure and the author's approval were distinct steps. The first spec review found two major issues and one minor; the plan review found three major and one minor.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Two or three major findings are a signal" data-page="7">
+  <h2>Ask what connects the findings</h2>
+  <div class="body">
+    <div class="callout" data-tone="practice"><strong>Two or three major findings are a signal.</strong>Ask whether the defects share an underlying missing concept. The count is a cue to investigate, not proof.</div>
+    <figure class="prompt">
+      <figcaption>Suggested prompt to the independent reviewer · handout page 7</figcaption>
+      <blockquote>Do these findings share a missing concept or reasoning framework? Explain the connection with evidence, identify other places it may apply, and state the tests that would demonstrate the broader guarantee. Distinguish a confirmed pattern from a hypothesis.</blockquote>
+    </figure>
+    <p class="small muted">Then give the explanation back to the coding agent so it fixes the broader problem, not just the named examples.</p>
+  </div>
+  <aside class="notes">
+    <p>This is the seminar's review takeaway. You don't need to diagnose the technical issue yourself. Ask the reviewer to look across the findings, then hand that explanation to the coder along with the original findings.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="What that revealed in our build" data-page="7">
+  <h2>What that revealed in our build</h2>
+  <div class="body">
+    <p class="small">The plan review found three major gaps: cancellation lost before a Revit read, a server that could hang while stopping, and an interrupted install without backups.</p>
+    <figure class="prompt actual">
+      <figcaption>Actual message accompanying those findings</figcaption>
+      <blockquote>“The common gap is reasoning about what remains safe when an operation stops halfway through.”</blockquote>
+    </figure>
+    <figure class="prompt compact">
+      <figcaption>Suggested prompt back to the coding agent · handout page 7</figcaption>
+      <blockquote>Assess the reviewer's diagnosis against the source before patching. State the guarantee that must hold across the whole operation, including interruption and failure. Apply the supported insight to every affected handoff, derive tests from it, preserve the original reproductions, and explain why the correction covers more than those examples.</blockquote>
+    </figure>
+  </div>
+  <aside class="notes">
+    <p>In plain terms: stopping your wait does not necessarily stop the Revit read. The read still needs its resources until it finishes, and its late result must not be presented as current.</p>
+    <p>Later cancellation findings showed a related gap: the coder had reasoned about who owned objects, but not fully about which work waited for other work. Tests then interrupted real operations at their handoffs.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="What each kind of evidence proves" data-page="7">
+  <h2>Ask what each kind of evidence proves</h2>
+  <div class="body">
+    <table>
+      <tr><th style="width: 32%">Evidence</th><th>What it proves</th></tr>
+      <tr><td>A build</td><td>The code compiles.</td></tr>
+      <tr><td>Offline tests</td><td>Specified behavior works outside the application.</td></tr>
+      <tr><td>A live Revit run</td><td>The host integration works.</td></tr>
+      <tr><td>A desktop answer</td><td>What the participant actually sees.</td></tr>
+    </table>
+    <div class="callout push"><strong>Freeze the candidate and record its identity.</strong>Evidence from an older installed build does not automatically prove the current source.</div>
+  </div>
+  <aside class="notes">
+    <p>Handout page 7. Each line answers a different question. Ask the agent which kind of evidence supports each claim it makes.</p>
+  </aside>
+</section>
+</div>
+
+<!-- 35–50 BIM Agent Lab -->
+<div class="block" data-label="Use BIM Agent Lab" data-start="35" data-end="50" data-tone="git">
+
+<section class="slide" data-title="Continue with bim-agent-lab" data-page="8">
+  <h2>Continue with bim-agent-lab</h2>
+  <div class="body">
+    <div class="cols wide-right center">
+      <div class="center"><img class="qr" src="assets/repo-qr.png" alt="QR code for https://github.com/bringfire/bim-agent-lab"></div>
+      <div>
+        <p class="url">github.com/bringfire/bim-agent-lab</p>
+        <ul>
+          <li><strong>Public now.</strong> No account or invitation needed to read or clone.</li>
+          <li>MIT license for original material.</li>
+          <li>Lessons, source code, evidence, and agent instructions in one place.</li>
+        </ul>
+        <p class="small muted">Your printed handout says "private during preparation". It went public on October 26; the same link and QR code work.</p>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Give people time to scan. The QR code is the same one printed on handout page 8 and points to https://github.com/bringfire/bim-agent-lab.</p>
+    <p>It is a teaching-source preview, not a packaged release.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Where to start" data-page="8">
+  <h2>Where to start</h2>
+  <div class="body">
+    <table class="t-small">
+      <tr><th style="width: 42%">Start with</th><th>Use it for</th></tr>
+      <tr><td><code>README.md</code></td><td>Current status and navigation</td></tr>
+      <tr><td><code>docs/start-here.md</code></td><td>Your first steps as a participant</td></tr>
+      <tr><td><code>docs/tutorials/README.md</code></td><td>How we engaged the agent at each stage</td></tr>
+      <tr><td><code>AGENTS.md</code></td><td>Rules and boundaries for agents working here</td></tr>
+      <tr><td><code>docs/how-to/agent-handoff.md</code></td><td>Technical setup, verification and remaining work</td></tr>
+    </table>
+    <div>
+      <span class="label">On Windows, clone with long paths enabled</span>
+      <pre>git clone -c core.longpaths=true https://github.com/bringfire/bim-agent-lab.git</pre>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Or ask your agent to clone it. The long-path option avoids checkout failures in deeply nested folders on Windows. Cloning installs nothing; build and installation are separate steps.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Use, learn, extend">
+  <h2>Use · learn · extend</h2>
+  <div class="body">
+    <div class="cols three">
+      <div class="card" data-tone="frame"><span class="label">Use</span><h3>Read and run</h3>Read the lessons with no Revit installed. Running the example needs the documented Windows and Revit 2024 environment.</div>
+      <div class="card" data-tone="research"><span class="label">Learn</span><h3>Follow the build</h3>Each step pairs a participant story (how we engaged the agent) with a technical guide for your agent.</div>
+      <div class="card" data-tone="build"><span class="label">Extend</span><h3>Add a rule</h3>Use the extension workflow and templates to add one readiness rule, or start another BIM tool.</div>
+    </div>
+    <p class="small muted push">Autodesk sample models and API libraries are not bundled. The repository has recipes for preparing the samples.</p>
+  </div>
+  <aside class="notes">
+    <p>Three ways in, depending on your level from Session 1's poll. L0 and L1 people can stop at "Use" and "Learn" and still get a lot out of it.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Your first prompt in your own checkout" data-page="8">
+  <h2>Your first prompt in your own checkout</h2>
+  <div class="body">
+    <figure class="prompt">
+      <figcaption>Suggested prompt · handout page 8</figcaption>
+      <blockquote>Clone https://github.com/bringfire/bim-agent-lab into a new folder. Read README.md, AGENTS.md, docs/start-here.md and docs/how-to/agent-handoff.md. Explain what works and what remains unverified. Inspect my prerequisites and guide me through one useful step. Tell me which Revit actions I must take. Explain proposed installations or settings changes before making them.</blockquote>
+    </figure>
+    <p class="small muted">Works with Claude Code, Codex, or another coding agent that can read a folder.</p>
+  </div>
+  <aside class="notes">
+    <p>The repository is written for both readers: you, and the agent you point at it. The agent reads AGENTS.md and the handoff; you read the stories.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Follow a lesson to its code and evidence">
+  <h2>Follow a lesson to its code and evidence</h2>
+  <div class="body">
+    <table class="t-small">
+      <tr><th style="width: 26%">Step</th><th>Participant story</th><th>Technical guide for your agent</th></tr>
+      <tr><td>Research</td><td>How did we ask for research before choosing tools?</td><td>Agent research guide, resource register</td></tr>
+      <tr><td>Git</td><td>How did we ask for source inspection and a reviewable history?</td><td>Agent Git guide, clone procedure</td></tr>
+      <tr><td>Setup</td><td>How did we turn prerequisites into a working proof?</td><td>Agent setup guide, prerequisites</td></tr>
+      <tr><td>Readiness</td><td>How did we request a meaningful rule and independent verification?</td><td>Agent readiness guide, contract</td></tr>
+      <tr><td>Excel</td><td>How did we direct a complete enhancement?</td><td>Agent dependency guide</td></tr>
+    </table>
+    <p class="small">The learning path continues through MCP, review, recovery and desktop testing. Ask your agent to explain one step: what the person decided, what was delegated, and the evidence.</p>
+  </div>
+  <aside class="notes">
+    <p>From docs/tutorials/README.md. Every story links to the same verification record and Git checkpoint as its technical guide.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Add one readiness rule">
+  <h2>Add one readiness rule</h2>
+  <div class="body">
+    <figure class="prompt">
+      <figcaption>Suggested prompt · from the readiness lesson</figcaption>
+      <blockquote>Read the existing contract and verification evidence. We need to check [condition] for [defined scope], using [requirement source]. Make the requirements and valid exceptions explicit. Prepare sample copies with independently known passing, failing, and excluded cases. Implement the check, verify values and affected identities against native BIM evidence, and show what the result does and does not prove. Record both learning layers and a reviewed Git checkpoint.</blockquote>
+    </figure>
+    <p class="small muted">Same pattern as today: purpose, scope, expected answers, smallest change, independent check, commit.</p>
+  </div>
+  <aside class="notes">
+    <p>If there's time, walk through how you would fill in the brackets for a wall and ceiling contractor's rule, e.g. a required STC rating on rated partitions, sourced from a project spec section.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="What is verified, and what isn't">
+  <h2>What is verified, and what isn't yet</h2>
+  <div class="body">
+    <div class="cols">
+      <div class="card ok"><span class="label">Verified</span>
+        <ul class="small">
+          <li>Revit 2024, build 24.3.60.12</li>
+          <li>Read-only command and four-sheet Excel output on the prepared samples</li>
+          <li>Reports for all five prepared cases, live through Codex desktop and Claude Desktop</li>
+          <li>Install recovery on a real machine</li>
+        </ul>
+      </div>
+      <div class="card warn"><span class="label">Not yet</span>
+        <ul class="small">
+          <li>Revit 2026 or 2027 support</li>
+          <li>Physical-condition and quantity checks</li>
+          <li>A packaged installer or release</li>
+          <li>Full implementation acceptance; the final independent review is still open</li>
+        </ul>
+      </div>
+    </div>
+    <p class="small muted">This is a teaching-source preview. Check the README's current status before installing anything.</p>
+  </div>
+  <aside class="notes">
+    <p>Model the behavior we've been teaching: state compatibility only as far as the evidence supports it. The repository's development-status page and acceptance ledger have the details.</p>
+  </aside>
+</section>
+</div>
+
+<!-- 50–55 Your idea -->
+<div class="block" data-label="Your idea" data-start="50" data-end="55" data-tone="practice">
+
+<section class="slide" data-title="Apply the process to your own idea" data-page="8">
+  <h2>Apply the process to your own idea</h2>
+  <p class="sub">An office task, or your Summit Challenge team's need. Two minutes.</p>
+  <div class="body">
+    <div class="cols four">
+      <div class="card"><span class="label">1 · Problem</span>Which repetitive BIM question, before which handoff or decision?</div>
+      <div class="card"><span class="label">2 · Existing resources</span>What might already exist: APIs, scripts, add-ins, repositories?</div>
+      <div class="card"><span class="label">3 · Smallest change</span>One read-only step that would be useful on its own.</div>
+      <div class="card"><span class="label">4 · Checkable answer</span>How will you know it's right without trusting the agent?</div>
+    </div>
+    <div class="write push"><span class="label">Write on page 8</span>My next small BIM question, and how I will verify the answer.</div>
+  </div>
+  <aside class="notes">
+    <p>Give two minutes to write, then ask one or two people to share. Push gently on box 4: what is the independent check? A native schedule, a hand count, a known sample?</p>
+  </aside>
+</section>
+</div>
+
+<!-- 55–60 Questions -->
+<div class="block" data-label="Questions and handoff" data-start="55" data-end="60" data-tone="frame">
+
+<section class="slide" data-title="Questions" data-page="7">
+  <h2>Questions</h2>
+  <div class="body">
+    <div class="cols wide-right center">
+      <div class="center"><img class="qr" src="assets/repo-qr.png" alt="QR code for https://github.com/bringfire/bim-agent-lab"></div>
+      <div>
+        <p class="url">github.com/bringfire/bim-agent-lab</p>
+        <ul class="small">
+          <li>Bring the BIM judgment: purpose, scope and evidence.</li>
+          <li>Ask it to look first, and to show you the source.</li>
+          <li>Write the expected answer before the tool runs.</li>
+          <li>Several major findings? Ask what connects them.</li>
+        </ul>
+        <div class="write"><span class="label">Write on page 7</span>A question I will ask before accepting an agent's work.</div>
+      </div>
+    </div>
+  </div>
+  <aside class="notes">
+    <p>Close by confirming the next action: clone the repository with your own agent and run the first prompt from page 8. Thank the organizers and the room.</p>
+  </aside>
+</section>
+</div>
+
+</main>
+<script src="deck.js"></script>
+</body>
+</html>
