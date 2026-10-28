@@ -152,11 +152,6 @@ pre { margin: 0; padding: 16px 20px; background: var(--sheet); border: 1px solid
 .ladder .card:nth-child(3) { min-height: 350px; }
 .ladder .card:nth-child(4) { min-height: 390px; }
 .card .today { margin-top: auto; padding-top: 10px; border-top: 1px solid var(--rule); font-size: 17px; color: var(--muted); }
-.gitlog { font: 19px/1.6 var(--mono); background: var(--sheet); border: 1px solid var(--rule); padding: 14px 20px; }
-.gitlog div { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.gitlog b { color: var(--actual); font-weight: 500; }
-.gitlog .hl { color: var(--ink); }
-.gitlog .dim { color: var(--muted); }
 .write { border: 1px dashed var(--tone, var(--accent)); padding: 14px 20px; font-size: 22px; display: grid; gap: 4px; }
 .write .label { color: var(--tone, var(--accent)); }
 .qr { width: 230px; height: 230px; image-rendering: pixelated; background: #fff; padding: 0; border: 0; }
@@ -338,3 +333,5 @@ body.presenter > .stage { display: none; }
 .tools { margin: 0 24px; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
 .tool { padding: 6px 12px; font: 15px/1.3 var(--mono); color: var(--muted); background: var(--paper); border: 1px solid var(--rule); border-radius: 6px; }
 .tool b { color: var(--ok); }
+.dg .commit-bad { fill: var(--paper); stroke: var(--bad); stroke-width: 4; }
+.dg .ring { fill: none; stroke: var(--accent); stroke-width: 3; }

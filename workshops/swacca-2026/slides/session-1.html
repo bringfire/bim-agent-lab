@@ -299,26 +299,43 @@
 
 <section class="slide" data-title="Every step is a checkpoint">
   <h2>Every step is a checkpoint you can point to</h2>
-  <p class="sub">Real commits from the first day of this build, October 20, 2026</p>
+  <p class="sub">Selected real commits from the first day of this build, October 20, 2026</p>
   <div class="body">
-    <div class="gitlog">
-      <div><b>3ca7a87</b> <span class="hl">chore: establish BIM Agent Lab teaching baseline</span></div>
-      <div><b>88ac2df</b> <span class="hl">docs: define minimum Revit development prerequisites</span></div>
-      <div><b>f025fce</b> <span class="hl">Add and verify the first read-only Revit 2024 command</span></div>
-      <div><b>c7c2ad9</b> <span class="hl">Add and verify required wall and ceiling type information check</span></div>
-      <div><b>4d40788</b> <span class="hl">Add ClosedXML readiness reports and dependency teaching lesson</span></div>
-      <div><b>7d3ae71</b> <span class="hl">Research current MCP versions and compare Revit bridge strategies</span></div>
-      <div class="dim">···</div>
-      <div><b>9ea3151</b> <span class="hl">feat: add MCP probe and record failed desktop compatibility checkpoint</span></div>
-    </div>
+    <svg class="dg" viewBox="0 0 1136 210" role="img" aria-label="A line of commits: 3ca7a87 teaching baseline, 88ac2df Revit prerequisites, f025fce first read-only command, c7c2ad9 required-information check, 4d40788 Excel report with ClosedXML, 7d3ae71 MCP version research, six more commits for the spec, plan and reviews, then 9ea3151 recording the failed desktop compatibility test.">
+      <line class="ln-git" x1="20" y1="110" x2="800" y2="110"/>
+      <line class="life" x1="800" y1="110" x2="1020" y2="110"/>
+      <line class="ln-git" x1="1020" y1="110" x2="1110" y2="110"/>
+      <g data-step="1"><circle class="ring" cx="340" cy="110" r="26"/></g>
+      <g data-step="2"><circle class="ring-bad" cx="1060" cy="110" r="26"/></g>
+      <circle class="commit" cx="60" cy="110" r="14"/><circle class="commit" cx="200" cy="110" r="14"/><circle class="commit" cx="340" cy="110" r="14"/>
+      <circle class="commit" cx="480" cy="110" r="14"/><circle class="commit" cx="620" cy="110" r="14"/><circle class="commit" cx="760" cy="110" r="14"/>
+      <circle class="commit-bad" cx="1060" cy="110" r="14"/>
+      <g>
+        <text class="t-mono t-warn" x="60" y="70" text-anchor="middle">3ca7a87</text>
+        <text class="t-mono t-warn" x="200" y="70" text-anchor="middle">88ac2df</text>
+        <text class="t-mono t-warn" x="340" y="70" text-anchor="middle">f025fce</text>
+        <text class="t-mono t-warn" x="480" y="70" text-anchor="middle">c7c2ad9</text>
+        <text class="t-mono t-warn" x="620" y="70" text-anchor="middle">4d40788</text>
+        <text class="t-mono t-warn" x="760" y="70" text-anchor="middle">7d3ae71</text>
+        <text class="t-mono t-bad" x="1060" y="70" text-anchor="middle">9ea3151</text>
+      </g>
+      <text class="t-small" x="60" y="158" text-anchor="middle">teaching</text><text class="t-small" x="60" y="180" text-anchor="middle">baseline</text>
+      <text class="t-small" x="200" y="158" text-anchor="middle">Revit</text><text class="t-small" x="200" y="180" text-anchor="middle">prerequisites</text>
+      <text x="340" y="158" text-anchor="middle" style="font-size: 15px">first read-only</text><text x="340" y="180" text-anchor="middle" style="font-size: 15px">command</text>
+      <text class="t-small" x="480" y="158" text-anchor="middle">required-info</text><text class="t-small" x="480" y="180" text-anchor="middle">check</text>
+      <text class="t-small" x="620" y="158" text-anchor="middle">Excel report</text><text class="t-small" x="620" y="180" text-anchor="middle">(ClosedXML)</text>
+      <text class="t-small" x="760" y="158" text-anchor="middle">MCP version</text><text class="t-small" x="760" y="180" text-anchor="middle">research</text>
+      <text class="t-small" x="910" y="158" text-anchor="middle">6 more: spec,</text><text class="t-small" x="910" y="180" text-anchor="middle">plan, reviews</text>
+      <text x="1060" y="158" text-anchor="middle" style="font-size: 15px">desktop test</text><text x="1060" y="180" text-anchor="middle" style="font-size: 15px">failed, recorded</text>
+    </svg>
     <div class="cols">
-      <div class="callout"><strong>A commit ID names an exact version</strong>"Tested at f025fce" is a claim someone else can check.</div>
-      <div class="callout"><strong>Useful failures are checkpoints too</strong>9ea3151 records a compatibility test that failed. Session 2 explains why that mattered.</div>
+      <div class="callout rise" data-step="1"><strong>A commit ID names an exact version</strong>"Tested at f025fce" is a claim someone else can check.</div>
+      <div class="callout rise" data-tone="bad" data-step="2"><strong>Useful failures are checkpoints too</strong>9ea3151 records a compatibility test that failed. Session 2 explains why that mattered.</div>
     </div>
   </div>
   <aside class="notes">
-    <p>Selected from the public history (git log in your own clone). Each commit pairs source with the lesson and the verification evidence.</p>
-    <p>Don't read every line. Point at f025fce (first working command) and 9ea3151 (a failure we kept on purpose).</p>
+    <p>Two clicks: the first working command, then a failure we kept on purpose. Selected from the public history (git log in your own clone); each commit pairs source with the lesson and the verification evidence.</p>
+    <p>The gap holds six commits for the bridge spec, plan and their external reviews, which Session 2 covers.</p>
   </aside>
 </section>
 
