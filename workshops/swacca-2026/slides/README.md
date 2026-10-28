@@ -40,7 +40,7 @@ Slide timings follow the [Option B agenda](../agenda.html), which remains the ti
 | Slide content | Source |
 |---|---|
 | Actual author prompts | Participant stories [00](../../../docs/tutorials/00-research-before-building.md), [01](../../../docs/tutorials/01-directing-an-agent-with-git.md), [02](../../../docs/tutorials/02-build-a-read-only-revit-command.md), [03](../../../docs/tutorials/03-check-required-type-information.md), [04](../../../docs/tutorials/04-add-an-excel-report-dependency.md), [06](../../../docs/tutorials/06-direct-design-and-external-review.md), [07](../../../docs/tutorials/07-test-desktop-compatibility-first.md) |
-| Level-of-engagement poll | [Planning notes](../planning-notes.md), levels accepted by the author October 15 |
+| Opening AI-experience question | The author's direction, October 28: gauge experience with chat interfaces, desktop agents, and agents working in code repositories. It replaces the October 15 [level-of-engagement ladder](../planning-notes.md) on that slide |
 | Revit, Excel and schedule screenshots | [Required-information](../../../projects/revit-readiness/docs/verification/2026-10-20-required-information.md), [Excel](../../../projects/revit-readiness/docs/verification/2026-10-20-excel-output.md), [read-only probe](../../../projects/revit-readiness/docs/verification/2026-10-20-read-only-probe.md) and [live MCP](../../../projects/revit-readiness/docs/verification/mcp-readiness.md) evidence |
 | Claude Desktop answer quotations | [Wall-defects answer](../../../projects/revit-readiness/docs/verification/mcp-readiness-evidence/2026-10-22-wall-defects/claude-wall-defects/answer.txt), pasted by the author |
 | Git checkpoints | The repository's own history (`git log --reverse`) |

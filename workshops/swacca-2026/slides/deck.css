@@ -144,10 +144,11 @@ pre { margin: 0; padding: 16px 20px; background: var(--sheet); border: 1px solid
 .flow > i { align-self: center; padding: 0 12px; font: normal 30px/1 var(--mono); color: var(--tone, var(--accent)); }
 .flow.small > div { font-size: 19px; padding: 12px 14px; }
 .ladder { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; align-items: end; }
-.ladder .card:nth-child(1) { min-height: 210px; }
-.ladder .card:nth-child(2) { min-height: 250px; }
-.ladder .card:nth-child(3) { min-height: 290px; }
-.ladder .card:nth-child(4) { min-height: 330px; }
+.ladder .card:nth-child(1) { min-height: 270px; }
+.ladder .card:nth-child(2) { min-height: 310px; }
+.ladder .card:nth-child(3) { min-height: 350px; }
+.ladder .card:nth-child(4) { min-height: 390px; }
+.ladder .today { margin-top: auto; padding-top: 10px; border-top: 1px solid var(--rule); font-size: 17px; color: var(--muted); }
 .gitlog { font: 19px/1.6 var(--mono); background: var(--sheet); border: 1px solid var(--rule); padding: 14px 20px; }
 .gitlog div { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .gitlog b { color: var(--actual); font-weight: 500; }
