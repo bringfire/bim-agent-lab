@@ -35,6 +35,9 @@ class RevitDeploymentTests(unittest.TestCase):
     def test_invalid_probe_template_is_rejected_before_install(self):
         self.run_case('probe-template')
 
+    def test_reinstall_and_stacked_undo_preserve_first_install_then_absence(self):
+        self.run_case('reinstall')
+
 
 if __name__ == '__main__':
     unittest.main()

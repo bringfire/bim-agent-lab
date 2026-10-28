@@ -1,4 +1,4 @@
-param([Parameter(Mandatory)][string]$Root,[ValidateSet('roundtrip','wrong-year','metadata','probe','mixed','probe-interrupted','probe-template')][string]$Scenario='roundtrip')
+param([Parameter(Mandatory)][string]$Root,[ValidateSet('roundtrip','wrong-year','metadata','probe','mixed','probe-interrupted','probe-template','reinstall')][string]$Scenario='roundtrip')
 $ErrorActionPreference='Stop'
 $project=Split-Path $PSScriptRoot -Parent
 Import-Module (Join-Path $project 'scripts/McpDeployment.psm1') -Force
@@ -75,6 +75,15 @@ try {
     if((Get-RevitAssemblyInfo -LiteralPath $dll).TargetFramework -ne '.NETCoreApp,Version=v10.0'){throw 'Installed wrong framework.'}
     $state=Get-Content -LiteralPath $receipt -Raw | ConvertFrom-Json
     foreach($op in $state.Operations){if($op.After -and (Get-FileHash -LiteralPath $op.Target).Hash -ne $op.After){throw 'Installed hash mismatch.'}}
+    if($Scenario -eq 'reinstall') {
+        $firstHash=(Get-FileHash -LiteralPath $dll).Hash
+        $secondPlan=New-McpDeploymentPlan @options
+        $secondReceipt=Save-McpDeploymentRecovery -Lease $lease -Plan $secondPlan -RecoveryRoot $recovery
+        Invoke-McpDeploymentPlan -Lease $lease -ReceiptPath $secondReceipt
+        Restore-McpDeployment -Lease $lease -ReceiptPath $secondReceipt
+        Restore-McpDeployment -Lease $lease -ReceiptPath $secondReceipt
+        if((Get-FileHash -LiteralPath $dll).Hash -ne $firstHash){throw 'Undo of reinstall did not restore first candidate.'}
+    }
     Restore-McpDeployment -Lease $lease -ReceiptPath $receipt
     Restore-McpDeployment -Lease $lease -ReceiptPath $receipt
     if(Test-Path -LiteralPath $dll){throw 'Fresh install was not restored to absence.'}

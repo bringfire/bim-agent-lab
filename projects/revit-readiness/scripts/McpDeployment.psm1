@@ -218,7 +218,13 @@ function New-McpDeploymentPlan {
             $fixtureDll=Join-Path $source "tests/fixture-tools/$($target.OutputRelative)/BimAgentLab.FixtureTools.dll"
             if($RevitYear -eq '2026'){Assert-RevitAssembly -LiteralPath $fixtureDll -RevitYear $RevitYear -RequireRevitApi}
             $f['BimAgentLab.FixtureTools.dll']=[IO.File]::ReadAllBytes($fixtureDll)
-            if($RevitYear -eq '2026'){Add-Payload $f 'BimAgentLab.FixtureTools.deps.json' (Join-Path $source "tests/fixture-tools/$($target.OutputRelative)/BimAgentLab.FixtureTools.deps.json")}
+            if($RevitYear -eq '2026'){
+                # Prior inventory seeded this map. Replace the dependency manifest
+                # alongside the updated fixture DLL, retaining source-path checks.
+                $deps='BimAgentLab.FixtureTools.deps.json'
+                if($f.Contains($deps)){$f.Remove($deps)}
+                Add-Payload $f $deps (Join-Path $source "tests/fixture-tools/$($target.OutputRelative)/$deps")
+            }
             $f['fixture-settings.json']=Get-JsonBytes @{SourceCopy=$model}
             # Existing legacy settings were not inventoried: their recognized manifest owns this one known path.
             if([IO.File]::Exists((Join-Path $fixture 'fixture-settings.json')) -and -not $prior.ContainsKey('fixture-settings.json')) {
