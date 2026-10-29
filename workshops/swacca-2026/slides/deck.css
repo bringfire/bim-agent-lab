@@ -360,3 +360,6 @@ tr.mark td { background: color-mix(in srgb, var(--tone, var(--accent)) 20%, tran
 .dg .dyn-code { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
 .dg .dyn-wire { fill: none; stroke: var(--ink); stroke-width: 2.5; }
 .dg .port { fill: var(--accent); }
+.tight { gap: 12px !important; }
+.tight .callout { font-size: 19px; padding: 11px 18px; gap: 3px; }
+.tight .callout strong:first-child { font-size: 21px; }

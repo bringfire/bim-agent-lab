@@ -133,21 +133,27 @@
 <section class="slide" data-title="A passing build did not predict the first Revit run" data-page="6">
   <h2>A passing build did not predict the first Revit run</h2>
   <div class="body">
-    <div class="cols wide-left">
-      <figure class="shot" style="height: 470px">
-        <img src="../../../projects/revit-readiness/docs/verification/excel-evidence/initial-host-failure.jpg" alt="Revit dialog: EXCEL EXPORT FAILED, a ClosedXML method does not have an implementation. JSON/text were saved.">
+    <div class="cols">
+      <figure class="shot">
+        <div class="anno">
+          <img src="../../../projects/revit-readiness/docs/verification/excel-evidence/initial-host-failure.jpg" alt="Revit dialog: 0 missing required type values; EXCEL EXPORT FAILED, a ClosedXML method does not have an implementation; JSON/text were saved." style="height: 440px">
+          <span class="hl" data-tone="bad" data-step="1" style="left: 1.3%; top: 33.9%; width: 96.7%; height: 6%"></span>
+          <span class="hl" data-tone="ok" data-step="2" style="left: 1.3%; top: 7.9%; width: 36%; height: 4.3%"></span>
+          <span class="hl" data-tone="ok" data-step="2" style="left: 1.3%; top: 39.9%; width: 77.6%; height: 3.2%"></span>
+        </div>
         <figcaption>First export inside Revit · repository evidence</figcaption>
       </figure>
-      <div>
-        <div class="callout"><strong>Automated tests passed</strong>The first export inside Revit failed.</div>
-        <div class="callout"><strong>The agent investigated</strong>It changed how the exporter runs: a small separate program now writes the workbook alongside Revit.</div>
-        <div class="callout"><strong>The lesson</strong>Require verification in the real application. That made the failure visible.</div>
+      <div class="tight">
+        <div class="callout rise" data-tone="bad" data-step="1"><strong>Automated tests passed</strong>The first export inside Revit failed.</div>
+        <div class="callout rise" data-tone="ok" data-step="2"><strong>The failure was contained</strong>The check still ran and saved JSON/text; only the workbook failed, and the dialog said so.</div>
+        <div class="callout rise" data-tone="research" data-step="3"><strong>The agent investigated</strong>A small separate program now writes the workbook alongside Revit.</div>
+        <div class="callout rise" data-tone="practice" data-step="4"><strong>The lesson</strong>Require verification in the real application. That made the failure visible.</div>
       </div>
     </div>
   </div>
   <aside class="notes">
+    <p>Four clicks. First the error lines in the real dialog, then the parts that still worked (the result line and the saved JSON/text), then the fix, then the lesson.</p>
     <p>The author did not have to diagnose library loading inside Revit. Requiring a real Revit run made the failure visible and gave the agent a reason to continue until the whole workflow worked.</p>
-    <p>Notice the dialog still reports the readiness result, and saved JSON/text. The failure was contained and stated plainly.</p>
   </aside>
 </section>
 
@@ -211,15 +217,11 @@
 <section class="slide" data-title="Choosing the bridge">
   <h2>Choosing the bridge: say what you reuse</h2>
   <div class="body">
-    <figure class="prompt actual">
+    <figure class="prompt actual large">
       <figcaption>Actual prompt · the author</figcaption>
       <blockquote>“Ok, let's build the minimal custom bridge with C# MCP SDK 2.2.0 and protocol 2026-07-28. … one important thing to emphasize is whether you are using any code from the SDK 1.26.0, whether you're just using it as a learning precedent, or whether you're going handroll your own from scratch.”</blockquote>
     </figure>
-    <div class="cols three">
-      <div class="card" data-tone="git"><span class="label">Consumed</span>Official C# MCP SDK 2.2.0 for MCP parsing and dispatch.</div>
-      <div class="card" data-tone="practice"><span class="label">Adapted</span>One small cancellation helper, with attribution and licenses kept.</div>
-      <div class="card" data-tone="research"><span class="label">Learned from</span>TypeScript SDK 1.26.0: research precedent only.</div>
-    </div>
+    <div class="callout push" data-tone="research"><strong>The same three relationships as Session 1</strong>Consume the C# MCP SDK 2.2.0 package · adapt one small helper, with attribution · learn from TypeScript SDK 1.26.0, no code copied.</div>
   </div>
   <aside class="notes">
     <p>Before this, the agent compared the existing Revit bridge with a minimal custom bridge around our readiness check, and checked the latest MCP versions.</p>
