@@ -6,9 +6,9 @@
   --muted: #a5b1bd; --rule: #34414f; --accent: #8fb8e0; --actual: #e8b86b;
   --frame: #8a9aab; --git: #6cc59a; --research: #6fa8e0; --build: #b39ae0; --practice: #e0b45a;
   --ok: #6cc59a; --warn: #e8b86b; --bad: #ef8f86;
-  --display: "Barlow Condensed", "Avenir Next Condensed", "Arial Narrow", sans-serif;
+  --display: "Barlow Condensed", "Bahnschrift SemiCondensed", Bahnschrift, "Avenir Next Condensed", "Arial Narrow", sans-serif;
   --body: "IBM Plex Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
-  --mono: "IBM Plex Mono", "SF Mono", Menlo, Consolas, monospace;
+  --mono: "IBM Plex Mono", "Cascadia Mono", Consolas, "SF Mono", Menlo, monospace;
 }
 body.light {
   color-scheme: light;
@@ -21,7 +21,7 @@ body.light {
 html, body { margin: 0; height: 100%; }
 body { background: var(--paper); color: var(--ink); font: 25px/1.4 var(--body); overflow: hidden; }
 a { color: var(--accent); text-underline-offset: 4px; }
-h1, h2, h3 { margin: 0; font-family: var(--display); font-weight: 600; line-height: 1.08; text-wrap: balance; }
+h1, h2, h3 { margin: 0; font-family: var(--display); font-weight: 600; font-stretch: semi-condensed; line-height: 1.08; text-wrap: balance; }
 p { margin: 0; }
 code, .mono { font-family: var(--mono); }
 
@@ -70,7 +70,7 @@ code, .mono { font-family: var(--mono); }
 /* Statement and lists */
 .lead { font-size: 32px; line-height: 1.32; max-width: 30ch; }
 .lead.wide { max-width: none; }
-.big { font-family: var(--display); font-weight: 600; font-size: 60px; line-height: 1.08; max-width: 22ch; }
+.big { font-family: var(--display); font-weight: 600; font-stretch: semi-condensed; font-size: 60px; line-height: 1.08; max-width: 22ch; }
 ul, ol { margin: 0; padding-left: 1.1em; display: grid; gap: 10px; }
 li::marker { color: var(--tone, var(--accent)); }
 .muted { color: var(--muted); }
