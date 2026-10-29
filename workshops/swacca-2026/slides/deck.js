@@ -1,5 +1,6 @@
 // Small slide engine shared by the SWACCA 2026 decks. No dependencies; works from file://.
 // Slides live in agenda blocks: <div class="block" data-label data-start data-end data-tone>.
+// A slide marked data-optional is flagged in the presenter view as safe to skip.
 // Inside a slide, data-step="n" appears on the nth click, data-hide="n" disappears from it
 // and data-mark="n" stays visible but gains the class "mark" from it.
 // Keys: arrows/Page/Space navigate, N notes, S presenter window, L light theme, F fullscreen, ? help.
@@ -192,7 +193,7 @@
     slides.forEach((s, i) => {
       const b = document.createElement('button');
       b.innerHTML = `<b>${i + 1}</b>`;
-      b.append(s.dataset.title);
+      b.append(s.dataset.title + (s.dataset.optional !== undefined ? ' · optional' : ''));
       b.addEventListener('click', () => request(i, 0));
       list.append(b);
     });
@@ -225,7 +226,8 @@
       put(frames[1], atEnd ? null : ni, ns);
       $('.pv-next-label').textContent = atEnd ? 'Next' : ni === cur ? `Next click · build ${ns} of ${maxStep[cur]}` : 'Next slide';
       const builds = maxStep[cur] ? ` · build ${step} of ${maxStep[cur]}` : '';
-      $('.pv-notes').innerHTML = `<h4>Notes · ${cur + 1} / ${total}${builds}</h4>${notesOf(cur)}`;
+      const optional = slides[cur].dataset.optional !== undefined ? '<p class="pv-optional">Optional slide: skip it if you are short on time.</p>' : '';
+      $('.pv-notes').innerHTML = `<h4>Notes · ${cur + 1} / ${total}${builds}</h4>${optional}${notesOf(cur)}`;
       [...list.children].forEach((b, j) => b.classList.toggle('on', j === cur));
       list.children[cur].scrollIntoView({ block: 'nearest' });
       history.replaceState(null, '', `${location.pathname}${location.search}${hashFor(cur, step)}`);

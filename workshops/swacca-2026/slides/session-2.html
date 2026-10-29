@@ -420,7 +420,7 @@
   </aside>
 </section>
 
-<section class="slide" data-title="Keep the claim inside its scope" data-page="5">
+<section class="slide" data-title="Keep the claim inside its scope" data-page="5" data-optional>
   <h2>Keep the claim inside its scope</h2>
   <div class="body">
     <div class="callout"><strong>What the tool checks</strong>Whether required information is present. It does not validate a fire-rated assembly, certify compliance or establish whole-project readiness. Other host elements and links are outside this teaching scope.</div>
@@ -457,27 +457,51 @@
     <p class="small muted push">An expired-token test alone does not prove model-switch detection. Switching models and recovering with a fresh context were tested live in both desktop apps.</p>
   </div>
   <aside class="notes">
-    <p>Three clicks after the first box. Handout page 5. A context token binds each request to the observed document and checklist, so an agent cannot report results about a model that is no longer the one open.</p>
+    <p><strong>Optional:</strong> if you are running long, skip this slide; the story holds without it. Three clicks after the first box. Handout page 5. A context token binds each request to the observed document and checklist, so an agent cannot report results about a model that is no longer the one open.</p>
     <p>Keep the claim's boundary in view too: the tool checks presence of required information, nothing more.</p>
   </aside>
 </section>
 
-<section class="slide" data-title="Ask for a spec, a plan and a reviewer" data-page="7">
-  <h2>Ask for a spec, a plan and an independent reviewer</h2>
+<section class="slide" data-title="Brainstorm first: the Superpowers skill" data-page="7">
+  <h2>Brainstorm before the spec: Superpowers</h2>
   <div class="body">
-    <figure class="prompt actual">
-      <figcaption>Actual prompt · the author, before the bridge build</figcaption>
-      <blockquote>“I also want you to write a spec and implementation plan, with review sessions that we hand to an external reviewer, so that we can teach that skill…”</blockquote>
-    </figure>
-    <div class="flow small">
-      <div>Spec<span>Reviewed, revised</span></div><i>→</i>
-      <div>Author approval<span>A separate step</span></div><i>→</i>
-      <div>Plan<span>Reviewed, revised</span></div><i>→</i>
-      <div>Implementation review<span>Source, tests, evidence at exact commits</span></div>
+    <div class="cols">
+      <div>
+        <p class="small"><strong>Superpowers</strong> is an open-source set of skills for coding agents (github.com/obra/superpowers, MIT). Its <strong>brainstorming</strong> skill asks what you are really trying to do, compares approaches, and writes a spec you review before any plan or code.</p>
+        <p class="small muted">Available for Claude Code, the Codex app and other agents. We used version 6.4.2 on October 20; the current release is newer, so ask your agent which version it has.</p>
+      </div>
+      <figure class="prompt actual compact">
+        <figcaption>Actual prompt · the author, before the bridge build</figcaption>
+        <blockquote>“I also want you to write a spec and implementation plan, with review sessions that we hand to an external reviewer, so that we can teach that skill...use the superpowers brainstorming skill protocol.”</blockquote>
+      </figure>
     </div>
+    <svg class="dg push" viewBox="0 0 1136 160" role="img" aria-label="The gated sequence: brainstorm, then a written spec; spec review and your approval; an implementation plan; plan review, your approval and your choice of how to execute; implementation with code, tests and evidence; then implementation and evidence review.">
+      <g data-step="1">
+        <rect class="box" x="0" y="20" width="170" height="76" rx="8"/><text class="t-title" x="16" y="52">Brainstorm</text><text class="t-small" x="16" y="78">questions, options</text>
+        <path class="arr draw" pathLength="1" d="M172 58 L236 58" style="--d:.3s"/>
+        <g class="fade" style="--d:.5s"><rect class="box-hi" x="240" y="20" width="170" height="76" rx="8"/><text class="t-title" x="256" y="52">Spec</text><text class="t-small" x="256" y="78">what + how to check</text></g>
+      </g>
+      <g data-step="2">
+        <path class="arr draw" pathLength="1" d="M412 58 L526 58"/>
+        <line class="gate" x1="469" y1="36" x2="469" y2="80"/>
+        <text class="t-small" x="469" y="122" text-anchor="middle">spec review</text><text class="t-small t-warn" x="469" y="142" text-anchor="middle">+ your approval</text>
+        <g class="fade" style="--d:.4s"><rect class="box-hi" x="530" y="20" width="170" height="76" rx="8"/><text class="t-title" x="546" y="52">Plan</text><text class="t-small" x="546" y="78">small, testable tasks</text></g>
+      </g>
+      <g data-step="3">
+        <path class="arr draw" pathLength="1" d="M702 58 L816 58"/>
+        <line class="gate" x1="759" y1="36" x2="759" y2="80"/>
+        <text class="t-small" x="759" y="122" text-anchor="middle">plan review</text><text class="t-small t-warn" x="759" y="142" text-anchor="middle">+ approval, how to run it</text>
+        <g class="fade" style="--d:.4s"><rect class="box-hi" x="820" y="20" width="170" height="76" rx="8"/><text class="t-title" x="836" y="52">Implement</text><text class="t-small" x="836" y="78">code, tests, evidence</text></g>
+        <path class="arr draw" pathLength="1" d="M992 58 L1130 58" style="--d:.6s"/>
+        <line class="gate" x1="1060" y1="36" x2="1060" y2="80"/>
+        <text class="t-small" x="1060" y="122" text-anchor="middle">implementation</text><text class="t-small" x="1060" y="142" text-anchor="middle">and evidence review</text>
+      </g>
+    </svg>
   </div>
   <aside class="notes">
-    <p>Handout page 7. Reviewer closure and the author's approval were distinct steps. The first spec review found two major issues and one minor; the plan review found three major and one minor.</p>
+    <p>Three clicks: brainstorm to spec, the plan behind its gate, then implementation and its review. The gates are the point: in the skill version we used, you approve the written spec before a plan is written, then review the written plan and choose how it is executed. You chose Native execution after the plan review.</p>
+    <p>Our first spec review found two major issues and one minor; the plan review found three major and one minor. The agent also used Superpowers' receiving-code-review skill to check each finding against the source before editing. The next slide is what to do when several major findings arrive at once.</p>
+    <p>For participants: in Claude Code the plugin installs with /plugin install superpowers@claude-plugins-official (as listed on the project page on October 28). The repository's agent procedure records the exact skill version and file used.</p>
   </aside>
 </section>
 
@@ -662,18 +686,19 @@
 
 <section class="slide" data-title="Follow a lesson to its code and evidence">
   <h2>Follow a lesson to its code and evidence</h2>
+  <p class="sub">One worked chain: the first readiness check</p>
   <div class="body">
-    <table class="t-small">
-      <tr><th style="width: 26%">Step</th><th>Participant story</th><th>Technical guide for your agent</th></tr>
-      <tr><td>Research</td><td>How did we ask for research before choosing tools?</td><td>Agent research guide, resource register</td></tr>
-      <tr><td>Git</td><td>How did we ask for source inspection and a reviewable history?</td><td>Agent Git guide, clone procedure</td></tr>
-      <tr><td>Setup</td><td>How did we turn prerequisites into a working proof?</td><td>Agent setup guide, prerequisites</td></tr>
-      <tr><td>Readiness</td><td>How did we request a meaningful rule and independent verification?</td><td>Agent readiness guide, contract</td></tr>
-      <tr><td>Excel</td><td>How did we direct a complete enhancement?</td><td>Agent dependency guide</td></tr>
-    </table>
-    <p class="small">The learning path continues through MCP, review, recovery and desktop testing. Ask your agent to explain one step: what the person decided, what was delegated, and the evidence.</p>
+    <svg class="dg chain" viewBox="0 0 1136 348" role="img" aria-label="One lesson followed through its links: the participant story, the agent guide, the code, the verification evidence, and the Git checkpoint c7c2ad9 that recorded them.">
+      <circle class="chain-dot" data-tone="practice" cx="20" cy="34" r="10"/><text x="46" y="40"><tspan class="t-lbl chain-lbl" data-tone="practice">Participant story</tspan><tspan class="t-small" dx="12">· how the author asked, and the decisions made</tspan></text><text class="t-mono" x="46" y="68" style="white-space: pre">docs/tutorials/03-check-required-type-information.md</text>
+      <g class="rise" data-step="1"><line class="ln" x1="20" y1="44" x2="20" y2="93"/><circle class="chain-dot" data-tone="research" cx="20" cy="102" r="10"/><text x="46" y="108"><tspan class="t-lbl chain-lbl" data-tone="research">Agent guide</tspan><tspan class="t-small" dx="12">· how an agent rebuilds and verifies it</tspan></text><text class="t-mono" x="46" y="136" style="white-space: pre">docs/how-to/build-required-information-check.md</text></g>
+      <g class="rise" data-step="2"><line class="ln" x1="20" y1="112" x2="20" y2="161"/><circle class="chain-dot" data-tone="build" cx="20" cy="170" r="10"/><text x="46" y="176"><tspan class="t-lbl chain-lbl" data-tone="build">Code</tspan><tspan class="t-small" dx="12">· the checklist and the read-only Revit reader</tspan></text><text class="t-mono" x="46" y="204" style="white-space: pre">projects/revit-readiness/src/  (Checklist.cs, RequiredInformationReader.cs)</text></g>
+      <g class="rise" data-step="3"><line class="ln" x1="20" y1="180" x2="20" y2="229"/><circle class="chain-dot" data-tone="ok" cx="20" cy="238" r="10"/><text x="46" y="244"><tspan class="t-lbl chain-lbl" data-tone="ok">Evidence</tspan><tspan class="t-small" dx="12">· three Revit runs checked against the answer sheet and schedules</tspan></text><text class="t-mono" x="46" y="272" style="white-space: pre">projects/revit-readiness/docs/verification/2026-10-20-required-information.md</text></g>
+      <g class="rise" data-step="4"><line class="ln" x1="20" y1="248" x2="20" y2="297"/><circle class="chain-dot" data-tone="git" cx="20" cy="306" r="10"/><text x="46" y="312"><tspan class="t-lbl chain-lbl" data-tone="git">Git checkpoint</tspan><tspan class="t-small" dx="12">· the check, its lesson and its acceptance record, committed together</tspan></text><text class="t-mono" x="46" y="340" style="white-space: pre">c7c2ad9  Add and verify required wall and ceiling type information check</text></g>
+    </svg>
+    <p class="small push">Every lesson links the same way. Ask your agent to walk one chain with you: what the person decided, what was delegated, and the evidence.</p>
   </div>
   <aside class="notes">
+    <p>Four clicks after the story: guide, code, evidence, checkpoint. Commit c7c2ad9 recorded the check, its participant story and its acceptance record together; the agent guide was separated out later and cites the same commit.</p>
     <p>From docs/tutorials/README.md. Every story links to the same verification record and Git checkpoint as its technical guide.</p>
   </aside>
 </section>
