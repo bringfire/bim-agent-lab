@@ -10,6 +10,8 @@ The author chose an HTML deck in the repository, one deck per session, content t
 
 Open a deck in Chrome, Edge or Safari from a checkout of the repository. The decks load their shared [styles](deck.css) and [script](deck.js), the [repository QR code](assets/repo-qr.png) and evidence screenshots under `projects/revit-readiness/docs/verification/` by relative path, so keep the folder structure intact. No server is needed. The fonts come from Google Fonts; without internet the decks fall back to system fonts. Open each deck once on the venue network, or check the fallback rendering beforehand.
 
+**Presenting from Windows.** Clone with long paths enabled (`git clone -c core.longpaths=true https://github.com/bringfire/bim-agent-lab.git`), or pull an existing checkout, then open `workshops\swacca-2026\slides\session-1.html` in Chrome or Edge. Without the Google Fonts, Windows uses Bahnschrift (semi-condensed) for headings, Segoe UI for text and Cascadia Mono or Consolas for code. On October 28 both decks were checked with every font replaced by Arial, which is wider than Bahnschrift: nothing crossed the footer, the right margin or a diagram box. For two screens, set Windows to **Extend** (Windows key + P), put the deck fullscreen (F) on the projector and drag the presenter window (S) to the laptop.
+
 | Key | Action |
 |---|---|
 | → Space PageDown Enter | Next build, then next slide (a presentation clicker works) |
