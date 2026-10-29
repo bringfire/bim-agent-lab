@@ -366,3 +366,5 @@ tr.mark td { background: color-mix(in srgb, var(--tone, var(--accent)) 20%, tran
 .dg .stair-lit.r { fill: color-mix(in srgb, var(--research) 24%, var(--sheet)); stroke: var(--research); }
 .dg.ev .t-step { font-size: 21px; }
 .dg.ev .t-small { font-size: 17px; }
+.dg .gate { stroke: var(--practice); stroke-width: 6; stroke-linecap: round; }
+.pv-optional { color: #e8b86b; font-weight: 600; }

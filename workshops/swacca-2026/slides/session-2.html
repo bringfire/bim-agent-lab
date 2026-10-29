@@ -420,7 +420,7 @@
   </aside>
 </section>
 
-<section class="slide" data-title="Keep the claim inside its scope" data-page="5">
+<section class="slide" data-title="Keep the claim inside its scope" data-page="5" data-optional>
   <h2>Keep the claim inside its scope</h2>
   <div class="body">
     <div class="callout"><strong>What the tool checks</strong>Whether required information is present. It does not validate a fire-rated assembly, certify compliance or establish whole-project readiness. Other host elements and links are outside this teaching scope.</div>
@@ -457,27 +457,51 @@
     <p class="small muted push">An expired-token test alone does not prove model-switch detection. Switching models and recovering with a fresh context were tested live in both desktop apps.</p>
   </div>
   <aside class="notes">
-    <p>Three clicks after the first box. Handout page 5. A context token binds each request to the observed document and checklist, so an agent cannot report results about a model that is no longer the one open.</p>
+    <p><strong>Optional:</strong> if you are running long, skip this slide; the story holds without it. Three clicks after the first box. Handout page 5. A context token binds each request to the observed document and checklist, so an agent cannot report results about a model that is no longer the one open.</p>
     <p>Keep the claim's boundary in view too: the tool checks presence of required information, nothing more.</p>
   </aside>
 </section>
 
-<section class="slide" data-title="Ask for a spec, a plan and a reviewer" data-page="7">
-  <h2>Ask for a spec, a plan and an independent reviewer</h2>
+<section class="slide" data-title="Brainstorm first: the Superpowers skill" data-page="7">
+  <h2>Brainstorm before the spec: Superpowers</h2>
   <div class="body">
-    <figure class="prompt actual">
-      <figcaption>Actual prompt · the author, before the bridge build</figcaption>
-      <blockquote>“I also want you to write a spec and implementation plan, with review sessions that we hand to an external reviewer, so that we can teach that skill…”</blockquote>
-    </figure>
-    <div class="flow small">
-      <div>Spec<span>Reviewed, revised</span></div><i>→</i>
-      <div>Author approval<span>A separate step</span></div><i>→</i>
-      <div>Plan<span>Reviewed, revised</span></div><i>→</i>
-      <div>Implementation review<span>Source, tests, evidence at exact commits</span></div>
+    <div class="cols">
+      <div>
+        <p class="small"><strong>Superpowers</strong> is an open-source set of skills for coding agents (github.com/obra/superpowers, MIT). Its <strong>brainstorming</strong> skill asks what you are really trying to do, compares approaches, and writes a spec you review before any plan or code.</p>
+        <p class="small muted">Available for Claude Code, the Codex app and other agents. We used version 6.4.2 on October 20; the current release is newer, so ask your agent which version it has.</p>
+      </div>
+      <figure class="prompt actual compact">
+        <figcaption>Actual prompt · the author, before the bridge build</figcaption>
+        <blockquote>“I also want you to write a spec and implementation plan, with review sessions that we hand to an external reviewer, so that we can teach that skill...use the superpowers brainstorming skill protocol.”</blockquote>
+      </figure>
     </div>
+    <svg class="dg push" viewBox="0 0 1136 160" role="img" aria-label="The gated sequence: brainstorm, then a written spec; spec review and your approval; an implementation plan; plan review, your approval and your choice of how to execute; implementation with code, tests and evidence; then implementation and evidence review.">
+      <g data-step="1">
+        <rect class="box" x="0" y="20" width="170" height="76" rx="8"/><text class="t-title" x="16" y="52">Brainstorm</text><text class="t-small" x="16" y="78">questions, options</text>
+        <path class="arr draw" pathLength="1" d="M172 58 L236 58" style="--d:.3s"/>
+        <g class="fade" style="--d:.5s"><rect class="box-hi" x="240" y="20" width="170" height="76" rx="8"/><text class="t-title" x="256" y="52">Spec</text><text class="t-small" x="256" y="78">what + how to check</text></g>
+      </g>
+      <g data-step="2">
+        <path class="arr draw" pathLength="1" d="M412 58 L526 58"/>
+        <line class="gate" x1="469" y1="36" x2="469" y2="80"/>
+        <text class="t-small" x="469" y="122" text-anchor="middle">spec review</text><text class="t-small t-warn" x="469" y="142" text-anchor="middle">+ your approval</text>
+        <g class="fade" style="--d:.4s"><rect class="box-hi" x="530" y="20" width="170" height="76" rx="8"/><text class="t-title" x="546" y="52">Plan</text><text class="t-small" x="546" y="78">small, testable tasks</text></g>
+      </g>
+      <g data-step="3">
+        <path class="arr draw" pathLength="1" d="M702 58 L816 58"/>
+        <line class="gate" x1="759" y1="36" x2="759" y2="80"/>
+        <text class="t-small" x="759" y="122" text-anchor="middle">plan review</text><text class="t-small t-warn" x="759" y="142" text-anchor="middle">+ approval, how to run it</text>
+        <g class="fade" style="--d:.4s"><rect class="box-hi" x="820" y="20" width="170" height="76" rx="8"/><text class="t-title" x="836" y="52">Implement</text><text class="t-small" x="836" y="78">code, tests, evidence</text></g>
+        <path class="arr draw" pathLength="1" d="M992 58 L1130 58" style="--d:.6s"/>
+        <line class="gate" x1="1060" y1="36" x2="1060" y2="80"/>
+        <text class="t-small" x="1060" y="122" text-anchor="middle">implementation</text><text class="t-small" x="1060" y="142" text-anchor="middle">and evidence review</text>
+      </g>
+    </svg>
   </div>
   <aside class="notes">
-    <p>Handout page 7. Reviewer closure and the author's approval were distinct steps. The first spec review found two major issues and one minor; the plan review found three major and one minor.</p>
+    <p>Three clicks: brainstorm to spec, the plan behind its gate, then implementation and its review. The gates are the point: in the skill version we used, you approve the written spec before a plan is written, then review the written plan and choose how it is executed. You chose Native execution after the plan review.</p>
+    <p>Our first spec review found two major issues and one minor; the plan review found three major and one minor. The agent also used Superpowers' receiving-code-review skill to check each finding against the source before editing. The next slide is what to do when several major findings arrive at once.</p>
+    <p>For participants: in Claude Code the plugin installs with /plugin install superpowers@claude-plugins-official (as listed on the project page on October 28). The repository's agent procedure records the exact skill version and file used.</p>
   </aside>
 </section>
 
