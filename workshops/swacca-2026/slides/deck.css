@@ -355,3 +355,8 @@ tr.mark td { background: color-mix(in srgb, var(--tone, var(--accent)) 20%, tran
 .dg .stair-done { fill: color-mix(in srgb, var(--muted) 14%, var(--sheet)); stroke: var(--rule); stroke-width: 1.5; }
 .dg .stair-lit { fill: color-mix(in srgb, var(--build) 26%, var(--sheet)); stroke: var(--build); stroke-width: 2; }
 .dg .t-step { font-size: 17px; font-weight: 600; }
+.dg .dyn-node { fill: var(--sheet); stroke: var(--rule); stroke-width: 1.5; }
+.dg .dyn-head { fill: color-mix(in srgb, var(--muted) 22%, var(--sheet)); }
+.dg .dyn-code { fill: var(--paper); stroke: var(--rule); stroke-width: 1; }
+.dg .dyn-wire { fill: none; stroke: var(--ink); stroke-width: 2.5; }
+.dg .port { fill: var(--accent); }

@@ -738,9 +738,32 @@
   <h2>Write the project memory first</h2>
   <div class="body">
     <div class="cols">
+      <svg class="dg" viewBox="0 0 548 400" role="img" aria-label="One AGENTS.md file, with sections for purpose and scope, where work belongs, how to work, commands and boundaries, and current status. Three separate agent sessions each start with no memory and read the same file first: Claude Code today, Codex as another agent, and a new session next week.">
+        <path class="box-hi" d="M0 60 H190 L230 100 V350 H0 Z"/>
+        <path class="ln" d="M190 60 V100 H230" style="stroke-width: 1.5"/>
+        <text class="t-mono" x="16" y="96" style="font-size: 18px; font-weight: 600">AGENTS.md</text>
+        <text class="t-small" x="16" y="146"># Purpose and scope</text>
+        <text class="t-small" x="16" y="184"># Where work belongs</text>
+        <text class="t-small" x="16" y="222"># How to work</text>
+        <text class="t-small" x="16" y="260"># Commands and boundaries</text>
+        <text class="t-small" x="16" y="298"># Current status</text>
+        <g data-step="1">
+          <path class="arr draw" pathLength="1" d="M232 190 C272 190 272 78 314 78"/>
+          <g class="fade" style="--d:.4s"><rect class="box" x="318" y="40" width="230" height="76" rx="8"/><text class="t-title" x="334" y="72">Claude Code</text><text class="t-small" x="334" y="98">today: starts empty</text></g>
+        </g>
+        <g data-step="2">
+          <path class="arr draw" pathLength="1" d="M232 205 L314 200"/>
+          <g class="fade" style="--d:.4s"><rect class="box" x="318" y="162" width="230" height="76" rx="8"/><text class="t-title" x="334" y="194">Codex</text><text class="t-small" x="334" y="220">another agent: starts empty</text></g>
+        </g>
+        <g data-step="3">
+          <path class="arr draw" pathLength="1" d="M232 220 C272 220 272 322 314 322"/>
+          <g class="fade" style="--d:.4s"><rect class="box" x="318" y="284" width="230" height="76" rx="8"/><text class="t-title" x="334" y="316">A new session</text><text class="t-small" x="334" y="342">next week: starts empty</text></g>
+          <text class="t-small" x="0" y="392">Every session reads the same file first; decisions go back into it.</text>
+        </g>
+      </svg>
       <div>
         <span class="label">AGENTS.md in this repository (excerpt)</span>
-        <pre style="font-size: 17px">## Where work belongs
+        <pre style="font-size: 16px">## Where work belongs
 - Transferable lessons: docs/tutorials/
   and docs/how-to/.
 - Application-specific implementation,
@@ -752,21 +775,12 @@
 1. Inspect the repository, current branch,
    and existing changes before editing.
    Preserve unrelated work.</pre>
-      </div>
-      <div>
-        <p>Agents start each session without memory. AGENTS.md (or CLAUDE.md) gives every session the same rules:</p>
-        <ul class="small">
-          <li>Purpose, audience and scope</li>
-          <li>Where each kind of work belongs</li>
-          <li>How to work: research, verify, commit</li>
-          <li>Commands and boundaries: what not to touch</li>
-        </ul>
         <p class="small muted">Here, CLAUDE.md simply points to AGENTS.md, so Claude Code and Codex read the same instructions.</p>
       </div>
     </div>
   </div>
   <aside class="notes">
-    <p>Long-term memory is part of the Monday-morning workflow: write it before the first build, and update it as decisions are made.</p>
+    <p>Three clicks, one session each. The project's memory lives in the repository, not in the chat: every agent session starts empty and reads the same file first. Write it before the first build, and update it as decisions are made.</p>
     <p>Our AGENTS.md also carries current status and safety boundaries, such as "no installer while Revit is open". It grew with the project.</p>
   </aside>
 </section>
@@ -784,15 +798,41 @@
         </ol>
       </div>
       <div>
-        <pre>import sys
-OUT = ["Dynamo is working", sys.version]</pre>
+        <span class="label">What the graph looks like</span>
+        <svg class="dg" viewBox="0 0 548 220" role="img" aria-label="Illustration of the Dynamo graph: a Python Script node set to CPython3 containing two lines of code, wired from its OUT port to a Watch node that lists 'Dynamo is working' and the Python version.">
+          <g data-step="1">
+            <rect class="dyn-node" x="0" y="10" width="300" height="190" rx="6"/>
+            <rect class="dyn-head" x="1" y="11" width="298" height="36" rx="5"/>
+            <text x="14" y="35" style="font-size: 17px; font-weight: 600">Python Script</text>
+            <text class="t-mono-sm t-acc" x="288" y="34" text-anchor="end">CPython3</text>
+            <rect class="port" x="0" y="62" width="8" height="14"/><text class="t-mono-sm" x="16" y="74" style="fill: var(--muted)">IN[0]</text>
+            <text class="t-mono-sm" x="286" y="74" text-anchor="end" style="fill: var(--muted)">OUT</text><circle class="port" cx="300" cy="69" r="6"/>
+            <rect class="dyn-code" x="12" y="92" width="276" height="96" rx="4"/>
+            <text class="t-mono-sm" x="22" y="118">import sys</text>
+            <text class="t-mono-sm" x="22" y="144">OUT = ["Dynamo is working",</text>
+            <text class="t-mono-sm" x="22" y="168" style="white-space: pre">       sys.version]</text>
+          </g>
+          <g data-step="2">
+            <path class="dyn-wire draw" pathLength="1" d="M306 69 C332 69 332 104 354 104"/>
+            <g class="fade" style="--d:.5s">
+              <rect class="dyn-node" x="360" y="40" width="188" height="160" rx="6"/>
+              <rect class="dyn-head" x="361" y="41" width="186" height="36" rx="5"/>
+              <text x="374" y="65" style="font-size: 17px; font-weight: 600">Watch</text>
+              <circle class="port" cx="360" cy="104" r="6"/>
+              <text class="t-mono-sm" x="374" y="106" style="fill: var(--muted)">List</text>
+              <text class="t-mono-sm" x="374" y="134">[0] Dynamo is working</text>
+              <text class="t-mono-sm" x="374" y="160">[1] "3.…"</text>
+              <text class="t-small" x="374" y="186" style="font-size: 13px">your engine's version</text>
+            </g>
+          </g>
+        </svg>
         <p class="small">Dynamo is included with Revit 2024, and its CPython3 engine has its own Python runtime. Next, ask for a read-only wall/ceiling inventory and compare its count with a native schedule.</p>
       </div>
     </div>
   </div>
   <aside class="notes">
-    <p>Handout page 4. This only reports the Python version: a smoke check that the environment runs. It is not a rehearsed inventory script.</p>
-    <p>Ask the agent to confirm your installed Revit, Dynamo and engine versions first.</p>
+    <p>Two clicks: the Python Script node, then the wire to the Watch node. The picture is an illustration of what a working graph looks like; the version line shows whatever your engine reports. Handout page 4.</p>
+    <p>This only reports the Python version: a smoke check that the environment runs. It is not a rehearsed inventory script. Ask the agent to confirm your installed Revit, Dynamo and engine versions first.</p>
   </aside>
 </section>
 
