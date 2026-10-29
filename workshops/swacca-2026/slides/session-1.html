@@ -206,14 +206,14 @@
   <h2>Three readiness questions; one built so far</h2>
   <div class="body">
     <div class="cols three tall">
-      <div class="card ok rise" data-step="1"><span class="label">Built · verified on Revit 2024</span><h3>Do we have the information we need?</h3>Required type information for declared walls and ceilings.</div>
+      <div class="card ok rise" data-step="1"><span class="label">Built · verified on Revit 2024 and 2026.5</span><h3>Do we have the information we need?</h3>Required type information for declared walls and ceilings.</div>
       <div class="card planned rise" data-step="2"><span class="label">Planned extension</span><h3>Which modeling conditions need review?</h3>Wall tops, ceiling heights and similar physical conditions.</div>
       <div class="card planned rise" data-step="2"><span class="label">Planned extension</span><h3>Which quantities can we use?</h3>Quantities separated by readiness findings.</div>
     </div>
     <p class="small muted push rise" data-step="2">Inventory supports today's readiness answer. Measured quantities and physical-condition checks are future extensions.</p>
   </div>
   <aside class="notes">
-    <p>Two clicks: what works, then what is next. Be honest about scope. The first question is built and verified on Revit 2024 build 24.3.60.12. The other two were planned demonstrations; they remain future work in the repository.</p>
+    <p>Two clicks: what works, then what is next. Be honest about scope. The first question is built and verified on Revit 2024 (build 24.3.60.12) and Revit 2026.5 (2026.5.1, API build 26.5.10.38), including both desktop apps on 2026.5. The other two were planned demonstrations; they remain future work in the repository.</p>
     <p>An instance count is not an area, length or material quantity.</p>
   </aside>
 </section>
@@ -479,9 +479,9 @@
       <text class="t-lbl" x="568" y="160" text-anchor="middle">local pipe</text>
       <text class="t-lbl" x="868" y="160" text-anchor="middle">MCP protocol</text>
       <g data-step="1">
-        <text class="t-mono t-acc fade" x="18" y="88">2024 · build 24.3.60.12</text>
+        <text class="t-mono t-acc fade" x="18" y="88">2024 · build 24.3.60.12</text><text class="t-mono t-acc fade" x="18" y="112">2026.5 · build 26.5.10.38</text>
         <text class="t-mono t-acc fade" x="318" y="88" style="--d:.2s">.NET Framework 4.8</text>
-        <text class="t-small fade" x="318" y="112" style="--d:.2s">loads inside Revit</text>
+        <text class="t-mono t-acc fade" x="318" y="112" style="--d:.2s">.NET 10 for 2026.5</text>
         <text class="t-mono t-acc fade" x="618" y="88" style="--d:.4s">C# MCP SDK 2.2.0</text>
         <text class="t-small fade" x="618" y="112" style="--d:.4s">2.3.0 was newer; pin kept</text>
         <text class="t-mono t-acc fade" x="918" y="88" style="--d:.6s">app version per test</text>
@@ -504,6 +504,7 @@
   <aside class="notes">
     <p>Two clicks: the versions, then the joint that broke. Handout page 3 callout. These are four different facts. "Check the latest" means gather current evidence and explain the selection. It does not mean silently upgrading a reviewed implementation.</p>
     <p>The protocol joint is the setup for Session 2's compatibility story: both desktop apps sent older protocol revisions than the SDK test client.</p>
+    <p>A live example from this build: Revit 2026.5 moved its add-in runtime to .NET 10, while earlier Revit 2026 releases use .NET 8. Our add-in is built separately for 2024 (.NET Framework 4.8) and 2026.5 (.NET 10); earlier 2026 releases and 2027 are not verified. Even a point release can move a boundary.</p>
   </aside>
 </section>
 </div>

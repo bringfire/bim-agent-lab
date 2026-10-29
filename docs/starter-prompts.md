@@ -26,7 +26,7 @@ Use when you are deciding where to start.
 
 Use when your firm runs a Revit version the lab has not verified yet.
 
-> We're on Revit [2025]. Read the roadmap's stage 1 and the existing add-in. Check my machine's Revit version, API libraries and .NET SDK, then propose how to build the readiness add-in for our year, explaining what changes between .NET Framework 4.8 and .NET 8. Build it, and verify the prepared sample cases in Revit before calling it supported.
+> We're on Revit [2025]. Read the roadmap's stage 1 and the existing add-in. Check my machine's Revit version, API libraries and .NET SDK, then propose how to build the readiness add-in for our year, explaining what changes between .NET Framework 4.8 and the .NET version our Revit release uses (.NET 8 for 2025 and early 2026 releases; .NET 10 for 2026.5 and later). Follow how the repository already builds for 2024 and 2026.5. Build it, and verify the prepared sample cases in Revit before calling it supported.
 
 ## 2 · "Ready for framing" (stage 2)
 

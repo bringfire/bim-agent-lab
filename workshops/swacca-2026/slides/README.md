@@ -56,7 +56,7 @@ Slide timings follow the [Option B agenda](../agenda.html), which remains the ti
 
 Prompts are labelled **Actual prompt** (quoted from the build) or **Suggested prompt** (reusable wording). Keep that distinction when editing. The QR code was cropped from page 8 of the delivered handout PDF and decodes to `https://github.com/bringfire/bim-agent-lab`.
 
-The slides state the current limits: Revit 2024 build 24.3.60.12 is the verified host. Revit 2026/2027, physical-condition and quantity checks, a packaged release and full implementation acceptance are not claimed. Page 8 of the printed handout still says the repository is private during preparation; Session 2 tells the room it has been public since October 26.
+The slides state the current limits: the verified hosts are Revit 2024 (build 24.3.60.12) and Revit 2026.5 (2026.5.1, API build 26.5.10.38), per the [2026.5 verification record](../../../projects/revit-readiness/docs/verification/2026-10-27-revit-2026-5.md). Revit 2026 releases before 2026.5 (.NET 8), Revit 2027, physical-condition and quantity checks, a packaged release and full implementation acceptance are not claimed. Page 8 of the printed handout still says the repository is private during preparation; Session 2 tells the room it has been public since October 26.
 
 ## Verification, October 28
 
