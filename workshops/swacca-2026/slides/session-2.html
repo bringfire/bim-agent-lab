@@ -398,19 +398,25 @@
   <h2>Check the answer against something independent</h2>
   <div class="body">
     <div class="cols">
-      <figure class="shot" style="height: 420px">
-        <img src="../../../projects/revit-readiness/docs/verification/mcp-readiness-evidence/2026-10-22-wall-defects/native-walls-schedule.png" alt="Native Revit schedule BAL INFO Walls: WB rows have blank FireRating; WD rows have blank Code." style="width: 100%; image-rendering: auto">
-        <figcaption>Native Revit schedule · wall-defects sample · supplied by the author, Oct 22</figcaption>
+      <figure class="shot">
+        <div class="anno">
+          <img src="../../../projects/revit-readiness/docs/verification/mcp-readiness-evidence/2026-10-22-wall-defects/native-walls-schedule.png" alt="Native Revit schedule BAL INFO Walls: the three Wall B rows have a blank FireRating; the three Wall D rows have a blank Code." style="width: 548px; image-rendering: auto">
+          <span class="hl" data-tone="bad" data-step="1" style="left: 57%; top: 47.9%; width: 18.6%; height: 13.4%"></span>
+          <span class="hl" data-tone="practice" data-step="2" style="left: 38.4%; top: 74.7%; width: 18.6%; height: 13.6%"></span>
+        </div>
+        <figcaption>Native Revit schedule · wall-defects sample · Oct 22</figcaption>
       </figure>
-      <div>
-        <div class="callout"><strong>The schedule agrees</strong>Wall B rows: Fire Rating blank. Wall D rows: Code blank. Two findings, six instances.</div>
-        <div class="callout"><strong>Confirm the intended model is active</strong>A similarly named copy is not the same document.</div>
-        <div class="callout"><strong>Counts are not quantities</strong>An instance count is not an area, length or material quantity.</div>
+      <div class="tight">
+        <div class="callout rise" data-tone="bad" data-step="1"><strong>Wall B: Fire Rating blank</strong>Three placed instances, one finding.</div>
+        <div class="callout rise" data-tone="practice" data-step="2"><strong>Wall D: Code blank</strong>Three more instances. Its Fire Rating and Assembly Ref are blank too, but not required.</div>
+        <div class="callout rise" data-tone="ok" data-step="3"><strong>The schedule agrees with the tool</strong>2 findings, 6 instances, from evidence the tool didn't produce.</div>
+        <p class="small muted rise" data-step="3">Confirm the intended model is active. An instance count is not an area, length or material quantity.</p>
       </div>
     </div>
   </div>
   <aside class="notes">
-    <p>Native Revit schedules and a prepared answer sheet are independent of both the plugin and the agent. A missing field on one type can affect several placed instances, which is why there are 2 findings but 6 affected instances.</p>
+    <p>Three clicks: Wall B's blank Fire Rating cells, Wall D's blank Code cells, then the agreement. Native Revit schedules and a prepared answer sheet are independent of both the plugin and the agent.</p>
+    <p>A missing field on one type affects every placed instance, which is why there are 2 findings but 6 affected instances. Wall D's other blanks are exempt in the checklist, so they are not findings.</p>
   </aside>
 </section>
 
@@ -418,11 +424,41 @@
   <h2>Keep the claim inside its scope</h2>
   <div class="body">
     <div class="callout"><strong>What the tool checks</strong>Whether required information is present. It does not validate a fire-rated assembly, certify compliance or establish whole-project readiness. Other host elements and links are outside this teaching scope.</div>
-    <div class="callout" data-tone="practice"><strong>Stale answers are rejected</strong>A context token binds each request to the observed document and checklist. After a model switch, the old token is rejected; get a fresh context to recover.</div>
-    <p class="small muted">An expired-token test alone does not prove model-switch detection. Switching models and recovering with a fresh context were tested live in both desktop apps.</p>
+    <span class="label">Stale answers are rejected</span>
+    <svg class="dg" viewBox="0 0 1136 150" role="img" aria-label="Stale-context sequence: the agent gets a context token bound to Model A; you switch Revit to Model B; a check with the old token is rejected because the document changed; a fresh context for Model B lets the check work.">
+      <rect class="box" x="0" y="10" width="260" height="130" rx="8"/>
+      <text class="t-title" x="18" y="44">1 · Get a context</text>
+      <text class="t-small" x="18" y="70">bound to Model A</text>
+      <rect class="box-hi" x="18" y="88" width="100" height="32" rx="16"/><text class="t-mono t-acc" x="68" y="109" text-anchor="middle">token A</text>
+      <g data-step="1">
+        <path class="arr draw" pathLength="1" d="M262 75 L288 75"/>
+        <g class="fade" style="--d:.3s"><rect class="box" x="292" y="10" width="260" height="130" rx="8"/>
+        <text class="t-title" x="310" y="44">2 · Switch models</text>
+        <text class="t-small" x="310" y="70">you open Model B</text>
+        <text class="t-small" x="310" y="92">in Revit</text></g>
+      </g>
+      <g data-step="2">
+        <path class="arr bad draw" pathLength="1" d="M554 75 L580 75"/>
+        <g class="fade" style="--d:.3s"><rect class="box-bad" x="584" y="10" width="260" height="130" rx="8"/>
+        <text class="t-title" x="602" y="44">3 · Check, token A</text>
+        <text class="t-small t-bad" x="602" y="70">rejected: the document</text>
+        <text class="t-small t-bad" x="602" y="92">changed</text>
+        <text class="t-mark t-bad" x="824" y="44" text-anchor="end">✗</text></g>
+      </g>
+      <g data-step="3">
+        <path class="arr ok draw" pathLength="1" d="M846 75 L872 75"/>
+        <g class="fade" style="--d:.3s"><rect class="box-ok" x="876" y="10" width="260" height="130" rx="8"/>
+        <text class="t-title" x="894" y="44">4 · Fresh context</text>
+        <text class="t-small" x="894" y="70">token B for Model B;</text>
+        <text class="t-small" x="894" y="92">the check works</text>
+        <text class="t-mark t-ok" x="1116" y="44" text-anchor="end">✓</text></g>
+      </g>
+    </svg>
+    <p class="small muted push">An expired-token test alone does not prove model-switch detection. Switching models and recovering with a fresh context were tested live in both desktop apps.</p>
   </div>
   <aside class="notes">
-    <p>Handout page 5. Two ideas: the claim's boundary, and freshness. The context token prevents an agent from reporting results about a model that is no longer the one open.</p>
+    <p>Three clicks after the first box. Handout page 5. A context token binds each request to the observed document and checklist, so an agent cannot report results about a model that is no longer the one open.</p>
+    <p>Keep the claim's boundary in view too: the tool checks presence of required information, nothing more.</p>
   </aside>
 </section>
 
