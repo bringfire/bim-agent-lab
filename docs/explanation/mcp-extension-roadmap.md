@@ -34,8 +34,8 @@ That gives two kinds of tools:
 
 | Stage | What it adds | Kind | Serves |
 |---|---|---|---|
-| **0 · Today** | Required wall and ceiling type information, read-only, verified on Revit 2024 build 24.3.60.12 | Model | Everyone |
-| **1 · The versions firms run** | Build the add-in for each Revit year: .NET Framework 4.8 for 2022–2024, .NET 8 for 2025–2026, and .NET 10 for 2027 (reported). The same MCP server serves all of them | Platform | No forced upgrade |
+| **0 · Today** | Required wall and ceiling type information, read-only, verified on Revit 2024 (build 24.3.60.12) and Revit 2026.5 (2026.5.1, API build 26.5.10.38), including both desktop apps on 2026.5 ([record](../../projects/revit-readiness/docs/verification/2026-10-27-revit-2026-5.md)) | Model | Everyone |
+| **1 · The versions firms run** | Build the add-in for each Revit release: .NET Framework 4.8 for 2022–2024 (2024 verified), .NET 8 for 2025 and Revit 2026 before 2026.5, and .NET 10 for Revit 2026.5 (verified) and 2027. The same MCP server serves all of them; the October 27 work added year-specific builds and installers for 2024 and 2026.5 | Platform | No forced upgrade |
 | **2 · More readiness rules** | "Ready for framing" and "ready for layout" checks before the model goes to a framing add-in or a layout robot, using the same checklist pattern | Model | Everyone |
 | **3 · Read framing output** | A framing reader independent of the vendor: Structural Framing members, Parts, Assemblies and parameters, with StrucSoft and AGACAD naming in profile files. Enables framing QA such as stud counts and spacing, missing fields and numbering | Model | StrucSoft MWF and AGACAD users |
 | **4 · File checks** | SitePrint DXF pre-flight; CNC file checks (Howick CSV comparisons, BTLx against its public schema); Dynamo graph review; vendor configuration comparisons | File | SitePrint, fabrication, Dynamo users |
