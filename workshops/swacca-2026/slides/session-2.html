@@ -717,7 +717,8 @@
       </div>
       <div class="card warn rise" data-step="2"><span class="label">Not yet</span>
         <ul class="small">
-          <li>Revit 2026 before 2026.5 (.NET 8), and Revit 2027</li>
+          <li>Revit 2027</li>
+          <li>Pre-2026.5 updates of Revit 2026, which use .NET 8: install the 2026.5 update</li>
           <li>Physical-condition and quantity checks</li>
           <li>A packaged installer or release</li>
           <li>Full implementation acceptance; the final independent review is still open</li>
@@ -728,6 +729,7 @@
   </div>
   <aside class="notes">
     <p>Two clicks: what is verified, then what is not yet. Model the behavior we've been teaching: state compatibility only as far as the evidence supports it. The repository's development-status page and acceptance ledger have the details.</p>
+    <p>Revit 2026 is verified from the 2026.5 update (tested on 2026.5.1). Autodesk moved Revit's add-in runtime from .NET 8 to .NET 10 at 2026.5, and our add-in is built for .NET 10, so a firm on an earlier 2026 update needs the 2026.5 update, not Revit 2027.</p>
   </aside>
 </section>
 
