@@ -344,3 +344,14 @@ body.presenter > .stage { display: none; }
 .dg .lane-agent { fill: color-mix(in srgb, var(--research) 9%, transparent); }
 .dg .node-you { fill: var(--sheet); stroke: var(--practice); stroke-width: 2; }
 .dg .node-agent { fill: var(--sheet); stroke: var(--research); stroke-width: 2; }
+
+/* Rows that light up on a click without appearing */
+tr[data-mark] td { transition: background .45s ease; }
+tr.mark td { background: color-mix(in srgb, var(--tone, var(--accent)) 20%, transparent); }
+@media print { tr[data-mark] td { background: color-mix(in srgb, var(--tone, var(--accent)) 20%, transparent); } }
+
+/* Staircase of build steps */
+.dg .stair { fill: none; stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 6 5; }
+.dg .stair-done { fill: color-mix(in srgb, var(--muted) 14%, var(--sheet)); stroke: var(--rule); stroke-width: 1.5; }
+.dg .stair-lit { fill: color-mix(in srgb, var(--build) 26%, var(--sheet)); stroke: var(--build); stroke-width: 2; }
+.dg .t-step { font-size: 17px; font-weight: 600; }

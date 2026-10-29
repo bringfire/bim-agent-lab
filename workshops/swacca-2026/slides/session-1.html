@@ -637,19 +637,48 @@
 <section class="slide" data-title="Build in checkable steps" data-page="6">
   <h2>Build in checkable steps</h2>
   <div class="body">
-    <table>
-      <tr><th style="width: 30%">Step</th><th>How we engaged the agent</th></tr>
-      <tr class="now"><td>Prove the setup</td><td>Check prerequisites; build a minimal read-only Revit command.</td></tr>
-      <tr class="now"><td>Add one useful rule</td><td>Define required type information and controlled sample results.</td></tr>
-      <tr class="later"><td>Add Excel output</td><td>Review a library and its dependencies; compare with known results.</td></tr>
-      <tr class="later"><td>Connect an agent</td><td>Compare bridges; test actual desktop compatibility early.</td></tr>
-      <tr class="later"><td>Prepare recovery</td><td>Record installed files and backups before changes; test restoration.</td></tr>
-      <tr class="later"><td>Retain the lesson</td><td>Record participant decisions and the agent's reproducible procedure.</td></tr>
-    </table>
-    <p class="small muted">Highlighted now; the rest in Session 2.</p>
+    <svg class="dg" viewBox="0 0 1136 372" role="img" aria-label="Six build steps rising like a staircase: prove the setup, add one useful rule, add Excel output, connect an agent, prepare recovery, retain the lesson. Each step ends with a Git checkpoint.">
+      <rect class="stair" x="0" y="262" width="183" height="100" rx="4"/>
+      <g data-step="1"><rect class="stair-lit" x="0" y="262" width="183" height="100" rx="4"/><text class="t-lbl" x="10" y="252">Today</text></g>
+      <rect class="stair" x="189" y="220" width="183" height="142" rx="4"/>
+      <g data-step="2"><rect class="stair-lit" x="189" y="220" width="183" height="142" rx="4"/><text class="t-lbl" x="199" y="210">Today</text></g>
+      <rect class="stair" x="378" y="178" width="183" height="184" rx="4"/>
+      <rect class="stair" x="567" y="136" width="183" height="226" rx="4"/>
+      <rect class="stair" x="756" y="94" width="183" height="268" rx="4"/>
+      <rect class="stair" x="945" y="52" width="183" height="310" rx="4"/>
+      <circle class="commit" cx="183" cy="262" r="7"/>
+      <text class="t-step" x="10" y="292">Prove the setup</text>
+      <text class="t-small" x="10" y="316">minimal read-only</text>
+      <text class="t-small" x="10" y="336">Revit command</text>
+      <circle class="commit" cx="372" cy="220" r="7"/>
+      <text class="t-step" x="199" y="250">Add one useful rule</text>
+      <text class="t-small" x="199" y="274">required type info,</text>
+      <text class="t-small" x="199" y="294">controlled samples</text>
+      <text class="t-lbl" x="388" y="168">Session 2</text>
+      <circle class="commit-m" cx="561" cy="178" r="7"/>
+      <text class="t-step" x="388" y="208">Add Excel output</text>
+      <text class="t-small" x="388" y="232">review the library,</text>
+      <text class="t-small" x="388" y="252">check known results</text>
+      <text class="t-lbl" x="577" y="126">Session 2</text>
+      <circle class="commit-m" cx="750" cy="136" r="7"/>
+      <text class="t-step" x="577" y="166">Connect an agent</text>
+      <text class="t-small" x="577" y="190">compare bridges,</text>
+      <text class="t-small" x="577" y="210">test desktops early</text>
+      <text class="t-lbl" x="766" y="84">Session 2</text>
+      <circle class="commit-m" cx="939" cy="94" r="7"/>
+      <text class="t-step" x="766" y="124">Prepare recovery</text>
+      <text class="t-small" x="766" y="148">backups first,</text>
+      <text class="t-small" x="766" y="168">then test restoring</text>
+      <text class="t-lbl" x="955" y="42">Session 2</text>
+      <circle class="commit-m" cx="1128" cy="52" r="7"/>
+      <text class="t-step" x="955" y="82">Retain the lesson</text>
+      <text class="t-small" x="955" y="106">participant story,</text>
+      <text class="t-small" x="955" y="126">agent procedure</text>
+    </svg>
+    <p class="small muted">Each step ended with evidence and a Git checkpoint (the dots) before the next began.</p>
   </div>
   <aside class="notes">
-    <p>Handout page 6. Keep the calculation separate from the way people ask for it. Each row ended with evidence and a Git checkpoint before the next began.</p>
+    <p>Two clicks light today's steps: proving the setup, then the first useful rule. The rest is Session 2. Handout page 6. Keep the calculation separate from the way people ask for it.</p>
   </aside>
 </section>
 
@@ -660,14 +689,14 @@
       <figcaption>Actual prompt · the author's starting question</figcaption>
       <blockquote>“first things..What are the minimal requirements for developing a plugin for Revit? This includes all software, libraries or other dependencies that will allow a new user to build a plugin with their agent.”</blockquote>
     </figure>
-    <figure class="prompt actual">
+    <figure class="prompt actual rise" data-step="1">
       <figcaption>Actual prompt · the next instruction</figcaption>
       <blockquote>“Ok, let's check this machine against the prerequisites, install anything missing, and build a minimal read-only Revit command to prove the setup works. Record the steps and lessons in the teaching repo.”</blockquote>
     </figure>
-    <p class="small muted">The author didn't specify compiler flags, project files or installer scripts. The agent chose those.</p>
+    <p class="small muted rise" data-step="1">The author didn't specify compiler flags, project files or installer scripts. The agent chose those.</p>
   </div>
   <aside class="notes">
-    <p>A bounded outcome: inspect the real machine, fill genuine gaps, make one small read-only command work, and leave a record someone else can follow.</p>
+    <p>One click brings in the instruction after the question. A bounded outcome: inspect the real machine, fill genuine gaps, make one small read-only command work, and leave a record someone else can follow.</p>
     <p>Inspection found every required input already present. No prerequisite software needed installing on this machine. Your machine may differ, which is why the prompt asks for an inspection first.</p>
   </aside>
 </section>
@@ -678,7 +707,12 @@
     <div class="cols wide-right">
       <div class="center">
         <figure class="shot">
-          <img src="../../../projects/revit-readiness/docs/verification/assets/probe-four-walls-first.jpg" alt="Read-only probe dialog: Wall instances 4, Ceiling instances 0, document modified False before and after, Revit 2024 build 24.3.60.12." style="width: 440px">
+          <div class="anno">
+            <img src="../../../projects/revit-readiness/docs/verification/assets/probe-four-walls-first.jpg" alt="Read-only probe dialog: Wall instances 4, Ceiling instances 0, document modified False before and after, Revit 2024 build 24.3.60.12." style="width: 440px">
+            <span class="hl" data-tone="practice" data-step="1" style="left: 2%; top: 22.4%; width: 26.6%; height: 9.1%"></span>
+            <span class="hl" data-tone="git" data-step="2" style="left: 2%; top: 49%; width: 61.5%; height: 10%"></span>
+            <span class="hl" data-tone="research" data-step="3" style="left: 2%; top: 60.8%; width: 37%; height: 4.7%"></span>
+          </div>
           <figcaption>Read-only probe · Revit 2024 · commit f025fce</figcaption>
         </figure>
       </div>
@@ -686,16 +720,17 @@
         <table class="t-small">
           <tr><th>Case</th><th>Expected</th><th>Result</th></tr>
           <tr><td>Empty project</td><td>0 walls, 0 ceilings</td><td class="yes">Matched</td></tr>
-          <tr><td>Four-wall model</td><td>4 walls, 0 ceilings</td><td class="yes">Matched twice</td></tr>
-          <tr><td>Read-only</td><td>No change</td><td class="yes">Modified flag false; file hashes matched</td></tr>
+          <tr data-mark="1" data-tone="practice"><td>Four-wall model</td><td>4 walls, 0 ceilings</td><td class="yes">Matched twice</td></tr>
+          <tr data-mark="2" data-tone="git"><td>Read-only</td><td>No change</td><td class="yes">Modified flag false; file hashes matched</td></tr>
+          <tr data-mark="3" data-tone="research"><td>Revit version</td><td>Revit 2024</td><td class="yes">Build 24.3.60.12 recorded</td></tr>
         </table>
         <div class="callout"><strong>What this proves, and what it doesn't</strong>The development setup works and a narrow count is right. Not readiness, quantities, MCP, or other Revit versions.</div>
       </div>
     </div>
   </div>
   <aside class="notes">
-    <p>The agent defined the expected answers before writing the command. Revit's own Properties palette showed Walls (4).</p>
-    <p>One check initially failed because Revit held the file open while the agent tried to hash it. That was recorded and resolved. It was not mistaken for the plugin changing the model.</p>
+    <p>Three clicks. Each outlines a line in the real dialog and lights the matching row: the count, the read-only evidence, then the exact Revit build.</p>
+    <p>The agent defined the expected answers before writing the command. Revit's own Properties palette showed Walls (4). One check initially failed because Revit held the file open while the agent tried to hash it. That was recorded and resolved. It was not mistaken for the plugin changing the model.</p>
   </aside>
 </section>
 

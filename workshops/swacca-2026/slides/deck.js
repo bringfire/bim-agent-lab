@@ -1,6 +1,7 @@
 // Small slide engine shared by the SWACCA 2026 decks. No dependencies; works from file://.
 // Slides live in agenda blocks: <div class="block" data-label data-start data-end data-tone>.
-// Inside a slide, data-step="n" appears on the nth click and data-hide="n" disappears from it.
+// Inside a slide, data-step="n" appears on the nth click, data-hide="n" disappears from it
+// and data-mark="n" stays visible but gains the class "mark" from it.
 // Keys: arrows/Page/Space navigate, N notes, S presenter window, L light theme, F fullscreen, ? help.
 (() => {
   const body = document.body;
@@ -47,11 +48,12 @@
   });
 
   // Builds: a position is [slide, step]; step 0 shows everything without data-step.
-  const maxStep = slides.map((s) => Math.max(0, ...[...s.querySelectorAll('[data-step]')].map((el) => Number(el.dataset.step) || 0)));
+  const maxStep = slides.map((s) => Math.max(0, ...[...s.querySelectorAll('[data-step], [data-mark]')].map((el) => Number(el.dataset.step || el.dataset.mark) || 0)));
   const applyStep = (slide, step) => {
     slide.dataset.at = step;
     slide.querySelectorAll('[data-step]').forEach((el) => el.classList.toggle('on', Number(el.dataset.step) <= step));
     slide.querySelectorAll('[data-hide]').forEach((el) => el.classList.toggle('off', Number(el.dataset.hide) <= step));
+    slide.querySelectorAll('[data-mark]').forEach((el) => el.classList.toggle('mark', Number(el.dataset.mark) <= step));
   };
   const clamp = (i) => Math.min(Math.max(i, 0), total - 1);
   const place = (i, s) => { const c = clamp(i); return [c, Math.min(Math.max(s || 0, 0), maxStep[c])]; };
