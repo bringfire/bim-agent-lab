@@ -391,3 +391,5 @@ td.c-no { background: var(--sheet); color: var(--muted); }
 .dg .yr-plan { fill: none; stroke: var(--muted); stroke-width: 1.5; stroke-dasharray: 6 5; }
 .dg.road .t-step { font-size: 17px; }
 .dg.road .t-small { font-size: 15px; }
+.starters .prompt { padding: 14px 16px; align-content: start; }
+.starters .prompt blockquote { font-size: 17px; line-height: 1.38; }
