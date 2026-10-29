@@ -15,3 +15,5 @@ Suggested prompt:
 > Read this project's instructions and current implementation. I want to add [BIM capability] for [intended use]. Establish the required inputs and independent acceptance cases. Identify the smallest complete change, explain the evidence behind it, implement it, and show me the verification and diff. Record anything you could not test.
 
 To start a different BIM tool, create a sibling project with its own brief, prerequisites, implementation boundaries, and tests. Reuse the research and teaching process, then justify any code reuse from the actual requirements.
+
+For the Revit readiness server, the [extension roadmap](../explanation/mcp-extension-roadmap.md) lists planned stages (more Revit years, more readiness rules, framing output, file checks, exports, and model changes last) and what each must prove before it counts as supported.

@@ -13,6 +13,7 @@ Research precedes selecting a stack or implementing a tool. Evaluate the BIM fit
 - [Repository manifest](repositories.json): exact sources, commits, and relative checkout paths.
 - [Clone guide](../how-to/clone-research-repositories.md): reproduce the source-inspection setup.
 - [Evidence snapshots](evidence/README.md): original license/manifests and checkout observations.
+- [Agent integration surfaces in wall-and-ceiling tools](wall-ceiling-tool-integrations-2026-10-28.md): what StrucSoft MWF, AGACAD Metal Framing, HP SitePrint and Dynamo expose to agents (October 28, 2026), and the platform options including Autodesk's Revit MCP preview. The [extension roadmap](../explanation/mcp-extension-roadmap.md) turns these into planned tools.
 - [Earlier domain research](archive/wall-and-ceiling-domain-research.md): historical wall and ceiling workflow research, with later qualifications called out.
 
 Use the [research record](../../templates/research-record.md) for a new candidate or a version update. Record why it is a development tool, a dependency, adapted code, or a precedent. State what has actually been tested.
