@@ -277,20 +277,42 @@
 
 <section class="slide" data-title="Prepare recovery before the first write" data-page="6">
   <h2>Prepare recovery before the first write</h2>
+  <p class="sub">Installing the bridge replaces files on a working machine.</p>
   <div class="body">
-    <div class="cols">
-      <div>
-        <p>Installing the bridge replaces files on a working machine. Before any change, the installer records an inventory and verified backups.</p>
-        <div class="callout"><strong>Tested for real</strong>Undo, run twice on the real installation, restored all 59 original files exactly. Reinstalling then matched all 97 planned targets.</div>
-      </div>
-      <figure class="prompt compact">
-        <figcaption>Suggested prompt · based on the approved review direction</figcaption>
-        <blockquote>Before touching the working installation, show what is already saved if the installer stops after its first write. Test interruptions between the important steps, then recover in a new process twice. Compare the original bytes and inventories, preserve unrelated files, and show what happens if someone edits a file before recovery.</blockquote>
-      </figure>
-    </div>
+    <svg class="dg" viewBox="0 0 1136 170" role="img" aria-label="Recovery sequence: first record an inventory and verified backups; then install; undo, run twice in new processes, restored all 59 original files exactly; reinstalling matched all 97 planned targets.">
+      <rect class="box-hi" x="0" y="20" width="250" height="130" rx="8"/>
+      <text class="t-title" x="18" y="54">1 · Record first</text>
+      <text class="t-small" x="18" y="82">inventory and verified backups,</text>
+      <text class="t-small" x="18" y="104">before any file changes</text>
+      <g data-step="1">
+        <path class="arr draw" pathLength="1" d="M252 85 L288 85"/>
+        <g class="fade" style="--d:.3s"><rect class="box" x="295" y="20" width="250" height="130" rx="8"/>
+        <text class="t-title" x="313" y="54">2 · Install</text>
+        <text class="t-small" x="313" y="82">writes over files on</text>
+        <text class="t-small" x="313" y="104">the working machine</text></g>
+      </g>
+      <g data-step="2">
+        <path class="arr ok draw" pathLength="1" d="M547 85 L583 85"/>
+        <g class="fade" style="--d:.3s"><rect class="box-ok" x="590" y="20" width="250" height="130" rx="8"/>
+        <text class="t-title" x="608" y="54">3 · Undo, twice</text>
+        <text class="t-small" x="608" y="82">in new processes: all 59</text>
+        <text class="t-small" x="608" y="104">original files matched exactly</text></g>
+      </g>
+      <g data-step="3">
+        <path class="arr draw" pathLength="1" d="M842 85 L878 85"/>
+        <g class="fade" style="--d:.3s"><rect class="box" x="886" y="20" width="250" height="130" rx="8"/>
+        <text class="t-title" x="904" y="54">4 · Reinstall</text>
+        <text class="t-small" x="904" y="82">all 97 planned targets</text>
+        <text class="t-small" x="904" y="104">matched</text></g>
+      </g>
+    </svg>
+    <figure class="prompt compact push">
+      <figcaption>Suggested prompt · based on the approved review direction</figcaption>
+      <blockquote>Before touching the working installation, show what is already saved if the installer stops after its first write. Test interruptions between the important steps, then recover in a new process twice. Compare the original bytes and inventories, preserve unrelated files, and show what happens if someone edits a file before recovery.</blockquote>
+    </figure>
   </div>
   <aside class="notes">
-    <p>A list of the files you intend to install cannot restore the files you already overwrote. Backups have to exist and be verified before the first replacement.</p>
+    <p>Three clicks after the first box: install, undo twice, reinstall. A list of the files you intend to install cannot restore the files you already overwrote. Backups have to exist and be verified before the first replacement.</p>
     <p>The repository tells this as the "install with a recovery plan" lesson. It is the most technical lesson; participants only need the principle.</p>
   </aside>
 </section>
@@ -298,14 +320,36 @@
 <section class="slide" data-title="Two ways to use the same calculation" data-page="6">
   <h2>Two ways to use the same calculation</h2>
   <div class="body">
-    <div class="cols">
-      <div class="card" data-tone="build"><span class="label">Run a command in Revit</span><h3>Manual</h3>Saves JSON and text evidence plus the four-sheet Excel workbook.</div>
-      <div class="card" data-tone="research"><span class="label">Ask an agent through MCP</span><h3>Conversational</h3>Returns structured results to the agent. Reads only: no edits and no exported files.</div>
-    </div>
+    <svg class="dg" viewBox="0 0 1136 280" role="img" aria-label="The written checklist and the Revit model feed one shared evaluator. It is used two ways: a command run in Revit that saves JSON, text and a four-sheet workbook, and an agent asking through MCP that receives structured results and reads only.">
+      <rect class="box" x="0" y="10" width="270" height="100" rx="8"/>
+      <text class="t-title" x="18" y="44">Written checklist</text>
+      <text class="t-small" x="18" y="70">which fields each type requires,</text>
+      <text class="t-small" x="18" y="92">and which are not required</text>
+      <rect class="box" x="0" y="170" width="270" height="100" rx="8"/>
+      <text class="t-title" x="18" y="204">Revit model</text>
+      <text class="t-small" x="18" y="230">the open document,</text>
+      <text class="t-small" x="18" y="252">read only</text>
+      <path class="arr" d="M272 60 C340 60 340 125 416 125"/>
+      <path class="arr" d="M272 220 C340 220 340 155 416 155"/>
+      <rect class="box-hi" x="420" y="85" width="290" height="110" rx="8"/>
+      <text class="t-title" x="438" y="120">One shared evaluator</text>
+      <text class="t-small" x="438" y="146">applies the written rules,</text>
+      <text class="t-small" x="438" y="168">reports findings and coverage</text>
+      <path class="arr" d="M712 125 C780 125 780 60 846 60"/>
+      <path class="arr" d="M712 155 C780 155 780 220 846 220"/>
+      <rect class="box" x="850" y="10" width="286" height="100" rx="8" style="stroke: var(--build); stroke-width: 2"/>
+      <text class="t-title" x="868" y="44">Run a command in Revit</text>
+      <text class="t-small" x="868" y="70">JSON, text and a</text>
+      <text class="t-small" x="868" y="92">four-sheet workbook</text>
+      <rect class="box" x="850" y="170" width="286" height="100" rx="8" style="stroke: var(--research); stroke-width: 2"/>
+      <text class="t-title" x="868" y="204">Ask an agent via MCP</text>
+      <text class="t-small" x="868" y="230">structured results to the agent;</text>
+      <text class="t-small" x="868" y="252">no edits, no exported files</text>
+    </svg>
     <div class="callout push"><strong>One evaluator, one set of written rules.</strong>Both routes give the same findings for the same model and checklist, so either can be checked against the other.</div>
   </div>
   <aside class="notes">
-    <p>Handout page 6 callout. This separation is what "keep the calculation separate from the way people ask for it" means in practice.</p>
+    <p>The same picture as Session 1's slide 5, now that the room has seen both routes. Handout page 6 callout. This separation is what "keep the calculation separate from the way people ask for it" means in practice.</p>
   </aside>
 </section>
 
