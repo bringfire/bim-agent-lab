@@ -686,18 +686,19 @@
 
 <section class="slide" data-title="Follow a lesson to its code and evidence">
   <h2>Follow a lesson to its code and evidence</h2>
+  <p class="sub">One worked chain: the first readiness check</p>
   <div class="body">
-    <table class="t-small">
-      <tr><th style="width: 26%">Step</th><th>Participant story</th><th>Technical guide for your agent</th></tr>
-      <tr><td>Research</td><td>How did we ask for research before choosing tools?</td><td>Agent research guide, resource register</td></tr>
-      <tr><td>Git</td><td>How did we ask for source inspection and a reviewable history?</td><td>Agent Git guide, clone procedure</td></tr>
-      <tr><td>Setup</td><td>How did we turn prerequisites into a working proof?</td><td>Agent setup guide, prerequisites</td></tr>
-      <tr><td>Readiness</td><td>How did we request a meaningful rule and independent verification?</td><td>Agent readiness guide, contract</td></tr>
-      <tr><td>Excel</td><td>How did we direct a complete enhancement?</td><td>Agent dependency guide</td></tr>
-    </table>
-    <p class="small">The learning path continues through MCP, review, recovery and desktop testing. Ask your agent to explain one step: what the person decided, what was delegated, and the evidence.</p>
+    <svg class="dg chain" viewBox="0 0 1136 348" role="img" aria-label="One lesson followed through its links: the participant story, the agent guide, the code, the verification evidence, and the Git checkpoint c7c2ad9 that recorded them.">
+      <circle class="chain-dot" data-tone="practice" cx="20" cy="34" r="10"/><text x="46" y="40"><tspan class="t-lbl chain-lbl" data-tone="practice">Participant story</tspan><tspan class="t-small" dx="12">· how the author asked, and the decisions made</tspan></text><text class="t-mono" x="46" y="68" style="white-space: pre">docs/tutorials/03-check-required-type-information.md</text>
+      <g class="rise" data-step="1"><line class="ln" x1="20" y1="44" x2="20" y2="93"/><circle class="chain-dot" data-tone="research" cx="20" cy="102" r="10"/><text x="46" y="108"><tspan class="t-lbl chain-lbl" data-tone="research">Agent guide</tspan><tspan class="t-small" dx="12">· how an agent rebuilds and verifies it</tspan></text><text class="t-mono" x="46" y="136" style="white-space: pre">docs/how-to/build-required-information-check.md</text></g>
+      <g class="rise" data-step="2"><line class="ln" x1="20" y1="112" x2="20" y2="161"/><circle class="chain-dot" data-tone="build" cx="20" cy="170" r="10"/><text x="46" y="176"><tspan class="t-lbl chain-lbl" data-tone="build">Code</tspan><tspan class="t-small" dx="12">· the checklist and the read-only Revit reader</tspan></text><text class="t-mono" x="46" y="204" style="white-space: pre">projects/revit-readiness/src/  (Checklist.cs, RequiredInformationReader.cs)</text></g>
+      <g class="rise" data-step="3"><line class="ln" x1="20" y1="180" x2="20" y2="229"/><circle class="chain-dot" data-tone="ok" cx="20" cy="238" r="10"/><text x="46" y="244"><tspan class="t-lbl chain-lbl" data-tone="ok">Evidence</tspan><tspan class="t-small" dx="12">· three Revit runs checked against the answer sheet and schedules</tspan></text><text class="t-mono" x="46" y="272" style="white-space: pre">projects/revit-readiness/docs/verification/2026-10-20-required-information.md</text></g>
+      <g class="rise" data-step="4"><line class="ln" x1="20" y1="248" x2="20" y2="297"/><circle class="chain-dot" data-tone="git" cx="20" cy="306" r="10"/><text x="46" y="312"><tspan class="t-lbl chain-lbl" data-tone="git">Git checkpoint</tspan><tspan class="t-small" dx="12">· the check, its lesson and its acceptance record, committed together</tspan></text><text class="t-mono" x="46" y="340" style="white-space: pre">c7c2ad9  Add and verify required wall and ceiling type information check</text></g>
+    </svg>
+    <p class="small push">Every lesson links the same way. Ask your agent to walk one chain with you: what the person decided, what was delegated, and the evidence.</p>
   </div>
   <aside class="notes">
+    <p>Four clicks after the story: guide, code, evidence, checkpoint. Commit c7c2ad9 recorded the check, its participant story and its acceptance record together; the agent guide was separated out later and cites the same commit.</p>
     <p>From docs/tutorials/README.md. Every story links to the same verification record and Git checkpoint as its technical guide.</p>
   </aside>
 </section>
