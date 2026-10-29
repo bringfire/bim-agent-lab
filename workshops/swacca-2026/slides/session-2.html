@@ -531,17 +531,17 @@
   <h2>What that revealed in our build</h2>
   <div class="body">
     <p class="small">The plan review found three major gaps: cancellation lost before a Revit read, a server that could hang while stopping, and an interrupted install without backups.</p>
-    <figure class="prompt actual">
+    <figure class="prompt actual rise" data-step="1">
       <figcaption>Actual message accompanying those findings</figcaption>
       <blockquote>“The common gap is reasoning about what remains safe when an operation stops halfway through.”</blockquote>
     </figure>
-    <figure class="prompt compact">
+    <figure class="prompt compact rise" data-step="2">
       <figcaption>Suggested prompt back to the coding agent · handout page 7</figcaption>
       <blockquote>Assess the reviewer's diagnosis against the source before patching. State the guarantee that must hold across the whole operation, including interruption and failure. Apply the supported insight to every affected handoff, derive tests from it, preserve the original reproductions, and explain why the correction covers more than those examples.</blockquote>
     </figure>
   </div>
   <aside class="notes">
-    <p>In plain terms: stopping your wait does not necessarily stop the Revit read. The read still needs its resources until it finishes, and its late result must not be presented as current.</p>
+    <p>Two clicks: the message, then what to do with it. In plain terms: stopping your wait does not necessarily stop the Revit read. The read still needs its resources until it finishes, and its late result must not be presented as current.</p>
     <p>Later cancellation findings showed a related gap: the coder had reasoned about who owned objects, but not fully about which work waited for other work. Tests then interrupted real operations at their handoffs.</p>
   </aside>
 </section>
@@ -549,17 +549,21 @@
 <section class="slide" data-title="What each kind of evidence proves" data-page="7">
   <h2>Ask what each kind of evidence proves</h2>
   <div class="body">
-    <table>
-      <tr><th style="width: 32%">Evidence</th><th>What it proves</th></tr>
-      <tr><td>A build</td><td>The code compiles.</td></tr>
-      <tr><td>Offline tests</td><td>Specified behavior works outside the application.</td></tr>
-      <tr><td>A live Revit run</td><td>The host integration works.</td></tr>
-      <tr><td>A desktop answer</td><td>What the participant actually sees.</td></tr>
-    </table>
+    <svg class="dg ev" viewBox="0 0 1136 300" role="img" aria-label="An evidence ladder. A build proves the code compiles. Offline tests prove specified behaviour works outside the application. A live Revit run proves the host integration works. A desktop answer shows what the participant actually sees. Each rung is closer to the participant's experience.">
+      <text class="t-small" x="0" y="24">↗ each rung is closer to what the participant experiences</text>
+      <rect class="stair" x="0" y="230" width="270" height="70" rx="4"/>
+      <g class="rise" data-step="1"><rect class="stair-lit r" x="0" y="230" width="270" height="70" rx="4"/><text class="t-step" x="14" y="258">A build</text><text class="t-small" x="14" y="282">the code compiles</text></g>
+      <rect class="stair" x="288" y="175" width="270" height="125" rx="4"/>
+      <g class="rise" data-step="2"><rect class="stair-lit r" x="288" y="175" width="270" height="125" rx="4"/><text class="t-step" x="302" y="203">Offline tests</text><text class="t-small" x="302" y="227">specified behaviour works</text><text class="t-small" x="302" y="247">outside the application</text></g>
+      <rect class="stair" x="576" y="120" width="270" height="180" rx="4"/>
+      <g class="rise" data-step="3"><rect class="stair-lit r" x="576" y="120" width="270" height="180" rx="4"/><text class="t-step" x="590" y="148">A live Revit run</text><text class="t-small" x="590" y="172">the host integration works</text></g>
+      <rect class="stair" x="864" y="65" width="270" height="235" rx="4"/>
+      <g class="rise" data-step="4"><rect class="stair-lit r" x="864" y="65" width="270" height="235" rx="4"/><text class="t-step" x="878" y="93">A desktop answer</text><text class="t-small" x="878" y="117">what the participant</text><text class="t-small" x="878" y="137">actually sees</text></g>
+    </svg>
     <div class="callout push"><strong>Freeze the candidate and record its identity.</strong>Evidence from an older installed build does not automatically prove the current source.</div>
   </div>
   <aside class="notes">
-    <p>Handout page 7. Each line answers a different question. Ask the agent which kind of evidence supports each claim it makes.</p>
+    <p>Four clicks, one rung each. Handout page 7. Each kind of evidence answers a different question; none substitutes for the one above it. Ask the agent which kind supports each claim it makes.</p>
   </aside>
 </section>
 </div>

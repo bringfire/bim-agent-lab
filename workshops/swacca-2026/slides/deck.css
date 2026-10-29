@@ -363,3 +363,6 @@ tr.mark td { background: color-mix(in srgb, var(--tone, var(--accent)) 20%, tran
 .tight { gap: 12px !important; }
 .tight .callout { font-size: 19px; padding: 11px 18px; gap: 3px; }
 .tight .callout strong:first-child { font-size: 21px; }
+.dg .stair-lit.r { fill: color-mix(in srgb, var(--research) 24%, var(--sheet)); stroke: var(--research); }
+.dg.ev .t-step { font-size: 21px; }
+.dg.ev .t-small { font-size: 17px; }
