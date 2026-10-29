@@ -703,20 +703,6 @@
   </aside>
 </section>
 
-<section class="slide" data-title="Add one readiness rule">
-  <h2>Add one readiness rule</h2>
-  <div class="body">
-    <figure class="prompt">
-      <figcaption>Suggested prompt · from the readiness lesson</figcaption>
-      <blockquote>Read the existing contract and verification evidence. We need to check [condition] for [defined scope], using [requirement source]. Make the requirements and valid exceptions explicit. Prepare sample copies with independently known passing, failing, and excluded cases. Implement the check, verify values and affected identities against native BIM evidence, and show what the result does and does not prove. Record both learning layers and a reviewed Git checkpoint.</blockquote>
-    </figure>
-    <p class="small muted">Same pattern as today: purpose, scope, expected answers, smallest change, independent check, commit.</p>
-  </div>
-  <aside class="notes">
-    <p>If there's time, walk through how you would fill in the brackets for a wall and ceiling contractor's rule, e.g. a required STC rating on rated partitions, sourced from a project spec section.</p>
-  </aside>
-</section>
-
 <section class="slide" data-title="What is verified, and what isn't">
   <h2>What is verified, and what isn't yet</h2>
   <div class="body">
@@ -780,6 +766,32 @@
   <aside class="notes">
     <p>Five clicks: the Revit years with stage 1, the model-reading stages, file checks, exports and changes, then the 2027 note. Everything after stage 0 is a plan, not support; the roadmap is docs/explanation/mcp-extension-roadmap.md.</p>
     <p>Each new tool keeps the same rules: a fresh context bound to the open model, read-only by default, results that say what they could not examine, independent expected answers, and a lesson in both layers. Vendor-specific field names go in profile files that a firm can edit. If tonight's Revit 2026 test passes and is recorded, update the 2026 cell.</p>
+  </aside>
+</section>
+
+<section class="slide" data-title="Start your own tool: three prompts">
+  <h2>Start your own tool</h2>
+  <p class="sub">Three of ten suggested starter prompts. Fill in the brackets for your firm.</p>
+  <div class="body">
+    <div class="cols three starters">
+      <figure class="prompt compact rise" data-step="1">
+        <figcaption>Suggested · 0 · Get oriented</figcaption>
+        <blockquote>Clone https://github.com/bringfire/bim-agent-lab. Read README.md, AGENTS.md, docs/explanation/mcp-extension-roadmap.md and docs/research/wall-ceiling-tool-integrations-2026-10-28.md. We're a wall-and-ceiling contractor using [MWF / AGACAD / SitePrint / Dynamo] on Revit [year]. Explain which roadmap stage fits our work, what already exists, and the smallest first tool we could build. Don't change anything yet.</blockquote>
+      </figure>
+      <figure class="prompt compact rise" data-step="2">
+        <figcaption>Suggested · 2 · Ready for framing</figcaption>
+        <blockquote>Using the existing readiness check as the pattern, add a "ready for framing" rule: before walls go to [MWF / AGACAD], every wall type in scope must have [our framing fields]. Read the existing checklist and evaluator first. Propose the rule, valid exceptions, and sample cases (complete, missing field, excluded type) with expected answers before writing code. Keep it read-only and check it against a native Revit schedule.</blockquote>
+      </figure>
+      <figure class="prompt compact rise" data-step="3">
+        <figcaption>Suggested · 5 · SitePrint check</figcaption>
+        <blockquote>Write a pre-flight checker for HP SitePrint layout files. First find HP's current file-preparation guidance and summarise its rules with sources; don't assume layer names. Then check a DXF against them: print elements on the right layers, obstacles closed, at least two named control points. Make sample files that should pass and fail, and build it as a command-line tool we could later expose through our MCP server.</blockquote>
+      </figure>
+    </div>
+    <p class="small push">All ten, including MWF, AGACAD, CNC files and Dynamo graphs: <code>docs/starter-prompts.md</code> in github.com/bringfire/bim-agent-lab</p>
+  </div>
+  <aside class="notes">
+    <p>Three clicks: one prompt to orient, one that extends the readiness pattern to framing, and one file tool that needs no Revit at all. Each makes the same moves: point at the context, state the handoff, research first, expected answers before code, read-only on a copy, check independently, commit.</p>
+    <p>The page also has prompts for building the add-in for your Revit year, inventorying MWF framing, checking AGACAD stud spacing, comparing CNC exports, putting Dynamo graphs in Git, asking vendors the right questions, and the Summit Challenge. It keeps the general "add one readiness rule" prompt that used to be on its own slide.</p>
   </aside>
 </section>
 </div>

@@ -74,3 +74,5 @@ The prepared demonstration has 16 declared instances across six types. Its expec
 Use an independent reviewer for the spec, plan and implemented result. If review finds two or three major issues, ask whether they share a missing concept; the count is a useful signal, not proof. In this build, repeated cancellation defects exposed a missing model of which work shutdown waits for. Ask the reviewer to explain that connection so the coding agent can correct its reasoning across the feature, then verify the correction. The [review lesson](tutorials/06-direct-design-and-external-review.md) includes the actual exchange.
 
 For a refresher, follow the [learning path](tutorials/README.md). For the exact build procedure, use the [agent handoff](how-to/agent-handoff.md). Continue the remaining verification and review steps before polishing the seminar presentation or treating the repository as a release.
+
+Ready to start your own tool? The [starter prompts](starter-prompts.md) are written for wall-and-ceiling contractors using StrucSoft MWF, AGACAD Metal Framing, HP SitePrint or Dynamo, and follow the [extension roadmap](explanation/mcp-extension-roadmap.md).

@@ -11,6 +11,7 @@ Revit model readiness is the first project. The lab can grow to other BIM applic
 | You want to… | Start with… |
 |---|---|
 | Learn how to engage an agent | [Participant starting guide](docs/start-here.md) and [learning path](docs/tutorials/README.md) |
+| Start your own tool | [Starter prompts](docs/starter-prompts.md) and the [extension roadmap](docs/explanation/mcp-extension-roadmap.md) |
 | Give your agent technical context | [Agent handoff](docs/how-to/agent-handoff.md), [AGENTS.md](AGENTS.md) and the relevant project guidance |
 | Build or try the Revit example | [Revit project](projects/revit-readiness/README.md), [prerequisites](projects/revit-readiness/docs/development-prerequisites.md) and [sample preparation](projects/revit-readiness/samples/README.md) |
 | Revisit the SWACCA seminar | [Participant PDF](output/pdf/swacca-2026-participant-handout-oct29-30.pdf), [editable Word handout](output/docx/swacca-2026-participant-handout-oct29-30.docx) and [two-session agenda](workshops/swacca-2026/agenda.html) |

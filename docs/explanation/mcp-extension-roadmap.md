@@ -64,4 +64,4 @@ Firms can ask their vendors for stable parameter names, configuration schemas an
 
 ## How to start a stage
 
-Follow the [extension workflow](../how-to/extend-a-project.md): write a feature brief, research the missing API or file format, prepare independent examples, implement one complete tool, verify it in the real application, and record the lesson.
+The [starter prompts](../starter-prompts.md) give a suggested opening prompt for each stage. Then follow the [extension workflow](../how-to/extend-a-project.md): write a feature brief, research the missing API or file format, prepare independent examples, implement one complete tool, verify it in the real application, and record the lesson.
