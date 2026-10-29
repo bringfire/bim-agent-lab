@@ -596,20 +596,37 @@
 <section class="slide" data-title="Where to start" data-page="8">
   <h2>Where to start</h2>
   <div class="body">
-    <table class="t-small">
-      <tr><th style="width: 42%">Start with</th><th>Use it for</th></tr>
-      <tr><td><code>README.md</code></td><td>Current status and navigation</td></tr>
-      <tr><td><code>docs/start-here.md</code></td><td>Your first steps as a participant</td></tr>
-      <tr><td><code>docs/tutorials/README.md</code></td><td>How we engaged the agent at each stage</td></tr>
-      <tr><td><code>AGENTS.md</code></td><td>Rules and boundaries for agents working here</td></tr>
-      <tr><td><code>docs/how-to/agent-handoff.md</code></td><td>Technical setup, verification and remaining work</td></tr>
-    </table>
+    <svg class="dg" viewBox="0 0 1136 300" role="img" aria-label="Two readers, two paths. You read README.md, then docs/start-here.md, then the participant stories in docs/tutorials. Your agent reads AGENTS.md, then docs/how-to/agent-handoff.md, then the technical guides, code and evidence. Each participant story links to its technical guide.">
+      <rect class="lane-you" x="0" y="0" width="1136" height="128" rx="8"/>
+      <rect class="lane-agent" x="0" y="172" width="1136" height="128" rx="8"/>
+      <text class="t-title" x="18" y="56">You</text><text class="t-small" x="18" y="80">read the stories</text>
+      <text class="t-title" x="18" y="228">Your agent</text><text class="t-small" x="18" y="252">reads the guides</text>
+      <g data-step="1">
+        <rect class="node-you" x="160" y="20" width="290" height="88" rx="8"/><text class="t-mono" x="178" y="54" style="font-size: 16px; font-weight: 600">README.md</text><text class="t-small" x="178" y="82">status and navigation</text>
+        <path class="arr draw" pathLength="1" d="M452 64 L486 64" style="--d:.2s"/>
+        <rect class="node-you" x="490" y="20" width="290" height="88" rx="8"/><text class="t-mono" x="508" y="54" style="font-size: 16px; font-weight: 600">docs/start-here.md</text><text class="t-small" x="508" y="82">your first steps</text>
+        <path class="arr draw" pathLength="1" d="M782 64 L816 64" style="--d:.4s"/>
+        <rect class="node-you" x="820" y="20" width="300" height="88" rx="8"/><text class="t-mono" x="838" y="54" style="font-size: 16px; font-weight: 600">docs/tutorials/</text><text class="t-small" x="838" y="82">how we engaged the agent</text>
+      </g>
+      <g data-step="2">
+        <rect class="node-agent" x="160" y="192" width="290" height="88" rx="8"/><text class="t-mono" x="178" y="226" style="font-size: 16px; font-weight: 600">AGENTS.md</text><text class="t-small" x="178" y="254">rules and boundaries</text>
+        <path class="arr draw" pathLength="1" d="M452 236 L486 236" style="--d:.2s"/>
+        <rect class="node-agent" x="490" y="192" width="290" height="88" rx="8"/><text class="t-mono" x="508" y="226" style="font-size: 15px; font-weight: 600">docs/how-to/agent-handoff.md</text><text class="t-small" x="508" y="254">setup, verification, open work</text>
+        <path class="arr draw" pathLength="1" d="M782 236 L816 236" style="--d:.4s"/>
+        <rect class="node-agent" x="820" y="192" width="300" height="88" rx="8"/><text class="t-mono" x="838" y="226" style="font-size: 16px; font-weight: 600">docs/how-to/, projects/</text><text class="t-small" x="838" y="254">technical guides, code, evidence</text>
+      </g>
+      <g data-step="3">
+        <path class="dash-arr" d="M970 112 L970 186"/>
+        <text class="t-small" x="958" y="154" text-anchor="end">each story links its technical guide</text>
+      </g>
+    </svg>
     <div>
       <span class="label">On Windows, clone with long paths enabled</span>
       <pre>git clone -c core.longpaths=true https://github.com/bringfire/bim-agent-lab.git</pre>
     </div>
   </div>
   <aside class="notes">
+    <p>Three clicks: your path, your agent's path, then the link between them. The repository is written for both readers; that is why it has two layers.</p>
     <p>Or ask your agent to clone it. The long-path option avoids checkout failures in deeply nested folders on Windows. Cloning installs nothing; build and installation are separate steps.</p>
   </aside>
 </section>
@@ -618,14 +635,14 @@
   <h2>Use · learn · extend</h2>
   <div class="body">
     <div class="cols three">
-      <div class="card" data-tone="frame"><span class="label">Use</span><h3>Read and run</h3>Read the lessons with no Revit installed. Running the example needs the documented Windows and Revit 2024 environment.</div>
-      <div class="card" data-tone="research"><span class="label">Learn</span><h3>Follow the build</h3>Each step pairs a participant story (how we engaged the agent) with a technical guide for your agent.</div>
-      <div class="card" data-tone="build"><span class="label">Extend</span><h3>Add a rule</h3>Use the extension workflow and templates to add one readiness rule, or start another BIM tool.</div>
+      <div class="card rise" data-tone="frame" data-step="1"><span class="label">Use</span><h3>Read and run</h3>Read the lessons with no Revit installed. Running the example needs the documented Windows and Revit 2024 environment.</div>
+      <div class="card rise" data-tone="research" data-step="2"><span class="label">Learn</span><h3>Follow the build</h3>Each step pairs a participant story (how we engaged the agent) with a technical guide for your agent.</div>
+      <div class="card rise" data-tone="build" data-step="3"><span class="label">Extend</span><h3>Add a rule</h3>Use the extension workflow and templates to add one readiness rule, or start another BIM tool.</div>
     </div>
-    <p class="small muted push">Autodesk sample models and API libraries are not bundled. The repository has recipes for preparing the samples.</p>
+    <p class="small muted push rise" data-step="3">Autodesk sample models and API libraries are not bundled. The repository has recipes for preparing the samples.</p>
   </div>
   <aside class="notes">
-    <p>Three ways in, depending on where people were in Session 1's opening question. People who are new to AI or use only chat apps can stop at "Use" and "Learn" and still get a lot out of it.</p>
+    <p>Three clicks, one way in each. Three ways in, depending on where people were in Session 1's opening question. People who are new to AI or use only chat apps can stop at "Use" and "Learn" and still get a lot out of it.</p>
   </aside>
 </section>
 
@@ -679,7 +696,7 @@
   <h2>What is verified, and what isn't yet</h2>
   <div class="body">
     <div class="cols">
-      <div class="card ok"><span class="label">Verified</span>
+      <div class="card ok rise" data-step="1"><span class="label">Verified</span>
         <ul class="small">
           <li>Revit 2024, build 24.3.60.12</li>
           <li>Read-only command and four-sheet Excel output on the prepared samples</li>
@@ -687,7 +704,7 @@
           <li>Install recovery on a real machine</li>
         </ul>
       </div>
-      <div class="card warn"><span class="label">Not yet</span>
+      <div class="card warn rise" data-step="2"><span class="label">Not yet</span>
         <ul class="small">
           <li>Revit 2026 or 2027 support</li>
           <li>Physical-condition and quantity checks</li>
@@ -699,7 +716,7 @@
     <p class="small muted">This is a teaching-source preview. Check the README's current status before installing anything.</p>
   </div>
   <aside class="notes">
-    <p>Model the behavior we've been teaching: state compatibility only as far as the evidence supports it. The repository's development-status page and acceptance ledger have the details.</p>
+    <p>Two clicks: what is verified, then what is not yet. Model the behavior we've been teaching: state compatibility only as far as the evidence supports it. The repository's development-status page and acceptance ledger have the details.</p>
   </aside>
 </section>
 </div>
@@ -712,15 +729,15 @@
   <p class="sub">An office task, or your Summit Challenge team's need. Two minutes.</p>
   <div class="body">
     <div class="cols four">
-      <div class="card"><span class="label">1 · Problem</span>Which repetitive BIM question, before which handoff or decision?</div>
-      <div class="card"><span class="label">2 · Existing resources</span>What might already exist: APIs, scripts, add-ins, repositories?</div>
-      <div class="card"><span class="label">3 · Smallest change</span>One read-only step that would be useful on its own.</div>
-      <div class="card"><span class="label">4 · Checkable answer</span>How will you know it's right without trusting the agent?</div>
+      <div class="card rise" data-step="1"><span class="label">1 · Problem</span>Which repetitive BIM question, before which handoff or decision?</div>
+      <div class="card rise" data-step="2"><span class="label">2 · Existing resources</span>What might already exist: APIs, scripts, add-ins, repositories?</div>
+      <div class="card rise" data-step="3"><span class="label">3 · Smallest change</span>One read-only step that would be useful on its own.</div>
+      <div class="card rise" data-step="4"><span class="label">4 · Checkable answer</span>How will you know it's right without trusting the agent?</div>
     </div>
     <div class="write push"><span class="label">Write on page 8</span>My next small BIM question, and how I will verify the answer.</div>
   </div>
   <aside class="notes">
-    <p>Give two minutes to write, then ask one or two people to share. Push gently on box 4: what is the independent check? A native schedule, a hand count, a known sample?</p>
+    <p>Four clicks: bring in each box as you ask the room the question in it. Give two minutes to write, then ask one or two people to share. Push gently on box 4: what is the independent check? A native schedule, a hand count, a known sample?</p>
   </aside>
 </section>
 </div>
